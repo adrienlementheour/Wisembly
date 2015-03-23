@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'gothamBook';
+    src: url('../fonts/GothamBook.eot');
+    src: url('../fonts/GothamBook.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GothamBook.woff2') format('woff2'),
+         url('../fonts/GothamBook.woff') format('woff'),
+         url('../fonts/GothamBook.ttf') format('truetype'),
+         url('../fonts/GothamBook.svg#gotham_bookregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamBookItalic';
+    src: url('../fonts/GothamBookItalic.eot');
+    src: url('../fonts/GothamBookItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GothamBookItalic.woff2') format('woff2'),
+         url('../fonts/GothamBookItalic.woff') format('woff'),
+         url('../fonts/GothamBookItalic.ttf') format('truetype'),
+         url('../fonts/GothamBookItalic.svg#gotham_bookitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamMedium';
+    src: url('../fonts/GothamMedium.eot');
+    src: url('../fonts/GothamMedium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GothamMedium.woff2') format('woff2'),
+         url('../fonts/GothamMedium.woff') format('woff'),
+         url('../fonts/GothamMedium.ttf') format('truetype'),
+         url('../fonts/GothamMedium.svg#gotham_mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamBold';
+    src: url('../fonts/GothamBold.eot');
+    src: url('../fonts/GothamBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GothamBold.woff2') format('woff2'),
+         url('../fonts/GothamBold.woff') format('woff'),
+         url('../fonts/GothamBold.ttf') format('truetype'),
+         url('../fonts/GothamBold.svg#gotham_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'wisembly';
+  src: url('../fonts/wisembly.eot');
+  src: url('../fonts/wisembly.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/wisembly.woff') format('woff'),
+       url('../fonts/wisembly.ttf') format('truetype'),
+       url('../fonts/wisembly.svg#wisembly') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.gotham(@size){
+  font-family: 'gothamBook', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.gothamItalic(@size){
+  font-family: 'gothamBookItalic', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.gothamMedium(@size){
+  font-family: 'gothamMedium', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.gothamBold(@size){
+  font-family: 'gothamBold', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+[class^="icon-"], [class*=" icon-"], .fontIcon{
+  font-family: 'wisembly';
+  speak: none;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-quote:before {
+  content: "\e600";
+}
