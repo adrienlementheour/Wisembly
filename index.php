@@ -12,20 +12,20 @@
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	  	<link rel="stylesheet" href="css/style.css">
-	  	<script src="js/modernizr-min.js" type="text/javascript" charset="utf-8"></script>
+	  	<script src="js/modernizr-min.js" type="text/javascript"></script>
 	</head>
 
-	<body>
+	<body class='home'>
 		
 		<?php include('includes/header.html'); ?>
 
-		<div class='wrapper' role='main'>
+		<div role='main'>
 			
 			<section class='headHome'>
 				<div class='content'>
 					<div class='blocH1'>
 						<h1>Ideas<br/>Are<span>Everywhere</span></h1>
-						<h2>Wisembly vous aide à améliorer la productivité de vos réunions grâce à l'intéractivité.</h>
+						<h2>Wisembly vous aide à améliorer la productivité de vos réunions grâce à l'intéractivité.</h2>
 						<a href='#' class="btnFull">Je suis intéressé</a>
 					</div>
 					<ul>
@@ -33,22 +33,20 @@
 							<h3>Evénements</h3>
 							<p>Donnez la parole à tous les participants de votre séminaire</p>
 							<a href='#' class='btnLight'>Vitaminez vos séminaires</a>
-						</li>
-						<li>
-							<h3>Trainings</h3>
-							<p>Wisembly vous permet de rythmer vos formations</p>
-							<a href='#' class='btnLight'>Animez vos trainings</a>
-						</li>
-						<li>
+						</li><li>
 							<h3>Conf-calls</h3>
 							<p>Préparez, animez et assurez le suivi de vos réunions &amp; conf-calls</p>
 							<a href='#' class='btnLight'>Dynamisez vos conf-calls</a>
+						</li><li>
+							<h3>Trainings</h3>
+							<p>Wisembly vous permet de rythmer vos formations</p>
+							<a href='#' class='btnLight'>Animez vos trainings</a>
 						</li>
 					</ul>
 				</div>
 			</section>
 
-			<section class='content'>
+			<section class='content main'>
 				<h2>Ils nous font confiance</h2>
 				<div id='sliderRef'>
 					<ul>

@@ -19,7 +19,7 @@
 		
 		<?php include('includes/header.html'); ?>
 
-		<div class='content simple' role='main'>
+		<div class='content main simple' role='main'>
 			
 			<h1>Page intérieure type</h1>
 
