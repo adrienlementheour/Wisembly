@@ -10,7 +10,8 @@
 	  	<meta name='description' content=''>
 	  	<meta name='viewport' content='width=device-width,initial-scale=1'>		
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+		
+		<link rel="stylesheet" type="text/css" href="http://cloud.typography.com/719316/795726/css/fonts.css" />
 	  	<link rel="stylesheet" href="css/style.css">
 	  	<script src="js/modernizr-min.js" type="text/javascript"></script>
 	</head>
@@ -22,9 +23,9 @@
 		<div role='main'>
 			
 			<section class='headHome'>
-				<div class='content'>
+				<div class='content main'>
 					<div class='blocH1'>
-						<h1>Ideas<br/>Are<span>Everywhere</span></h1>
+						<h1 class='heading'>Ideas<br/>Are<span>Everywhere</span></h1>
 						<h2>Wisembly vous aide à améliorer la productivité de vos réunions grâce à l'intéractivité.</h2>
 						<a href='#' class="btnFull">Je suis intéressé</a>
 					</div>
@@ -79,7 +80,7 @@
 
 		</div>
 
-	  	<?php include('includes/footer.html'); ?>
+	  	<?php include('includes/footer.php'); ?>
 
 	</body>
 

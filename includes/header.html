@@ -8,7 +8,7 @@
 			<p>Contactez-nous au <span>01 85 08 53 71</span> ou <a href='mailto:contact@wisembly.com' title='Envoyer un e-mail'>contact@wisembly.com</a></p>
 			<form method='POST' action='#'>
 				<label for='event'>Rejoindre votre event :</label>
-				<input type='text' name='event' id='event' placeholder='votre mot clé'/><input type='submit' value='Ok'/>
+				<input type='text' name='event' id='event' placeholder='votre mot clé'/><button type='submit' class='btnFull' name='submit'>Ok</button>
 			</form> 
 		</div>
 	</section>
@@ -16,7 +16,21 @@
 		<nav role='navigation' class='content'>
 			<a id='logo' href='./' title="Retour à l'accueil">Wisembly</a>
 			<ul class='menu'>
-				<li><a href='#'>Solutions</a></li>
+				<li class='hasSubMenu' tabindex='0'>
+					<a href='#'>Solutions</a>
+					<ul class='subMenu'>
+						<li>
+							<a href='#'>Evénements</a>
+							<ul>
+								<li><a href='#'>Préparer</a></li>
+								<li><a href='#'>Animer</a></li>
+								<li><a href='#'>Analyser</a></li>
+							</ul>
+						</li>
+						<li><a href='#'>Conf-Call</a></li>
+						<li><a href='#'>Trainings</a></li>
+					</ul>
+				</li>
 				<li><a href='#'>Clients</a></li>
 				<li><a href='#'>Accompagnement</a></li>
 				<li><a href='#'>Ressources</a></li>

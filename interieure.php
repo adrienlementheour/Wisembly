@@ -10,7 +10,8 @@
 	  	<meta name='description' content=''>
 	  	<meta name='viewport' content='width=device-width,initial-scale=1'>		
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+		
+		<link rel="stylesheet" type="text/css" href="http://cloud.typography.com/719316/795726/css/fonts.css" />
 	  	<link rel="stylesheet" href="css/style.css">
 	  	<script src="js/modernizr-min.js" type="text/javascript"></script>
 	</head>
@@ -87,7 +88,7 @@
 
 		</div>
 
-	  	<?php include('includes/footer.html'); ?>
+	  	<?php include('includes/footer.php'); ?>
 
 	</body>
 
