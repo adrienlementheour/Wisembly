@@ -426,24 +426,6 @@ h2.big {
 h3 {
   color: #4e4e4e;
 }
-.heading {
-  font-family: 'edmond', 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-  font-weight: normal;
-  font-size: 1em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  color: #ffffff;
-}
-.heading span {
-  display: block;
-  font-family: 'edmondBold', 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-  font-weight: normal;
-  font-size: 1em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
 a {
   border-bottom: 1px solid rgba(40, 155, 196, 0.3);
   color: #289bc4;
@@ -615,6 +597,10 @@ button {
   appearance: none;
   background: none;
   border: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 button.btnFull {
   text-transform: none;
@@ -624,8 +610,13 @@ button.btnFull {
 button.btnFull:before {
   top: 0;
 }
+button:hover,
 button:focus {
   outline: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 /* BUTTONS */
 .btnFull,
@@ -634,7 +625,7 @@ button:focus {
   position: relative;
   width: 220px;
   text-align: center;
-  height: 42px;
+  height: 44px;
   line-height: 44px;
   border: 2px solid;
   overflow: hidden;
@@ -730,6 +721,37 @@ button:focus {
 .btnLight:focus:before {
   background: #46b489;
 }
+.scrollNext {
+  color: #17698d;
+  position: relative;
+  z-index: 1;
+  margin: 65px 0 0;
+}
+.scrollNext:hover,
+.scrollNext:focus {
+  color: #289bc4;
+}
+.scrollNext:before {
+  background: #ffffff;
+  padding: 0 20px;
+}
+.scrollNext:after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 450px;
+  background: #ebeeef;
+  position: absolute;
+  z-index: -1;
+  top: 42%;
+  left: 50%;
+  margin: 0 0 0 -225px;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
 /* CONTAINERS */
 .content {
   width: 100%;
@@ -755,6 +777,11 @@ header {
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  /*.home & {
+    a.btnFull{
+      opacity: 0;
+    }
+  }*/
 }
 header ul,
 header li,
@@ -770,9 +797,6 @@ header li:before {
 }
 header a {
   border: 0;
-}
-.home header a.btnFull {
-  opacity: 0;
 }
 header.on {
   top: -40px;
@@ -797,7 +821,7 @@ header.on .menu > li > a {
 }
 header.on #logo,
 header.on .bottomHeader .btnFull {
-  margin: 14px 0;
+  margin: 13px 0;
 }
 .topHeader {
   height: 40px;
@@ -1002,7 +1026,7 @@ header.on .bottomHeader .btnFull {
 .bottomHeader .btnFull {
   float: right;
   width: 170px;
-  margin: 25px 0;
+  margin: 24px 0;
 }
 #logo {
   width: 198px;
@@ -1145,6 +1169,7 @@ header.on .bottomHeader .btnFull {
 /* FOOTER */
 footer {
   padding: 130px 0 0;
+  margin: 100px 0 0;
   overflow: hidden;
 }
 .contactFooter {
@@ -1368,10 +1393,6 @@ footer {
 .buttonsTeam button {
   padding: 0;
   opacity: .6;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 .buttonsTeam button:before {
   font-family: 'wisembly';
@@ -1411,10 +1432,6 @@ footer {
 .buttonsTeam button:hover,
 .buttonsTeam button:focus {
   opacity: 1;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 #ent:before {
   content: "\e605";
@@ -1773,10 +1790,169 @@ footer {
   color: #289bc4;
   border-color: rgba(40, 155, 196, 0.3);
 }
-/* HOME */
+/* ENTETE */
 .headHome {
-  background: url(../layoutImg/headHome.jpg) no-repeat 50% 0;
+  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 0;
   background-size: cover;
+  overflow: hidden;
+}
+.blocH1 {
+  width: 290px;
+  float: right;
+  padding: 0 0 200px;
+  margin: 0 5% 0 0;
+}
+.heading {
+  font-family: 'edmond', 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #ffffff;
+  font-size: 3em;
+  line-height: 1em;
+  margin: 200px 0 0;
+}
+.heading span {
+  display: block;
+  font-family: 'edmondBold', 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.subHeading {
+  color: #ffffff;
+  text-transform: none;
+  /*font-family: 'gothamBook', sans-serif;
+  font-weight: normal;*/
+  font-family: 'Gotham SSm A', 'Gotham SSm B';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.32em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 25px 0;
+}
+/* HOME */
+.home .wrapper {
+  text-align: center;
+}
+.home .wrapper .btnLight {
+  margin: 0 auto;
+}
+.detailHome {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 65px;
+  margin: -130px 0 0;
+}
+.detailHome li {
+  display: inline-block;
+  width: 33%;
+  padding: 0 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.detailHome li:before {
+  content: '';
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+}
+.detailHome p {
+  margin: 1em 0 1.5em;
+}
+.detailHome .event:before {
+  background: url(../layoutImg/home/pot.png) no-repeat;
+}
+.detailHome .conf:before {
+  background: url(../layoutImg/home/tel.png) no-repeat;
+}
+.detailHome .training:before {
+  background: url(../layoutImg/home/graph.png) no-repeat;
+}
+.avantages {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 90px 0 70px;
+}
+.avantages li {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 0 0 5.6%;
+  padding: 0;
+}
+.avantages li:first-child {
+  margin: 0;
+}
+.avantages li:before {
+  content: '';
+  display: block;
+  position: relative;
+  margin: 0 auto;
+}
+.avantages .accompagnement {
+  width: 20%;
+}
+.avantages .accompagnement:before {
+  height: 96px;
+  width: 106px;
+  background: url(../layoutImg/home/accompagnement.png) no-repeat;
+}
+.avantages .securite {
+  width: 22%;
+}
+.avantages .securite:before {
+  height: 121px;
+  width: 68px;
+  background: url(../layoutImg/home/chateau.png) no-repeat;
+}
+.avantages .fiable {
+  width: 19%;
+}
+.avantages .fiable:before {
+  height: 91px;
+  width: 94px;
+  background: url(../layoutImg/home/w.png) no-repeat;
+}
+.avantages .technique {
+  width: 22%;
+}
+.avantages .technique:before {
+  height: 88px;
+  width: 71px;
+  background: url(../layoutImg/home/connexion.png) no-repeat;
+}
+.avantages h3 {
+  margin: 35px 0 15px;
+}
+.avantages p {
+  margin: 0;
+}
+.logosPresse {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 95px;
+  margin: 60px 0 0;
+}
+.logosPresse li {
+  width: 25%;
+  display: inline-block;
+  padding: 0;
+}
+.logosPresse li:before {
+  display: none;
 }
 /* @end */
 /* @group clearfix */
@@ -1797,6 +1973,34 @@ footer {
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   #logo {
     background: url('../layoutImg/logo@2.png') no-repeat;
+    background-size: 100%;
+  }
+  .detailHome .event:before {
+    background: url('../layoutImg/home/pot@2.png') no-repeat;
+    background-size: 100%;
+  }
+  .detailHome .conf:before {
+    background: url('../layoutImg/home/tel@2.png') no-repeat;
+    background-size: 100%;
+  }
+  .detailHome .training:before {
+    background: url('../layoutImg/home/graph@2.png') no-repeat;
+    background-size: 100%;
+  }
+  .avantages .accompagnement:before {
+    background: url('../layoutImg/home/accompagnement@2.png') no-repeat;
+    background-size: 100%;
+  }
+  .avantages .securite:before {
+    background: url('../layoutImg/home/chateau@2.png') no-repeat;
+    background-size: 100%;
+  }
+  .avantages .fiable:before {
+    background: url('../layoutImg/home/w@2.png') no-repeat;
+    background-size: 100%;
+  }
+  .avantages .technique:before {
+    background: url('../layoutImg/home/connexion@2.png') no-repeat;
     background-size: 100%;
   }
 }

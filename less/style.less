@@ -79,15 +79,6 @@ h3{
   color: @grisH3;
 }
 
-.heading{
-  .edmond(1em);
-  color: @blanc;
-  span{
-    display: block;
-    .edmondBold(1em);
-  }
-}
-
 a{
   border-bottom: 1px solid fade(@bleuLien, 30);
   color: @bleuLien;
@@ -208,6 +199,7 @@ button{
   appearance: none;
   background: none;
   border: 0;
+  .transition(.3s ease-in-out);
   &.btnFull{
     text-transform: none;
     padding: 0;
@@ -216,8 +208,9 @@ button{
       top: 0;
     }
   }
-  &:focus{
+  &:hover, &:focus{
     outline: 0;
+    .transition(.3s ease-in-out);
   }
 }
 
@@ -228,7 +221,7 @@ button{
   position: relative;
   width: 220px;
   text-align: center;
-  height: 42px;
+  height: 44px;
   line-height: 44px;
   border: 2px solid;
   overflow: hidden;
@@ -285,6 +278,33 @@ button{
   }
 }
 
+.scrollNext{
+  color: @bleuH2;
+  position: relative;
+  z-index: 1;
+  margin: 65px 0 0;
+  &:hover, &:focus{
+    color: @bleuLien;
+  }
+  &:before{
+    background: @blanc;
+    padding: 0 20px; 
+  }
+  &:after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 450px;
+    background: @grisBorder;
+    position: absolute;
+    z-index: -1;
+    top: 42%;
+    left: 50%;
+    margin: 0 0 0 -225px;
+    .transform(rotate(-3deg));
+  }
+}
+
 
 /* CONTAINERS */
 
@@ -322,11 +342,11 @@ header{
   a{
     border: 0;
   }
-  .home & {
+  /*.home & {
     a.btnFull{
       opacity: 0;
     }
-  }
+  }*/
   &.on{
     top: -40px;
     .transition(.3s ease-in-out);
@@ -346,7 +366,7 @@ header{
       }
     }
     #logo, .bottomHeader .btnFull{
-      margin: 14px 0;
+      margin: 13px 0;
     }
   }
 }
@@ -482,7 +502,7 @@ header{
   .btnFull{
     float: right;
     width: 170px;
-    margin: 25px 0;
+    margin: 24px 0;
   }
 }
 
@@ -602,6 +622,7 @@ header{
 
 footer{
   padding: 130px 0 0;
+  margin: 100px 0 0;
   overflow: hidden;
 }
 
@@ -786,7 +807,6 @@ footer{
   button{
     padding: 0;
     opacity: .6;
-    .transition(.3s ease-in-out);
     &:before{
       .fontIcon();
       display: block;
@@ -814,7 +834,6 @@ footer{
     }
     &:hover, &:focus{
       opacity: 1;
-      .transition(.3s ease-in-out);
     }
   }
 }
@@ -1105,11 +1124,160 @@ footer{
 }
 
 
-/* HOME */
+/* ENTETE */
 
 .headHome{
-  background: url(../layoutImg/headHome.jpg) no-repeat 50% 0;
+  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 0;
   background-size: cover; 
+  overflow: hidden;
+}
+
+.blocH1{
+  width: 290px;
+  float: right;
+  padding: 0 0 200px;
+  margin: 0 5% 0 0;
+}
+
+.heading{
+  .edmond(1em);
+  color: @blanc;
+  font-size: 3em;
+  line-height: 1em;
+  margin: 200px 0 0;
+  span{
+    display: block;
+    .edmondBold(1em);
+  }
+}
+
+.subHeading{
+  color: @blanc;
+  text-transform: none;
+  .gotham(1.32em);
+  margin: 25px 0;
+}
+
+
+/* HOME */
+
+.home{
+  .wrapper{
+    text-align: center;
+    .btnLight{
+      margin: 0 auto;
+    }
+  }
+}
+
+.detailHome{
+  .box-sizing(border-box);
+  padding: 0 65px;
+  margin: -130px 0 0;
+  li{
+    display: inline-block;
+    width: 33%;
+    padding: 0 30px;
+    .box-sizing(border-box);
+    &:before{
+      content: '';
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      .size(150px);
+    }
+  }
+  p{
+    margin: 1em 0 1.5em;
+  }
+  .event{
+    &:before{
+      background: url(../layoutImg/home/pot.png) no-repeat;
+    }
+  }
+  .conf{
+    &:before{
+      background: url(../layoutImg/home/tel.png) no-repeat;
+    }
+  }
+  .training{
+    &:before{
+      background: url(../layoutImg/home/graph.png) no-repeat;
+    }
+  }
+}
+
+.avantages{
+  .box-sizing(border-box);
+  padding: 0 20px;
+  margin: 90px 0 70px;
+  li{
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 0 0 5.6%;
+    padding: 0;
+    &:first-child{
+      margin: 0;
+    }
+    &:before{
+      content: '';
+      display: block;
+      position: relative;
+      margin: 0 auto;
+    }
+  }
+  .accompagnement{
+    width: 20%;
+    &:before{
+      height: 96px;
+      width: 106px;
+      background: url(../layoutImg/home/accompagnement.png) no-repeat;
+    }
+  }
+  .securite{
+    width: 22%;
+    &:before{
+      height: 121px;
+      width: 68px;
+      background: url(../layoutImg/home/chateau.png) no-repeat;
+    }
+  }
+  .fiable{
+    width: 19%;
+    &:before{
+      height: 91px;
+      width: 94px;
+      background: url(../layoutImg/home/w.png) no-repeat;
+    }
+  }
+  .technique{
+    width: 22%;
+    &:before{
+      height: 88px;
+      width: 71px;
+      background: url(../layoutImg/home/connexion.png) no-repeat;
+    }
+  }
+  h3{
+    margin: 35px 0 15px;
+  }
+  p{
+    margin: 0;
+  }
+}
+
+.logosPresse{
+  .box-sizing(border-box);
+  padding: 0 95px;
+  margin: 60px 0 0;
+  li{
+    width: 25%;
+    display: inline-block;
+    padding: 0;
+    &:before{
+      display: none;
+    }
+  }
 }
 
 
@@ -1156,6 +1324,55 @@ footer{
       background: url('../layoutImg/logo@2.png') no-repeat;
       background-size: 100%; 
     }
+
+    .detailHome{
+      .event{
+        &:before{
+          background: url('../layoutImg/home/pot@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .conf{
+        &:before{
+          background: url('../layoutImg/home/tel@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .training{
+        &:before{
+          background: url('../layoutImg/home/graph@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+    }
+
+    .avantages{
+      .accompagnement{
+        &:before{
+          background: url('../layoutImg/home/accompagnement@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .securite{
+        &:before{
+          background: url('../layoutImg/home/chateau@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .fiable{
+        &:before{
+          background: url('../layoutImg/home/w@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .technique{
+        &:before{
+          background: url('../layoutImg/home/connexion@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+    }
+
 }
 
 /* @end */
