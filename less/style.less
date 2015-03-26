@@ -1144,9 +1144,35 @@ footer{
 /* ENTETE */
 
 .headHome{
-  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 0;
+  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
   background-size: cover; 
   overflow: hidden;
+  position: relative;
+  z-index: 1;
+  + .wrapper{
+    position: relative;
+    z-index: 2;
+  }
+  &:before, &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 150%;
+    z-index: -1;
+  }
+  &:after{
+    bottom: -25px;
+    height: 105px;
+    background: @blanc;
+    .transform(rotate(-3deg));
+  }
+  &:before{
+    right: 0;
+    bottom: -60px;
+    height: 170px;
+    background: fade(@vert, 60);
+    .transform(rotate(7deg));
+  }
 }
 
 .blocH1{
@@ -1424,6 +1450,10 @@ footer{
   position: absolute;
   top: 50%;
   margin: -17px 0 0;
+  &:hover{
+    background: @vert;
+    color: @blanc;
+  }
 }
 #prev{
   left: -50px;

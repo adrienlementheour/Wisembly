@@ -11,6 +11,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/img\/auchan.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5029,
+		"inputAbbreviatedPath": "\/img\/auchan.png",
+		"outputAbbreviatedPath": "\/img\/auchan.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/bnp.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5216,
+		"inputAbbreviatedPath": "\/img\/bnp.png",
+		"outputAbbreviatedPath": "\/img\/bnp.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/challenges.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -33,6 +55,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/hec.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4321,
+		"inputAbbreviatedPath": "\/img\/hec.png",
+		"outputAbbreviatedPath": "\/img\/hec.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/management.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -51,6 +84,28 @@
 		"initialSize": 6856,
 		"inputAbbreviatedPath": "\/img\/patrick.png",
 		"outputAbbreviatedPath": "\/img\/patrick.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/poste.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11739,
+		"inputAbbreviatedPath": "\/img\/poste.png",
+		"outputAbbreviatedPath": "\/img\/poste.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/sncf.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4878,
+		"inputAbbreviatedPath": "\/img\/sncf.png",
+		"outputAbbreviatedPath": "\/img\/sncf.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -568,7 +623,7 @@
 	"iconImageName": "harddrive_gray"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",

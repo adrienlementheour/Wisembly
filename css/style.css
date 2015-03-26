@@ -1807,9 +1807,44 @@ footer {
 }
 /* ENTETE */
 .headHome {
-  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 0;
+  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
   background-size: cover;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.headHome + .wrapper {
+  position: relative;
+  z-index: 2;
+}
+.headHome:before,
+.headHome:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 150%;
+  z-index: -1;
+}
+.headHome:after {
+  bottom: -25px;
+  height: 105px;
+  background: #ffffff;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.headHome:before {
+  right: 0;
+  bottom: -60px;
+  height: 170px;
+  background: rgba(70, 180, 137, 0.6);
+  -webkit-transform: rotate(7deg);
+  -moz-transform: rotate(7deg);
+  -o-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
 }
 .blocH1 {
   width: 290px;
@@ -2136,6 +2171,10 @@ footer {
   position: absolute;
   top: 50%;
   margin: -17px 0 0;
+}
+.navSliderRef:hover {
+  background: #46b489;
+  color: #ffffff;
 }
 #prev {
   left: -50px;
