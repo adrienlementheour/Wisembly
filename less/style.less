@@ -554,15 +554,13 @@ header{
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 0 0 0 0;
+        border-width: 0 110px 0 0;
         border-color: transparent transparent @grisSubMenu transparent;
-        .transform(rotate(-10deg));
         .transition(.3s ease-in-out);
       }
       &:hover, &:focus{
         &:before{
           border-width: 0 110px 66px 36px;
-          .transform(rotate(0deg));
           .transition(.3s ease-in-out);
         }
       }
@@ -1260,22 +1258,114 @@ footer{
     margin: 0 1%;
     top: 0;
     position: absolute;
-    > img{
+    &:before, &:after{
+      content: '';
       display: block;
       position: absolute;
-      top: 25px;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+    &:before{
+      border-width: 43px 0 0 274px;
+      .transition(.3s border-width .2s ease-in-out);
+    }
+    &:after{
       right: 0;
-      left: 0;
+      border-width: 0 0 43px 274px;
+      .transition(.4s border-width .2s ease-in-out);
     }
     &:hover, &:focus{
+      background: fade(@grisSlides, 50);
       .hover{
         top: 0;
-        .transition(.3s ease-in-out);
+        .transition(.2s top .3s ease-in-out);
       }
+      &:before{
+        border-width: 0 0 0 274px;
+        .transition(.2s ease-in-out);
+      }
+      &:after{
+        border-width: 0 0 0 274px;
+        .transition(.1s border-width .1s ease-in-out);
+      }
+    }
+  }
+  &.jaune{
+    a{
+      &:before{
+        border-color: transparent transparent transparent @jaune;
+      }
+      &:after{
+        border-color: transparent transparent fade(@jaune, 55) transparent;
+      }
+    }
+    .hover{
+      background: @jaune;
+    }  
+  }
+  &.rouge{
+    a{
+      &:before{
+        border-color: transparent transparent transparent @rouge;
+      }
+      &:after{
+        border-color: transparent transparent fade(@rouge, 55) transparent;
+      }
+    }
+    .hover{
+      background: @rouge;
+    }
+  }
+  &.rose{
+    a{
+      &:before{
+        border-color: transparent transparent transparent @rose;
+      }
+      &:after{
+        border-color: transparent transparent fade(@rose, 55) transparent;
+      }
+    }
+    .hover{
+      background: @rose; 
+    }
+  }
+  &.bleu{
+    a{
+      &:before{
+        border-color: transparent transparent transparent @bleu;
+      }
+      &:after{
+        border-color: transparent transparent fade(@bleu, 55) transparent;
+      }
+    }
+    .hover{
+      background: @bleu; 
+    }
+  }
+  &.vert{
+    a{
+      &:before{
+        border-color: transparent transparent transparent @vert;
+      }
+      &:after{
+        border-color: transparent transparent fade(@vert, 55) transparent;
+      }
+    }
+    .hover{
+      background: @vert; 
     }
   }
   span{
     display: block;
+  }
+  .img{
+    position: absolute;
+    line-height: 100px;
+    top: 20px;
+    height: 100px;
+    width: 100%;
   }
   .txt{
     margin: 135px auto 0;
@@ -1292,21 +1382,6 @@ footer{
     opacity: .9;
     .box-sizing(border-box);
     .transition(.3s ease-in-out);
-    &.jaune{
-      background: @jaune;
-    }
-    &.rouge{
-      background: @rouge;
-    }
-    &.rose{
-      background: @rose;
-    }
-    &.bleu{
-      background: @bleu;
-    }
-    &.vert{
-      background: @vert;
-    }
   }
   .quote{
     text-align: left;

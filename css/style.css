@@ -1084,13 +1084,8 @@ header.on .bottomHeader .btnFull {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 0 0 0;
+  border-width: 0 110px 0 0;
   border-color: transparent transparent #eff1f1 transparent;
-  -webkit-transform: rotate(-10deg);
-  -moz-transform: rotate(-10deg);
-  -o-transform: rotate(-10deg);
-  -ms-transform: rotate(-10deg);
-  transform: rotate(-10deg);
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
@@ -1099,11 +1094,6 @@ header.on .bottomHeader .btnFull {
 .menu > li > a:hover:before,
 .menu > li > a:focus:before {
   border-width: 0 110px 66px 36px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
@@ -1938,23 +1928,113 @@ footer {
   top: 0;
   position: absolute;
 }
-.ref a > img {
+.ref a:before,
+.ref a:after {
+  content: '';
   display: block;
   position: absolute;
-  top: 25px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.ref a:before {
+  border-width: 43px 0 0 274px;
+  -webkit-transition: 0.3s border-width 0.2s ease-in-out;
+  -moz-transition: 0.3s border-width 0.2s ease-in-out;
+  -o-transition: 0.3s border-width 0.2s ease-in-out;
+  transition: 0.3s border-width 0.2s ease-in-out;
+}
+.ref a:after {
   right: 0;
-  left: 0;
+  border-width: 0 0 43px 274px;
+  -webkit-transition: 0.4s border-width 0.2s ease-in-out;
+  -moz-transition: 0.4s border-width 0.2s ease-in-out;
+  -o-transition: 0.4s border-width 0.2s ease-in-out;
+  transition: 0.4s border-width 0.2s ease-in-out;
+}
+.ref a:hover,
+.ref a:focus {
+  background: rgba(244, 245, 245, 0.5);
 }
 .ref a:hover .hover,
 .ref a:focus .hover {
   top: 0;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.2s top 0.3s ease-in-out;
+  -moz-transition: 0.2s top 0.3s ease-in-out;
+  -o-transition: 0.2s top 0.3s ease-in-out;
+  transition: 0.2s top 0.3s ease-in-out;
+}
+.ref a:hover:before,
+.ref a:focus:before {
+  border-width: 0 0 0 274px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.ref a:hover:after,
+.ref a:focus:after {
+  border-width: 0 0 0 274px;
+  -webkit-transition: 0.1s border-width 0.1s ease-in-out;
+  -moz-transition: 0.1s border-width 0.1s ease-in-out;
+  -o-transition: 0.1s border-width 0.1s ease-in-out;
+  transition: 0.1s border-width 0.1s ease-in-out;
+}
+.ref.jaune a:before {
+  border-color: transparent transparent transparent #f1bc33;
+}
+.ref.jaune a:after {
+  border-color: transparent transparent rgba(241, 188, 51, 0.55) transparent;
+}
+.ref.jaune .hover {
+  background: #f1bc33;
+}
+.ref.rouge a:before {
+  border-color: transparent transparent transparent #e25c5b;
+}
+.ref.rouge a:after {
+  border-color: transparent transparent rgba(226, 92, 91, 0.55) transparent;
+}
+.ref.rouge .hover {
+  background: #e25c5b;
+}
+.ref.rose a:before {
+  border-color: transparent transparent transparent #f7886c;
+}
+.ref.rose a:after {
+  border-color: transparent transparent rgba(247, 136, 108, 0.55) transparent;
+}
+.ref.rose .hover {
+  background: #f7886c;
+}
+.ref.bleu a:before {
+  border-color: transparent transparent transparent #06698d;
+}
+.ref.bleu a:after {
+  border-color: transparent transparent rgba(6, 105, 141, 0.55) transparent;
+}
+.ref.bleu .hover {
+  background: #06698d;
+}
+.ref.vert a:before {
+  border-color: transparent transparent transparent #46b489;
+}
+.ref.vert a:after {
+  border-color: transparent transparent rgba(70, 180, 137, 0.55) transparent;
+}
+.ref.vert .hover {
+  background: #46b489;
 }
 .ref span {
   display: block;
+}
+.ref .img {
+  position: absolute;
+  line-height: 100px;
+  top: 20px;
+  height: 100px;
+  width: 100%;
 }
 .ref .txt {
   margin: 135px auto 0;
@@ -1984,21 +2064,6 @@ footer {
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-}
-.ref .hover.jaune {
-  background: #f1bc33;
-}
-.ref .hover.rouge {
-  background: #e25c5b;
-}
-.ref .hover.rose {
-  background: #f7886c;
-}
-.ref .hover.bleu {
-  background: #06698d;
-}
-.ref .hover.vert {
-  background: #46b489;
 }
 .ref .quote {
   text-align: left;

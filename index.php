@@ -55,16 +55,16 @@
 				<h2>Ils nous font confiance</h2>
 				<div id='sliderRef'>
 					<ul>
-						<li class='ref'>
+						<li class='jaune ref'>
 							<a href='#' title='En savoir plus'>
-								<img src='' alt='La Poste'/>
+								<span class='img'><img src='img/poste.png' alt='La Poste'/></span>
 								<span class='txt'>
 									1 jour de séminaire par an<br/>
 									120 managers<br/>
 									120 questions posées<br/>
 									100% de participation
 								</span>
-								<span class='jaune hover'>
+								<span class='hover'>
 									<span class='quote'>
 										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
 										La solution nous accompagne dans toutes nos réunions.
@@ -78,16 +78,16 @@
 									</span>
 								</span>
 							</a>
-						</li><li class='ref'>
+						</li><li class='rose ref'>
 							<a href='#' title='En savoir plus'>
-								<img src='' alt='SNCF'/>
+								<span class='img'><img src='img/sncf.png' alt='SNCF'/></span>
 								<span class='txt'>
 									1h30 de management call<br/>
 									600 top managers en région<br/>
 									150 questions posées<br/>
 									65% de participation
 								</span>
-								<span class='rose hover'>
+								<span class='hover'>
 									<span class='quote'>
 										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
 										La solution nous accompagne dans toutes nos réunions.
@@ -101,16 +101,16 @@
 									</span>
 								</span>
 							</a>
-						</li><li class='ref'>
+						</li><li class='rouge ref'>
 							<a href='#' title='En savoir plus'>
-								<img src='' alt='Auchan'/>
+								<span class='img'><img src='img/auchan.png' alt='Auchan'/></span>
 								<span class='txt'>
 									2h de réunions bimensuelles<br/>
 									15 participants internationaux<br/>
 									100% de participation<br/>
 									50 questions et idées
 								</span>
-								<span class='rouge hover'>
+								<span class='hover'>
 									<span class='quote'>
 										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
 										La solution nous accompagne dans toutes nos réunions.
@@ -124,16 +124,16 @@
 									</span>
 								</span>
 							</a>
-						</li><li class='ref'>
+						</li><li class='bleu ref'>
 							<a href='#' title='En savoir plus'>
-								<img src='' alt='HEC Paris'/>
+								<span class='img'><img src='img/hec.png' alt='HEC Paris'/></span>
 								<span class='txt'>
 									6 sessions en cours<br/>
 									3h par session<br/>
 									35 élèves<br/>
 									100% de participation
 								</span>
-								<span class='bleu hover'>
+								<span class='hover'>
 									<span class='quote'>
 										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
 										La solution nous accompagne dans toutes nos réunions.
@@ -147,16 +147,16 @@
 									</span>
 								</span>
 							</a>
-						</li><li class='ref'>
+						</li><li class='vert ref'>
 							<a href='#' title='En savoir plus'>
-								<img src='' alt='BNP Paribas'/>
+								<span class='img'><img src='img/bnp.png' alt='BNP Paribas'/></span>
 								<span class='txt'>
 									3h par session<br/>
 									50 questions posées<br/>
 									100% de participation<br/>
 									2h de management call
 								</span>
-								<span class='vert hover'>
+								<span class='hover'>
 									<span class='quote'>
 										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
 										La solution nous accompagne dans toutes nos réunions.
