@@ -10,6 +10,7 @@
 @rouge: #e25c5b;
 @bleu: #06698d;
 @rose: #f7886c;
+@jaune: #f1bc33;
 
 @bleuLien: #289bc4;
 @bleuH2: #17698d;
@@ -21,6 +22,7 @@
 @grisMentions: #8c959b;
 @grisSolid: #718289;
 @grisSubMenu: #eff1f1;
+@grisSlides: #f4f5f5;
 
 html,
 button,
@@ -342,11 +344,11 @@ header{
   a{
     border: 0;
   }
-  /*.home & {
+  .home & {
     a.btnFull{
       opacity: 0;
     }
-  }*/
+  }
   &.on{
     top: -40px;
     .transition(.3s ease-in-out);
@@ -1203,6 +1205,100 @@ footer{
   .training{
     &:before{
       background: url(../layoutImg/home/graph.png) no-repeat;
+    }
+  }
+}
+
+#sliderRef{
+  li{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    width: 24%;
+    margin: 0 .5%;
+    padding: 0;
+    background: @grisSlides;
+    height: 300px;
+    &:before{
+      display: none;
+    }
+  }
+  a{
+    border: 0;
+    color: @txt;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    > img{
+      display: block;
+      position: absolute;
+      top: 25px;
+      right: 0;
+      left: 0;
+    }
+    &:hover, &:focus{
+      .hover{
+        top: 0;
+        .transition(.3s ease-in-out);
+      }
+    }
+  }
+  span{
+    display: block;
+  }
+  .txt{
+    margin: 135px auto 0;
+    max-width: 90%;
+    .gothamMedium(.85em);
+  }
+  .hover{
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    height: 100%;
+    color: @blanc;
+    padding: 50px 10px 25px 35px;
+    .box-sizing(border-box);
+    .transition(.3s ease-in-out);
+    &.jaune{
+      background: fade(@jaune, 95);
+    }
+    &.rouge{
+      background: fade(@rouge, 95);
+    }
+    &.rose{
+      background: fade(@rose, 95);
+    }
+    &.bleu{
+      background: fade(@bleu, 95);
+    }
+    &.vert{
+      background: fade(@vert, 95);
+    }
+  }
+  .quote{
+    text-align: left;
+    .gothamMedium(1em);
+    + span{
+      text-align: left;
+      position: absolute;
+      bottom: 25px;
+      span{
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 140px;
+        .gotham(.85em);
+        strong{
+          .gothamBold(1.1em);
+        }
+      }
+    }
+    img{
+      display: inline-block;
+      vertical-align: middle;
     }
   }
 }

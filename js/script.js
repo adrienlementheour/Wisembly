@@ -1,6 +1,7 @@
 /**** VARIABLES ****/
 var myScroll,
-	header = $('header');
+	header = $('header'),
+	htmlBody = $('html, body');
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -17,11 +18,14 @@ window.requestAnimFrame = (function(){
 
 
 /**** FONCTIONS SPECIFIQUES ****/
+
+// Header fixe //
 function scrollMenu(){
 	myScroll > 100 ? header.addClass('on') : header.removeClass('on');
 	requestAnimFrame(scrollMenu);
 }
 
+// Mise en place du slider //
 function setSliderTeam(slider){
 	var slides = slider.find('.slideTeam'), slidesLength = slides.length, i = 0, 
 		pagination = $('.navTeam'), button = '<li><button>•</button></li>',
@@ -47,19 +51,16 @@ function setSliderTeam(slider){
 	if(slidesLength > 1){
 		for(i; i<slidesLength; i++){
 			pagination.append(button);
-
-			if(!slides.eq(i).hasClass('on')){
-				slides.eq(i).css('opacity', 0);
-			}else{
-				btnActif = i;
-			}
+			(!slides.eq(i).hasClass('on')) ? slides.eq(i).css('opacity', 0) : btnActif = i;
 		}
 	}
 
+	// Changement de slides //
 	pagination.find('button').eq(btnActif).addClass('actif');
 	pagination.find('button').on('click', letSlide);
 }
 
+// Changement de slider //
 function setSliderTeamProfil(){
 	var numSlider = $(this).parents('li').index(), sliders = $('.slidesTeam'),
 		slider = sliders.eq(numSlider);
@@ -72,12 +73,18 @@ function setSliderTeamProfil(){
 	}
 }
 
+// Scroll to a la section suivante home //
+function goToNextSection(){
+	htmlBody.animate({scrollTop: $(this).parents('section').next('section').offset().top - 100}, 400);
+}
+
 
 /**** INIT ****/
 $(function(){
 
 	scrollMenu();
 
+	// Btn demande de contact footer //
 	$('#demandeContact').on('click', function(){
 		$(this).animate({opacity: 0}, 200, function(){
 			$(this).css('display', 'none');
@@ -85,9 +92,14 @@ $(function(){
 		});
 	});
 
+	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
 	$('.buttonsTeam').find('button').on('click', setSliderTeamProfil);
 
+	// Petites fleches page accueil //
+	$('.scrollNext').on('click', goToNextSection);
+
 	$(window).load(function(){
+		// Slider footer //
 		if($('#sliderTeam').length){
 			setSliderTeam($('.slidesTeam').eq(0));
 		}

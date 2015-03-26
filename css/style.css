@@ -777,11 +777,6 @@ header {
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  /*.home & {
-    a.btnFull{
-      opacity: 0;
-    }
-  }*/
 }
 header ul,
 header li,
@@ -797,6 +792,9 @@ header li:before {
 }
 header a {
   border: 0;
+}
+.home header a.btnFull {
+  opacity: 0;
 }
 header.on {
   top: -40px;
@@ -1878,6 +1876,135 @@ footer {
 }
 .detailHome .training:before {
   background: url(../layoutImg/home/graph.png) no-repeat;
+}
+#sliderRef li {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 24%;
+  margin: 0 .5%;
+  padding: 0;
+  background: #f4f5f5;
+  height: 300px;
+}
+#sliderRef li:before {
+  display: none;
+}
+#sliderRef a {
+  border: 0;
+  color: #3a434c;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+}
+#sliderRef a > img {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  left: 0;
+}
+#sliderRef a:hover .hover,
+#sliderRef a:focus .hover {
+  top: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+#sliderRef span {
+  display: block;
+}
+#sliderRef .txt {
+  margin: 135px auto 0;
+  max-width: 90%;
+  /*font-family: 'gothamMedium', sans-serif;
+  font-weight: normal;*/
+  font-family: 'Gotham SSm A', 'Gotham SSm B';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.85em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+#sliderRef .hover {
+  position: absolute;
+  top: 300px;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  padding: 50px 10px 25px 35px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+#sliderRef .hover.jaune {
+  background: rgba(241, 188, 51, 0.95);
+}
+#sliderRef .hover.rouge {
+  background: rgba(226, 92, 91, 0.95);
+}
+#sliderRef .hover.rose {
+  background: rgba(247, 136, 108, 0.95);
+}
+#sliderRef .hover.bleu {
+  background: rgba(6, 105, 141, 0.95);
+}
+#sliderRef .hover.vert {
+  background: rgba(70, 180, 137, 0.95);
+}
+#sliderRef .quote {
+  text-align: left;
+  /*font-family: 'gothamMedium', sans-serif;
+  font-weight: normal;*/
+  font-family: 'Gotham SSm A', 'Gotham SSm B';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+#sliderRef .quote + span {
+  text-align: left;
+  position: absolute;
+  bottom: 25px;
+}
+#sliderRef .quote + span span {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 140px;
+  /*font-family: 'gothamBook', sans-serif;
+  font-weight: normal;*/
+  font-family: 'Gotham SSm A', 'Gotham SSm B';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.85em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+#sliderRef .quote + span span strong {
+  /*font-family: 'gothamBold', sans-serif;
+  font-weight: normal;*/
+  font-family: 'Gotham SSm A', 'Gotham SSm B';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+#sliderRef .quote img {
+  display: inline-block;
+  vertical-align: middle;
 }
 .avantages {
   -webkit-box-sizing: border-box;

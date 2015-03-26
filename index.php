@@ -54,8 +54,103 @@
 			<section class='content'>
 				<h2>Ils nous font confiance</h2>
 				<div id='sliderRef'>
+					<button id="prev">‹</button>
 					<ul>
+						<li>
+							<a href='#' title='En savoir plus'>
+								<img src='' alt='La Poste'/>
+								<span class='txt'>
+									1 jour de séminaire par an<br/>
+									120 managers<br/>
+									120 questions posées<br/>
+									100% de participation
+								</span>
+								<span class='jaune hover'>
+									<span class='quote'>
+										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
+										La solution nous accompagne dans toutes nos réunions.
+									</span>
+									<span>
+										<img src='img/patrick.png' alt='Patrinck Ropert'/>
+										<span>
+											<strong>Patrick Ropert,</strong>
+											Directeur de la Communication, SNCF
+										</span>
+									</span>
+								</span>
+							</a>
+						</li><li>
+							<a href='#' title='En savoir plus'>
+								<img src='' alt='SNCF'/>
+								<span class='txt'>
+									1h30 de management call<br/>
+									600 top managers en région<br/>
+									150 questions posées<br/>
+									65% de participation
+								</span>
+								<span class='rose hover'>
+									<span class='quote'>
+										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
+										La solution nous accompagne dans toutes nos réunions.
+									</span>
+									<span>
+										<img src='img/patrick.png' alt='Patrinck Ropert'/>
+										<span>
+											<strong>Patrick Ropert,</strong>
+											Directeur de la Communication, SNCF
+										</span>
+									</span>
+								</span>
+							</a>
+						</li><li>
+							<a href='#' title='En savoir plus'>
+								<img src='' alt='Auchan'/>
+								<span class='txt'>
+									2h de réunions bimensuelles<br/>
+									15 participants internationaux<br/>
+									100% de participation<br/>
+									50 questions et idées
+								</span>
+								<span class='rouge hover'>
+									<span class='quote'>
+										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
+										La solution nous accompagne dans toutes nos réunions.
+									</span>
+									<span>
+										<img src='img/patrick.png' alt='Patrinck Ropert'/>
+										<span>
+											<strong>Patrick Ropert,</strong>
+											Directeur de la Communication, SNCF
+										</span>
+									</span>
+								</span>
+							</a>
+						</li><li>
+							<a href='#' title='En savoir plus'>
+								<img src='' alt='HEC Paris'/>
+								<span class='txt'>
+									6 sessions en cours<br/>
+									3h par session<br/>
+									35 élèves<br/>
+									100% de participation
+								</span>
+								<span class='bleu hover'>
+									<span class='quote'>
+										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
+										La solution nous accompagne dans toutes nos réunions.
+									</span>
+									<span>
+										<img src='img/patrick.png' alt='Patrinck Ropert'/>
+										<span>
+											<strong>Patrick Ropert,</strong>
+											Directeur de la Communication, SNCF
+										</span>
+									</span>
+								</span>
+							</a>
+						</li>
 					</ul>
+					<button id="next">›</button>
 				</div>
 				<a href='#' class='btnLight'>Voir les études de cas</a>
 				<button class='icon-down scrollNext'></button>
