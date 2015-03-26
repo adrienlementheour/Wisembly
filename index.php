@@ -54,9 +54,8 @@
 			<section class='content'>
 				<h2>Ils nous font confiance</h2>
 				<div id='sliderRef'>
-					<button id="prev">‹</button>
 					<ul>
-						<li>
+						<li class='ref'>
 							<a href='#' title='En savoir plus'>
 								<img src='' alt='La Poste'/>
 								<span class='txt'>
@@ -79,7 +78,7 @@
 									</span>
 								</span>
 							</a>
-						</li><li>
+						</li><li class='ref'>
 							<a href='#' title='En savoir plus'>
 								<img src='' alt='SNCF'/>
 								<span class='txt'>
@@ -102,7 +101,7 @@
 									</span>
 								</span>
 							</a>
-						</li><li>
+						</li><li class='ref'>
 							<a href='#' title='En savoir plus'>
 								<img src='' alt='Auchan'/>
 								<span class='txt'>
@@ -125,7 +124,7 @@
 									</span>
 								</span>
 							</a>
-						</li><li>
+						</li><li class='ref'>
 							<a href='#' title='En savoir plus'>
 								<img src='' alt='HEC Paris'/>
 								<span class='txt'>
@@ -148,9 +147,31 @@
 									</span>
 								</span>
 							</a>
+						</li><li class='ref'>
+							<a href='#' title='En savoir plus'>
+								<img src='' alt='BNP Paribas'/>
+								<span class='txt'>
+									3h par session<br/>
+									50 questions posées<br/>
+									100% de participation<br/>
+									2h de management call
+								</span>
+								<span class='vert hover'>
+									<span class='quote'>
+										Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
+										La solution nous accompagne dans toutes nos réunions.
+									</span>
+									<span>
+										<img src='img/patrick.png' alt='Patrinck Ropert'/>
+										<span>
+											<strong>Patrick Ropert,</strong>
+											Directeur de la Communication, SNCF
+										</span>
+									</span>
+								</span>
+							</a>
 						</li>
 					</ul>
-					<button id="next">›</button>
 				</div>
 				<a href='#' class='btnLight'>Voir les études de cas</a>
 				<button class='icon-down scrollNext'></button>

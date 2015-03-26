@@ -1877,47 +1877,59 @@ footer {
 .detailHome .training:before {
   background: url(../layoutImg/home/graph.png) no-repeat;
 }
-#sliderRef li {
+#sliderRef {
+  position: relative;
+  margin: 35px 0 30px;
+  width: 100%;
+  height: 300px;
+}
+#sliderRef ul {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.ref {
   display: inline-block;
   position: relative;
   overflow: hidden;
-  width: 24%;
-  margin: 0 .5%;
+  width: 25%;
   padding: 0;
-  background: #f4f5f5;
   height: 300px;
 }
-#sliderRef li:before {
+.ref:before {
   display: none;
 }
-#sliderRef a {
+.ref a {
+  background: #f4f5f5;
   border: 0;
   color: #3a434c;
   display: block;
   height: 100%;
-  width: 100%;
+  width: 98%;
+  margin: 0 1%;
   top: 0;
   position: absolute;
 }
-#sliderRef a > img {
+.ref a > img {
   display: block;
   position: absolute;
   top: 25px;
   right: 0;
   left: 0;
 }
-#sliderRef a:hover .hover,
-#sliderRef a:focus .hover {
+.ref a:hover .hover,
+.ref a:focus .hover {
   top: 0;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-#sliderRef span {
+.ref span {
   display: block;
 }
-#sliderRef .txt {
+.ref .txt {
   margin: 135px auto 0;
   max-width: 90%;
   /*font-family: 'gothamMedium', sans-serif;
@@ -1930,13 +1942,14 @@ footer {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-#sliderRef .hover {
+.ref .hover {
   position: absolute;
   top: 300px;
   width: 100%;
   height: 100%;
   color: #ffffff;
   padding: 50px 10px 25px 35px;
+  opacity: .9;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1945,22 +1958,22 @@ footer {
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-#sliderRef .hover.jaune {
-  background: rgba(241, 188, 51, 0.95);
+.ref .hover.jaune {
+  background: #f1bc33;
 }
-#sliderRef .hover.rouge {
-  background: rgba(226, 92, 91, 0.95);
+.ref .hover.rouge {
+  background: #e25c5b;
 }
-#sliderRef .hover.rose {
-  background: rgba(247, 136, 108, 0.95);
+.ref .hover.rose {
+  background: #f7886c;
 }
-#sliderRef .hover.bleu {
-  background: rgba(6, 105, 141, 0.95);
+.ref .hover.bleu {
+  background: #06698d;
 }
-#sliderRef .hover.vert {
-  background: rgba(70, 180, 137, 0.95);
+.ref .hover.vert {
+  background: #46b489;
 }
-#sliderRef .quote {
+.ref .quote {
   text-align: left;
   /*font-family: 'gothamMedium', sans-serif;
   font-weight: normal;*/
@@ -1972,15 +1985,30 @@ footer {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-#sliderRef .quote + span {
+.ref .quote:before {
+  font-family: 'wisembly';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e600";
+  font-size: 18px;
+  opacity: .8;
+  line-height: 10px;
+}
+.ref .quote + span {
   text-align: left;
   position: absolute;
   bottom: 25px;
 }
-#sliderRef .quote + span span {
+.ref .quote + span span {
   display: inline-block;
   vertical-align: middle;
-  max-width: 140px;
+  max-width: 163px;
+  margin: 0 0 0 5px;
   /*font-family: 'gothamBook', sans-serif;
   font-weight: normal;*/
   font-family: 'Gotham SSm A', 'Gotham SSm B';
@@ -1991,7 +2019,7 @@ footer {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-#sliderRef .quote + span span strong {
+.ref .quote + span span strong {
   /*font-family: 'gothamBold', sans-serif;
   font-weight: normal;*/
   font-family: 'Gotham SSm A', 'Gotham SSm B';
@@ -2002,9 +2030,26 @@ footer {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-#sliderRef .quote img {
+.ref .quote img {
   display: inline-block;
   vertical-align: middle;
+}
+.navSliderRef {
+  width: 30px;
+  height: 30px;
+  color: #46b489;
+  border: 2px solid;
+  line-height: 20px;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  margin: -17px 0 0;
+}
+#prev {
+  left: -50px;
+}
+#next {
+  right: -50px;
 }
 .avantages {
   -webkit-box-sizing: border-box;

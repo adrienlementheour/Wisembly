@@ -11,6 +11,61 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/img\/challenges.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8878,
+		"inputAbbreviatedPath": "\/img\/challenges.png",
+		"outputAbbreviatedPath": "\/img\/challenges.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/echos.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7059,
+		"inputAbbreviatedPath": "\/img\/echos.jpg",
+		"outputAbbreviatedPath": "\/img\/echos.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/management.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8679,
+		"inputAbbreviatedPath": "\/img\/management.png",
+		"outputAbbreviatedPath": "\/img\/management.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/patrick.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6856,
+		"inputAbbreviatedPath": "\/img\/patrick.png",
+		"outputAbbreviatedPath": "\/img\/patrick.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/tribune.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6067,
+		"inputAbbreviatedPath": "\/img\/tribune.jpg",
+		"outputAbbreviatedPath": "\/img\/tribune.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/includes\/footer.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -62,6 +117,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/jquery-1.11.2.min.js",
 		"outputAbbreviatedPath": "\/js\/min\/jquery-1.11.2.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/jquery.easing.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/jquery.easing.js",
+		"outputAbbreviatedPath": "\/js\/min\/jquery.easing-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -122,13 +188,167 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/layoutImg\/headHome.jpg": {
+	"\/layoutImg\/home\/accompagnement.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9545,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/accompagnement.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/accompagnement.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/accompagnement@2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11377,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/accompagnement@2.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/accompagnement@2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/chateau.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3974,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/chateau.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/chateau.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/chateau@2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3740,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/chateau@2.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/chateau@2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/connexion.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8156,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/connexion.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/connexion.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/connexion@2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9189,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/connexion@2.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/connexion@2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/graph.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9127,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/graph.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/graph.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/graph@2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15383,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/graph@2.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/graph@2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/headHome.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 980161,
-		"inputAbbreviatedPath": "\/layoutImg\/headHome.jpg",
-		"outputAbbreviatedPath": "\/layoutImg\/headHome.jpg",
+		"inputAbbreviatedPath": "\/layoutImg\/home\/headHome.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/headHome.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/pot.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9384,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/pot.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/pot.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/pot@2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14206,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/pot@2.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/pot@2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/tel.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16224,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/tel.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/tel.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/tel@2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19984,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/tel@2.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/tel@2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/w.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4931,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/w.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/w.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/home\/w@2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7421,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/w@2.png",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/w@2.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -151,17 +371,6 @@
 		"initialSize": 8667,
 		"inputAbbreviatedPath": "\/layoutImg\/logo@2.png",
 		"outputAbbreviatedPath": "\/layoutImg\/logo@2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/layoutImg\/pot.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/layoutImg\/pot.png",
-		"outputAbbreviatedPath": "\/layoutImg\/pot.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

@@ -1210,26 +1210,37 @@ footer{
 }
 
 #sliderRef{
-  li{
-    display: inline-block;
+  position: relative;
+  margin: 35px 0 30px;
+  width: 100%;
+  height: 300px;
+  ul{
+    width: 100%;
+    height: 100%;
     position: relative;
     overflow: hidden;
-    height: 300px;
-    width: 24%;
-    margin: 0 .5%;
-    padding: 0;
-    background: @grisSlides;
-    height: 300px;
-    &:before{
-      display: none;
-    }
+  }
+}
+
+.ref{
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  width: 25%;
+  padding: 0;
+  height: 300px;
+  &:before{
+    display: none;
   }
   a{
+    background: @grisSlides;
     border: 0;
     color: @txt;
     display: block;
     height: 100%;
-    width: 100%;
+    width: 98%;
+    margin: 0 1%;
     top: 0;
     position: absolute;
     > img{
@@ -1261,27 +1272,35 @@ footer{
     height: 100%;
     color: @blanc;
     padding: 50px 10px 25px 35px;
+    opacity: .9;
     .box-sizing(border-box);
     .transition(.3s ease-in-out);
     &.jaune{
-      background: fade(@jaune, 95);
+      background: @jaune;
     }
     &.rouge{
-      background: fade(@rouge, 95);
+      background: @rouge;
     }
     &.rose{
-      background: fade(@rose, 95);
+      background: @rose;
     }
     &.bleu{
-      background: fade(@bleu, 95);
+      background: @bleu;
     }
     &.vert{
-      background: fade(@vert, 95);
+      background: @vert;
     }
   }
   .quote{
     text-align: left;
     .gothamMedium(1em);
+    &:before{
+      .fontIcon();
+      content: "\e600";
+      font-size: 18px;
+      opacity: .8;
+      line-height: 10px;
+    }
     + span{
       text-align: left;
       position: absolute;
@@ -1289,7 +1308,8 @@ footer{
       span{
         display: inline-block;
         vertical-align: middle;
-        max-width: 140px;
+        max-width: 163px;
+        margin: 0 0 0 5px;
         .gotham(.85em);
         strong{
           .gothamBold(1.1em);
@@ -1301,6 +1321,23 @@ footer{
       vertical-align: middle;
     }
   }
+}
+
+.navSliderRef{
+  .size(30px);
+  color: @vert;
+  border: 2px solid;
+  line-height: 20px;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  margin: -17px 0 0;
+}
+#prev{
+  left: -50px;
+}
+#next{
+  right: -50px;
 }
 
 .avantages{
