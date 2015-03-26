@@ -1862,7 +1862,7 @@ footer {
   color: #ffffff;
   font-size: 3em;
   line-height: 1em;
-  margin: 200px 0 0;
+  margin: 15vh 0 0;
 }
 .heading span {
   display: block;
@@ -2341,6 +2341,39 @@ footer {
 /* ==|== media queries ======================================================
    ========================================================================== */
 /* @group Responsive horizontal */
+/* @end */
+/* @group Responsive vertical */
+@media (max-height: 850px) {
+  .heading {
+    margin: 10vh 0 0;
+  }
+}
+@media (max-height: 800px) {
+  .heading {
+    margin: 5vh 0 0;
+  }
+}
+@media (max-height: 750px) {
+  .blocH1 {
+    width: 350px;
+    padding: 0 0 170px;
+  }
+}
+@media (max-height: 700px) {
+  .heading br {
+    display: none;
+  }
+  .blocH1 {
+    width: 400px;
+    margin: 0;
+  }
+}
+@media (max-height: 650px) {
+  .subHeading {
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+}
 /* @end */
 /*  @group retina */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {

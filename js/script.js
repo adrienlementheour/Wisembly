@@ -124,6 +124,17 @@ $(function(){
 	}
 
 	$(window).load(function(){
+		// Slider ref home //
+		if($('#sliderRef').length){
+			$('#sliderRef').contentcarousel({
+				sliderSpeed		: 500,
+				sliderEasing	: 'easeOutExpo',
+				itemSpeed		: 500,
+				itemEasing		: 'easeOutExpo',
+				scroll			: 1	
+			});
+		}
+
 		// Slider footer //
 		if($('#sliderTeam').length){
 			setSliderTeam($('.slidesTeam').eq(0));
