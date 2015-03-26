@@ -158,6 +158,18 @@
 
 			<section class='content'>
 				<h2>Collaborer en réunion</h2>
+				<div id="bloc-video">
+					<div class='embed-container'><iframe class="iframe-video" src='http://www.youtube.com/embed/wZZ7oFKsKzY?enablejsapi=1' frameborder='0' allowfullscreen></iframe></div>
+					<div class="cover-video">
+						<div class="bg-cover-video"></div>
+						<div class="wrapper-zone-txt-cover-video">
+							<div class="zone-txt-cover-video">
+								<p>Wisembly est une solution web et mobile qui vous permet de préparer, d’animer et d’assurer le suivi de vos réunions.</p>
+								<a href="#" id="btn-video" class="btnBlanc"><span class="small">►</span> Regarder la vidéo</a>
+							</div>
+						</div>
+					</div>
+				</div>
 				<ul class='avantages'>
 					<li class='accompagnement'>
 						<h3>Accompagnement personnalisé</h3>
