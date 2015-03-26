@@ -78,6 +78,16 @@ function goToNextSection(){
 	htmlBody.animate({scrollTop: $(this).parents('section').next('section').offset().top - 100}, 400);
 }
 
+// API Youtube //
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubeIframeAPIReady() {
+    //player1 = new YT.Player('player-1');
+}
+
 
 /**** INIT ****/
 $(function(){
@@ -97,6 +107,11 @@ $(function(){
 
 	// Petites fleches page accueil //
 	$('.scrollNext').on('click', goToNextSection);
+
+	// Btn video //
+	$('#btn-video').on('click', function(){
+		
+	});
 
 	$(window).load(function(){
 		// Slider ref home //
