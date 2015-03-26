@@ -782,7 +782,8 @@ button:focus {
 /* CONTAINERS */
 .content {
   width: 100%;
-  max-width: 1120px;
+  max-width: 1160px;
+  padding: 0 20px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1137,6 +1138,15 @@ header.on .bottomHeader .btnFull {
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+.menu .hasSubMenu.actifHover > a:before {
+  border-width: 0 110px 66px 36px;
+}
+.menu .hasSubMenu.actifHover > a:after {
+  width: 100%;
+  top: 65px;
+  text-align: center;
+  right: 8px;
+}
 .subMenu {
   bottom: 50px;
   position: absolute;
@@ -1181,6 +1191,11 @@ header.on .bottomHeader .btnFull {
 .subMenu ul {
   display: none;
 }
+#burger {
+  float: right;
+  margin: 34px 0;
+  display: none;
+}
 /* FOOTER */
 footer {
   padding: 130px 0 0;
@@ -1188,12 +1203,179 @@ footer {
   overflow: hidden;
 }
 .contactFooter {
-  background: #0d5c7b;
   padding: 0 0 130px;
   position: relative;
   /*.no-csstransforms &{
     padding: 40px 0;
   }*/
+}
+.contactFooter.bleu {
+  background: #0d5c7b;
+}
+.contactFooter.bleu:before {
+  background: #0d5c7b;
+}
+.contactFooter.bleu:after {
+  background: #aed7e8;
+}
+.contactFooter.bleu .slideTeam strong {
+  color: #aed7e8;
+}
+.contactFooter.bleu .navTeam button {
+  color: #04455c;
+}
+.contactFooter.bleu .navTeam button:hover,
+.contactFooter.bleu .navTeam button:focus,
+.contactFooter.bleu .navTeam button.actif {
+  color: #aed7e8;
+}
+.contactFooter.bleu .navTeam button.actif {
+  text-shadow: 2px 2px 2px #04455c;
+}
+.contactFooter.bleu #bulle:after {
+  color: #aed7e8;
+}
+.contactFooter.bleu .formContact input,
+.contactFooter.bleu .formContact textarea {
+  background: #116180;
+  border-color: #04455c;
+}
+.contactFooter.bleu .formContact input:focus,
+.contactFooter.bleu .formContact textarea:focus {
+  border-color: #ffffff;
+}
+.contactFooter.bleu .buttonsTeam:after {
+  background: #04455c;
+}
+.contactFooter.bleu .buttonsTeam button.actif:after {
+  color: #aed7e8;
+  text-shadow: 2px 2px 2px #04455c;
+}
+.contactFooter.rouge {
+  background: #e25c5b;
+}
+.contactFooter.rouge:before {
+  background: #e25c5b;
+}
+.contactFooter.rouge:after {
+  background: rgba(226, 92, 91, 0.6);
+}
+.contactFooter.rouge .slideTeam strong {
+  color: rgba(226, 92, 91, 0.6);
+}
+.contactFooter.rouge .navTeam button {
+  color: #da3130;
+}
+.contactFooter.rouge .navTeam button:hover,
+.contactFooter.rouge .navTeam button:focus,
+.contactFooter.rouge .navTeam button.actif {
+  color: rgba(226, 92, 91, 0.6);
+}
+.contactFooter.rouge .navTeam button.actif {
+  text-shadow: 2px 2px 2px #da3130;
+}
+.contactFooter.rouge #bulle:after {
+  color: rgba(226, 92, 91, 0.6);
+}
+.contactFooter.rouge .formContact input,
+.contactFooter.rouge .formContact textarea {
+  background: #de4645;
+  border-color: #da3130;
+}
+.contactFooter.rouge .formContact input:focus,
+.contactFooter.rouge .formContact textarea:focus {
+  border-color: #ffffff;
+}
+.contactFooter.rouge .buttonsTeam:after {
+  background: #da3130;
+}
+.contactFooter.rouge .buttonsTeam button.actif:after {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 2px 2px 2px #da3130;
+}
+.contactFooter.vert {
+  background: #46b489;
+}
+.contactFooter.vert:before {
+  background: #46b489;
+}
+.contactFooter.vert:after {
+  background: rgba(70, 180, 137, 0.6);
+}
+.contactFooter.vert .slideTeam strong {
+  color: rgba(70, 180, 137, 0.6);
+}
+.contactFooter.vert .navTeam button {
+  color: #388f6d;
+}
+.contactFooter.vert .navTeam button:hover,
+.contactFooter.vert .navTeam button:focus,
+.contactFooter.vert .navTeam button.actif {
+  color: rgba(70, 180, 137, 0.6);
+}
+.contactFooter.vert .navTeam button.actif {
+  text-shadow: 2px 2px 2px #388f6d;
+}
+.contactFooter.vert #bulle:after {
+  color: rgba(70, 180, 137, 0.6);
+}
+.contactFooter.vert .formContact input,
+.contactFooter.vert .formContact textarea {
+  background: #3fa27b;
+  border-color: #388f6d;
+}
+.contactFooter.vert .formContact input:focus,
+.contactFooter.vert .formContact textarea:focus {
+  border-color: #ffffff;
+}
+.contactFooter.vert .buttonsTeam:after {
+  background: #388f6d;
+}
+.contactFooter.vert .buttonsTeam button.actif:after {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 2px 2px 2px #388f6d;
+}
+.contactFooter.rose {
+  background: #f7886c;
+}
+.contactFooter.rose:before {
+  background: #f7886c;
+}
+.contactFooter.rose:after {
+  background: rgba(247, 136, 108, 0.6);
+}
+.contactFooter.rose .slideTeam strong {
+  color: rgba(247, 136, 108, 0.6);
+}
+.contactFooter.rose .navTeam button {
+  color: #f4613c;
+}
+.contactFooter.rose .navTeam button:hover,
+.contactFooter.rose .navTeam button:focus,
+.contactFooter.rose .navTeam button.actif {
+  color: rgba(247, 136, 108, 0.6);
+}
+.contactFooter.rose .navTeam button.actif {
+  text-shadow: 2px 2px 2px #f4613c;
+}
+.contactFooter.rose #bulle:after {
+  color: rgba(247, 136, 108, 0.6);
+}
+.contactFooter.rose .formContact input,
+.contactFooter.rose .formContact textarea {
+  background: #f67454;
+  border-color: #f4613c;
+}
+.contactFooter.rose .formContact input:focus,
+.contactFooter.rose .formContact textarea:focus {
+  border-color: #ffffff;
+}
+.contactFooter.rose .buttonsTeam:after {
+  background: #f4613c;
+}
+.contactFooter.rose .buttonsTeam button.actif:after {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 2px 2px 2px #f4613c;
 }
 .contactFooter h2,
 .contactFooter button,
@@ -1212,7 +1394,6 @@ footer {
 }
 .contactFooter:before {
   z-index: -1;
-  background: #0d5c7b;
   -webkit-transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
   -o-transform: rotate(-3deg);
@@ -1222,7 +1403,6 @@ footer {
 .contactFooter:after {
   left: -50%;
   z-index: -2;
-  background: #aed7e8;
   -webkit-transform: rotate(3deg);
   -moz-transform: rotate(3deg);
   -o-transform: rotate(3deg);
@@ -1268,7 +1448,6 @@ footer {
 }
 .slideTeam strong {
   display: block;
-  color: #aed7e8;
 }
 .navTeam {
   text-align: right;
@@ -1281,7 +1460,6 @@ footer {
 }
 .navTeam button {
   padding: 0;
-  color: #04455c;
   font-size: 32px;
   padding-right: 0;
   -webkit-transition: 0.3s ease-in-out;
@@ -1292,14 +1470,10 @@ footer {
 .navTeam button:hover,
 .navTeam button:focus,
 .navTeam button.actif {
-  color: #aed7e8;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-}
-.navTeam button.actif {
-  text-shadow: 2px 2px 2px #04455c;
 }
 #bulle {
   text-align: right;
@@ -1331,7 +1505,6 @@ footer {
   -moz-osx-font-smoothing: grayscale;
   content: "\e60b";
   display: block;
-  color: #aed7e8;
   font-size: 194px;
   line-height: 30px;
   opacity: .3;
@@ -1353,12 +1526,6 @@ footer {
 .formContact input,
 .formContact textarea {
   color: #ffffff;
-  background: #116180;
-  border-color: #04455c;
-}
-.formContact input:focus,
-.formContact textarea:focus {
-  border-color: #ffffff;
 }
 .formContact label {
   margin: 0 0 5px 1px;
@@ -1390,7 +1557,6 @@ footer {
   width: 351px;
   height: 9px;
   border-radius: 20px;
-  background: #04455c;
   margin: 15px 0 0 34px;
 }
 .buttonsTeam li {
@@ -1441,8 +1607,6 @@ footer {
   font-size: 46px;
   left: 30%;
   bottom: -46px;
-  color: #aed7e8;
-  text-shadow: 2px 2px 2px #04455c;
 }
 .buttonsTeam button:hover,
 .buttonsTeam button:focus {
@@ -1995,10 +2159,11 @@ footer {
 .ref a:hover .hover,
 .ref a:focus .hover {
   top: 0;
-  -webkit-transition: 0.2s top 0.3s ease-in-out;
-  -moz-transition: 0.2s top 0.3s ease-in-out;
-  -o-transition: 0.2s top 0.3s ease-in-out;
-  transition: 0.2s top 0.3s ease-in-out;
+  opacity: .9;
+  -webkit-transition: 0.2s top 0.3s ease-in-out, 0.2s opacity 0.3s ease-in-out;
+  -moz-transition: 0.2s top 0.3s ease-in-out, 0.2s opacity 0.3s ease-in-out;
+  -o-transition: 0.2s top 0.3s ease-in-out, 0.2s opacity 0.3s ease-in-out;
+  transition: 0.2s top 0.3s ease-in-out, 0.2s opacity 0.3s ease-in-out;
 }
 .ref a:hover:before,
 .ref a:focus:before {
@@ -2091,7 +2256,7 @@ footer {
   height: 100%;
   color: #ffffff;
   padding: 50px 10px 25px 35px;
-  opacity: .9;
+  opacity: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -2341,6 +2506,99 @@ footer {
 /* ==|== media queries ======================================================
    ========================================================================== */
 /* @group Responsive horizontal */
+@media (max-width: 1160px) {
+  .content.simple {
+    padding-right: 20px;
+  }
+  .menu > li > a {
+    padding: 0 15px;
+  }
+  .menu .hasSubMenu > a {
+    padding-right: 27px;
+  }
+  .menu .hasSubMenu > a:after {
+    right: 15px;
+  }
+}
+@media (max-width: 1040px) {
+  .menu {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.95);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    margin: 0;
+    padding: 30px;
+  }
+  .menu li {
+    display: block;
+  }
+  .menu > li > a {
+    line-height: 25px;
+    padding-left: 0;
+  }
+  .menu > li > a:hover:before,
+  .menu > li > a:focus:before {
+    border-width: 0 110px 0 0;
+  }
+  .menu .hasSubMenu:hover .subMenu,
+  .menu .hasSubMenu:focus .subMenu {
+    bottom: auto;
+  }
+  .menu .hasSubMenu > a:hover:after,
+  .menu .hasSubMenu > a:focus:after {
+    width: auto;
+    top: 47%;
+    text-align: left;
+    right: 15px;
+  }
+  .subMenu {
+    position: relative;
+    bottom: auto;
+    opacity: 1;
+    z-index: 1;
+    background: none;
+    text-align: left;
+    padding-top: 0;
+  }
+  .subMenu ul {
+    display: block;
+    padding: 0 0 10px 10px;
+  }
+  .subMenu ul a {
+    /*font-family: 'gothamBookItalic', sans-serif;
+  font-weight: normal;*/
+    font-family: 'Gotham SSm A', 'Gotham SSm B';
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    padding: 0;
+  }
+  .topHeader p {
+    display: none;
+  }
+  .bottomHeader .btnFull {
+    z-index: 10;
+    float: none;
+    position: absolute;
+    bottom: -270px;
+    left: 30px;
+  }
+  .home .bottomHeader .btnFull {
+    opacity: 1;
+  }
+  .bottomHeader .subMenu a {
+    color: rgba(58, 67, 76, 0.8);
+  }
+  #burger {
+    display: block;
+  }
+}
 /* @end */
 /* @group Responsive vertical */
 @media (max-height: 850px) {

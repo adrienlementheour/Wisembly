@@ -329,7 +329,8 @@ button{
 
 .content{
   width: 100%;
-  max-width: 1120px;
+  max-width: 1160px;
+  padding: 0 20px;
   .box-sizing(border-box);
   margin: 0 auto;
   &.main{
@@ -594,6 +595,19 @@ header{
         .transition(.3s ease-in-out);
       }
     }
+    &.actifHover{
+      > a{
+        &:before{
+          border-width: 0 110px 66px 36px;
+        }
+        &:after{
+          width: 100%;
+          top: 65px;
+          text-align: center;
+          right: 8px;
+        }
+      }
+    }
   }
 }
 
@@ -634,6 +648,11 @@ header{
   }
 }
 
+#burger{
+  float: right;
+  margin: 34px 0;
+  display: none;
+}
 
 /* FOOTER */
 
@@ -644,7 +663,214 @@ footer{
 }
 
 .contactFooter{
-  background: @bleuFooterContact;
+  &.bleu{
+    background: @bleuFooterContact;
+    &:before{
+      background: @bleuFooterContact;
+    }
+    &:after{
+      background: @bleuFooter;
+    }
+    .slideTeam{
+      strong{
+        color: @bleuFooter;
+      }
+    }
+    .navTeam{
+      button{
+        color: darken(@bleu, 10);
+        &:hover, &:focus, &.actif{
+          color: @bleuFooter;
+        }
+        &.actif{
+          text-shadow: 2px 2px 2px darken(@bleu, 10);
+        }
+      }
+    }
+    #bulle{
+      &:after{
+        color: @bleuFooter;
+      }
+    }
+    .formContact{
+      input, textarea{
+        background: #116180;
+        border-color: darken(@bleu, 10);
+        &:focus{
+          border-color: @blanc;
+        }
+      }
+    }
+    .buttonsTeam{
+      &:after{
+        background: darken(@bleu, 10);
+      }
+      button{
+        &.actif{
+          &:after{
+            color: @bleuFooter;
+            text-shadow: 2px 2px 2px darken(@bleu, 10);
+          }
+        }
+      }
+    }
+  }
+  &.rouge{
+    background: @rouge;
+    &:before{
+      background: @rouge;
+    }
+    &:after{
+      background: fade(@rouge, 60);
+    }
+    .slideTeam{
+      strong{
+        color: fade(@rouge, 60);
+      }
+    }
+    .navTeam{
+      button{
+        color: darken(@rouge, 10);
+        &:hover, &:focus, &.actif{
+          color: fade(@rouge, 60);
+        }
+        &.actif{
+          text-shadow: 2px 2px 2px darken(@rouge, 10);
+        }
+      }
+    }
+    #bulle{
+      &:after{
+        color: fade(@rouge, 60);
+      }
+    }
+    .formContact{
+      input, textarea{
+        background: darken(@rouge, 5);
+        border-color: darken(@rouge, 10);
+        &:focus{
+          border-color: @blanc;
+        }
+      }
+    }
+    .buttonsTeam{
+      &:after{
+        background: darken(@rouge, 10);
+      }
+      button{
+        &.actif{
+          &:after{
+            color: fade(@blanc, 60);
+            text-shadow: 2px 2px 2px darken(@rouge, 10);
+          }
+        }
+      }
+    }
+  }
+  &.vert{
+    background: @vert;
+    &:before{
+      background: @vert;
+    }
+    &:after{
+      background: fade(@vert, 60);
+    }
+    .slideTeam{
+      strong{
+        color: fade(@vert, 60);
+      }
+    }
+    .navTeam{
+      button{
+        color: darken(@vert, 10);
+        &:hover, &:focus, &.actif{
+          color: fade(@vert, 60);
+        }
+        &.actif{
+          text-shadow: 2px 2px 2px darken(@vert, 10);
+        }
+      }
+    }
+    #bulle{
+      &:after{
+        color: fade(@vert, 60);
+      }
+    }
+    .formContact{
+      input, textarea{
+        background: darken(@vert, 5);
+        border-color: darken(@vert, 10);
+        &:focus{
+          border-color: @blanc;
+        }
+      }
+    }
+    .buttonsTeam{
+      &:after{
+        background: darken(@vert, 10);
+      }
+      button{
+        &.actif{
+          &:after{
+            color: fade(@blanc, 60);
+            text-shadow: 2px 2px 2px darken(@vert, 10);
+          }
+        }
+      }
+    }
+  }
+  &.rose{
+    background: @rose;
+    &:before{
+      background: @rose;
+    }
+    &:after{
+      background: fade(@rose, 60);
+    }
+    .slideTeam{
+      strong{
+        color: fade(@rose, 60);
+      }
+    }
+    .navTeam{
+      button{
+        color: darken(@rose, 10);
+        &:hover, &:focus, &.actif{
+          color: fade(@rose, 60);
+        }
+        &.actif{
+          text-shadow: 2px 2px 2px darken(@rose, 10);
+        }
+      }
+    }
+    #bulle{
+      &:after{
+        color: fade(@rose, 60);
+      }
+    }
+    .formContact{
+      input, textarea{
+        background: darken(@rose, 5);
+        border-color: darken(@rose, 10);
+        &:focus{
+          border-color: @blanc;
+        }
+      }
+    }
+    .buttonsTeam{
+      &:after{
+        background: darken(@rose, 10);
+      }
+      button{
+        &.actif{
+          &:after{
+            color: fade(@blanc, 60);
+            text-shadow: 2px 2px 2px darken(@rose, 10);
+          }
+        }
+      }
+    }
+  }
   padding: 0 0 130px;
   position: relative;
   h2, button, p, label{
@@ -660,13 +886,11 @@ footer{
   }
   &:before{
     z-index: -1;
-    background: @bleuFooterContact;
     .transform(rotate(-3deg));
   }
   &:after{
     left: -50%;
     z-index: -2;
-    background: @bleuFooter;
     .transform(rotate(3deg));
   }
   /*.no-csstransforms &{
@@ -712,7 +936,6 @@ footer{
   }
   strong{
     display: block;
-    color: @bleuFooter;
   }
 }
 .navTeam{
@@ -725,16 +948,11 @@ footer{
   }
   button{
     padding: 0;
-    color: darken(@bleu, 10);
     font-size: 32px;
     padding-right: 0;
     .transition(.3s ease-in-out);
     &:hover, &:focus, &.actif{
-      color: @bleuFooter;
       .transition(.3s ease-in-out);
-    }
-    &.actif{
-      text-shadow: 2px 2px 2px darken(@bleu, 10);
     }
   }
 }
@@ -755,7 +973,6 @@ footer{
     .fontIcon();
     content: "\e60b";
     display: block;
-    color: @bleuFooter;
     font-size: 194px;
     line-height: 30px;
     opacity: .3;
@@ -775,11 +992,6 @@ footer{
   }
   input, textarea{
     color: @blanc;
-    background: #116180;
-    border-color: darken(@bleu, 10);
-    &:focus{
-      border-color: @blanc;
-    }
   }
   label{
     margin: 0 0 5px 1px;
@@ -806,7 +1018,6 @@ footer{
     width: 351px;
     height: 9px;
     border-radius: 20px;
-    background: darken(@bleu, 10);
     margin: 15px 0 0 34px;
   }
   li{
@@ -845,8 +1056,6 @@ footer{
         font-size: 46px;
         left: 30%;
         bottom: -46px;
-        color: @bleuFooter;
-        text-shadow: 2px 2px 2px darken(@bleu, 10);
       }
     }
     &:hover, &:focus{
@@ -1306,7 +1515,8 @@ footer{
       background: fade(@grisSlides, 50);
       .hover{
         top: 0;
-        .transition(.2s top .3s ease-in-out);
+        opacity: .9;
+        .transition(.2s top .3s ease-in-out, .2s opacity .3s ease-in-out);
       }
       &:before{
         border-width: 0 0 0 274px;
@@ -1405,7 +1615,7 @@ footer{
     height: 100%;
     color: @blanc;
     padding: 50px 10px 25px 35px;
-    opacity: .9;
+    opacity: 0;
     .box-sizing(border-box);
     .transition(.3s ease-in-out);
   }
@@ -1623,142 +1833,4 @@ footer{
 
 /* @end */
 
-
-/* ==|== media queries ======================================================
-   ========================================================================== */
-
-/* @group Responsive horizontal */
-
-@media (max-width: 1150px){
-}
-
-@media (max-width: 979px){
-}
-
-@media (max-width: 767px){
-}
-
-@media (max-width: 450px){
-}
-
-/* @end */
-
-/* @group Responsive vertical */
-
-@media (max-height: 850px){
-  .heading{
-    margin: 10vh 0 0;
-  }
-}
-
-@media (max-height: 800px){
-  .heading{
-    margin: 5vh 0 0;
-  }
-}
-
-@media (max-height: 750px){
-  .blocH1 {
-    width: 350px;
-    padding: 0 0 170px;
-  }
-}
-
-@media (max-height: 700px){
-  .heading{
-    br{
-      display: none;
-    }
-  }
-  .blocH1 {
-    width: 400px;
-    margin: 0;
-  }
-}
-
-@media (max-height: 650px){
-  .subHeading{
-    font-size: 1em;
-    line-height: 1.2em;
-  }
-}
-
-/* @end */
-
-/*  @group retina */
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-    #logo{
-      background: url('../layoutImg/logo@2.png') no-repeat;
-      background-size: 100%; 
-    }
-
-    .detailHome{
-      .event{
-        &:before{
-          background: url('../layoutImg/home/pot@2.png') no-repeat;
-          background-size: 100%; 
-        }
-      }
-      .conf{
-        &:before{
-          background: url('../layoutImg/home/tel@2.png') no-repeat;
-          background-size: 100%; 
-        }
-      }
-      .training{
-        &:before{
-          background: url('../layoutImg/home/graph@2.png') no-repeat;
-          background-size: 100%; 
-        }
-      }
-    }
-
-    .avantages{
-      .accompagnement{
-        &:before{
-          background: url('../layoutImg/home/accompagnement@2.png') no-repeat;
-          background-size: 100%; 
-        }
-      }
-      .securite{
-        &:before{
-          background: url('../layoutImg/home/chateau@2.png') no-repeat;
-          background-size: 100%; 
-        }
-      }
-      .fiable{
-        &:before{
-          background: url('../layoutImg/home/w@2.png') no-repeat;
-          background-size: 100%; 
-        }
-      }
-      .technique{
-        &:before{
-          background: url('../layoutImg/home/connexion@2.png') no-repeat;
-          background-size: 100%; 
-        }
-      }
-    }
-
-}
-
-/* @end */
-
-
-/* ==|== print styles =======================================================
-   ========================================================================== */
- 
-@media print {
-  * {} 
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; }
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
-}
+@import "mediaqueries.less";

@@ -1,0 +1,249 @@
+/* ==|== media queries ======================================================
+   ========================================================================== */
+
+/* @group Responsive horizontal */
+
+@media (max-width: 1160px){
+  .content{
+    &.simple{
+      padding-right: 20px;
+    }
+  }
+
+  .menu{
+    > li > a{
+      padding: 0 15px;
+    }
+    .hasSubMenu{
+      > a{
+        padding-right: 27px;
+        &:after{
+          right: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1040px){
+  .menu{
+    //display: none;
+    position: fixed;
+    background: fade(@blanc, 95);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    margin: 0;
+    padding: 30px;
+    li{
+      display: block;
+    }
+    >li{
+      >a{
+        line-height: 25px;
+        padding-left: 0;
+        &:hover, &:focus{
+          &:before{
+            border-width: 0 110px 0 0;
+          }
+        }
+      }
+    }
+    .hasSubMenu{
+      &:hover, &:focus{
+        .subMenu{
+          bottom: auto;
+        }
+      }
+      > a{
+        &:hover, &:focus{
+          &:after{
+            width: auto;
+            top: 47%;
+            text-align: left;
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .subMenu{
+    position: relative;
+    bottom: auto;
+    opacity: 1;
+    z-index: 1;
+    background: none;
+    text-align: left;
+    padding-top: 0;
+    ul{
+      display: block;
+      padding: 0 0 10px 10px;
+      a{
+        .gothamItalic(1em);
+        padding: 0;
+      }
+    }
+  }
+
+  .topHeader{
+    p{
+      display: none;
+    }
+  }
+
+  .bottomHeader{
+    .btnFull{
+      z-index: 10;
+      float: none;
+      position: absolute;
+      bottom: -270px;
+      left: 30px;
+      .home &{
+        opacity: 1;
+      }
+    }
+    .subMenu{
+      a{
+        color: fade(@txt, 80);
+      }
+    }
+  }
+
+  #burger{
+    display: block;
+  }
+}
+
+@media (max-width: 979px){
+}
+
+@media (max-width: 767px){
+}
+
+@media (max-width: 450px){
+}
+
+/* @end */
+
+/* @group Responsive vertical */
+
+@media (max-height: 850px){
+  .heading{
+    margin: 10vh 0 0;
+  }
+}
+
+@media (max-height: 800px){
+  .heading{
+    margin: 5vh 0 0;
+  }
+}
+
+@media (max-height: 750px){
+  .blocH1 {
+    width: 350px;
+    padding: 0 0 170px;
+  }
+}
+
+@media (max-height: 700px){
+  .heading{
+    br{
+      display: none;
+    }
+  }
+  .blocH1 {
+    width: 400px;
+    margin: 0;
+  }
+}
+
+@media (max-height: 650px){
+  .subHeading{
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+}
+
+/* @end */
+
+/*  @group retina */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+    #logo{
+      background: url('../layoutImg/logo@2.png') no-repeat;
+      background-size: 100%; 
+    }
+
+    .detailHome{
+      .event{
+        &:before{
+          background: url('../layoutImg/home/pot@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .conf{
+        &:before{
+          background: url('../layoutImg/home/tel@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .training{
+        &:before{
+          background: url('../layoutImg/home/graph@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+    }
+
+    .avantages{
+      .accompagnement{
+        &:before{
+          background: url('../layoutImg/home/accompagnement@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .securite{
+        &:before{
+          background: url('../layoutImg/home/chateau@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .fiable{
+        &:before{
+          background: url('../layoutImg/home/w@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+      .technique{
+        &:before{
+          background: url('../layoutImg/home/connexion@2.png') no-repeat;
+          background-size: 100%; 
+        }
+      }
+    }
+
+}
+
+/* @end */
+
+
+/* ==|== print styles =======================================================
+   ========================================================================== */
+ 
+@media print {
+  * {} 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

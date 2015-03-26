@@ -63,9 +63,19 @@ function setSliderTeam(slider){
 // Changement de slider //
 function setSliderTeamProfil(){
 	var numSlider = $(this).parents('li').index(), sliders = $('.slidesTeam'),
-		slider = sliders.eq(numSlider);
+		slider = sliders.eq(numSlider), contactFooter = $('.contactFooter');
 
 	$(this).addClass('actif').parents('li').siblings().find('button').removeClass();
+
+	if(numSlider == 0){
+		contactFooter.addClass('bleu').removeClass('rose').removeClass('rouge').removeClass('vert');
+	}else if(numSlider == 1){
+		contactFooter.addClass('rouge').removeClass('rose').removeClass('bleu').removeClass('vert');
+	}else if(numSlider == 2){
+		contactFooter.addClass('vert').removeClass('rose').removeClass('rouge').removeClass('bleu');
+	}else if(numSlider == 3){
+		contactFooter.addClass('rose').removeClass('bleu').removeClass('rouge').removeClass('vert');
+	}
 
 	if(!slider.hasClass('on')){
 		slider.addClass('on').animate({opacity: 1}, 600).siblings('.slidesTeam').animate({opacity: 0}, 600).removeClass('on');
@@ -102,6 +112,15 @@ $(function(){
 			$('#contact, #bulle').addClass('visible');
 		});
 	});
+
+	// Sous menu //
+	if($(window).width() > 1040){
+		$('.hasSubMenu').on('mouseover', function(){
+			$(this).addClass('actifHover');
+		}).on('mouseout', function(){
+			$(this).removeClass('actifHover');
+		});
+	}
 
 	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
 	$('.buttonsTeam').find('button').on('click', setSliderTeamProfil);

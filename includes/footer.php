@@ -1,5 +1,5 @@
 <footer role='contentinfo'>
-  <section class='contactFooter'>
+  <section class='contactFooter bleu'>
     <div class='content'>
       <div id='sliderTeam'>
         <div id='bulle'>
