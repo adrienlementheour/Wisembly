@@ -827,6 +827,16 @@ button:focus {
   -o-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 /* CONTAINERS */
 .content {
@@ -1510,6 +1520,16 @@ footer {
   -o-transform: rotate(0deg) translateZ(1px);
   -ms-transform: rotate(0deg) translateZ(1px);
   transform: rotate(0deg) translateZ(1px);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .contactFooter #triangle-footer-top-bleu-clair {
   display: block;
@@ -1525,6 +1545,16 @@ footer {
   -o-transform: rotate(0deg) translateZ(1px);
   -ms-transform: rotate(0deg) translateZ(1px);
   transform: rotate(0deg) translateZ(1px);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .profil {
   display: none;
@@ -1787,6 +1817,16 @@ footer {
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   z-index: -1;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .navFooter #triangle-footer-bottom-blanc {
   display: block;
@@ -1802,6 +1842,16 @@ footer {
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   z-index: -1;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .navFooter li {
   padding: 0;
@@ -2006,6 +2056,16 @@ footer {
   -webkit-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .menuFooter a {
   border: 0;
@@ -2142,11 +2202,11 @@ footer {
   bottom: -60px;
   height: 170px;
   background: rgba(70, 180, 137, 0.6);
-  -webkit-transform: rotate(7deg);
-  -moz-transform: rotate(7deg);
-  -o-transform: rotate(7deg);
-  -ms-transform: rotate(7deg);
-  transform: rotate(7deg);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
 }
 .headHome #triangle-header-blanc {
   display: block;
@@ -2156,11 +2216,11 @@ footer {
   bottom: -25px;
   height: 105px;
   background: #ffffff;
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
+  -webkit-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  -o-transform: rotate(-1deg);
+  -ms-transform: rotate(-1deg);
+  transform: rotate(-1deg);
 }
 .blocH1 {
   width: 290px;
