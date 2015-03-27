@@ -148,6 +148,10 @@ function scrollMagic(){
 	var trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 	var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {rotation: "3deg", force3D:true,lazy:true});
 	var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+	var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {rotation: "-3deg", y: "0px", force3D:true,lazy:true});
+	var scrollNext1= TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+	var scrollNext2= TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+	var scrollNext3= TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 
 	var whenInContainer = new ScrollScene({
 		triggerElement: '.contactFooter',
@@ -176,6 +180,46 @@ function scrollMagic(){
 		loglevel: 3
 	})
 	.setTween(tiangleFooterBottomBlanc)
+	.addTo(controller)
+	.addIndicators();
+
+	var whenInContainer4 = new ScrollScene({
+		triggerElement: '.menuFooter',
+		duration: $('.menuFooter').outerHeight(),
+		offset: -300,
+		loglevel: 3
+	})
+	.setTween(tiangleMenuFooter)
+	.addTo(controller)
+	.addIndicators();
+
+	var whenInContainer5 = new ScrollScene({
+		triggerElement: '.scrollNext1',
+		duration: $('.scrollNext1').outerHeight(),
+		offset: -300,
+		loglevel: 3
+	})
+	.setTween(scrollNext1)
+	.addTo(controller)
+	.addIndicators();
+
+	var whenInContainer6 = new ScrollScene({
+		triggerElement: '.scrollNext2',
+		duration: $('.scrollNext2').outerHeight(),
+		offset: -300,
+		loglevel: 3
+	})
+	.setTween(scrollNext2)
+	.addTo(controller)
+	.addIndicators();
+
+	var whenInContainer7 = new ScrollScene({
+		triggerElement: '.scrollNext3',
+		duration: $('.scrollNext3').outerHeight(),
+		offset: -300,
+		loglevel: 3
+	})
+	.setTween(scrollNext3)
 	.addTo(controller)
 	.addIndicators();
 }

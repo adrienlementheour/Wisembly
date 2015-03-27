@@ -340,8 +340,7 @@ button{
     background: @blanc;
     padding: 0 20px; 
   }
-  &:after{
-    content: '';
+  span{
     display: block;
     height: 2px;
     width: 450px;
@@ -351,7 +350,7 @@ button{
     top: 42%;
     left: 50%;
     margin: 0 0 0 -225px;
-    .transform(rotate(-3deg));
+    .transform(rotate(0deg));
   }
 }
 
@@ -719,10 +718,10 @@ footer{
 .contactFooter{
   &.bleu{
     background: @bleuFooterContact;
-    &:before{
+    #triangle-footer-top-bleu-fonce{
       background: @bleuFooterContact;
     }
-    &:after{
+    #triangle-footer-top-bleu-clair{
       background: @bleuFooter;
     }
     .slideTeam{
@@ -779,10 +778,10 @@ footer{
   }
   &.rouge{
     background: @rouge;
-    &:before{
+    #triangle-footer-top-bleu-fonce{
       background: @rouge;
     }
-    &:after{
+    #triangle-footer-top-bleu-clair{
       background: fade(@rouge, 60);
     }
     .slideTeam{
@@ -831,10 +830,10 @@ footer{
   }
   &.vert{
     background: @vert;
-    &:before{
+    #triangle-footer-top-bleu-fonce{
       background: @vert;
     }
-    &:after{
+    #triangle-footer-top-bleu-clair{
       background: fade(@vert, 60);
     }
     .slideTeam{
@@ -883,10 +882,10 @@ footer{
   }
   &.rose{
     background: @rose;
-    &:before{
+    #triangle-footer-top-bleu-fonce{
       background: @rose;
     }
-    &:after{
+    #triangle-footer-top-bleu-clair{
       background: fade(@rose, 60);
     }
     .slideTeam{
@@ -964,7 +963,6 @@ footer{
     height: 100px;
     width: 150%;
     z-index: -1;
-    background: @bleuFooterContact;
     .transform(rotate(0deg) translateZ(1px));
   }
   #triangle-footer-top-bleu-clair{
@@ -974,7 +972,6 @@ footer{
     height: 100px;
     width: 150%;
     z-index: -1;
-    background: @bleuFooter;
     left: -50%;
     z-index: -2;
     .transform(rotate(0deg) translateZ(1px));
@@ -1341,8 +1338,7 @@ footer{
       .gothamBold(1em);
       color: @bleu;
     }
-    &:before{
-      content: '';
+    .triangle-menu-footer{
       position: absolute;
       display: block;
       width: 0;
@@ -1353,7 +1349,7 @@ footer{
       border-width: 75px 40px 0 250px;
       border-color: @blanc transparent transparent transparent;
       z-index: -1;
-      .transform(rotate(-3deg));
+      .transform(rotate(-22deg) translateY(40px));
     }
   }
   a{

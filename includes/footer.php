@@ -135,7 +135,7 @@
           </a>
         </li>
       </ul><div class='menuFooter'>
-      <p>Contactez-nous au <span>01 85 08 53 71</span> ou <a href='mailto:contact@wisembly.com' title='Envoyer un e-mail'>contact@wisembly.com</a></p>
+      <p>Contactez-nous au <span>01 85 08 53 71</span> ou <a href='mailto:contact@wisembly.com' title='Envoyer un e-mail'>contact@wisembly.com</a><span class="triangle-menu-footer"></span></p>
         <ul>
           <li>
             <a href=''>Solution</a>
