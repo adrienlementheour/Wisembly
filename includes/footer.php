@@ -1,5 +1,7 @@
 <footer role='contentinfo'>
-  <section class='contactFooter bleu' id="contactFooterTest">
+  <section class='contactFooter bleu'>
+    <div id='triangle-footer-top-bleu-fonce'></div>
+    <div id='triangle-footer-top-bleu-clair'></div>
     <div class='content'>
       <div id='sliderTeam'>
         <div id='bulle'>
@@ -108,7 +110,9 @@
     </div>
   </section>
 
-  <section class='navFooter'>
+  <section class='navFooter' id="container3">
+    <div id='triangle-footer-bottom-bleu-clair'></div>
+    <div id='triangle-footer-bottom-blanc'></div>
     <div class='content'>
       <ul class='itemsFooter'>
         <li>

@@ -1472,7 +1472,7 @@ footer {
 .contactFooter:before,
 .contactFooter:after {
   content: '';
-  display: block;
+  display: none;
   position: absolute;
   top: -71px;
   height: 100px;
@@ -1480,11 +1480,11 @@ footer {
 }
 .contactFooter:before {
   z-index: -1;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg) translateZ(1px);
+  -moz-transform: rotate(0deg) translateZ(1px);
+  -o-transform: rotate(0deg) translateZ(1px);
+  -ms-transform: rotate(0deg) translateZ(1px);
+  transform: rotate(0deg) translateZ(1px);
 }
 .contactFooter:after {
   left: -50%;
@@ -1495,8 +1495,40 @@ footer {
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
 }
+<<<<<<< HEAD
+.contactFooter #triangle-footer-top-bleu-fonce {
+  display: block;
+  position: absolute;
+  top: -71px;
+  height: 100px;
+  width: 150%;
+  z-index: -1;
+  background: #0d5c7b;
+  -webkit-transform: rotate(0deg) translateZ(1px);
+  -moz-transform: rotate(0deg) translateZ(1px);
+  -o-transform: rotate(0deg) translateZ(1px);
+  -ms-transform: rotate(0deg) translateZ(1px);
+  transform: rotate(0deg) translateZ(1px);
+}
+.contactFooter #triangle-footer-top-bleu-clair {
+  display: block;
+  position: absolute;
+  top: -71px;
+  height: 100px;
+  width: 150%;
+  z-index: -1;
+  background: #aed7e8;
+  left: -50%;
+  z-index: -2;
+  -webkit-transform: rotate(0deg) translateZ(1px);
+  -moz-transform: rotate(0deg) translateZ(1px);
+  -o-transform: rotate(0deg) translateZ(1px);
+  -ms-transform: rotate(0deg) translateZ(1px);
+  transform: rotate(0deg) translateZ(1px);
+=======
 .profil {
   display: none;
+>>>>>>> origin/master
 }
 #sliderTeam {
   width: 50%;
@@ -1726,7 +1758,7 @@ footer {
 .navFooter:before,
 .navFooter:after {
   content: '';
-  display: block;
+  display: none;
   position: absolute;
   top: -71px;
   height: 105px;
@@ -1742,6 +1774,35 @@ footer {
 .navFooter:after {
   top: auto;
   bottom: -30px;
+}
+.navFooter #triangle-footer-bottom-bleu-clair {
+  display: block;
+  position: absolute;
+  top: -71px;
+  height: 105px;
+  width: 150%;
+  background: #ebeeef;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  z-index: -1;
+}
+.navFooter #triangle-footer-bottom-blanc {
+  display: block;
+  position: absolute;
+  top: auto;
+  bottom: -30px;
+  height: 105px;
+  width: 150%;
+  background: #ebeeef;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  z-index: -1;
 }
 .navFooter li {
   padding: 0;
