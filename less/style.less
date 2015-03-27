@@ -62,7 +62,7 @@ h1, h2{
 }
 h1{
   font-size: 2.5em;
-  line-height: 26px;
+  line-height: 45px;
   color: @vert;
   margin: 1.6em 0;
 }
@@ -619,7 +619,7 @@ header{
         }
       }
     }
-    &:hover, &:focus{
+    &:hover{
       .subMenu{
         opacity: 1;
         bottom: -45px;
@@ -687,6 +687,8 @@ header{
   width: 28px;
   height: 20px;
   padding: 0;
+  top: 0;
+  .transition(.3s ease-in-out);
 }
 
 .b{
@@ -1468,6 +1470,7 @@ footer{
   overflow: hidden;
   position: relative;
   z-index: 1;
+  width: 100%;
   + .wrapper{
     position: relative;
     z-index: 2;
@@ -1496,6 +1499,7 @@ footer{
 
 .blocH1{
   width: 290px;
+  max-width: 100%;
   float: right;
   padding: 0 0 200px;
   margin: 0 5% 0 0;
@@ -1538,6 +1542,7 @@ footer{
   margin: -130px 0 0;
   li{
     display: inline-block;
+    vertical-align: top;
     width: 33%;
     padding: 0 30px;
     .box-sizing(border-box);
@@ -1880,6 +1885,7 @@ footer{
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
+  max-width: 100%;
   .cover-video{
     width: 100%;
     height: 100%;
@@ -1912,6 +1918,7 @@ footer{
         width: 90%;
         p{
           max-width: 410px;
+          width: 95%;
           margin: 0 auto;
         }
         a{

@@ -3,6 +3,32 @@
 
 /* @group Responsive horizontal */
 
+@media (max-width: 1820px){
+  .headHome{
+    background: url(../layoutImg/home/smallHeadHome.jpg) no-repeat 50% 100%;
+    background-size: auto; 
+  }
+}
+
+@media (max-width: 1250px){
+  #sliderRef{
+    ul{
+      width: 840px;
+      margin: 0 auto;
+    }
+  }
+  #prev{
+    left: 30px;
+  }
+  #next{
+    right: 30px;
+  }
+
+  .ref{
+    width: 33.333%;
+  }
+} 
+
 @media (max-width: 1160px){
   .content{
     &.simple{
@@ -38,35 +64,75 @@
   .menuFooter{
     padding: 0;
   }
+
+  .headHome{
+    background-position: 66% 100%;
+  }
+
+  .detailHome{
+    padding: 0;
+  }
+
+  .avantages{
+    li{
+      width: 50% !important;
+      margin: 0 0 70px !important;
+      padding: 0 50px;
+      .box-sizing(border-box);
+    }
+    h3{
+      br{
+        display: none;
+      }
+    }
+  }
 }
 
 @media (max-width: 1040px){
   header{
     position: relative;
+    + .content{
+      &.main{
+        padding-top: 0;
+      }
+    }
   }
 
-  nav{
-    &.visible{
-      .menu{
-        display: block;
-      }
-      #burger{
-        position: fixed;
+  header{
+    &.menuVisible{
+      nav{
+        .menu{
+          top: 0;
+          height: 100%;
+          opacity: 1;
+          .transition(.3s ease-in-out);
+        }
+        #burger{
+          position: fixed;
+          top: 2px;
+          right: 30px;
+          .transition(.3s ease-in-out);
+        }
+        .btnFull{
+          display: block;
+        }
       }
     }
   }
 
   .menu{
-    display: none;
+    height: 0;
+    opacity: 0;
     position: fixed;
     background: fade(@blanc, 95);
-    top: 0;
     left: 0;
+    top: 100%;
     bottom: 0;
     right: 0;
     z-index: 10;
     margin: 0;
     padding: 30px;
+    .transition(.3s ease-in-out);
     li{
       display: block;
     }
@@ -107,7 +173,7 @@
     z-index: 1;
     background: none;
     text-align: left;
-    padding-top: 0;
+    padding: 0 0 5px;
     ul{
       display: block;
       padding: 0 0 10px 10px;
@@ -164,8 +230,8 @@
       display: none;
       z-index: 10;
       float: none;
-      position: absolute;
-      bottom: -270px;
+      position: fixed;
+      top: 415px;
       left: 30px;
       .home &{
         opacity: 1;
@@ -174,6 +240,9 @@
     .subMenu{
       a{
         color: fade(@txt, 80);
+      }
+      > li > a{
+        padding-top: 0;
       }
     }
   }
@@ -207,6 +276,35 @@
       }
     }
   }
+
+  #sliderRef{
+    ul{
+      width: 560px;
+    }
+  }
+  #prev{
+    left: 50px;
+  }
+  #next{
+    right: 50px;
+  }
+
+  .ref{
+    width: 50%;
+  }
+
+  .detailHome{
+    li{
+      padding: 0 10px;
+    }
+  }
+
+  .avantages{
+    li{
+      width: 100% !important;
+      padding: 0 100px;
+    }
+  }
 }
 
 @media (max-width: 979px){
@@ -234,9 +332,107 @@
       display: none;
     }
   }
+
+  .detailHome{
+    li{
+      width: 100%;
+      padding: 0;
+      margin: 0 0 50px;
+    }
+  }
+
+  .logosPresse{
+    padding: 0;
+    li{
+      .box-sizing(border-box);
+      padding: 0 20px;
+    }
+    img{
+      max-width: 100%;
+    }
+  }
 }
 
 @media (max-width: 767px){
+  header{
+    &.menuVisible{
+      .lang{
+        display: block;
+      }
+      .topHeader{
+        p{
+          display: block;
+          color: @txt;
+          position: fixed;
+          top: 500px;
+          left: 30px;
+          line-height: 18px;
+          a{
+            color: @txt;
+          }
+        }
+        form{
+          display: none;
+        }
+      }
+      #burger{
+        top: 7px;
+      }
+    }
+  }
+
+  .home{
+    .topHeader form{
+      display: block;
+    }
+    .bottomHeader {
+      height: 150px;
+    }
+  }
+
+  .topHeader{
+    height: 0;
+    .content{
+      z-index: 11;
+      &:before{
+        display: none;
+      }
+    }
+    form{
+      display: none;
+      position: absolute;
+      top: 80px;
+      margin: 0 auto;
+      right: 0;
+      left: 0;
+      width: 223px;
+      label{
+        color: @bleu;
+        text-align: center;
+        display: block;
+        padding: 0 0 5px;
+      }
+      input{
+        border-color: @vert;
+        width: 160px;
+      }
+    }
+  }
+
+  .lang{
+    display: none;
+    position: fixed;
+    left: 30px;
+    top: -5px;
+    a{
+      color: @txt;
+    }
+  }
+
+  .menu{
+    padding: 35px 30px;
+  }
+
   .itemsFooter{
     li{
       padding: 0 0 0 30px;
@@ -245,6 +441,46 @@
       }
     }
   }
+
+  .headHome {
+    background-position: 73% 100%;
+  }
+
+  #sliderRef{
+    ul{
+      width: 280px;
+    }
+  }
+
+  .ref{
+    width: 100%;
+  }
+
+  .avantages{
+    li{
+      padding: 0;
+    }
+  }
+
+}
+
+@media (max-width: 520px){
+
+  #prev{
+    left: 20px;
+  }
+  #next{
+    right: 20px;
+  }
+
+  .logosPresse{
+    li{
+      width: 100%;
+      padding: 0;
+      margin: 0 0 30px;
+    }
+  }
+
 }
 
 @media (max-width: 450px){
@@ -280,6 +516,14 @@
       }
     }
   }
+
+  .headHome {
+    background-position: 78% 100%;
+  }
+
+  /*.blocH1{
+    float: none;
+  }*/
 }
 
 /* @end */
