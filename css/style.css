@@ -3166,6 +3166,20 @@ footer {
   .headHome {
     background-position: 73% 100%;
   }
+  .headHome #triangle-header-vert {
+    -webkit-transform: rotate(7deg);
+    -moz-transform: rotate(7deg);
+    -o-transform: rotate(7deg);
+    -ms-transform: rotate(7deg);
+    transform: rotate(7deg);
+  }
+  .headHome #triangle-header-blanc {
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
   #sliderRef ul {
     width: 280px;
   }
@@ -3174,6 +3188,51 @@ footer {
   }
   .avantages li {
     padding: 0;
+  }
+  .contactFooter #triangle-footer-top-bleu-fonce {
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+  .contactFooter #triangle-footer-top-bleu-clair {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+  .navFooter #triangle-footer-bottom-bleu-clair {
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+  .navFooter #triangle-footer-bottom-blanc {
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+  .menuFooter p .triangle-menu-footer {
+    -webkit-transform: rotate(-3deg) translateY(0px);
+    -moz-transform: rotate(-3deg) translateY(0px);
+    -o-transform: rotate(-3deg) translateY(0px);
+    -ms-transform: rotate(-3deg) translateY(0px);
+    transform: rotate(-3deg) translateY(0px);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+  .scrollNext span {
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
   }
 }
 @media (max-width: 520px) {

@@ -426,6 +426,12 @@
 
   .headHome {
     background-position: 73% 100%;
+      #triangle-header-vert{
+        .transform(rotate(7deg));
+      }
+      #triangle-header-blanc{
+        .transform(rotate(-3deg));
+      }
   }
 
   #sliderRef{
@@ -443,7 +449,35 @@
       padding: 0;
     }
   }
-
+  .contactFooter{
+    #triangle-footer-top-bleu-fonce{
+      .transform(rotate(-3deg));
+    }
+    #triangle-footer-top-bleu-clair{
+      .transform(rotate(3deg));
+    }
+  }
+  .navFooter{
+    #triangle-footer-bottom-bleu-clair{
+      .transform(rotate(-3deg));
+    }
+    #triangle-footer-bottom-blanc{
+      .transform(rotate(-3deg));
+    }
+  }
+  .menuFooter{
+    p{
+      .triangle-menu-footer{
+        .transform(rotate(-3deg) translateY(0px));
+        .opacity(1);
+      }
+    }
+  }
+  .scrollNext{
+    span{
+      .transform(rotate(-3deg));
+    }
+  }
 }
 
 @media (max-width: 520px){
