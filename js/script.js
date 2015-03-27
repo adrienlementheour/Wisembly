@@ -20,9 +20,25 @@ window.requestAnimFrame = (function(){
 /**** FONCTIONS SPECIFIQUES ****/
 
 // Header fixe //
-function scrollMenu(){
+function scrollPage(){
+	myScroll = $(document).scrollTop();
 	myScroll > 100 ? header.addClass('on') : header.removeClass('on');
-	requestAnimFrame(scrollMenu);
+	requestAnimFrame(scrollPage);
+
+	/*function scrollEvent(){
+		myScroll = $(document).scrollTop();
+		if (myScroll>100) {
+			$("#header").addClass("on");
+		} else {
+			$("#header").removeClass("on");
+		}
+		$("#bg").css("top",-Math.ceil(myScroll/2.2));
+		$("#triangle1").css("margin-top",-Math.ceil(myScroll/6));
+		$("#accroche").css("top",-Math.ceil(myScroll/2));
+		requestAnimFrame(function(){
+			scrollMenu();
+		});
+	}*/
 }
 
 // Mise en place du slider //
@@ -99,11 +115,51 @@ function onYouTubeIframeAPIReady() {
     player1 = new YT.Player('player-1');
 }
 
+// ScrollMagic
+function scrollMagic(){
+	//	TweenMax.to([CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, force3D:true,lazy:true, delay: 1.5});
+	// 
+	// init controller
+	//var controller = new ScrollMagic.Controller();
+	/*var tween1 = TweenMax.to('#animation-1', 0.3, {
+	    backgroundColor: 'rgb(255, 39, 46)',
+	    scale: 10,
+	    rotation: 360
+	  });*/
+	//var tween1 = TweenMax.to(CSSRulePlugin.getRule(".contactFooter:before"), 1.2, {cssRule: {rotation: "-3deg"}, ease:Circ.easeInOut, force3D:true,lazy:true});
+	/*var tween1 = TweenMax.to(CSSRulePlugin.getRule(".contactFooter"), 1.2, {opacity: 0, ease:Circ.easeInOut, force3D:true,lazy:true});
+
+	  var scene1 = new ScrollScene({
+	    triggerElement: '#scene',
+	    offset: 0
+	  })
+	  .setClassToggle('body', 'scene-1-active')
+	  .setTween(tween1)
+	  .addTo(controller);
+	// Add debug indicators fixed on right side
+	scene1.addIndicators();*/
+
+	var controller = new ScrollMagic();
+
+	/*var changeToRed = TweenMax.to('#contactFooterTest', 0.5, {
+		backgroundColor: 'red',
+		color: 'white'
+	});*/
+	/*var changeToRed = TweenMax.to($(".contactFooter"), 1.2, {opacity: 0, ease:Circ.easeInOut, force3D:true,lazy:true});
+
+	var whenInContainer = new ScrollScene({
+		triggerElement: '#scene'
+	})
+	.setTween(changeToRed)
+	.addTo(controller)
+	.addIndicators();*/
+}
+
 
 /**** INIT ****/
 $(function(){
 
-	scrollMenu();
+	scrollPage();
 
 	// Btn demande de contact footer //
 	$('#demandeContact').on('click', function(){
@@ -142,6 +198,8 @@ $(function(){
 		};
 	}
 
+	scrollMagic();
+
 	$(window).load(function(){
 		// Slider ref home //
 		if($('#sliderRef').length){
@@ -161,7 +219,7 @@ $(function(){
 	});
 
     $(document).scroll(function(){
-    	myScroll = $(document).scrollTop();
+    	
     });
 
     $(window).resize(function(){

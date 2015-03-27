@@ -16,7 +16,7 @@
 	  	<script src="js/modernizr-min.js" type="text/javascript"></script>
 	</head>
 
-	<body class='home'>
+	<body class='home' id='scene'>
 		
 		<?php include('includes/header.html'); ?>
 

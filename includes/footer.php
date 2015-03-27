@@ -1,5 +1,5 @@
 <footer role='contentinfo'>
-  <section class='contactFooter bleu'>
+  <section class='contactFooter bleu' id="contactFooterTest">
     <div class='content'>
       <div id='sliderTeam'>
         <div id='bulle'>
@@ -180,4 +180,9 @@
 <script src="js/greensock/plugins/BezierPlugin.min.js" type="text/javascript"></script>
 <script src="js/greensock/plugins/CSSRulePlugin.min.js" type="text/javascript"></script>
 <script src="js/greensock/plugins/ScrollToPlugin.min.js" type="text/javascript"></script>
+<!--<script src="js/ScrollMagic.min.js" type="text/javascript"></script>
+<script src="js/jquery.ScrollMagic.min.js" type="text/javascript"></script>
+<script src="js/debug.addIndicators.min.js" type="text/javascript"></script>-->
+<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.js"></script>
+<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.debug.js"></script>
 <script src="js/script.js" type="text/javascript"></script>
