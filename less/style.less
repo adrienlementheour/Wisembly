@@ -1468,25 +1468,26 @@ footer{
     position: relative;
     z-index: 2;
   }
-  &:before, &:after{
-    content: '';
+  #triangle-header-vert{
     display: block;
     position: absolute;
     width: 150%;
     z-index: -1;
-  }
-  &:after{
-    bottom: -25px;
-    height: 105px;
-    background: @blanc;
-    .transform(rotate(-3deg));
-  }
-  &:before{
     right: 0;
     bottom: -60px;
     height: 170px;
     background: fade(@vert, 60);
     .transform(rotate(7deg));
+  }
+  #triangle-header-blanc{
+    display: block;
+    position: absolute;
+    width: 150%;
+    z-index: -1;
+    bottom: -25px;
+    height: 105px;
+    background: @blanc;
+    .transform(rotate(-3deg));
   }
 }
 

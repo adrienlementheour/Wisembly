@@ -160,8 +160,7 @@ function scrollMagic(){
 		loglevel: 3
 	})
 	.setTween(trianglesFooterTopFonce)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var whenInContainer2 = new ScrollScene({
 		triggerElement: '.contactFooter',
@@ -170,8 +169,7 @@ function scrollMagic(){
 		loglevel: 3
 	})
 	.setTween(tiangleFooterTopClair)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var whenInContainer3 = new ScrollScene({
 		triggerElement: '#container-3',
@@ -180,8 +178,7 @@ function scrollMagic(){
 		loglevel: 3
 	})
 	.setTween(tiangleFooterBottomBlanc)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var whenInContainer4 = new ScrollScene({
 		triggerElement: '.menuFooter',
@@ -190,8 +187,7 @@ function scrollMagic(){
 		loglevel: 3
 	})
 	.setTween(tiangleMenuFooter)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var whenInContainer5 = new ScrollScene({
 		triggerElement: '.scrollNext1',
@@ -200,8 +196,7 @@ function scrollMagic(){
 		loglevel: 3
 	})
 	.setTween(scrollNext1)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var whenInContainer6 = new ScrollScene({
 		triggerElement: '.scrollNext2',
@@ -210,8 +205,7 @@ function scrollMagic(){
 		loglevel: 3
 	})
 	.setTween(scrollNext2)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var whenInContainer7 = new ScrollScene({
 		triggerElement: '.scrollNext3',
@@ -220,8 +214,7 @@ function scrollMagic(){
 		loglevel: 3
 	})
 	.setTween(scrollNext3)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 }
 
 

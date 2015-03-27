@@ -21,6 +21,8 @@
 		<?php include('includes/header.html'); ?>
 
 		<section class='headHome'>
+			<div id="triangle-header-vert"></div>
+			<div id="triangle-header-blanc"></div>
 			<div class='content main'>
 				<div class='blocH1'>
 					<h1 class='heading'>Ideas <br/>Are<span>Everywhere</span></h1>
