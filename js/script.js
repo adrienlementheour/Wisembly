@@ -144,9 +144,10 @@ function onYouTubeIframeAPIReady() {
 // ScrollMagic
 function scrollMagic(){
 	var controller = new ScrollMagic();
-
-	var tiangleHeaderVert = TweenMax.to($("#triangle-header-vert"), 1.2, {css:{rotation: "7deg", force3D:true,lazy:true}});
-	var tiangleHeaderBlanc = TweenMax.to($("#triangle-header-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true,lazy:true}});
+	
+	var triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true,lazy:true}});
+	var triangleHeaderVert = TweenMax.to($("#triangle-header-vert"), 1.2, {css:{rotation: "7deg", force3D:true,lazy:true}});
+	var triangleHeaderBlanc = TweenMax.to($("#triangle-header-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true,lazy:true}});
 	var trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {css:{rotation: "-3deg", force3D:true,lazy:true}});
 	var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {css:{rotation: "3deg", force3D:true,lazy:true}});
 	var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true,lazy:true}});
@@ -160,7 +161,7 @@ function scrollMagic(){
 		duration: $('.headHome').outerHeight()/3,
 		offset: 500
 	})
-	.setTween(tiangleHeaderVert)
+	.setTween(triangleHeaderVert)
 	.addTo(controller);
 
 	var sceneHeader = new ScrollScene({
@@ -168,7 +169,7 @@ function scrollMagic(){
 		duration: $('.headHome').outerHeight()/3,
 		offset: 500
 	})
-	.setTween(tiangleHeaderBlanc)
+	.setTween(triangleHeaderBlanc)
 	.addTo(controller);
 
 	var whenInContainer = new ScrollScene({
@@ -264,9 +265,11 @@ $(function(){
 		if(!isMobile.phone){ player1.playVideo(); }
 	}
 
-	scrollMagic();
+	
 
 	$(window).load(function(){
+		scrollMagic();
+
 		// Slider ref home //
 		if($('#sliderRef').length){
 			$('#sliderRef').contentcarousel({
