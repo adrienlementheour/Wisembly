@@ -147,20 +147,38 @@ function onYouTubeIframeAPIReady() {
 // ScrollMagic
 function scrollMagic(){
 	var controller = new ScrollMagic();
-
-	var trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-	var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {rotation: "3deg", force3D:true,lazy:true});
-	var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-	var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {rotation: "-3deg", y: "0px", opacity: "1", force3D:true,lazy:true});
+	
+	var triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true}});
+	var triangleHeaderVert = TweenMax.to($("#triangle-header-vert"), 1.2, {css:{rotation: "7deg", force3D:true}});
+	var triangleHeaderBlanc = TweenMax.to($("#triangle-header-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}});
+	var trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {css:{rotation: "-3deg", force3D:true}});
+	var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {css:{rotation: "3deg", force3D:true}});
+	var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}});
+	var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}});
 	var scrollNext1= TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 	var scrollNext2= TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 	var scrollNext3= TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 
+	var sceneHeader = new ScrollScene({
+		triggerElement: '.headHome',
+		duration: $('.headHome').outerHeight()/3,
+		offset: 500
+	})
+	.setTween(triangleHeaderVert)
+	.addTo(controller);
+
+	var sceneHeader = new ScrollScene({
+		triggerElement: '.headHome',
+		duration: $('.headHome').outerHeight()/3,
+		offset: 500
+	})
+	.setTween(triangleHeaderBlanc)
+	.addTo(controller);
+
 	var whenInContainer = new ScrollScene({
 		triggerElement: '.contactFooter',
 		duration: $('.contactFooter').outerHeight(),
-		offset: -300,
-		loglevel: 3
+		offset: -300
 	})
 	.setTween(trianglesFooterTopFonce)
 	.addTo(controller);
@@ -168,17 +186,15 @@ function scrollMagic(){
 	var whenInContainer2 = new ScrollScene({
 		triggerElement: '.contactFooter',
 		duration: $('.contactFooter').outerHeight(),
-		offset: -400,
-		loglevel: 3
+		offset: -400
 	})
 	.setTween(tiangleFooterTopClair)
 	.addTo(controller);
 
 	var whenInContainer3 = new ScrollScene({
-		triggerElement: '#container-3',
-		duration: $('#container-3').outerHeight(),
-		offset: 0,
-		loglevel: 3
+		triggerElement: '#container3',
+		duration: $('#container3').outerHeight(),
+		offset: 0
 	})
 	.setTween(tiangleFooterBottomBlanc)
 	.addTo(controller);
@@ -186,8 +202,7 @@ function scrollMagic(){
 	var whenInContainer4 = new ScrollScene({
 		triggerElement: '.menuFooter',
 		duration: $('.menuFooter').outerHeight(),
-		offset: -300,
-		loglevel: 3
+		offset: -300
 	})
 	.setTween(tiangleMenuFooter)
 	.addTo(controller);
@@ -195,8 +210,7 @@ function scrollMagic(){
 	var whenInContainer5 = new ScrollScene({
 		triggerElement: '.scrollNext1',
 		duration: $('.scrollNext1').outerHeight(),
-		offset: -300,
-		loglevel: 3
+		offset: -300
 	})
 	.setTween(scrollNext1)
 	.addTo(controller);
@@ -204,8 +218,7 @@ function scrollMagic(){
 	var whenInContainer6 = new ScrollScene({
 		triggerElement: '.scrollNext2',
 		duration: $('.scrollNext2').outerHeight(),
-		offset: -300,
-		loglevel: 3
+		offset: -300
 	})
 	.setTween(scrollNext2)
 	.addTo(controller);
@@ -213,8 +226,7 @@ function scrollMagic(){
 	var whenInContainer7 = new ScrollScene({
 		triggerElement: '.scrollNext3',
 		duration: $('.scrollNext3').outerHeight(),
-		offset: -300,
-		loglevel: 3
+		offset: -300
 	})
 	.setTween(scrollNext3)
 	.addTo(controller);
@@ -256,9 +268,11 @@ $(function(){
 		if(!isMobile.phone){ player1.playVideo(); }
 	}
 
-	scrollMagic();
+	
 
 	$(window).load(function(){
+		scrollMagic();
+
 		// Slider ref home //
 		if($('#sliderRef').length){
 			$('#sliderRef').contentcarousel({
