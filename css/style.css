@@ -925,6 +925,14 @@ header.menuVisible .topHeader p {
   opacity: 1;
   top: 475px;
 }
+header.menuVisible #fdMenu {
+  opacity: .95;
+  top: 0;
+  -webkit-transition: opacity 0.1s, top 0.2s ease-in-out;
+  -moz-transition: opacity 0.1s, top 0.2s ease-in-out;
+  -o-transition: opacity 0.1s, top 0.2s ease-in-out;
+  transition: opacity 0.1s, top 0.2s ease-in-out;
+}
 .topHeader {
   height: 40px;
   background: #06698d;
@@ -1365,11 +1373,15 @@ header.menuVisible .topHeader p {
   position: fixed;
   z-index: 9;
   background: #ffffff;
-  opacity: .95;
-  top: 0;
+  opacity: 0;
+  top: 100%;
   left: 0;
   bottom: 0;
   right: 0;
+  -webkit-transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
+  -moz-transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
+  -o-transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
+  transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
 }
 /* FOOTER */
 footer {

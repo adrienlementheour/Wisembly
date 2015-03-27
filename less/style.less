@@ -440,7 +440,13 @@ header{
         top: 475px;
       }
     }
+    #fdMenu{
+      opacity: .95;
+      top: 0;
+      .transition(opacity .1s, top .2s ease-in-out);
+    }
   }
+  
 }
 
 .topHeader{
@@ -765,11 +771,12 @@ header{
   position: fixed;
   z-index: 9;
   background: @blanc;
-  opacity: .95;
-  top: 0;
+  opacity: 0;
+  top: 100%;
   left: 0;
   bottom: 0;
   right: 0;
+  .transition(top .4s ease-in-out, .3s opacity .1s ease-in-out);
 }
 
 /* FOOTER */
