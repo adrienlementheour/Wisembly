@@ -147,18 +147,18 @@ function onYouTubeIframeAPIReady() {
 // ScrollMagic
 function scrollMagic(){
 	if(($(window).width()>767)){
-		var controller = new ScrollMagic();
+		var controller = new ScrollMagic(),
 		
-		var triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true}});
-		var triangleHeaderVert = TweenMax.to($("#triangle-header-vert"), 1.2, {css:{rotation: "7deg", force3D:true}});
-		var triangleHeaderBlanc = TweenMax.to($("#triangle-header-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}});
-		var trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {css:{rotation: "-3deg", force3D:true}});
-		var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {css:{rotation: "3deg", force3D:true}});
-		var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}});
-		var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}});
-		var scrollNext1= TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-		var scrollNext2= TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-		var scrollNext3= TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+			triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true}}),
+			triangleHeaderVert = TweenMax.to($("#triangle-header-vert"), 1.2, {css:{rotation: "7deg", force3D:true}}),
+			triangleHeaderBlanc = TweenMax.to($("#triangle-header-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}}),
+			trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {css:{rotation: "-3deg", force3D:true}}),
+			tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {css:{rotation: "3deg", force3D:true}}),
+			tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}}),
+			tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}}),
+			scrollNext1= TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true}),
+			scrollNext2= TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true}),
+			scrollNext3= TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 
 		var sceneHeader = new ScrollScene({
 			triggerElement: '.headHome',
@@ -195,7 +195,7 @@ function scrollMagic(){
 		var whenInContainer3 = new ScrollScene({
 			triggerElement: '#container3',
 			duration: $('#container3').outerHeight(),
-			offset: 0
+			offset: -100
 		})
 		.setTween(tiangleFooterBottomBlanc)
 		.addTo(controller);

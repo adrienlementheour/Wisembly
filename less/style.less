@@ -813,11 +813,6 @@ footer{
         }
       }
     }
-    #bulle{
-      &:after{
-        color: @bleuFooter;
-      }
-    }
     .formContact{
       input, textarea, .select{
         background: #116180;
@@ -873,11 +868,6 @@ footer{
         }
       }
     }
-    #bulle{
-      &:after{
-        color: fade(@rouge, 60);
-      }
-    }
     .formContact{
       input, textarea, .select{
         background: darken(@rouge, 5);
@@ -925,11 +915,6 @@ footer{
         }
       }
     }
-    #bulle{
-      &:after{
-        color: fade(@vert, 60);
-      }
-    }
     .formContact{
       input, textarea, .select{
         background: darken(@vert, 5);
@@ -975,11 +960,6 @@ footer{
         &.actif{
           text-shadow: 2px 2px 2px darken(@rose, 10);
         }
-      }
-    }
-    #bulle{
-      &:after{
-        color: fade(@rose, 60);
       }
     }
     .formContact{
@@ -1144,6 +1124,7 @@ footer{
   }
   &:after{
     .fontIcon();
+    color: @blanc;
     content: "\e60b";
     display: block;
     font-size: 194px;
@@ -1267,7 +1248,7 @@ footer{
   background: @grisBorder;
   padding: 15px 0;
   z-index: 1;
-  &:before, &:after{
+  /*&:before, &:after{
     content: '';
     //display: block;
     display: none;
@@ -1284,7 +1265,7 @@ footer{
   &:after{
     top: auto;
     bottom: -30px;
-  }
+  }*/
   #triangle-footer-bottom-bleu-clair{
     display: block;
     position: absolute;
@@ -1991,7 +1972,7 @@ footer{
       position: absolute;
       top: 0;
       left: 0;
-      background: url("../layoutImg/home/cover-video.jpg") no-repeat 50% 50%;
+      background: url(../layoutImg/home/cover-video.jpg) no-repeat 50% 50%;
       background-size: 100% auto; 
       background-size: cover;
     }

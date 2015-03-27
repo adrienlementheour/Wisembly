@@ -1441,9 +1441,6 @@ footer {
 .contactFooter.bleu .navTeam button.actif {
   text-shadow: 2px 2px 2px #04455c;
 }
-.contactFooter.bleu #bulle:after {
-  color: #aed7e8;
-}
 .contactFooter.bleu .formContact input,
 .contactFooter.bleu .formContact textarea,
 .contactFooter.bleu .formContact .select {
@@ -1493,9 +1490,6 @@ footer {
 .contactFooter.rouge .navTeam button.actif {
   text-shadow: 2px 2px 2px #da3130;
 }
-.contactFooter.rouge #bulle:after {
-  color: rgba(226, 92, 91, 0.6);
-}
 .contactFooter.rouge .formContact input,
 .contactFooter.rouge .formContact textarea,
 .contactFooter.rouge .formContact .select {
@@ -1537,9 +1531,6 @@ footer {
 .contactFooter.vert .navTeam button.actif {
   text-shadow: 2px 2px 2px #388f6d;
 }
-.contactFooter.vert #bulle:after {
-  color: rgba(70, 180, 137, 0.6);
-}
 .contactFooter.vert .formContact input,
 .contactFooter.vert .formContact textarea,
 .contactFooter.vert .formContact .select {
@@ -1580,9 +1571,6 @@ footer {
 }
 .contactFooter.rose .navTeam button.actif {
   text-shadow: 2px 2px 2px #f4613c;
-}
-.contactFooter.rose #bulle:after {
-  color: rgba(247, 136, 108, 0.6);
 }
 .contactFooter.rose .formContact input,
 .contactFooter.rose .formContact textarea,
@@ -1774,6 +1762,7 @@ footer {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #ffffff;
   content: "\e60b";
   display: block;
   font-size: 194px;
@@ -1908,26 +1897,24 @@ footer {
   background: #ebeeef;
   padding: 15px 0;
   z-index: 1;
-}
-.navFooter:before,
-.navFooter:after {
-  content: '';
-  display: none;
-  position: absolute;
-  top: -71px;
-  height: 105px;
-  width: 150%;
-  background: #ebeeef;
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-  z-index: -1;
-}
-.navFooter:after {
-  top: auto;
-  bottom: -30px;
+  /*&:before, &:after{
+    content: '';
+    //display: block;
+    display: none;
+    position: absolute;
+    top: -71px;
+    height: 105px;
+    width: 150%;
+    background: @grisBorder;
+    .transform(rotate(-3deg));
+    z-index: -1;
+  }
+  &:before{
+  }
+  &:after{
+    top: auto;
+    bottom: -30px;
+  }*/
 }
 .navFooter #triangle-footer-bottom-bleu-clair {
   display: block;
@@ -2798,7 +2785,7 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  background: url("../layoutImg/home/cover-video.jpg") no-repeat 50% 50%;
+  background: url(../layoutImg/home/cover-video.jpg) no-repeat 50% 50%;
   background-size: 100% auto;
   background-size: cover;
 }
