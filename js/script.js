@@ -64,7 +64,7 @@ function setSubMenu(){
 // Menu responsive //
 function responsiveMenu(){
 	$(this).toggleClass('actif');
-	$(this).parents('nav').toggleClass('visible');
+	header.toggleClass('menuVisible');
 }
 
 // Mise en place du slider //
@@ -280,6 +280,14 @@ $(function(){
     $(window).resize(function(){
     	fixedHeader();
     	setSubMenu();
+
+    	/*$('#sliderRef').contentcarousel({
+    		sliderSpeed		: 500,
+    		sliderEasing	: 'easeOutExpo',
+    		itemSpeed		: 500,
+    		itemEasing		: 'easeOutExpo',
+    		scroll			: 1	
+    	});*/
 	});
 
 });

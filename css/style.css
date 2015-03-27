@@ -399,7 +399,7 @@ h2 {
 }
 h1 {
   font-size: 2.5em;
-  line-height: 26px;
+  line-height: 45px;
   color: #46b489;
   margin: 1.6em 0;
 }
@@ -1178,8 +1178,7 @@ header.on .bottomHeader .btnFull {
   -o-transition: top 0.3s ease-in-out;
   transition: top 0.3s ease-in-out;
 }
-.menu .hasSubMenu:hover .subMenu,
-.menu .hasSubMenu:focus .subMenu {
+.menu .hasSubMenu:hover .subMenu {
   opacity: 1;
   bottom: -45px;
   -webkit-transition: 0.3s ease-in-out;
@@ -1248,6 +1247,11 @@ header.on .bottomHeader .btnFull {
   width: 28px;
   height: 20px;
   padding: 0;
+  top: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .b {
   display: block;
@@ -2120,6 +2124,7 @@ footer {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 .headHome + .wrapper {
   position: relative;
@@ -2156,6 +2161,7 @@ footer {
 }
 .blocH1 {
   width: 290px;
+  max-width: 100%;
   float: right;
   padding: 0 0 200px;
   margin: 0 5% 0 0;
@@ -2211,6 +2217,7 @@ footer {
 }
 .detailHome li {
   display: inline-block;
+  vertical-align: top;
   width: 33%;
   padding: 0 30px;
   -webkit-box-sizing: border-box;
@@ -2591,6 +2598,7 @@ footer {
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
+  max-width: 100%;
 }
 #bloc-video .cover-video {
   width: 100%;
@@ -2630,6 +2638,7 @@ footer {
 }
 #bloc-video .cover-video .wrapper-zone-txt-cover-video .zone-txt-cover-video p {
   max-width: 410px;
+  width: 95%;
   margin: 0 auto;
 }
 #bloc-video .cover-video .wrapper-zone-txt-cover-video .zone-txt-cover-video a {
@@ -2653,6 +2662,27 @@ footer {
 /* ==|== media queries ======================================================
    ========================================================================== */
 /* @group Responsive horizontal */
+@media (max-width: 1820px) {
+  .headHome {
+    background: url(../layoutImg/home/smallHeadHome.jpg) no-repeat 50% 100%;
+    background-size: auto;
+  }
+}
+@media (max-width: 1250px) {
+  #sliderRef ul {
+    width: 840px;
+    margin: 0 auto;
+  }
+  #prev {
+    left: 30px;
+  }
+  #next {
+    right: 30px;
+  }
+  .ref {
+    width: 33.333%;
+  }
+}
 @media (max-width: 1160px) {
   .content.simple {
     padding-right: 20px;
@@ -2676,28 +2706,68 @@ footer {
   .menuFooter {
     padding: 0;
   }
+  .headHome {
+    background-position: 66% 100%;
+  }
+  .detailHome {
+    padding: 0;
+  }
+  .avantages li {
+    width: 50% !important;
+    margin: 0 0 70px !important;
+    padding: 0 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .avantages h3 br {
+    display: none;
+  }
 }
 @media (max-width: 1040px) {
   header {
     position: relative;
   }
-  nav.visible .menu {
+  header + .content.main {
+    padding-top: 0;
+  }
+  header.menuVisible nav .menu {
+    top: 0;
+    height: 100%;
+    opacity: 1;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  header.menuVisible nav #burger {
+    position: fixed;
+    top: 2px;
+    right: 30px;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  header.menuVisible nav .btnFull {
     display: block;
   }
-  nav.visible #burger {
-    position: fixed;
-  }
   .menu {
-    display: none;
+    height: 0;
+    opacity: 0;
     position: fixed;
     background: rgba(255, 255, 255, 0.95);
-    top: 0;
     left: 0;
+    top: 100%;
     bottom: 0;
     right: 0;
     z-index: 10;
     margin: 0;
     padding: 30px;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
   .menu li {
     display: block;
@@ -2728,7 +2798,7 @@ footer {
     z-index: 1;
     background: none;
     text-align: left;
-    padding-top: 0;
+    padding: 0 0 5px;
   }
   .subMenu ul {
     display: block;
@@ -2787,8 +2857,8 @@ footer {
     display: none;
     z-index: 10;
     float: none;
-    position: absolute;
-    bottom: -270px;
+    position: fixed;
+    top: 415px;
     left: 30px;
   }
   .home .bottomHeader .btnFull {
@@ -2796,6 +2866,9 @@ footer {
   }
   .bottomHeader .subMenu a {
     color: rgba(58, 67, 76, 0.8);
+  }
+  .bottomHeader .subMenu > li > a {
+    padding-top: 0;
   }
   #logo {
     margin: 15px 0;
@@ -2816,6 +2889,25 @@ footer {
   }
   .headHome .content.main {
     padding-top: 0;
+  }
+  #sliderRef ul {
+    width: 560px;
+  }
+  #prev {
+    left: 50px;
+  }
+  #next {
+    right: 50px;
+  }
+  .ref {
+    width: 50%;
+  }
+  .detailHome li {
+    padding: 0 10px;
+  }
+  .avantages li {
+    width: 100% !important;
+    padding: 0 100px;
   }
 }
 @media (max-width: 979px) {
@@ -2838,13 +2930,121 @@ footer {
   .menuFooter ul {
     display: none;
   }
+  .detailHome li {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 50px;
+  }
+  .logosPresse {
+    padding: 0;
+  }
+  .logosPresse li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+  .logosPresse img {
+    max-width: 100%;
+  }
 }
 @media (max-width: 767px) {
+  header.menuVisible .lang {
+    display: block;
+  }
+  header.menuVisible .topHeader p {
+    display: block;
+    color: #3a434c;
+    position: fixed;
+    top: 500px;
+    left: 30px;
+    line-height: 18px;
+  }
+  header.menuVisible .topHeader p a {
+    color: #3a434c;
+  }
+  header.menuVisible .topHeader form {
+    display: none;
+  }
+  header.menuVisible #burger {
+    top: 7px;
+  }
+  .home .topHeader form {
+    display: block;
+  }
+  .home .bottomHeader {
+    height: 150px;
+  }
+  .topHeader {
+    height: 0;
+  }
+  .topHeader .content {
+    z-index: 11;
+  }
+  .topHeader .content:before {
+    display: none;
+  }
+  .topHeader form {
+    display: none;
+    position: absolute;
+    top: 80px;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    width: 223px;
+  }
+  .topHeader form label {
+    color: #06698d;
+    text-align: center;
+    display: block;
+    padding: 0 0 5px;
+  }
+  .topHeader form input {
+    border-color: #46b489;
+    width: 160px;
+  }
+  .lang {
+    display: none;
+    position: fixed;
+    left: 30px;
+    top: -5px;
+  }
+  .lang a {
+    color: #3a434c;
+  }
+  .menu {
+    padding: 35px 30px;
+  }
   .itemsFooter li {
     padding: 0 0 0 30px;
   }
   .itemsFooter li:first-child {
     padding: 0 30px 0 0;
+  }
+  .headHome {
+    background-position: 73% 100%;
+  }
+  #sliderRef ul {
+    width: 280px;
+  }
+  .ref {
+    width: 100%;
+  }
+  .avantages li {
+    padding: 0;
+  }
+}
+@media (max-width: 520px) {
+  #prev {
+    left: 20px;
+  }
+  #next {
+    right: 20px;
+  }
+  .logosPresse li {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 30px;
   }
 }
 @media (max-width: 450px) {
@@ -2871,6 +3071,12 @@ footer {
     padding: 0;
     margin: 0 0 60px;
   }
+  .headHome {
+    background-position: 78% 100%;
+  }
+  /*.blocH1{
+    float: none;
+  }*/
 }
 /* @end */
 /* @group Responsive vertical */
