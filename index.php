@@ -48,7 +48,7 @@
 						<a href='#' class='btnLight'>Animez vos trainings</a>
 					</li>
 				</ul>
-				<button class='icon-down scrollNext'></button>
+				<button class='icon-down scrollNext'><span class="scrollNext1"></span></button>
 			</section>
 
 			<section class='content'>
@@ -174,7 +174,7 @@
 					</ul>
 				</div>
 				<a href='#' class='btnLight'>Voir les études de cas</a>
-				<button class='icon-down scrollNext'></button>
+				<button class='icon-down scrollNext'><span class="scrollNext2"></span></button>
 			</section>
 
 			<section class='content'>
@@ -207,7 +207,7 @@
 						<p>Qu’ils vous disposent d’une tablette, d’un ordinateur, d’un smartphone ou d’un cellulaire, vos interlocuteurs pourront être actifs.</p>
 					</li>
 				</ul>
-				<button class='icon-down scrollNext'></button>
+				<button class='icon-down scrollNext'><span class="scrollNext3"></span></button>
 			</section>
 
 			<section class='content'>

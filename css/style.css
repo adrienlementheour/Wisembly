@@ -812,8 +812,7 @@ button:focus {
   background: #ffffff;
   padding: 0 20px;
 }
-.scrollNext:after {
-  content: '';
+.scrollNext span {
   display: block;
   height: 2px;
   width: 450px;
@@ -823,11 +822,11 @@ button:focus {
   top: 42%;
   left: 50%;
   margin: 0 0 0 -225px;
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 /* CONTAINERS */
 .content {
@@ -1282,10 +1281,10 @@ footer {
 .contactFooter.bleu {
   background: #0d5c7b;
 }
-.contactFooter.bleu:before {
+.contactFooter.bleu #triangle-footer-top-bleu-fonce {
   background: #0d5c7b;
 }
-.contactFooter.bleu:after {
+.contactFooter.bleu #triangle-footer-top-bleu-clair {
   background: #aed7e8;
 }
 .contactFooter.bleu .slideTeam strong {
@@ -1334,10 +1333,10 @@ footer {
 .contactFooter.rouge {
   background: #e25c5b;
 }
-.contactFooter.rouge:before {
+.contactFooter.rouge #triangle-footer-top-bleu-fonce {
   background: #e25c5b;
 }
-.contactFooter.rouge:after {
+.contactFooter.rouge #triangle-footer-top-bleu-clair {
   background: rgba(226, 92, 91, 0.6);
 }
 .contactFooter.rouge .slideTeam strong {
@@ -1378,10 +1377,10 @@ footer {
 .contactFooter.vert {
   background: #46b489;
 }
-.contactFooter.vert:before {
+.contactFooter.vert #triangle-footer-top-bleu-fonce {
   background: #46b489;
 }
-.contactFooter.vert:after {
+.contactFooter.vert #triangle-footer-top-bleu-clair {
   background: rgba(70, 180, 137, 0.6);
 }
 .contactFooter.vert .slideTeam strong {
@@ -1422,10 +1421,10 @@ footer {
 .contactFooter.rose {
   background: #f7886c;
 }
-.contactFooter.rose:before {
+.contactFooter.rose #triangle-footer-top-bleu-fonce {
   background: #f7886c;
 }
-.contactFooter.rose:after {
+.contactFooter.rose #triangle-footer-top-bleu-clair {
   background: rgba(247, 136, 108, 0.6);
 }
 .contactFooter.rose .slideTeam strong {
@@ -1502,7 +1501,6 @@ footer {
   height: 100px;
   width: 150%;
   z-index: -1;
-  background: #0d5c7b;
   -webkit-transform: rotate(0deg) translateZ(1px);
   -moz-transform: rotate(0deg) translateZ(1px);
   -o-transform: rotate(0deg) translateZ(1px);
@@ -1516,7 +1514,6 @@ footer {
   height: 100px;
   width: 150%;
   z-index: -1;
-  background: #aed7e8;
   left: -50%;
   z-index: -2;
   -webkit-transform: rotate(0deg) translateZ(1px);
@@ -1986,8 +1983,7 @@ footer {
   text-rendering: optimizeLegibility;
   color: #06698d;
 }
-.menuFooter p:before {
-  content: '';
+.menuFooter p .triangle-menu-footer {
   position: absolute;
   display: block;
   width: 0;
@@ -1998,11 +1994,11 @@ footer {
   border-width: 75px 40px 0 250px;
   border-color: #ffffff transparent transparent transparent;
   z-index: -1;
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
+  -webkit-transform: rotate(-22deg) translateY(40px);
+  -moz-transform: rotate(-22deg) translateY(40px);
+  -o-transform: rotate(-22deg) translateY(40px);
+  -ms-transform: rotate(-22deg) translateY(40px);
+  transform: rotate(-22deg) translateY(40px);
 }
 .menuFooter a {
   border: 0;
