@@ -1495,7 +1495,6 @@ footer {
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
 }
-<<<<<<< HEAD
 .contactFooter #triangle-footer-top-bleu-fonce {
   display: block;
   position: absolute;
@@ -1525,10 +1524,9 @@ footer {
   -o-transform: rotate(0deg) translateZ(1px);
   -ms-transform: rotate(0deg) translateZ(1px);
   transform: rotate(0deg) translateZ(1px);
-=======
+}
 .profil {
   display: none;
->>>>>>> origin/master
 }
 #sliderTeam {
   width: 50%;
@@ -2687,6 +2685,12 @@ footer {
   header {
     position: relative;
   }
+  nav.visible .menu {
+    display: block;
+  }
+  nav.visible #burger {
+    position: fixed;
+  }
   .menu {
     display: none;
     position: fixed;
@@ -2698,9 +2702,6 @@ footer {
     z-index: 10;
     margin: 0;
     padding: 30px;
-  }
-  .menu.visible {
-    display: block;
   }
   .menu li {
     display: block;
