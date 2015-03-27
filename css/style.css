@@ -1003,7 +1003,16 @@ header.menuVisible .topHeader p {
   position: relative;
   z-index: 1;
 }
-.topHeader .content #triangle-top-header {
+.topHeader .content #container-triangle-top-header {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.topHeader .content #container-triangle-top-header #triangle-top-header {
   content: '';
   display: block;
   position: absolute;
@@ -2951,6 +2960,14 @@ footer {
   .topHeader .content:before {
     top: -10px;
   }
+  .topHeader .content #container-triangle-top-header {
+    height: auto;
+    bottom: -15px;
+  }
+  .topHeader .content #container-triangle-top-header #triangle-top-header {
+    top: -10px;
+    border-width: 0 70px 60px 600px;
+  }
   .topHeader p {
     opacity: 0;
     color: #3a434c;
@@ -3120,6 +3137,9 @@ footer {
     z-index: 11;
   }
   .topHeader .content:before {
+    display: none;
+  }
+  .topHeader .content #container-triangle-top-header {
     display: none;
   }
   .topHeader form {
