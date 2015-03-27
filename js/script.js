@@ -61,6 +61,12 @@ function setSubMenu(){
 	}
 }
 
+// Menu responsive //
+function responsiveMenu(){
+	$(this).toggleClass('actif');
+	$(this).parents('nav').toggleClass('visible');
+}
+
 // Mise en place du slider //
 function setSliderTeam(slider){
 	var slides = slider.find('.slideTeam'), slidesLength = slides.length, i = 0, 
@@ -182,6 +188,8 @@ $(function(){
 	scrollPage();
 
 	setSubMenu();
+
+	$('#burger').on('click', responsiveMenu);
 
 	// Btn demande de contact footer //
 	$('#demandeContact').on('click', function(){

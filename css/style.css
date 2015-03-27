@@ -2638,6 +2638,9 @@ footer {
     margin: 0;
     padding: 30px;
   }
+  .menu.visible {
+    display: block;
+  }
   .menu li {
     display: block;
   }
@@ -2741,6 +2744,7 @@ footer {
   }
   #burger {
     display: block;
+    z-index: 11;
   }
   #sliderTeam {
     display: none;

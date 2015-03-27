@@ -78,8 +78,6 @@
 							$wrapper		= $el.find('ul'),
 							$items			= $wrapper.children('.ref'),
 							cache			= {};
-
-						console.log($wrapper);
 						
 						// save the with of one item	
 						cache.itemW			= $items.width();
