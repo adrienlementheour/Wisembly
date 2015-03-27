@@ -117,42 +117,41 @@ function onYouTubeIframeAPIReady() {
 
 // ScrollMagic
 function scrollMagic(){
-	//	TweenMax.to([CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, force3D:true,lazy:true, delay: 1.5});
-	// 
-	// init controller
-	//var controller = new ScrollMagic.Controller();
-	/*var tween1 = TweenMax.to('#animation-1', 0.3, {
-	    backgroundColor: 'rgb(255, 39, 46)',
-	    scale: 10,
-	    rotation: 360
-	  });*/
-	//var tween1 = TweenMax.to(CSSRulePlugin.getRule(".contactFooter:before"), 1.2, {cssRule: {rotation: "-3deg"}, ease:Circ.easeInOut, force3D:true,lazy:true});
-	/*var tween1 = TweenMax.to(CSSRulePlugin.getRule(".contactFooter"), 1.2, {opacity: 0, ease:Circ.easeInOut, force3D:true,lazy:true});
-
-	  var scene1 = new ScrollScene({
-	    triggerElement: '#scene',
-	    offset: 0
-	  })
-	  .setClassToggle('body', 'scene-1-active')
-	  .setTween(tween1)
-	  .addTo(controller);
-	// Add debug indicators fixed on right side
-	scene1.addIndicators();*/
-
 	var controller = new ScrollMagic();
 
-	/*var changeToRed = TweenMax.to('#contactFooterTest', 0.5, {
-		backgroundColor: 'red',
-		color: 'white'
-	});*/
-	/*var changeToRed = TweenMax.to($(".contactFooter"), 1.2, {opacity: 0, ease:Circ.easeInOut, force3D:true,lazy:true});
+	var trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+	var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {rotation: "3deg", force3D:true,lazy:true});
+	var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 
 	var whenInContainer = new ScrollScene({
-		triggerElement: '#scene'
+		triggerElement: '.contactFooter',
+		duration: $('.contactFooter').outerHeight(),
+		offset: -300,
+		loglevel: 3
 	})
-	.setTween(changeToRed)
+	.setTween(trianglesFooterTopFonce)
 	.addTo(controller)
-	.addIndicators();*/
+	.addIndicators();
+
+	var whenInContainer2 = new ScrollScene({
+		triggerElement: '.contactFooter',
+		duration: $('.contactFooter').outerHeight(),
+		offset: -400,
+		loglevel: 3
+	})
+	.setTween(tiangleFooterTopClair)
+	.addTo(controller)
+	.addIndicators();
+
+	var whenInContainer3 = new ScrollScene({
+		triggerElement: '#container-3',
+		duration: $('#container-3').outerHeight(),
+		offset: 0,
+		loglevel: 3
+	})
+	.setTween(tiangleFooterBottomBlanc)
+	.addTo(controller)
+	.addIndicators();
 }
 
 
