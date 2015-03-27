@@ -23,9 +23,28 @@
       }
     }
   }
+
+  .slideTeam{
+    p{
+      max-width: 150px;
+    }
+  }
+
+  .navTeam{
+    width: 152px;
+    top: -85px;
+  }
+
+  .menuFooter{
+    padding: 0;
+  }
 }
 
 @media (max-width: 1040px){
+  header{
+    position: relative;
+  }
+
   .menu{
     display: none;
     position: fixed;
@@ -89,12 +108,47 @@
   }
 
   .topHeader{
+    height: 50px;
+    .content{
+      &:before{
+        top: -10px;
+      }
+    }
     p{
       display: none;
+    }
+    label{
+      padding: 0 25px 0 0;
+    }
+    input{
+      height: 22px;
+    }
+    button{
+      width: 45px;
+      height: 36px
+    }
+  }
+
+  .lang{
+    padding: 0;
+    width: auto;
+    margin: 15px 30px 0 0;
+    &:after{
+      display: none;
+    }
+    li{
+      &.actif{
+        position: relative;
+        + li{
+          margin: 0;
+          opacity: .7;
+        }
+      }
     }
   }
 
   .bottomHeader{
+    height: 75px;
     .btnFull{
       display: none;
       z-index: 10;
@@ -113,18 +167,107 @@
     }
   }
 
+  #logo{
+    margin: 15px 0;
+  }
+
   #burger{
     display: block;
+  }
+
+  #sliderTeam{
+    display: none;
+  }
+
+  .contactFooter{
+    padding: 0 0 90px;
+  }
+
+  .formContact{
+    width: 100%;
+    padding: 0;
+  }
+
+  .headHome{
+    .content{
+      &.main{
+        padding-top: 0;
+      }
+    }
   }
 }
 
 @media (max-width: 979px){
+  .navFooter{
+    .content{
+      > ul, > div{
+        width: 100%;
+      }
+    }
+  }
+
+  .itemsFooter{
+    padding: 0;
+    li{
+      padding: 0 50px;
+    }
+  }
+
+  .menuFooter{
+    margin: 70px 0 0;
+    p{
+      text-align: center;
+    }
+    ul{
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 767px){
+  .itemsFooter{
+    li{
+      padding: 0 0 0 30px;
+      &:first-child{
+        padding: 0 30px 0 0;
+      }
+    }
+  }
 }
 
 @media (max-width: 450px){
+  .buttonsTeam{
+    display: none;
+  }
+
+  .formContact{
+    h2{
+      margin: 0 0 30px;
+    }
+    p{
+      display: none;
+    }
+    form{
+      &.visible{
+        height: 460px;
+      }
+    }
+  }
+
+  .profil{
+    display: block;
+  }
+
+  .itemsFooter{
+    li{
+      padding: 0;
+      width: 100%;
+      &:first-child{
+        padding: 0;
+        margin: 0 0 60px;
+      }
+    }
+  }
 }
 
 /* @end */

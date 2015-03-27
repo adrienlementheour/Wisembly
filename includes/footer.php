@@ -65,11 +65,11 @@
           <li>
             <button id='ent' name='profilEnt' class='actif'>Entreprise</button>
           </li><li>
-            <button id='agence' name='profilEnt'>Agence</button>
+            <button id='agence' name='profilAgence'>Agence</button>
           </li><li>
-            <button id='ecole' name='profilEnt'>Ecole</button>
+            <button id='ecole' name='profilEcole'>Ecole</button>
           </li><li>
-            <button id='autre' name='profilEnt'>Autre</button>
+            <button id='autre' name='profilAutre'>Autre</button>
           </li>
         </ul>
         <button id='demandeContact' class='btnFull'>Demande de contact</button>
@@ -86,6 +86,17 @@
           </fieldset><fieldset class='small'>
             <label for='tel'>Téléphone</label>
             <input type='text' name='tel' id='tel'/>
+          </fieldset>
+          <fieldset class='profil'>
+            <label for='profil'>Votre profil</label>
+            <div class='select'>
+              <select name='profil'>
+                <option value='profilEnt'>Entreprise</option>
+                <option value='profilAgence'>Agence</option>
+                <option value='profilEcole'>Ecole</option>
+                <option value='profilAutre'>Autre</option>
+              </select>
+            </div>
           </fieldset>
           <fieldset class='block'>
             <label for='message'>Message <span>(facultatif)</span></label>
