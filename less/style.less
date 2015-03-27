@@ -351,6 +351,8 @@ button{
     left: 50%;
     margin: 0 0 0 -225px;
     .transform(rotate(0deg));
+    .backface-visibility(hidden);
+    .transform-style(preserve-3d);
   }
 }
 
@@ -489,7 +491,7 @@ header{
   .content{
     position: relative;
     z-index: 1;
-    &:before{
+    #triangle-top-header{
       content: '';
       display: block;
       position: absolute;
@@ -501,6 +503,9 @@ header{
       border-style: solid;
       border-width: 0 10px 60px 600px;
       border-color: transparent transparent @bleuTop transparent;
+      .transform(translateY(20px) rotate(3deg));
+      .backface-visibility(hidden);
+      .transform-style(preserve-3d);
     }
   }
 }
@@ -1014,6 +1019,8 @@ footer{
     z-index: -1;
     .transform(rotate(0deg) translateZ(1px));
     .transition(.3s ease-in-out);
+    .backface-visibility(hidden);
+    .transform-style(preserve-3d);
   }
   #triangle-footer-top-bleu-clair{
     display: block;
@@ -1021,11 +1028,12 @@ footer{
     top: -71px;
     height: 100px;
     width: 150%;
-    z-index: -1;
     left: -50%;
     z-index: -2;
     .transform(rotate(0deg) translateZ(1px));
     .transition(.3s ease-in-out);
+    .backface-visibility(hidden);
+    .transform-style(preserve-3d);
   }
   /*.no-csstransforms &{
     padding: 40px 0;
@@ -1270,6 +1278,8 @@ footer{
     background: @grisBorder;
     .transform(rotate(0deg));
     z-index: -1;
+    .backface-visibility(hidden);
+    .transform-style(preserve-3d);
   }
   li{
     padding: 0;
@@ -1403,6 +1413,8 @@ footer{
       z-index: -1;
       .transform(rotate(-22deg) translateY(40px));
       .opacity(0);
+      .backface-visibility(hidden);
+      .transform-style(preserve-3d);
     }
   }
   a{
