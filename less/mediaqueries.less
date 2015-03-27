@@ -74,6 +74,7 @@
   }
 
   .avantages{
+    margin: 90px 0 0;
     li{
       width: 50% !important;
       margin: 0 0 70px !important;
@@ -94,28 +95,6 @@
     + .content{
       &.main{
         padding-top: 0;
-      }
-    }
-  }
-
-  header{
-    &.menuVisible{
-      nav{
-        .menu{
-          top: 0;
-          height: 100%;
-          opacity: 1;
-          .transition(.3s ease-in-out);
-        }
-        #burger{
-          position: fixed;
-          top: 2px;
-          right: 30px;
-          .transition(.3s ease-in-out);
-        }
-        .btnFull{
-          display: block;
-        }
       }
     }
   }
@@ -192,7 +171,16 @@
       }
     }
     p{
-      display: none;
+      opacity: 0;
+      color: @txt;
+      position: fixed;
+      top: 1050px;
+      left: 30px;
+      line-height: 18px;
+      a{
+        color: @txt;
+      }
+      .transition(.3s ease-in-out);
     }
     label{
       padding: 0 25px 0 0;
@@ -227,22 +215,26 @@
   .bottomHeader{
     height: 75px;
     .btnFull{
-      display: none;
+      opacity: 0;
       z-index: 10;
       float: none;
       position: fixed;
-      top: 415px;
+      top: 1000px;
       left: 30px;
-      .home &{
-        opacity: 1;
-      }
+      .transition(.3s ease-in-out);
     }
     .subMenu{
       a{
         color: fade(@txt, 80);
+        font-size: 0.9em;
       }
       > li > a{
         padding-top: 0;
+      }
+    }
+    ul{
+      a{
+        font-size: 0.95em;
       }
     }
   }
@@ -253,7 +245,6 @@
 
   #burger{
     display: block;
-    z-index: 11;
   }
 
   #sliderTeam{
@@ -357,20 +348,10 @@
   header{
     &.menuVisible{
       .lang{
-        display: block;
+        opacity: 1;
+        .transition(.5s ease-in-out);
       }
       .topHeader{
-        p{
-          display: block;
-          color: @txt;
-          position: fixed;
-          top: 500px;
-          left: 30px;
-          line-height: 18px;
-          a{
-            color: @txt;
-          }
-        }
         form{
           display: none;
         }
@@ -420,10 +401,11 @@
   }
 
   .lang{
-    display: none;
+    opacity: 0;
     position: fixed;
     left: 30px;
     top: -5px;
+    .transition(.3s ease-in-out);
     a{
       color: @txt;
     }
@@ -465,6 +447,25 @@
 }
 
 @media (max-width: 520px){
+  footer{
+    margin: 60px 0 0;
+  }
+
+  .rsFooter{
+    ul{
+      &:before{
+        width: 300px;
+        margin: 0 0 0 -150px;
+      }
+    }
+  }
+
+  .scrollNext{
+    span{
+      width: 300px;
+      margin: 0 0 0 -150px;
+    }
+  }
 
   #prev{
     left: 20px;
@@ -519,6 +520,29 @@
 
   .headHome {
     background-position: 78% 100%;
+  }
+
+  .heading{
+    font-size: 2.5em;
+  }
+
+  #sliderRef{
+    + .btnLight{
+      margin: 80px auto 0;
+    }
+  }
+
+  .navSliderRef{
+    top: auto;
+    bottom: -50px;
+  }
+
+  #prev{
+    left: 100px;
+  }
+
+  #next{
+    right: 100px;
   }
 
   /*.blocH1{

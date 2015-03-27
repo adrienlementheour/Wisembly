@@ -63,6 +63,9 @@ function setSubMenu(){
 
 // Menu responsive //
 function responsiveMenu(){
+	if(!$(this).hasClass('actif')){
+		$(this).css({opacity: 0}).delay(50).animate({opacity: 1}, 250);
+	}
 	$(this).toggleClass('actif');
 	header.toggleClass('menuVisible');
 }

@@ -898,6 +898,23 @@ header.on #logo,
 header.on .bottomHeader .btnFull {
   margin: 13px 0;
 }
+header.menuVisible nav .menu {
+  top: 0;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+header.menuVisible nav .btnFull {
+  top: 395px;
+  opacity: 1;
+}
+header.menuVisible .topHeader p {
+  opacity: 1;
+  top: 475px;
+}
 .topHeader {
   height: 40px;
   background: #06698d;
@@ -1248,26 +1265,67 @@ header.on .bottomHeader .btnFull {
   height: 20px;
   padding: 0;
   top: 0;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  z-index: 11;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
 }
-.b {
+#burger .b {
   display: block;
   height: 4px;
   width: 28px;
   background: #46b489;
   position: absolute;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.b1 {
+#burger .b1 {
   top: 0;
 }
-.b2 {
+#burger .b2 {
   top: 8px;
 }
-.b3 {
+#burger .b3 {
   top: 16px;
+  opacity: 1;
+}
+#burger.actif {
+  position: absolute;
+  top: 2px;
+  right: 30px;
+}
+#burger.actif .b1 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: 0.1s all 0.3s ease-in-out;
+  -moz-transition: 0.1s all 0.3s ease-in-out;
+  -o-transition: 0.1s all 0.3s ease-in-out;
+  transition: 0.1s all 0.3s ease-in-out;
+}
+#burger.actif .b2 {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: 0.1s all 0.3s ease-in-out;
+  -moz-transition: 0.1s all 0.3s ease-in-out;
+  -o-transition: 0.1s all 0.3s ease-in-out;
+  transition: 0.1s all 0.3s ease-in-out;
+}
+#burger.actif .b3 {
+  opacity: 0;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 /* FOOTER */
 footer {
@@ -1276,8 +1334,30 @@ footer {
   overflow: hidden;
 }
 .contactFooter {
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   padding: 0 0 130px;
   position: relative;
+  /*&:before, &:after{
+    content: '';
+    display: none;
+    position: absolute;
+    top: -71px;
+    height: 100px;
+    width: 150%;
+  }
+  &:before{
+    z-index: -1;
+    //.transform(rotate(-3deg));
+    .transform(rotate(0deg) translateZ(1px));
+  }
+  &:after{
+    left: -50%;
+    z-index: -2;
+    .transform(rotate(3deg));
+  }*/
   /*.no-csstransforms &{
     padding: 40px 0;
   }*/
@@ -1466,37 +1546,25 @@ footer {
   color: rgba(255, 255, 255, 0.6);
   text-shadow: 2px 2px 2px #f4613c;
 }
+.contactFooter.rouge .btnFull,
+.contactFooter.rose .btnFull,
+.contactFooter.vert .btnFull {
+  background: #06698d;
+  border-color: #06698d;
+}
+.contactFooter.rouge .btnFull:hover,
+.contactFooter.rose .btnFull:hover,
+.contactFooter.vert .btnFull:hover,
+.contactFooter.rouge .btnFull:focus,
+.contactFooter.rose .btnFull:focus,
+.contactFooter.vert .btnFull:focus {
+  color: #06698d;
+}
 .contactFooter h2,
 .contactFooter button,
 .contactFooter p,
 .contactFooter label {
   color: #ffffff;
-}
-.contactFooter:before,
-.contactFooter:after {
-  content: '';
-  display: none;
-  position: absolute;
-  top: -71px;
-  height: 100px;
-  width: 150%;
-}
-.contactFooter:before {
-  z-index: -1;
-  -webkit-transform: rotate(0deg) translateZ(1px);
-  -moz-transform: rotate(0deg) translateZ(1px);
-  -o-transform: rotate(0deg) translateZ(1px);
-  -ms-transform: rotate(0deg) translateZ(1px);
-  transform: rotate(0deg) translateZ(1px);
-}
-.contactFooter:after {
-  left: -50%;
-  z-index: -2;
-  -webkit-transform: rotate(3deg);
-  -moz-transform: rotate(3deg);
-  -o-transform: rotate(3deg);
-  -ms-transform: rotate(3deg);
-  transform: rotate(3deg);
 }
 .contactFooter #triangle-footer-top-bleu-fonce {
   display: block;
@@ -1510,6 +1578,10 @@ footer {
   -o-transform: rotate(0deg) translateZ(1px);
   -ms-transform: rotate(0deg) translateZ(1px);
   transform: rotate(0deg) translateZ(1px);
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .contactFooter #triangle-footer-top-bleu-clair {
   display: block;
@@ -1525,6 +1597,10 @@ footer {
   -o-transform: rotate(0deg) translateZ(1px);
   -ms-transform: rotate(0deg) translateZ(1px);
   transform: rotate(0deg) translateZ(1px);
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .profil {
   display: none;
@@ -1678,6 +1754,10 @@ footer {
   height: 9px;
   border-radius: 20px;
   margin: 15px 0 0 34px;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .buttonsTeam li {
   padding: 0;
@@ -2715,6 +2795,9 @@ footer {
   .detailHome {
     padding: 0;
   }
+  .avantages {
+    margin: 90px 0 0;
+  }
   .avantages li {
     width: 50% !important;
     margin: 0 0 70px !important;
@@ -2733,27 +2816,6 @@ footer {
   }
   header + .content.main {
     padding-top: 0;
-  }
-  header.menuVisible nav .menu {
-    top: 0;
-    height: 100%;
-    opacity: 1;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-  }
-  header.menuVisible nav #burger {
-    position: fixed;
-    top: 2px;
-    right: 30px;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-  }
-  header.menuVisible nav .btnFull {
-    display: block;
   }
   .menu {
     height: 0;
@@ -2826,7 +2888,19 @@ footer {
     top: -10px;
   }
   .topHeader p {
-    display: none;
+    opacity: 0;
+    color: #3a434c;
+    position: fixed;
+    top: 1050px;
+    left: 30px;
+    line-height: 18px;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  .topHeader p a {
+    color: #3a434c;
   }
   .topHeader label {
     padding: 0 25px 0 0;
@@ -2857,28 +2931,32 @@ footer {
     height: 75px;
   }
   .bottomHeader .btnFull {
-    display: none;
+    opacity: 0;
     z-index: 10;
     float: none;
     position: fixed;
-    top: 415px;
+    top: 1000px;
     left: 30px;
-  }
-  .home .bottomHeader .btnFull {
-    opacity: 1;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
   .bottomHeader .subMenu a {
     color: rgba(58, 67, 76, 0.8);
+    font-size: 0.9em;
   }
   .bottomHeader .subMenu > li > a {
     padding-top: 0;
+  }
+  .bottomHeader ul a {
+    font-size: 0.95em;
   }
   #logo {
     margin: 15px 0;
   }
   #burger {
     display: block;
-    z-index: 11;
   }
   #sliderTeam {
     display: none;
@@ -2953,18 +3031,11 @@ footer {
 }
 @media (max-width: 767px) {
   header.menuVisible .lang {
-    display: block;
-  }
-  header.menuVisible .topHeader p {
-    display: block;
-    color: #3a434c;
-    position: fixed;
-    top: 500px;
-    left: 30px;
-    line-height: 18px;
-  }
-  header.menuVisible .topHeader p a {
-    color: #3a434c;
+    opacity: 1;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
   }
   header.menuVisible .topHeader form {
     display: none;
@@ -3007,10 +3078,14 @@ footer {
     width: 160px;
   }
   .lang {
-    display: none;
+    opacity: 0;
     position: fixed;
     left: 30px;
     top: -5px;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
   .lang a {
     color: #3a434c;
@@ -3038,6 +3113,17 @@ footer {
   }
 }
 @media (max-width: 520px) {
+  footer {
+    margin: 60px 0 0;
+  }
+  .rsFooter ul:before {
+    width: 300px;
+    margin: 0 0 0 -150px;
+  }
+  .scrollNext span {
+    width: 300px;
+    margin: 0 0 0 -150px;
+  }
   #prev {
     left: 20px;
   }
@@ -3076,6 +3162,22 @@ footer {
   }
   .headHome {
     background-position: 78% 100%;
+  }
+  .heading {
+    font-size: 2.5em;
+  }
+  #sliderRef + .btnLight {
+    margin: 80px auto 0;
+  }
+  .navSliderRef {
+    top: auto;
+    bottom: -50px;
+  }
+  #prev {
+    left: 100px;
+  }
+  #next {
+    right: 100px;
   }
   /*.blocH1{
     float: none;
