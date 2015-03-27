@@ -20,9 +20,18 @@ window.requestAnimFrame = (function(){
 /**** FONCTIONS SPECIFIQUES ****/
 
 // Header fixe //
+function fixedHeader(){
+	if($(window).width() > 1040){
+		myScroll > 100 ? header.addClass('on') : header.removeClass('on');
+	}
+}
+
+// Animations au scroll //
 function scrollPage(){
 	myScroll = $(document).scrollTop();
-	myScroll > 100 ? header.addClass('on') : header.removeClass('on');
+
+	fixedHeader();
+
 	requestAnimFrame(scrollPage);
 
 	/*function scrollEvent(){
@@ -39,6 +48,17 @@ function scrollPage(){
 			scrollMenu();
 		});
 	}*/
+}
+
+// Sous menu //
+function setSubMenu(){
+	if($(window).width() > 1040){
+		$('.hasSubMenu').on('mouseover', function(){
+			$(this).addClass('actifHover');
+		}).on('mouseout', function(){
+			$(this).removeClass('actifHover');
+		});
+	}
 }
 
 // Mise en place du slider //
@@ -83,13 +103,13 @@ function setSliderTeamProfil(){
 
 	$(this).addClass('actif').parents('li').siblings().find('button').removeClass();
 
-	if(numSlider == 0){
+	if(numSlider === 0){
 		contactFooter.addClass('bleu').removeClass('rose').removeClass('rouge').removeClass('vert');
-	}else if(numSlider == 1){
+	}else if(numSlider === 1){
 		contactFooter.addClass('rouge').removeClass('rose').removeClass('bleu').removeClass('vert');
-	}else if(numSlider == 2){
+	}else if(numSlider === 2){
 		contactFooter.addClass('vert').removeClass('rose').removeClass('rouge').removeClass('bleu');
-	}else if(numSlider == 3){
+	}else if(numSlider === 3){
 		contactFooter.addClass('rose').removeClass('bleu').removeClass('rouge').removeClass('vert');
 	}
 
@@ -160,6 +180,8 @@ $(function(){
 
 	scrollPage();
 
+	setSubMenu();
+
 	// Btn demande de contact footer //
 	$('#demandeContact').on('click', function(){
 		$(this).animate({opacity: 0}, 200, function(){
@@ -167,15 +189,6 @@ $(function(){
 			$('#contact, #bulle').addClass('visible');
 		});
 	});
-
-	// Sous menu //
-	if($(window).width() > 1040){
-		$('.hasSubMenu').on('mouseover', function(){
-			$(this).addClass('actifHover');
-		}).on('mouseout', function(){
-			$(this).removeClass('actifHover');
-		});
-	}
 
 	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
 	$('.buttonsTeam').find('button').on('click', setSliderTeamProfil);
@@ -192,9 +205,7 @@ $(function(){
 		return false;
 	});
 	function completeTlVideo(){
-		if(!isMobile.phone){
-			player1.playVideo();
-		};
+		if(!isMobile.phone){ player1.playVideo(); }
 	}
 
 	scrollMagic();
@@ -222,6 +233,8 @@ $(function(){
     });
 
     $(window).resize(function(){
+    	fixedHeader();
+    	setSubMenu();
 	});
 
 });

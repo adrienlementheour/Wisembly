@@ -188,6 +188,37 @@ textarea{
   height: 130px;
 }
 
+.select{
+  padding: 5px 10px;
+  border: 2px solid @blanc;
+  width: 100%;
+  position: relative;
+  .box-sizing(border-box);
+  &:after{
+    .fontIcon();
+    content: "\e601";
+    color: @blanc;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 8px;
+    pointer-events: none;
+    .transition(.3s ease-in-out);
+  }
+}
+select{
+  cursor: pointer;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  width: 130%;
+  color: @blanc;
+  .gothamItalic(1em);
+}
+
 label{
   display: block;
 }
@@ -650,8 +681,29 @@ header{
 
 #burger{
   float: right;
-  margin: 34px 0;
+  margin: 28px 0;
   display: none;
+  position: relative;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+}
+
+.b{
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: @vert;
+  position: absolute;
+}
+.b1{
+  top: 0;
+}
+.b2{
+  top: 8px;
+}
+.b3{
+  top: 16px;
 }
 
 /* FOOTER */
@@ -693,11 +745,19 @@ footer{
       }
     }
     .formContact{
-      input, textarea{
+      input, textarea, .select{
         background: #116180;
         border-color: darken(@bleu, 10);
         &:focus{
           border-color: @blanc;
+        }
+      }
+      .select{
+        &:hover, &:focus{
+          &:after{
+            color: darken(@bleu, 10);
+            .transition(.3s ease-in-out);
+          }
         }
       }
     }
@@ -745,7 +805,7 @@ footer{
       }
     }
     .formContact{
-      input, textarea{
+      input, textarea, .select{
         background: darken(@rouge, 5);
         border-color: darken(@rouge, 10);
         &:focus{
@@ -797,7 +857,7 @@ footer{
       }
     }
     .formContact{
-      input, textarea{
+      input, textarea, .select{
         background: darken(@vert, 5);
         border-color: darken(@vert, 10);
         &:focus{
@@ -849,7 +909,7 @@ footer{
       }
     }
     .formContact{
-      input, textarea{
+      input, textarea, .select{
         background: darken(@rose, 5);
         border-color: darken(@rose, 10);
         &:focus{
@@ -920,6 +980,10 @@ footer{
   /*.no-csstransforms &{
     padding: 40px 0;
   }*/
+}
+
+.profil{
+  display: none;
 }
 
 #sliderTeam{
@@ -1865,6 +1929,9 @@ footer{
 
 /* @end */
 
+.none{
+  display: none;
+}
 
 /* @group clearfix */
 

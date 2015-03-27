@@ -575,6 +575,56 @@ input + button {
 textarea {
   height: 130px;
 }
+.select {
+  padding: 5px 10px;
+  border: 2px solid #ffffff;
+  width: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.select:after {
+  font-family: 'wisembly';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e601";
+  color: #ffffff;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 8px;
+  pointer-events: none;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+select {
+  cursor: pointer;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  width: 130%;
+  color: #ffffff;
+  /*font-family: 'gothamBookItalic', sans-serif;
+  font-weight: normal;*/
+  font-family: 'Gotham SSm A', 'Gotham SSm B';
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 label {
   display: block;
 }
@@ -1193,8 +1243,28 @@ header.on .bottomHeader .btnFull {
 }
 #burger {
   float: right;
-  margin: 34px 0;
+  margin: 28px 0;
   display: none;
+  position: relative;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+}
+.b {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #46b489;
+  position: absolute;
+}
+.b1 {
+  top: 0;
+}
+.b2 {
+  top: 8px;
+}
+.b3 {
+  top: 16px;
 }
 /* FOOTER */
 footer {
@@ -1236,13 +1306,23 @@ footer {
   color: #aed7e8;
 }
 .contactFooter.bleu .formContact input,
-.contactFooter.bleu .formContact textarea {
+.contactFooter.bleu .formContact textarea,
+.contactFooter.bleu .formContact .select {
   background: #116180;
   border-color: #04455c;
 }
 .contactFooter.bleu .formContact input:focus,
-.contactFooter.bleu .formContact textarea:focus {
+.contactFooter.bleu .formContact textarea:focus,
+.contactFooter.bleu .formContact .select:focus {
   border-color: #ffffff;
+}
+.contactFooter.bleu .formContact .select:hover:after,
+.contactFooter.bleu .formContact .select:focus:after {
+  color: #04455c;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .contactFooter.bleu .buttonsTeam:after {
   background: #04455c;
@@ -1278,12 +1358,14 @@ footer {
   color: rgba(226, 92, 91, 0.6);
 }
 .contactFooter.rouge .formContact input,
-.contactFooter.rouge .formContact textarea {
+.contactFooter.rouge .formContact textarea,
+.contactFooter.rouge .formContact .select {
   background: #de4645;
   border-color: #da3130;
 }
 .contactFooter.rouge .formContact input:focus,
-.contactFooter.rouge .formContact textarea:focus {
+.contactFooter.rouge .formContact textarea:focus,
+.contactFooter.rouge .formContact .select:focus {
   border-color: #ffffff;
 }
 .contactFooter.rouge .buttonsTeam:after {
@@ -1320,12 +1402,14 @@ footer {
   color: rgba(70, 180, 137, 0.6);
 }
 .contactFooter.vert .formContact input,
-.contactFooter.vert .formContact textarea {
+.contactFooter.vert .formContact textarea,
+.contactFooter.vert .formContact .select {
   background: #3fa27b;
   border-color: #388f6d;
 }
 .contactFooter.vert .formContact input:focus,
-.contactFooter.vert .formContact textarea:focus {
+.contactFooter.vert .formContact textarea:focus,
+.contactFooter.vert .formContact .select:focus {
   border-color: #ffffff;
 }
 .contactFooter.vert .buttonsTeam:after {
@@ -1362,12 +1446,14 @@ footer {
   color: rgba(247, 136, 108, 0.6);
 }
 .contactFooter.rose .formContact input,
-.contactFooter.rose .formContact textarea {
+.contactFooter.rose .formContact textarea,
+.contactFooter.rose .formContact .select {
   background: #f67454;
   border-color: #f4613c;
 }
 .contactFooter.rose .formContact input:focus,
-.contactFooter.rose .formContact textarea:focus {
+.contactFooter.rose .formContact textarea:focus,
+.contactFooter.rose .formContact .select:focus {
   border-color: #ffffff;
 }
 .contactFooter.rose .buttonsTeam:after {
@@ -1409,6 +1495,7 @@ footer {
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
 }
+<<<<<<< HEAD
 .contactFooter #triangle-footer-top-bleu-fonce {
   display: block;
   position: absolute;
@@ -1438,6 +1525,10 @@ footer {
   -o-transform: rotate(0deg) translateZ(1px);
   -ms-transform: rotate(0deg) translateZ(1px);
   transform: rotate(0deg) translateZ(1px);
+=======
+.profil {
+  display: none;
+>>>>>>> origin/master
 }
 #sliderTeam {
   width: 50%;
@@ -2552,6 +2643,9 @@ footer {
 }
 /* @end */
 /* @end */
+.none {
+  display: none;
+}
 /* @group clearfix */
 .clearfix:before,
 .clearfix:after {
@@ -2578,8 +2672,21 @@ footer {
   .menu .hasSubMenu > a:after {
     right: 15px;
   }
+  .slideTeam p {
+    max-width: 150px;
+  }
+  .navTeam {
+    width: 152px;
+    top: -85px;
+  }
+  .menuFooter {
+    padding: 0;
+  }
 }
 @media (max-width: 1040px) {
+  header {
+    position: relative;
+  }
   .menu {
     display: none;
     position: fixed;
@@ -2639,8 +2746,42 @@ footer {
     text-rendering: optimizeLegibility;
     padding: 0;
   }
+  .topHeader {
+    height: 50px;
+  }
+  .topHeader .content:before {
+    top: -10px;
+  }
   .topHeader p {
     display: none;
+  }
+  .topHeader label {
+    padding: 0 25px 0 0;
+  }
+  .topHeader input {
+    height: 22px;
+  }
+  .topHeader button {
+    width: 45px;
+    height: 36px;
+  }
+  .lang {
+    padding: 0;
+    width: auto;
+    margin: 15px 30px 0 0;
+  }
+  .lang:after {
+    display: none;
+  }
+  .lang li.actif {
+    position: relative;
+  }
+  .lang li.actif + li {
+    margin: 0;
+    opacity: .7;
+  }
+  .bottomHeader {
+    height: 75px;
   }
   .bottomHeader .btnFull {
     display: none;
@@ -2656,8 +2797,78 @@ footer {
   .bottomHeader .subMenu a {
     color: rgba(58, 67, 76, 0.8);
   }
+  #logo {
+    margin: 15px 0;
+  }
   #burger {
     display: block;
+  }
+  #sliderTeam {
+    display: none;
+  }
+  .contactFooter {
+    padding: 0 0 90px;
+  }
+  .formContact {
+    width: 100%;
+    padding: 0;
+  }
+  .headHome .content.main {
+    padding-top: 0;
+  }
+}
+@media (max-width: 979px) {
+  .navFooter .content > ul,
+  .navFooter .content > div {
+    width: 100%;
+  }
+  .itemsFooter {
+    padding: 0;
+  }
+  .itemsFooter li {
+    padding: 0 50px;
+  }
+  .menuFooter {
+    margin: 70px 0 0;
+  }
+  .menuFooter p {
+    text-align: center;
+  }
+  .menuFooter ul {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .itemsFooter li {
+    padding: 0 0 0 30px;
+  }
+  .itemsFooter li:first-child {
+    padding: 0 30px 0 0;
+  }
+}
+@media (max-width: 450px) {
+  .buttonsTeam {
+    display: none;
+  }
+  .formContact h2 {
+    margin: 0 0 30px;
+  }
+  .formContact p {
+    display: none;
+  }
+  .formContact form.visible {
+    height: 460px;
+  }
+  .profil {
+    display: block;
+  }
+  .itemsFooter li {
+    padding: 0;
+    width: 100%;
+  }
+  .itemsFooter li:first-child {
+    padding: 0;
+    margin: 0 0 60px;
   }
 }
 /* @end */
