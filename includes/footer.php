@@ -63,13 +63,13 @@
         <p>A chaque secteur, son interlocuteur ! Votre profil :</p>
         <ul class='buttonsTeam'>
           <li>
-            <button id='ent' class='actif'>Entreprise</button>
+            <button id='ent' name='profilEnt' class='actif'>Entreprise</button>
           </li><li>
-            <button id='agence'>Agence</button>
+            <button id='agence' name='profilEnt'>Agence</button>
           </li><li>
-            <button id='ecole'>Ecole</button>
+            <button id='ecole' name='profilEnt'>Ecole</button>
           </li><li>
-            <button id='autre'>Autre</button>
+            <button id='autre' name='profilEnt'>Autre</button>
           </li>
         </ul>
         <button id='demandeContact' class='btnFull'>Demande de contact</button>
@@ -91,7 +91,7 @@
             <label for='message'>Message <span>(facultatif)</span></label>
             <textarea name='message' id='message'></textarea>
           </fieldset>
-          <button type='submit' name='submitContact' class='btnFull'>Contactez-moi !</button>
+          <button type='submit' name='submitContact' class='btnFull' form='contact'>Contactez-moi !</button>
         </form>
       </div>
     </div>
