@@ -148,7 +148,7 @@ function scrollMagic(){
 	var trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 	var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {rotation: "3deg", force3D:true,lazy:true});
 	var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-	var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {rotation: "-3deg", y: "0px", force3D:true,lazy:true});
+	var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {rotation: "-3deg", y: "0px", opacity: "1", force3D:true,lazy:true});
 	var scrollNext1= TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 	var scrollNext2= TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 	var scrollNext3= TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});

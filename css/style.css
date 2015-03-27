@@ -2003,6 +2003,9 @@ footer {
   -o-transform: rotate(-22deg) translateY(40px);
   -ms-transform: rotate(-22deg) translateY(40px);
   transform: rotate(-22deg) translateY(40px);
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
 }
 .menuFooter a {
   border: 0;
