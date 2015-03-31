@@ -72,7 +72,9 @@ h2, h3{
 h2{
   .gothamBold(1.3em);
   color: @bleuH2;
-  margin-top: 4em;
+  //margin-top: 4em;
+  margin-top: 0;
+  padding-top: 4em;
   &.big{
     font-size: 1.45em;
   }
@@ -247,6 +249,10 @@ button{
   }
 }
 
+.bgBlanc{
+  background-color: @blanc;
+}
+
 /* BUTTONS */
 
 .btnFull, .btnLight, .btnBlanc{
@@ -367,9 +373,13 @@ button{
   margin: 0 auto;
   &.main{
     padding-top: 135px;
+    position: relative;
   }
   &.simple{
     padding-right: 185px;
+  }
+  &.paddingBottom{
+    padding-bottom: 100px;
   }
 }
 
@@ -786,14 +796,23 @@ header{
 
 footer{
   padding: 130px 0 0;
-  margin: 100px 0 0;
+  margin: 0;
   overflow: hidden;
+  position: relative;
 }
 
 .contactFooter{
   .transition(.3s ease-in-out);
+  .wrapper-contentinfo{
+    display: block;
+    position: relative;
+    .transition(.3s ease-in-out);
+  }
   &.bleu{
     background: @bleuFooterContact;
+    .wrapper-contentinfo{
+      background: @bleuFooterContact;
+    }
     #triangle-footer-top-bleu-fonce{
       background: @bleuFooterContact;
     }
@@ -849,6 +868,9 @@ footer{
   }
   &.rouge{
     background: @rouge;
+    .wrapper-contentinfo{
+      background: @rouge;
+    }
     #triangle-footer-top-bleu-fonce{
       background: @rouge;
     }
@@ -896,6 +918,9 @@ footer{
   }
   &.vert{
     background: @vert;
+    .wrapper-contentinfo{
+      background: @vert;
+    }
     #triangle-footer-top-bleu-fonce{
       background: @vert;
     }
@@ -943,6 +968,9 @@ footer{
   }
   &.rose{
     background: @rose;
+    .wrapper-contentinfo{
+      background: @rose;
+    }
     #triangle-footer-top-bleu-fonce{
       background: @rose;
     }
@@ -999,27 +1027,10 @@ footer{
   }
   padding: 0 0 130px;
   position: relative;
+  z-index: 2;
   h2, button, p, label{
     color: @blanc;
   }
-  /*&:before, &:after{
-    content: '';
-    display: none;
-    position: absolute;
-    top: -71px;
-    height: 100px;
-    width: 150%;
-  }
-  &:before{
-    z-index: -1;
-    //.transform(rotate(-3deg));
-    .transform(rotate(0deg) translateZ(1px));
-  }
-  &:after{
-    left: -50%;
-    z-index: -2;
-    .transform(rotate(3deg));
-  }*/
   #triangle-footer-top-bleu-fonce{
     display: block;
     position: absolute;
@@ -1143,6 +1154,7 @@ footer{
   .box-sizing(border-box);
   h2{
     margin: 0;
+    padding: 0;
   }
   p{
     margin-top: 0;
@@ -1154,7 +1166,6 @@ footer{
     margin: 0 0 5px 1px;
   }
   form{
-    margin: 50px 0 0;
     height: 0;
     opacity: 0;
     overflow: hidden;
@@ -1163,6 +1174,11 @@ footer{
       height: 390px;
       opacity: 1;
       .transition(.3s ease-in-out);
+    }
+    fieldset{
+      &:first-of-type{
+        margin-top: 50px;
+      }
     }
   }
 }
@@ -1250,7 +1266,10 @@ footer{
   position: relative;
   background: @grisBorder;
   padding: 15px 0;
-  z-index: 1;
+  z-index: 3;
+  .no-mobile &{
+    margin-bottom: 232px;
+  }
   /*&:before, &:after{
     content: '';
     //display: block;
@@ -1467,6 +1486,14 @@ footer{
 }
 
 .rsFooter{
+  .no-mobile &{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  width: 100%;
+  background-color: @blanc;
+
   text-align: center;
   margin: 105px auto 0;
   li{
@@ -1537,8 +1564,6 @@ footer{
 /* ENTETE */
 
 .headHome{
-  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
-  background-size: cover; 
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -1547,11 +1572,21 @@ footer{
     position: relative;
     z-index: 2;
   }
+  #bgHeadHome{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
+    background-size: cover;
+    pointer-events: none;
+  }
   #triangle-header-vert{
     display: block;
     position: absolute;
     width: 150%;
-    z-index: -1;
     right: 0;
     bottom: -60px;
     height: 170px;
@@ -1562,7 +1597,6 @@ footer{
     display: block;
     position: absolute;
     width: 150%;
-    z-index: -1;
     bottom: -25px;
     height: 105px;
     background: @blanc;

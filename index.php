@@ -21,6 +21,7 @@
 		<?php include('includes/header.html'); ?>
 
 		<section class='headHome'>
+			<div id="bgHeadHome"></div>
 			<div id="triangle-header-vert"></div>
 			<div id="triangle-header-blanc"></div>
 			<div class='content main'>
@@ -53,7 +54,7 @@
 				<button class='icon-down scrollNext'><span class="scrollNext1"></span></button>
 			</section>
 
-			<section class='content'>
+			<section class='content bgBlanc'>
 				<h2>Ils nous font confiance</h2>
 				<div id='sliderRef'>
 					<ul>
@@ -179,7 +180,7 @@
 				<button class='icon-down scrollNext'><span class="scrollNext2"></span></button>
 			</section>
 
-			<section class='content'>
+			<section class='content bgBlanc'>
 				<h2>Collaborer en réunion</h2>
 				<div id="bloc-video">
 					<div class='embed-container'><iframe id="player-1" class="iframe-video" src='http://www.youtube.com/embed/wZZ7oFKsKzY?enablejsapi=1' frameborder='0' allowfullscreen></iframe></div>
@@ -212,7 +213,7 @@
 				<button class='icon-down scrollNext'><span class="scrollNext3"></span></button>
 			</section>
 
-			<section class='content'>
+			<section class='content bgBlanc paddingBottom'>
 				<h2>Ils parlent de nous</h2>
 				<ul class='logosPresse'>
 					<li>

@@ -61,6 +61,15 @@ function setSubMenu(){
 	}
 }
 
+function hoverMenu(){
+	$('ul.menu li').on('mouseover', function(){
+		TweenMax.to($("#triangle-top-header"), 0.2, {css:{y: "-60px", force3D:true}});
+	}).on('mouseout', function(){
+		TweenMax.to($("#triangle-top-header"), 0.2, {css:{y: "0px", force3D:true}});
+	});
+}
+
+
 // Menu responsive //
 function responsiveMenu(){
 	if(!$(this).hasClass('actif')){
@@ -156,6 +165,10 @@ function videoCover(){
 		   .set($(".cover-video"), {display: "none"});
 
 	return false;
+}
+
+function heightBgHeadHome(){
+	TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height()+"px"});
 }
 
 // ScrollMagic
@@ -255,6 +268,16 @@ $(function(){
 	scrollPage();
 
 	setSubMenu();
+	hoverMenu();
+	if(!isMobile.any){
+		$("html").addClass("no-mobile");
+	}
+	if($("body").hasClass("home")){
+		if(!isMobile.any){
+			TweenMax.set($("#bgHeadHome"), {position:"fixed"});
+		}
+		TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height()+"px"});
+	}
 
 	$('#burger').on('click', responsiveMenu);
 
@@ -302,6 +325,9 @@ $(function(){
     $(window).resize(function(){
     	fixedHeader();
     	setSubMenu();
+    	if($("body").hasClass("home")){
+	    	heightBgHeadHome();
+	    }
 	});
 
 });

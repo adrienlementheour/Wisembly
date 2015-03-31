@@ -418,7 +418,8 @@ h2 {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   color: #17698d;
-  margin-top: 4em;
+  margin-top: 0;
+  padding-top: 4em;
 }
 h2.big {
   font-size: 1.45em;
@@ -668,6 +669,9 @@ button:focus {
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+.bgBlanc {
+  background-color: #ffffff;
+}
 /* BUTTONS */
 .btnFull,
 .btnLight,
@@ -850,9 +854,13 @@ button:focus {
 }
 .content.main {
   padding-top: 135px;
+  position: relative;
 }
 .content.simple {
   padding-right: 185px;
+}
+.content.paddingBottom {
+  padding-bottom: 100px;
 }
 /* HEADER */
 header {
@@ -1389,8 +1397,9 @@ header.menuVisible #fdMenu {
 /* FOOTER */
 footer {
   padding: 130px 0 0;
-  margin: 100px 0 0;
+  margin: 0;
   overflow: hidden;
+  position: relative;
 }
 .contactFooter {
   -webkit-transition: 0.3s ease-in-out;
@@ -1399,29 +1408,23 @@ footer {
   transition: 0.3s ease-in-out;
   padding: 0 0 130px;
   position: relative;
-  /*&:before, &:after{
-    content: '';
-    display: none;
-    position: absolute;
-    top: -71px;
-    height: 100px;
-    width: 150%;
-  }
-  &:before{
-    z-index: -1;
-    //.transform(rotate(-3deg));
-    .transform(rotate(0deg) translateZ(1px));
-  }
-  &:after{
-    left: -50%;
-    z-index: -2;
-    .transform(rotate(3deg));
-  }*/
+  z-index: 2;
   /*.no-csstransforms &{
     padding: 40px 0;
   }*/
 }
+.contactFooter .wrapper-contentinfo {
+  display: block;
+  position: relative;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
 .contactFooter.bleu {
+  background: #0d5c7b;
+}
+.contactFooter.bleu .wrapper-contentinfo {
   background: #0d5c7b;
 }
 .contactFooter.bleu #triangle-footer-top-bleu-fonce {
@@ -1473,6 +1476,9 @@ footer {
 .contactFooter.rouge {
   background: #e25c5b;
 }
+.contactFooter.rouge .wrapper-contentinfo {
+  background: #e25c5b;
+}
 .contactFooter.rouge #triangle-footer-top-bleu-fonce {
   background: #e25c5b;
 }
@@ -1514,6 +1520,9 @@ footer {
 .contactFooter.vert {
   background: #46b489;
 }
+.contactFooter.vert .wrapper-contentinfo {
+  background: #46b489;
+}
 .contactFooter.vert #triangle-footer-top-bleu-fonce {
   background: #46b489;
 }
@@ -1553,6 +1562,9 @@ footer {
   text-shadow: 2px 2px 2px #388f6d;
 }
 .contactFooter.rose {
+  background: #f7886c;
+}
+.contactFooter.rose .wrapper-contentinfo {
   background: #f7886c;
 }
 .contactFooter.rose #triangle-footer-top-bleu-fonce {
@@ -1782,6 +1794,7 @@ footer {
 }
 .formContact h2 {
   margin: 0;
+  padding: 0;
 }
 .formContact p {
   margin-top: 0;
@@ -1794,7 +1807,6 @@ footer {
   margin: 0 0 5px 1px;
 }
 .formContact form {
-  margin: 50px 0 0;
   height: 0;
   opacity: 0;
   overflow: hidden;
@@ -1810,6 +1822,9 @@ footer {
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+}
+.formContact form fieldset:first-of-type {
+  margin-top: 50px;
 }
 .buttonsTeam {
   margin: 0 0 30px;
@@ -1899,7 +1914,7 @@ footer {
   position: relative;
   background: #ebeeef;
   padding: 15px 0;
-  z-index: 1;
+  z-index: 3;
   /*&:before, &:after{
     content: '';
     //display: block;
@@ -1918,6 +1933,9 @@ footer {
     top: auto;
     bottom: -30px;
   }*/
+}
+.no-mobile .navFooter {
+  margin-bottom: 232px;
 }
 .navFooter #triangle-footer-bottom-bleu-clair {
   display: block;
@@ -2214,8 +2232,15 @@ footer {
   font-size: .85em;
 }
 .rsFooter {
+  width: 100%;
+  background-color: #ffffff;
   text-align: center;
   margin: 105px auto 0;
+}
+.no-mobile .rsFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 .rsFooter li {
   display: inline-block;
@@ -2287,8 +2312,6 @@ footer {
 }
 /* ENTETE */
 .headHome {
-  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
-  background-size: cover;
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -2298,11 +2321,21 @@ footer {
   position: relative;
   z-index: 2;
 }
+.headHome #bgHeadHome {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
+  background-size: cover;
+  pointer-events: none;
+}
 .headHome #triangle-header-vert {
   display: block;
   position: absolute;
   width: 150%;
-  z-index: -1;
   right: 0;
   bottom: -60px;
   height: 170px;
@@ -2317,7 +2350,6 @@ footer {
   display: block;
   position: absolute;
   width: 150%;
-  z-index: -1;
   bottom: -25px;
   height: 105px;
   background: #ffffff;
@@ -2831,7 +2863,7 @@ footer {
    ========================================================================== */
 /* @group Responsive horizontal */
 @media (max-width: 1820px) {
-  .headHome {
+  .headHome #bgHeadHome {
     background: url(../layoutImg/home/smallHeadHome.jpg) no-repeat 50% 100%;
     background-size: auto;
   }
@@ -2874,7 +2906,7 @@ footer {
   .menuFooter {
     padding: 0;
   }
-  .headHome {
+  .headHome #bgHeadHome {
     background-position: 66% 100%;
   }
   .detailHome {
@@ -3201,7 +3233,7 @@ footer {
   .itemsFooter li:first-child {
     padding: 0 30px 0 0;
   }
-  .headHome {
+  .headHome #bgHeadHome {
     background-position: 73% 100%;
   }
   .headHome #triangle-header-vert {
@@ -3275,7 +3307,10 @@ footer {
 }
 @media (max-width: 520px) {
   footer {
-    margin: 60px 0 0;
+    margin: 0;
+  }
+  .content.paddingBottom {
+    padding-bottom: 60px;
   }
   .rsFooter ul:before {
     width: 300px;
@@ -3321,7 +3356,7 @@ footer {
     padding: 0;
     margin: 0 0 60px;
   }
-  .headHome {
+  .headHome #bgHeadHome {
     background-position: 78% 100%;
   }
   .heading {
@@ -3346,6 +3381,11 @@ footer {
 }
 /* @end */
 /* @group Responsive vertical */
+@media (max-height: 850px) {
+  .heading {
+    margin: 10vh 0 0;
+  }
+}
 @media (max-height: 850px) {
   .heading {
     margin: 10vh 0 0;

@@ -5,8 +5,10 @@
 
 @media (max-width: 1820px){
   .headHome{
-    background: url(../layoutImg/home/smallHeadHome.jpg) no-repeat 50% 100%;
-    background-size: auto; 
+    #bgHeadHome{
+      background: url(../layoutImg/home/smallHeadHome.jpg) no-repeat 50% 100%;
+      background-size: auto;
+    }
   }
 }
 
@@ -66,7 +68,9 @@
   }
 
   .headHome{
-    background-position: 66% 100%;
+    #bgHeadHome{
+      background-position: 66% 100%;
+    }
   }
 
   .detailHome{
@@ -450,7 +454,9 @@
   }
 
   .headHome {
-    background-position: 73% 100%;
+      #bgHeadHome{
+        background-position: 73% 100%;
+      }
       #triangle-header-vert{
         .transform(rotate(7deg));
       }
@@ -507,7 +513,10 @@
 
 @media (max-width: 520px){
   footer{
-    margin: 60px 0 0;
+    margin: 0;
+  }
+  .content.paddingBottom {
+    padding-bottom: 60px;
   }
 
   .rsFooter{
@@ -578,7 +587,9 @@
   }
 
   .headHome {
-    background-position: 78% 100%;
+    #bgHeadHome{
+      background-position: 78% 100%;
+    }
   }
 
   .heading{
@@ -612,6 +623,12 @@
 /* @end */
 
 /* @group Responsive vertical */
+
+@media (max-height: 850px){
+  .heading{
+    margin: 10vh 0 0;
+  }
+}
 
 @media (max-height: 850px){
   .heading{

@@ -2,110 +2,112 @@
   <section class='contactFooter bleu'>
     <div id='triangle-footer-top-bleu-fonce'></div>
     <div id='triangle-footer-top-bleu-clair'></div>
-    <div class='content'>
-      <div id='sliderTeam'>
-        <div id='bulle'>
-          <h2>Et ensuite ?</h2>
-          <p>Nous vous recontactons sous 24h<br/>
-          Nous planifions votre démo,<br/>
-          ou préparons votre devis</p>
+    <div class="wrapper-contentinfo">
+      <div class='content'>
+        <div id='sliderTeam'>
+          <div id='bulle'>
+            <h2>Et ensuite ?</h2>
+            <p>Nous vous recontactons sous 24h<br/>
+            Nous planifions votre démo,<br/>
+            ou préparons votre devis</p>
+          </div>
+          
+          <ul class='slidesTeam on'>
+            <li class='slideTeam on'>
+              <p>
+                <strong>Arnaud</strong>
+                Key Account Manager
+              </p>
+              <img src='layoutImg/team/arnaud.png' alt='Arnaud'/>
+            </li>
+            <li class='slideTeam'>
+              <p>
+                <strong>Bastien</strong>
+                Key Account Manager
+              </p>
+              <img src='layoutImg/team/bastien.png' alt='Bastien'/>
+            </li>
+          </ul>
+
+          <ul class='slidesTeam'>
+            <li class='slideTeam on'>
+              <p>
+                <strong>Cécile</strong>
+                Key Account Manager
+              </p>
+              <img src='layoutImg/team/cecile.png' alt='Cecile'/>
+            </li>
+          </ul>
+
+          <ul class='slidesTeam'>
+            <li class='slideTeam on'>
+              <p>
+                <strong>Chloé</strong>
+                Key Account Manager
+              </p>
+              <img src='layoutImg/team/chloe.png' alt='Chloe'/>
+            </li>
+          </ul>
+
+          <ul class='slidesTeam'>
+            <li class='slideTeam on'>
+              <p>
+                <strong>Emilio</strong>
+                Key Account Manager
+              </p>
+              <img src='layoutImg/team/emilio.png' alt='Emilio'/>
+            </li>
+          </ul>
+
+          <ul class='navTeam'></ul>
+
+        </div><div class='formContact'>
+          <h2 class='big'>Intéressé ?</h2>
+          <p>A chaque secteur, son interlocuteur ! Votre profil :</p>
+          <ul class='buttonsTeam'>
+            <li>
+              <button id='ent' name='profilEnt' class='actif'>Entreprise</button>
+            </li><li>
+              <button id='agence' name='profilAgence'>Agence</button>
+            </li><li>
+              <button id='ecole' name='profilEcole'>Ecole</button>
+            </li><li>
+              <button id='autre' name='profilAutre'>Autre</button>
+            </li>
+          </ul>
+          <button id='demandeContact' class='btnFull'>Demande de contact</button>
+          <form id='contact' action='#' method='POST'>
+            <fieldset class='left'>
+              <label for='nom'>Nom complet</label>
+              <input type='text' name='nom' id='nom'/>
+            </fieldset><fieldset>
+              <label for='entreprise'>Entreprise</label>
+              <input type='text' name='entreprise' id='entreprise'/>
+            </fieldset><fieldset class='left'>
+              <label for='email'>Email</label>
+              <input type='email' name='email' id='email'/>
+            </fieldset><fieldset class='small'>
+              <label for='tel'>Téléphone</label>
+              <input type='text' name='tel' id='tel'/>
+            </fieldset>
+            <fieldset class='profil'>
+              <label for='profil'>Votre profil</label>
+              <div class='select'>
+                <select name='profil'>
+                  <option value='profilEnt'>Entreprise</option>
+                  <option value='profilAgence'>Agence</option>
+                  <option value='profilEcole'>Ecole</option>
+                  <option value='profilAutre'>Autre</option>
+                </select>
+              </div>
+            </fieldset>
+            <fieldset class='block'>
+              <label for='message'>Message <span>(facultatif)</span></label>
+              <textarea name='message' id='message'></textarea>
+            </fieldset>
+            <button type='submit' name='submitContact' class='btnFull' form='contact'>Contactez-moi !</button>
+          </form>
         </div>
-        
-        <ul class='slidesTeam on'>
-          <li class='slideTeam on'>
-            <p>
-              <strong>Arnaud</strong>
-              Key Account Manager
-            </p>
-            <img src='layoutImg/team/arnaud.png' alt='Arnaud'/>
-          </li>
-          <li class='slideTeam'>
-            <p>
-              <strong>Bastien</strong>
-              Key Account Manager
-            </p>
-            <img src='layoutImg/team/bastien.png' alt='Bastien'/>
-          </li>
-        </ul>
-
-        <ul class='slidesTeam'>
-          <li class='slideTeam on'>
-            <p>
-              <strong>Cécile</strong>
-              Key Account Manager
-            </p>
-            <img src='layoutImg/team/cecile.png' alt='Cecile'/>
-          </li>
-        </ul>
-
-        <ul class='slidesTeam'>
-          <li class='slideTeam on'>
-            <p>
-              <strong>Chloé</strong>
-              Key Account Manager
-            </p>
-            <img src='layoutImg/team/chloe.png' alt='Chloe'/>
-          </li>
-        </ul>
-
-        <ul class='slidesTeam'>
-          <li class='slideTeam on'>
-            <p>
-              <strong>Emilio</strong>
-              Key Account Manager
-            </p>
-            <img src='layoutImg/team/emilio.png' alt='Emilio'/>
-          </li>
-        </ul>
-
-        <ul class='navTeam'></ul>
-
-      </div><div class='formContact'>
-        <h2 class='big'>Intéressé ?</h2>
-        <p>A chaque secteur, son interlocuteur ! Votre profil :</p>
-        <ul class='buttonsTeam'>
-          <li>
-            <button id='ent' name='profilEnt' class='actif'>Entreprise</button>
-          </li><li>
-            <button id='agence' name='profilAgence'>Agence</button>
-          </li><li>
-            <button id='ecole' name='profilEcole'>Ecole</button>
-          </li><li>
-            <button id='autre' name='profilAutre'>Autre</button>
-          </li>
-        </ul>
-        <button id='demandeContact' class='btnFull'>Demande de contact</button>
-        <form id='contact' action='#' method='POST'>
-          <fieldset class='left'>
-            <label for='nom'>Nom complet</label>
-            <input type='text' name='nom' id='nom'/>
-          </fieldset><fieldset>
-            <label for='entreprise'>Entreprise</label>
-            <input type='text' name='entreprise' id='entreprise'/>
-          </fieldset><fieldset class='left'>
-            <label for='email'>Email</label>
-            <input type='email' name='email' id='email'/>
-          </fieldset><fieldset class='small'>
-            <label for='tel'>Téléphone</label>
-            <input type='text' name='tel' id='tel'/>
-          </fieldset>
-          <fieldset class='profil'>
-            <label for='profil'>Votre profil</label>
-            <div class='select'>
-              <select name='profil'>
-                <option value='profilEnt'>Entreprise</option>
-                <option value='profilAgence'>Agence</option>
-                <option value='profilEcole'>Ecole</option>
-                <option value='profilAutre'>Autre</option>
-              </select>
-            </div>
-          </fieldset>
-          <fieldset class='block'>
-            <label for='message'>Message <span>(facultatif)</span></label>
-            <textarea name='message' id='message'></textarea>
-          </fieldset>
-          <button type='submit' name='submitContact' class='btnFull' form='contact'>Contactez-moi !</button>
-        </form>
       </div>
     </div>
   </section>
@@ -174,14 +176,16 @@
     </div>
   </section>
 
-  <section class='rsFooter content'>
-    <ul>
-      <li><a href='#' title='Wisembly sur Facebook' class='icon-fb'><span>Facebook</span></a></li>
-      <li><a href='#' title='Wisembly sur Twitter' class='icon-tw'><span>Twitter</span></a></li>
-      <li><a href='#' title='Wisembly sur LinkedIn' class='icon-in'><span>LinkedIn</span></a></li>
-      <li><a href='#' title='Wisembly sur YouTube' class='icon-yt'><span>YouTube</span></a></li>
-    </ul>
-    <p>©2015 <a href=''>Mentions légales</a></p>
+  <section class='rsFooter'>
+    <div class="content">
+      <ul>
+        <li><a href='#' title='Wisembly sur Facebook' class='icon-fb'><span>Facebook</span></a></li>
+        <li><a href='#' title='Wisembly sur Twitter' class='icon-tw'><span>Twitter</span></a></li>
+        <li><a href='#' title='Wisembly sur LinkedIn' class='icon-in'><span>LinkedIn</span></a></li>
+        <li><a href='#' title='Wisembly sur YouTube' class='icon-yt'><span>YouTube</span></a></li>
+      </ul>
+      <p>©2015 <a href=''>Mentions légales</a></p>
+    </div>
   </section>
 </footer>
 
