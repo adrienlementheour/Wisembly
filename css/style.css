@@ -918,12 +918,12 @@ header.menuVisible nav .menu {
   transition: 0.3s ease-in-out;
 }
 header.menuVisible nav .btnFull {
-  top: 395px;
+  top: 340px;
   opacity: 1;
 }
 header.menuVisible .topHeader p {
   opacity: 1;
-  top: 475px;
+  top: 455px;
 }
 header.menuVisible #fdMenu {
   opacity: .95;
@@ -980,6 +980,8 @@ header.menuVisible #fdMenu {
 .topHeader form {
   margin: 7px 0;
   float: right;
+  position: relative;
+  z-index: 2;
 }
 .topHeader button {
   display: inline-block;
@@ -1010,6 +1012,7 @@ header.menuVisible #fdMenu {
 .topHeader .content {
   position: relative;
   z-index: 1;
+  height: 100%;
 }
 .topHeader .content #container-triangle-top-header {
   display: block;
@@ -2945,20 +2948,13 @@ footer {
     padding: 0 0 5px;
   }
   .subMenu ul {
-    display: block;
-    padding: 0 0 10px 10px;
-  }
-  .subMenu ul a {
-    /*font-family: 'gothamBookItalic', sans-serif;
-  font-weight: normal;*/
-    font-family: 'Gotham SSm A', 'Gotham SSm B';
-    font-weight: 400;
-    font-style: italic;
-    font-size: 1em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    padding: 0;
+    display: none;
+    /*display: block;
+      padding: 0 0 10px 10px;
+      a{
+        .gothamItalic(1em);
+        padding: 0;
+      }*/
   }
   .topHeader {
     height: 50px;
@@ -3130,6 +3126,9 @@ footer {
   header.menuVisible #burger {
     top: 7px;
   }
+  header.menuVisible nav .btnFull {
+    top: 370px;
+  }
   .home .topHeader form {
     display: block;
   }
@@ -3171,7 +3170,7 @@ footer {
     opacity: 0;
     position: absolute;
     left: 30px;
-    top: -5px;
+    top: 15px;
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
@@ -3181,7 +3180,7 @@ footer {
     color: #3a434c;
   }
   .menu {
-    padding: 35px 30px;
+    padding: 60px 30px;
   }
   #burger.actif .b1,
   #burger.actif .b2 {

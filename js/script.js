@@ -144,21 +144,35 @@ function onYouTubeIframeAPIReady() {
     player1 = new YT.Player('player-1');
 }
 
+function videoCover(){
+	function completeTlVideo(){
+		if(!isMobile.phone){ player1.playVideo(); }
+	}
+
+	var tlVideo = new TimelineMax({onComplete:completeTlVideo});
+
+	tlVideo.to($('.zone-txt-cover-video'), 0.2, {y: "100px", opacity: "0", ease:Cubic.easeInOut})
+		   .to($(".bg-cover-video"), 0.5, {rotationZ:1, rotation:"-45deg", y: "-100%", transformOrigin:"left bottom", ease:Cubic.easeInOut})
+		   .set($(".cover-video"), {display: "none"});
+
+	return false;
+}
+
 // ScrollMagic
 function scrollMagic(){
 	if(($(window).width()>767)){
-		var controller = new ScrollMagic(),
+		var controller = new ScrollMagic();
 		
-			triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true}}),
-			triangleHeaderVert = TweenMax.to($("#triangle-header-vert"), 1.2, {css:{rotation: "7deg", force3D:true}}),
-			triangleHeaderBlanc = TweenMax.to($("#triangle-header-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}}),
-			trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {css:{rotation: "-3deg", force3D:true}}),
-			tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {css:{rotation: "3deg", force3D:true}}),
-			tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}}),
-			tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}}),
-			scrollNext1= TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true}),
-			scrollNext2= TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true}),
-			scrollNext3= TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+		var triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true}});
+		var triangleHeaderVert = TweenMax.to($("#triangle-header-vert"), 1.2, {css:{rotation: "7deg", force3D:true}});
+		var triangleHeaderBlanc = TweenMax.to($("#triangle-header-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}});
+		var trianglesFooterTopFonce = TweenMax.to([$("#triangle-footer-top-bleu-fonce"), $("#triangle-footer-bottom-bleu-clair")], 1.2, {css:{rotation: "-3deg", force3D:true}});
+		var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {css:{rotation: "3deg", force3D:true}});
+		var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}});
+		var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}});
+		var scrollNext1= TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+		var scrollNext2= TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+		var scrollNext3= TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 
 		var sceneHeader = new ScrollScene({
 			triggerElement: '.headHome',
@@ -195,7 +209,7 @@ function scrollMagic(){
 		var whenInContainer3 = new ScrollScene({
 			triggerElement: '#container3',
 			duration: $('#container3').outerHeight(),
-			offset: -100
+			offset: 0
 		})
 		.setTween(tiangleFooterBottomBlanc)
 		.addTo(controller);
@@ -259,17 +273,7 @@ $(function(){
 	$('.scrollNext').on('click', goToNextSection);
 
 	// Btn video //
-	$('#btn-video').on('click', function(){
-		var tlVideo = new TimelineMax({onComplete:completeTlVideo});
-		tlVideo.to($(".zone-txt-cover-video"), 0.2, {y: "100px", opacity: "0", ease:Cubic.easeInOut});
-		tlVideo.to($(".bg-cover-video"), 0.5, {rotationZ:1, rotation:"-45deg", y: "-100%", transformOrigin:"left bottom", ease:Cubic.easeInOut});
-		tlVideo.set($(".cover-video"), {display: "none"});
-		return false;
-	});
-	function completeTlVideo(){
-		if(!isMobile.phone){ player1.playVideo(); }
-	}
-
+	$('#btn-video').on('click', videoCover);
 	
 
 	$(window).load(function(){
@@ -293,20 +297,11 @@ $(function(){
 	});
 
     $(document).scroll(function(){
-    	
     });
 
     $(window).resize(function(){
     	fixedHeader();
     	setSubMenu();
-
-    	/*$('#sliderRef').contentcarousel({
-    		sliderSpeed		: 500,
-    		sliderEasing	: 'easeOutExpo',
-    		itemSpeed		: 500,
-    		itemEasing		: 'easeOutExpo',
-    		scroll			: 1	
-    	});*/
 	});
 
 });
