@@ -418,8 +418,8 @@ h2 {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   color: #17698d;
+  margin-top: 4em;
   margin-top: 0;
-  padding-top: 4em;
 }
 h2.big {
   font-size: 1.45em;

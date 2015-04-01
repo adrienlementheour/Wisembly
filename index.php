@@ -183,7 +183,7 @@
 			<section class='content bgBlanc'>
 				<h2>Collaborer en réunion</h2>
 				<div id="bloc-video">
-					<div class='embed-container'><iframe id="player-1" class="iframe-video" src='http://www.youtube.com/embed/wZZ7oFKsKzY?enablejsapi=1' frameborder='0' allowfullscreen></iframe></div>
+					<div class='embed-container'><iframe id="player-1" class="iframe-video" src='http://www.youtube.com/embed/RpyDzJFSl0g?enablejsapi=1' frameborder='0' allowfullscreen></iframe></div>
 					<div class="cover-video">
 						<div class="bg-cover-video"></div>
 						<div class="filtre-bg-cover-video"></div>

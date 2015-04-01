@@ -252,7 +252,7 @@ function scrollMagic(){
 		var whenInContainer3 = new ScrollScene({
 			triggerElement: '#container3',
 			duration: $('#container3').outerHeight(),
-			offset: 0
+			offset: -$('.rsFooter').outerHeight()
 		})
 		.setTween(tiangleFooterBottomBlanc)
 		.addTo(controller);
