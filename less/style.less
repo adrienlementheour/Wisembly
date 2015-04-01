@@ -949,6 +949,19 @@ footer{
         }
       }
     }
+    .btnFull{
+      background: @jaune;
+      border-color: @jaune;
+      &:before{
+        background: @jaune;
+      }
+      &:hover, &:focus{
+        color: @jaune;
+        &:before{
+          background: @blanc;
+        }
+      }
+    }
   }
   &.vert{
     background: @vert;
@@ -1050,7 +1063,7 @@ footer{
       }
     }
   }
-  &.rouge, &.rose, &.vert{
+  &.rose, &.vert{
     .btnFull{
       background: @bleu;
       border-color: @bleu;
@@ -1114,9 +1127,14 @@ footer{
   display: none;
   &.on{
     display: block;
+    img{
+      .transform(translateY(0px));
+    }
   }
   img{
     float: right;
+    .transform(translateY(150px));
+    .transition(all 3s ease-in-out);
   }
   p{
     display: inline-block;
