@@ -19,10 +19,39 @@ window.requestAnimFrame = (function(){
 
 /**** FONCTIONS SPECIFIQUES ****/
 
+$.fn.isOnScreen = function(){
+    
+    var win = $(window);
+    
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+    
+    var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top + this.outerHeight();
+    
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+    
+};
+
 // Header fixe //
 function fixedHeader(){
 	if($(window).width() > 1040){
 		myScroll > 100 ? header.addClass('on') : header.removeClass('on');
+	}
+}
+
+function apparitionFooter(){
+	if(!isMobile.any){
+		if($('.navFooter').isOnScreen()){
+			TweenMax.set($(".rsFooter"), {visibility:"visible"});
+		}else{
+			TweenMax.set($(".rsFooter"), {visibility:"hidden"});
+		}
 	}
 }
 
@@ -31,6 +60,7 @@ function scrollPage(){
 	myScroll = $(document).scrollTop();
 
 	fixedHeader();
+	apparitionFooter();
 
 	requestAnimFrame(scrollPage);
 
@@ -237,7 +267,7 @@ function scrollMagic(){
 
 		var whenInContainer5 = new ScrollScene({
 			triggerElement: '.scrollNext1',
-			duration: $('.scrollNext1').outerHeight(),
+			duration: 200,
 			offset: -300
 		})
 		.setTween(scrollNext1)
@@ -245,7 +275,7 @@ function scrollMagic(){
 
 		var whenInContainer6 = new ScrollScene({
 			triggerElement: '.scrollNext2',
-			duration: $('.scrollNext2').outerHeight(),
+			duration: 200,
 			offset: -300
 		})
 		.setTween(scrollNext2)
@@ -253,7 +283,7 @@ function scrollMagic(){
 
 		var whenInContainer7 = new ScrollScene({
 			triggerElement: '.scrollNext3',
-			duration: $('.scrollNext3').outerHeight(),
+			duration: 200,
 			offset: -300
 		})
 		.setTween(scrollNext3)

@@ -2340,11 +2340,11 @@ footer {
   bottom: -60px;
   height: 170px;
   background: rgba(70, 180, 137, 0.6);
-  -webkit-transform: rotate(7deg);
-  -moz-transform: rotate(7deg);
-  -o-transform: rotate(7deg);
-  -ms-transform: rotate(7deg);
-  transform: rotate(7deg);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
 }
 .headHome #triangle-header-blanc {
   display: block;
@@ -2353,11 +2353,11 @@ footer {
   bottom: -25px;
   height: 105px;
   background: #ffffff;
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
+  -webkit-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  -o-transform: rotate(-1deg);
+  -ms-transform: rotate(-1deg);
+  transform: rotate(-1deg);
 }
 .blocH1 {
   width: 290px;
