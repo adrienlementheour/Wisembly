@@ -73,7 +73,6 @@ h2{
   .gothamBold(1.3em);
   color: @bleuH2;
   margin-top: 4em;
-  margin-top: 0;
   &.big{
     font-size: 1.45em;
   }
@@ -1513,8 +1512,7 @@ footer{
     position: relative;
     background: @blanc;
     padding: 0 10px;
-    &:before{
-      content: '';
+    .barre-footer{
       display: block;
       height: 2px;
       width: 500px;
@@ -1524,7 +1522,7 @@ footer{
       top: 42%;
       left: 50%;
       margin: 0 0 0 -250px;
-      .transform(rotate(-3deg));
+      .transform(rotate(0deg));
     }
     a{
       border: 0;

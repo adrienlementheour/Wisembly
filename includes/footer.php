@@ -179,6 +179,7 @@
   <section class='rsFooter'>
     <div class="content">
       <ul>
+        <div class="barre-footer"></div>
         <li><a href='#' title='Wisembly sur Facebook' class='icon-fb'><span>Facebook</span></a></li>
         <li><a href='#' title='Wisembly sur Twitter' class='icon-tw'><span>Twitter</span></a></li>
         <li><a href='#' title='Wisembly sur LinkedIn' class='icon-in'><span>LinkedIn</span></a></li>

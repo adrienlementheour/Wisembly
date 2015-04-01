@@ -419,7 +419,6 @@ h2 {
   text-rendering: optimizeLegibility;
   color: #17698d;
   margin-top: 4em;
-  margin-top: 0;
 }
 h2.big {
   font-size: 1.45em;
@@ -2261,8 +2260,7 @@ footer {
   background: #ffffff;
   padding: 0 10px;
 }
-.rsFooter ul:before {
-  content: '';
+.rsFooter ul .barre-footer {
   display: block;
   height: 2px;
   width: 500px;
@@ -2272,11 +2270,11 @@ footer {
   top: 42%;
   left: 50%;
   margin: 0 0 0 -250px;
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 .rsFooter ul a {
   border: 0;

@@ -216,6 +216,7 @@ function scrollMagic(){
 		var scrollNext1= TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 		var scrollNext2= TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 		var scrollNext3= TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+		var barreFooter= TweenMax.to($(".barre-footer"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 
 		var sceneHeader = new ScrollScene({
 			triggerElement: '.headHome',
@@ -287,6 +288,14 @@ function scrollMagic(){
 			offset: -300
 		})
 		.setTween(scrollNext3)
+		.addTo(controller);
+
+		var whenInContainer8 = new ScrollScene({
+			triggerElement: '.navFooter',
+			duration: $('.rsFooter').height(),
+			offset: -50
+		})
+		.setTween(barreFooter)
 		.addTo(controller);
 	}
 }
