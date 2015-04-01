@@ -221,6 +221,11 @@ select{
 
 label{
   display: block;
+  span{
+    .gothamItalic(1em);
+    text-transform: none;
+    opacity: .6;
+  }
 }
 button, label{
   .gothamBold(.93em);
@@ -336,7 +341,7 @@ button{
   color: @bleuH2;
   position: relative;
   z-index: 1;
-  margin: 65px 0 0;
+  margin: 65px 0 55px;
   &:hover, &:focus{
     color: @bleuLien;
   }
@@ -356,7 +361,6 @@ button{
     margin: 0 0 0 -225px;
     .transform(rotate(0deg));
     .backface-visibility(hidden);
-    .transform-style(preserve-3d);
   }
 }
 
@@ -530,7 +534,6 @@ header{
         border-color: transparent transparent @bleuTop transparent;
         .transform(translateY(20px) rotate(3deg));
         .backface-visibility(hidden);
-        .transform-style(preserve-3d);
       }
     }
   }
@@ -800,10 +803,14 @@ footer{
 }
 
 .contactFooter{
+  padding: 0 0 130px;
+  position: relative;
+  z-index: 2;
   .transition(.3s ease-in-out);
   .wrapper-contentinfo{
     display: block;
     position: relative;
+    z-index: 2;
     .transition(.3s ease-in-out);
   }
   &.bleu{
@@ -1023,40 +1030,29 @@ footer{
       }
     }
   }
-  padding: 0 0 130px;
-  position: relative;
-  z-index: 2;
   h2, button, p, label{
     color: @blanc;
-  }
-  #triangle-footer-top-bleu-fonce{
-    display: block;
-    position: absolute;
-    top: -71px;
-    height: 100px;
-    width: 150%;
-    z-index: -1;
-    .transform(rotate(0deg) translateZ(1px));
-    .transition(.3s ease-in-out);
-    .backface-visibility(hidden);
-    .transform-style(preserve-3d);
-  }
-  #triangle-footer-top-bleu-clair{
-    display: block;
-    position: absolute;
-    top: -71px;
-    height: 100px;
-    width: 150%;
-    left: -50%;
-    z-index: -2;
-    .transform(rotate(0deg) translateZ(1px));
-    .transition(.3s ease-in-out);
-    .backface-visibility(hidden);
-    .transform-style(preserve-3d);
   }
   /*.no-csstransforms &{
     padding: 40px 0;
   }*/
+}
+
+#triangle-footer-top-bleu-fonce, #triangle-footer-top-bleu-clair{
+  display: block;
+  position: absolute;
+  top: -71px;
+  height: 100px;
+  width: 150%;
+  z-index: 1;
+  .transition(.3s ease-in-out);
+  //.transform(rotate(0deg) translateZ(1px));
+  /*.backface-visibility(hidden);
+  .transform-style(preserve-3d);*/
+}
+#triangle-footer-top-bleu-clair{
+  left: -50%;
+  z-index: 0;
 }
 
 .profil{
@@ -1125,7 +1121,7 @@ footer{
 #bulle{
   text-align: right;
   position: absolute;
-  top: -610px;
+  top: -530px;
   width: 275px;
   left: 45px;
   opacity: 0;
@@ -1169,7 +1165,7 @@ footer{
     overflow: hidden;
     .transition(.3s ease-in-out);
     &.visible{
-      height: 390px;
+      height: 440px;
       opacity: 1;
       .transition(.3s ease-in-out);
     }
@@ -1286,29 +1282,6 @@ footer{
     top: auto;
     bottom: -30px;
   }*/
-  #triangle-footer-bottom-bleu-clair{
-    display: block;
-    position: absolute;
-    top: -71px;
-    height: 105px;
-    width: 150%;
-    background: @grisBorder;
-    .transform(rotate(0deg));
-    z-index: -1;
-  }
-  #triangle-footer-bottom-blanc{
-    display: block;
-    position: absolute;
-    top: auto;
-    bottom: -30px;
-    height: 105px;
-    width: 150%;
-    background: @grisBorder;
-    .transform(rotate(0deg));
-    z-index: -1;
-    .backface-visibility(hidden);
-    .transform-style(preserve-3d);
-  }
   li{
     padding: 0;
     &:before{
@@ -1326,6 +1299,24 @@ footer{
       }
     }
   }
+}
+
+#triangle-footer-bottom-bleu-clair, #triangle-footer-bottom-blanc{
+  display: block;
+  position: absolute;
+  height: 105px;
+  width: 150%;
+  background: @grisBorder;
+  .transform(rotate(0deg));
+  z-index: -1;
+  .backface-visibility(hidden);
+}
+#triangle-footer-bottom-bleu-clair{
+  top: -76px;
+}
+#triangle-footer-bottom-blanc{
+  left: -1%;
+  bottom: -30px;
 }
 
 .itemsFooter{
@@ -1442,7 +1433,6 @@ footer{
       .transform(rotate(-22deg) translateY(40px));
       .opacity(0);
       .backface-visibility(hidden);
-      .transform-style(preserve-3d);
     }
   }
   a{
@@ -1588,6 +1578,7 @@ footer{
     bottom: -60px;
     height: 170px;
     background: fade(@vert, 60);
+    //outline: 1px solid transparent;
     .transform(rotate(2deg));
   }
   #triangle-header-blanc{
@@ -1598,6 +1589,10 @@ footer{
     height: 105px;
     background: @blanc;
     .transform(rotate(-1deg));
+    /*.backface-visibility(hidden);
+    .transform-style(preserve-3d);
+    .transform(rotate(-1deg) rotateZ(0) transform3d(0px,0px,1px));
+    .perspective(1000);*/
   }
 }
 

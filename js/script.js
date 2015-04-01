@@ -16,11 +16,7 @@ window.requestAnimFrame = (function(){
            };
 })();
 
-
-/**** FONCTIONS SPECIFIQUES ****/
-
 $.fn.isOnScreen = function(){
-    
     var win = $(window);
     
     var viewport = {
@@ -35,8 +31,10 @@ $.fn.isOnScreen = function(){
     bounds.bottom = bounds.top + this.outerHeight();
     
     return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-    
 };
+
+
+/**** FONCTIONS SPECIFIQUES ****/
 
 // Header fixe //
 function fixedHeader(){
@@ -63,21 +61,6 @@ function scrollPage(){
 	apparitionFooter();
 
 	requestAnimFrame(scrollPage);
-
-	/*function scrollEvent(){
-		myScroll = $(document).scrollTop();
-		if (myScroll>100) {
-			$("#header").addClass("on");
-		} else {
-			$("#header").removeClass("on");
-		}
-		$("#bg").css("top",-Math.ceil(myScroll/2.2));
-		$("#triangle1").css("margin-top",-Math.ceil(myScroll/6));
-		$("#accroche").css("top",-Math.ceil(myScroll/2));
-		requestAnimFrame(function(){
-			scrollMenu();
-		});
-	}*/
 }
 
 // Sous menu //
