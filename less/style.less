@@ -530,31 +530,29 @@ header{
     position: relative;
     z-index: 1;
     height: 100%;
-    #container-triangle-top-header{
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top:0;
-      left: 0;
-      overflow: hidden;
-      #triangle-top-header{
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -1;
-        width: 0;
-        height: 0;
-        top: -20px;
-        right: 80px;
-        border-style: solid;
-        border-width: 0 10px 60px 600px;
-        border-color: transparent transparent @bleuTop transparent;
-        .transform(translateY(20px) rotate(3deg));
-        .backface-visibility(hidden);
-      }
-    }
   }
+}
+
+#container-triangle-top-header{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  overflow: hidden;
+}
+#triangle-top-header{
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  top: -20px;
+  right: 80px;
+  border-style: solid;
+  border-width: 0 10px 60px 600px;
+  border-color: transparent transparent @bleuTop transparent;
+  .transform(translateY(20px) rotate(3deg));
+  .backface-visibility(hidden);
 }
 
 .lang{
@@ -808,7 +806,7 @@ header{
   left: 100%;
   bottom: 0;
   right: 0;
-  .transition(left .4s ease-in-out, .3s opacity .1s ease-in-out);
+  .transition(left .4s ease-in-out, .1s opacity .3s ease-in-out);
 }
 
 #triangleMenu{
@@ -1088,9 +1086,6 @@ footer{
   width: 150%;
   z-index: 1;
   .transition(.3s ease-in-out);
-  //.transform(rotate(0deg) translateZ(1px));
-  /*.backface-visibility(hidden);
-  .transform-style(preserve-3d);*/
 }
 #triangle-footer-top-bleu-clair{
   left: -50%;
@@ -1127,14 +1122,9 @@ footer{
   display: none;
   &.on{
     display: block;
-    img{
-      .transform(translateY(0px));
-    }
   }
   img{
     float: right;
-    .transform(translateY(150px));
-    .transition(all 3s ease-in-out);
   }
   p{
     display: inline-block;
@@ -1607,41 +1597,35 @@ footer{
     position: relative;
     z-index: 2;
   }
-  #bgHeadHome{
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
-    background-size: cover;
-    pointer-events: none;
-  }
-  #triangle-header-vert{
-    display: block;
-    position: absolute;
-    width: 150%;
-    right: 0;
-    bottom: -60px;
-    height: 170px;
-    background: fade(@vert, 60);
-    //outline: 1px solid transparent;
-    .transform(rotate(2deg));
-  }
-  #triangle-header-blanc{
-    display: block;
-    position: absolute;
-    width: 150%;
-    bottom: -25px;
-    height: 105px;
-    background: @blanc;
-    .transform(rotate(-1deg));
-    /*.backface-visibility(hidden);
-    .transform-style(preserve-3d);
-    .transform(rotate(-1deg) rotateZ(0) transform3d(0px,0px,1px));
-    .perspective(1000);*/
-  }
+}
+
+#bgHeadHome{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
+  background-size: cover;
+  pointer-events: none;
+}
+#triangle-header-vert, #triangle-header-blanc{
+  position: absolute;
+  width: 150%;
+}
+#triangle-header-vert{
+  right: 0;
+  bottom: -60px;
+  height: 170px;
+  background: fade(@vert, 60);
+  .transform(rotate(2deg));
+}
+#triangle-header-blanc{
+  bottom: -25px;
+  height: 105px;
+  background: @blanc;
+  .transform(rotate(-1deg));
 }
 
 .blocH1{

@@ -104,13 +104,17 @@ function setSliderTeam(slider){
 
 		if(!slides.eq(numSlide).hasClass('on')){
 			$(this).addClass('actif').parents('li').siblings().find('button').removeClass('actif');
-			slides.eq(numSlide).addClass('on').animate({opacity: 1}, 600).siblings().animate({opacity: 0}, 600).removeClass('on');
+			slides.eq(numSlide).siblings().stop().animate({opacity: 0, marginBottom: '-50px'}, 400, function(){
+				slides.eq(numSlide).siblings().removeClass('on');
+				slides.eq(numSlide).addClass('on').stop().animate({opacity: 1, marginBottom: 0}, 400);
+			});
+			
 		}
 	}
 
 	for(y; y<slidersLength; y++){
 		if(!sliders.eq(y).hasClass('on')){
-			sliders.eq(y).css('opacity', 0);
+			sliders.eq(y).css({opacity: 0, bottom: '-165px'});
 		}
 	}
 
@@ -118,7 +122,7 @@ function setSliderTeam(slider){
 	if(slidesLength > 1){
 		for(i; i<slidesLength; i++){
 			pagination.append(button);
-			(!slides.eq(i).hasClass('on')) ? slides.eq(i).css('opacity', 0) : btnActif = i;
+			(!slides.eq(i).hasClass('on')) ? slides.eq(i).css({opacity: 0, marginBottom: '-50px'}) : btnActif = i;
 		}
 	}
 
@@ -134,19 +138,25 @@ function setSliderTeamProfil(){
 
 	$(this).addClass('actif').parents('li').siblings().find('button').removeClass();
 
-	if(numSlider === 0){
-		contactFooter.addClass('bleu').removeClass('rose').removeClass('rouge').removeClass('vert');
-	}else if(numSlider === 1){
-		contactFooter.addClass('rouge').removeClass('rose').removeClass('bleu').removeClass('vert');
-	}else if(numSlider === 2){
-		contactFooter.addClass('vert').removeClass('rose').removeClass('rouge').removeClass('bleu');
-	}else if(numSlider === 3){
-		contactFooter.addClass('rose').removeClass('bleu').removeClass('rouge').removeClass('vert');
-	}
-
 	if(!slider.hasClass('on')){
-		slider.addClass('on').animate({opacity: 1}, 600).siblings('.slidesTeam').animate({opacity: 0}, 600).removeClass('on');
-		setSliderTeam(slider);
+		slider.siblings('.slidesTeam').stop().animate({opacity: 0, bottom: '-165px'}, 400, function(){
+			slider.siblings('.slidesTeam').removeClass('on');
+			slider.addClass('on').stop().animate({opacity: 1, bottom: '-115px'}, 400);
+
+			if(numSlider === 0){
+				contactFooter.addClass('bleu').removeClass('rose').removeClass('rouge').removeClass('vert');
+			}else if(numSlider === 1){
+				contactFooter.addClass('rouge').removeClass('rose').removeClass('bleu').removeClass('vert');
+			}else if(numSlider === 2){
+				contactFooter.addClass('vert').removeClass('rose').removeClass('rouge').removeClass('bleu');
+			}else if(numSlider === 3){
+				contactFooter.addClass('rose').removeClass('bleu').removeClass('rouge').removeClass('vert');
+			}
+
+			setSliderTeam(slider);
+		});
+		
+		
 	}
 }
 
@@ -196,10 +206,10 @@ function scrollMagic(){
 		var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {css:{rotation: "3deg", force3D:true}});
 		var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}});
 		var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}});
-		var scrollNext1= TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-		var scrollNext2= TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-		var scrollNext3= TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-		var barreFooter= TweenMax.to($(".barre-footer"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+		var scrollNext1 = TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+		var scrollNext2 = TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+		var scrollNext3 = TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
+		var barreFooter = TweenMax.to($(".barre-footer"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 
 		var sceneHeader = new ScrollScene({
 			triggerElement: '.headHome',
