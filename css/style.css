@@ -3043,7 +3043,7 @@ footer {
   }
   .topHeader .content #container-triangle-top-header {
     height: auto;
-    bottom: -15px;
+    bottom: 0;
   }
   .topHeader .content #container-triangle-top-header #triangle-top-header {
     top: -10px;
