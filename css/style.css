@@ -2964,6 +2964,9 @@ footer {
   header + .content.main {
     padding-top: 0;
   }
+  .no-mobile.js .headHome #bgHeadHome {
+    top: 125px;
+  }
   .menu {
     width: 170px;
     opacity: 0;
