@@ -2934,12 +2934,14 @@ footer {
 @media (max-width: 1040px) {
   header {
     position: relative;
+    overflow: hidden;
   }
   header + .content.main {
     padding-top: 0;
   }
   .no-mobile.js .headHome #bgHeadHome {
     top: 125px;
+    /* ça bug, le header est en relatif a partir de la! */
   }
   .menu {
     width: 170px;
