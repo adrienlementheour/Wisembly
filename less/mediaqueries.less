@@ -198,8 +198,10 @@
       opacity: 0;
       color: @txt;
       position: absolute;
-      top: 1050px;
-      left: 30px;
+      top: 440px;
+      right: -300px;
+      width: 250px;
+      text-align: right;
       line-height: 18px;
       a{
         color: @txt;
@@ -386,10 +388,8 @@
       #burger{
         top: 7px;
       }
-      nav{
-        .btnFull{
-          top: 370px;
-        }
+      #triangleMenu{
+        .transform(rotate(15deg));
       }
     }
   }
@@ -444,10 +444,6 @@
     a{
       color: @txt;
     }
-  }
-
-  .menu{
-    padding: 60px 30px;
   }
 
   #burger{
@@ -570,6 +566,14 @@
 }
 
 @media (max-width: 450px){
+  header{
+    &.menuVisible{
+      #triangleMenu{
+        .transform(rotate(19deg));
+      }
+    }
+  }
+
   .buttonsTeam{
     display: none;
   }

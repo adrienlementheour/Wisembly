@@ -460,7 +460,8 @@ header{
     .topHeader{
       p{
         opacity: 1;
-        top: 470px;
+        right: 30px;
+        .transition(.5s ease-in-out);
       }
     }
     #fdMenu{
@@ -469,9 +470,10 @@ header{
       .transition(opacity .1s, left .2s ease-in-out);
     }
     #triangleMenu{
-      left: -19%;
+      width: 100%;
+      right: 19%;
       .transform(rotate(12deg));
-      .transition(.4s ease-in-out);
+      .transition(right .3s ease-in-out, transform .4s ease-in-out);
     }
   }
   
@@ -806,19 +808,18 @@ header{
   left: 100%;
   bottom: 0;
   right: 0;
-  .transition(top .4s ease-in-out, .3s opacity .1s ease-in-out);
+  .transition(left .4s ease-in-out, .3s opacity .1s ease-in-out);
 }
 
 #triangleMenu{
   position: fixed;
-  width: 100%;
+  width: 0;
   height: 150%;
   top: -50%;
-  left: 0;
+  right: 0;
   background: fade(@bleu, 90);
   .transform-origin(0, 0);
   .transform(rotate(0));
-  .transition(.3s ease-in-out);
 }
 
 /* FOOTER */

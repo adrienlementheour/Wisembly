@@ -951,7 +951,11 @@ header.menuVisible nav .btnFull {
 }
 header.menuVisible .topHeader p {
   opacity: 1;
-  top: 470px;
+  right: 30px;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 header.menuVisible #fdMenu {
   opacity: .95;
@@ -962,16 +966,17 @@ header.menuVisible #fdMenu {
   transition: opacity 0.1s, left 0.2s ease-in-out;
 }
 header.menuVisible #triangleMenu {
-  left: -19%;
+  width: 100%;
+  right: 19%;
   -webkit-transform: rotate(12deg);
   -moz-transform: rotate(12deg);
   -o-transform: rotate(12deg);
   -ms-transform: rotate(12deg);
   transform: rotate(12deg);
-  -webkit-transition: 0.4s ease-in-out;
-  -moz-transition: 0.4s ease-in-out;
-  -o-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
+  -webkit-transition: right 0.3s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -moz-transition: right 0.3s ease-in-out, -moz-transform 0.4s ease-in-out;
+  -o-transition: right 0.3s ease-in-out, -o-transform 0.4s ease-in-out;
+  transition: right 0.3s ease-in-out,-webkit-transform 0.4s ease-in-out,-moz-transform 0.4s ease-in-out,-o-transform 0.4s ease-in-out,transform 0.4s ease-in-out;
 }
 .topHeader {
   height: 40px;
@@ -1416,17 +1421,17 @@ header.menuVisible #triangleMenu {
   left: 100%;
   bottom: 0;
   right: 0;
-  -webkit-transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
-  -moz-transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
-  -o-transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
-  transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
+  -webkit-transition: left 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
+  -moz-transition: left 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
+  -o-transition: left 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
+  transition: left 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
 }
 #triangleMenu {
   position: fixed;
-  width: 100%;
+  width: 0;
   height: 150%;
   top: -50%;
-  left: 0;
+  right: 0;
   background: rgba(6, 105, 141, 0.9);
   -webkit-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
@@ -1438,10 +1443,6 @@ header.menuVisible #triangleMenu {
   -o-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 /* FOOTER */
 footer {
@@ -3025,8 +3026,10 @@ footer {
     opacity: 0;
     color: #3a434c;
     position: absolute;
-    top: 1050px;
-    left: 30px;
+    top: 440px;
+    right: -300px;
+    width: 250px;
+    text-align: right;
     line-height: 18px;
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out;
@@ -3180,8 +3183,12 @@ footer {
   header.menuVisible #burger {
     top: 7px;
   }
-  header.menuVisible nav .btnFull {
-    top: 370px;
+  header.menuVisible #triangleMenu {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
   }
   .home .topHeader form {
     display: block;
@@ -3232,9 +3239,6 @@ footer {
   }
   .lang a {
     color: #3a434c;
-  }
-  .menu {
-    padding: 60px 30px;
   }
   #burger.actif .b1,
   #burger.actif .b2 {
@@ -3355,6 +3359,13 @@ footer {
   }
 }
 @media (max-width: 450px) {
+  header.menuVisible #triangleMenu {
+    -webkit-transform: rotate(19deg);
+    -moz-transform: rotate(19deg);
+    -o-transform: rotate(19deg);
+    -ms-transform: rotate(19deg);
+    transform: rotate(19deg);
+  }
   .buttonsTeam {
     display: none;
   }
