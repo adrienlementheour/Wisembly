@@ -934,29 +934,44 @@ header.on .bottomHeader .btnFull {
   margin: 13px 0;
 }
 header.menuVisible nav .menu {
-  top: 0;
-  height: 100%;
+  right: 0;
   opacity: 1;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 header.menuVisible nav .btnFull {
-  top: 340px;
+  right: 30px;
   opacity: 1;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 header.menuVisible .topHeader p {
   opacity: 1;
-  top: 455px;
+  top: 470px;
 }
 header.menuVisible #fdMenu {
   opacity: .95;
-  top: 0;
-  -webkit-transition: opacity 0.1s, top 0.2s ease-in-out;
-  -moz-transition: opacity 0.1s, top 0.2s ease-in-out;
-  -o-transition: opacity 0.1s, top 0.2s ease-in-out;
-  transition: opacity 0.1s, top 0.2s ease-in-out;
+  left: 0;
+  -webkit-transition: opacity 0.1s, left 0.2s ease-in-out;
+  -moz-transition: opacity 0.1s, left 0.2s ease-in-out;
+  -o-transition: opacity 0.1s, left 0.2s ease-in-out;
+  transition: opacity 0.1s, left 0.2s ease-in-out;
+}
+header.menuVisible #triangleMenu {
+  left: -19%;
+  -webkit-transform: rotate(12deg);
+  -moz-transform: rotate(12deg);
+  -o-transform: rotate(12deg);
+  -ms-transform: rotate(12deg);
+  transform: rotate(12deg);
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 .topHeader {
   height: 40px;
@@ -1360,7 +1375,7 @@ header.menuVisible #fdMenu {
 #burger.actif {
   position: fixed;
   top: 2px;
-  right: 30px;
+  right: 28px;
 }
 #burger.actif .b1 {
   -webkit-transform: rotate(45deg);
@@ -1368,10 +1383,10 @@ header.menuVisible #fdMenu {
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  -webkit-transition: 0.1s all 0.3s ease-in-out;
-  -moz-transition: 0.1s all 0.3s ease-in-out;
-  -o-transition: 0.1s all 0.3s ease-in-out;
-  transition: 0.1s all 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 #burger.actif .b2 {
   top: 0;
@@ -1380,10 +1395,10 @@ header.menuVisible #fdMenu {
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  -webkit-transition: 0.1s all 0.3s ease-in-out;
-  -moz-transition: 0.1s all 0.3s ease-in-out;
-  -o-transition: 0.1s all 0.3s ease-in-out;
-  transition: 0.1s all 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 #burger.actif .b3 {
   opacity: 0;
@@ -1397,14 +1412,36 @@ header.menuVisible #fdMenu {
   z-index: 9;
   background: #ffffff;
   opacity: 0;
-  top: 100%;
-  left: 0;
+  top: 0;
+  left: 100%;
   bottom: 0;
   right: 0;
   -webkit-transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
   -moz-transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
   -o-transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
   transition: top 0.4s ease-in-out, 0.3s opacity 0.1s ease-in-out;
+}
+#triangleMenu {
+  position: fixed;
+  width: 100%;
+  height: 150%;
+  top: -50%;
+  left: 0;
+  background: rgba(6, 105, 141, 0.9);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 /* FOOTER */
 footer {
@@ -2899,25 +2936,33 @@ footer {
     padding-top: 0;
   }
   .menu {
-    height: 0;
+    width: 170px;
     opacity: 0;
     position: absolute;
-    left: 0;
-    top: 100%;
+    top: 35px;
     z-index: 10;
     margin: 0;
     padding: 30px;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
+    right: -170px;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
   .menu li {
     display: block;
+    text-align: right;
+  }
+  .menu > li {
+    margin: 0 0 5px;
   }
   .menu > li > a {
     line-height: 25px;
-    padding-left: 0;
+    padding: 0;
+  }
+  .menu > li > a:hover,
+  .menu > li > a:focus {
+    color: #46b489;
   }
   .menu > li > a:hover:before,
   .menu > li > a:focus:before {
@@ -2927,10 +2972,17 @@ footer {
   .menu .hasSubMenu:focus .subMenu {
     bottom: auto;
   }
+  .menu .hasSubMenu > a {
+    padding-right: 15px;
+  }
+  .menu .hasSubMenu > a:after {
+    top: 41%;
+    right: 0;
+  }
   .menu .hasSubMenu > a:hover:after,
   .menu .hasSubMenu > a:focus:after {
     width: auto;
-    top: 47%;
+    top: 41%;
     text-align: left;
     right: 15px;
   }
@@ -2941,7 +2993,7 @@ footer {
     z-index: 1;
     background: none;
     text-align: left;
-    padding: 0 0 5px;
+    padding: 0;
   }
   .subMenu ul {
     display: none;
@@ -2951,6 +3003,9 @@ footer {
         .gothamItalic(1em);
         padding: 0;
       }*/
+  }
+  .subMenu a {
+    margin: 0;
   }
   .topHeader {
     height: 50px;
@@ -3010,12 +3065,15 @@ footer {
     height: 75px;
   }
   .bottomHeader .btnFull {
+    height: 35px;
+    line-height: 35px;
+    width: 160px;
     opacity: 0;
     z-index: 10;
     float: none;
     position: absolute;
-    top: 1000px;
-    left: 30px;
+    top: 365px;
+    right: -400px;
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;

@@ -104,28 +104,34 @@
   }
 
   .menu{
-    height: 0;
+    width: 170px;
     opacity: 0;
     position: absolute;
-    left: 0;
-    top: 100%;
+    top: 35px;
     z-index: 10;
     margin: 0;
     padding: 30px;
-    .transition(.3s ease-in-out);
+    right: -170px;
+    .transition(.2s ease-in-out);
     li{
       display: block;
+      text-align: right;
     }
     >li{
+      margin: 0 0 5px;
       >a{
         line-height: 25px;
-        padding-left: 0;
+        padding: 0;
         &:hover, &:focus{
+          color: @vert;
           &:before{
             border-width: 0 110px 0 0;
           }
         }
       }
+    }
+    a{
+
     }
     .hasSubMenu{
       &:hover, &:focus{
@@ -134,10 +140,15 @@
         }
       }
       > a{
+        padding-right: 15px;
+        &:after{
+          top: 41%;
+          right: 0;
+        }
         &:hover, &:focus{
           &:after{
             width: auto;
-            top: 47%;
+            top: 41%;
             text-align: left;
             right: 15px;
           }
@@ -153,7 +164,7 @@
     z-index: 1;
     background: none;
     text-align: left;
-    padding: 0 0 5px;
+    padding: 0;
     ul{
       display: none;
       /*display: block;
@@ -162,6 +173,9 @@
         .gothamItalic(1em);
         padding: 0;
       }*/
+    }
+    a{
+      margin: 0;
     }
   }
 
@@ -225,12 +239,15 @@
   .bottomHeader{
     height: 75px;
     .btnFull{
+      height: 35px;
+      line-height: 35px;
+      width: 160px;
       opacity: 0;
       z-index: 10;
       float: none;
       position: absolute;
-      top: 1000px;
-      left: 30px;
+      top: 365px;
+      right: -400px;
       .transition(.3s ease-in-out);
     }
     .subMenu{
