@@ -34,7 +34,7 @@
 		</section>
 
 		<div class='wrapper' role='main'>
-
+			<div id="bg-blanc-home"></div>
 			<section class='content'>
 				<ul class='detailHome'>
 					<li class='event'>
