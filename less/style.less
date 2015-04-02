@@ -503,6 +503,8 @@ header{
   height: 40px;
   background: @bleu;
   color: @blanc;
+  .backface-visibility(hidden);
+  .transform-style(preserve-3d);
   a, label{
     color: @blanc;
     .gothamMedium(.85em);
@@ -633,6 +635,8 @@ header{
   border-bottom: 1px solid @grisBorder;
   .box-sizing(border-box);
   .transition(.3s ease-in-out);
+  .backface-visibility(hidden);
+  .transform-style(preserve-3d);
   ul{
     vertical-align: middle;
     a{
@@ -1659,6 +1663,7 @@ footer{
   pointer-events: none;
   .lt-ie9 &{
     background-size: 100% auto;
+    background-position: 57% 50%;
   }
 }
 #triangle-header-vert, #triangle-header-blanc{

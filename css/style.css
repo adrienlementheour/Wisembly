@@ -996,6 +996,16 @@ header.menuVisible #triangleMenu {
   height: 40px;
   background: #06698d;
   color: #ffffff;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .topHeader a,
 .topHeader label {
@@ -1196,6 +1206,16 @@ header.menuVisible #triangleMenu {
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .bottomHeader ul {
   vertical-align: middle;
@@ -2381,6 +2401,7 @@ footer {
 }
 .lt-ie9 #bgHeadHome {
   background-size: 100% auto;
+  background-position: 57% 50%;
 }
 #triangle-header-vert,
 #triangle-header-blanc {

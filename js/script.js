@@ -228,6 +228,7 @@ function videoCover(){
 }
 
 function heightBgHeadHome(){
+	////// LE PROBLEME VIENT DU -100 QUE TU AS AJOUTE (JE CROIS) DANS LE CAS OU ON EST SUR MOBILE /////
 	!isMobile.any ? TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height()+"px"}) : TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height() - 100 +"px"});
 }
 
