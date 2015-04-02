@@ -717,11 +717,13 @@ header{
   width: 100%;
   left: 0;
   background: @grisSubMenu;
-  text-align: center;
   padding: 10px 0;
   z-index: -1;
   opacity: 0;
   .transition(.5s ease-in-out);
+  .no-js &{
+    text-align: center;
+  }
   a{
     margin: 0 23px;
     padding: 4px 0;
@@ -816,6 +818,7 @@ header{
   top: -50%;
   right: 0;
   background: fade(@bleu, 90);
+  cursor: pointer;
   .transform-origin(0, 0);
   .transform(rotate(0));
 }
@@ -911,7 +914,7 @@ footer{
     }
     .slideTeam{
       strong{
-        color: fade(@rouge, 60);
+        color: fade(@blanc, 80);
       }
     }
     .navTeam{
@@ -972,11 +975,6 @@ footer{
     #triangle-footer-top-bleu-clair{
       background: fade(@vert, 60);
     }
-    .slideTeam{
-      strong{
-        color: fade(@vert, 60);
-      }
-    }
     .navTeam{
       button{
         color: darken(@vert, 10);
@@ -1022,11 +1020,6 @@ footer{
     #triangle-footer-top-bleu-clair{
       background: fade(@rose, 60);
     }
-    .slideTeam{
-      strong{
-        color: fade(@rose, 60);
-      }
-    }
     .navTeam{
       button{
         color: darken(@rose, 10);
@@ -1067,6 +1060,11 @@ footer{
       border-color: @bleu;
       &:hover, &:focus{
         color: @bleu;
+      }
+    }
+    .slideTeam{
+      strong{
+        color: fade(@blanc, 80);
       }
     }
   }
@@ -2069,6 +2067,10 @@ footer{
 
 .none{
   display: none;
+}
+
+.overflow{
+  overflow: hidden;
 }
 
 /* @group clearfix */

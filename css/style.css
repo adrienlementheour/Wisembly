@@ -1300,7 +1300,6 @@ header.menuVisible #triangleMenu {
   width: 100%;
   left: 0;
   background: #eff1f1;
-  text-align: center;
   padding: 10px 0;
   z-index: -1;
   opacity: 0;
@@ -1308,6 +1307,9 @@ header.menuVisible #triangleMenu {
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
+}
+.no-js .subMenu {
+  text-align: center;
 }
 .subMenu a {
   margin: 0 23px;
@@ -1430,6 +1432,7 @@ header.menuVisible #triangleMenu {
   top: -50%;
   right: 0;
   background: rgba(6, 105, 141, 0.9);
+  cursor: pointer;
   -webkit-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
   -o-transform-origin: 0 0;
@@ -1534,7 +1537,7 @@ footer {
   background: rgba(226, 92, 91, 0.6);
 }
 .contactFooter.rouge .slideTeam strong {
-  color: rgba(226, 92, 91, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 .contactFooter.rouge .navTeam button {
   color: #da3130;
@@ -1592,9 +1595,6 @@ footer {
 .contactFooter.vert #triangle-footer-top-bleu-clair {
   background: rgba(70, 180, 137, 0.6);
 }
-.contactFooter.vert .slideTeam strong {
-  color: rgba(70, 180, 137, 0.6);
-}
 .contactFooter.vert .navTeam button {
   color: #388f6d;
 }
@@ -1636,9 +1636,6 @@ footer {
 .contactFooter.rose #triangle-footer-top-bleu-clair {
   background: rgba(247, 136, 108, 0.6);
 }
-.contactFooter.rose .slideTeam strong {
-  color: rgba(247, 136, 108, 0.6);
-}
 .contactFooter.rose .navTeam button {
   color: #f4613c;
 }
@@ -1678,6 +1675,10 @@ footer {
 .contactFooter.rose .btnFull:focus,
 .contactFooter.vert .btnFull:focus {
   color: #06698d;
+}
+.contactFooter.rose .slideTeam strong,
+.contactFooter.vert .slideTeam strong {
+  color: rgba(255, 255, 255, 0.8);
 }
 .contactFooter h2,
 .contactFooter button,
@@ -2853,6 +2854,9 @@ footer {
 .none {
   display: none;
 }
+.overflow {
+  overflow: hidden;
+}
 /* @group clearfix */
 .clearfix:before,
 .clearfix:after {
@@ -2934,14 +2938,12 @@ footer {
 @media (max-width: 1040px) {
   header {
     position: relative;
-    overflow: hidden;
   }
   header + .content.main {
     padding-top: 0;
   }
   .no-mobile.js .headHome #bgHeadHome {
     top: 125px;
-    /* ça bug, le header est en relatif a partir de la! */
   }
   .menu {
     width: 170px;

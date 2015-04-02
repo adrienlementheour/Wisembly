@@ -1,7 +1,9 @@
 /**** VARIABLES ****/
 var myScroll,
 	header = $('header'),
-	htmlBody = $('html, body');
+	htmlBody = $('html, body'),
+	body = $("body"),
+	burger = $('#burger');
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -59,9 +61,10 @@ function scrollPage(){
 
 	fixedHeader();
 	apparitionFooter();
-	if($("body").hasClass("home")){
+
+	if(body.hasClass("home")){
 		if(!isMobile.any){
-			if (myScroll<$(".headHome").height()){
+			if(myScroll<$(".headHome").height()){
 				TweenMax.set($("#bgHeadHome"), {y:-(myScroll/1.5)+"px"});
 			}
 		}
@@ -72,17 +75,44 @@ function scrollPage(){
 
 // Sous menu //
 function setSubMenu(){
+	var subMenus = $('.subMenu');
+
 	if($(window).width() > 1040){
 		$('.hasSubMenu').on('mouseover', function(){
 			$(this).addClass('actifHover');
 		}).on('mouseout', function(){
 			$(this).removeClass('actifHover');
 		});
+
+		var nbSubMenus = subMenus.length, i = 0, y,
+			liens, liensLength, widthLi, widthSubMenu, middleSubMenu,
+			hasSubMenu, middleHasSubMenu, posHasSubMenu, newPosSubMenu;
+
+		for(i; i<nbSubMenus; i++){
+			liens = subMenus.eq(i).find('li');
+			liensLength = liens.length;
+			y = 0; 
+			widthSubMenu = 0;
+
+			for(y; y<liensLength; y++){
+				widthSubMenu += liens.eq(y).outerWidth();
+			}
+			
+			middleSubMenu = widthSubMenu / 2;
+			hasSubMenu = subMenus.eq(i).parents('.hasSubMenu');
+			middleHasSubMenu = hasSubMenu.outerWidth() / 2;
+			posHasSubMenu = hasSubMenu.offset().left;
+
+			newPosSubMenu = (middleHasSubMenu + posHasSubMenu) - middleSubMenu;
+			subMenus.eq(i).css('padding-left', newPosSubMenu + 'px');
+		}
+	}else{
+		$('.subMenu').css('padding-left', 0);
 	}
 }
 
 function hoverMenu(){
-	$('ul.menu li').on('mouseover', function(){
+	$('.menu').find('li').on('mouseover', function(){
 		TweenMax.to($("#triangle-top-header"), 0.2, {css:{y: "-60px", force3D:true}});
 	}).on('mouseout', function(){
 		TweenMax.to($("#triangle-top-header"), 0.2, {css:{y: "0px", force3D:true}});
@@ -308,17 +338,22 @@ $(function(){
 
 	setSubMenu();
 	hoverMenu();
+
 	if(!isMobile.any){
 		$("html").addClass("no-mobile");
 	}
-	if($("body").hasClass("home")){
+	if(body.hasClass("home")){
 		if(!isMobile.any){
 			TweenMax.set($("#bgHeadHome"), {position:"fixed"});
 		}
 		TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height()+"px"});
 	}
 
-	$('#burger').on('click', responsiveMenu);
+	burger.on('click', responsiveMenu);
+	$('#triangleMenu').on('click', function(){
+		burger.removeClass('actif');
+		header.removeClass('menuVisible');
+	});
 
 	// Btn demande de contact footer //
 	$('#demandeContact').on('click', function(){
@@ -364,7 +399,7 @@ $(function(){
     $(window).resize(function(){
     	fixedHeader();
     	setSubMenu();
-    	if($("body").hasClass("home")){
+    	if(body.hasClass("home")){
 	    	heightBgHeadHome();
 	    }
 	});
