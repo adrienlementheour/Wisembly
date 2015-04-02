@@ -468,7 +468,9 @@ header{
       }
       .btnFull{
         right: 30px;
-        opacity: 1;
+        .js &{
+          opacity: 1;
+        }
         .transition(.5s ease-in-out);
       }
     }
@@ -802,11 +804,11 @@ header{
     top: 2px;
     right: 28px;
     .b1{
+      top: 8px;
       .transform(rotate(45deg));
       .transition(.3s ease-in-out);
     }
     .b2{
-      top: 0;
       .transform(rotate(-45deg));
       .transition(.3s ease-in-out);
     }
@@ -1095,8 +1097,8 @@ footer{
   display: block;
   position: absolute;
   top: -71px;
-  left: -1%;
-  height: 100px;
+  left: -10%;
+  height: 125px;
   width: 150%;
   z-index: 1;
   .transition(.3s ease-in-out);
@@ -1175,7 +1177,7 @@ footer{
 #bulle{
   text-align: right;
   position: absolute;
-  top: -530px;
+  top: -620px;
   width: 275px;
   left: 45px;
   opacity: 0;
@@ -1185,7 +1187,6 @@ footer{
     .transition(.3s ease-in-out);
   }
   .no-js &{
-    top: -620px;
     opacity: 1;
   }
   &:after{
@@ -1384,6 +1385,8 @@ footer{
 }
 #triangle-footer-bottom-bleu-clair{
   top: -76px;
+  left: -20%;
+  height: 125px;
 }
 #triangle-footer-bottom-blanc{
   left: -1%;
