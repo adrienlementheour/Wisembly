@@ -75,6 +75,7 @@
               <button id='autre' name='profilAutre'>Autre</button>
             </li>
           </ul>
+          <div id='dragIn'><div id='drag'>•</div></div>
           <button id='demandeContact' class='btnFull'>Demande de contact</button>
           <form id='contact' action='#' method='POST'>
             <fieldset class='left'>
@@ -190,19 +191,29 @@
   </section>
 </footer>
 
-<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
-<script src="js/jquery.easing.js" type="text/javascript"></script>
-<script src="js/carousel.js" type="text/javascript"></script>
-<script src="js/isMobile.min.js" type="text/javascript"></script>
+</div>
+
+</div>
+
+
+
+<script src="js/jquery-1.11.2.min.js" type="text/javascript" defer></script>
+
 <!-- Tweens -->
-<script src="js/greensock/TweenMax.min.js" type="text/javascript"></script>
-<script src="js/greensock/TimelineMax.min.js" type="text/javascript"></script>
-<script src="js/greensock/plugins/BezierPlugin.min.js" type="text/javascript"></script>
-<script src="js/greensock/plugins/CSSRulePlugin.min.js" type="text/javascript"></script>
-<script src="js/greensock/plugins/ScrollToPlugin.min.js" type="text/javascript"></script>
-<!--<script src="js/ScrollMagic.min.js" type="text/javascript"></script>
-<script src="js/jquery.ScrollMagic.min.js" type="text/javascript"></script>
-<script src="js/debug.addIndicators.min.js" type="text/javascript"></script>-->
-<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.js"></script>
-<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.debug.js"></script>
-<script src="js/script.js" type="text/javascript"></script>
+<script src="js/greensock/TweenMax.min.js" type="text/javascript" defer></script>
+<script src="js/greensock/TimelineMax.min.js" type="text/javascript" defer></script>
+<script src="js/greensock/plugins/BezierPlugin.min.js" type="text/javascript" defer></script>
+<script src="js/greensock/plugins/CSSRulePlugin.min.js" type="text/javascript" defer></script>
+<script src="js/greensock/plugins/ScrollToPlugin.min.js" type="text/javascript" defer></script>
+<script src="js/greensock/utils/Draggable.min.js" type="text/javascript" defer></script>
+<script src="js/jquery.scrollmagic.min.js" defer></script>
+<!--<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.js"></script>-->
+<!--<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.debug.js"></script>-->
+
+<script src="js/jquery.easing.min.js" type="text/javascript" defer></script>
+<script src="js/carousel.js" type="text/javascript" defer></script>
+<script src="js/script.js" type="text/javascript" defer></script>
+
+</body>
+
+</html>

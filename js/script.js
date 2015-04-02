@@ -40,18 +40,14 @@ $.fn.isOnScreen = function(){
 
 // Header fixe //
 function fixedHeader(){
-	if($(window).width() > 1040){
+	if($(window).width() > 1040 && !isMobile.any){
 		myScroll > 100 ? header.addClass('on') : header.removeClass('on');
 	}
 }
 
 function apparitionFooter(){
 	if(!isMobile.any){
-		if($('.navFooter').isOnScreen()){
-			TweenMax.set($(".rsFooter"), {visibility:"visible"});
-		}else{
-			TweenMax.set($(".rsFooter"), {visibility:"hidden"});
-		}
+		$('.navFooter').isOnScreen() ? TweenMax.set($(".rsFooter"), {visibility:"visible"}) : TweenMax.set($(".rsFooter"), {visibility:"hidden"});
 	}
 }
 
@@ -84,30 +80,34 @@ function setSubMenu(){
 			$(this).removeClass('actifHover');
 		});
 
-		var nbSubMenus = subMenus.length, i = 0, y,
-			liens, liensLength, widthLi, widthSubMenu, middleSubMenu,
-			hasSubMenu, middleHasSubMenu, posHasSubMenu, newPosSubMenu;
+		if(!$('html').hasClass('lt-ie9')){
+			var nbSubMenus = subMenus.length, i = 0, y,
+				liens, liensLength, widthLi, widthSubMenu, middleSubMenu,
+				hasSubMenu, middleHasSubMenu, posHasSubMenu, newPosSubMenu;
 
-		for(i; i<nbSubMenus; i++){
-			liens = subMenus.eq(i).find('li');
-			liensLength = liens.length;
-			y = 0; 
-			widthSubMenu = 0;
+			for(i; i<nbSubMenus; i++){
+				liens = subMenus.eq(i).find('li');
+				liensLength = liens.length;
+				y = 0; 
+				widthSubMenu = 0;
 
-			for(y; y<liensLength; y++){
-				widthSubMenu += liens.eq(y).outerWidth();
+				for(y; y<liensLength; y++){
+					widthSubMenu += liens.eq(y).outerWidth();
+				}
+				
+				middleSubMenu = widthSubMenu / 2;
+				hasSubMenu = subMenus.eq(i).parents('.hasSubMenu');
+				middleHasSubMenu = hasSubMenu.outerWidth() / 2;
+				posHasSubMenu = hasSubMenu.offset().left;
+
+				newPosSubMenu = (middleHasSubMenu + posHasSubMenu) - middleSubMenu;
+				subMenus.eq(i).css('padding-left', newPosSubMenu + 'px');
 			}
-			
-			middleSubMenu = widthSubMenu / 2;
-			hasSubMenu = subMenus.eq(i).parents('.hasSubMenu');
-			middleHasSubMenu = hasSubMenu.outerWidth() / 2;
-			posHasSubMenu = hasSubMenu.offset().left;
-
-			newPosSubMenu = (middleHasSubMenu + posHasSubMenu) - middleSubMenu;
-			subMenus.eq(i).css('padding-left', newPosSubMenu + 'px');
 		}
 	}else{
-		$('.subMenu').css('padding-left', 0);
+		if(!$('html').hasClass('lt-ie9')){
+			$('.subMenu').css('padding-left', 0);
+		}
 	}
 }
 
@@ -122,8 +122,14 @@ function hoverMenu(){
 
 // Menu responsive //
 function responsiveMenu(){
+	var height = $(window).height() - header.height(),
+		container = $('#container');
 	if(!$(this).hasClass('actif')){
 		$(this).css({opacity: 0}).delay(10).animate({opacity: 1}, 100);
+		height > 340 ? container.height(height) : container.height('340px');
+		container.css('overflow', 'hidden');
+	}else{
+		container.css({height: 'auto', overflow: 'visible'});
 	}
 	$(this).toggleClass('actif');
 	header.toggleClass('menuVisible');
@@ -228,8 +234,8 @@ function videoCover(){
 }
 
 function heightBgHeadHome(){
-	////// LE PROBLEME VIENT DU -100 QUE TU AS AJOUTE (JE CROIS) DANS LE CAS OU ON EST SUR MOBILE /////
-	!isMobile.any ? TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height()+"px"}) : TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height() - 100 +"px"});
+	var newHeight = !isMobile.any ? $(".headHome").height()+"px" : $(".headHome").height() + 100 +"px";
+	TweenMax.set($("#bgHeadHome"), {height:newHeight});
 }
 
 // ScrollMagic
@@ -354,18 +360,26 @@ $(function(){
 	$('#triangleMenu').on('click', function(){
 		burger.removeClass('actif');
 		header.removeClass('menuVisible');
+		$('#container').css({height: 'auto', overflow: 'visible'});
 	});
 
 	// Btn demande de contact footer //
 	$('#demandeContact').on('click', function(){
-		$(this).animate({opacity: 0}, 200, function(){
+		$(this).animate({opacity: 0}, 250, function(){
 			$(this).css('display', 'none');
-			$('#contact, #bulle').addClass('visible');
+			$('#contact, #bulle').delay(10).addClass('visible');
 		});
+		if($('html').hasClass('lt-ie9')){
+			$('#sliderTeam').height('500px');
+		}
 	});
 
 	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
 	$('.buttonsTeam').find('button').on('click', setSliderTeamProfil);
+	Draggable.create('#drag', function(){
+		type: 'y'/*,
+		bounds: $('#dragIn')*/
+	});
 
 	// Petites fleches page accueil //
 	$('.scrollNext').on('click', goToNextSection);

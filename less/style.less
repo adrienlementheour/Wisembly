@@ -203,6 +203,7 @@ textarea{
   padding: 5px 10px;
   border: 2px solid @blanc;
   width: 100%;
+  overflow: hidden;
   position: relative;
   .box-sizing(border-box);
   &:after{
@@ -355,13 +356,30 @@ button{
   color: @bleuH2;
   position: relative;
   z-index: 1;
-  margin: 65px 0 55px;
+  margin: 65px 0 0;
+  width: 54px;
+  height: 15px;
   &:hover, &:focus{
     color: @bleuLien;
+    &:before{
+      top: 5px;
+      .transition(.2s ease-in-out);
+      .lt-ie9 &{
+        top: -5px;
+      }
+    }
   }
   &:before{
     background: @blanc;
     padding: 0 20px; 
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -27px;
+    .transition(.2s ease-in-out);
+    .lt-ie9 &{
+      top: -5px;
+    }
   }
   span{
     display: block;
@@ -375,6 +393,9 @@ button{
     margin: 0 0 0 -225px;
     .transform(rotate(0deg));
     .backface-visibility(hidden);
+    .lt-ie9 &{
+      display: none;
+    }
   }
 }
 
@@ -387,6 +408,9 @@ button{
   padding: 0 20px;
   .box-sizing(border-box);
   margin: 0 auto;
+  .lt-ie9 &{
+    min-width: 1040px;
+  }
   &.main{
     padding-top: 135px;
     position: relative;
@@ -449,7 +473,9 @@ header{
       .transition(.3s ease-in-out);
     }
     a.btnFull{
-      opacity: 1;
+      .js &{
+        opacity: 1;
+      }
     }
     .menu{
       > li{
@@ -477,13 +503,6 @@ header{
         .transition(.5s ease-in-out);
       }
     }
-    .topHeader{
-      p{
-        opacity: 1;
-        right: 30px;
-        .transition(.5s ease-in-out);
-      }
-    }
     #fdMenu{
       opacity: .95;
       left: 0;
@@ -492,8 +511,8 @@ header{
     #triangleMenu{
       width: 100%;
       right: 19%;
-      .transform(rotate(12deg));
-      .transition(right .3s ease-in-out, transform .4s ease-in-out);
+      .transform(rotate(16deg));
+      .transition(.4s right .3s ease-in-out, .4s transform .3s ease-in-out);
     }
   }
   
@@ -504,7 +523,7 @@ header{
   background: @bleu;
   color: @blanc;
   .backface-visibility(hidden);
-  .transform-style(preserve-3d);
+  /*.transform-style(preserve-3d);*/
   a, label{
     color: @blanc;
     .gothamMedium(.85em);
@@ -514,8 +533,11 @@ header{
     line-height: 39px;
     vertical-align: top;
     .gothamItalic(.85em);
-    a, span{
+    a, span span{
       .gothamMedium(1em);
+    }
+    a:hover, a:focus{
+      opacity: 0.7;
     }
   }
   form{
@@ -565,7 +587,6 @@ header{
   top:0;
   left: 0;
   overflow: hidden;
-  display: none;
 }
 #triangle-top-header{
   position: absolute;
@@ -583,48 +604,61 @@ header{
 
 .lang{
   position: relative;
-  padding: 0 15px 0 0;
+  padding: 0;
+  width: auto;
   margin: 10px 30px 0 0;
-  width: 18px;
   height: 17px;
   overflow: hidden;
   .transition(.3s ease-in-out);
+  .no-mobile &{
+    padding: 0 15px 0 0;
+    width: 18px;
+    margin: 10px 30px 0 0;
+    &:after{
+      .fontIcon();
+      content: "\e601";
+      display: block;
+      font-size: 6px;
+      position: absolute;
+      left: 23px;
+      height: 100%;
+      top: 0;
+      line-height: 20px;
+      cursor: pointer;
+      .transition(.1s ease-in-out);
+    }
+  }
   li{
     opacity: 0;
     .transition(.3s ease-in-out);
     &.actif{
       opacity: 1;
-      position: absolute;
+      position: relative;
+      .no-mobile &{
+        position: absolute;
+        + li{
+          margin: 0 0 0 40px;
+        }
+      }
       + li{
-        margin: 0 0 0 40px;
+        opacity: .7;
       }
     }
   }
-  &:after{
-    .fontIcon();
-    content: "\e601";
-    display: block;
-    font-size: 6px;
-    position: absolute;
-    left: 23px;
-    height: 100%;
-    top: 0;
-    line-height: 20px;
-    cursor: pointer;
-    .transition(.1s ease-in-out);
-  }
-  &:hover, &:focus{
-    width: 71px;
-    .transition(.3s ease-in-out);
-    li{
-      opacity: 1;
+  .no-mobile &{
+    &:hover{
+      width: 71px;
       .transition(.3s ease-in-out);
-    }
-    &:after{
-      top: 2px;
-      left: 21px;
-      .transform(rotate(-90deg));
-      .transition(.1s ease-in-out);
+      li{
+        opacity: 1;
+        .transition(.3s ease-in-out);
+      }
+      &:after{
+        top: 2px;
+        left: 21px;
+        .transform(rotate(-90deg));
+        .transition(.1s ease-in-out);
+      }
     }
   }
 }
@@ -636,7 +670,7 @@ header{
   .box-sizing(border-box);
   .transition(.3s ease-in-out);
   .backface-visibility(hidden);
-  .transform-style(preserve-3d);
+  /*.transform-style(preserve-3d);*/
   ul{
     vertical-align: middle;
     a{
@@ -749,7 +783,7 @@ header{
   z-index: -1;
   opacity: 0;
   .transition(.5s ease-in-out);
-  .no-js &{
+  .no-js &, .lt-ie9 &{
     text-align: center;
   }
   a{
@@ -842,8 +876,8 @@ header{
 #triangleMenu{
   position: fixed;
   width: 0;
-  height: 150%;
-  top: -50%;
+  height: 200%;
+  top: -55%;
   right: 0;
   background: fade(@bleu, 90);
   cursor: pointer;
@@ -915,18 +949,8 @@ footer{
         }
       }
     }
-    .buttonsTeam{
-      &:after{
-        background: darken(@bleu, 10);
-      }
-      button{
-        &.actif{
-          &:after{
-            color: @bleuFooter;
-            text-shadow: 2px 2px 2px darken(@bleu, 10);
-          }
-        }
-      }
+    #dragIn{
+      background: darken(@bleu, 10);
     }
   }
   &.rouge{
@@ -965,18 +989,8 @@ footer{
         }
       }
     }
-    .buttonsTeam{
-      &:after{
-        background: darken(@rouge, 10);
-      }
-      button{
-        &.actif{
-          &:after{
-            color: fade(@blanc, 60);
-            text-shadow: 2px 2px 2px darken(@rouge, 10);
-          }
-        }
-      }
+    #dragIn{
+      background: darken(@rouge, 10);
     }
     .btnFull{
       background: @jaune;
@@ -1023,18 +1037,8 @@ footer{
         }
       }
     }
-    .buttonsTeam{
-      &:after{
-        background: darken(@vert, 10);
-      }
-      button{
-        &.actif{
-          &:after{
-            color: fade(@blanc, 60);
-            text-shadow: 2px 2px 2px darken(@vert, 10);
-          }
-        }
-      }
+    #dragIn{
+      background: darken(@vert, 10);
     }
   }
   &.rose{
@@ -1068,18 +1072,8 @@ footer{
         }
       }
     }
-    .buttonsTeam{
-      &:after{
-        background: darken(@rose, 10);
-      }
-      button{
-        &.actif{
-          &:after{
-            color: fade(@blanc, 60);
-            text-shadow: 2px 2px 2px darken(@rose, 10);
-          }
-        }
-      }
+    #dragIn{
+      background: darken(@rose, 10);
     }
   }
   &.rose, &.vert{
@@ -1118,7 +1112,7 @@ footer{
 
 .profil{
   display: none;
-  .no-js &{
+  .no-js &, .lt-ie9 &{
     display: block;
   }
 }
@@ -1127,6 +1121,7 @@ footer{
   width: 50%;
   display: inline-block;
   position: relative;
+  vertical-align: bottom;
   li{
     padding: 0;
     &:before{
@@ -1205,12 +1200,20 @@ footer{
     font-size: 194px;
     line-height: 30px;
     opacity: .3;
+    .lt-ie9 &{
+      display: none;
+    }
+  }
+  .lt-ie9 &{
+    top: -550px;
   }
 }
 
 .formContact{
+  position: relative;
   width: 50%;
   display: inline-block;
+  vertical-align: bottom;
   padding: 0 0 0 30px;
   .box-sizing(border-box);
   h2{
@@ -1219,6 +1222,9 @@ footer{
   }
   p{
     margin-top: 0;
+    .no-js &, .lt-ie9 &{
+      display: none;
+    }
   }
   input, textarea{
     color: @blanc;
@@ -1231,7 +1237,7 @@ footer{
     opacity: 0;
     overflow: hidden;
     .transition(.3s ease-in-out);
-    .no-js &{
+    .no-js &, .lt-ie9 &{
       height: auto;
       opacity: 1;
     }
@@ -1245,28 +1251,24 @@ footer{
         margin-top: 50px;
       }
     }
+    .lt-ie9 &{
+      margin-top: 50px;
+    }
   }
 }
 
 #demandeContact{
-  .no-js &{
+  .no-js &, .lt-ie9 &{
     display: none;
   }
 }
 
 .buttonsTeam{
-  margin: 0 0 30px;
-  .no-js &{
+  margin: 0 0 60px;
+  z-index: 1;
+  position: relative;
+  .no-js &, .lt-ie9 &{
     display: none;
-  }
-  &:after{
-    content: '';
-    display: block;
-    width: 351px;
-    height: 9px;
-    border-radius: 20px;
-    margin: 15px 0 0 34px;
-    .transition(.3s ease-in-out);
   }
   li{
     padding: 0;
@@ -1300,11 +1302,6 @@ footer{
     }
     &.actif{
       opacity: 1;
-      &:after{
-        font-size: 46px;
-        left: 30%;
-        bottom: -46px;
-      }
     }
     &:hover, &:focus{
       opacity: 1;
@@ -1336,6 +1333,23 @@ footer{
   }
 }
 
+#dragIn{
+  position: absolute;
+  top: 155px;
+  left: 66px;
+  width: 348px;
+  height: 10px;
+  border-radius: 20px;
+  .transition(.3s ease-in-out);
+}
+#drag{
+  color: #aed7e8;
+  text-shadow: 2px 2px 2px #04455c;
+  font-size: 46px;
+  width: 23px;
+  line-height: 18px;
+}
+
 .navFooter{
   position: relative;
   background: @grisBorder;
@@ -1344,24 +1358,6 @@ footer{
   .no-mobile &{
     margin-bottom: 232px;
   }
-  /*&:before, &:after{
-    content: '';
-    //display: block;
-    display: none;
-    position: absolute;
-    top: -71px;
-    height: 105px;
-    width: 150%;
-    background: @grisBorder;
-    .transform(rotate(-3deg));
-    z-index: -1;
-  }
-  &:before{
-  }
-  &:after{
-    top: auto;
-    bottom: -30px;
-  }*/
   li{
     padding: 0;
     &:before{
@@ -1810,19 +1806,19 @@ footer{
     }
     &:before{
       border-width: 43px 0 0 274px;
-      .transition(.3s border-width .2s ease-in-out);
+      .transition(.2s border-width .2s ease-in-out);
     }
     &:after{
       right: 0;
       border-width: 0 0 43px 274px;
-      .transition(.4s border-width .2s ease-in-out);
+      .transition(.2s border-width .3s ease-in-out);
     }
     &:hover, &:focus{
       background: fade(@grisSlides, 50);
       .hover{
         top: 0;
         opacity: .9;
-        .transition(.2s top .3s ease-in-out, .2s opacity .3s ease-in-out);
+        .transition(.3s top .3s cubic-bezier(0.565, 0.015, 0.175, 0.980), .3s opacity .3s cubic-bezier(0.565, 0.015, 0.175, 0.980));
       }
       &:before{
         border-width: 0 0 0 274px;
@@ -1840,6 +1836,7 @@ footer{
         border-color: transparent transparent transparent @jaune;
       }
       &:after{
+        border-color: transparent transparent @jaune transparent;
         border-color: transparent transparent fade(@jaune, 55) transparent;
       }
     }
@@ -1853,6 +1850,7 @@ footer{
         border-color: transparent transparent transparent @rouge;
       }
       &:after{
+        border-color: transparent transparent @rouge transparent;
         border-color: transparent transparent fade(@rouge, 55) transparent;
       }
     }
@@ -1866,6 +1864,7 @@ footer{
         border-color: transparent transparent transparent @rose;
       }
       &:after{
+        border-color: transparent transparent @rose transparent;
         border-color: transparent transparent fade(@rose, 55) transparent;
       }
     }
@@ -1879,6 +1878,7 @@ footer{
         border-color: transparent transparent transparent @bleu;
       }
       &:after{
+        border-color: transparent transparent @bleu transparent;
         border-color: transparent transparent fade(@bleu, 55) transparent;
       }
     }
@@ -1892,6 +1892,7 @@ footer{
         border-color: transparent transparent transparent @vert;
       }
       &:after{
+        border-color: transparent transparent @vert transparent;
         border-color: transparent transparent fade(@vert, 55) transparent;
       }
     }
@@ -2123,6 +2124,82 @@ footer{
   }
 }
 
+
+/* Special IE 9 */
+
+.lt-ie9 {
+  .content{
+    &.simple{
+      padding-right: 20px;
+    }
+  }
+
+  .menu{
+    > li > a{
+      padding: 0 15px;
+    }
+    .hasSubMenu{
+      > a{
+        padding-right: 27px;
+        &:after{
+          right: 15px;
+        }
+      }
+    }
+  }
+
+  .slideTeam{
+    p{
+      max-width: 150px;
+    }
+  }
+
+  .navTeam{
+    width: 152px;
+    top: -85px;
+  }
+
+  .menuFooter{
+    padding: 0;
+  }
+
+  .detailHome{
+    padding: 0;
+  }
+
+  .avantages{
+    margin: 90px 0 0;
+    li{
+      width: 50% !important;
+      margin: 0 0 70px !important;
+      padding: 0 50px;
+      .box-sizing(border-box);
+    }
+    h3{
+      br{
+        display: none;
+      }
+    }
+  }
+
+  #sliderRef{
+    ul{
+      width: 840px;
+      margin: 0 auto;
+    }
+  }
+  #prev{
+    left: 30px;
+  }
+  #next{
+    right: 30px;
+  }
+
+  .ref{
+    width: 33.333%;
+  }
+}
+
 /* @end */
 
 /* @end */
@@ -2131,8 +2208,12 @@ footer{
   display: none;
 }
 
-.overflow{
+#overflow{
   overflow: hidden;
+  .lt-ie9 &{
+    min-width: 1100px;
+    overflow: visible;
+  }
 }
 
 /* @group clearfix */

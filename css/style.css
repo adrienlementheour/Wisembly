@@ -589,6 +589,7 @@ textarea {
   padding: 5px 10px;
   border: 2px solid #ffffff;
   width: 100%;
+  overflow: hidden;
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -831,15 +832,40 @@ button:focus {
   color: #17698d;
   position: relative;
   z-index: 1;
-  margin: 65px 0 55px;
+  margin: 65px 0 0;
+  width: 54px;
+  height: 15px;
 }
 .scrollNext:hover,
 .scrollNext:focus {
   color: #289bc4;
 }
+.scrollNext:hover:before,
+.scrollNext:focus:before {
+  top: 5px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.lt-ie9 .scrollNext:hover:before,
+.lt-ie9 .scrollNext:focus:before {
+  top: -5px;
+}
 .scrollNext:before {
   background: #ffffff;
   padding: 0 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -27px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.lt-ie9 .scrollNext:before {
+  top: -5px;
 }
 .scrollNext span {
   display: block;
@@ -862,6 +888,9 @@ button:focus {
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+.lt-ie9 .scrollNext span {
+  display: none;
+}
 /* CONTAINERS */
 .content {
   width: 100%;
@@ -871,6 +900,9 @@ button:focus {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 auto;
+}
+.lt-ie9 .content {
+  min-width: 1040px;
 }
 .content.main {
   padding-top: 135px;
@@ -935,7 +967,7 @@ header.on .bottomHeader {
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-header.on a.btnFull {
+.js header.on a.btnFull {
   opacity: 1;
 }
 header.on .menu > li > a {
@@ -963,14 +995,6 @@ header.menuVisible nav .btnFull {
 .js header.menuVisible nav .btnFull {
   opacity: 1;
 }
-header.menuVisible .topHeader p {
-  opacity: 1;
-  right: 30px;
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
 header.menuVisible #fdMenu {
   opacity: .95;
   left: 0;
@@ -982,15 +1006,15 @@ header.menuVisible #fdMenu {
 header.menuVisible #triangleMenu {
   width: 100%;
   right: 19%;
-  -webkit-transform: rotate(12deg);
-  -moz-transform: rotate(12deg);
-  -o-transform: rotate(12deg);
-  -ms-transform: rotate(12deg);
-  transform: rotate(12deg);
-  -webkit-transition: right 0.3s ease-in-out, -webkit-transform 0.4s ease-in-out;
-  -moz-transition: right 0.3s ease-in-out, -moz-transform 0.4s ease-in-out;
-  -o-transition: right 0.3s ease-in-out, -o-transform 0.4s ease-in-out;
-  transition: right 0.3s ease-in-out,-webkit-transform 0.4s ease-in-out,-moz-transform 0.4s ease-in-out,-o-transform 0.4s ease-in-out,transform 0.4s ease-in-out;
+  -webkit-transform: rotate(16deg);
+  -moz-transform: rotate(16deg);
+  -o-transform: rotate(16deg);
+  -ms-transform: rotate(16deg);
+  transform: rotate(16deg);
+  -webkit-transition: 0.4s right 0.3s ease-in-out, 0.4s -webkit-transform 0.3s ease-in-out;
+  -moz-transition: 0.4s right 0.3s ease-in-out, 0.4s -moz-transform 0.3s ease-in-out;
+  -o-transition: 0.4s right 0.3s ease-in-out, 0.4s -o-transform 0.3s ease-in-out;
+  transition: 0.4s right 0.3s ease-in-out,0.4s -webkit-transform 0.3s ease-in-out,0.4s -moz-transform 0.3s ease-in-out,0.4s -o-transform 0.3s ease-in-out,0.4s transform 0.3s ease-in-out;
 }
 .topHeader {
   height: 40px;
@@ -1001,11 +1025,7 @@ header.menuVisible #triangleMenu {
   -o-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  /*.transform-style(preserve-3d);*/
 }
 .topHeader a,
 .topHeader label {
@@ -1035,7 +1055,7 @@ header.menuVisible #triangleMenu {
   text-rendering: optimizeLegibility;
 }
 .topHeader p a,
-.topHeader p span {
+.topHeader p span span {
   /*font-family: 'gothamMedium', sans-serif;
   font-weight: normal;*/
   font-family: 'Gotham SSm A', 'Gotham SSm B';
@@ -1045,6 +1065,10 @@ header.menuVisible #triangleMenu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+.topHeader p a:hover,
+.topHeader p a:focus {
+  opacity: 0.7;
 }
 .topHeader form {
   margin: 7px 0;
@@ -1093,7 +1117,6 @@ header.menuVisible #triangleMenu {
   top: 0;
   left: 0;
   overflow: hidden;
-  display: none;
 }
 #triangle-top-header {
   position: absolute;
@@ -1118,9 +1141,9 @@ header.menuVisible #triangleMenu {
 }
 .lang {
   position: relative;
-  padding: 0 15px 0 0;
+  padding: 0;
+  width: auto;
   margin: 10px 30px 0 0;
-  width: 18px;
   height: 17px;
   overflow: hidden;
   -webkit-transition: 0.3s ease-in-out;
@@ -1128,21 +1151,12 @@ header.menuVisible #triangleMenu {
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-.lang li {
-  opacity: 0;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+.no-mobile .lang {
+  padding: 0 15px 0 0;
+  width: 18px;
+  margin: 10px 30px 0 0;
 }
-.lang li.actif {
-  opacity: 1;
-  position: absolute;
-}
-.lang li.actif + li {
-  margin: 0 0 0 40px;
-}
-.lang:after {
+.no-mobile .lang:after {
   font-family: 'wisembly';
   speak: none;
   font-weight: normal;
@@ -1165,24 +1179,41 @@ header.menuVisible #triangleMenu {
   -o-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
 }
-.lang:hover,
-.lang:focus {
+.lang li {
+  opacity: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.lang li.actif {
+  opacity: 1;
+  position: relative;
+}
+.no-mobile .lang li.actif {
+  position: absolute;
+}
+.no-mobile .lang li.actif + li {
+  margin: 0 0 0 40px;
+}
+.lang li.actif + li {
+  opacity: .7;
+}
+.no-mobile .lang:hover {
   width: 71px;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-.lang:hover li,
-.lang:focus li {
+.no-mobile .lang:hover li {
   opacity: 1;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-.lang:hover:after,
-.lang:focus:after {
+.no-mobile .lang:hover:after {
   top: 2px;
   left: 21px;
   -webkit-transform: rotate(-90deg);
@@ -1211,11 +1242,7 @@ header.menuVisible #triangleMenu {
   -o-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  /*.transform-style(preserve-3d);*/
 }
 .bottomHeader ul {
   vertical-align: middle;
@@ -1346,7 +1373,8 @@ header.menuVisible #triangleMenu {
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-.no-js .subMenu {
+.no-js .subMenu,
+.lt-ie9 .subMenu {
   text-align: center;
 }
 .subMenu a {
@@ -1466,8 +1494,8 @@ header.menuVisible #triangleMenu {
 #triangleMenu {
   position: fixed;
   width: 0;
-  height: 150%;
-  top: -50%;
+  height: 200%;
+  top: -55%;
   right: 0;
   background: rgba(6, 105, 141, 0.9);
   cursor: pointer;
@@ -1552,12 +1580,8 @@ footer {
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-.contactFooter.bleu .buttonsTeam:after {
+.contactFooter.bleu #dragIn {
   background: #04455c;
-}
-.contactFooter.bleu .buttonsTeam button.actif:after {
-  color: #aed7e8;
-  text-shadow: 2px 2px 2px #04455c;
 }
 .contactFooter.rouge {
   background: #e25c5b;
@@ -1596,12 +1620,8 @@ footer {
 .contactFooter.rouge .formContact .select:focus {
   border-color: #ffffff;
 }
-.contactFooter.rouge .buttonsTeam:after {
+.contactFooter.rouge #dragIn {
   background: #da3130;
-}
-.contactFooter.rouge .buttonsTeam button.actif:after {
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 2px 2px 2px #da3130;
 }
 .contactFooter.rouge .btnFull {
   background: #f1bc33;
@@ -1652,12 +1672,8 @@ footer {
 .contactFooter.vert .formContact .select:focus {
   border-color: #ffffff;
 }
-.contactFooter.vert .buttonsTeam:after {
+.contactFooter.vert #dragIn {
   background: #388f6d;
-}
-.contactFooter.vert .buttonsTeam button.actif:after {
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 2px 2px 2px #388f6d;
 }
 .contactFooter.rose {
   background: #f7886c;
@@ -1693,12 +1709,8 @@ footer {
 .contactFooter.rose .formContact .select:focus {
   border-color: #ffffff;
 }
-.contactFooter.rose .buttonsTeam:after {
+.contactFooter.rose #dragIn {
   background: #f4613c;
-}
-.contactFooter.rose .buttonsTeam button.actif:after {
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 2px 2px 2px #f4613c;
 }
 .contactFooter.rose .btnFull,
 .contactFooter.vert .btnFull {
@@ -1742,13 +1754,15 @@ footer {
 .profil {
   display: none;
 }
-.no-js .profil {
+.no-js .profil,
+.lt-ie9 .profil {
   display: block;
 }
 #sliderTeam {
   width: 50%;
   display: inline-block;
   position: relative;
+  vertical-align: bottom;
 }
 #sliderTeam li {
   padding: 0;
@@ -1849,9 +1863,17 @@ footer {
   line-height: 30px;
   opacity: .3;
 }
+.lt-ie9 #bulle:after {
+  display: none;
+}
+.lt-ie9 #bulle {
+  top: -550px;
+}
 .formContact {
+  position: relative;
   width: 50%;
   display: inline-block;
+  vertical-align: bottom;
   padding: 0 0 0 30px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1863,6 +1885,10 @@ footer {
 }
 .formContact p {
   margin-top: 0;
+}
+.no-js .formContact p,
+.lt-ie9 .formContact p {
+  display: none;
 }
 .formContact input,
 .formContact textarea {
@@ -1880,7 +1906,8 @@ footer {
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-.no-js .formContact form {
+.no-js .formContact form,
+.lt-ie9 .formContact form {
   height: auto;
   opacity: 1;
 }
@@ -1895,26 +1922,21 @@ footer {
 .formContact form fieldset:first-of-type {
   margin-top: 50px;
 }
-.no-js #demandeContact {
+.lt-ie9 .formContact form {
+  margin-top: 50px;
+}
+.no-js #demandeContact,
+.lt-ie9 #demandeContact {
   display: none;
 }
 .buttonsTeam {
-  margin: 0 0 30px;
+  margin: 0 0 60px;
+  z-index: 1;
+  position: relative;
 }
-.no-js .buttonsTeam {
+.no-js .buttonsTeam,
+.lt-ie9 .buttonsTeam {
   display: none;
-}
-.buttonsTeam:after {
-  content: '';
-  display: block;
-  width: 351px;
-  height: 9px;
-  border-radius: 20px;
-  margin: 15px 0 0 34px;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 .buttonsTeam li {
   padding: 0;
@@ -1960,11 +1982,6 @@ footer {
 .buttonsTeam button.actif {
   opacity: 1;
 }
-.buttonsTeam button.actif:after {
-  font-size: 46px;
-  left: 30%;
-  bottom: -46px;
-}
 .buttonsTeam button:hover,
 .buttonsTeam button:focus {
   opacity: 1;
@@ -1985,29 +2002,30 @@ footer {
   content: "\e603";
   line-height: 41px;
 }
+#dragIn {
+  position: absolute;
+  top: 155px;
+  left: 66px;
+  width: 348px;
+  height: 10px;
+  border-radius: 20px;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+#drag {
+  color: #aed7e8;
+  text-shadow: 2px 2px 2px #04455c;
+  font-size: 46px;
+  width: 23px;
+  line-height: 18px;
+}
 .navFooter {
   position: relative;
   background: #ebeeef;
   padding: 15px 0;
   z-index: 3;
-  /*&:before, &:after{
-    content: '';
-    //display: block;
-    display: none;
-    position: absolute;
-    top: -71px;
-    height: 105px;
-    width: 150%;
-    background: @grisBorder;
-    .transform(rotate(-3deg));
-    z-index: -1;
-  }
-  &:before{
-  }
-  &:after{
-    top: auto;
-    bottom: -30px;
-  }*/
 }
 .no-mobile .navFooter {
   margin-bottom: 232px;
@@ -2564,18 +2582,18 @@ footer {
 }
 .ref a:before {
   border-width: 43px 0 0 274px;
-  -webkit-transition: 0.3s border-width 0.2s ease-in-out;
-  -moz-transition: 0.3s border-width 0.2s ease-in-out;
-  -o-transition: 0.3s border-width 0.2s ease-in-out;
-  transition: 0.3s border-width 0.2s ease-in-out;
+  -webkit-transition: 0.2s border-width 0.2s ease-in-out;
+  -moz-transition: 0.2s border-width 0.2s ease-in-out;
+  -o-transition: 0.2s border-width 0.2s ease-in-out;
+  transition: 0.2s border-width 0.2s ease-in-out;
 }
 .ref a:after {
   right: 0;
   border-width: 0 0 43px 274px;
-  -webkit-transition: 0.4s border-width 0.2s ease-in-out;
-  -moz-transition: 0.4s border-width 0.2s ease-in-out;
-  -o-transition: 0.4s border-width 0.2s ease-in-out;
-  transition: 0.4s border-width 0.2s ease-in-out;
+  -webkit-transition: 0.2s border-width 0.3s ease-in-out;
+  -moz-transition: 0.2s border-width 0.3s ease-in-out;
+  -o-transition: 0.2s border-width 0.3s ease-in-out;
+  transition: 0.2s border-width 0.3s ease-in-out;
 }
 .ref a:hover,
 .ref a:focus {
@@ -2585,10 +2603,10 @@ footer {
 .ref a:focus .hover {
   top: 0;
   opacity: .9;
-  -webkit-transition: 0.2s top 0.3s ease-in-out, 0.2s opacity 0.3s ease-in-out;
-  -moz-transition: 0.2s top 0.3s ease-in-out, 0.2s opacity 0.3s ease-in-out;
-  -o-transition: 0.2s top 0.3s ease-in-out, 0.2s opacity 0.3s ease-in-out;
-  transition: 0.2s top 0.3s ease-in-out, 0.2s opacity 0.3s ease-in-out;
+  -webkit-transition: 0.3s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.3s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
+  -moz-transition: 0.3s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.3s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
+  -o-transition: 0.3s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.3s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
+  transition: 0.3s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.3s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
 }
 .ref a:hover:before,
 .ref a:focus:before {
@@ -2610,6 +2628,7 @@ footer {
   border-color: transparent transparent transparent #f1bc33;
 }
 .ref.jaune a:after {
+  border-color: transparent transparent #f1bc33 transparent;
   border-color: transparent transparent rgba(241, 188, 51, 0.55) transparent;
 }
 .ref.jaune .hover {
@@ -2619,6 +2638,7 @@ footer {
   border-color: transparent transparent transparent #e25c5b;
 }
 .ref.rouge a:after {
+  border-color: transparent transparent #e25c5b transparent;
   border-color: transparent transparent rgba(226, 92, 91, 0.55) transparent;
 }
 .ref.rouge .hover {
@@ -2628,6 +2648,7 @@ footer {
   border-color: transparent transparent transparent #f7886c;
 }
 .ref.rose a:after {
+  border-color: transparent transparent #f7886c transparent;
   border-color: transparent transparent rgba(247, 136, 108, 0.55) transparent;
 }
 .ref.rose .hover {
@@ -2637,6 +2658,7 @@ footer {
   border-color: transparent transparent transparent #06698d;
 }
 .ref.bleu a:after {
+  border-color: transparent transparent #06698d transparent;
   border-color: transparent transparent rgba(6, 105, 141, 0.55) transparent;
 }
 .ref.bleu .hover {
@@ -2646,6 +2668,7 @@ footer {
   border-color: transparent transparent transparent #46b489;
 }
 .ref.vert a:after {
+  border-color: transparent transparent #46b489 transparent;
   border-color: transparent transparent rgba(70, 180, 137, 0.55) transparent;
 }
 .ref.vert .hover {
@@ -2918,13 +2941,70 @@ footer {
 #bloc-video .cover-video .wrapper-zone-txt-cover-video .zone-txt-cover-video a {
   margin: 20px auto 0 auto;
 }
+/* Special IE 9 */
+.lt-ie9 .content.simple {
+  padding-right: 20px;
+}
+.lt-ie9 .menu > li > a {
+  padding: 0 15px;
+}
+.lt-ie9 .menu .hasSubMenu > a {
+  padding-right: 27px;
+}
+.lt-ie9 .menu .hasSubMenu > a:after {
+  right: 15px;
+}
+.lt-ie9 .slideTeam p {
+  max-width: 150px;
+}
+.lt-ie9 .navTeam {
+  width: 152px;
+  top: -85px;
+}
+.lt-ie9 .menuFooter {
+  padding: 0;
+}
+.lt-ie9 .detailHome {
+  padding: 0;
+}
+.lt-ie9 .avantages {
+  margin: 90px 0 0;
+}
+.lt-ie9 .avantages li {
+  width: 50% !important;
+  margin: 0 0 70px !important;
+  padding: 0 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.lt-ie9 .avantages h3 br {
+  display: none;
+}
+.lt-ie9 #sliderRef ul {
+  width: 840px;
+  margin: 0 auto;
+}
+.lt-ie9 #prev {
+  left: 30px;
+}
+.lt-ie9 #next {
+  right: 30px;
+}
+.lt-ie9 .ref {
+  width: 33.333%;
+}
 /* @end */
 /* @end */
 .none {
   display: none;
 }
-.overflow {
+#overflow {
   overflow: hidden;
+}
+.lt-ie9 #overflow {
+  min-width: 1100px;
+  overflow: visible;
 }
 /* @group clearfix */
 .clearfix:before,
@@ -3062,8 +3142,7 @@ footer {
   .menu .hasSubMenu > a:focus:after {
     width: auto;
     top: 41%;
-    text-align: left;
-    right: 15px;
+    right: 0;
   }
   .subMenu {
     position: relative;
@@ -3076,12 +3155,6 @@ footer {
   }
   .subMenu ul {
     display: none;
-    /*display: block;
-      padding: 0 0 10px 10px;
-      a{
-        .gothamItalic(1em);
-        padding: 0;
-      }*/
   }
   .subMenu a {
     margin: 0;
@@ -3114,6 +3187,9 @@ footer {
     -o-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
   }
+  .topHeader p > span {
+    background: #ffffff;
+  }
   .topHeader p a {
     color: #3a434c;
   }
@@ -3128,17 +3204,20 @@ footer {
     height: 36px;
   }
   .lang {
+    margin: 15px 30px 0 0;
+  }
+  .no-mobile .lang {
     padding: 0;
     width: auto;
     margin: 15px 30px 0 0;
   }
-  .lang:after {
+  .no-mobile .lang:after {
     display: none;
   }
-  .lang li.actif {
+  .no-mobile .lang li.actif {
     position: relative;
   }
-  .lang li.actif + li {
+  .no-mobile .lang li.actif + li {
     margin: 0;
     opacity: .7;
   }
@@ -3258,12 +3337,20 @@ footer {
   header.menuVisible .topHeader form {
     display: none;
   }
+  header.menuVisible .topHeader p {
+    opacity: 1;
+    right: 30px;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
   header.menuVisible #triangleMenu {
-    -webkit-transform: rotate(15deg);
-    -moz-transform: rotate(15deg);
-    -o-transform: rotate(15deg);
-    -ms-transform: rotate(15deg);
-    transform: rotate(15deg);
+    -webkit-transform: rotate(19deg);
+    -moz-transform: rotate(19deg);
+    -o-transform: rotate(19deg);
+    -ms-transform: rotate(19deg);
+    transform: rotate(19deg);
   }
   .home .topHeader form {
     display: block;
@@ -3435,11 +3522,11 @@ footer {
 }
 @media (max-width: 450px) {
   header.menuVisible #triangleMenu {
-    -webkit-transform: rotate(19deg);
-    -moz-transform: rotate(19deg);
-    -o-transform: rotate(19deg);
-    -ms-transform: rotate(19deg);
-    transform: rotate(19deg);
+    -webkit-transform: rotate(23deg);
+    -moz-transform: rotate(23deg);
+    -o-transform: rotate(23deg);
+    -ms-transform: rotate(23deg);
+    transform: rotate(23deg);
   }
   .buttonsTeam {
     display: none;
