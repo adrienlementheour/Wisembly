@@ -228,7 +228,7 @@ function videoCover(){
 }
 
 function heightBgHeadHome(){
-	TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height()+"px"});
+	!isMobile.any ? TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height()+"px"}) : TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height() - 100 +"px"});
 }
 
 // ScrollMagic

@@ -95,21 +95,19 @@
 
 @media (max-width: 1040px){
   header{
-    position: relative;
-    + .content{
-      &.main{
-        padding-top: 0;
+    .no-mobile &{
+      position: relative;
+      + .content{
+        &.main{
+          padding-top: 0;
+        }
       }
     }
   }
   .headHome{
     #bgHeadHome{
       .no-mobile.js &{
-<<<<<<< HEAD
-        top: 125px;
-=======
         padding-top: 125px;
->>>>>>> origin/master
       }
     }
   }
@@ -407,6 +405,9 @@
   .home{
     .topHeader form{
       display: block;
+      .no-js &{
+        margin-top: 0;
+      }
     }
     .bottomHeader {
       height: 150px;
@@ -451,9 +452,6 @@
     left: 30px;
     top: 15px;
     .transition(.3s ease-in-out);
-    a{
-      color: @txt;
-    }
   }
 
   #burger{
@@ -645,10 +643,6 @@
   #next{
     right: 100px;
   }
-
-  /*.blocH1{
-    float: none;
-  }*/
 }
 
 /* @end */
