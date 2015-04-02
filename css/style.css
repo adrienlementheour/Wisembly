@@ -2943,7 +2943,11 @@ footer {
     padding-top: 0;
   }
   .no-mobile.js .headHome #bgHeadHome {
+<<<<<<< HEAD
     top: 125px;
+=======
+    padding-top: 125px;
+>>>>>>> origin/master
   }
   .menu {
     width: 170px;
