@@ -62,7 +62,7 @@ function scrollPage(){
 	fixedHeader();
 	apparitionFooter();
 
-	if(body.hasClass("home")){
+	if(body.hasClass("home") && !$("html").hasClass("lt-ie10")){
 		if(!isMobile.any){
 			if(myScroll<$(".headHome").height()){
 				TweenMax.set($("#bgHeadHome"), {y:-(myScroll/1.5)+"px"});
@@ -342,7 +342,7 @@ $(function(){
 	if(!isMobile.any){
 		$("html").addClass("no-mobile");
 	}
-	if(body.hasClass("home")){
+	if(body.hasClass("home") && !$("html").hasClass("lt-ie10")){
 		if(!isMobile.any){
 			TweenMax.set($("#bgHeadHome"), {position:"fixed"});
 		}

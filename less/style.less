@@ -336,6 +336,9 @@ button{
 .btnBlanc{
   color: @blanc;
   background: none;
+  .lt-ie10 &{
+    color: @bleuLien;
+  }
   &:before{
     background: @blanc;
   }
@@ -560,6 +563,7 @@ header{
   top:0;
   left: 0;
   overflow: hidden;
+  display: none;
 }
 #triangle-top-header{
   position: absolute;
@@ -1433,6 +1437,9 @@ footer{
       .transform(rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0));
       .transform-origin(0% 100%);
       .transition(.3s ease-in-out);
+      .lt-ie10 &{
+        display: none;
+      }
     }
   }
   .txt{
@@ -1650,6 +1657,9 @@ footer{
   background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
   background-size: cover;
   pointer-events: none;
+  .lt-ie9 &{
+    background-size: 100% auto;
+  }
 }
 #triangle-header-vert, #triangle-header-blanc{
   position: absolute;

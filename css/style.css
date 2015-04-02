@@ -812,6 +812,9 @@ button:focus {
   color: #ffffff;
   background: none;
 }
+.lt-ie10 .btnBlanc {
+  color: #289bc4;
+}
 .btnBlanc:before {
   background: #ffffff;
 }
@@ -1080,6 +1083,7 @@ header.menuVisible #triangleMenu {
   top: 0;
   left: 0;
   overflow: hidden;
+  display: none;
 }
 #triangle-top-header {
   position: absolute;
@@ -2104,6 +2108,9 @@ footer {
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+.lt-ie10 .itemsFooter .titre:before {
+  display: none;
+}
 .itemsFooter .txt {
   display: block;
   color: #3a434c;
@@ -2371,6 +2378,9 @@ footer {
   background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
   background-size: cover;
   pointer-events: none;
+}
+.lt-ie9 #bgHeadHome {
+  background-size: 100% auto;
 }
 #triangle-header-vert,
 #triangle-header-blanc {
