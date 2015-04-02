@@ -59,6 +59,13 @@ function scrollPage(){
 
 	fixedHeader();
 	apparitionFooter();
+	if($("body").hasClass("home")){
+		if(!isMobile.any){
+			if (myScroll<$(".headHome").height()){
+				TweenMax.set($("#bgHeadHome"), {y:-(myScroll/1.5)+"px"});
+			}
+		}
+	}
 
 	requestAnimFrame(scrollPage);
 }
