@@ -2940,8 +2940,7 @@ footer {
     padding-top: 0;
   }
   .no-mobile.js .headHome #bgHeadHome {
-    top: 125px;
-    /* ça bug, le header est en relatif a partir de la! */
+    padding-top: 125px;
   }
   .menu {
     width: 170px;
