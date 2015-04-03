@@ -106,19 +106,32 @@
 								left		: i * cache.itemW + 'px'
 							});
 						});
+
+
+						function nav(left){
+							var direction = left ? -1 : 1;
+							if( cache.isAnimating ) return false;
+							cache.isAnimating	= true;
+							aux.navigate( direction, $el, $wrapper, settings, cache );
+						}
 						
 						// navigate left
 						$navPrev.bind('click.contentcarousel', function( event ) {
-							if( cache.isAnimating ) return false;
-							cache.isAnimating	= true;
-							aux.navigate( -1, $el, $wrapper, settings, cache );
-						});
+							nav(true);
+						});	
+
+						$wrapper.on('swiperight', function( event ){
+							nav(true);
+						});					
 						
 						// navigate right
+
 						$navNext.bind('click.contentcarousel', function( event ) {
-							if( cache.isAnimating ) return false;
-							cache.isAnimating	= true;
-							aux.navigate( 1, $el, $wrapper, settings, cache );
+							nav(false);
+						});
+
+						$wrapper.on('swipeleft', function( event ){
+							nav(false);
 						});
 
 					});

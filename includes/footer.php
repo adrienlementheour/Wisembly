@@ -75,7 +75,6 @@
               <button id='autre' name='profilAutre'>Autre</button>
             </li>
           </ul>
-          <div id='dragIn'><div id='drag'>•</div></div>
           <button id='demandeContact' class='btnFull'>Demande de contact</button>
           <form id='contact' action='#' method='POST'>
             <fieldset class='left'>
@@ -206,12 +205,16 @@
 <script src="js/greensock/plugins/CSSRulePlugin.min.js" type="text/javascript" defer></script>
 <script src="js/greensock/plugins/ScrollToPlugin.min.js" type="text/javascript" defer></script>
 <script src="js/greensock/utils/Draggable.min.js" type="text/javascript" defer></script>
+<script src="js/greensock/plugins/ThrowPropsPlugin.min.js" type="text/javascript" defer></script>
 <script src="js/jquery.scrollmagic.min.js" defer></script>
 <!--<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.js"></script>-->
 <!--<script src="https://rawgit.com/janpaepke/ScrollMagic/master/js/jquery.scrollmagic.debug.js"></script>-->
 
+<!-- Carousel -->
+<script src="js/jquery.swipe.min.js" type="text/javascript" defer></script>
 <script src="js/jquery.easing.min.js" type="text/javascript" defer></script>
 <script src="js/carousel.js" type="text/javascript" defer></script>
+
 <script src="js/script.js" type="text/javascript" defer></script>
 
 </body>

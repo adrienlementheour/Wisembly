@@ -197,6 +197,7 @@ input{
 }
 textarea{
   height: 130px;
+  resize: none;
 }
 
 .select{
@@ -280,7 +281,6 @@ button{
   border: 2px solid;
   overflow: hidden;
   z-index: 1;
-  -webkit-backface-visibility: hidden;
   .transition-timing-function(cubic-bezier(0.2, 1, 0.3, 1));
   .gothamMedium(1em);
   .small{
@@ -293,16 +293,18 @@ button{
     width: 150%;
     height: 100%;
     z-index: -1;
-    .transform(rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0));
+    opacity: 1;
+    .transform(rotate(-45deg) translate3d(0, -2em, 0));
     .transform-origin(0% 100%);
     .transition(.3s ease-in-out);
   }
   &:hover, &:focus{
     background: transparent;
     border-color: @vert;
+    outline: 0;
     &:before{
       opacity: 1;
-      .transform(rotate3d(0, 0, 1, 0deg));
+      .transform(rotate(0deg));
       .transition-timing-function(cubic-bezier(0.2, 1, 0.3, 1));
     }
   }
@@ -468,7 +470,7 @@ header{
     top: -40px;
     .transition(.3s ease-in-out);
     .bottomHeader{
-      background: fade(@blanc, 80);
+      background: fade(@blanc, 95);
       height: 73px;
       .transition(.3s ease-in-out);
     }
@@ -523,7 +525,6 @@ header{
   background: @bleu;
   color: @blanc;
   .backface-visibility(hidden);
-  /*.transform-style(preserve-3d);*/
   a, label{
     color: @blanc;
     .gothamMedium(.85em);
@@ -670,7 +671,6 @@ header{
   .box-sizing(border-box);
   .transition(.3s ease-in-out);
   .backface-visibility(hidden);
-  /*.transform-style(preserve-3d);*/
   ul{
     vertical-align: middle;
     a{
@@ -700,6 +700,9 @@ header{
   margin: 0 0 0 70px;
   a{
     padding: 0 23px;
+    &:focus{
+      outline: 0;
+    }
   }
   > li{
     position: static;
@@ -952,6 +955,12 @@ footer{
     #dragIn{
       background: darken(@bleu, 10);
     }
+    #drag{
+      &:before{
+        color: #aed7e8;
+        text-shadow: 2px 2px 2px #04455c;
+      }
+    }
   }
   &.rouge{
     background: @rouge;
@@ -991,6 +1000,12 @@ footer{
     }
     #dragIn{
       background: darken(@rouge, 10);
+    }
+    #drag{
+      &:before{
+        color: fade(@blanc, 80);
+        text-shadow: 2px 2px 2px darken(@rouge, 10);
+      }
     }
     .btnFull{
       background: @jaune;
@@ -1040,6 +1055,12 @@ footer{
     #dragIn{
       background: darken(@vert, 10);
     }
+    #drag{
+      &:before{
+        color: fade(@blanc, 80);
+        text-shadow: 2px 2px 2px darken(@vert, 10);
+      }
+    }
   }
   &.rose{
     background: @rose;
@@ -1074,6 +1095,12 @@ footer{
     }
     #dragIn{
       background: darken(@rose, 10);
+    }
+    #drag{
+      &:before{
+        color: fade(@blanc, 80);
+        text-shadow: 2px 2px 2px darken(@rose, 10);
+      }
     }
   }
   &.rose, &.vert{
@@ -1335,7 +1362,7 @@ footer{
 
 #dragIn{
   position: absolute;
-  top: 155px;
+  top: 153px;
   left: 66px;
   width: 348px;
   height: 10px;
@@ -1343,11 +1370,29 @@ footer{
   .transition(.3s ease-in-out);
 }
 #drag{
-  color: #aed7e8;
-  text-shadow: 2px 2px 2px #04455c;
-  font-size: 46px;
-  width: 23px;
-  line-height: 18px;
+  position: relative;
+  z-index: 2;
+  .size(14px);
+  &:before{
+    content: '•';
+    position: absolute;
+    font-size: 46px;
+    line-height: 18px;
+    top: -3px;
+    left: -5px;
+  }
+}
+
+@supports (-webkit-appearance:none){
+  #dragIn{
+    top: 156px;
+  }
+}
+
+@supports (-moz-appearance:meterbar){
+  #dragIn{
+    top: 156px;
+  }
 }
 
 .navFooter{
@@ -1465,6 +1510,7 @@ footer{
   }
   a{
     &:hover, &:focus{
+      outline: 0;
       .titre{
         strong{
           color: @grisSolid;
@@ -1555,17 +1601,21 @@ footer{
 }
 
 .rsFooter{
+  width: 100%;
+  background-color: @blanc;
+  text-align: center;
+  padding: 105px 0 0;
+  margin: 0 auto;
+  z-index: 1;
   .no-mobile &{
     position: fixed;
     bottom: 0;
     left: 0;
+    visibility: hidden;
   }
-  width: 100%;
-  background-color: @blanc;
-  text-align: center;
-  padding: 105px 0 0 0;
-  margin: 0 auto;
-  z-index: 1;
+  .no-js &{
+    visiblity: visible;
+  }
   li{
     display: inline-block;
     padding: 3px;
@@ -1600,6 +1650,7 @@ footer{
       border: 0;
       font-size: 30px;
       &:hover, &:focus{
+        outline: 0;
         color: @txt;
       }
     }
@@ -1637,10 +1688,6 @@ footer{
   position: relative;
   z-index: 1;
   width: 100%;
-  /*margin-top: -60px;
-  .no-mobile &{
-    margin-top: 0;
-  }*/
   + .wrapper{
     position: relative;
     z-index: 2;
@@ -1815,6 +1862,7 @@ footer{
     }
     &:hover, &:focus{
       background: fade(@grisSlides, 50);
+      outline: 0;
       .hover{
         top: 0;
         opacity: .9;

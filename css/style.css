@@ -584,6 +584,7 @@ input + button {
 }
 textarea {
   height: 130px;
+  resize: none;
 }
 .select {
   padding: 5px 10px;
@@ -708,7 +709,6 @@ button:focus {
   border: 2px solid;
   overflow: hidden;
   z-index: 1;
-  -webkit-backface-visibility: hidden;
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   -moz-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   -o-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
@@ -737,11 +737,12 @@ button:focus {
   width: 150%;
   height: 100%;
   z-index: -1;
-  -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-  -moz-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-  -o-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-  -ms-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-  transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+  opacity: 1;
+  -webkit-transform: rotate(-45deg) translate3d(0, -2em, 0);
+  -moz-transform: rotate(-45deg) translate3d(0, -2em, 0);
+  -o-transform: rotate(-45deg) translate3d(0, -2em, 0);
+  -ms-transform: rotate(-45deg) translate3d(0, -2em, 0);
+  transform: rotate(-45deg) translate3d(0, -2em, 0);
   -webkit-transform-origin: 0% 100%;
   -moz-transform-origin: 0% 100%;
   -o-transform-origin: 0% 100%;
@@ -760,6 +761,7 @@ button:focus {
 .btnBlanc:focus {
   background: transparent;
   border-color: #46b489;
+  outline: 0;
 }
 .btnFull:hover:before,
 .btnLight:hover:before,
@@ -768,11 +770,11 @@ button:focus {
 .btnLight:focus:before,
 .btnBlanc:focus:before {
   opacity: 1;
-  -webkit-transform: rotate3d(0, 0, 1, 0deg);
-  -moz-transform: rotate3d(0, 0, 1, 0deg);
-  -o-transform: rotate3d(0, 0, 1, 0deg);
-  -ms-transform: rotate3d(0, 0, 1, 0deg);
-  transform: rotate3d(0, 0, 1, 0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   -moz-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   -o-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
@@ -960,7 +962,7 @@ header.on {
   transition: 0.3s ease-in-out;
 }
 header.on .bottomHeader {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   height: 73px;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
@@ -1025,7 +1027,6 @@ header.menuVisible #triangleMenu {
   -o-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-  /*.transform-style(preserve-3d);*/
 }
 .topHeader a,
 .topHeader label {
@@ -1242,7 +1243,6 @@ header.menuVisible #triangleMenu {
   -o-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-  /*.transform-style(preserve-3d);*/
 }
 .bottomHeader ul {
   vertical-align: middle;
@@ -1279,6 +1279,9 @@ header.menuVisible #triangleMenu {
 }
 .menu a {
   padding: 0 23px;
+}
+.menu a:focus {
+  outline: 0;
 }
 .menu > li {
   position: static;
@@ -1583,6 +1586,10 @@ footer {
 .contactFooter.bleu #dragIn {
   background: #04455c;
 }
+.contactFooter.bleu #drag:before {
+  color: #aed7e8;
+  text-shadow: 2px 2px 2px #04455c;
+}
 .contactFooter.rouge {
   background: #e25c5b;
 }
@@ -1622,6 +1629,10 @@ footer {
 }
 .contactFooter.rouge #dragIn {
   background: #da3130;
+}
+.contactFooter.rouge #drag:before {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 2px 2px 2px #da3130;
 }
 .contactFooter.rouge .btnFull {
   background: #f1bc33;
@@ -1675,6 +1686,10 @@ footer {
 .contactFooter.vert #dragIn {
   background: #388f6d;
 }
+.contactFooter.vert #drag:before {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 2px 2px 2px #388f6d;
+}
 .contactFooter.rose {
   background: #f7886c;
 }
@@ -1711,6 +1726,10 @@ footer {
 }
 .contactFooter.rose #dragIn {
   background: #f4613c;
+}
+.contactFooter.rose #drag:before {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 2px 2px 2px #f4613c;
 }
 .contactFooter.rose .btnFull,
 .contactFooter.vert .btnFull {
@@ -2004,7 +2023,7 @@ footer {
 }
 #dragIn {
   position: absolute;
-  top: 155px;
+  top: 153px;
   left: 66px;
   width: 348px;
   height: 10px;
@@ -2015,11 +2034,28 @@ footer {
   transition: 0.3s ease-in-out;
 }
 #drag {
-  color: #aed7e8;
-  text-shadow: 2px 2px 2px #04455c;
+  position: relative;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+}
+#drag:before {
+  content: '•';
+  position: absolute;
   font-size: 46px;
-  width: 23px;
   line-height: 18px;
+  top: -3px;
+  left: -5px;
+}
+@supports (-webkit-appearance:none) {
+  #dragIn {
+    top: 156px;
+  }
+}
+@supports (-moz-appearance:meterbar) {
+  #dragIn {
+    top: 156px;
+  }
 }
 .navFooter {
   position: relative;
@@ -2181,6 +2217,10 @@ footer {
   top: 0;
   left: -7px;
 }
+.itemsFooter a:hover,
+.itemsFooter a:focus {
+  outline: 0;
+}
 .itemsFooter a:hover .titre strong,
 .itemsFooter a:focus .titre strong {
   color: #718289;
@@ -2315,7 +2355,7 @@ footer {
   width: 100%;
   background-color: #ffffff;
   text-align: center;
-  padding: 105px 0 0 0;
+  padding: 105px 0 0;
   margin: 0 auto;
   z-index: 1;
 }
@@ -2323,6 +2363,10 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
+  visibility: hidden;
+}
+.no-js .rsFooter {
+  visiblity: visible;
 }
 .rsFooter li {
   display: inline-block;
@@ -2365,6 +2409,7 @@ footer {
 }
 .rsFooter ul a:hover,
 .rsFooter ul a:focus {
+  outline: 0;
   color: #3a434c;
 }
 .rsFooter .icon-fb {
@@ -2397,10 +2442,6 @@ footer {
   position: relative;
   z-index: 1;
   width: 100%;
-  /*margin-top: -60px;
-  .no-mobile &{
-    margin-top: 0;
-  }*/
 }
 .headHome + .wrapper {
   position: relative;
@@ -2598,6 +2639,7 @@ footer {
 .ref a:hover,
 .ref a:focus {
   background: rgba(244, 245, 245, 0.5);
+  outline: 0;
 }
 .ref a:hover .hover,
 .ref a:focus .hover {
@@ -3265,6 +3307,9 @@ footer {
     width: 100%;
     padding: 0;
   }
+  #dragIn {
+    left: 36px;
+  }
   .headHome .content.main {
     padding-top: 0;
   }
@@ -3550,6 +3595,9 @@ footer {
   .itemsFooter li:first-child {
     padding: 0;
     margin: 0 0 60px;
+  }
+  #dragIn {
+    display: none;
   }
   .headHome #bgHeadHome {
     background-position: 78% 100%;
