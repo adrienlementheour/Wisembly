@@ -165,7 +165,7 @@
     }
     .hasSubMenu{
       &:hover, &:focus{
-        .subMenu{
+        .sub-menu{
           bottom: auto;
         }
       }
@@ -175,21 +175,20 @@
         }
       }
     }
-  }
-
-  .subMenu{
-    position: relative;
-    bottom: auto;
-    opacity: 1;
-    z-index: 1;
-    background: none;
-    text-align: left;
-    padding: 0;
-    ul{
-      display: none;
-    }
-    a{
-      margin: 0;
+    .sub-menu{
+      position: relative;
+      bottom: auto;
+      opacity: 1;
+      z-index: 1;
+      background: none;
+      text-align: left;
+      padding: 0;
+      ul{
+        display: none;
+      }
+      a{
+        margin: 0;
+      }
     }
   }
 
@@ -272,7 +271,7 @@
       right: -400px;
       .transition(.3s ease-in-out);
     }
-    .subMenu{
+    .sub-menu{
       a{
         color: fade(@txt, 80);
         font-size: 0.9em;

@@ -361,12 +361,12 @@ textarea {
 /* @group General */
 /* selection */
 ::-moz-selection {
-  background: #3a434c;
+  background: #06698d;
   color: #ffffff;
   text-shadow: none;
 }
 ::selection {
-  background: #3a434c;
+  background: #06698d;
   color: #ffffff;
   text-shadow: none;
 }
@@ -999,7 +999,7 @@ header.on .menu .hasSubMenu > a:focus:before,
 header.on .menu .hasSubMenu > a:hover:before {
   top: 52px;
 }
-header.on .subMenu {
+header.on .sub-menu {
   background: rgba(255, 255, 255, 0.95);
 }
 header.on #logo,
@@ -1356,13 +1356,13 @@ header.menuVisible #triangleMenu {
 .menu > li:nth-child(3) > a:before {
   border-color: #f1bc33 transparent transparent transparent;
 }
-.menu > li:nth-child(3) .subMenu a:after {
+.menu > li:nth-child(3) .sub-menu a:after {
   background: #f1bc33;
 }
 .menu > li:nth-child(4) > a:before {
   border-color: #e25c5b transparent transparent transparent;
 }
-.menu > li:nth-child(4) .subMenu a:after {
+.menu > li:nth-child(4) .sub-menu a:after {
   background: #e25c5b;
 }
 .menu .hasSubMenu > a:after {
@@ -1387,6 +1387,9 @@ header.menuVisible #triangleMenu {
   -moz-transition: 0.2s all 0.3s ease-in-out;
   -o-transition: 0.2s all 0.3s ease-in-out;
   transition: 0.2s all 0.3s ease-in-out;
+}
+.lt-ie9 .menu .hasSubMenu > a:after {
+  display: none;
 }
 .menu .hasSubMenu > a:before {
   content: '';
@@ -1432,7 +1435,7 @@ header.menuVisible #triangleMenu {
   -o-transition: 0.2s all 0.1s ease-in-out;
   transition: 0.2s all 0.1s ease-in-out;
 }
-.menu .hasSubMenu:hover .subMenu {
+.menu .hasSubMenu:hover .sub-menu {
   opacity: 1;
   bottom: -45px;
   -webkit-transition: 0.3s all 0.15s ease-in-out;
@@ -1460,7 +1463,7 @@ header.menuVisible #triangleMenu {
   top: 75px;
   opacity: 0;
 }
-.subMenu {
+.menu .sub-menu {
   bottom: 50px;
   position: absolute;
   width: 100%;
@@ -1474,16 +1477,16 @@ header.menuVisible #triangleMenu {
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-.no-js .subMenu,
-.lt-ie9 .subMenu {
+.no-js .menu .sub-menu,
+.lt-ie9 .menu .sub-menu {
   text-align: center;
 }
-.subMenu a {
+.menu .sub-menu a {
   margin: 0 23px;
   padding: 4px 0;
   position: relative;
 }
-.subMenu a:after {
+.menu .sub-menu a:after {
   content: '';
   display: block;
   position: absolute;
@@ -1496,15 +1499,15 @@ header.menuVisible #triangleMenu {
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-.subMenu a:hover:after,
-.subMenu a:focus:after {
+.menu .sub-menu a:hover:after,
+.menu .sub-menu a:focus:after {
   height: 3px;
   -webkit-transition: 0.2s ease-in-out;
   -moz-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-.subMenu ul {
+.menu .sub-menu ul {
   display: none;
 }
 #burger {
@@ -2483,22 +2486,6 @@ footer {
   background: #ffffff;
   padding: 0 10px;
 }
-.rsFooter ul .barre-footer {
-  display: block;
-  height: 2px;
-  width: 500px;
-  background: #ebeeef;
-  position: absolute;
-  z-index: -1;
-  top: 42%;
-  left: 50%;
-  margin: 0 0 0 -250px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
 .rsFooter ul a {
   border: 0;
   font-size: 30px;
@@ -2531,6 +2518,21 @@ footer {
 .rsFooter p a:focus {
   color: #289bc4;
   border-color: rgba(40, 155, 196, 0.3);
+}
+.barre-footer {
+  height: 2px;
+  width: 500px;
+  background: #ebeeef;
+  position: absolute;
+  z-index: -1;
+  top: 120px;
+  left: 50%;
+  margin: 0 0 0 -250px;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
 }
 /* ENTETE */
 .headHome {
@@ -3284,14 +3286,14 @@ footer {
   .menu > li:nth-child(4) > a:focus {
     color: #e25c5b;
   }
-  .menu .hasSubMenu:hover .subMenu,
-  .menu .hasSubMenu:focus .subMenu {
+  .menu .hasSubMenu:hover .sub-menu,
+  .menu .hasSubMenu:focus .sub-menu {
     bottom: auto;
   }
   .menu .hasSubMenu > a:after {
     display: none;
   }
-  .subMenu {
+  .menu .sub-menu {
     position: relative;
     bottom: auto;
     opacity: 1;
@@ -3300,10 +3302,10 @@ footer {
     text-align: left;
     padding: 0;
   }
-  .subMenu ul {
+  .menu .sub-menu ul {
     display: none;
   }
-  .subMenu a {
+  .menu .sub-menu a {
     margin: 0;
   }
   .topHeader {
@@ -3386,11 +3388,11 @@ footer {
     -o-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
   }
-  .bottomHeader .subMenu a {
+  .bottomHeader .sub-menu a {
     color: rgba(58, 67, 76, 0.8);
     font-size: 0.9em;
   }
-  .bottomHeader .subMenu > li > a {
+  .bottomHeader .sub-menu > li > a {
     padding-top: 0;
   }
   .bottomHeader ul a {

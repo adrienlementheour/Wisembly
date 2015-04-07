@@ -38,6 +38,16 @@ $.fn.isOnScreen = function(){
 
 /**** FONCTIONS SPECIFIQUES ****/
 
+// API Youtube //
+var tag = document.createElement('script'), player1;
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubeIframeAPIReady(){
+    player1 = new YT.Player('player-1');
+}
+
 // Header fixe //
 function fixedHeader(){
 	if($(window).width() > 1040 && !isMobile.any){
@@ -56,22 +66,18 @@ function scrollPage(){
 	myScroll = $(document).scrollTop();
 
 	fixedHeader();
-	apparitionFooter();
-
-	if(body.hasClass("home") && !$("html").hasClass("lt-ie10")){
-		if(!isMobile.any){
-			if(myScroll<$(".headHome").height()){
-				TweenMax.set($("#bgHeadHome"), {y:-(myScroll/1.5)+"px"});
-			}
-		}
+	if(body.hasClass("home") && !$("html").hasClass("lt-ie10") && !isMobile.any && myScroll < $(".headHome").height()){
+		TweenMax.set($("#bgHeadHome"), {y:-(myScroll/1.5)+"px"});
 	}
+
+	apparitionFooter();
 
 	requestAnimFrame(scrollPage);
 }
 
 // Sous menu //
 function setSubMenu(){
-	var subMenus = $('.subMenu');
+	var subMenus = $('.menu').find('.sub-menu');
 
 	if($(window).width() > 1040){
 		$('.hasSubMenu').on('mouseover', function(){
@@ -107,7 +113,7 @@ function setSubMenu(){
 	}else{
 		$('.hasSubMenu').unbind();
 		if(!$('html').hasClass('lt-ie9')){
-			$('.subMenu').css('padding-left', 0);
+			subMenus.css('padding-left', 0);
 		}
 	}
 }
@@ -241,17 +247,6 @@ function goToNextSection(){
 	htmlBody.animate({scrollTop: $(this).parents('section').next('section').offset().top - 100}, 400);
 }
 
-// API Youtube //
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-var player1;
-
-function onYouTubeIframeAPIReady() {
-    player1 = new YT.Player('player-1');
-}
-
 function videoCover(){
 	function completeTlVideo(){
 		if(!isMobile.phone){ player1.playVideo(); }
@@ -267,8 +262,7 @@ function videoCover(){
 }
 
 function heightBgHeadHome(){
-	var newHeight = $(".headHome").height()+"px";
-	TweenMax.set($("#bgHeadHome"), {height:newHeight});
+	TweenMax.set($("#bgHeadHome"), {height: $(".headHome").height()+"px"});
 }
 
 // ScrollMagic
@@ -287,7 +281,6 @@ function scrollMagic(){
 		var scrollNext1 = TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 		var scrollNext2 = TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 		var scrollNext3 = TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-		var barreFooter = TweenMax.to($(".barre-footer"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
 
 		var sceneHeader = new ScrollScene({
 			triggerElement: '.headHome',
@@ -367,14 +360,6 @@ function scrollMagic(){
 			offset: -300
 		})
 		.setTween(scrollNext3)
-		.addTo(controller);
-
-		var whenInContainer8 = new ScrollScene({
-			triggerElement: '.navFooter',
-			duration: $('.rsFooter').height(),
-			offset: -50
-		})
-		.setTween(barreFooter)
 		.addTo(controller);
 	}
 }

@@ -120,21 +120,20 @@
 							nav(true);
 						});	
 
+						$wrapper.on('swiperight', function( event ){
+							nav(true);
+						});					
+						
 						// navigate right
+
 						$navNext.bind('click.contentcarousel', function( event ) {
 							nav(false);
 						});
 
-						if(!$('html').hasClass('lt-ie9')){
-							$wrapper.on('swiperight', function( event ){
-								nav(true);
-							});	
+						$wrapper.on('swipeleft', function( event ){
+							nav(false);
+						});
 
-							$wrapper.on('swipeleft', function( event ){
-								nav(false);
-							});
-						}
-										
 					});
 				}
 			}
