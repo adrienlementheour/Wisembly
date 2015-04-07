@@ -542,7 +542,7 @@ fieldset.small {
   width: 35%;
 }
 fieldset + button {
-  margin: 20px 0 0;
+  margin: 15px 0 0;
 }
 input,
 textarea {
@@ -561,7 +561,7 @@ textarea {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  line-height: 26px;
+  line-height: 22px;
   width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -975,6 +975,33 @@ header.on .bottomHeader {
 header.on .menu > li > a {
   line-height: 73px;
 }
+header.on .menu > li > a:before {
+  bottom: 22px;
+}
+header.on .menu > li.actifHover > a:before {
+  top: 52px;
+}
+header.on .menu > li.actifHover > a:after {
+  top: 62px;
+}
+header.on .menu .hasSubMenu > a:after {
+  top: 52px;
+}
+header.on .menu .hasSubMenu > a:before {
+  top: 37px;
+  bottom: auto;
+}
+header.on .menu .hasSubMenu > a:focus:after,
+header.on .menu .hasSubMenu > a:hover:after {
+  top: 62px;
+}
+header.on .menu .hasSubMenu > a:focus:before,
+header.on .menu .hasSubMenu > a:hover:before {
+  top: 52px;
+}
+header.on .subMenu {
+  background: rgba(255, 255, 255, 0.95);
+}
 header.on #logo,
 header.on .bottomHeader .btnFull {
   margin: 13px 0;
@@ -1007,7 +1034,7 @@ header.menuVisible #fdMenu {
 }
 header.menuVisible #triangleMenu {
   width: 100%;
-  right: 19%;
+  right: 10%;
   -webkit-transform: rotate(16deg);
   -moz-transform: rotate(16deg);
   -o-transform: rotate(16deg);
@@ -1278,7 +1305,7 @@ header.menuVisible #triangleMenu {
   margin: 0 0 0 70px;
 }
 .menu a {
-  padding: 0 23px;
+  padding: 0 30px;
 }
 .menu a:focus {
   outline: 0;
@@ -1292,32 +1319,51 @@ header.menuVisible #triangleMenu {
   z-index: 1;
 }
 .menu > li > a:before {
+  /*content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        border-width: 0 110px 0 0;
+        border-color: transparent transparent @grisSubMenu transparent;
+        .transition(.3s ease-in-out);*/
   content: '';
   display: block;
   position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  width: 0;
   height: 0;
-  border-style: solid;
-  border-width: 0 110px 0 0;
-  border-color: transparent transparent #eff1f1 transparent;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  left: 30px;
+  right: 30px;
+  margin: auto;
+  background: #46b489;
+  bottom: 32px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 .menu > li > a:hover:before,
 .menu > li > a:focus:before {
-  border-width: 0 110px 66px 36px;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  height: 3px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
-.menu .hasSubMenu > a {
-  padding-right: 35px;
+.menu > li:nth-child(3) > a:before {
+  border-color: #f1bc33 transparent transparent transparent;
+}
+.menu > li:nth-child(3) .subMenu a:after {
+  background: #f1bc33;
+}
+.menu > li:nth-child(4) > a:before {
+  border-color: #e25c5b transparent transparent transparent;
+}
+.menu > li:nth-child(4) .subMenu a:after {
+  background: #e25c5b;
 }
 .menu .hasSubMenu > a:after {
   font-family: 'wisembly';
@@ -1331,43 +1377,95 @@ header.menuVisible #triangleMenu {
   content: "\e601";
   position: absolute;
   font-size: 7px;
-  right: 23px;
-  top: 47%;
-}
-.menu .hasSubMenu > a:hover:after,
-.menu .hasSubMenu > a:focus:after {
+  /*right: 23px;
+        top: 47%;*/
   width: 100%;
   top: 65px;
   text-align: center;
-  right: 8px;
-  -webkit-transition: top 0.3s ease-in-out;
-  -moz-transition: top 0.3s ease-in-out;
-  -o-transition: top 0.3s ease-in-out;
-  transition: top 0.3s ease-in-out;
+  left: 0;
+  -webkit-transition: 0.2s all 0.3s ease-in-out;
+  -moz-transition: 0.2s all 0.3s ease-in-out;
+  -o-transition: 0.2s all 0.3s ease-in-out;
+  transition: 0.2s all 0.3s ease-in-out;
+}
+.menu .hasSubMenu > a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 12px 0 12px;
+  border-color: #f7886c transparent transparent transparent;
+  top: 50px;
+  bottom: auto;
+  left: 50%;
+  margin-left: -12px;
+  opacity: 0;
+  background: none;
+  -webkit-transition: 0.2s all 0.2s ease-in-out;
+  -moz-transition: 0.2s all 0.2s ease-in-out;
+  -o-transition: 0.2s all 0.2s ease-in-out;
+  transition: 0.2s all 0.2s ease-in-out;
+}
+.menu .hasSubMenu > a:hover:after,
+.menu .hasSubMenu > a:focus:after {
+  /*width: 100%;
+          top: 65px;
+          text-align: center;
+          right: 8px;
+          .transition(top .3s ease-in-out);*/
+  top: 75px;
+  opacity: 0;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.menu .hasSubMenu > a:hover:before,
+.menu .hasSubMenu > a:focus:before {
+  border-width: 12px 12px 0 12px;
+  top: 65px;
+  opacity: 1;
+  -webkit-transition: 0.2s all 0.1s ease-in-out;
+  -moz-transition: 0.2s all 0.1s ease-in-out;
+  -o-transition: 0.2s all 0.1s ease-in-out;
+  transition: 0.2s all 0.1s ease-in-out;
 }
 .menu .hasSubMenu:hover .subMenu {
   opacity: 1;
   bottom: -45px;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s all 0.15s ease-in-out;
+  -moz-transition: 0.3s all 0.15s ease-in-out;
+  -o-transition: 0.3s all 0.15s ease-in-out;
+  transition: 0.3s all 0.15s ease-in-out;
+}
+.menu .hasSubMenu.actifHover > a {
+  /*&:before{
+          border-width: 0 110px 66px 36px;
+        }
+        &:after{
+          width: 100%;
+          top: 65px;
+          text-align: center;
+          right: 8px;
+        }*/
 }
 .menu .hasSubMenu.actifHover > a:before {
-  border-width: 0 110px 66px 36px;
+  border-width: 12px 12px 0 12px;
+  top: 65px;
+  opacity: 1;
 }
 .menu .hasSubMenu.actifHover > a:after {
-  width: 100%;
-  top: 65px;
-  text-align: center;
-  right: 8px;
+  top: 75px;
+  opacity: 0;
 }
 .subMenu {
   bottom: 50px;
   position: absolute;
   width: 100%;
   left: 0;
-  background: #eff1f1;
+  background: #ffffff;
   padding: 10px 0;
   z-index: -1;
   opacity: 0;
@@ -1498,7 +1596,7 @@ header.menuVisible #triangleMenu {
   position: fixed;
   width: 0;
   height: 200%;
-  top: -55%;
+  bottom: 0;
   right: 0;
   background: rgba(6, 105, 141, 0.9);
   cursor: pointer;
@@ -1894,6 +1992,7 @@ footer {
   display: inline-block;
   vertical-align: bottom;
   padding: 0 0 0 30px;
+  min-height: 250px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1920,29 +2019,26 @@ footer {
   height: 0;
   opacity: 0;
   overflow: hidden;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 .no-js .formContact form,
 .lt-ie9 .formContact form {
   height: auto;
   opacity: 1;
+  margin: 40px 0 0;
 }
 .formContact form.visible {
-  height: 440px;
+  height: 376px;
   opacity: 1;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-.formContact form fieldset:first-of-type {
-  margin-top: 50px;
+  -webkit-transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -moz-transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .lt-ie9 .formContact form {
   margin-top: 50px;
+}
+#demandeContact {
+  position: absolute;
 }
 .no-js #demandeContact,
 .lt-ie9 #demandeContact {
@@ -2645,10 +2741,10 @@ footer {
 .ref a:focus .hover {
   top: 0;
   opacity: .9;
-  -webkit-transition: 0.3s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.3s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
-  -moz-transition: 0.3s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.3s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
-  -o-transition: 0.3s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.3s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
-  transition: 0.3s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.3s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
+  -webkit-transition: 0.4s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.4s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
+  -moz-transition: 0.4s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.4s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
+  -o-transition: 0.4s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.4s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
+  transition: 0.4s top 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98), 0.4s opacity 0.3s cubic-bezier(0.565, 0.015, 0.175, 0.98);
 }
 .ref a:hover:before,
 .ref a:focus:before {
@@ -3086,14 +3182,21 @@ footer {
   .content.simple {
     padding-right: 20px;
   }
+  /*.menu{
+    > li > a{
+      padding: 0 15px;
+    }
+    .hasSubMenu{
+      > a{
+        padding-right: 27px;
+        &:after{
+          right: 15px;
+        }
+      }
+    }
+  }*/
   .menu > li > a {
-    padding: 0 15px;
-  }
-  .menu .hasSubMenu > a {
-    padding-right: 27px;
-  }
-  .menu .hasSubMenu > a:after {
-    right: 15px;
+    padding: 0 20px;
   }
   .slideTeam p {
     max-width: 150px;
@@ -3167,24 +3270,26 @@ footer {
   }
   .menu > li > a:hover:before,
   .menu > li > a:focus:before {
-    border-width: 0 110px 0 0;
+    display: none;
+  }
+  .menu > li:first-child > a:hover,
+  .menu > li:first-child > a:focus {
+    color: #f7886c;
+  }
+  .menu > li:nth-child(3) > a:hover,
+  .menu > li:nth-child(3) > a:focus {
+    color: #f1bc33;
+  }
+  .menu > li:nth-child(4) > a:hover,
+  .menu > li:nth-child(4) > a:focus {
+    color: #e25c5b;
   }
   .menu .hasSubMenu:hover .subMenu,
   .menu .hasSubMenu:focus .subMenu {
     bottom: auto;
   }
-  .menu .hasSubMenu > a {
-    padding-right: 15px;
-  }
   .menu .hasSubMenu > a:after {
-    top: 41%;
-    right: 0;
-  }
-  .menu .hasSubMenu > a:hover:after,
-  .menu .hasSubMenu > a:focus:after {
-    width: auto;
-    top: 41%;
-    right: 0;
+    display: none;
   }
   .subMenu {
     position: relative;
@@ -3306,6 +3411,7 @@ footer {
   .formContact {
     width: 100%;
     padding: 0;
+    min-height: 105px;
   }
   #dragIn {
     left: 36px;
@@ -3583,7 +3689,7 @@ footer {
     display: none;
   }
   .formContact form.visible {
-    height: 510px;
+    height: 446px;
   }
   .profil {
     display: block;

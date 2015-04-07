@@ -38,7 +38,7 @@
     }
   }
 
-  .menu{
+  /*.menu{
     > li > a{
       padding: 0 15px;
     }
@@ -50,6 +50,10 @@
         }
       }
     }
+  }*/
+
+  .menu > li > a{
+    padding: 0 20px;
   }
 
   .slideTeam{
@@ -133,7 +137,28 @@
         &:hover, &:focus{
           color: @vert;
           &:before{
-            border-width: 0 110px 0 0;
+            display: none;
+          }
+        }
+      }
+      &:first-child{
+        > a{
+          &:hover, &:focus{
+            color: @rose;
+          }
+        }
+      }
+      &:nth-child(3){
+        > a{
+          &:hover, &:focus{
+            color: @jaune;
+          }
+        }
+      }
+      &:nth-child(4){
+        > a{
+          &:hover, &:focus{
+            color: @rouge;
           }
         }
       }
@@ -145,17 +170,8 @@
         }
       }
       > a{
-        padding-right: 15px;
         &:after{
-          top: 41%;
-          right: 0;
-        }
-        &:hover, &:focus{
-          &:after{
-            width: auto;
-            top: 41%;
-            right: 0;
-          }
+          display: none;
         }
       }
     }
@@ -291,6 +307,7 @@
   .formContact{
     width: 100%;
     padding: 0;
+    min-height: 105px;
   }
 
   #dragIn{
@@ -597,7 +614,7 @@
     }
     form{
       &.visible{
-        height: 510px;
+        height: 446px;
       }
     }
   }
