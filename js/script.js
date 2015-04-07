@@ -264,12 +264,7 @@ function videoCover(){
 }
 
 function heightBgHeadHome(){
-	//var newHeight = !isMobile.any ? $(".headHome").height()+"px" : $(".headHome").height() + 100 +"px";
-	if(!isMobile.any){
-		var newHeight = $(".headHome").height()+"px";
-	}else{
-		var newHeight = $(".headHome").height()  +"px";
-	}
+	var newHeight = $(".headHome").height()+"px";
 	TweenMax.set($("#bgHeadHome"), {height:newHeight});
 }
 
