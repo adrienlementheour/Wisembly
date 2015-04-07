@@ -267,7 +267,7 @@ function videoCover(){
 }
 
 function heightBgHeadHome(){
-	var newHeight = !isMobile.any ? $(".headHome").height()+"px" : $(".headHome").height() + 100 +"px";
+	var newHeight = $(".headHome").height()+"px";
 	TweenMax.set($("#bgHeadHome"), {height:newHeight});
 }
 
@@ -397,6 +397,10 @@ $(function(){
 		}
 		TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height()+"px"});
 	}
+
+	if(body.hasClass("home")){
+    	heightBgHeadHome();
+    }
 
 	burger.on('click', responsiveMenu);
 	$('#triangleMenu').on('click', function(){

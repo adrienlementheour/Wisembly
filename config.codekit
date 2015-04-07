@@ -1072,7 +1072,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 203314,
+		"initialSize": 137896,
 		"inputAbbreviatedPath": "\/layoutImg\/team\/cecile.png",
 		"outputAbbreviatedPath": "\/layoutImg\/team\/cecile.png",
 		"outputPathIsOutsideProject": 0,
@@ -1281,7 +1281,7 @@
 	"iconImageName": "harddrive_gray"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 1,
+	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -1423,7 +1423,7 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
-	"externalServerAddress": "http:\/\/localhost",
+	"externalServerAddress": "http:\/\/localhost:8888",
 	"externalServerPreviewPathAddition": "",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,
