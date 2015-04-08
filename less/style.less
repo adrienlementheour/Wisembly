@@ -435,6 +435,20 @@ header{
       }
     }
   }
+  .menu{
+    &:hover{
+      li{
+        a{
+          color: fade(@txt, 50);
+        }
+        &:hover{
+          a{
+            color: @txt;
+          }
+        }
+      }
+    }
+  }
   &.on{
     top: -40px;
     .transition(.3s ease-in-out);
@@ -449,18 +463,6 @@ header{
       }
     }
     .menu{
-      &:hover{
-        li{
-          a{
-            color: fade(@txt, 50);
-          }
-          &:hover{
-            a{
-              color: @txt;
-            }
-          }
-        }
-      }
       > li{
         > a{
           line-height: 73px;
@@ -799,7 +801,7 @@ header{
         text-align: center;
         //right: 8px;
         left: 0;
-        .transition(.2s all .3s ease-in-out);
+        .transition(.2s opacity .3s ease-in-out, .2s transform .3s ease-in-out, .2s margin .3s ease-in-out, .2s top .3s ease-in-out);
         .lt-ie9 &{
           display: none;
         }
@@ -1107,14 +1109,9 @@ footer{
     .btnFull{
       background: @jaune;
       border-color: @jaune;
-      &:before{
-        background: @jaune;
-      }
       &:hover, &:focus{
         color: @jaune;
-        &:before{
-          background: @blanc;
-        }
+        background: @blanc;
       }
     }
   }
@@ -1206,6 +1203,7 @@ footer{
       border-color: @bleu;
       &:hover, &:focus{
         color: @bleu;
+        background-color: @blanc;
       }
     }
     .slideTeam{

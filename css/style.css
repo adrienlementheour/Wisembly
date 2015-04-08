@@ -898,6 +898,12 @@ header a {
 .js .home header a.btnFull {
   opacity: 0;
 }
+header .menu:hover li a {
+  color: rgba(58, 67, 76, 0.5);
+}
+header .menu:hover li:hover a {
+  color: #3a434c;
+}
 header.on {
   top: -40px;
   -webkit-transition: 0.3s ease-in-out;
@@ -915,12 +921,6 @@ header.on .bottomHeader {
 }
 .js header.on a.btnFull {
   opacity: 1;
-}
-header.on .menu:hover li a {
-  color: rgba(58, 67, 76, 0.5);
-}
-header.on .menu:hover li:hover a {
-  color: #3a434c;
 }
 header.on .menu > li > a {
   line-height: 73px;
@@ -1333,10 +1333,10 @@ header.menuVisible #triangleMenu {
   top: 65px;
   text-align: center;
   left: 0;
-  -webkit-transition: 0.2s all 0.3s ease-in-out;
-  -moz-transition: 0.2s all 0.3s ease-in-out;
-  -o-transition: 0.2s all 0.3s ease-in-out;
-  transition: 0.2s all 0.3s ease-in-out;
+  -webkit-transition: 0.2s opacity 0.3s ease-in-out, 0.2s -webkit-transform 0.3s ease-in-out, 0.2s margin 0.3s ease-in-out, 0.2s top 0.3s ease-in-out;
+  -moz-transition: 0.2s opacity 0.3s ease-in-out, 0.2s -moz-transform 0.3s ease-in-out, 0.2s margin 0.3s ease-in-out, 0.2s top 0.3s ease-in-out;
+  -o-transition: 0.2s opacity 0.3s ease-in-out, 0.2s -o-transform 0.3s ease-in-out, 0.2s margin 0.3s ease-in-out, 0.2s top 0.3s ease-in-out;
+  transition: 0.2s opacity 0.3s ease-in-out,0.2s -webkit-transform 0.3s ease-in-out,0.2s -moz-transform 0.3s ease-in-out,0.2s -o-transform 0.3s ease-in-out,0.2s transform 0.3s ease-in-out, 0.2s margin 0.3s ease-in-out, 0.2s top 0.3s ease-in-out;
 }
 .lt-ie9 .menu .hasSubMenu > a:after {
   display: none;
@@ -1689,15 +1689,9 @@ footer {
   background: #f1bc33;
   border-color: #f1bc33;
 }
-.contactFooter.rouge .btnFull:before {
-  background: #f1bc33;
-}
 .contactFooter.rouge .btnFull:hover,
 .contactFooter.rouge .btnFull:focus {
   color: #f1bc33;
-}
-.contactFooter.rouge .btnFull:hover:before,
-.contactFooter.rouge .btnFull:focus:before {
   background: #ffffff;
 }
 .contactFooter.vert {
@@ -1792,6 +1786,7 @@ footer {
 .contactFooter.rose .btnFull:focus,
 .contactFooter.vert .btnFull:focus {
   color: #06698d;
+  background-color: #ffffff;
 }
 .contactFooter.rose .slideTeam strong,
 .contactFooter.vert .slideTeam strong {
