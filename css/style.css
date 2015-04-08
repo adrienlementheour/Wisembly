@@ -1860,6 +1860,7 @@ footer {
   text-align: right;
   margin: 38% 0 0;
   float: left;
+  width: 177px;
 }
 .slideTeam strong {
   display: block;
@@ -2823,6 +2824,7 @@ footer {
   font-size: 18px;
   opacity: .8;
   line-height: 10px;
+  padding: 0 5px 0 0;
 }
 .ref .quote + span {
   text-align: left;
@@ -2954,6 +2956,9 @@ footer {
 }
 .logosPresse li:before {
   display: none;
+}
+.logosPresse img {
+  padding: 0 0 10px;
 }
 /* @group Video */
 .embed-container {
