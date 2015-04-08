@@ -286,54 +286,28 @@ button{
   .small{
     font-size: 0.75em;
   }
-  &:before{
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 150%;
-    height: 100%;
-    z-index: -1;
-    opacity: 1;
-    //.transform(rotate(-45deg) translate3d(0, -2em, 0));
-    //.transform-origin(0% 100%);
-    .transition(.3s ease-in-out);
-  }
+  .transition(.3s ease-in-out);
   &:hover, &:focus{
     background: transparent;
     border-color: @vert;
     outline: 0;
-    &:before{
-      opacity: 1;
-      .transform(rotate(0deg));
-      .transition-timing-function(cubic-bezier(0.2, 1, 0.3, 1));
-    }
   }
 }
 .btnFull{
   color: @blanc;
   border-color: @vert;
   background: @vert;
-  &:before{
-    background: @vert;
-  }
   &:hover, &:focus{
     color: @vert;
-    &:before{
-      background: @blanc;
-    }
+    background: @blanc;
   }
 }
 .btnLight{
   color: @vert;
   background: @blanc;
-  &:before{
-    background: @blanc;
-  }
   &:hover, &:focus{
     color: @blanc;
-    &:before{
-      background: @vert;
-    }
+    background: @vert;
   }
 }
 .btnBlanc{
@@ -342,16 +316,10 @@ button{
   .lt-ie10 &{
     color: @bleuLien;
   }
-  &:before{
-    background: @blanc;
-    .opacity(0);
-  }
   &:hover, &:focus{
     color: @bleuLien;
     border-color: @bleuLien;
-    &:before{
-      background: @blanc;
-    }
+    background: @blanc;
   }
 }
 
@@ -831,12 +799,12 @@ header{
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 0 12px 0 12px;
+        border-width: 0 6px 0 6px;
         border-color: @rose transparent transparent transparent;
         top: 50px;
         bottom: auto;
         left: 50%;
-        margin-left: -12px;
+        margin-left: -6px;
         opacity: 0;
         background: none;
         .transition(.2s all .2s ease-in-out);
@@ -854,7 +822,8 @@ header{
         }
         &:before{
           //border-width: 0 110px 66px 36px;
-          border-width: 12px 12px 0 12px;
+          //border-width: 12px 12px 0 12px;
+          border-width: 6px 6px 0 6px;
           top: 65px;
           opacity: 1;
           .transition(.2s all .1s ease-in-out);
@@ -880,7 +849,7 @@ header{
           right: 8px;
         }*/
         &:before{
-          border-width: 12px 12px 0 12px;
+          border-width: 6px 6px 0 6px;
           top: 65px;
           opacity: 1;
         }
