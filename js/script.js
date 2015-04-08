@@ -340,7 +340,7 @@ function scrollMagic(){
 
 		var whenInContainer5 = new ScrollScene({
 			triggerElement: '.scrollNext1',
-			duration: 200,
+			duration: 800,
 			offset: -300
 		})
 		.setTween(scrollNext1)
@@ -348,7 +348,7 @@ function scrollMagic(){
 
 		var whenInContainer6 = new ScrollScene({
 			triggerElement: '.scrollNext2',
-			duration: 200,
+			duration: 800,
 			offset: -300
 		})
 		.setTween(scrollNext2)
@@ -356,7 +356,7 @@ function scrollMagic(){
 
 		var whenInContainer7 = new ScrollScene({
 			triggerElement: '.scrollNext3',
-			duration: 200,
+			duration: 800,
 			offset: -300
 		})
 		.setTween(scrollNext3)

@@ -294,8 +294,8 @@ button{
     height: 100%;
     z-index: -1;
     opacity: 1;
-    .transform(rotate(-45deg) translate3d(0, -2em, 0));
-    .transform-origin(0% 100%);
+    //.transform(rotate(-45deg) translate3d(0, -2em, 0));
+    //.transform-origin(0% 100%);
     .transition(.3s ease-in-out);
   }
   &:hover, &:focus{
@@ -344,6 +344,7 @@ button{
   }
   &:before{
     background: @blanc;
+    .opacity(0);
   }
   &:hover, &:focus{
     color: @bleuLien;
