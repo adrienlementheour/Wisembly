@@ -279,8 +279,6 @@ button{
   height: 44px;
   line-height: 44px;
   border: 2px solid;
-  overflow: hidden;
-  z-index: 1;
   .transition-timing-function(cubic-bezier(0.2, 1, 0.3, 1));
   .gothamMedium(1em);
   .small{
@@ -2082,21 +2080,25 @@ footer{
       text-align: left;
       position: absolute;
       bottom: 25px;
-      span{
-        display: inline-block;
-        vertical-align: middle;
-        max-width: 163px;
-        margin: 0 0 0 5px;
-        .gotham(.85em);
-        strong{
-          .gothamBold(1.1em);
-        }
-      }
     }
-    img{
-      display: inline-block;
-      vertical-align: middle;
+  }
+  .cite{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 163px;
+    margin: 0 0 0 5px;
+    .gotham(.85em);
+    strong{
+      .gothamBold(1.1em);
     }
+  }
+  .imgQuote{
+    display: inline-block;
+    vertical-align: middle;
+    width: 51px;
+    height: 51px;
+    background: #f3f4f6;
+    border-radius: 99px;
   }
 }
 

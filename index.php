@@ -76,8 +76,8 @@
 												La solution nous accompagne dans toutes nos réunions.
 											</span>
 											<span>
-												<img src='img/patrick.png' alt='Patrinck Ropert'/>
-												<span>
+												<span class='imgQuote'><img src='img/patrick.png' alt='Patrinck Ropert'/></span>
+												<span class='cite'>
 													<strong>Patrick Ropert,</strong>
 													Directeur de la Communication, SNCF
 												</span>
@@ -99,8 +99,8 @@
 												La solution nous accompagne dans toutes nos réunions.
 											</span>
 											<span>
-												<img src='img/patrick.png' alt='Patrinck Ropert'/>
-												<span>
+												<span class='imgQuote'><img src='img/patrick.png' alt='Patrinck Ropert'/></span>
+												<span class='cite'>
 													<strong>Patrick Ropert,</strong>
 													Directeur de la Communication, SNCF
 												</span>
@@ -122,8 +122,8 @@
 												La solution nous accompagne dans toutes nos réunions.
 											</span>
 											<span>
-												<img src='img/patrick.png' alt='Patrinck Ropert'/>
-												<span>
+												<span class='imgQuote'><img src='img/patrick.png' alt='Patrinck Ropert'/></span>
+												<span class='cite'>
 													<strong>Patrick Ropert,</strong>
 													Directeur de la Communication, SNCF
 												</span>
@@ -145,8 +145,8 @@
 												La solution nous accompagne dans toutes nos réunions.
 											</span>
 											<span>
-												<img src='img/patrick.png' alt='Patrinck Ropert'/>
-												<span>
+												<span class='imgQuote'><img src='img/patrick.png' alt='Patrinck Ropert'/></span>
+												<span class='cite'>
 													<strong>Patrick Ropert,</strong>
 													Directeur de la Communication, SNCF
 												</span>
@@ -168,8 +168,8 @@
 												La solution nous accompagne dans toutes nos réunions.
 											</span>
 											<span>
-												<img src='img/patrick.png' alt='Patrinck Ropert'/>
-												<span>
+												<span class='imgQuote'><img src='img/patrick.png' alt='Patrinck Ropert'/></span>
+												<span class='cite'>
 													<strong>Patrick Ropert,</strong>
 													Directeur de la Communication, SNCF
 												</span>

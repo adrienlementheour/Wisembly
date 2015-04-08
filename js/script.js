@@ -1,9 +1,11 @@
 /**** VARIABLES ****/
 var myScroll,
 	header = $('header'),
+	htmlTag = $('html'),
 	htmlBody = $('html, body'),
 	body = $("body"),
-	burger = $('#burger');
+	burger = $('#burger'),
+	headHome = $('#bgHeadHome');
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -19,16 +21,16 @@ window.requestAnimFrame = (function(){
 })();
 
 $.fn.isOnScreen = function(){
-    var win = $(window);
-    
-    var viewport = {
-        top : win.scrollTop(),
-        left : win.scrollLeft()
-    };
+    var win = $(window),
+    	viewport = {
+        	top : win.scrollTop(),
+        	left : win.scrollLeft()
+    	},
+    	bounds = this.offset();
+
     viewport.right = viewport.left + win.width();
     viewport.bottom = viewport.top + win.height();
     
-    var bounds = this.offset();
     bounds.right = bounds.left + this.outerWidth();
     bounds.bottom = bounds.top + this.outerHeight();
     
@@ -66,8 +68,8 @@ function scrollPage(){
 	myScroll = $(document).scrollTop();
 
 	fixedHeader();
-	if(body.hasClass("home") && !$("html").hasClass("lt-ie10") && !isMobile.any && myScroll < $(".headHome").height()){
-		TweenMax.set($("#bgHeadHome"), {y:-(myScroll/1.5)+"px"});
+	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie10") && !isMobile.any && myScroll < $(".headHome").height()){
+		TweenMax.set(headHome, {y:-(myScroll/1.5)+"px"});
 	}
 
 	apparitionFooter();
@@ -86,7 +88,7 @@ function setSubMenu(){
 			$(this).removeClass('actifHover');
 		});
 
-		if(!$('html').hasClass('lt-ie9')){
+		if(!htmlTag.hasClass('lt-ie9')){
 			var nbSubMenus = subMenus.length, i = 0, y,
 				liens, liensLength, widthLi, widthSubMenu, middleSubMenu,
 				hasSubMenu, middleHasSubMenu, posHasSubMenu, newPosSubMenu;
@@ -112,7 +114,7 @@ function setSubMenu(){
 		}
 	}else{
 		$('.hasSubMenu').unbind();
-		if(!$('html').hasClass('lt-ie9')){
+		if(!htmlTag.hasClass('lt-ie9')){
 			subMenus.css('padding-left', 0);
 		}
 	}
@@ -262,7 +264,7 @@ function videoCover(){
 }
 
 function heightBgHeadHome(){
-	TweenMax.set($("#bgHeadHome"), {height: $(".headHome").height()+"px"});
+	TweenMax.set(headHome, {height: $(".headHome").height()+"px"});
 }
 
 // ScrollMagic
@@ -374,13 +376,13 @@ $(function(){
 	//hoverMenu();
 
 	if(!isMobile.any){
-		$("html").addClass("no-mobile");
+		htmlTag.addClass("no-mobile");
 	}
-	if(body.hasClass("home") && !$("html").hasClass("lt-ie10")){
+	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie10")){
 		if(!isMobile.any){
-			TweenMax.set($("#bgHeadHome"), {position:"fixed"});
+			TweenMax.set(headHome, {position:"fixed"});
 		}
-		TweenMax.set($("#bgHeadHome"), {height:$(".headHome").height()+"px"});
+		TweenMax.set(headHome, {height:$(".headHome").height()+"px"});
 	}
 
 	if(body.hasClass("home")){
@@ -405,14 +407,14 @@ $(function(){
 			
 			$('#nom').focus();
 		});
-		if($('html').hasClass('lt-ie9')){
+		if(htmlTag.hasClass('lt-ie9')){
 			$('#sliderTeam').height('500px');
 		}
 	});
 
 	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
 	$('.buttonsTeam').find('button').on('click', function(){ setSliderTeamProfil($(this)); });
-	if($(window).width() > 450 && !$('html').hasClass('lt-ie9')) setDraggableButton();
+	if($(window).width() > 450 && !htmlTag.hasClass('lt-ie9')) setDraggableButton();
 
 	// Petites fleches page accueil //
 	$('.scrollNext').on('click', goToNextSection);

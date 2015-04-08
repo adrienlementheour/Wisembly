@@ -707,8 +707,6 @@ button:focus {
   height: 44px;
   line-height: 44px;
   border: 2px solid;
-  overflow: hidden;
-  z-index: 1;
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   -moz-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   -o-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
@@ -2831,7 +2829,7 @@ footer {
   position: absolute;
   bottom: 25px;
 }
-.ref .quote + span span {
+.ref .cite {
   display: inline-block;
   vertical-align: middle;
   max-width: 163px;
@@ -2846,7 +2844,7 @@ footer {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-.ref .quote + span span strong {
+.ref .cite strong {
   /*font-family: 'gothamBold', sans-serif;
   font-weight: normal;*/
   font-family: 'Gotham SSm A', 'Gotham SSm B';
@@ -2857,9 +2855,13 @@ footer {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-.ref .quote img {
+.ref .imgQuote {
   display: inline-block;
   vertical-align: middle;
+  width: 51px;
+  height: 51px;
+  background: #f3f4f6;
+  border-radius: 99px;
 }
 .navSliderRef {
   width: 30px;

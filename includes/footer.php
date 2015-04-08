@@ -200,10 +200,10 @@
 
 <!-- Tweens -->
 <script src="js/greensock/TweenMax.min.js" type="text/javascript"></script>
-<script src="js/greensock/TimelineMax.min.js" type="text/javascript"></script>
-<script src="js/greensock/plugins/BezierPlugin.min.js" type="text/javascript"></script>
-<script src="js/greensock/plugins/CSSRulePlugin.min.js" type="text/javascript"></script>
-<script src="js/greensock/plugins/ScrollToPlugin.min.js" type="text/javascript"></script>
+<!--<script src="js/greensock/TimelineMax.min.js" type="text/javascript"></script>-->
+<!--<script src="js/greensock/plugins/BezierPlugin.min.js" type="text/javascript"></script>-->
+<!--<script src="js/greensock/plugins/CSSRulePlugin.min.js" type="text/javascript"></script>-->
+<!--<script src="js/greensock/plugins/ScrollToPlugin.min.js" type="text/javascript"></script>-->
 <script src="js/greensock/utils/Draggable.min.js" type="text/javascript"></script>
 <script src="js/greensock/plugins/ThrowPropsPlugin.min.js" type="text/javascript"></script>
 <script src="js/jquery.scrollmagic.min.js"></script>
