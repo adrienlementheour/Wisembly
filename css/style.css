@@ -916,6 +916,12 @@ header.on .bottomHeader {
 .js header.on a.btnFull {
   opacity: 1;
 }
+header.on .menu:hover li a {
+  color: rgba(58, 67, 76, 0.5);
+}
+header.on .menu:hover li:hover a {
+  color: #3a434c;
+}
 header.on .menu > li > a {
   line-height: 73px;
 }

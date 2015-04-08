@@ -399,7 +399,10 @@ $(function(){
 		$(this).animate({opacity: 0}, 200, function(){
 			$(this).css('display', 'none');
 			$('#contact, #bulle').addClass('visible');
-			htmlBody.animate({scrollTop: $('#contact').offset().top - 100}, 400, 'easeInOutCubic');
+			setTimeout(function() {
+			      htmlBody.animate({scrollTop: $('#contact').offset().top - 250}, 400, 'easeInOutCubic');
+			}, 300);
+			
 			$('#nom').focus();
 		});
 		if($('html').hasClass('lt-ie9')){

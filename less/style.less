@@ -449,6 +449,18 @@ header{
       }
     }
     .menu{
+      &:hover{
+        li{
+          a{
+            color: fade(@txt, 50);
+          }
+          &:hover{
+            a{
+              color: @txt;
+            }
+          }
+        }
+      }
       > li{
         > a{
           line-height: 73px;
