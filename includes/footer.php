@@ -63,7 +63,7 @@
 
         </div><div class='formContact'>
           <h2 class='big'>Intéressé ?</h2>
-          <p>A chaque secteur, son interlocuteur ! Votre profil :</p>
+          <p class='none450'>A chaque secteur, son interlocuteur ! Votre profil :</p>
           <ul class='buttonsTeam'>
             <li>
               <button id='ent' name='profilEnt' class='actif'>Entreprise</button>

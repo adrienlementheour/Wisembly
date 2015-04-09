@@ -627,6 +627,9 @@ header{
   height: 17px;
   overflow: hidden;
   .transition(.3s ease-in-out);
+  a{
+    text-transform: uppercase;
+  }
   .no-mobile &{
     padding: 0 15px 0 0;
     width: 18px;
@@ -647,6 +650,7 @@ header{
   }
   li{
     opacity: 0;
+    padding: 0 5px 0 0;
     .transition(.3s ease-in-out);
     &.actif{
       opacity: 1;
@@ -1213,6 +1217,13 @@ footer{
   h2, button, p, label{
     color: @blanc;
   }
+  .formContact{
+    .error{
+      input, .select, textarea{
+        border-color: darken(@rouge, 20);
+      }
+    }
+  }
 }
 
 #triangle-footer-top-bleu-fonce, #triangle-footer-top-bleu-clair{
@@ -1372,6 +1383,11 @@ footer{
       margin-top: 50px;
     }
   }
+}
+
+.blocError{
+  padding: 15px 20px;
+  border: 2px solid darken(@rouge, 20);
 }
 
 #demandeContact{
