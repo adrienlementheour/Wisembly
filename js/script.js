@@ -217,6 +217,10 @@ function setSliderTeamProfil(that){
 
 	/* Récupérer la valeur du name et l'appliquer au select "profil" */
 	$('#profil').find('option[value='+ that.attr('name') +']').prop('selected', true);
+
+	/* Changement du champ entreprise */
+	var label = that.html() == 'Autre' ? 'Organisation' : that.html();
+	$('#labelEnt').html(label + ' *');
 }
 
 function setDraggableButton(){

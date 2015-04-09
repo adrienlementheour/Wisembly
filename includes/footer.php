@@ -81,7 +81,7 @@
               <label for='nom'>Nom complet</label>
               <input type='text' name='nom' id='nom'/>
             </fieldset><fieldset>
-              <label for='entreprise'>Entreprise</label>
+              <label for='entreprise' id='labelEnt'>Entreprise</label>
               <input type='text' name='entreprise' id='entreprise'/>
             </fieldset><fieldset class='left'>
               <label for='email'>Email</label>
