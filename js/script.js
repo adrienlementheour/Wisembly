@@ -5,7 +5,7 @@ var myScroll,
 	htmlBody = $('html, body'),
 	body = $("body"),
 	burger = $('#burger'),
-	headHome = $('#bgHeadHome');
+	bgHeadHome = $('#bgHeadHome');
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -69,7 +69,7 @@ function scrollPage(){
 
 	fixedHeader();
 	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie10") && !isMobile.any && myScroll < $(".headHome").height()){
-		TweenMax.set(headHome, {y:-(myScroll/1.5)+"px"});
+		TweenMax.set(bgHeadHome, {y:-(myScroll/1.5)+"px"});
 	}
 
 	apparitionFooter();
@@ -264,7 +264,7 @@ function videoCover(){
 }
 
 function heightBgHeadHome(){
-	TweenMax.set(headHome, {height: $(".headHome").height()+"px"});
+	TweenMax.set(bgHeadHome, {height: $(".headHome").height()+"px"});
 }
 
 // ScrollMagic
@@ -380,9 +380,9 @@ $(function(){
 	}
 	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie10")){
 		if(!isMobile.any){
-			TweenMax.set(headHome, {position:"fixed"});
+			TweenMax.set(bgHeadHome, {position:"fixed"});
 		}
-		TweenMax.set(headHome, {height:$(".headHome").height()+"px"});
+		TweenMax.set(bgHeadHome, {height:$(".headHome").height()+"px"});
 	}
 
 	if(body.hasClass("home")){
