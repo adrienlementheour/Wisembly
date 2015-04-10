@@ -6,7 +6,8 @@ var myScroll,
 	body = $("body"),
 	burger = $('#burger'),
 	bgHeadHome = $('#bgHeadHome'),
-	btnContact = $('#demandeContact');
+	btnContact = $('#demandeContact'),
+	minHeight = $('.menu').innerHeight() - 10;
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -37,6 +38,13 @@ $.fn.isOnScreen = function(){
     
     return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 };
+
+function shuffle(array) {
+  var random = array.map(Math.random);
+  array.sort(function(a, b) {
+    return random[a] - random[b];
+  });
+}
 
 
 /**** FONCTIONS SPECIFIQUES ****/
@@ -111,7 +119,12 @@ function setSubMenu(){
 				posHasSubMenu = hasSubMenu.offset().left;
 
 				newPosSubMenu = (middleHasSubMenu + posHasSubMenu) - middleSubMenu;
-				subMenus.eq(i).css('padding-left', newPosSubMenu + 'px');
+
+				if(widthSubMenu + newPosSubMenu > $(window).width()){
+					subMenus.eq(i).css({'padding-left': 0, 'text-align': 'center'});
+				}else{
+					subMenus.eq(i).css('padding-left', newPosSubMenu + 'px');
+				}
 			}
 		}
 	}else{
@@ -131,13 +144,27 @@ function setSubMenu(){
 }*/
 
 
+function setPosBtnMenu(){
+	var btn = $('.bottomHeader').find('.btnFull'), txt = $('.topHeader').find('p');
+	if($(window).width() < 1040){
+		btn.css('top', minHeight);
+		txt.css('top', minHeight + 80);
+	}else{
+		btn.css('top', 0);
+		txt.css('top', 0);
+	}
+}
+
 // Menu responsive //
 function responsiveMenu(){
 	var height = $(window).height() - header.height(),
 		container = $('#container');
+
+	setPosBtnMenu();
+
 	if(!burger.hasClass('actif')){
 		burger.css({opacity: 0}).delay(10).animate({opacity: 1}, 100);
-		height > 340 ? container.height(height) : container.height('340px');
+		height > minHeight ? container.height(height) : container.height(minHeight);
 		container.css('overflow', 'hidden');
 	}else{
 		container.css({height: 'auto', overflow: 'visible'});
@@ -398,6 +425,24 @@ function scrollMagic(){
 	}
 }
 
+function randomLogosPress(){
+	var logos = $('.logosPresse').find('li'), logosLength = logos.length, 
+		i = 0, rand, nbLogos = 4, j = 0, tabRand = [];
+
+	if(logosLength > nbLogos){
+		logos.css('display', 'none');
+
+		for(j; j<logosLength; j++){
+			tabRand[j] = j;
+		}
+		shuffle(tabRand);
+
+		for(i; i<nbLogos; i++){
+			logos.eq(tabRand[i]).css('display', 'inline-block');
+		}
+	}
+}
+
 
 /**** INIT ****/
 $(function(){
@@ -415,16 +460,6 @@ $(function(){
 		langSelector();
 	}
 
-	if(body.hasClass("home")){
-		if(!htmlTag.hasClass("lt-ie10")){
-			if(!isMobile.any){
-				TweenMax.set(bgHeadHome, {position:"fixed"});
-			}
-			TweenMax.set(bgHeadHome, {height:$(".headHome").height()+"px"});
-		}
-		heightBgHeadHome();
-	}
-
 	burger.on('click', responsiveMenu);
 	$('#triangleMenu').on('click', function(){
 		burger.removeClass('actif');
@@ -432,15 +467,20 @@ $(function(){
 		$('#container').css({height: 'auto', overflow: 'visible'});
 	});
 
+	if($(window).width() > 450 && !htmlTag.hasClass('lt-ie9') && $('.buttonsTeam').length) setDraggableButton();
+
+	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
+	$('.buttonsTeam').find('button').on('click', function(){ setSliderTeamProfil($(this)); });
+
 	// Btn demande de contact footer //
 	btnContact.on('click', openForm);
 	if($('.formContact').hasClass('open')){
 		openForm();
-	}
+	}	
 
-	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
-	$('.buttonsTeam').find('button').on('click', function(){ setSliderTeamProfil($(this)); });
-	if($(window).width() > 450 && !htmlTag.hasClass('lt-ie9') && $('.buttonsTeam').length) setDraggableButton();
+	$('#profil').change(function(){
+		$('#labelEnt').html($(this).val() + ' *');
+	});
 
 	// Petites fleches page accueil //
 	$('.scrollNext').on('click', goToNextSection);
@@ -450,6 +490,15 @@ $(function(){
 	
 
 	$(window).load(function(){
+		if(body.hasClass("home")){
+			if(!htmlTag.hasClass("lt-ie10") && !isMobile.any){
+				TweenMax.set(bgHeadHome, {position:"fixed"});
+			}
+			heightBgHeadHome();
+
+			randomLogosPress();
+		}
+
 		scrollMagic();
 
 		// Slider footer //
@@ -472,6 +521,7 @@ $(function(){
     $(window).resize(function(){
     	fixedHeader();
     	setSubMenu();
+    	setPosBtnMenu();
 
     	if(body.hasClass("home")){
 	    	heightBgHeadHome();

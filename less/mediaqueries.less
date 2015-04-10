@@ -77,6 +77,10 @@
     }
   }
 
+  .blocH1{
+    margin: 0 5% 0 0;
+  }
+
   .detailHome{
     padding: 0;
   }
@@ -183,6 +187,7 @@
       background: none;
       text-align: left;
       padding: 0;
+      height: auto;
       ul{
         display: none;
       }
@@ -211,7 +216,6 @@
       opacity: 0;
       color: @txt;
       position: absolute;
-      top: 440px;
       right: -300px;
       width: 250px;
       text-align: right;
@@ -267,7 +271,6 @@
       z-index: 10;
       float: none;
       position: absolute;
-      top: 365px;
       right: -400px;
       .transition(.3s ease-in-out);
     }
@@ -306,7 +309,7 @@
   .formContact{
     width: 100%;
     padding: 0;
-    min-height: 105px;
+    min-height: 290px;
   }
 
   #dragIn{
@@ -375,6 +378,10 @@
     ul{
       display: none;
     }
+  }
+
+  .blocH1{
+    margin: 0;
   }
 
   .detailHome{
@@ -605,6 +612,7 @@
   }
 
   .formContact{
+    min-height: 110px;
     h2{
       margin: 0 0 30px;
     }
@@ -686,20 +694,7 @@
 
 @media (max-height: 750px){
   .blocH1 {
-    width: 350px;
     padding: 0 0 170px;
-  }
-}
-
-@media (max-height: 700px){
-  .heading{
-    br{
-      display: none;
-    }
-  }
-  .blocH1 {
-    width: 400px;
-    margin: 0;
   }
 }
 

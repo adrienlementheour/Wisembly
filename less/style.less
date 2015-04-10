@@ -242,7 +242,6 @@ label{
 }
 button, label{
   .gothamBold(.93em);
-  text-transform: uppercase;
 }
 button{
   -webkit-appearance: none;
@@ -252,7 +251,6 @@ button{
   border: 0;
   .transition(.3s ease-in-out);
   &.btnFull{
-    text-transform: none;
     padding: 0;
     height: 48px;
     &:before{
@@ -274,7 +272,7 @@ button{
 .btnFull, .btnLight, .btnBlanc{
   display: block;
   position: relative;
-  width: 220px;
+  width: 230px;
   text-align: center;
   height: 44px;
   line-height: 44px;
@@ -575,7 +573,6 @@ header{
   }
   label{
     padding: 0 40px 0 0;
-    text-transform: none;
     display: inline;
   }
   input{
@@ -885,6 +882,7 @@ header{
     padding: 10px 0;
     z-index: -1;
     opacity: 0;
+    height: 27px;
     .transition(.5s ease-in-out);
     .no-js &, .lt-ie9 &{
       text-align: center;
@@ -893,6 +891,7 @@ header{
       margin: 0 23px;
       padding: 4px 0;
       position: relative;
+      font-size: .9em;
       &:after{
         content: '';
         display: block;
@@ -1347,11 +1346,14 @@ footer{
   display: inline-block;
   vertical-align: bottom;
   padding: 0 0 0 30px;
-  min-height: 250px;
+  min-height: 285px;
   .box-sizing(border-box);
   h2{
     margin: 0;
     padding: 0;
+    +p{
+      height: 57px;
+    }
   }
   p{
     margin-top: 0;
@@ -1364,6 +1366,7 @@ footer{
   }
   label{
     margin: 0 0 5px 1px;
+    text-transform: capitalize;
   }
   form{
     height: 0;
@@ -1419,6 +1422,7 @@ footer{
   button{
     padding: 0;
     opacity: .6;
+    text-transform: uppercase;
     &:before{
       .fontIcon();
       display: block;
@@ -1469,7 +1473,7 @@ footer{
 
 #dragIn{
   position: absolute;
-  top: 171px;
+  top: 190px;
   left: 66px;
   width: 348px;
   height: 10px;
@@ -1492,13 +1496,13 @@ footer{
 
 @supports (-webkit-appearance:none){
   #dragIn{
-    top: 174px;
+    top: 193px;
   }
 }
 
 @supports (-moz-appearance:meterbar){
   #dragIn{
-    top: 174px;
+    top: 193px;
   }
 }
 
@@ -1642,8 +1646,6 @@ footer{
 }
 
 .menuFooter{
-  .box-sizing(border-box);
-  padding: 0 0 0 60px;
   p{
     margin: 0 0 60px;
     position: relative;
@@ -1677,7 +1679,8 @@ footer{
   }
   > ul{
     > li{
-      padding: 0 0 0 90px;
+      padding: 0 0 0 50px;
+      max-width: 31%;
       &:first-child{
         padding: 0;
       }
@@ -1811,6 +1814,7 @@ footer{
   background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
   background-size: cover;
   pointer-events: none;
+  height: 740px;
   .lt-ie9 &{
     background-size: 100% auto;
     background-position: 57% 50%;
@@ -1835,11 +1839,10 @@ footer{
 }
 
 .blocH1{
-  width: 290px;
+  width: 400px;
   max-width: 100%;
   float: right;
   padding: 0 0 200px;
-  margin: 0 5% 0 0;
 }
 
 .heading{
@@ -1857,8 +1860,9 @@ footer{
 .subHeading{
   color: @blanc;
   text-transform: none;
-  .gotham(1.32em);
+  .gotham(1.1em);
   margin: 25px 0;
+  line-height: 20px;
 }
 
 
@@ -2145,9 +2149,10 @@ footer{
   margin: 90px 0 70px;
   li{
     display: inline-block;
-    vertical-align: bottom;
+    vertical-align: top;
     margin: 0 0 0 5.6%;
     padding: 0;
+    width: 20.75%;
     &:first-child{
       margin: 0;
     }
@@ -2159,7 +2164,6 @@ footer{
     }
   }
   .accompagnement{
-    width: 20%;
     &:before{
       height: 96px;
       width: 106px;
@@ -2167,7 +2171,6 @@ footer{
     }
   }
   .securite{
-    width: 22%;
     &:before{
       height: 121px;
       width: 68px;
@@ -2175,7 +2178,6 @@ footer{
     }
   }
   .fiable{
-    width: 19%;
     &:before{
       height: 91px;
       width: 94px;
@@ -2183,7 +2185,6 @@ footer{
     }
   }
   .technique{
-    width: 22%;
     &:before{
       height: 88px;
       width: 71px;
