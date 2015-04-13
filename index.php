@@ -25,11 +25,11 @@
 			<div id='container'>
 				<section class='headHome'>
 					<div id="bgHeadHome"></div>
-					<div id="triangle-header-vert"></div>
-					<div id="triangle-header-blanc"></div>
+					<!--<div id="triangle-header-vert"></div>
+					<div id="triangle-header-blanc"></div>-->
 					<div class='content main'>
 						<div class='blocH1'>
-							<h1 class='heading'>Ideas <br/>Are<span>Everywhere</span></h1>
+							<h1 class='heading'>Moins de bla-bla,<span>plus de résultats</span></h1>
 							<h2 class='subHeading'>Wisembly vous aide à améliorer la productivité de vos réunions grâce à l'intéractivité.</h2>
 							<a href='#' class="btnFull">Je suis intéressé</a>
 						</div>

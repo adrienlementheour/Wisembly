@@ -66,6 +66,7 @@ function fixedHeader(){
 	}
 }
 
+// Appartition footer social //
 function apparitionFooter(){
 	if(!isMobile.any){
 		$('.navFooter').isOnScreen() ? TweenMax.set($(".rsFooter"), {visibility:"visible"}) : TweenMax.set($(".rsFooter"), {visibility:"hidden"});
@@ -120,7 +121,7 @@ function setSubMenu(){
 
 				newPosSubMenu = (middleHasSubMenu + posHasSubMenu) - middleSubMenu;
 
-				if(widthSubMenu + newPosSubMenu > $(window).width()){
+				if(widthSubMenu + newPosSubMenu >= $(window).width()){
 					subMenus.eq(i).css({'padding-left': 0, 'text-align': 'center'});
 				}else{
 					subMenus.eq(i).css('padding-left', newPosSubMenu + 'px');
@@ -135,24 +136,10 @@ function setSubMenu(){
 	}
 }
 
-/*function hoverMenu(){
-	$('.menu').find('li').on('mouseover', function(){
-		TweenMax.to($("#triangle-top-header"), 0.2, {css:{y: "-60px", force3D:true}});
-	}).on('mouseout', function(){
-		TweenMax.to($("#triangle-top-header"), 0.2, {css:{y: "0px", force3D:true}});
-	});
-}*/
-
-
-function setPosBtnMenu(){
-	var btn = $('.bottomHeader').find('.btnFull'), txt = $('.topHeader').find('p');
-	if($(window).width() < 1040){
-		btn.css('top', minHeight);
-		txt.css('top', minHeight + 80);
-	}else{
-		btn.css('top', 0);
-		txt.css('top', 0);
-	}
+// Sélecteur de langue header //
+function langSelector(){
+	var menuLang = $('.lang'), actifLi = menuLang.find('.actif');
+	menuLang.prepend(actifLi).find('.actif').eq(1).remove();
 }
 
 // Menu responsive //
@@ -173,7 +160,19 @@ function responsiveMenu(){
 	header.toggleClass('menuVisible');
 }
 
-// Mise en place du slider //
+// Gérer la position du bouton "je suis intéressé" et du texte "contactez-nous" dans le menu responsive //
+function setPosBtnMenu(){
+	var btn = $('.bottomHeader').find('.btnFull'), txt = $('.topHeader').find('p');
+	if($(window).width() < 1040){
+		btn.css('top', minHeight);
+		txt.css('top', minHeight + 80);
+	}else{
+		btn.css('top', 0);
+		txt.css('top', 0);
+	}
+}
+
+// Mise en place du slider du footer //
 function setSliderTeam(slider){
 	var slides = slider.find('.slideTeam'), slidesLength = slides.length, i = 0, 
 		pagination = $('.navTeam'), button = '<li><button>•</button></li>',
@@ -242,14 +241,15 @@ function setSliderTeamProfil(that){
 		});
 	}
 
-	/* Récupérer la valeur du name et l'appliquer au select "profil" */
+	// Récupérer la valeur du name et l'appliquer au select "profil" //
 	$('#profil').find('option[value='+ that.attr('name') +']').prop('selected', true);
 
-	/* Changement du champ entreprise */
+	// Changement du champ entreprise //
 	var label = that.html() == 'Autre' ? 'Organisation' : that.html();
 	$('#labelEnt').html(label + ' *');
 }
 
+// Apparition du slider permettant de chosir son profil //
 function setDraggableButton(){
 	var buttons = $('.buttonsTeam').find('button');
 	btnContact.before("<div id='dragIn'><div id='drag'></div></div>");
@@ -280,11 +280,7 @@ function setDraggableButton(){
 	});
 }
 
-// Scroll to a la section suivante home //
-function goToNextSection(){
-	htmlBody.animate({scrollTop: $(this).parents('section').next('section').offset().top - 100}, 400);
-}
-
+// Ouverture du formulaire de contact du footer //
 function openForm(){
 	if(btnContact.length){
 		btnContact.animate({opacity: 0}, 200, function(){
@@ -301,13 +297,35 @@ function openForm(){
 	}
 }
 
-function langSelector(){
-	var menuLang = $('.lang'),
-		actifLi = menuLang.find('.actif');
-	menuLang.prepend(actifLi);
-	menuLang.find('.actif').eq(1).remove();
+// ScrollMagic triangle footer + header )
+function scrollMagic(){
+	if(($(window).width() > 767)){
+		var controller = new ScrollMagic();
+		
+		var triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true}});
+		var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}});
+
+		var whenInContainer4 = new ScrollScene({
+			triggerElement: '.menuFooter',
+			duration: $('.menuFooter').outerHeight(),
+			offset: -300
+		})
+		.setTween(tiangleMenuFooter)
+		.addTo(controller);
+	}
 }
 
+// Scroll to a la section suivante home //
+function goToNextSection(){
+	htmlBody.animate({scrollTop: $(this).parents('section').next('section').offset().top - 100}, 400);
+}
+
+// Réglage de la photo en page d'accueil //
+function heightBgHeadHome(){
+	TweenMax.set(bgHeadHome, {height: $(".headHome").height()+"px"});
+}
+
+// Vidéo youtube //
 function videoCover(){
 	function completeTlVideo(){
 		if(!isMobile.phone){ player1.playVideo(); }
@@ -322,109 +340,7 @@ function videoCover(){
 	return false;
 }
 
-function heightBgHeadHome(){
-	TweenMax.set(bgHeadHome, {height: $(".headHome").height()+"px"});
-}
-
-// ScrollMagic
-function scrollMagic(){
-	if(($(window).width()>767)){
-		var controller = new ScrollMagic();
-		
-		var triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true}});
-		var triangleHeaderVert = TweenMax.to($("#triangle-header-vert"), 1.2, {css:{rotation: "7deg", force3D:true}});
-		var triangleHeaderBlanc = TweenMax.to($("#triangle-header-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}});
-		var trianglesFooterTopFonce = TweenMax.to($("#triangle-footer-top-bleu-fonce"), 1.2, {css:{rotation: "-3deg", force3D:true}});
-		var tiangleFooterTopClair = TweenMax.to($("#triangle-footer-top-bleu-clair"), 1.2, {css:{rotation: "3deg", force3D:true}});
-		var tiangleFooterBottomBleu = TweenMax.to($("#triangle-footer-bottom-bleu-clair"), 1.2, {css:{rotation: "-3deg", force3D:true}});
-		var tiangleFooterBottomBlanc = TweenMax.to($("#triangle-footer-bottom-blanc"), 1.2, {css:{rotation: "-3deg", force3D:true}});
-		var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}});
-		var scrollNext1 = TweenMax.to($(".scrollNext1"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-		var scrollNext2 = TweenMax.to($(".scrollNext2"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-		var scrollNext3 = TweenMax.to($(".scrollNext3"), 1.2, {rotation: "-3deg", force3D:true,lazy:true});
-
-		var sceneHeader = new ScrollScene({
-			triggerElement: '.headHome',
-			duration: $('.headHome').outerHeight()/3,
-			offset: 500
-		})
-		.setTween(triangleHeaderVert)
-		.addTo(controller);
-
-		var sceneHeader = new ScrollScene({
-			triggerElement: '.headHome',
-			duration: $('.headHome').outerHeight()/3,
-			offset: 500
-		})
-		.setTween(triangleHeaderBlanc)
-		.addTo(controller);
-
-		var whenInContainer = new ScrollScene({
-			triggerElement: '.contactFooter',
-			duration: $('.contactFooter').outerHeight(),
-			offset: -300
-		})
-		.setTween(trianglesFooterTopFonce)
-		.addTo(controller);
-
-		var whenInContainer2 = new ScrollScene({
-			triggerElement: '.contactFooter',
-			duration: $('.contactFooter').outerHeight(),
-			offset: -400
-		})
-		.setTween(tiangleFooterTopClair)
-		.addTo(controller);
-
-		var whenInContainer3Bis = new ScrollScene({
-			triggerElement: '#container3',
-			duration: $('#container3').outerHeight(),
-			offset: -400
-		})
-		.setTween(tiangleFooterBottomBleu)
-		.addTo(controller);
-
-		var whenInContainer3 = new ScrollScene({
-			triggerElement: 'body',
-			duration: $('#container3').outerHeight(),
-			offset: $(document).height() - $(window).height() + $('#container3').height() - 100
-		})
-		.setTween(tiangleFooterBottomBlanc)
-		.addTo(controller);
-
-		var whenInContainer4 = new ScrollScene({
-			triggerElement: '.menuFooter',
-			duration: $('.menuFooter').outerHeight(),
-			offset: -300
-		})
-		.setTween(tiangleMenuFooter)
-		.addTo(controller);
-
-		var whenInContainer5 = new ScrollScene({
-			triggerElement: '.scrollNext1',
-			duration: 800,
-			offset: -300
-		})
-		.setTween(scrollNext1)
-		.addTo(controller);
-
-		var whenInContainer6 = new ScrollScene({
-			triggerElement: '.scrollNext2',
-			duration: 800,
-			offset: -300
-		})
-		.setTween(scrollNext2)
-		.addTo(controller);
-
-		var whenInContainer7 = new ScrollScene({
-			triggerElement: '.scrollNext3',
-			duration: 800,
-			offset: -300
-		})
-		.setTween(scrollNext3)
-		.addTo(controller);
-	}
-}
-
+// Logos presse aléatoire en page d'accueil //
 function randomLogosPress(){
 	var logos = $('.logosPresse').find('li'), logosLength = logos.length, 
 		i = 0, rand, nbLogos = 4, j = 0, tabRand = [];
@@ -447,19 +363,23 @@ function randomLogosPress(){
 /**** INIT ****/
 $(function(){
 
+	// No-mobile //
 	if(!isMobile.any){
 		htmlTag.addClass("no-mobile");
 	}
 
-	setSubMenu();
-	//hoverMenu();
-
-	scrollPage();
-
+	// Lang selector //
 	if(!htmlTag.attr('lang') != 'fr-FR'){
 		langSelector();
 	}
 
+	// Scroll init //
+	scrollPage();
+
+	// Sous menu //
+	setSubMenu();
+
+	// Responsive menu //
 	burger.on('click', responsiveMenu);
 	$('#triangleMenu').on('click', function(){
 		burger.removeClass('actif');
@@ -467,6 +387,7 @@ $(function(){
 		$('#container').css({height: 'auto', overflow: 'visible'});
 	});
 
+	// Slider footer //
 	if($(window).width() > 450 && !htmlTag.hasClass('lt-ie9') && $('.buttonsTeam').length) setDraggableButton();
 
 	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
@@ -478,6 +399,7 @@ $(function(){
 		openForm();
 	}	
 
+	// Changement label entreprise selon profil //
 	$('#profil').change(function(){
 		$('#labelEnt').html($(this).val() + ' *');
 	});
@@ -490,16 +412,21 @@ $(function(){
 	
 
 	$(window).load(function(){
+		// Anim triangles header + footer //
+		scrollMagic();
+
+		apparitionFooter();
+
 		if(body.hasClass("home")){
+			// Photo accueil header //
 			if(!htmlTag.hasClass("lt-ie10") && !isMobile.any){
 				TweenMax.set(bgHeadHome, {position:"fixed"});
 			}
 			heightBgHeadHome();
 
+			// Logos presse //
 			randomLogosPress();
 		}
-
-		scrollMagic();
 
 		// Slider footer //
 		if($('#sliderTeam').length){

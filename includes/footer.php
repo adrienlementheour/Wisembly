@@ -1,7 +1,7 @@
 <footer role='contentinfo'>
   <section class='contactFooter bleu'>
-    <div id='triangle-footer-top-bleu-fonce'></div>
-    <div id='triangle-footer-top-bleu-clair'></div>
+    <!--<div id='triangle-footer-top-bleu-fonce'></div>
+    <div id='triangle-footer-top-bleu-clair'></div>-->
     <div class="wrapper-contentinfo">
       <div class='content'>
         <div id='sliderTeam'>
@@ -112,9 +112,9 @@
     </div>
   </section>
 
-  <section class='navFooter' id="container3">
-    <div id='triangle-footer-bottom-bleu-clair'></div>
-    <div id='triangle-footer-bottom-blanc'></div>
+  <section class='navFooter'>
+    <!--<div id='triangle-footer-bottom-bleu-clair'></div>
+    <div id='triangle-footer-bottom-blanc'></div>-->
     <div class='content'>
       <ul class='itemsFooter'>
         <li>
@@ -185,7 +185,7 @@
         <li><a href='#' title='Wisembly sur YouTube' class='icon-yt'><span>YouTube</span></a></li>
       </ul>
       <p>©2015 <a href=''>Mentions légales</a></p>
-      <div class="barre-footer"></div>
+      <!--<div class="barre-footer"></div>-->
     </div>
   </section>
 </footer>
