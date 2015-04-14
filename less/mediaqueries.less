@@ -4,12 +4,12 @@
 /* @group Responsive horizontal */
 
 @media (max-width: 1820px){
-  .headHome{
-    #bgHeadHome{
-      background: url(../layoutImg/home/smallHeadHome.jpg) no-repeat 50% 100%;
-      background-size: auto;
-    }
+
+  #bgHeadHome{
+    background: url(../layoutImg/home/smallHeadHome.jpg) no-repeat 50% 100%;
+    background-size: auto;
   }
+
 }
 
 @media (max-width: 1250px){
@@ -71,14 +71,12 @@
     padding: 0;
   }
 
-  .headHome{
-    #bgHeadHome{
-      background-position: 66% 100%;
-    }
+  #bgHeadHome{
+    background-position: 66% 100%;
   }
 
   .blocH1{
-    margin: 0 5% 0 0;
+    margin: 0 9% 0 0;
   }
 
   .detailHome{
@@ -92,6 +90,9 @@
       margin: 0 0 70px !important;
       padding: 105px 50px 0;
       .box-sizing(border-box);
+    }
+    .technique{
+      margin: 0 !important;
     }
     h3{
       br{
@@ -320,6 +321,10 @@
     }
   }
 
+  #bgHeadHome{
+    top: 100px;
+  }
+
   #sliderRef{
     ul{
       width: 560px;
@@ -377,7 +382,7 @@
   }
 
   .blocH1{
-    margin: 0;
+    margin: 0 5% 0 0;
   }
 
   .detailHome{
@@ -385,6 +390,9 @@
       width: 100%;
       padding: 0;
       margin: 0 0 50px;
+    }
+    .training{
+      margin: 0;
     }
   }
 
@@ -495,13 +503,9 @@
     }
   }
 
-  .menuFooter{
-    p{
-      .triangle-menu-footer{
-        .transform(rotate(-3deg) translateY(0px));
-        .opacity(1);
-      }
-    }
+  .triangle-menu-footer{
+    .transform(rotate(-3deg) translateY(0px));
+    .opacity(1);
   }
 
   .scrollNext{
@@ -510,10 +514,56 @@
     }
   }
 
-  .headHome {
-      #bgHeadHome{
-        background-position: 73% 100%;
+  #bgHeadHome{
+    background-size: 100%;
+    background-position: 0 100%;
+    top: auto;
+    bottom: 50px;
+    position: absolute;
+    height: 340px;
+  }
+
+  .headHome{
+    padding: 0 0 50%;
+    &:before{
+      display: none;
+    }
+    .btnFull{
+      margin: 0 auto;
+    }
+    .content.main{
+      padding: 40px 20px 20px;
+      background: @bleu;
+      &:after{
+        content: '';
+        display: block;
+        width: 120%;
+        height: 50px;
+        background: @bleu;
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        .transform(rotate(3deg));
+        z-index: -1;
       }
+    }
+  }
+
+  .heading{
+    margin: 0;
+  }
+
+  .subHeading{
+    br:first-child{
+      display: none;
+    }
+  }
+
+  .blocH1{
+    padding: 0;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
   }
 
   #sliderRef{
@@ -575,14 +625,16 @@
 }
 
 @media (max-width: 450px){
-  header{
-    &.menuVisible{
-      #triangleMenu{
-        .transform(rotate(23deg));
-      }
+
+  .contactFooter{
+    .wrapper-contentinfo{
+      padding: 0 0 20px;
+    }
+    button{
+      margin: 15px auto;
     }
   }
-
+  
   .buttonsTeam{
     display: none;
   }
@@ -591,12 +643,23 @@
     min-height: 110px;
     h2{
       margin: 0 0 30px;
+      text-align: center;
     }
     form{
       &.visible{
         height: 446px;
       }
     }
+  }
+
+  fieldset.small{
+    width: 48.5%;
+  }
+
+  #demandeContact{
+    margin-top: 0;
+    left: 0;
+    right: 0;
   }
 
   .none450{
@@ -622,9 +685,13 @@
     display: none;
   }
 
-  .headHome {
-    #bgHeadHome{
-      background-position: 78% 100%;
+  .headHome{
+    padding: 0 0 55%;
+    .content.main{
+      padding: 25px 20px 20px;
+      &:after{
+        bottom: -14px;
+      }
     }
   }
 
@@ -652,23 +719,43 @@
   }
 }
 
+@media (max-width: 400px){
+
+  .heading{
+    font-size: 2em;
+  }
+
+  .subHeading{
+    font-size: 1em;
+    line-height: 1.2em;
+    margin: 10px 0 15px;
+  }
+
+}
+
+@media (max-width: 330px){
+  .headHome{
+    padding: 0 0 60%;
+  }
+}
+
 /* @end */
 
 /* @group Responsive vertical */
 
-@media (max-height: 850px){
+@media (max-height: 850px) and (min-width: 768px){
   .heading{
     margin: 10vh 0 0;
   }
 }
 
-@media (max-height: 800px){
+@media (max-height: 800px) and (min-width: 768px){
   .heading{
     margin: 5vh 0 0;
   }
 }
 
-@media (max-height: 750px){
+@media (max-height: 750px) and (min-width: 768px){
   .blocH1 {
     padding: 0 0 170px;
   }
@@ -678,6 +765,26 @@
   .subHeading{
     font-size: 1em;
     line-height: 1.2em;
+  }
+}
+
+@media (max-height: 510px) and (max-width: 1040px){
+  header{
+    &.menuVisible{
+      #triangleMenu{
+        .transform(rotate(23deg));
+      }
+    }
+  }
+}
+
+@media (min-height: 580px) and (max-width: 420px){
+  header{
+    &.menuVisible{
+      #triangleMenu{
+        .transform(rotate(16deg));
+      }
+    }
   }
 }
 

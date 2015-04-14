@@ -80,7 +80,7 @@ function scrollPage(){
 	fixedHeader();
 	apparitionFooter();
 
-	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie10") && !isMobile.any && myScroll < $(".headHome").height()){
+	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie10") && !isMobile.any && myScroll < $(".headHome").height() && $(window).width() > 767){
 		TweenMax.set(bgHeadHome, {y:-(myScroll/1.5)+"px"});
 	}
 
@@ -322,7 +322,15 @@ function goToNextSection(){
 
 // Réglage de la photo en page d'accueil //
 function heightBgHeadHome(){
-	TweenMax.set(bgHeadHome, {height: $(".headHome").height()+"px"});
+	if($(window).width() > 767){
+		if(!htmlTag.hasClass("lt-ie10") && !isMobile.any){
+			TweenMax.set(bgHeadHome, {position:"fixed"});
+		}
+		TweenMax.set(bgHeadHome, {height: $(".headHome").height()+"px"});
+	}else{
+		TweenMax.set(bgHeadHome, {height: "340px", position:"absolute"});
+	}
+	
 }
 
 // Vidéo youtube //
@@ -419,9 +427,6 @@ $(function(){
 
 		if(body.hasClass("home")){
 			// Photo accueil header //
-			if(!htmlTag.hasClass("lt-ie10") && !isMobile.any){
-				TweenMax.set(bgHeadHome, {position:"fixed"});
-			}
 			heightBgHeadHome();
 
 			// Logos presse //
