@@ -90,7 +90,7 @@
     li{
       width: 50% !important;
       margin: 0 0 70px !important;
-      padding: 0 50px;
+      padding: 105px 50px 0;
       .box-sizing(border-box);
     }
     h3{
@@ -112,7 +112,7 @@
       }
     }
   }
-  
+
   .menu{
     width: 185px;
     opacity: 0;
@@ -197,14 +197,6 @@
       &:before{
         top: -10px;
       }
-      #container-triangle-top-header{
-        height: auto;
-        bottom: 0;
-        #triangle-top-header{
-          top: -10px;
-          border-width: 0 70px 60px 600px
-        }
-      }
     }
     p{
       opacity: 0;
@@ -232,6 +224,16 @@
       width: 45px;
       height: 36px
     }
+  }
+
+  #container-triangle-top-header{
+    height: auto;
+    bottom: 0;
+  }
+
+  #triangle-top-header{
+    top: -10px;
+    border-width: 0 70px 60px 600px
   }
 
   .lang{
@@ -271,7 +273,7 @@
     .sub-menu{
       a{
         color: fade(@txt, 80);
-        font-size: 0.9em;
+        font-size: .88em;
       }
       > li > a{
         padding-top: 0;
@@ -343,7 +345,7 @@
   .avantages{
     li{
       width: 100% !important;
-      padding: 0 100px;
+      padding: 105px 100px 0;
     }
   }
 }
@@ -493,15 +495,24 @@
     }
   }
 
+  .menuFooter{
+    p{
+      .triangle-menu-footer{
+        .transform(rotate(-3deg) translateY(0px));
+        .opacity(1);
+      }
+    }
+  }
+
+  .scrollNext{
+    span{
+      .transform(rotate(-3deg));
+    }
+  }
+
   .headHome {
       #bgHeadHome{
         background-position: 73% 100%;
-      }
-      #triangle-header-vert{
-        .transform(rotate(7deg));
-      }
-      #triangle-header-blanc{
-        .transform(rotate(-3deg));
       }
   }
 
@@ -517,36 +528,7 @@
 
   .avantages{
     li{
-      padding: 0;
-    }
-  }
-  .contactFooter{
-    #triangle-footer-top-bleu-fonce{
-      .transform(rotate(-3deg));
-    }
-    #triangle-footer-top-bleu-clair{
-      .transform(rotate(3deg));
-    }
-  }
-  .navFooter{
-    #triangle-footer-bottom-bleu-clair{
-      .transform(rotate(-3deg));
-    }
-    #triangle-footer-bottom-blanc{
-      .transform(rotate(-3deg));
-    }
-  }
-  .menuFooter{
-    p{
-      .triangle-menu-footer{
-        .transform(rotate(-3deg) translateY(0px));
-        .opacity(1);
-      }
-    }
-  }
-  .scrollNext{
-    span{
-      .transform(rotate(-3deg));
+      padding: 105px 0 0;
     }
   }
 }
