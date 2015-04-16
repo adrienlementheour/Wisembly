@@ -1,4 +1,4 @@
-<footer role='contentinfo'>
+<footer role='contentinfo' id='contactezNous'>
   <section class='contactFooter bleu'>
     <!--<div id='triangle-footer-top-bleu-fonce'></div>
     <div id='triangle-footer-top-bleu-clair'></div>-->
@@ -105,7 +105,7 @@
               <label for='message'>Message <span>(facultatif)</span></label>
               <textarea name='message' id='message'></textarea>
             </fieldset>
-            <button type='submit' name='submitContact' class='btnFull' form='contact'>Contactez-moi !</button>
+            <button type='submit' name='submitContact' id='submitContact' class='btnFull' form='contact'>Contactez-moi !</button>
           </form>
         </div>
       </div>
@@ -173,6 +173,9 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class='webinar'>
+      <p><strong>Prochain Webinar</strong> le Jeudi 9 avril à 11h. <a href='#' title='Inscrivez-vous au prochain Webinar'>Cliquez ici pour vous inscrire.</a></p>
     </div>
   </section>
 

@@ -263,7 +263,6 @@
     .btnFull{
       height: 35px;
       line-height: 35px;
-      width: 160px;
       opacity: 0;
       z-index: 10;
       float: none;
@@ -322,7 +321,13 @@
   }
 
   #bgHeadHome{
-    top: 100px;
+    top: 0;
+    .no-js &{
+      background-position: 66% 295%;
+    }
+    .no-mobile &{
+      top: 100px;
+    }
   }
 
   #sliderRef{
@@ -521,6 +526,10 @@
     bottom: 50px;
     position: absolute;
     height: 340px;
+    .no-js &{
+      background-position: 0 100%;
+      top: auto;
+    }
   }
 
   .headHome{
@@ -645,9 +654,12 @@
       margin: 0 0 30px;
       text-align: center;
     }
+    p{
+      text-align: center;
+    }
     form{
       &.visible{
-        height: 446px;
+        height: 453px;
       }
     }
   }
@@ -750,7 +762,7 @@
 }
 
 @media (max-height: 800px) and (min-width: 768px){
-  .heading{
+  .js .heading{
     margin: 5vh 0 0;
   }
 }

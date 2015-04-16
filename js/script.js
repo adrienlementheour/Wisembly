@@ -7,7 +7,8 @@ var myScroll,
 	burger = $('#burger'),
 	bgHeadHome = $('#bgHeadHome'),
 	btnContact = $('#demandeContact'),
-	minHeight = $('.menu').innerHeight() - 10;
+	minHeight = $('.menu').innerHeight() - 10,
+	subMenus = $('.menu').find('.sub-menu');
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -80,7 +81,7 @@ function scrollPage(){
 	fixedHeader();
 	apparitionFooter();
 
-	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie10") && !isMobile.any && myScroll < $(".headHome").height() && $(window).width() > 767){
+	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie9") && !isMobile.any && myScroll < $(".headHome").height() && $(window).width() > 767){
 		TweenMax.set(bgHeadHome, {y:-(myScroll/1.5)+"px"});
 	}
 
@@ -89,8 +90,7 @@ function scrollPage(){
 
 // Sous menu //
 function setSubMenu(){
-	var subMenus = $('.menu').find('.sub-menu'),
-		hasMenu = $('.hasSubMenu');
+	var hasMenu = $('.hasSubMenu');
 
 	if($(window).width() > 1040){
 		hasMenu.on('mouseover', function(){
@@ -98,10 +98,17 @@ function setSubMenu(){
 		}).on('mouseout', function(){
 			$(this).removeClass('actifHover');
 		});
+	}else{
+		hasMenu.unbind();
+	}
+}
 
-		if(!htmlTag.hasClass('lt-ie9')){
+function centerSubMenu(){
+	if(!htmlTag.hasClass('lt-ie9')){
+
+		if($(window).width() > 1040){
 			var nbSubMenus = subMenus.length, i = 0, y,
-				liens, liensLength, widthLi, widthSubMenu, middleSubMenu,
+				liens, liensLength, widthSubMenu, middleSubMenu,
 				hasSubMenu, middleHasSubMenu, posHasSubMenu, newPosSubMenu;
 
 			for(i; i<nbSubMenus; i++){
@@ -127,12 +134,10 @@ function setSubMenu(){
 					subMenus.eq(i).css('padding-left', newPosSubMenu + 'px');
 				}
 			}
-		}
-	}else{
-		hasMenu.unbind();
-		if(!htmlTag.hasClass('lt-ie9')){
+		}else{
 			subMenus.css('padding-left', 0);
 		}
+
 	}
 }
 
@@ -140,6 +145,18 @@ function setSubMenu(){
 function langSelector(){
 	var menuLang = $('.lang'), actifLi = menuLang.find('.actif');
 	menuLang.prepend(actifLi).find('.actif').eq(1).remove();
+}
+
+// Gérer la position du bouton "je suis intéressé" et du texte "contactez-nous" dans le menu responsive //
+function setPosBtnMenu(){
+	var btn = $('.bottomHeader').find('.btnFull'), txt = $('.topHeader').find('p');
+	if($(window).width() < 1040){
+		btn.css('top', minHeight);
+		txt.css('top', minHeight + 80);
+	}else{
+		btn.css('top', 0);
+		txt.css('top', 0);
+	}
 }
 
 // Menu responsive //
@@ -158,18 +175,6 @@ function responsiveMenu(){
 	}
 	burger.toggleClass('actif');
 	header.toggleClass('menuVisible');
-}
-
-// Gérer la position du bouton "je suis intéressé" et du texte "contactez-nous" dans le menu responsive //
-function setPosBtnMenu(){
-	var btn = $('.bottomHeader').find('.btnFull'), txt = $('.topHeader').find('p');
-	if($(window).width() < 1040){
-		btn.css('top', minHeight);
-		txt.css('top', minHeight + 80);
-	}else{
-		btn.css('top', 0);
-		txt.css('top', 0);
-	}
 }
 
 // Mise en place du slider du footer //
@@ -245,7 +250,7 @@ function setSliderTeamProfil(that){
 	$('#profil').find('option[value='+ that.attr('name') +']').prop('selected', true);
 
 	// Changement du champ entreprise //
-	var label = that.html() == 'Autre' ? 'Organisation' : that.html();
+	var label = that.html() === 'Autre' ? 'Organisation' : that.html();
 	$('#labelEnt').html(label + ' *');
 }
 
@@ -263,16 +268,16 @@ function setDraggableButton(){
 		maxDuration: 3,
 		onThrowComplete: function(){
 			var button;
-			if(this.x == 0){
+			if(this.x === 0){
 				button = buttons.eq(0);
 			}
-			if(this.x == 130){
+			if(this.x === 130){
 				button = buttons.eq(1);
 			}
-			if(this.x == 235){
+			if(this.x === 235){
 				button = buttons.eq(2);
 			}
-			if(this.x == 334){
+			if(this.x === 334){
 				button = buttons.eq(3);
 			}
 			setSliderTeamProfil(button);
@@ -297,7 +302,7 @@ function openForm(){
 	}
 }
 
-// ScrollMagic triangle footer + header )
+// ScrollMagic ( triangle footer + header )
 function scrollMagic(){
 	if(($(window).width() > 767)){
 		var controller = new ScrollMagic();
@@ -309,9 +314,7 @@ function scrollMagic(){
 			triggerElement: '.menuFooter',
 			duration: $('.menuFooter').outerHeight(),
 			offset: -300
-		})
-		.setTween(tiangleMenuFooter)
-		.addTo(controller);
+		}).setTween(tiangleMenuFooter).addTo(controller);
 	}
 }
 
@@ -323,7 +326,7 @@ function goToNextSection(){
 // Réglage de la photo en page d'accueil //
 function heightBgHeadHome(){
 	if($(window).width() > 767){
-		if(!htmlTag.hasClass("lt-ie10") && !isMobile.any){
+		if(!htmlTag.hasClass("lt-ie9") && !isMobile.any){
 			TweenMax.set(bgHeadHome, {position:"fixed"});
 		}
 		TweenMax.set(bgHeadHome, {height: $(".headHome").height()+"px"});
@@ -351,7 +354,7 @@ function videoCover(){
 // Logos presse aléatoire en page d'accueil //
 function randomLogosPress(){
 	var logos = $('.logosPresse').find('li'), logosLength = logos.length, 
-		i = 0, rand, nbLogos = 4, j = 0, tabRand = [];
+		i = 0, nbLogos = 4, j = 0, tabRand = [];
 
 	if(logosLength > nbLogos){
 		logos.css('display', 'none');
@@ -377,7 +380,7 @@ $(function(){
 	}
 
 	// Lang selector //
-	if(!htmlTag.attr('lang') != 'fr-FR'){
+	if(htmlTag.attr('lang') !== 'fr-FR'){
 		langSelector();
 	}
 
@@ -396,7 +399,9 @@ $(function(){
 	});
 
 	// Slider footer //
-	if($(window).width() > 450 && !htmlTag.hasClass('lt-ie9') && $('.buttonsTeam').length) setDraggableButton();
+	if($(window).width() > 450 && !htmlTag.hasClass('lt-ie9') && $('.buttonsTeam').length){
+		setDraggableButton();
+	} 
 
 	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
 	$('.buttonsTeam').find('button').on('click', function(){ setSliderTeamProfil($(this)); });
@@ -406,6 +411,19 @@ $(function(){
 	if($('.formContact').hasClass('open')){
 		openForm();
 	}	
+	$('.bottomHeader').find('.btnFull').on('click', function(e){
+		if(header.hasClass('menuVisible')){
+			responsiveMenu();
+		}
+		e.preventDefault();
+		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
+		setTimeout(openForm, 500);
+	});
+	$('.blocH1').find('.btnFull').on('click', function(e){
+		e.preventDefault();
+		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
+		setTimeout(openForm, 500);
+	});
 
 	// Changement label entreprise selon profil //
 	$('#profil').change(function(){
@@ -420,6 +438,9 @@ $(function(){
 	
 
 	$(window).load(function(){
+		// Sous menu //
+		centerSubMenu();
+
 		// Anim triangles header + footer //
 		scrollMagic();
 
@@ -451,8 +472,11 @@ $(function(){
 	});
 
     $(window).resize(function(){
+    	minHeight = $('.menu').innerHeight() - 10;
+
     	fixedHeader();
     	setSubMenu();
+    	centerSubMenu();
     	setPosBtnMenu();
 
     	if(body.hasClass("home")){
