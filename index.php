@@ -229,6 +229,10 @@
 								<img src='img/tribune.jpg' alt='La Tribune'/>
 							</li>
 						</ul>
+						<p>
+							Wisembly a été nommé <em>COOL VENDOR 2015</em> par GATNER. <a href='#' target='_blank'>En savoir plus</a>
+							<img src='img/gartner.png' alt='Gartner 2015 CoolVendor'/>
+						</p>
 					</section>
 
 				</div>

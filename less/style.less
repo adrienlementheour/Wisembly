@@ -21,7 +21,7 @@
 @bleuFooterContact: #0d5c7b;
 @grisMentions: #8c959b;
 @grisSolid: #718289;
-@grisSubMenu: #eff1f1;
+//@grisSubMenu: #eff1f1;
 @grisSlides: #f4f5f5;
 
 html,
@@ -2268,6 +2268,27 @@ footer{
   }
   img{
     padding: 0 0 10px;
+  }
+  + p{
+    position: relative;
+    .gothamMedium(1em);
+    margin: 60px 0 0;
+    a{
+      .gotham(1em);
+      color: @vert;
+      border-color: fade(@vert, 30);
+      &:hover, &:focus{
+        color: darken(@vert, 10);
+        border-color: fade(darken(@vert, 10), 30);
+      }
+    }
+    em{
+      .gothamMediumIt(1em);
+    }
+    img{
+      display: block;
+      margin: 45px auto 0;
+    }
   }
 }
 
