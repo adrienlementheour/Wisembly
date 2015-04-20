@@ -174,9 +174,9 @@
         </ul>
       </div>
     </div>
-    <div class='webinar'>
+    <!--<div class='webinar'>
       <p><strong>Prochain Webinar</strong> le Jeudi 9 avril à 11h. <a href='#' title='Inscrivez-vous au prochain Webinar'>Cliquez ici pour vous inscrire.</a></p>
-    </div>
+    </div>-->
   </section>
 
   <section class='rsFooter'>

@@ -16,15 +16,15 @@
 	  	
 	</head>
 
-	<body class='home' id='scene'>
+	<body class='home page-template'>
 
 		<div id='overflow'>
 		
 			<?php include('includes/header.html'); ?>
 			
 			<div id='container'>
-				<section class='headHome'>
-					<div id="bgHeadHome"></div>
+				<section class='head headHome'>
+					<div id="bgHead"></div>
 					<!--<div id="triangle-header-vert"></div>
 					<div id="triangle-header-blanc"></div>-->
 					<div class='content main'>
@@ -37,8 +37,8 @@
 				</section>
 
 				<div class='wrapper' role='main'>
-					<div id="bg-blanc-home"></div>
-					<section class='content'>
+					<div id="bg-blanc"></div>
+					<section class='content scrollHere'>
 						<ul class='detailHome'>
 							<li class='event'>
 								<h3>Evénements</h3>
@@ -54,10 +54,10 @@
 								<a href='#' class='btnLight'>Animez vos trainings</a>
 							</li>
 						</ul>
-						<button class='icon-down scrollNext'><span class="scrollNext1"></span></button>
+						<button class='icon-down scrollNext'><span></span></button>
 					</section>
 
-					<section class='content bgBlanc'>
+					<section class='content bgBlanc scrollHere'>
 						<h2>Ils nous font confiance</h2>
 						<div id='sliderRef'>
 							<ul>
@@ -180,10 +180,10 @@
 							</ul>
 						</div>
 						<a href='#' class='btnLight'>Voir les études de cas</a>
-						<button class='icon-down scrollNext'><span class="scrollNext2"></span></button>
+						<button class='icon-down scrollNext'><span></span></button>
 					</section>
 
-					<section class='content bgBlanc'>
+					<section class='content bgBlanc scrollHere'>
 						<h2>Collaborer en réunion</h2>
 						<div id="bloc-video">
 							<div class='embed-container'><iframe id="player-1" class="iframe-video" src='http://www.youtube.com/embed/RpyDzJFSl0g?enablejsapi=1' frameborder='0' allowfullscreen></iframe></div>
@@ -213,10 +213,10 @@
 								<p>Qu’ils vous disposent d’une tablette, d’un ordinateur, d’un smartphone ou d’un cellulaire, vos interlocuteurs pourront être actifs.</p>
 							</li>
 						</ul>
-						<button class='icon-down scrollNext'><span class="scrollNext3"></span></button>
+						<button class='icon-down scrollNext'><span></span></button>
 					</section>
 
-					<section class='content bgBlanc paddingBottom'>
+					<section class='content bgBlanc paddingBottom scrollHere'>
 						<h2>Ils parlent de nous</h2>
 						<ul class='logosPresse'>
 							<li>

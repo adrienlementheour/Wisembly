@@ -5,7 +5,7 @@ var myScroll,
 	htmlBody = $('html, body'),
 	body = $("body"),
 	burger = $('#burger'),
-	bgHeadHome = $('#bgHeadHome'),
+	bgHeadHome = $('#bgHead'),
 	btnContact = $('#demandeContact'),
 	minHeight = $('.menu').innerHeight() - 10,
 	subMenus = $('.menu').find('.sub-menu');
@@ -81,7 +81,7 @@ function scrollPage(){
 	fixedHeader();
 	apparitionFooter();
 
-	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie9") && !isMobile.any && myScroll < $(".headHome").height() && $(window).width() > 767){
+	if(body.hasClass("home") && !htmlTag.hasClass("lt-ie9") && !isMobile.any && myScroll < $(".head").height() && $(window).width() > 767){
 		TweenMax.set(bgHeadHome, {y:-(myScroll/1.5)+"px"});
 	}
 
@@ -318,9 +318,9 @@ function scrollMagic(){
 	}
 }
 
-// Scroll to a la section suivante home //
+// Scroll to a la section suivante //
 function goToNextSection(){
-	htmlBody.animate({scrollTop: $(this).parents('section').next('section').offset().top - 100}, 400);
+	htmlBody.animate({scrollTop: $(this).parents('.scrollHere').next('.scrollHere').offset().top - 100}, 400);
 }
 
 // Réglage de la photo en page d'accueil //
@@ -329,7 +329,7 @@ function heightBgHeadHome(){
 		if(!htmlTag.hasClass("lt-ie9") && !isMobile.any){
 			TweenMax.set(bgHeadHome, {position:"fixed"});
 		}
-		TweenMax.set(bgHeadHome, {height: $(".headHome").height()+"px"});
+		TweenMax.set(bgHeadHome, {height: $(".head").height()+"px"});
 	}else{
 		TweenMax.set(bgHeadHome, {height: "340px", position:"absolute"});
 	}

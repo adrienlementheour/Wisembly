@@ -54,14 +54,6 @@ body{
   .gotham(.95em);
 }
 
-#bg-blanc-home{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 129px;
-  background: @blanc;
-}
-
 h1, h3{
   .gothamMedium(1.2em);
 }
@@ -261,9 +253,6 @@ button{
   }
 }
 
-.bgBlanc{
-  background-color: @blanc;
-}
 
 /* BUTTONS */
 
@@ -389,6 +378,36 @@ button{
   }
   &.paddingBottom{
     padding-bottom: 100px;
+  }
+}
+
+#bg-blanc{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 129px;
+  background: @blanc;
+  z-index: -1;
+}
+
+.bgBlanc{
+  background: @blanc;
+}
+
+#overflow{
+  overflow: hidden;
+  .lt-ie9 &{
+    min-width: 1100px;
+    overflow: visible;
+  }
+}
+
+.page-template{
+  .wrapper{
+    text-align: center;
+    .btnLight{
+      margin: 0 auto;
+    }
   }
 }
 
@@ -632,10 +651,29 @@ header{
       opacity: .7;
     }
   }
+  li{
+    opacity: 0;
+    padding: 0 5px 0 0;
+    .transition(.3s ease-in-out);
+    &.actif{
+      opacity: 1;
+      position: relative;
+      + li{
+        opacity: .7;
+      }
+    }
+  }
   .no-mobile &{
     padding: 0 15px 0 0;
     width: 18px;
-    margin: 10px 30px 0 0;
+    li{
+      &.actif{
+        position: absolute;
+        + li{
+          margin: 0 0 0 40px;
+        }
+      }
+    }
     &:after{
       .fontIcon();
       content: "\e601";
@@ -649,26 +687,6 @@ header{
       cursor: pointer;
       .transition(.1s ease-in-out);
     }
-  }
-  li{
-    opacity: 0;
-    padding: 0 5px 0 0;
-    .transition(.3s ease-in-out);
-    &.actif{
-      opacity: 1;
-      position: relative;
-      .no-mobile &{
-        position: absolute;
-        + li{
-          margin: 0 0 0 40px;
-        }
-      }
-      + li{
-        opacity: .7;
-      }
-    }
-  }
-  .no-mobile &{
     &:hover{
       width: 71px;
       .transition(.3s ease-in-out);
@@ -727,7 +745,6 @@ header{
 .menu{
   margin: 0 0 0 70px;
   a{
-    //padding: 0 23px;
     padding: 0 30px;
     &:focus{
       outline: 0;
@@ -740,18 +757,6 @@ header{
       position: relative;
       z-index: 1;
       &:before{
-        /*content: '';
-        display: block;
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        left: 0;
-        bottom: 0;
-        z-index: -1;
-        border-width: 0 110px 0 0;
-        border-color: transparent transparent @grisSubMenu transparent;
-        .transition(.3s ease-in-out);*/
         content: '';
         display: block;
         position: absolute;
@@ -765,7 +770,6 @@ header{
       }
       &:hover, &:focus{
         &:before{
-          //border-width: 0 110px 66px 36px;
           height: 3px;
           .transition(.2s ease-in-out);
         }
@@ -798,20 +802,16 @@ header{
   }
   .hasSubMenu{
     > a{
-      //padding-right: 35px;
       &:after{
         .fontIcon();
         content: "\e601";
         position: absolute;
         font-size: 7px;
-        /*right: 23px;
-        top: 47%;*/
         width: 100%;
         top: 65px;
         text-align: center;
-        //right: 8px;
         left: 0;
-        .transition(.2s opacity .3s ease-in-out, .2s transform .3s ease-in-out, .2s margin .3s ease-in-out, .2s top .3s ease-in-out);
+        .transition(.2s all .3s ease-in-out);
         .lt-ie9 &{
           display: none;
         }
@@ -835,18 +835,11 @@ header{
       }
       &:hover, &:focus{
         &:after{
-          /*width: 100%;
-          top: 65px;
-          text-align: center;
-          right: 8px;
-          .transition(top .3s ease-in-out);*/
           top: 75px;
           opacity: 0;
           .transition(.2s ease-in-out);
         }
         &:before{
-          //border-width: 0 110px 66px 36px;
-          //border-width: 12px 12px 0 12px;
           border-width: 6px 6px 0 6px;
           top: 65px;
           opacity: 1;
@@ -863,15 +856,6 @@ header{
     }
     &.actifHover{
       > a{
-        /*&:before{
-          border-width: 0 110px 66px 36px;
-        }
-        &:after{
-          width: 100%;
-          top: 65px;
-          text-align: center;
-          right: 8px;
-        }*/
         &:before{
           border-width: 6px 6px 0 6px;
           top: 65px;
@@ -893,8 +877,8 @@ header{
     padding: 10px 0;
     z-index: -1;
     opacity: 0;
-    height: 27px;
-    .transition(.5s ease-in-out);
+    height: 25px;
+    .transition(.5s all .3s ease-in-out);
     .no-js &, .lt-ie9 &{
       text-align: center;
     }
@@ -1003,7 +987,6 @@ header{
 
 footer{
   padding: 130px 0 0;
-  margin: 0;
   overflow: hidden;
   position: relative;
 }
@@ -1550,7 +1533,6 @@ footer{
   background: @grisBorder;
   padding: 15px 0;
   z-index: 3;
-  margin: 0 0 100px;
   &:before, &:after{
     content: '';
     display: block;
@@ -1559,19 +1541,18 @@ footer{
     background: @grisBorder;
     .transform(rotate(-3deg));
     z-index: -1;
+    height: 125px;
   }
   &:before{
     top: -76px;
     left: -20%;
-    height: 125px;
   }
   &:after{
     left: -1%;
-    bottom: -110px;
-    height: 190px;
+    bottom: -30px;
   }
   .no-mobile &{
-    margin: 0 0 320px;
+    margin: 0 0 280px;
   }
   li{
     padding: 0;
@@ -1714,7 +1695,7 @@ footer{
   }
 }
 
-.webinar{
+/*.webinar{
   padding: 30px 20px;
   .box-sizing(border-box);
   text-align: center;
@@ -1734,7 +1715,7 @@ footer{
       border-color: fade(darken(@vert, 10), 30);
     }
   }
-}
+}*/
 
 
 .triangle-menu-footer{
@@ -1757,7 +1738,7 @@ footer{
   width: 100%;
   background-color: @blanc;
   text-align: center;
-  padding: 105px 0 0;
+  padding: 160px 0 0;
   margin: 0 auto;
   z-index: 1;
   .no-mobile &{
@@ -1839,7 +1820,7 @@ footer{
 
 /* ENTETE */
 
-.headHome{
+.head{
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -1853,6 +1834,17 @@ footer{
     position: absolute;
     width: 150%;
   }
+}
+
+#bgHead{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.headHome{
   &:before{
     right: 0;
     bottom: -60px;
@@ -1866,20 +1858,14 @@ footer{
     background: @blanc;
     .transform(rotate(-3deg));
   }
-}
-
-#bgHeadHome{
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
-  background-size: cover;
-  height: 740px;
-  z-index: -1;
-  .lt-ie9 &{
-    background-size: 100% auto;
-    background-position: 57% 50%;
+  #bgHead{
+    background: url(../layoutImg/home/headHome.jpg) no-repeat 100% 100%;
+    background-size: cover;
+    height: 740px;
+    .lt-ie9 &{
+      background-size: 100% auto;
+      background-position: 57% 50%;
+    }
   }
 }
 
@@ -1911,15 +1897,6 @@ footer{
 
 
 /* HOME */
-
-.home{
-  .wrapper{
-    text-align: center;
-    .btnLight{
-      margin: 0 auto;
-    }
-  }
-}
 
 .detailHome{
   .box-sizing(border-box);
@@ -2008,19 +1985,19 @@ footer{
     }
     &:before{
       border-width: 43px 0 0 274px;
-      .transition(.2s border-width .2s ease-in-out);
+      .transition(.2s all .2s ease-in-out);
     }
     &:after{
       right: 0;
       border-width: 0 0 43px 274px;
-      .transition(.2s border-width .3s ease-in-out);
+      .transition(.2s all .3s ease-in-out);
     }
     &:hover, &:focus{
       outline: 0;
       .hover{
         top: 0;
         opacity: .9;
-        .transition(.4s top .3s cubic-bezier(0.565, 0.015, 0.175, 0.980), .4s opacity .3s cubic-bezier(0.565, 0.015, 0.175, 0.980));
+        .transition(.4s all .3s cubic-bezier(0.565, 0.015, 0.175, 0.980));
       }
       &:before{
         border-width: 0 0 0 274px;
@@ -2028,7 +2005,7 @@ footer{
       }
       &:after{
         border-width: 0 0 0 274px;
-        .transition(.1s border-width .1s ease-in-out);
+        .transition(.1s all .1s ease-in-out);
       }
     }
   }
@@ -2123,14 +2100,14 @@ footer{
     width: 100%;
     height: 100%;
     color: @blanc;
-    padding: 50px 10px 25px 35px;
+    padding: 30px 25px;
     opacity: 0;
     .box-sizing(border-box);
     .transition(.3s ease-in-out);
   }
   .quote{
     text-align: left;
-    .gothamMedium(1em);
+    .gothamMedium(.96em);
     &:before{
       .fontIcon();
       content: "\e600";
@@ -2153,13 +2130,13 @@ footer{
     .gotham(.85em);
     strong{
       .gothamBold(1.1em);
+      display: block;
     }
   }
   .imgQuote{
     display: inline-block;
     vertical-align: middle;
-    width: 51px;
-    height: 51px;
+    .size(50px);
     background: #f3f4f6;
     border-radius: 99px;
   }
@@ -2325,7 +2302,6 @@ footer{
     top: 0;
     left: 0;
     display: block;
-    //.transition(transform 0.4s ease-in-out);
     .transform-origin(0 100%);
     .bg-cover-video{
       display: block;
@@ -2443,14 +2419,6 @@ footer{
 
 .none{
   display: none;
-}
-
-#overflow{
-  overflow: hidden;
-  .lt-ie9 &{
-    min-width: 1100px;
-    overflow: visible;
-  }
 }
 
 /* @group clearfix */
