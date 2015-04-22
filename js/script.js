@@ -183,7 +183,12 @@ function responsiveMenu(){
 
 	if(!burger.hasClass('actif')){
 		burger.css({opacity: 0}).delay(10).animate({opacity: 1}, 100);
-		height > minHeight ? container.height(height) : container.height(minHeight);
+
+		if( height > minHeight ){
+			container.height(height);
+		}else{
+			htmlTag.hasClass('home') ? container.height(minHeight) : container.height(minHeight + 100);
+		}
 		container.css('overflow', 'hidden');
 	}else{
 		container.css({height: 'auto', overflow: 'visible'});
@@ -309,9 +314,6 @@ function openForm(){
 			setTimeout(function(){ htmlBody.animate({scrollTop: $('#contact').offset().top - 250}, 400, 'easeInOutCubic'); }, 300);
 			$('#nom').focus();
 		});
-		if(htmlTag.hasClass('lt-ie9')){
-			$('#sliderTeam').height('500px');
-		}
 	}else{
 		setTimeout(function(){ htmlBody.animate({scrollTop: $('.formContact').offset().top - 200}, 500, 'easeInOutCubic'); }, 300);
 	}
@@ -319,11 +321,10 @@ function openForm(){
 
 // ScrollMagic ( triangle footer + header )
 function scrollMagic(){
-	if(($(window).width() > 767)){
-		var controller = new ScrollMagic();
-		
-		var triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true}});
-		var tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}});
+	if( $(window).width() > 767 ){
+		var controller = new ScrollMagic(),
+			triangleTopHeader = TweenMax.to($("#triangle-top-header"), 1.2, {css:{y: "0px", rotation: "0deg", force3D:true}}),
+			tiangleMenuFooter = TweenMax.to($(".triangle-menu-footer"), 1.2, {css:{rotation: "-3deg", y: "0px", opacity: "1", force3D:true}});
 
 		var whenInContainer4 = new ScrollScene({
 			triggerElement: '.menuFooter',
@@ -388,6 +389,17 @@ function randomLogosPress(){
 	}
 }
 
+// RDV filtres //
+function goToContent(){
+	setTimeout(function(){
+		htmlBody.animate({scrollTop: $('.wrapper').offset().top - 100}, 400);
+	}, 400);
+}
+
+function setMapSize(){
+	$('#map').height($(window).height() - header.height());
+}
+
 
 /**** INIT ****/
 $(function(){
@@ -410,6 +422,16 @@ $(function(){
 
 	// Sous menu //
 	setSubMenu();
+
+	// RDV filtres //
+	if( $('.filtres').find('.actif').length ){
+		goToContent();
+	}
+
+	// Size map //
+	if( $('#map').length ){
+		setMapSize();
+	}
 
 	// Responsive menu //
 	burger.on('click', responsiveMenu);
@@ -437,13 +459,22 @@ $(function(){
 			responsiveMenu();
 		}
 		e.preventDefault();
-		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
-		setTimeout(openForm, 500);
+		if(!htmlTag.hasClass('lt-ie9')){ 
+			htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
+			setTimeout(openForm, 500); 
+		}else{
+			htmlBody.animate({scrollTop: $('#contactezNous').offset().top}, 800, 'easeInOutCubic');
+		}	
 	});
 	$('.blocH1').find('.btnFull').on('click', function(e){
 		e.preventDefault();
 		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
-		setTimeout(openForm, 500);
+		if(!htmlTag.hasClass('lt-ie9')){ 
+			htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
+			setTimeout(openForm, 500); 
+		}else{
+			htmlBody.animate({scrollTop: $('#contactezNous').offset().top}, 800, 'easeInOutCubic');
+		}
 	});
 
 	// Changement label entreprise selon profil //
@@ -501,6 +532,11 @@ $(function(){
 
 	    if(header.hasClass('menuVisible') && $(window).width() > 1040){
 	    	responsiveMenu();
+	    }
+
+	    // Size map //
+	    if( $('#map').length ){
+	    	setMapSize();
 	    }
 	});
 

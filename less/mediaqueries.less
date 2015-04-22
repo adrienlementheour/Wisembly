@@ -3,12 +3,11 @@
 
 /* @group Responsive horizontal */
 
-@media (max-width: 1820px){
+@media (min-width: 1820px){
   
   .headHome{
     #bgHead{
-      background: url(../layoutImg/head/smallHeadHome.jpg) no-repeat 50% 100%;
-      background-size: auto;
+      background-size: cover;
     }
   }
 
@@ -93,14 +92,15 @@
 }
 
 @media (max-width: 1040px){
+  .content{
+    &.main{
+      padding-top: 0;
+    }
+  }
+
   header{
     .no-mobile &{
       position: relative;
-      + .content{
-        &.main{
-          padding-top: 0;
-        }
-      }
     }
   }
 
@@ -130,10 +130,32 @@
           }
         }
       }
+      &.current-menu-item{
+        > a{
+          color: @vert;
+        }
+      }
       &:first-child{
         > a{
           &:hover, &:focus{
             color: @rose;
+          }
+        }
+        &.current-menu-item{
+          > a{
+            color: @rose;
+          }
+        }
+      }
+      &:nth-child(2){
+        > a{
+          &:hover, &:focus{
+            color: @vert;
+          }
+        }
+        &.current-menu-item{
+          > a{
+            color: @vert;
           }
         }
       }
@@ -143,10 +165,20 @@
             color: @jaune;
           }
         }
+        &.current-menu-item{
+          > a{
+            color: @jaune;
+          }
+        }
       }
       &:nth-child(4){
         > a{
           &:hover, &:focus{
+            color: @rouge;
+          }
+        }
+        &.current-menu-item{
+          > a{
             color: @rouge;
           }
         }
@@ -159,7 +191,7 @@
         }
       }
       > a{
-        &:after{
+        &:after, &:before{
           display: none;
         }
       }
@@ -178,6 +210,9 @@
       }
       a{
         margin: 0;
+        &.notActive{
+          color: fade(@txt, 50);
+        }
       }
     }
   }
@@ -312,11 +347,6 @@
         top: 100px;
       }
     }
-    .content{
-      &.main{
-        padding-top: 0;
-      }
-    }
   }
 
   #sliderRef{
@@ -345,6 +375,12 @@
     li{
       width: 100% !important;
       padding: 105px 100px 0;
+    }
+  }
+
+  #map{
+    .no-mobile &{
+      margin: 0;
     }
   }
 }
@@ -845,6 +881,18 @@
     #logo{
       background: url('../layoutImg/logo@2.png') no-repeat;
       background-size: 100%; 
+    }
+
+    .headHome{
+      #bgHead{
+        background-image: url(../layoutImg/head/headHome.jpg);
+      }
+    }
+
+    .headRdv{
+      #bgHead{
+        background-image: url(../layoutImg/head/headRdv.jpg);
+      }
     }
 
     .detailHome{
