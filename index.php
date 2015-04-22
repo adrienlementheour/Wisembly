@@ -193,7 +193,7 @@
 								<div class="wrapper-zone-txt-cover-video">
 									<div class="zone-txt-cover-video">
 										<p>Wisembly est une solution web et mobile qui vous permet de préparer, d’animer et d’assurer le suivi de vos réunions.</p>
-										<a href="#" id="btn-video" class="btnBlanc"><span class="small">►</span> Regarder la vidéo</a>
+										<a href="https://www.youtube.com/embed/RpyDzJFSl0g" target='_blank' id="btn-video" class="btnBlanc"><span class="small">►</span> Regarder la vidéo</a>
 									</div>
 								</div>
 							</div>
@@ -230,7 +230,7 @@
 							</li>
 						</ul>
 						<p>
-							Wisembly a été nommé <em>COOL VENDOR 2015</em> par GATNER. <a href='#' target='_blank'>En savoir plus</a>
+							Wisembly a été nommé <em>COOL VENDOR 2015</em> par GATNER. <a href='#' class='lienVert' target='_blank'>En savoir plus</a>
 							<img src='img/gartner.png' alt='Gartner 2015 CoolVendor'/>
 						</p>
 					</section>

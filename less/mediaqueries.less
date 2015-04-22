@@ -7,7 +7,7 @@
   
   .headHome{
     #bgHead{
-      background: url(../layoutImg/home/smallHeadHome.jpg) no-repeat 50% 100%;
+      background: url(../layoutImg/head/smallHeadHome.jpg) no-repeat 50% 100%;
       background-size: auto;
     }
   }
@@ -302,7 +302,7 @@
     left: 36px;
   }
 
-  .headHome{
+  .head{
     #bgHead{
       top: 0;
       .no-js &{
@@ -508,6 +508,17 @@
     }
   }
 
+  .head{
+    #bgHead{
+      .no-mobile &{
+        top: 0
+      }
+    }
+    h1{
+      font-size: 3em;
+    }
+  }
+
   .headHome{
     padding: 0 0 50%;
     #bgHead{
@@ -525,6 +536,11 @@
         top: auto;
         bottom: 50px;
       }
+    }
+    .heading{
+      margin: 0;
+      text-align: center;
+      font-size: 2.7em;
     }
     &:before{
       display: none;
@@ -548,10 +564,6 @@
         z-index: -1;
       }
     }
-  }
-
-  .heading{
-    margin: 0;
   }
 
   .subHeading{
@@ -606,6 +618,16 @@
       width: 300px;
       margin: 0 0 0 -150px;
     }
+  }
+
+  .head{
+    h1{
+      margin: 15vh 0 0;
+    }
+  }
+
+  .filtres {
+    margin: 20px 0 180px;
   }
 
   #prev{
@@ -691,16 +713,15 @@
 
   .headHome{
     padding: 0 0 55%;
+    .heading{
+      font-size: 2.5em;
+    }
     .content.main{
       padding: 25px 20px 20px;
       &:after{
         bottom: -14px;
       }
     }
-  }
-
-  .heading{
-    font-size: 2.5em;
   }
 
   #sliderRef{
@@ -725,7 +746,7 @@
 
 @media (max-width: 400px){
 
-  .heading{
+  .headHome .heading{
     font-size: 2em;
   }
 
@@ -748,13 +769,13 @@
 /* @group Responsive vertical */
 
 @media (max-height: 850px) and (min-width: 768px){
-  .heading{
+  .headHome .heading{
     margin: 10vh 0 0;
   }
 }
 
 @media (max-height: 800px) and (min-width: 768px){
-  .js .heading{
+  .js .headHome.heading{
     margin: 5vh 0 0;
   }
 }
@@ -789,6 +810,30 @@
         .transform(rotate(16deg));
       }
     }
+  }
+}
+
+@media (max-height: 800px){
+  .head{
+    h1{
+      margin: 15vh 0 0;
+    }
+  }
+
+  .filtres {
+    margin: 20px 0 180px;
+  }
+}
+
+@media (max-height: 800px) and (max-width: 520px){
+  .head{
+    h1{
+      margin: 10vh 0 0;
+    }
+  }
+
+  .filtres {
+    margin: 20px 0 130px;
   }
 }
 

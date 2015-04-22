@@ -189,15 +189,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/css\/style.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/style.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/favicon-16x16.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -227,6 +218,17 @@
 		"initialSize": 1837,
 		"inputAbbreviatedPath": "\/favicon-96x96.png",
 		"outputAbbreviatedPath": "\/favicon-96x96.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/agent.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17293,
+		"inputAbbreviatedPath": "\/img\/agent.jpg",
+		"outputAbbreviatedPath": "\/img\/agent.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -264,6 +266,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/collaboratif.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18820,
+		"inputAbbreviatedPath": "\/img\/collaboratif.jpg",
+		"outputAbbreviatedPath": "\/img\/collaboratif.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/echos.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -271,6 +284,17 @@
 		"initialSize": 7059,
 		"inputAbbreviatedPath": "\/img\/echos.jpg",
 		"outputAbbreviatedPath": "\/img\/echos.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/gartner.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12665,
+		"inputAbbreviatedPath": "\/img\/gartner.png",
+		"outputAbbreviatedPath": "\/img\/gartner.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -286,6 +310,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/kpis.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14585,
+		"inputAbbreviatedPath": "\/img\/kpis.jpg",
+		"outputAbbreviatedPath": "\/img\/kpis.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/management.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -293,6 +328,17 @@
 		"initialSize": 8679,
 		"inputAbbreviatedPath": "\/img\/management.png",
 		"outputAbbreviatedPath": "\/img\/management.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mojito.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17748,
+		"inputAbbreviatedPath": "\/img\/mojito.jpg",
+		"outputAbbreviatedPath": "\/img\/mojito.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -738,6 +784,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/script.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/script.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/script.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/unused\/debug.addIndicators.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -815,13 +872,46 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/layoutImg\/home\/_headHome.jpg": {
+	"\/layoutImg\/head\/_headHome.jpg": {
 		"fileType": 16384,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 993926,
-		"inputAbbreviatedPath": "\/layoutImg\/home\/_headHome.jpg",
-		"outputAbbreviatedPath": "\/layoutImg\/home\/_headHome.jpg",
+		"inputAbbreviatedPath": "\/layoutImg\/head\/_headHome.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/head\/_headHome.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/head\/headHome.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 980161,
+		"inputAbbreviatedPath": "\/layoutImg\/head\/headHome.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/head\/headHome.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/head\/headRdv.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/layoutImg\/head\/headRdv.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/head\/headRdv.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/head\/smallHeadHome.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 408571,
+		"inputAbbreviatedPath": "\/layoutImg\/head\/smallHeadHome.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/head\/smallHeadHome.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -925,17 +1015,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/layoutImg\/home\/headHome.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 980161,
-		"inputAbbreviatedPath": "\/layoutImg\/home\/headHome.jpg",
-		"outputAbbreviatedPath": "\/layoutImg\/home\/headHome.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/layoutImg\/home\/pot.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -954,17 +1033,6 @@
 		"initialSize": 14206,
 		"inputAbbreviatedPath": "\/layoutImg\/home\/pot@2.png",
 		"outputAbbreviatedPath": "\/layoutImg\/home\/pot@2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/layoutImg\/home\/smallHeadHome.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 408571,
-		"inputAbbreviatedPath": "\/layoutImg\/home\/smallHeadHome.jpg",
-		"outputAbbreviatedPath": "\/layoutImg\/home\/smallHeadHome.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1245,6 +1313,15 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/rdv.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/rdv.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/README.md": {
 		"enableFootnoteSupport": 0,
 		"enableSmartyPants": 1,
@@ -1257,16 +1334,14 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/script.min.js": {
-		"fileType": 64,
+	"\/style.css": {
+		"fileType": 16,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/script.min.js",
-		"outputAbbreviatedPath": "\/min\/script.min-min.js",
+		"inputAbbreviatedPath": "\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
