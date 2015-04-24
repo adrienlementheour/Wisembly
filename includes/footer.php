@@ -6,7 +6,7 @@
       <div class='content'>
         <div id='sliderTeam'>
           <div id='bulle'>
-            <h2>Et ensuite ?</h2>
+            <p class='h2'>Et ensuite ?</p>
             <p>Nous vous recontactons sous 24h<br/>
             Nous planifions votre démo,<br/>
             ou préparons votre devis</p>
@@ -62,7 +62,7 @@
           <ul class='navTeam'></ul>
 
         </div><div class='formContact'>
-          <h2 class='big'>Intéressé ?</h2>
+          <p class='h2 big'>Intéressé ?</p>
           <p class='none450'>A chaque secteur, son interlocuteur ! Votre profil :</p>
           <ul class='buttonsTeam'>
             <li>
@@ -179,7 +179,7 @@
     </div>-->
   </section>
 
-  <section class='rsFooter'>
+  <section class='rs rsFooter'>
     <div class="content">
       <ul>
         <li><a href='#' title='Wisembly sur Facebook' class='icon-fb'><span>Facebook</span></a></li>

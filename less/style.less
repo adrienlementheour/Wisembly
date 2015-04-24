@@ -57,19 +57,19 @@ body{
 h1, h3, .h3{
   .gothamMedium(1.2em);
 }
-h1, h2{
+h1, h2, .h2{
   text-transform: uppercase;
 }
 h1{
   font-size: 2.5em;
-  line-height: 45px;
+  line-height: .95em;
   color: @vert;
   margin: 1.6em 0;
 }
-h2, h3, .h3{
+h2, h3, .h2, .h3{
   line-height: 24px;
 }
-h2{
+h2, .h2{
   .gothamBold(1.3em);
   color: @bleuH2;
   margin-top: 4em;
@@ -83,6 +83,10 @@ h2{
 }
 h3, .h3{
   color: @grisH3;
+}
+
+.firstTitle{
+  margin-top: 0;
 }
 
 a{
@@ -174,6 +178,15 @@ fieldset{
   &.small{
     width: 35%;
   }
+  &.medium{
+    .box-sizing(border-box);
+    padding-right: 10%;
+  }
+  &.error{
+    input, textarea{
+      border-color: @rouge;
+    }
+  }
   + button{
     margin: 15px 0 0;
   }
@@ -185,7 +198,8 @@ input, textarea{
   appearance: none;
   padding: 5px 10px;
   vertical-align: middle;
-  border: 2px solid @blanc;
+  background: #f7f7f7;
+  border: 2px solid #edf0f1;
   .gothamItalic(1em);
   line-height: 22px;
   width: 100%;
@@ -193,6 +207,7 @@ input, textarea{
   .transition(.3s ease-in-out);
   &:focus{
     outline: 0;
+    border-color: @vert;
     .transition(.3s ease-in-out);
   }
 }
@@ -240,6 +255,7 @@ select{
 
 label{
   display: block;
+  margin: 0 0 5px 1px;
   span{
     .gothamItalic(1em);
     text-transform: none;
@@ -267,6 +283,12 @@ button{
     outline: 0;
     .transition(.3s ease-in-out);
   }
+}
+
+.blocError{
+  padding: 20px 25px;
+  background: #f7f7f7;
+  color: @rouge;
 }
 
 
@@ -421,7 +443,7 @@ button{
   }
 }
 
-.page-template, .archive{
+.page-template, .archive, .single{
   .wrapper{
     text-align: center;
     .btnLight{
@@ -601,11 +623,14 @@ header{
   label{
     padding: 0 40px 0 0;
     display: inline;
+    margin: 0;
   }
   input{
     height: 12px;
     width: 121px;
     padding: 5px;
+    background: @blanc;
+    border-color: @blanc;
     .box-sizing(content-box);
     + button{
       margin-left: 3px;
@@ -720,6 +745,9 @@ header{
   .box-sizing(border-box);
   .transition(.3s ease-in-out);
   .backface-visibility(hidden);
+  .landing &{
+    height: 75px;
+  }
   ul{
     vertical-align: middle;
     a{
@@ -748,6 +776,9 @@ header{
   margin: 25px 0;
   &:active{
     opacity: .7;
+  }
+  .landing &{
+    margin: 15px 0;
   }
 }
 
@@ -1022,7 +1053,7 @@ footer{
   padding: 130px 0 0;
   overflow: hidden;
   position: relative;
-  .page-template-nous-trouver &{
+  .js .page-template-nous-trouver &{
     margin: -90px 0 0;
   }
 }
@@ -1063,7 +1094,6 @@ footer{
     .transform(rotate(3deg));
   }
   .blocError{
-    padding: 20px 25px;
     background: #f7f6e0;
     color: #ea1212;
     .no-js &, .lt-ie9 &{
@@ -1295,7 +1325,7 @@ footer{
       }
     }
   }
-  h2, button, p, label{
+  button, p, label{
     color: @blanc;
   }
 }
@@ -1409,7 +1439,7 @@ footer{
   padding: 0 0 0 30px;
   min-height: 285px;
   .box-sizing(border-box);
-  h2{
+  .h2{
     margin: 0;
     padding: 0;
     +p{
@@ -1428,7 +1458,6 @@ footer{
     color: @blanc;
   }
   label{
-    margin: 0 0 5px 1px;
     text-transform: capitalize;
   }
   form{
@@ -1760,10 +1789,28 @@ footer{
   .no-js &{
     visibility: visible;
   }
+  ul{
+    background: @blanc;
+  }
+  p{
+    font-size: 0.75em;
+    a{
+      color: @grisMentions;
+      border-color: fade(@grisMentions, 30);
+      &:hover, &:focus{
+        color: @bleuLien;
+        border-color: fade(@bleuLien, 30);
+      }
+    }
+  }
+}
+
+/* Réseaux sociaux */
+
+.rs{
   li{
     display: inline-block;
     padding: 3px;
-    height: 30px;
     &:before{
       display: none;
     }
@@ -1776,7 +1823,6 @@ footer{
     height: 40px;
     display: inline-block;
     position: relative;
-    background: @blanc;
     padding: 0 10px;
     &:before{
       content: '';
@@ -1793,6 +1839,8 @@ footer{
     a{
       border: 0;
       font-size: 30px;
+      .size(30px);
+      overflow: hidden;
       &:hover, &:focus{
         outline: 0;
         color: @txt;
@@ -1814,16 +1862,8 @@ footer{
   .icon-yt{
     color: #c85450;
   }
-  p{
-    font-size: 0.75em;
-    a{
-      color: @grisMentions;
-      border-color: fade(@grisMentions, 30);
-      &:hover, &:focus{
-        color: @bleuLien;
-        border-color: fade(@bleuLien, 30);
-      }
-    }
+  .icon-mail{
+    color: #e15c5b;
   }
 }
 
@@ -1877,7 +1917,6 @@ footer{
   }
   h1{
     font-size: 2.6em;
-    line-height: 1em;
     margin: 15vh 0 0;
     text-align: left;
     span{
@@ -1920,6 +1959,86 @@ footer{
     background: @blanc;
     .transform(rotate(3deg));
   }
+}
+
+.headLivres{
+  #bgHead{
+    background-image: url(../layoutImg/head/headLivres.jpg);
+    background-position: 50% 0;
+  }
+  .content{
+    overflow: hidden;
+  }
+  h1{
+    margin: 5vh 0 27vh;
+    text-align: left;
+    color: darken(@bleu, 10);
+    width: 420px;
+    float: right;
+  }
+  &:before{
+    left: 5%;
+    width: 55%;
+    bottom: -100px;
+    height: 200px;
+    background: fade(@bleu, 60);
+    .transform(rotate(15deg));
+  }
+  &:after{
+    bottom: -25px;
+    height: 105px;
+    background: @blanc;
+    .transform(rotate(-2deg));
+  }
+}
+
+.headLivreLanding{
+  #bgHead{
+    background-position: 50% 68%;
+  }
+  .content{
+    padding-top: 75px;
+  }
+}
+
+/* Carousels */
+
+.carousel{
+  position: relative;
+  ul{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .js &{
+      overflow: hidden;
+    }
+  }
+  li{
+    padding: 0;
+    &:before{
+      display: none;
+    }
+  }
+}
+.navSlider{
+  .size(30px);
+  color: @vert;
+  border: 2px solid;
+  line-height: 20px;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  margin: -17px 0 0;
+  &:hover{
+    background: @vert;
+    color: @blanc;
+  }
+}
+#prev{
+  left: -50px;
+}
+#next{
+  right: -50px;
 }
 
 
@@ -1979,19 +2098,10 @@ footer{
 }
 
 #sliderRef{
-  position: relative;
-  margin: 35px 0 30px;
   width: 100%;
+  margin: 35px 0 30px;
   .js &{
     height: 300px;
-  }
-  ul{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    .js &{
-      overflow: hidden;
-    }
   }
 }
 
@@ -2000,11 +2110,6 @@ footer{
   position: relative;
   height: 300px;
   width: 25%;
-  padding: 0;
-  height: 300px;
-  &:before{
-    display: none;
-  }
   a{
     background: @grisSlides;
     border: 0;
@@ -2036,6 +2141,12 @@ footer{
     }
     &:hover, &:focus{
       outline: 0;
+      .no-mobile &{
+        .tooltip{
+          opacity: 1;
+          .transition(opacity .3s ease-in-out);
+        }
+      }
       .hover{
         top: 0;
         opacity: .9;
@@ -2157,6 +2268,8 @@ footer{
       opacity: .8;
       line-height: 10px;
       padding: 0 5px 0 0;
+      display: inline-block;
+      vertical-align: top;
     }
     + span{
       text-align: left;
@@ -2184,25 +2297,17 @@ footer{
   }
 }
 
-.navSliderRef{
-  .size(30px);
-  color: @vert;
-  border: 2px solid;
-  line-height: 20px;
-  border-radius: 50px;
+.tooltip{
   position: absolute;
-  top: 50%;
-  margin: -17px 0 0;
-  &:hover{
-    background: @vert;
-    color: @blanc;
-  }
-}
-#prev{
-  left: -50px;
-}
-#next{
-  right: -50px;
+  z-index: 10;
+  background: @blanc;
+  color: @txt;
+  padding: 5px;
+  width: auto;
+  min-width: 130px;
+  font-size: 12px;
+  opacity: 0;
+  .transition(opacity .3s ease-in-out);
 }
 
 .avantages{
@@ -2414,7 +2519,7 @@ footer{
 
 /* Articles RDV */
 
-article{
+.rdv{
   position: relative;
   padding: 40px 0;
   &:first-child{
@@ -2485,11 +2590,56 @@ article{
   }
 }
 
+/* Pagination */
+
 .pagination{
+  margin: 40px 0 0;
   a{
     font-size: 1.2em;
     border: 0;
-    padding: 0 10px;
+    padding: 1px 0;
+    color: @vert;
+    border: 1px solid;
+    display: inline-block;
+    width: 23px;
+    &:hover, &:focus{
+      background: @vert;
+      border-color: @vert;
+      color: @blanc;
+    }
+  }
+  b{
+    font-size: 1.1em;
+  }
+  .next, .prev{
+    border: 0;
+    font-size: 1.1em;
+    width: auto;
+    &:hover, &:focus{
+      background: none;
+      color: darken(@vert, 10);
+    }
+  }
+  .next{
+    padding: 0 0 0 10px;
+    b{
+      padding: 0 0 0 5px;
+    }
+  }
+  .prev{
+    padding: 0 10px 0 0;
+    b{
+      padding: 0 5px 0 0;
+    }
+  }
+  .current{
+    background: @bleu;
+    color: @blanc;
+    padding: 3px 0 2px;
+    border: 1px solid @bleu;
+    display: inline-block;
+    vertical-align: top;
+    width: 23px;
   }
 }
 
@@ -2501,6 +2651,11 @@ article{
   width: 100%;
   .no-mobile &{
     margin: 130px 0 0;
+  }
+  .no-js &{
+    height: auto;
+    margin: 50px auto;
+    width: 90%;
   }
   h1{
     text-transform: none;
@@ -2522,6 +2677,111 @@ article{
   }
   strong, i{
     font-size: 1.25em;
+  }
+  + img{
+    max-width: 90%;
+    .js &{
+      display: none;
+    }
+  }
+}
+
+
+/* Livres blanc */
+
+.page-template-livres-blancs{
+  h2{
+    &:after{
+      content: '';
+      display: block;
+      width: 66px;
+      height: 2px;
+      background: @grisBorder;
+      margin: 20px auto;
+    }
+  }
+}
+
+.listeLivres{
+  li{
+    padding: 0;
+    width: 33%;
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 40px 25px;
+    .box-sizing(border-box);
+    &:before{
+      display: none;
+    }
+  }
+  h3{
+    margin: 30px 0 0;
+  }
+  p{
+    margin: 20px 0 25px;
+  }
+}
+
+.livre{
+  h2{
+    margin-top: 0;
+    padding-top: 50px;
+  }
+}
+
+.couvSeule{
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.containerLivre{
+  margin: 55px 0 0;
+  .form{
+    &:extend(.couvSeule);
+    .box-sizing(border-box);
+    padding: 0 120px 0 90px;
+    text-align: left;
+  }
+  p{
+    margin: 0 0 40px;
+  }
+  fieldset{
+    margin: 0 0 20px;
+    &.error{
+      label{
+        color: @rouge;
+      }
+    }
+  }
+}
+
+#sliderBooks{
+  height: 500px;
+  &:extend(.couvSeule);
+  ul, li{
+    width: 400px;
+  }
+  ul{
+    margin: 0 auto;
+  }
+  #prev {
+    left: 0;
+  }
+  #next {
+    right: 0;
+  }
+}
+
+.landing{
+  .rs{
+    float: right;
+    p{
+      margin: 28px 0px
+    }
+    a{
+      .fontIcon();
+    }
   }
 }
 

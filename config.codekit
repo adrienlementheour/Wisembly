@@ -189,6 +189,15 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/css\/style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/favicon-16x16.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -284,6 +293,28 @@
 		"initialSize": 7059,
 		"inputAbbreviatedPath": "\/img\/echos.jpg",
 		"outputAbbreviatedPath": "\/img\/echos.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/formation.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15976,
+		"inputAbbreviatedPath": "\/img\/formation.png",
+		"outputAbbreviatedPath": "\/img\/formation.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/formationCouv.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14581,
+		"inputAbbreviatedPath": "\/img\/formationCouv.png",
+		"outputAbbreviatedPath": "\/img\/formationCouv.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -839,6 +870,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/landing-livres-blanc.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/landing-livres-blanc.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/layoutImg\/error.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -872,17 +912,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/layoutImg\/head\/_headHome.jpg": {
-		"fileType": 16384,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 993926,
-		"inputAbbreviatedPath": "\/layoutImg\/head\/_headHome.jpg",
-		"outputAbbreviatedPath": "\/layoutImg\/head\/_headHome.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/layoutImg\/head\/headHome.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -890,6 +919,17 @@
 		"initialSize": 980161,
 		"inputAbbreviatedPath": "\/layoutImg\/head\/headHome.jpg",
 		"outputAbbreviatedPath": "\/layoutImg\/head\/headHome.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/head\/headLivres.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 495954,
+		"inputAbbreviatedPath": "\/layoutImg\/head\/headLivres.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/head\/headLivres.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -912,6 +952,17 @@
 		"initialSize": 408571,
 		"inputAbbreviatedPath": "\/layoutImg\/head\/smallHeadHome.jpg",
 		"outputAbbreviatedPath": "\/layoutImg\/head\/smallHeadHome.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/head\/smallHeadRdv.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 950283,
+		"inputAbbreviatedPath": "\/layoutImg\/head\/smallHeadRdv.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/head\/smallHeadRdv.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1099,6 +1150,17 @@
 		"initialSize": 8667,
 		"inputAbbreviatedPath": "\/layoutImg\/logo@2.png",
 		"outputAbbreviatedPath": "\/layoutImg\/logo@2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/map.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1726,
+		"inputAbbreviatedPath": "\/layoutImg\/map.png",
+		"outputAbbreviatedPath": "\/layoutImg\/map.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1331,15 +1393,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/README.md",
 		"outputAbbreviatedPath": "\/README.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/style.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/style.css",
-		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		}

@@ -15,14 +15,14 @@
 				
 				// clone the elements on the right / left and append / prepend them according to dir and scroll
 				if( dir === 1 ) {
-					$wrapper.find('.ref:lt(' + scroll + ')').each(function(i) {
+					$wrapper.find('li:lt(' + scroll + ')').each(function(i) {
 						$(this).clone(true).css( 'left', ( cache.totalItems - idxClicked + i ) * cache.itemW * factor + 'px' ).appendTo( $wrapper );
 					});
 				}
 				else {
 					var $first	= $wrapper.children().eq(0);
 					
-					$wrapper.find('.ref:gt(' + ( cache.totalItems  - 1 - scroll ) + ')').each(function(i) {
+					$wrapper.find('li:gt(' + ( cache.totalItems  - 1 - scroll ) + ')').each(function(i) {
 						// insert before $first so they stay in the right order
 						$(this).clone(true).css( 'left', - ( scroll - i + idxClicked ) * cache.itemW * factor + 'px' ).insertBefore( $first );
 					});
@@ -30,7 +30,7 @@
 				
 				// animate the left of each item
 				// the calculations are dependent on dir and on the cache.expanded value
-				$wrapper.find('.ref').each(function(i) {
+				$wrapper.find('li').each(function(i) {
 					var $item	= $(this);
 					$item.stop().animate({
 						left	:  ( dir === 1 ) ? '-=' + ( cache.itemW * factor * scroll ) + 'px' : '+=' + ( cache.itemW * factor * scroll ) + 'px'
@@ -76,7 +76,7 @@
 						
 						var $el 			= $(this),
 							$wrapper		= $el.find('ul'),
-							$items			= $wrapper.children('.ref'),
+							$items			= $wrapper.children('li'),
 							cache			= {};
 						
 						// save the with of one item	
@@ -85,9 +85,9 @@
 						cache.totalItems	= $items.length;
 						
 						// add navigation buttons
-						if( cache.totalItems > 3 )	
-							$el.prepend('<button id="prev" class="navSliderRef">‹</button>');
-							$el.append('<button id="next" class="navSliderRef">›</button>');
+						if( cache.totalItems > 1 )	
+							$el.prepend('<button id="prev" class="navSlider">‹</button>');
+							$el.append('<button id="next" class="navSlider">›</button>');
 						
 						// control the scroll value
 						if( settings.scroll < 1 )
@@ -111,7 +111,7 @@
 						function nav(left){
 							var direction = left ? -1 : 1;
 							if( cache.isAnimating ) return false;
-							cache.isAnimating	= true;
+							cache.isAnimating = true;
 							aux.navigate( direction, $el, $wrapper, settings, cache );
 						}
 						

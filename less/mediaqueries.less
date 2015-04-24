@@ -89,6 +89,24 @@
       }
     }
   }
+
+  .listeLivres{
+    li{
+      width: 100%;
+      padding: 40px 0;
+    }
+    p{
+      br{
+        display: none;
+      }
+    }
+  }
+
+  .containerLivre{
+    .small{
+      width: 50%;
+    }
+  }
 }
 
 @media (max-width: 1040px){
@@ -114,6 +132,9 @@
     padding: 30px;
     right: -245px;
     .transition(.2s ease-in-out);
+    .no-js &{
+      display: none;
+    }
     li{
       display: block;
       text-align: right;
@@ -349,6 +370,17 @@
     }
   }
 
+  .headLivreLanding{
+    .content{
+      padding-top: 0;
+    }
+    #bgHead{
+      .no-mobile &{
+        top: 75px;
+      }
+    }
+  }
+
   #sliderRef{
     ul{
       width: 560px;
@@ -434,6 +466,23 @@
     }
     img{
       max-width: 100%;
+    }
+  }
+
+  .couvSeule{
+    width: 100%;
+  }
+
+  .containerLivre{
+    .form{
+      padding: 0;
+      margin: 50px 0 0;
+    }
+    p{
+      text-align: center;
+    }
+    form{
+      margin-right: 25%;
     }
   }
 }
@@ -544,18 +593,7 @@
     }
   }
 
-  .head{
-    #bgHead{
-      .no-mobile &{
-        top: 0
-      }
-    }
-    h1{
-      font-size: 3em;
-    }
-  }
-
-  .headHome{
+  .head:not(.headLivreLanding){
     padding: 0 0 50%;
     #bgHead{
       background-size: 100%;
@@ -565,7 +603,6 @@
       position: absolute;
       height: 340px;
       .no-js &{
-        background-position: 0 100%;
         top: auto;
       }
       .no-mobile &{
@@ -573,7 +610,7 @@
         bottom: 50px;
       }
     }
-    .heading{
+    h1{
       margin: 0;
       text-align: center;
       font-size: 2.7em;
@@ -602,6 +639,44 @@
     }
   }
 
+  .headHome{
+    #bgHead{
+      .no-js &{
+        background-position: 0 100%;
+      }
+    }
+  }
+
+  .headRdv{
+    &:after{
+      .transform(rotate(-3deg));
+    }
+  }
+
+  .headLivres{
+    padding: 0 0 38%;
+    .content{
+      overflow: visible;
+    }
+    h1{
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      float: none;
+      color: @blanc;
+    }
+  }
+
+  .headLivreLanding{
+    #bgHead{
+      position: absolute;
+      height: 300px !important;
+      .no-mobile &{
+        top: 0;
+      }
+    }
+  }
+
   .subHeading{
     br:first-child{
       display: none;
@@ -613,6 +688,10 @@
     float: none;
     margin: 0 auto;
     text-align: center;
+  }
+
+  .filtres{
+    margin-bottom: 0;
   }
 
   #sliderRef{
@@ -656,16 +735,6 @@
     }
   }
 
-  .head{
-    h1{
-      margin: 15vh 0 0;
-    }
-  }
-
-  .filtres {
-    margin: 20px 0 180px;
-  }
-
   #prev{
     left: 20px;
   }
@@ -678,6 +747,41 @@
       width: 100%;
       padding: 0;
       margin: 0 0 30px;
+    }
+  }
+
+  .pagination{
+    a{
+      span{
+        display: none;
+      }
+    }
+  }
+
+  .containerLivre{
+    .form{
+      margin: 70px 0 0;
+    }
+  }
+
+  #sliderBooks{
+    height: 390px;
+    ul, li{
+      width: 100%;
+    }
+    img{
+      width: 260px;
+      height: auto;
+    }
+    .navSlider{
+      bottom: -25px;
+      top: auto;
+    }
+    #prev{
+      left: 30%;
+    }
+    #next{
+      right: 30%;
     }
   }
 
@@ -700,7 +804,7 @@
 
   .formContact{
     min-height: 110px;
-    h2{
+    .h2{
       margin: 0 0 30px;
       text-align: center;
     }
@@ -747,9 +851,11 @@
     display: none;
   }
 
-  .headHome{
-    padding: 0 0 55%;
-    .heading{
+  .head{
+    &:not(.headLivreLanding){
+      padding: 0 0 55%;
+    }
+    h1{
       font-size: 2.5em;
     }
     .content.main{
@@ -760,13 +866,23 @@
     }
   }
 
+  .headLivres{
+    padding: 0 0 43%;
+  }
+
+  .headLivreLanding{
+    #bgHead{
+      height: 200px !important;
+    }
+  }
+
   #sliderRef{
     + .btnLight{
       margin: 80px auto 0;
     }
   }
 
-  .navSliderRef{
+  .navSlider{
     top: auto;
     bottom: -50px;
   }
@@ -782,7 +898,7 @@
 
 @media (max-width: 400px){
 
-  .headHome .heading{
+  .head:not(.headLivreLanding) h1{
     font-size: 2em;
   }
 
@@ -792,10 +908,16 @@
     margin: 10px 0 15px;
   }
 
+  .containerLivre{
+    form{
+      margin-right: 0;
+    }
+  }
+
 }
 
 @media (max-width: 330px){
-  .headHome{
+  .head:not(.headLivreLanding){
     padding: 0 0 60%;
   }
 }
@@ -805,14 +927,10 @@
 /* @group Responsive vertical */
 
 @media (max-height: 850px) and (min-width: 768px){
-  .headHome .heading{
-    margin: 10vh 0 0;
-  }
-}
-
-@media (max-height: 800px) and (min-width: 768px){
-  .js .headHome.heading{
-    margin: 5vh 0 0;
+  .headHome, .headRdv{
+    h1{
+      margin: 10vh 0 0;
+    }
   }
 }
 
@@ -849,27 +967,9 @@
   }
 }
 
-@media (max-height: 800px){
-  .head{
-    h1{
-      margin: 15vh 0 0;
-    }
-  }
-
+@media (max-height: 800px) and (min-width: 676px){
   .filtres {
     margin: 20px 0 180px;
-  }
-}
-
-@media (max-height: 800px) and (max-width: 520px){
-  .head{
-    h1{
-      margin: 10vh 0 0;
-    }
-  }
-
-  .filtres {
-    margin: 20px 0 130px;
   }
 }
 

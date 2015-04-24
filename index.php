@@ -59,10 +59,10 @@
 
 					<section class='content bgBlanc scrollHere'>
 						<h2>Ils nous font confiance</h2>
-						<div id='sliderRef'>
+						<div id='sliderRef' class='carousel'>
 							<ul>
 								<li class='jaune ref'>
-									<a href='#' title='En savoir plus'>
+									<a href='#' title="Lire l'étude de cas">
 										<span class='img'><img src='img/poste.png' alt='La Poste'/></span>
 										<span class='txt'>
 											1 jour de séminaire par an<br/>
@@ -85,7 +85,7 @@
 										</span>
 									</a>
 								</li><li class='rose ref'>
-									<a href='#' title='En savoir plus'>
+									<a href='#' title="Lire l'étude de cas">
 										<span class='img'><img src='img/sncf.png' alt='SNCF'/></span>
 										<span class='txt'>
 											1h30 de management call<br/>
@@ -108,7 +108,7 @@
 										</span>
 									</a>
 								</li><li class='rouge ref'>
-									<a href='#' title='En savoir plus'>
+									<a href='#' title="Lire l'étude de cas">
 										<span class='img'><img src='img/auchan.png' alt='Auchan'/></span>
 										<span class='txt'>
 											2h de réunions bimensuelles<br/>
@@ -131,7 +131,7 @@
 										</span>
 									</a>
 								</li><li class='bleu ref'>
-									<a href='#' title='En savoir plus'>
+									<a href='#' title="Lire l'étude de cas">
 										<span class='img'><img src='img/hec.png' alt='HEC Paris'/></span>
 										<span class='txt'>
 											6 sessions en cours<br/>
@@ -154,7 +154,7 @@
 										</span>
 									</a>
 								</li><li class='vert ref'>
-									<a href='#' title='En savoir plus'>
+									<a href='#' title="Lire l'étude de cas">
 										<span class='img'><img src='img/bnp.png' alt='BNP Paribas'/></span>
 										<span class='txt'>
 											3h par session<br/>
