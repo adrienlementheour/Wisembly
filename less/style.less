@@ -85,8 +85,16 @@ h3, .h3{
   color: @grisH3;
 }
 
-.firstTitle{
+.bordered{
   margin-top: 0;
+  &:after{
+    content: '';
+    display: block;
+    width: 66px;
+    height: 2px;
+    background: @grisBorder;
+    margin: 20px auto;
+  }
 }
 
 a{
@@ -141,6 +149,9 @@ li{
 
 strong, b{
   .gothamBold(1em);
+  &.medium{
+    .gothamMedium(1em);
+  }
 }
 em, i, blockquote{
   .gothamItalic(1em);
@@ -416,6 +427,9 @@ button{
   }
   &.paddingBottom{
     padding-bottom: 100px;
+  }
+  &.smallPadBot{
+    padding-bottom: 65px;
   }
 }
 
@@ -766,6 +780,11 @@ header{
     width: 185px;
     margin: 24px 0;
   }
+  .rs{
+    a{
+      font-size: 30px;
+    }
+  }
 }
 
 #logo{
@@ -779,6 +798,9 @@ header{
   }
   .landing &{
     margin: 15px 0;
+    .no-js &{
+      float: left;
+    }
   }
 }
 
@@ -976,7 +998,7 @@ header{
 
 #burger{
   float: right;
-  margin: 28px 0;
+  margin: 28px 0 27px;
   display: none;
   position: relative;
   width: 28px;
@@ -1791,6 +1813,19 @@ footer{
   }
   ul{
     background: @blanc;
+    padding: 0 10px;
+    &:before{
+      content: '';
+      height: 2px;
+      width: 500px;
+      background: @grisBorder;
+      position: absolute;
+      z-index: -1;
+      top: 16px;
+      left: 50%;
+      margin: 0 0 0 -250px;
+      .transform(rotate(-3deg));
+    }
   }
   p{
     font-size: 0.75em;
@@ -1810,9 +1845,22 @@ footer{
 .rs{
   li{
     display: inline-block;
+    .size(30px);
+    overflow: hidden;
     padding: 3px;
     &:before{
       display: none;
+    }
+    a{
+      border: 0;
+      font-size: 30px;
+      &:hover, &:focus{
+        outline: 0;
+        color: @txt;
+      }
+      &:active{
+        opacity: .7;
+      }
     }
   }
   span{
@@ -1823,32 +1871,7 @@ footer{
     height: 40px;
     display: inline-block;
     position: relative;
-    padding: 0 10px;
-    &:before{
-      content: '';
-      height: 2px;
-      width: 500px;
-      background: @grisBorder;
-      position: absolute;
-      z-index: -1;
-      top: 16px;
-      left: 50%;
-      margin: 0 0 0 -250px;
-      .transform(rotate(-3deg));
-    }
-    a{
-      border: 0;
-      font-size: 30px;
-      .size(30px);
-      overflow: hidden;
-      &:hover, &:focus{
-        outline: 0;
-        color: @txt;
-      }
-      &:active{
-        opacity: .7;
-      }
-    }
+    padding: 0 0 0 10px;
   }
   .icon-fb{
     color: #0d5c7c;
@@ -1892,6 +1915,12 @@ footer{
     position: absolute;
     width: 150%;
   }
+  &:after{
+    bottom: -25px;
+    height: 105px;
+    background: @blanc;
+    .transform(rotate(-3deg));
+  }
 }
 
 #bgHead{
@@ -1908,7 +1937,7 @@ footer{
 
 .headHome{
   #bgHead{
-    background-image: url(../layoutImg/head/smallHeadHome.jpg);
+    background-image: url(../layoutImg/head/headHome.jpg);
     background-position: 50% 100%;
     background-size: auto;
     .lt-ie9 &{
@@ -1930,17 +1959,11 @@ footer{
     background: fade(@vert, 60);
     .transform(rotate(7deg));
   }
-  &:after{
-    bottom: -25px;
-    height: 105px;
-    background: @blanc;
-    .transform(rotate(-3deg));
-  }
 }
 
 .headRdv{
   #bgHead{
-    background-image: url(../layoutImg/head/smallHeadRdv.jpg);
+    background-image: url(../layoutImg/head/headRdv.jpg);
     background-position: 50% 0;
   }
   h1{
@@ -1984,12 +2007,6 @@ footer{
     background: fade(@bleu, 60);
     .transform(rotate(15deg));
   }
-  &:after{
-    bottom: -25px;
-    height: 105px;
-    background: @blanc;
-    .transform(rotate(-2deg));
-  }
 }
 
 .headLivreLanding{
@@ -1998,6 +2015,29 @@ footer{
   }
   .content{
     padding-top: 75px;
+  }
+  &:after{
+    display: none;
+  }
+}
+
+.headTeam{
+  #bgHead{
+    background-image: url(../layoutImg/head/headTeam.jpg);
+    background-position: 30% 110px;
+  }
+  h1{
+    margin: 25vh 0 30vh;
+  }
+  &:before{
+    right: 0;
+    bottom: -100px;
+    height: 170px;
+    background: fade(@jaune, 60);
+    .transform(rotate(3deg));
+  }
+  .lt-ie9 &{
+    height: 450px;
   }
 }
 
@@ -2689,22 +2729,8 @@ footer{
 
 /* Livres blanc */
 
-.page-template-livres-blancs{
-  h2{
-    &:after{
-      content: '';
-      display: block;
-      width: 66px;
-      height: 2px;
-      background: @grisBorder;
-      margin: 20px auto;
-    }
-  }
-}
-
 .listeLivres{
   li{
-    padding: 0;
     width: 33%;
     display: inline-block;
     vertical-align: bottom;
@@ -2753,6 +2779,9 @@ footer{
         color: @rouge;
       }
     }
+    &.small{
+      width: 50%;
+    }
   }
 }
 
@@ -2781,6 +2810,84 @@ footer{
     }
     a{
       .fontIcon();
+    }
+  }
+}
+
+
+/* Team */
+
+.page-template-team{
+  .wrapper{
+    section{
+      &.vert{
+        h2, .subCat{
+          color: @vert;
+        }
+      }
+      &.rose{
+        h2, .subCat{
+          color: @rose;
+        }
+      }
+      &.jaune{
+        h2, .subCat{
+          color: @jaune;
+        }
+      }
+      &.rouge{
+        h2, .subCat{
+          color: @rouge;
+        }
+      }
+    }
+  }
+
+  .scrollNext{
+    margin: 70px 0 0;
+  }
+}
+
+.subCat{
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+.listeTeam{
+  > li{
+  display: inline-block;
+  padding: 7px 25px;
+  .box-sizing(border-box);
+  width: 224px;
+  vertical-align: top;
+  &:before{
+    display: none;
+  }
+  }
+  .img{
+    height: 205px;
+    overflow: hidden;
+  }
+  img{
+    max-width: 100%;
+    height: auto;
+    .lt-ie9 &{
+      max-width: 300px;
+    }
+  }
+  p{
+    margin: 0 0 1.5em;
+  }
+  .icon-tw{
+    color: @txt;
+    &:hover, &:focus{
+      &:extend(.rs .icon-tw);
+    }
+  }
+  .icon-in{
+    color: @txt;
+    &:hover, &:focus{
+      &:extend(.rs .icon-in);
     }
   }
 }

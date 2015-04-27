@@ -90,6 +90,7 @@ function scrollPage(){
 
 	if(!htmlTag.hasClass("lt-ie9") && !isMobile.any && myScroll < $(".head").height() && $(window).width() > 767){
 		TweenMax.set(bgHead, {y:-(myScroll/1.5)+"px"});
+		TweenMax.set($('.head').find('.content'), {y:+(myScroll/2.5)+"px"});
 	}
 
 	requestAnimFrame(scrollPage);
@@ -522,6 +523,11 @@ $(function(){
 
 	// Btn video //
 	$('#btn-video').on('click', videoCover);
+
+	// Landing livre blanc formulaire //
+	if($('.form').hasClass('open')){
+		htmlBody.animate({scrollTop: $('.form').offset().top}, 800, 'easeInOutCubic');
+	}	
 	
 
 	$(window).load(function(){
