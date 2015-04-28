@@ -448,6 +448,10 @@ function setSliderHeight(context){
 	context.find('ul').css('height', li.eq(liBigger).height());
 }
 
+function initAnnonces(){
+	TweenMax.set($(".whr-item"), {display:"block"});
+}
+
 
 /**** INIT ****/
 $(function(){
@@ -468,6 +472,10 @@ $(function(){
 
 		// Sous menu //
 		setSubMenu();
+	}
+
+	if(body.hasClass("emploi")){
+		initAnnonces();
 	}
 
 	// Scroll init //
