@@ -3080,8 +3080,14 @@ footer{
 }
 
 .temoignage{
-  &:extend(.etude);
+  width: 50%;
   height: auto;
+  display: inline-block;
+  > div{
+    width: 92%;
+    display: inline-block;
+    background: @grisSlides;
+  }
   .img{
     &:extend(.ref .img);
     left: 0;

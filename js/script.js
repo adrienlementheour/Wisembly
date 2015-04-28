@@ -445,7 +445,7 @@ function setSliderHeight(context){
 		}
 	}
 
-	context.find('ul').css('height', li.eq(liBigger).height());
+	context.find('ul').css('height', li.eq(liBigger).outerHeight());
 }
 
 function initAnnonces(){
@@ -598,8 +598,8 @@ $(function(){
 
 		// Slider témoignages //
 		if($('#sliderTemoignages').length){
-			//setSliderHeight($('#sliderTemoignages'));
-			//$('#sliderTemoignages').contentcarousel({ sliderEasing: 'easeOutExpo' });
+			setSliderHeight($('#sliderTemoignages'));
+			$('#sliderTemoignages').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
 
 		// Slider clients ils nous ont accueillis //
