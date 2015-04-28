@@ -74,6 +74,19 @@ h2, .h2{
   color: @bleuH2;
   margin-top: 4em;
   position: relative;
+  &:after{
+    content: '';
+    display: block;
+    width: 66px;
+    height: 2px;
+    background: @grisBorder;
+    margin: 10px auto 20px;
+  }
+  &.big, &.h3{
+    &:after{
+      display: none;
+    }
+  }
   &.big{
     font-size: 1.45em;
   }
@@ -85,16 +98,8 @@ h3, .h3{
   color: @grisH3;
 }
 
-.bordered{
+.noMarginTop{
   margin-top: 0;
-  &:after{
-    content: '';
-    display: block;
-    width: 66px;
-    height: 2px;
-    background: @grisBorder;
-    margin: 20px auto;
-  }
 }
 
 a{
@@ -135,6 +140,7 @@ ul{
   padding: 0;
   margin: 0;
   list-style: none;
+  text-align: left;
 }
 li{
   position: relative;
@@ -143,7 +149,7 @@ li{
     content: '•';
     position: absolute;
     left: 0;
-    color: @rouge;
+    color: @bleuLien;
   }
 }
 
@@ -173,6 +179,10 @@ blockquote{
     font-size: 20px;
     color: @rouge;
     text-indent: 0;
+    font-style: normal;
+  }
+  p{
+    margin: 0;
   }
 }
 
@@ -423,7 +433,8 @@ button{
     position: relative;
   }
   &.simple{
-    padding-right: 185px;
+    padding-right: 90px;
+    padding-left: 90px;
   }
   &.paddingBottom{
     padding-bottom: 100px;
@@ -457,12 +468,10 @@ button{
   }
 }
 
-.page-template, .archive, .single{
-  .wrapper{
-    text-align: center;
-    .btnLight{
-      margin: 0 auto;
-    }
+.wrapper{
+  text-align: center;
+  .btnLight{
+    margin: 0 auto;
   }
 }
 
@@ -1094,6 +1103,11 @@ footer{
       padding: 30px 0 0;
     }
   }
+  .h2{
+    &:after{
+      display: none;
+    }
+  }
   &:before, &:after{
     content: '';
     display: block;
@@ -1201,7 +1215,7 @@ footer{
       button{
         color: darken(@rouge, 10);
         &:hover, &:focus, &.actif{
-          color: fade(@rouge, 60);
+          color: fade(@blanc, 80);
         }
         &.actif{
           text-shadow: 2px 2px 2px darken(@rouge, 10);
@@ -1255,7 +1269,7 @@ footer{
       button{
         color: darken(@vert, 10);
         &:hover, &:focus, &.actif{
-          color: fade(@vert, 60);
+          color: fade(@blanc, 80);
         }
         &.actif{
           text-shadow: 2px 2px 2px darken(@vert, 10);
@@ -1301,7 +1315,7 @@ footer{
       button{
         color: darken(@rose, 10);
         &:hover, &:focus, &.actif{
-          color: fade(@rose, 60);
+          color: fade(@blanc, 80);
         }
         &.actif{
           text-shadow: 2px 2px 2px darken(@rose, 10);
@@ -1384,15 +1398,12 @@ footer{
 .slideTeam{
   overflow: hidden;
   display: none;
+  text-align: right;
   &.on{
     display: block;
   }
-  img{
-    float: right;
-  }
   p{
     display: inline-block;
-    text-align: right;
     margin: 38% 0 0;
     float: left;
     width: 177px;
@@ -1405,7 +1416,7 @@ footer{
   text-align: right;
   width: 178px;
   position: absolute;
-  top: -105px;
+  top: -95px;
   li{
     display: inline-block;
   }
@@ -1660,9 +1671,9 @@ footer{
 .itemsFooter{
   .box-sizing(border-box);
   padding: 0 45px 0 0;
+  text-align: center;
   li{
     width: 50%;
-    text-align: center;
     .box-sizing(border-box);
     padding: 0 70px 0 0;
   }
@@ -1678,7 +1689,6 @@ footer{
       display: block;
       line-height: 96px;
       width: 100%;
-      text-align: center;
       color: @blanc;
       font-size: 4em;
       .transition(.3s ease-in-out);
@@ -2041,6 +2051,35 @@ footer{
   }
 }
 
+.headClients{
+  #bgHead{
+    background-image: url(../layoutImg/head/headClients.png);
+    background-position: 50% 50%;
+  }
+  h1{
+    margin: 15vh 0 0;
+  }
+  .subHeading{
+    text-align: center;
+  }
+  .filtres{
+    a{
+      width: 240px;
+      &:hover, &:focus, &.actif{
+        background: @bleuLien;
+        border-color: @bleuLien;
+      }
+    }
+  }
+  &:before{
+    right: 0;
+    bottom: -60px;
+    height: 170px;
+    background: fade(@vert, 60);
+    .transform(rotate(7deg));
+  }
+}
+
 /* Carousels */
 
 .carousel{
@@ -2049,6 +2088,7 @@ footer{
     width: 100%;
     height: 100%;
     position: relative;
+    text-align: center;
     .js &{
       overflow: hidden;
     }
@@ -2084,6 +2124,14 @@ footer{
 
 /* HOME */
 
+.home{
+  .wrapper{
+    ul{
+      text-align: center;
+    }
+  }
+}
+
 .blocH1{
   width: 360px;
   max-width: 100%;
@@ -2097,6 +2145,9 @@ footer{
   .gotham(1.1em);
   margin: 25px 0;
   line-height: 20px;
+  &:after{
+    display: none;
+  }
 }
 
 .detailHome{
@@ -2143,22 +2194,37 @@ footer{
   .js &{
     height: 300px;
   }
+  .ref{
+    height: 300px;
+    width: 25%;
+    a{
+      background: @grisSlides;
+      height: 100%;
+      width: 98%;
+      margin: 0 1%;
+      top: 0;
+    }
+    .txt{
+      margin: 135px auto 0;
+      .gothamMedium(.85em);
+    }
+    .hover{
+      padding: 30px 25px;
+      text-align: left;
+    }
+    .quote{
+      .gothamMedium(.96em);
+    }
+  }
 }
 
 .ref{
   display: inline-block;
   position: relative;
-  height: 300px;
-  width: 25%;
-  a{
-    background: @grisSlides;
+  .lien{
     border: 0;
     color: @txt;
     display: block;
-    height: 100%;
-    width: 98%;
-    margin: 0 1%;
-    top: 0;
     position: absolute;
     overflow: hidden;
     &:before, &:after{
@@ -2189,18 +2255,76 @@ footer{
       }
       .hover{
         top: 0;
-        opacity: .9;
+        opacity: .95;
         .transition(.4s all .3s cubic-bezier(0.565, 0.015, 0.175, 0.980));
       }
-      &:before{
+      &:before, &:after{
         border-width: 0 0 0 274px;
+      }
+      &:before{
         .transition(.2s ease-in-out);
       }
       &:after{
-        border-width: 0 0 0 274px;
         .transition(.1s all .1s ease-in-out);
       }
     }
+  }
+  span{
+    display: block;
+  }
+  .img{
+    position: absolute;
+    line-height: 100px;
+    top: 20px;
+    height: 100px;
+    width: 100%;
+  }
+  .txt{
+    max-width: 90%;
+  }
+  .hover{
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    height: 100%;
+    color: @blanc;
+    opacity: 0;
+    .box-sizing(border-box);
+    .transition(.3s ease-in-out);
+  }
+  .quote{
+    &:before{
+      .fontIcon();
+      content: "\e600";
+      font-size: 18px;
+      opacity: .8;
+      line-height: 10px;
+      padding: 0 5px 0 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+    + span{
+      position: absolute;
+      bottom: 25px;
+    }
+  }
+  .cite{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 163px;
+    margin: 0 0 0 5px;
+    .gotham(.85em);
+    strong{
+      .gothamBold(1.1em);
+      display: block;
+    }
+  }
+  .imgQuote{
+    display: inline-block;
+    vertical-align: middle;
+    .size(50px);
+    background: #f3f4f6;
+    border-radius: 99px;
   }
   &.jaune{
     a{
@@ -2271,69 +2395,6 @@ footer{
     .hover{
       background: @vert; 
     }
-  }
-  span{
-    display: block;
-  }
-  .img{
-    position: absolute;
-    line-height: 100px;
-    top: 20px;
-    height: 100px;
-    width: 100%;
-  }
-  .txt{
-    margin: 135px auto 0;
-    max-width: 90%;
-    .gothamMedium(.85em);
-  }
-  .hover{
-    position: absolute;
-    top: 300px;
-    width: 100%;
-    height: 100%;
-    color: @blanc;
-    padding: 30px 25px;
-    opacity: 0;
-    .box-sizing(border-box);
-    .transition(.3s ease-in-out);
-  }
-  .quote{
-    text-align: left;
-    .gothamMedium(.96em);
-    &:before{
-      .fontIcon();
-      content: "\e600";
-      font-size: 18px;
-      opacity: .8;
-      line-height: 10px;
-      padding: 0 5px 0 0;
-      display: inline-block;
-      vertical-align: top;
-    }
-    + span{
-      text-align: left;
-      position: absolute;
-      bottom: 25px;
-    }
-  }
-  .cite{
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 163px;
-    margin: 0 0 0 5px;
-    .gotham(.85em);
-    strong{
-      .gothamBold(1.1em);
-      display: block;
-    }
-  }
-  .imgQuote{
-    display: inline-block;
-    vertical-align: middle;
-    .size(50px);
-    background: #f3f4f6;
-    border-radius: 99px;
   }
 }
 
@@ -2455,12 +2516,8 @@ footer{
 .embed-container{
   position: relative;
   padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
   iframe, object, embed{
     position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -2468,12 +2525,9 @@ footer{
 }
 
 #bloc-video{
-  display: block;
   position: relative;
   width: 780px;
-  height: auto;
   margin: 0 auto;
-  padding: 0;
   overflow: hidden;
   max-width: 100%;
   .cover-video{
@@ -2481,40 +2535,34 @@ footer{
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
-    display: block;
     .transform-origin(0 100%);
-    .bg-cover-video{
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: url(../layoutImg/home/cover-video.jpg) no-repeat 50% 50%;
-      background-size: 100% auto; 
-      background-size: cover;
-    }
-    .wrapper-zone-txt-cover-video{
-      display: table;
-      width: 100%;
-      height: 100%;
-      .zone-txt-cover-video{
-        position: relative;
-        color: @blanc;
-        display: table-cell;
-        vertical-align: middle;
-        width: 90%;
-        p{
-          max-width: 410px;
-          width: 95%;
-          margin: 0 auto;
-        }
-        a{
-          margin: 20px auto 0 auto;
-        }
-      }
-    }
+  }
+  .bg-cover-video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../layoutImg/home/cover-video.jpg) no-repeat 50% 50%;
+    background-size: 100% auto; 
+    background-size: cover;
+  }
+  .wrapper-zone-txt-cover-video{
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  .zone-txt-cover-video{
+    position: relative;
+    color: @blanc;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  p{
+    max-width: 410px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  a{
+    margin: 20px auto 0;
   }
 }
 
@@ -2574,15 +2622,12 @@ footer{
     left: 0;
     right: 0;
     + a{
+      &:extend(.filtres a);
       display: inline-block;
       margin: 100px 0 15px;
       position: relative;
       z-index: 1;
-      color: @blanc;
-      border: 1px solid @vert;
-      border-radius: 4px;
-      padding: 4px 0;
-      width: 130px;
+      border-color: @vert;
       background: @vert;
       &:hover, &:focus{
         background: @blanc;
@@ -2730,6 +2775,7 @@ footer{
 /* Livres blanc */
 
 .listeLivres{
+  text-align: center;
   li{
     width: 33%;
     display: inline-block;
@@ -2854,6 +2900,7 @@ footer{
 }
 
 .listeTeam{
+  text-align: center;
   > li{
   display: inline-block;
   padding: 7px 25px;
@@ -2867,6 +2914,17 @@ footer{
   .img{
     height: 205px;
     overflow: hidden;
+    position: relative;
+    &:after{
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: '';
+      border-style: solid;
+      border-width: 0 0 20px 257px;
+      border-color: transparent transparent @blanc transparent;
+    }
   }
   img{
     max-width: 100%;
@@ -2890,10 +2948,223 @@ footer{
       &:extend(.rs .icon-in);
     }
   }
+  ul{
+    text-align: center;
+  }
+}
+
+/* Clients */
+
+.etude{
+  background: @grisSlides;
+  height: 490px;
+  width: 46%;
+  margin: 2% 2% 0;
+  strong{
+    margin: 0 auto;
+    max-width: 85%;
+    display: block;
+  }
+  .lien{
+    height: 60%;
+    width: 100%;
+    top: 40%;
+    &:before{
+      border-width: 50px 0 0 520px;
+    }
+    &:after{
+      border-width: 0 0 50px 520px;
+    }
+  }
+  .cat{
+    &:extend(.filtres a);
+    width: 240px;
+    margin: 140px auto 0;
+  }
+  .txt{
+    margin: 20px auto 0;
+    font-size: .95em;
+    line-height: 1.5em;
+  }
+  .hover{
+    padding: 30px 55px;
+  }
+  .quote{
+    font-size: 1.1em;
+    line-height: 1.35em;
+    + span{
+      width: 100%;
+      left: 0;
+    }
+  }
+  .imgQuote{
+    display: block;
+    margin: 0 auto 15px;
+  }
+  .cite{
+    strong{
+      margin: 0 auto 5px;
+    }
+  }
+  .btnFalse{
+    margin: 40px auto 20px;
+    width: 155px;
+    line-height: 40px;
+    color: @blanc;
+  }
+  &.jaune{
+    .cat{
+      color: @jaune;
+      &:hover, &:focus{
+        color: @blanc;
+        background: @jaune;
+        border-color: @jaune;
+      }
+    }
+    .btnFalse{
+      background: @jaune;
+    }
+  }
+  &.rose{
+    .cat{
+      color: @rose;
+      &:hover, &:focus{
+        color: @blanc;
+        background: @rose;
+        border-color: @rose;
+      }
+    }
+    .btnFalse{
+      background: @rose;
+    }
+  }
+  &.rouge{
+    .cat{
+      color: @rouge;
+      &:hover, &:focus{
+        color: @blanc;
+        background: @rouge;
+        border-color: @rouge;
+      }
+    }
+    .btnFalse{
+      background: @rouge;
+    }
+  }
+  &.vert{
+    .cat{
+      color: @vert;
+      &:hover, &:focus{
+        color: @blanc;
+        background: @vert;
+        border-color: @vert;
+      }
+    }
+    .btnFalse{
+      background: @vert;
+    }
+  }
+  &.bleu{
+    .cat{
+      color: @bleu;
+      &:hover, &:focus{
+        color: @blanc;
+        background: @bleu;
+        border-color: @bleu;
+      }
+    }
+    .btnFalse{
+      background: @bleu;
+    }
+  }
+}
+
+.temoignage{
+  &:extend(.etude);
+  height: auto;
+  .img{
+    &:extend(.ref .img);
+    left: 0;
+  }
+  .imgQuote{
+    &:extend(.ref .imgQuote);
+    &:extend(.etude .imgQuote);
+  }
+  .quote{
+    padding: 120px 50px 50px;
+    display: block;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    &:before{
+      &:extend(.ref .quote:before);
+      color: @bleu;
+    }
+  }
+  .citeContainer{
+    background: @blanc;
+    position: relative;
+    padding: 15px 0 0;
+    &:before{
+      .fontIcon();
+      content: "\e60c";
+      color: @grisSlides;
+      font-size: 40px;
+      position: absolute;
+      top: -10px;
+      left: 30%;
+    }
+  }
+  .cite{
+    opacity: .6;
+    display: block;
+    strong{
+      display: block;
+    }
+  }
+}
+
+.containerChiffre{
+  margin: 0 75px 60px;
+  display: inline-block;
+  vertical-align: top;
+  span{
+    display: block;
+  }
+  .chiffre{
+    color: @bleu;
+    font-size: 50px;
+    margin: 0 0 5px;
+    font-weight: 300;
+  }
+  &:after{
+    content: '';
+    width: 90px;
+    height: 1px;
+    display: block;
+    background: @bleu;
+    margin: 20px auto 0;
+  }
+}
+
+.gallery{
+  li{
+    width: 49.7%;
+    display: inline-block;
+  }
+  div{
+    width: 20%;
+    height: 100px;
+    line-height: 100px;
+    display: inline-block;
+  }
+  img{
+    max-width: 80%;
+    height: auto;
+  }
 }
 
 
-/* Special IE 9 */
+/* Special IE 8 */
 
 .lt-ie9 {
   .content{

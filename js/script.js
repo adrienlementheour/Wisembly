@@ -434,6 +434,20 @@ function setToolTip(context){
 	}
 }
 
+function setSliderHeight(context){
+	var li = context.find('li'), liLength = li.length, i = 0, nbDiv = [], nbDivBigger = 0, liBigger;
+
+	for(i; i < liLength; i++){
+		nbDiv[i] = li.eq(i).find('div').length;
+		if(nbDiv[i] > nbDivBigger){
+			nbDivBigger = nbDiv[i];
+			liBigger = i;
+		}
+	}
+
+	context.find('ul').css('height', li.eq(liBigger).height());
+}
+
 
 /**** INIT ****/
 $(function(){
@@ -561,6 +575,29 @@ $(function(){
 		// Slider landing livre blanc //
 		if($('#sliderBooks').length){
 			$('#sliderBooks').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
+
+		// Tooltip etudes de cas //
+		if($('#etudes').length){
+			setToolTip($('#etudes'));
+		}
+
+		// Slider clients ils nous font confiance //
+		if($('#sliderLogosConfiance').length){
+			setSliderHeight($('#sliderLogosConfiance'));
+			$('#sliderLogosConfiance').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
+
+		// Slider témoignages //
+		if($('#sliderTemoignages').length){
+			//setSliderHeight($('#sliderTemoignages'));
+			//$('#sliderTemoignages').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
+
+		// Slider clients ils nous ont accueillis //
+		if($('#sliderLogosAccueillis').length){
+			setSliderHeight($('#sliderLogosAccueillis'));
+			$('#sliderLogosAccueillis').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
 	});
 

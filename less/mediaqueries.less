@@ -26,16 +26,23 @@
   #next{
     right: 30px;
   }
-
-  .ref{
-    width: 33.333%;
+  
+  #sliderRef{
+    .ref{
+      width: 33.333%;
+    }
   }
 } 
 
 @media (max-width: 1160px){
+  blockquote{
+    margin: 0;
+  }
+
   .content{
     &.simple{
       padding-right: 20px;
+      padding-left: 20px;
     }
   }
 
@@ -398,7 +405,7 @@
   #next{
     right: 50px;
   }
-
+  
   .ref{
     width: 50%;
   }
@@ -419,6 +426,17 @@
   #map{
     .no-mobile &{
       margin: 0;
+    }
+  }
+
+  .etude{
+    width: 100%;
+    margin: 2% 0 0;
+  }
+
+  .gallery{
+    li{
+      width: 100%;
     }
   }
 }
@@ -684,7 +702,7 @@
     }
   }
 
-  .headTeam{
+  .headTeam, .headClients{
     &:extend(.headLivres);
   }
 
@@ -805,6 +823,10 @@
     }
   }
 
+  .etude{
+    height: 520px;
+  }
+
 }
 
 @media (max-width: 450px){
@@ -886,7 +908,7 @@
     }
   }
 
-  .headLivres, .headTeam{
+  .headLivres, .headTeam, .headClients{
     padding: 0 0 43% !important;
   }
 
@@ -960,6 +982,16 @@
     }
   }
 
+  .etude{
+    .lien{
+      top: 33%;
+      height: 67%;
+    }
+    .hover{
+      padding: 30px;
+    }
+  }
+
 }
 
 @media (max-width: 330px){
@@ -967,8 +999,12 @@
     padding: 0 0 60%;
   }
 
-  .headLivres, .headTeam{
+  .headLivres, .headTeam, .headClients{
     padding: 0 0 50% !important;
+  }
+
+  .etude{
+    height: 560px;
   }
 }
 
@@ -1017,7 +1053,7 @@
   }
 }
 
-@media (max-height: 800px) and (min-width: 676px){
+@media (max-height: 800px) and (min-width: 768px){
   .filtres {
     margin: 20px 0 180px;
   }
