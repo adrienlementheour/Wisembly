@@ -8,7 +8,12 @@ var myScroll,
 	bgHead = $('#bgHead'),
 	btnContact = $('#demandeContact'),
 	minHeight = $('.menu').innerHeight() - 10,
-	subMenus = $('.menu').find('.sub-menu');
+	subMenus = $('.menu').find('.sub-menu')
+	avancementLeft = 0,
+	avancementLeftFuture = 0,
+	precWidth = 0,
+	hasDemiBefore = false,
+	avancementLeftBottom = 0;
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -448,10 +453,67 @@ function setSliderHeight(context){
 	context.find('ul').css('height', li.eq(liBigger).outerHeight());
 }
 
+function setSliderHeightLi(context){
+	var li = context.find('li'), liLength = li.length, i = 0, heightMaxLi = 0;
+	for(i; i < liLength; i++){
+		if (li.eq(i).height() > heightMaxLi){
+			heightMaxLi = li.eq(i).height();
+		}
+	}
+	context.find('ul').css('height', heightMaxLi+"px");
+}
+
 function initAnnonces(){
 	TweenMax.set($(".whr-item"), {display:"block"});
 }
 
+/* Positionnement des images diapos dans la page Emploi */
+function positionDiapos(){
+	$("ul#slider-diapos li").each(function(index){
+		if($(this).hasClass("half")){
+			// Si l'image a une demi-hauteur
+			if(precWidth!=0){
+				// Si l'image d'avant est en haut
+				var newWidth=$(this).outerWidth();
+				if(newWidth<=precWidth){
+					// Si la nouvelle image n'est pas plus large que celle du haut
+					TweenMax.set($(this), {top: "50%", left: avancementLeft+avancementLeftBottom+"px"});
+					// Mise à jour du precWidth
+					precWidth-=newWidth;
+					hasDemiBefore=true;
+					avancementLeftBottom+=$(this).outerWidth();
+				}else{
+					// Si la nouvelle image est plus large que celle du haut
+					avancementLeft+=avancementLeftFuture;
+					TweenMax.set($(this), {top: "0", left: avancementLeft+"px"});
+					avancementLeftFuture=0;
+					hasDemiBefore=false;
+					avancementLeftBottom=0;
+				}
+			}else{
+				// Si l'image d'avant n'est pas en haut
+				TweenMax.set($(this), {top: "0px", left: avancementLeft+"px"});
+				precWidth = $(this).outerWidth();
+				avancementLeftFuture = $(this).outerWidth();
+				hasDemiBefore = false;
+				avancementLeftBottom = 0;
+			}
+		}else{
+			// Si l'image n'a pas une demi-hauteur
+			// On met à jour l'avancement
+			avancementLeft+=avancementLeftFuture;
+			avancementLeftFuture=0;
+			TweenMax.set($(this), {top: "0px", left: avancementLeft+"px"});
+			avancementLeft+=$(this).outerWidth();
+			hasDemiBefore = false;
+			avancementLeftBottom = 0;
+			precWidth=0;
+			hasDemiBefore=false;
+		}
+	});
+	TweenMax.set($("ul#slider-diapos"), {width: avancementLeft+"px"});
+	Draggable.create("ul#slider-diapos", {type:"x", edgeResistance:0.65, bounds:"#container-slider-diapos", throwProps:true});
+}
 
 /**** INIT ****/
 $(function(){
@@ -476,6 +538,7 @@ $(function(){
 
 	if(body.hasClass("emploi")){
 		initAnnonces();
+		//positionDiapos();
 	}
 
 	// Scroll init //
@@ -569,6 +632,10 @@ $(function(){
 			randomLogosPress();
 		}
 
+		if(body.hasClass("emploi")){
+			positionDiapos();
+		}
+
 		// Slider ref home //
 		if($('#sliderRef').length){
 			setToolTip($('#sliderRef'));
@@ -610,13 +677,13 @@ $(function(){
 
 		// Slider Wisembly vous invite //
 		if($('#slider-invite').length){
-			setSliderHeight($('#slider-invite'));
+			setSliderHeightLi($('#slider-invite'));
 			$('#slider-invite').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
 
 		// Slider Wisembly vous invite //
 		if($('#slider-on-parle-de-nous').length){
-			setSliderHeight($('#slider-on-parle-de-nous'));
+			setSliderHeightLi($('#slider-on-parle-de-nous'));
 			$('#slider-on-parle-de-nous').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
 	});

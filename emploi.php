@@ -21,6 +21,13 @@
 			<?php include('includes/header.html'); ?>
 
 			<div id='container'>
+				<section class='head headEmploi'>
+					<div id="bgHead"></div>
+					<div class='content main'>
+						<h1>Nous <span>rejoindre</span></h1>
+					</div>
+				</section>
+
 				<section class='wrapper content bgBlanc scrollHere main'>
 					<h2>Pourquoi vous aimerez travailler chez wisembly</h2>
 					<ul id="avantages-wisembly">
@@ -53,41 +60,48 @@
 					<p>Au coeur du <strong>quartier du Marais</strong> (4è arrondissement), nous sommes <strong>40 Wizers, d’une moyenne d’âge de 27 ans.</strong><br />
 Nous accordons une place fondamentale à la qualité de vie et de travail de nos équipes. Réunions d’équipe hebdomadaires, bière du vendredi, teambuilding, tickets-restaurant, mutuelle d’entreprise… Tous les avantages d’une grosse boîte au sein d’une startup parisienne en pleine croissance !</p>
 					
-					<div id="whr_embed_hook"></div>
+					
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
 				<section class='wrapper content bgBlanc scrollHere'>
 					<h2>Nos offres d’emploi</h2>
-					<!--<script src='https://www.workable.com/assets/embed.js' type='text/javascript'></script>
 					<script src='https://www.workable.com/assets/embed.js' type='text/javascript'></script>
 					<script type='text/javascript' charset='utf-8'>
 					whr(document).ready(function(){
 					whr_embed(13428, {detail: 'titles', base: 'departments', zoom: 'city'});
 
 					});
-					</script>-->
-					<button class='icon-down scrollNext'><span></span></button>
+					</script>
+					<div id="container-offres-emploi">
+						<div id="whr_embed_hook"></div>
+						<div id="no-offer">There is no offer for you? <a href="" class="lienVert">Apply freely.</a></div>
+					</div>
 				</section>
-				<section class='wrapper bgBlanc container-diapos'>
+				<section class='wrapper bgBlanc container-diapos scrollHere'>
 					<div id="container-slider-diapos">
 						<ul id="slider-diapos">
-							<li>
+							<li class="half">
 								<img src="img/emploi/diapos/diapo1.jpg">
-							</li><li>
+							</li><li class="half">
 								<img src="img/emploi/diapos/diapo2.jpg">
-							</li><li>
+							</li><li class="half">
 								<img src="img/emploi/diapos/diapo3.jpg">
 							</li><li>
 								<img src="img/emploi/diapos/diapo4.jpg">
-							</li><li>
+							</li><li class="half">
 								<img src="img/emploi/diapos/diapo5.jpg">
-							</li><li>
+							</li><li class="half">
 								<img src="img/emploi/diapos/diapo6.jpg">
+							</li><li>
+								<img src="img/emploi/diapos/diapo7.jpg">
+							</li><li>
+								<img src="img/emploi/diapos/diapo7.jpg">
 							</li><li>
 								<img src="img/emploi/diapos/diapo7.jpg">
 							</li>
 						</ul>
 					</div>
+					<button class='icon-down scrollNext'><span></span></button>
 				</section>
 				<section class='wrapper content bgBlanc scrollHere'>
 					<h2>Wisembly vous invite</h2>

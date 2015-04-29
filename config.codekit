@@ -306,6 +306,83 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/emploi\/diapos\/diapo1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 172697,
+		"inputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo1.jpg",
+		"outputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/emploi\/diapos\/diapo2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 92550,
+		"inputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo2.jpg",
+		"outputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/emploi\/diapos\/diapo3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 79425,
+		"inputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo3.jpg",
+		"outputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/emploi\/diapos\/diapo4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 216348,
+		"inputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo4.jpg",
+		"outputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/emploi\/diapos\/diapo5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 99095,
+		"inputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo5.jpg",
+		"outputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo5.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/emploi\/diapos\/diapo6.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 96981,
+		"inputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo6.jpg",
+		"outputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo6.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/emploi\/diapos\/diapo7.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 366707,
+		"inputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo7.jpg",
+		"outputAbbreviatedPath": "\/img\/emploi\/diapos\/diapo7.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/emploi\/forum-emploi.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -313,6 +390,17 @@
 		"initialSize": 14087,
 		"inputAbbreviatedPath": "\/img\/emploi\/forum-emploi.png",
 		"outputAbbreviatedPath": "\/img\/emploi\/forum-emploi.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/emploi\/le-figaro.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22669,
+		"inputAbbreviatedPath": "\/img\/emploi\/le-figaro.png",
+		"outputAbbreviatedPath": "\/img\/emploi\/le-figaro.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

@@ -2553,6 +2553,22 @@ footer {
   -ms-transform: rotate(7deg);
   transform: rotate(7deg);
 }
+.headEmploi #bgHead {
+  background-image: url(../layoutImg/head/headEmploi.jpg);
+  background-position: 50% 0;
+}
+.headEmploi h1 {
+  margin: 20vh 0;
+}
+.headEmploi:before {
+  right: 0;
+  bottom: -60px;
+  height: 170px;
+  background: rgba(70, 180, 137, 0.6);
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
+}
 /* Carousels */
 .carousel {
   position: relative;
@@ -3734,6 +3750,7 @@ ul#avantages-wisembly > li .zone-txt-avantages-wisembly {
   height: 504px;
   position: relative;
   overflow: hidden;
+  margin: 100px 0 40px 0;
 }
 .container-diapos #container-slider-diapos ul#slider-diapos {
   display: inline-block;
@@ -3746,6 +3763,9 @@ ul#avantages-wisembly > li .zone-txt-avantages-wisembly {
   top: 0;
   left: 0;
 }
+.js .container-diapos #container-slider-diapos ul#slider-diapos {
+  width: 4000px;
+}
 .container-diapos #container-slider-diapos ul#slider-diapos li {
   display: inline-block;
   vertical-align: top;
@@ -3753,11 +3773,42 @@ ul#avantages-wisembly > li .zone-txt-avantages-wisembly {
   padding: 0;
   border: 5px solid #ffffff;
   box-sizing: border-box;
+  height: 100%;
+}
+.container-diapos #container-slider-diapos ul#slider-diapos li.half {
+  height: 50%;
+}
+.js .container-diapos #container-slider-diapos ul#slider-diapos li {
+  position: absolute;
 }
 .container-diapos #container-slider-diapos ul#slider-diapos li:before {
   display: none;
 }
+.container-diapos #container-slider-diapos ul#slider-diapos li img {
+  height: 100%;
+}
 /* Workable */
+#container-offres-emploi {
+  display: block;
+  width: 900px;
+  height: auto;
+  box-sizing: border-box;
+  border: 1px solid #eceff0;
+  margin: 30px auto 0 auto;
+  padding: 35px 45px;
+}
+#no-offer {
+  margin: 40px 0 0 0;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.938em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #084d66;
+  text-align: left;
+}
 ul.whr-items {
   display: block!important;
 }
@@ -3770,23 +3821,26 @@ h2.whr-group {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   text-align: left;
-  margin: 0;
-  -webkit-column-break-after: avoid;
+  margin: 0 0 10px 0;
+  position: relative;
 }
 h2.whr-group:after {
-  display: none;
+  content: "";
+  display: block;
+  width: auto;
+  height: 1px;
+  background: #eceff0;
+  left: -45px;
+  right: -45px;
+  bottom: -20px;
+  margin: 10px auto 10px auto;
 }
 h2.whr-group a {
   color: #3a434c;
   border: none;
 }
-#whr_embed_hook {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-}
 ul.whr-items {
-  -webkit-column-break-before: avoid;
+  margin: 0 0 30px 0;
 }
 ul.whr-items li {
   padding: 0;
@@ -3796,12 +3850,20 @@ ul.whr-items li:before {
 }
 ul.whr-items li.whr-item {
   clear: both;
+  margin: 5px 0;
+}
+ul.whr-items li.whr-item:before,
+ul.whr-items li.whr-item:after {
+  content: " ";
+  display: table;
+}
+ul.whr-items li.whr-item:after {
+  clear: both;
 }
 ul.whr-items li.whr-item h3.whr-title {
   display: inline-block;
   vertical-align: top;
   width: 80%;
-  float: left;
   margin: 0;
   font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
   font-weight: 400;
@@ -3810,16 +3872,31 @@ ul.whr-items li.whr-item h3.whr-title {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  float: left;
 }
 ul.whr-items li.whr-item h3.whr-title a {
   color: #17698d;
   border: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+ul.whr-items li.whr-item h3.whr-title a:hover,
+ul.whr-items li.whr-item h3.whr-title a:focus {
+  outline: 0;
+  color: #06698d;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+ul.whr-items li.whr-item h3.whr-title a:active {
+  color: #04455c;
 }
 ul.whr-items li ul.whr-info {
   display: inline-block;
   vertical-align: top;
   width: 20%;
+  margin: 0;
   float: right;
+  text-align: right;
 }
 ul.whr-items li ul.whr-info li.whr-location {
   color: #084d66;

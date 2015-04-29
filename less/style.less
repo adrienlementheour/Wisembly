@@ -2080,6 +2080,23 @@ footer{
   }
 }
 
+.headEmploi{
+  #bgHead{
+    background-image: url(../layoutImg/head/headEmploi.jpg);
+    background-position: 50% 0;
+  }
+  h1{
+    margin: 20vh 0;
+  }
+  &:before{
+    right: 0;
+    bottom: -60px;
+    height: 170px;
+    background: fade(@vert, 60);
+    .transform(rotate(7deg));
+  }
+}
+
 /* Carousels */
 
 .carousel{
@@ -3258,6 +3275,7 @@ ul#avantages-wisembly{
     height: 504px;
     position: relative;
     overflow: hidden;
+    margin: 100px 0 40px 0;
     ul#slider-diapos{
       display: inline-block;
       vertical-align: top;
@@ -3268,6 +3286,9 @@ ul#avantages-wisembly{
       position: absolute;
       top: 0;
       left: 0;
+      .js &{
+        width: 4000px;
+      }
       li{
         display: inline-block;
         vertical-align: top;
@@ -3275,8 +3296,18 @@ ul#avantages-wisembly{
         padding: 0;
         border: 5px solid @blanc;
         .box-sizing(border-box);
+        height: 100%;
+        &.half{
+          height: 50%;
+        }
+        .js &{
+          position: absolute;
+        }
         &:before{
           display: none;
+        }
+        img{
+          height: 100%;
         }
       }
     }
@@ -3285,6 +3316,23 @@ ul#avantages-wisembly{
 
 /* Workable */
 
+#container-offres-emploi{
+  display: block;
+  width: 900px;
+  height: auto;
+  .box-sizing(border-box);
+  border: 1px solid #eceff0;
+  margin: 30px auto 0 auto;
+  padding: 35px 45px;
+}
+
+#no-offer{
+  margin: 40px 0 0 0;
+  .gothamMedium(0.938em);
+  color: #084d66;
+  text-align: left;
+}
+
 ul.whr-items{
   display: block!important;
 }
@@ -3292,10 +3340,18 @@ ul.whr-items{
 h2.whr-group{
   .gothamMedium(1.250em);
   text-align: left;
-  margin: 0;
-  -webkit-column-break-after: avoid;
+  margin: 0 0 10px 0;
+  position: relative;
   &:after{
-    display: none;
+    content: "";
+    display: block;
+    width: auto;
+    height: 1px;
+    background: #eceff0;
+    left: -45px;
+    right: -45px;
+    bottom: -20px;
+    margin: 10px auto 10px auto;
   }
   a{
     color: @txt;
@@ -3303,12 +3359,8 @@ h2.whr-group{
   }
 }
 
-#whr_embed_hook{
-  .column-count(2);
-}
-
 ul.whr-items{
-  -webkit-column-break-before: avoid;
+  margin: 0 0 30px 0;
   li{
     padding: 0;
     &:before{
@@ -3316,16 +3368,34 @@ ul.whr-items{
     }
     &.whr-item{
       clear: both;
+      margin: 5px 0;
+      &:before,
+      &:after {
+          content: " "; 
+          display: table; 
+      }
+      &:after {
+          clear: both;
+      }
       h3.whr-title{
         display: inline-block;
         vertical-align: top;
         width: 80%;
-        float: left;
         margin: 0;
         .gotham(0.938em);
+        float: left;
         a{
           color: @bleuH2;
           border: none;
+          .transition(.3s ease-in-out);
+          &:hover, &:focus{
+            outline: 0;
+            color: @bleu;
+            .transition(.3s ease-in-out);
+          }
+          &:active{
+            color: darken(@bleu, 10);
+          }
         }
       }
     }
@@ -3333,7 +3403,9 @@ ul.whr-items{
       display: inline-block;
       vertical-align: top;
       width: 20%;
+      margin: 0;
       float: right;
+      text-align: right;
       li{
         &.whr-location{
           color: #084d66;
