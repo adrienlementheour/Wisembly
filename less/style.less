@@ -130,7 +130,8 @@ a{
 }
 
 p{
-  margin: 2em 0;
+  margin: 2em auto;
+  max-width: 920px;
   strong, b{
     .gothamMedium(1em);
   }
@@ -433,8 +434,8 @@ button{
     position: relative;
   }
   &.simple{
-    padding-right: 90px;
-    padding-left: 90px;
+    padding-right: 120px;
+    padding-left: 120px;
   }
   &.paddingBottom{
     padding-bottom: 100px;
@@ -1647,7 +1648,7 @@ footer{
     bottom: -30px;
   }
   .no-mobile &{
-    margin: 0 0 280px;
+    margin: 0 0 220px;
   }
   li{
     padding: 0;
@@ -1931,6 +1932,11 @@ footer{
     background: @blanc;
     .transform(rotate(-3deg));
   }
+  .no-js &{
+    .content.main{
+      padding-top: 0;
+    }
+  }
 }
 
 #bgHead{
@@ -1952,6 +1958,9 @@ footer{
     background-size: auto;
     .lt-ie9 &{
       background-position: 57% 50%;
+    }
+    .no-js &{
+      background-position: 50% 355%;
     }
   }
   h1{
@@ -2034,7 +2043,7 @@ footer{
 .headTeam{
   #bgHead{
     background-image: url(../layoutImg/head/headTeam.jpg);
-    background-position: 30% 110px;
+    background-position: 50% 50%;
   }
   h1{
     margin: 25vh 0 30vh;
@@ -2077,6 +2086,22 @@ footer{
     height: 170px;
     background: fade(@vert, 60);
     .transform(rotate(7deg));
+  }
+}
+
+.headPresse{
+  #bgHead{
+    background: @grisBorder url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
+  }
+  .blocH1{
+    padding: 0 0 160px;
+  }
+  h1{
+    margin: 10vh 0 0;
+    text-align: left;
+  }
+  h1, .subHeading{
+    color: @txt;
   }
 }
 
@@ -2324,7 +2349,8 @@ footer{
     vertical-align: middle;
     .size(50px);
     background: #f3f4f6;
-    border-radius: 99px;
+    border-radius: 100%;
+    overflow: hidden;
   }
   &.jaune{
     a{
@@ -2487,12 +2513,15 @@ footer{
     width: 25%;
     display: inline-block;
     padding: 0;
+    .box-sizing(border-box);
     &:before{
       display: none;
     }
   }
   img{
     padding: 0 0 10px;
+    max-width: 100%;
+    height: auto;
   }
   + p{
     position: relative;
@@ -2832,8 +2861,10 @@ footer{
 }
 
 #sliderBooks{
-  height: 500px;
   &:extend(.couvSeule);
+  .js &{
+    height: 500px;
+  }
   ul, li{
     width: 400px;
   }
@@ -2845,6 +2876,11 @@ footer{
   }
   #next {
     right: 0;
+  }
+  li{
+    .no-js &{
+      margin: 0 0 30px;
+    }
   }
 }
 
@@ -2959,7 +2995,7 @@ footer{
   background: @grisSlides;
   height: 490px;
   width: 46%;
-  margin: 2% 2% 0;
+  margin: 4% 2% 0;
   strong{
     margin: 0 auto;
     max-width: 85%;
@@ -2974,6 +3010,11 @@ footer{
     }
     &:after{
       border-width: 0 0 50px 520px;
+    }
+    &:hover, &:focus{
+      .btnFalse{
+        opacity: 0;
+      }
     }
   }
   .cat{
@@ -2999,18 +3040,25 @@ footer{
   }
   .imgQuote{
     display: block;
-    margin: 0 auto 15px;
+    margin: 0 auto 10px;
   }
   .cite{
+    max-width: 100%;
+    margin: 0;
     strong{
-      margin: 0 auto 5px;
+      margin: 0 auto 3px;
     }
   }
   .btnFalse{
-    margin: 40px auto 20px;
     width: 155px;
     line-height: 40px;
     color: @blanc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 30%;
+    .transition(.3s ease-in-out);
   }
   &.jaune{
     .cat{
@@ -3129,8 +3177,10 @@ footer{
   }
 }
 
+/* Les chiffres */
+
 .containerChiffre{
-  margin: 0 75px 60px;
+  margin: 0 0 60px;
   display: inline-block;
   vertical-align: top;
   span{
@@ -3152,6 +3202,8 @@ footer{
   }
 }
 
+/* Carousels de logos */
+
 .gallery{
   li{
     width: 49.7%;
@@ -3166,6 +3218,25 @@ footer{
   img{
     max-width: 80%;
     height: auto;
+  }
+}
+
+/* Presse */
+
+.listePresse{
+  h3{
+    margin: 0;
+  }
+  .date{
+    display: block;
+    margin: 30px 0 0;
+    color: @bleu;
+  }
+  p{
+    margin: 12px 0;
+  }
+  .btnLight{
+    margin: 35px auto 0;
   }
 }
 
@@ -3272,6 +3343,7 @@ ul.whr-items{
   .content{
     &.simple{
       padding-right: 20px;
+      padding-left: 20px;
     }
   }
 

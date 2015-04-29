@@ -32,6 +32,26 @@
       width: 33.333%;
     }
   }
+
+  .temoignage{
+    width: 100%;
+    > div{
+      width: 85%;
+    }
+  }
+
+  .gallery{
+    .navSlider{
+      top: auto;
+      bottom: -30px;
+    }
+    #prev{
+      left: 40%;
+    }
+    #next{
+      right: 40%;
+    }
+  }
 } 
 
 @media (max-width: 1160px){
@@ -75,6 +95,12 @@
     margin: 0 9% 0 0;
   }
 
+  .headPresse{
+    .blocH1{
+      margin: 0 4% 0 0;
+    }
+  }
+
   .detailHome{
     padding: 0;
   }
@@ -113,10 +139,6 @@
     .small{
       width: 50%;
     }
-  }
-
-  .temoignage{
-    width: 100%;
   }
 }
 
@@ -357,6 +379,14 @@
 
   .contactFooter{
     padding: 0 0 90px;
+    p{
+      text-align: center;
+    }
+    form{
+      button{
+        margin: 15px auto;
+      }
+    }
   }
 
   .formContact{
@@ -366,7 +396,19 @@
   }
 
   #dragIn{
-    left: 36px;
+    left: 12px;
+    right: 0;
+    margin: auto;
+  }
+
+  .buttonsTeam{
+    text-align: center;
+  }
+
+  #demandeContact{
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 
   .head{
@@ -392,12 +434,6 @@
     }
   }
 
-  .headTeam{
-    #bgHead{
-      background-position: 50% 0;
-    }
-  }
-
   #sliderRef{
     ul{
       width: 560px;
@@ -410,7 +446,7 @@
     right: 50px;
   }
   
-  .ref{
+  #sliderRef .ref, .ref{
     width: 50%;
   }
 
@@ -435,12 +471,19 @@
 
   .etude{
     width: 100%;
-    margin: 2% 0 0;
+    margin: 4% 0 0;
+    max-width: 600px;
   }
 
   .gallery{
     li{
       width: 100%;
+    }
+  }
+
+  .temoignage{
+    > div{
+      width: 70%;
     }
   }
 }
@@ -463,16 +506,28 @@
 
   .menuFooter{
     margin: 70px 0 0;
-    p{
+    p, ul{
       text-align: center;
     }
-    ul{
-      display: none;
+    > ul{
+      > li{
+        margin: 0;
+        width: 33%;
+      }
     }
   }
 
   .blocH1{
     margin: 0 5% 0 0;
+  }
+
+  .headPresse{
+    .blocH1{
+      margin: 0;
+    }
+    #bgHead{
+      background-position: 3% 100%;
+    }
   }
 
   .detailHome{
@@ -489,11 +544,7 @@
   .logosPresse{
     padding: 0;
     li{
-      .box-sizing(border-box);
       padding: 0 20px;
-    }
-    img{
-      max-width: 100%;
     }
   }
 
@@ -710,6 +761,27 @@
     &:extend(.headLivres);
   }
 
+  .headPresse{
+    background: @grisBorder;
+    .blocH1{
+      padding: 0;
+      width: 100%;
+      max-width: 370px;
+      margin: 0 auto;
+    }
+    #bgHead{
+      background-size: 300px !important;
+      opacity: .5;
+      background-color: transparent;
+    }
+    .content.main{
+      background: none !important;
+      &:after{
+        display: none !important;
+      }
+    }
+  }
+
   .subHeading{
     br:first-child{
       display: none;
@@ -733,13 +805,19 @@
     }
   }
 
-  .ref{
+  #sliderRef .ref, .ref{
     width: 100%;
   }
 
   .avantages{
     li{
       padding: 105px 0 0;
+    }
+  }
+
+  .temoignage{
+    > div{
+      width: 62%;
     }
   }
 }
@@ -766,6 +844,15 @@
       &:before{
         width: 300px;
         margin: 0 0 0 -150px;
+      }
+    }
+  }
+
+  .menuFooter{
+    > ul{
+      > li{
+        width: 100%;
+        margin: 35px 0 0;
       }
     }
   }
@@ -807,7 +894,9 @@
   }
 
   #sliderBooks{
-    height: 390px;
+    .js &{
+      height: 390px;
+    }
     ul, li{
       width: 100%;
     }
@@ -839,9 +928,6 @@
     .wrapper-contentinfo{
       padding: 0 0 20px;
     }
-    button{
-      margin: 15px auto;
-    }
   }
   
   .buttonsTeam{
@@ -852,10 +938,6 @@
     min-height: 110px;
     .h2{
       margin: 0 0 30px;
-      text-align: center;
-    }
-    p{
-      text-align: center;
     }
     form{
       &.visible{
@@ -870,8 +952,6 @@
 
   #demandeContact{
     margin-top: 0;
-    left: 0;
-    right: 0;
   }
 
   .none450{
@@ -933,12 +1013,18 @@
     bottom: -50px;
   }
 
-  #prev{
+  .gallery #prev, #prev{
     left: 100px;
   }
 
-  #next{
+  .gallery #next, #next{
     right: 100px;
+  }
+
+  .temoignage{
+    > div{
+      width: 100%;
+    }
   }
 }
 
@@ -988,8 +1074,8 @@
 
   .etude{
     .lien{
-      top: 33%;
-      height: 67%;
+      top: 36%;
+      height: 64%;
     }
     .hover{
       padding: 30px;
