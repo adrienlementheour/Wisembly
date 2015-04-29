@@ -710,6 +710,11 @@ $(function(){
 	    if( $('#map').length ){
 	    	setMapSize();
 	    }
+
+	    // Hauteur slider témoignages //
+	    if($('#sliderTemoignages').length){
+	    	setSliderHeight($('#sliderTemoignages'));
+	    }
 	});
 
 });

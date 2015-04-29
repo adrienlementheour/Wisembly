@@ -444,7 +444,8 @@ a:active {
   border-color: rgba(56, 143, 109, 0.3);
 }
 p {
-  margin: 2em 0;
+  margin: 2em auto;
+  max-width: 920px;
 }
 p strong,
 p b {
@@ -833,8 +834,8 @@ button:focus {
   position: relative;
 }
 .content.simple {
-  padding-right: 90px;
-  padding-left: 90px;
+  padding-right: 120px;
+  padding-left: 120px;
 }
 .content.paddingBottom {
   padding-bottom: 100px;
@@ -982,7 +983,6 @@ header.menuVisible #triangleMenu {
   -ms-transform: rotate(16deg);
   transform: rotate(16deg);
   -webkit-transition: 0.4s right 0.3s ease-in-out, 0.4s -webkit-transform 0.3s ease-in-out;
-  transition: 0.4s right 0.3s ease-in-out,0.4s -webkit-transform 0.3s ease-in-out,0.4s -moz-transform 0.3s ease-in-out,0.4s -o-transform 0.3s ease-in-out,0.4s transform 0.3s ease-in-out;
 }
 .topHeader {
   height: 40px;
@@ -2081,7 +2081,7 @@ footer {
   bottom: -30px;
 }
 .no-mobile .navFooter {
-  margin: 0 0 280px;
+  margin: 0 0 220px;
 }
 .navFooter li {
   padding: 0;
@@ -2412,6 +2412,9 @@ footer {
   -ms-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
+.no-js .head .content.main {
+  padding-top: 0;
+}
 #bgHead {
   display: block;
   width: 100%;
@@ -2430,6 +2433,9 @@ footer {
 }
 .lt-ie9 .headHome #bgHead {
   background-position: 57% 50%;
+}
+.no-js .headHome #bgHead {
+  background-position: 50% 355%;
 }
 .headHome h1 {
   font-size: 2.6em;
@@ -2508,7 +2514,7 @@ footer {
 }
 .headTeam #bgHead {
   background-image: url(../layoutImg/head/headTeam.jpg);
-  background-position: 30% 110px;
+  background-position: 50% 50%;
 }
 .headTeam h1 {
   margin: 25vh 0 30vh;
@@ -2553,6 +2559,7 @@ footer {
   -ms-transform: rotate(7deg);
   transform: rotate(7deg);
 }
+<<<<<<< HEAD
 .headEmploi #bgHead {
   background-image: url(../layoutImg/head/headEmploi.jpg);
   background-position: 50% 0;
@@ -2568,6 +2575,21 @@ footer {
   -webkit-transform: rotate(7deg);
   -ms-transform: rotate(7deg);
   transform: rotate(7deg);
+=======
+.headPresse #bgHead {
+  background: #ebeeef url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
+}
+.headPresse .blocH1 {
+  padding: 0 0 160px;
+}
+.headPresse h1 {
+  margin: 10vh 0 0;
+  text-align: left;
+}
+.headPresse h1,
+.headPresse .subHeading {
+  color: #3a434c;
+>>>>>>> origin/master
 }
 /* Carousels */
 .carousel {
@@ -2850,7 +2872,8 @@ footer {
   width: 50px;
   height: 50px;
   background: #f3f4f6;
-  border-radius: 99px;
+  border-radius: 100%;
+  overflow: hidden;
 }
 .ref.jaune a:before {
   border-color: transparent transparent transparent #f1bc33;
@@ -2983,12 +3006,15 @@ footer {
   width: 25%;
   display: inline-block;
   padding: 0;
+  box-sizing: border-box;
 }
 .logosPresse li:before {
   display: none;
 }
 .logosPresse img {
   padding: 0 0 10px;
+  max-width: 100%;
+  height: auto;
 }
 .logosPresse + p {
   position: relative;
@@ -3342,7 +3368,7 @@ footer {
 .containerLivre fieldset.small {
   width: 50%;
 }
-#sliderBooks {
+.js #sliderBooks {
   height: 500px;
 }
 #sliderBooks ul,
@@ -3357,6 +3383,9 @@ footer {
 }
 #sliderBooks #next {
   right: 0;
+}
+.no-js #sliderBooks li {
+  margin: 0 0 30px;
 }
 .landing .rs {
   float: right;
@@ -3450,7 +3479,7 @@ footer {
   background: #f4f5f5;
   height: 490px;
   width: 46%;
-  margin: 2% 2% 0;
+  margin: 4% 2% 0;
 }
 .etude strong {
   margin: 0 auto;
@@ -3467,6 +3496,10 @@ footer {
 }
 .etude .lien:after {
   border-width: 0 0 50px 520px;
+}
+.etude .lien:hover .btnFalse,
+.etude .lien:focus .btnFalse {
+  opacity: 0;
 }
 .etude .cat {
   width: 240px;
@@ -3491,16 +3524,26 @@ footer {
 .etude .imgQuote,
 .temoignage .imgQuote {
   display: block;
-  margin: 0 auto 15px;
+  margin: 0 auto 10px;
+}
+.etude .cite {
+  max-width: 100%;
+  margin: 0;
 }
 .etude .cite strong {
-  margin: 0 auto 5px;
+  margin: 0 auto 3px;
 }
 .etude .btnFalse {
-  margin: 40px auto 20px;
   width: 155px;
   line-height: 40px;
   color: #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 30%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .etude.jaune .cat {
   color: #f1bc33;
@@ -3612,8 +3655,9 @@ footer {
 .temoignage .cite strong {
   display: block;
 }
+/* Les chiffres */
 .containerChiffre {
-  margin: 0 75px 60px;
+  margin: 0 0 60px;
   display: inline-block;
   vertical-align: top;
 }
@@ -3634,6 +3678,7 @@ footer {
   background: #06698d;
   margin: 20px auto 0;
 }
+/* Carousels de logos */
 .gallery li {
   width: 49.7%;
   display: inline-block;
@@ -3647,6 +3692,21 @@ footer {
 .gallery img {
   max-width: 80%;
   height: auto;
+}
+/* Presse */
+.listePresse h3 {
+  margin: 0;
+}
+.listePresse .date {
+  display: block;
+  margin: 30px 0 0;
+  color: #06698d;
+}
+.listePresse p {
+  margin: 12px 0;
+}
+.listePresse .btnLight {
+  margin: 35px auto 0;
 }
 /* Emploi */
 ul#avantages-wisembly {
@@ -3914,6 +3974,7 @@ ul.whr-items li ul.whr-info li.whr-date {
 /* Special IE 8 */
 .lt-ie9 .content.simple {
   padding-right: 20px;
+  padding-left: 20px;
 }
 .lt-ie9 .menu > li > a {
   padding: 0 15px;
@@ -4000,6 +4061,22 @@ ul.whr-items li ul.whr-info li.whr-date {
   #sliderRef .ref {
     width: 33.333%;
   }
+  .temoignage {
+    width: 100%;
+  }
+  .temoignage > div {
+    width: 85%;
+  }
+  .gallery .navSlider {
+    top: auto;
+    bottom: -30px;
+  }
+  .gallery #prev {
+    left: 40%;
+  }
+  .gallery #next {
+    right: 40%;
+  }
 }
 @media (max-width: 1160px) {
   blockquote {
@@ -4027,6 +4104,9 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .blocH1 {
     margin: 0 9% 0 0;
+  }
+  .headPresse .blocH1 {
+    margin: 0 4% 0 0;
   }
   .detailHome {
     padding: 0;
@@ -4254,13 +4334,29 @@ ul.whr-items li ul.whr-info li.whr-date {
   .contactFooter {
     padding: 0 0 90px;
   }
+  .contactFooter p {
+    text-align: center;
+  }
+  .contactFooter form button {
+    margin: 15px auto;
+  }
   .formContact {
     width: 100%;
     padding: 0;
     min-height: 290px;
   }
   #dragIn {
-    left: 36px;
+    left: 12px;
+    right: 0;
+    margin: auto;
+  }
+  .buttonsTeam {
+    text-align: center;
+  }
+  #demandeContact {
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .head #bgHead {
     top: 0;
@@ -4277,9 +4373,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   .no-mobile .headLivreLanding #bgHead {
     top: 75px;
   }
-  .headTeam #bgHead {
-    background-position: 50% 0;
-  }
   #sliderRef ul {
     width: 560px;
   }
@@ -4289,6 +4382,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   #next {
     right: 50px;
   }
+  #sliderRef .ref,
   .ref {
     width: 50%;
   }
@@ -4304,10 +4398,14 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .etude {
     width: 100%;
-    margin: 2% 0 0;
+    margin: 4% 0 0;
+    max-width: 600px;
   }
   .gallery li {
     width: 100%;
+  }
+  .temoignage > div {
+    width: 70%;
   }
 }
 @media (max-width: 979px) {
@@ -4324,14 +4422,22 @@ ul.whr-items li ul.whr-info li.whr-date {
   .menuFooter {
     margin: 70px 0 0;
   }
-  .menuFooter p {
+  .menuFooter p,
+  .menuFooter ul {
     text-align: center;
   }
-  .menuFooter ul {
-    display: none;
+  .menuFooter > ul > li {
+    margin: 0;
+    width: 33%;
   }
   .blocH1 {
     margin: 0 5% 0 0;
+  }
+  .headPresse .blocH1 {
+    margin: 0;
+  }
+  .headPresse #bgHead {
+    background-position: 3% 100%;
   }
   .detailHome li {
     width: 100%;
@@ -4345,11 +4451,7 @@ ul.whr-items li ul.whr-info li.whr-date {
     padding: 0;
   }
   .logosPresse li {
-    box-sizing: border-box;
     padding: 0 20px;
-  }
-  .logosPresse img {
-    max-width: 100%;
   }
   .couvSeule,
   .containerLivre .form,
@@ -4541,6 +4643,26 @@ ul.whr-items li ul.whr-info li.whr-date {
   .no-mobile .headLivreLanding #bgHead {
     top: 0;
   }
+  .headPresse {
+    background: #ebeeef;
+  }
+  .headPresse .blocH1 {
+    padding: 0;
+    width: 100%;
+    max-width: 370px;
+    margin: 0 auto;
+  }
+  .headPresse #bgHead {
+    background-size: 300px !important;
+    opacity: .5;
+    background-color: transparent;
+  }
+  .headPresse .content.main {
+    background: none !important;
+  }
+  .headPresse .content.main:after {
+    display: none !important;
+  }
   .subHeading br:first-child {
     display: none;
   }
@@ -4556,11 +4678,15 @@ ul.whr-items li ul.whr-info li.whr-date {
   #sliderRef ul {
     width: 280px;
   }
+  #sliderRef .ref,
   .ref {
     width: 100%;
   }
   .avantages li {
     padding: 105px 0 0;
+  }
+  .temoignage > div {
+    width: 62%;
   }
 }
 @media (max-width: 520px) {
@@ -4579,6 +4705,10 @@ ul.whr-items li ul.whr-info li.whr-date {
   .rsFooter ul:before {
     width: 300px;
     margin: 0 0 0 -150px;
+  }
+  .menuFooter > ul > li {
+    width: 100%;
+    margin: 35px 0 0;
   }
   .scrollNext span {
     width: 300px;
@@ -4601,7 +4731,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   .containerLivre .form {
     margin: 70px 0 0;
   }
-  #sliderBooks {
+  .js #sliderBooks {
     height: 390px;
   }
   #sliderBooks ul,
@@ -4630,9 +4760,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   .contactFooter .wrapper-contentinfo {
     padding: 0 0 20px;
   }
-  .contactFooter button {
-    margin: 15px auto;
-  }
   .buttonsTeam {
     display: none;
   }
@@ -4641,10 +4768,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .formContact .h2 {
     margin: 0 0 30px;
-    text-align: center;
-  }
-  .formContact p {
-    text-align: center;
   }
   .formContact form.visible {
     height: 453px;
@@ -4654,8 +4777,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   #demandeContact {
     margin-top: 0;
-    left: 0;
-    right: 0;
   }
   .none450 {
     display: none;
@@ -4701,11 +4822,16 @@ ul.whr-items li ul.whr-info li.whr-date {
     top: auto;
     bottom: -50px;
   }
+  .gallery #prev,
   #prev {
     left: 100px;
   }
+  .gallery #next,
   #next {
     right: 100px;
+  }
+  .temoignage > div {
+    width: 100%;
   }
 }
 @media (max-width: 400px) {
@@ -4741,8 +4867,8 @@ ul.whr-items li ul.whr-info li.whr-date {
     margin-right: 0;
   }
   .etude .lien {
-    top: 33%;
-    height: 67%;
+    top: 36%;
+    height: 64%;
   }
   .etude .hover {
     padding: 30px;
