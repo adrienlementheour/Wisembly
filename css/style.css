@@ -533,6 +533,11 @@ blockquote:before {
 blockquote p {
   margin: 0;
 }
+iframe,
+object,
+embed {
+  max-width: 100%;
+}
 fieldset {
   width: 48.5%;
   display: inline-block;
@@ -2461,20 +2466,11 @@ footer {
 .headRdv h1 {
   margin: 20vh 0 0;
 }
-.headRdv:before,
-.headRdv:after {
-  bottom: -25px;
-  height: 105px;
-}
 .headRdv:before {
+  right: 0;
+  bottom: -85px;
+  height: 170px;
   background: rgba(70, 180, 137, 0.6);
-  -webkit-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-}
-.headRdv:after {
-  right: -1%;
-  background: #ffffff;
   -webkit-transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
@@ -2590,6 +2586,84 @@ footer {
 .headPresse .subHeading {
   color: #3a434c;
 >>>>>>> origin/master
+}
+.headEtude .quoteHead {
+  margin: 7vh 0 15vh;
+}
+.headEtude blockquote {
+  border: 0;
+  color: #ffffff;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: 300;
+  display: inline-block;
+  width: 70%;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0 60px 0 70px;
+  text-align: right;
+  line-height: 1.3em;
+}
+.headEtude blockquote b {
+  display: block;
+  margin: 25px 0 0;
+  font-size: .7em;
+}
+.headEtude blockquote b span {
+  opacity: 0.85;
+}
+.headEtude blockquote:before {
+  left: 95px;
+  top: -5px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.headEtude .logo {
+  display: inline-block;
+  width: 30%;
+  vertical-align: middle;
+}
+.headEtude .roundImg {
+  width: 155px;
+  height: 155px;
+  background: #ffffff;
+  border-radius: 100%;
+  overflow: hidden;
+  text-align: center;
+  line-height: 155px;
+}
+.headEtude:before {
+  right: 0;
+  bottom: -105px;
+  height: 170px;
+  -webkit-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  background: rgba(255, 255, 255, 0.4);
+  z-index: 1;
+}
+.headEtude:after {
+  z-index: 2;
+}
+.headEtude.bleu {
+  background: #06698d;
+}
+.headEtude.vert {
+  background: #46b489;
+}
+.headEtude.jaune {
+  background: #f1bc33;
+}
+.headEtude.rouge {
+  background: #e25c5b;
+}
+.headEtude.rose {
+  background: #f7886c;
 }
 /* Carousels */
 .carousel {
@@ -3025,7 +3099,7 @@ footer {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  margin: 60px 0 0;
+  margin: 60px auto 0;
 }
 .logosPresse + p em {
   font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
@@ -3188,7 +3262,8 @@ footer {
 .rdv h2 {
   margin: 0;
 }
-.rdv .date {
+.rdv .date,
+.dateEtude {
   font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -3655,6 +3730,74 @@ footer {
 .temoignage .cite strong {
   display: block;
 }
+.dateEtude {
+  padding: 0;
+  margin: 20px 0 0;
+  text-transform: capitalize;
+}
+.detailEtude {
+  margin: 80px 0;
+}
+.detailEtude > li {
+  display: inline-block;
+  vertical-align: top;
+  width: 33%;
+  padding: 0;
+  text-align: center;
+}
+.detailEtude > li:before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 97px;
+  height: 96px;
+  margin: 0 auto;
+  z-index: -1;
+}
+.detailEtude > li li {
+  padding: 10px;
+  text-align: left;
+}
+.detailEtude h3 {
+  display: inline-block;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1em;
+  padding: 5px 12px;
+  margin: -10px 0 30px;
+}
+.detailEtude + h3 {
+  font-weight: 300;
+  font-size: 1.4em;
+}
+.enjeux:before {
+  background: url(../layoutImg/client/enjeux.png) no-repeat;
+}
+.enjeux h3 {
+  background: #46b489;
+}
+.solutions:before {
+  background: url(../layoutImg/client/solutions.png) no-repeat;
+}
+.solutions h3 {
+  background: #06698d;
+}
+.benefices:before {
+  background: url(../layoutImg/client/benefices.png) no-repeat;
+}
+.benefices h3 {
+  background: #e25c5b;
+}
+.listeChiffres {
+  text-align: center;
+}
+.listeChiffres li {
+  padding: 0 60px;
+}
+.listeChiffres li:before {
+  display: none;
+}
 /* Les chiffres */
 .containerChiffre {
   margin: 0 0 60px;
@@ -3677,6 +3820,9 @@ footer {
   display: block;
   background: #06698d;
   margin: 20px auto 0;
+}
+.containerChiffre .legend {
+  font-weight: 500;
 }
 /* Carousels de logos */
 .gallery li {
@@ -3971,6 +4117,42 @@ ul.whr-items li ul.whr-info li.whr-date {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+/* 404 */
+.error404 {
+  background: #000;
+}
+.error404 h1 {
+  color: #ffffff;
+  font-family: 'edmond', sans-serif;
+  font-weight: normal;
+  font-size: 4em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 1em 0 .5em;
+}
+.error404 h1 span {
+  display: block;
+  font-family: 'edmondBold', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.error404 .wrapper p {
+  color: #ffffff;
+  font-size: 1.2em;
+}
+.error404 .wrapper a {
+  border-color: rgba(241, 188, 51, 0.3);
+  color: #f1bc33;
+}
+.error404 .wrapper a:hover,
+.error404 .wrapper a:focus {
+  color: #b2840c;
+  border-color: rgba(178, 132, 12, 0.3);
+}
 /* Special IE 8 */
 .lt-ie9 .content.simple {
   padding-right: 20px;
@@ -4135,9 +4317,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .containerLivre .small {
     width: 50%;
-  }
-  .temoignage {
-    width: 100%;
   }
 }
 @media (max-width: 1040px) {
@@ -4407,6 +4586,15 @@ ul.whr-items li ul.whr-info li.whr-date {
   .temoignage > div {
     width: 70%;
   }
+  .detailEtude > li {
+    width: 100%;
+    margin: 50px auto 0;
+    max-width: 450px;
+    display: block;
+  }
+  .detailEtude > li:first-child {
+    margin-top: 0;
+  }
 }
 @media (max-width: 979px) {
   .navFooter .content > ul,
@@ -4645,6 +4833,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .headPresse {
     background: #ebeeef;
+    padding: 0 0 20% !important;
   }
   .headPresse .blocH1 {
     padding: 0;
@@ -4814,6 +5003,9 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .headLivreLanding #bgHead {
     height: 200px !important;
+  }
+  .headPresse {
+    padding: 0 0 30% !important;
   }
   #sliderRef + .btnLight {
     margin: 80px auto 0;

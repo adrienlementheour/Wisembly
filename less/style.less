@@ -187,6 +187,10 @@ blockquote{
   }
 }
 
+iframe, object, embed{
+  max-width: 100%;
+}
+
 fieldset{
   width: 48.5%;
   display: inline-block;
@@ -1988,17 +1992,11 @@ footer{
   h1{
     margin: 20vh 0 0;
   }
-  &:before, &:after{
-    bottom: -25px;
-    height: 105px;
-  }
   &:before{
+    right: 0;
+    bottom: -85px;
+    height: 170px;
     background: fade(@vert, 60);
-    .transform(rotate(-3deg));
-  }
-  &:after{
-    right: -1%;
-    background: @blanc;
     .transform(rotate(3deg));
   }
 }
@@ -2119,6 +2117,78 @@ footer{
   h1, .subHeading{
     color: @txt;
 >>>>>>> origin/master
+  }
+}
+
+.headEtude{
+  .quoteHead{
+    margin: 7vh 0 15vh;
+  }
+  blockquote{
+    border: 0;
+    color: @blanc;
+    .gotham(1.4em);
+    font-weight: 300;
+    display: inline-block;
+    width: 70%;
+    .box-sizing(border-box);
+    vertical-align: middle;
+    margin: 0;
+    padding: 0 60px 0 70px;
+    text-align: right;
+    line-height: 1.3em;
+    b{
+      display: block;
+      margin: 25px 0 0;
+      font-size: .7em;
+      span{
+        opacity: 0.85;
+      }
+    }
+    &:before{
+      left: 95px;
+      top: -5px;
+      color: fade(@blanc, 40);
+    }
+  }
+  .logo{
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+  .roundImg{
+    .size(155px);
+    background: @blanc;
+    border-radius: 100%;
+    overflow: hidden;
+    text-align: center;
+    line-height: 155px;
+  }
+  &:before{
+    right: 0;
+    bottom: -105px;
+    height: 170px;
+    .transform(rotate(3deg));
+    background: fade(@blanc, 40);
+    z-index: 1;
+  }
+  &:after{
+    z-index: 2;
+  }
+  &.bleu{
+    background: @bleu;
+  }
+  &.vert{
+    background: @vert;
+  }
+  &.jaune{
+    background: @jaune;
+  }
+  &.rouge{
+    background: @rouge;
+  }
+  &.rose{
+    background: @rose;
   }
 }
 
@@ -2543,7 +2613,7 @@ footer{
   + p{
     position: relative;
     .gothamMedium(1em);
-    margin: 60px 0 0;
+    margin: 60px auto 0;
     em{
       .gothamMediumIt(1em);
     }
@@ -3194,6 +3264,84 @@ footer{
   }
 }
 
+.dateEtude{
+  &:extend(.rdv .date);
+  padding: 0;
+  margin: 20px 0 0;
+  text-transform: capitalize;
+}
+
+.detailEtude{
+  margin: 80px 0;
+  > li{
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+    padding: 0;
+    text-align: center;
+    &:before{
+      content: '';
+      display: block;
+      position: relative;
+      width: 97px;
+      height: 96px;
+      margin: 0 auto;
+      z-index: -1;
+    }
+    li{
+      padding: 10px;
+      text-align: left;
+    }
+  }
+  h3{
+    display: inline-block;
+    color: @blanc;
+    text-transform: uppercase;
+    font-size: 1em;
+    line-height: 1em;
+    padding: 5px 12px;
+    margin: -10px 0 30px;
+  }
+  + h3{
+    font-weight: 300;
+    font-size: 1.4em;
+  }
+}
+.enjeux{
+  &:before{
+    background: url(../layoutImg/client/enjeux.png) no-repeat;
+  }
+  h3{
+    background: @vert;
+  }
+}
+.solutions{
+  &:before{
+    background: url(../layoutImg/client/solutions.png) no-repeat;
+  }
+  h3{
+    background: @bleu;
+  }
+}
+.benefices{
+  &:before{
+    background: url(../layoutImg/client/benefices.png) no-repeat;
+  }
+  h3{
+    background: @rouge;
+  }
+}
+
+.listeChiffres{
+  text-align: center;
+  li{
+    padding: 0 60px;
+    &:before{
+      display: none;
+    }
+  }
+}
+
 /* Les chiffres */
 
 .containerChiffre{
@@ -3216,6 +3364,9 @@ footer{
     display: block;
     background: @bleu;
     margin: 20px auto 0;
+  }
+  .legend{
+    font-weight: 500;
   }
 }
 
@@ -3489,6 +3640,37 @@ ul.whr-items{
     }
   }
 }
+
+
+/* 404 */
+
+.error404{
+  background: #000;
+  h1{
+    color: @blanc;
+    .edmond(4em);
+    margin: 1em 0 .5em;
+    span{
+      display: block;
+      .edmondBold(1em);
+    }
+  }
+  .wrapper{
+    p{
+      color: @blanc;
+      font-size: 1.2em;
+    }
+    a{
+      border-color: fade(@jaune, 30);
+      color: @jaune;
+      &:hover, &:focus{
+        color: darken(@jaune, 20);
+        border-color: darken(fade(@jaune, 30), 20);
+      }
+    }
+  }
+}
+
 
 /* Special IE 8 */
 
