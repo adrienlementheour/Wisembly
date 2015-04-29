@@ -607,6 +607,18 @@ $(function(){
 			setSliderHeight($('#sliderLogosAccueillis'));
 			$('#sliderLogosAccueillis').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
+
+		// Slider Wisembly vous invite //
+		if($('#slider-invite').length){
+			setSliderHeight($('#slider-invite'));
+			$('#slider-invite').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
+
+		// Slider Wisembly vous invite //
+		if($('#slider-on-parle-de-nous').length){
+			setSliderHeight($('#slider-on-parle-de-nous'));
+			$('#slider-on-parle-de-nous').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
 	});
 
     $(window).resize(function(){
