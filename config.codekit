@@ -198,6 +198,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/emploi.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/emploi.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/favicon-16x16.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -293,6 +302,17 @@
 		"initialSize": 6123,
 		"inputAbbreviatedPath": "\/img\/echos.jpg",
 		"outputAbbreviatedPath": "\/img\/echos.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/emploi\/forum-emploi.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14087,
+		"inputAbbreviatedPath": "\/img\/emploi\/forum-emploi.png",
+		"outputAbbreviatedPath": "\/img\/emploi\/forum-emploi.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -878,6 +898,94 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/layoutImg\/emploi\/20-compet-jour.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5174,
+		"inputAbbreviatedPath": "\/layoutImg\/emploi\/20-compet-jour.png",
+		"outputAbbreviatedPath": "\/layoutImg\/emploi\/20-compet-jour.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/emploi\/au-coeur-de-paris.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3349,
+		"inputAbbreviatedPath": "\/layoutImg\/emploi\/au-coeur-de-paris.png",
+		"outputAbbreviatedPath": "\/layoutImg\/emploi\/au-coeur-de-paris.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/emploi\/biere-vendredi.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2616,
+		"inputAbbreviatedPath": "\/layoutImg\/emploi\/biere-vendredi.png",
+		"outputAbbreviatedPath": "\/layoutImg\/emploi\/biere-vendredi.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/emploi\/fifa.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5224,
+		"inputAbbreviatedPath": "\/layoutImg\/emploi\/fifa.png",
+		"outputAbbreviatedPath": "\/layoutImg\/emploi\/fifa.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/emploi\/mutuelle-sante.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 516,
+		"inputAbbreviatedPath": "\/layoutImg\/emploi\/mutuelle-sante.png",
+		"outputAbbreviatedPath": "\/layoutImg\/emploi\/mutuelle-sante.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/emploi\/tickets-restaurant.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3452,
+		"inputAbbreviatedPath": "\/layoutImg\/emploi\/tickets-restaurant.png",
+		"outputAbbreviatedPath": "\/layoutImg\/emploi\/tickets-restaurant.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/emploi\/we-like-a-challenge.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5645,
+		"inputAbbreviatedPath": "\/layoutImg\/emploi\/we-like-a-challenge.png",
+		"outputAbbreviatedPath": "\/layoutImg\/emploi\/we-like-a-challenge.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/emploi\/welcome-pack.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3254,
+		"inputAbbreviatedPath": "\/layoutImg\/emploi\/welcome-pack.png",
+		"outputAbbreviatedPath": "\/layoutImg\/emploi\/welcome-pack.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/layoutImg\/error.png": {
 		"fileType": 32768,
