@@ -466,7 +466,7 @@ function initAnnonces(){
 
 /* Positionnement des images diapos dans la page Emploi */
 function positionDiapos(){
-	$("ul#slider-diapos li").each(function(index){
+	$("#slider-diapos li").each(function(index){
 		if($(this).hasClass("half")){
 			// Si l'image a une demi-hauteur
 			if(precWidth!==0){
@@ -508,8 +508,8 @@ function positionDiapos(){
 			hasDemiBefore=false;
 		}
 	});
-	TweenMax.set($("ul#slider-diapos"), {width: avancementLeft+"px"});
-	Draggable.create("ul#slider-diapos", {type:"x", edgeResistance:0.65, bounds:"#container-slider-diapos", throwProps:true});
+	TweenMax.set($("#slider-diapos"), {width: avancementLeft+"px"});
+	Draggable.create("#slider-diapos", {type:"x", edgeResistance:0.65, bounds:"#container-slider-diapos", throwProps:true});
 }
 
 /**** INIT ****/
@@ -533,7 +533,7 @@ $(function(){
 		setSubMenu();
 	}
 
-	if(body.hasClass("emploi")){
+	if(body.hasClass("page-template-emploi")){
 		initAnnonces();
 		//positionDiapos();
 	}
@@ -584,7 +584,7 @@ $(function(){
 			htmlBody.animate({scrollTop: $('#contactezNous').offset().top}, 800, 'easeInOutCubic');
 		}	
 	});
-	$('.blocH1').find('.btnFull').on('click', function(e){
+	$('.home .blocH1').find('.btnFull').on('click', function(e){
 		e.preventDefault();
 		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
 		if(!htmlTag.hasClass('lt-ie9')){ 
@@ -634,7 +634,7 @@ $(function(){
 			randomLogosPress();
 		}
 
-		if(body.hasClass("emploi")){
+		if(body.hasClass("page-template-emploi")){
 			positionDiapos();
 		}
 
