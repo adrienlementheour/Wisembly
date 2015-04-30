@@ -988,6 +988,7 @@ header.menuVisible #triangleMenu {
   -ms-transform: rotate(16deg);
   transform: rotate(16deg);
   -webkit-transition: 0.4s right 0.3s ease-in-out, 0.4s -webkit-transform 0.3s ease-in-out;
+  transition: 0.4s right 0.3s ease-in-out,0.4s -webkit-transform 0.3s ease-in-out,0.4s -moz-transform 0.3s ease-in-out,0.4s -o-transform 0.3s ease-in-out,0.4s transform 0.3s ease-in-out;
 }
 .topHeader {
   height: 40px;
@@ -2555,7 +2556,6 @@ footer {
   -ms-transform: rotate(7deg);
   transform: rotate(7deg);
 }
-<<<<<<< HEAD
 .headEmploi #bgHead {
   background-image: url(../layoutImg/head/headEmploi.jpg);
   background-position: 50% 0;
@@ -2571,7 +2571,7 @@ footer {
   -webkit-transform: rotate(7deg);
   -ms-transform: rotate(7deg);
   transform: rotate(7deg);
-=======
+}
 .headPresse #bgHead {
   background: #ebeeef url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
 }
@@ -2585,7 +2585,6 @@ footer {
 .headPresse h1,
 .headPresse .subHeading {
   color: #3a434c;
->>>>>>> origin/master
 }
 .headEtude .quoteHead {
   margin: 7vh 0 15vh;
