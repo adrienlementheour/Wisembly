@@ -243,7 +243,8 @@ input{
   }
 }
 textarea{
-  height: 130px;
+  height: 60px;
+  max-height: 740px;
   resize: none;
 }
 
@@ -791,7 +792,7 @@ header{
   }
   .btnFull{
     float: right;
-    width: 185px;
+    width: 170px;
     margin: 24px 0;
   }
   .rs{
@@ -1450,7 +1451,7 @@ footer{
   }
   .no-js &{
     opacity: 1;
-    top: -590px;
+    top: -530px;
   }
   &:after{
     .fontIcon();
@@ -1499,16 +1500,19 @@ footer{
     text-transform: capitalize;
   }
   form{
-    height: 0;
+    height: auto;
+    min-height: 0;
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
     .no-js &, .lt-ie9 &{
-      height: auto;
+      min-height: 380px;
       opacity: 1;
       margin: 40px 0 0;
     }
     &.visible{
-      height: 380px;
+      min-height: 310px;
+      max-height: 1000px;
       opacity: 1;
       .transition(.4s cubic-bezier(0.645, 0.045, 0.355, 1));
     }
@@ -1965,7 +1969,7 @@ footer{
       background-position: 57% 50%;
     }
     .no-js &{
-      background-position: 50% 355%;
+      background-position: 50% 255%;
     }
   }
   h1{
@@ -2020,7 +2024,7 @@ footer{
   &:before{
     left: 5%;
     width: 55%;
-    bottom: -100px;
+    bottom: -150px;
     height: 200px;
     background: fade(@bleu, 60);
     .transform(rotate(15deg));
@@ -2069,6 +2073,7 @@ footer{
   }
   .subHeading{
     text-align: center;
+    margin: 25px auto;
   }
   .filtres{
     a{
@@ -2108,6 +2113,9 @@ footer{
 .headPresse{
   #bgHead{
     background: @grisBorder url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
+    .no-js &{
+      background-position: 25% 20%;
+    }
   }
   .blocH1{
     padding: 0 0 160px;

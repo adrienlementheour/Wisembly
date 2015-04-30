@@ -596,7 +596,8 @@ input + button {
   margin-left: 3px;
 }
 textarea {
-  height: 130px;
+  height: 60px;
+  max-height: 740px;
   resize: none;
 }
 .select {
@@ -988,7 +989,6 @@ header.menuVisible #triangleMenu {
   -ms-transform: rotate(16deg);
   transform: rotate(16deg);
   -webkit-transition: 0.4s right 0.3s ease-in-out, 0.4s -webkit-transform 0.3s ease-in-out;
-  transition: 0.4s right 0.3s ease-in-out,0.4s -webkit-transform 0.3s ease-in-out,0.4s -moz-transform 0.3s ease-in-out,0.4s -o-transform 0.3s ease-in-out,0.4s transform 0.3s ease-in-out;
 }
 .topHeader {
   height: 40px;
@@ -1221,7 +1221,7 @@ header.menuVisible #triangleMenu {
 }
 .bottomHeader .btnFull {
   float: right;
-  width: 185px;
+  width: 170px;
   margin: 24px 0;
 }
 .bottomHeader .rs a {
@@ -1872,7 +1872,7 @@ footer {
 }
 .no-js #bulle {
   opacity: 1;
-  top: -590px;
+  top: -530px;
 }
 #bulle:after {
   font-family: 'wisembly';
@@ -1927,18 +1927,21 @@ footer {
   text-transform: capitalize;
 }
 .formContact form {
-  height: 0;
+  height: auto;
+  min-height: 0;
+  max-height: 0;
   opacity: 0;
   overflow: hidden;
 }
 .no-js .formContact form,
 .lt-ie9 .formContact form {
-  height: auto;
+  min-height: 380px;
   opacity: 1;
   margin: 40px 0 0;
 }
 .formContact form.visible {
-  height: 380px;
+  min-height: 310px;
+  max-height: 1000px;
   opacity: 1;
   -webkit-transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -2445,7 +2448,7 @@ footer {
   background-position: 57% 50%;
 }
 .no-js .headHome #bgHead {
-  background-position: 50% 355%;
+  background-position: 50% 255%;
 }
 .headHome h1 {
   font-size: 2.6em;
@@ -2497,7 +2500,7 @@ footer {
 .headLivres:before {
   left: 5%;
   width: 55%;
-  bottom: -100px;
+  bottom: -150px;
   height: 200px;
   background: rgba(6, 105, 141, 0.6);
   -webkit-transform: rotate(15deg);
@@ -2541,6 +2544,7 @@ footer {
 }
 .headClients .subHeading {
   text-align: center;
+  margin: 25px auto;
 }
 .headClients .filtres a {
   width: 240px;
@@ -2578,6 +2582,9 @@ footer {
 }
 .headPresse #bgHead {
   background: #ebeeef url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
+}
+.no-js .headPresse #bgHead {
+  background-position: 25% 20%;
 }
 .headPresse .blocH1 {
   padding: 0 0 160px;
@@ -4626,11 +4633,11 @@ ul.whr-items li ul.whr-info li.whr-date {
   .head #bgHead {
     top: 0;
   }
-  .no-js .head #bgHead {
-    background-position: 66% 295%;
-  }
   .no-mobile .head #bgHead {
     top: 100px;
+  }
+  .no-js .headHome #bgHead {
+    background-position: 66% 295%;
   }
   .headLivreLanding .content {
     padding-top: 0;
@@ -5045,7 +5052,7 @@ ul.whr-items li ul.whr-info li.whr-date {
     margin: 0 0 30px;
   }
   .formContact form.visible {
-    height: 453px;
+    min-height: 380px;
   }
   fieldset.small {
     width: 48.5%;
@@ -5169,8 +5176,18 @@ ul.whr-items li ul.whr-info li.whr-date {
 /* @group Responsive vertical */
 @media (max-height: 850px) and (min-width: 768px) {
   .headHome h1,
-  .headRdv h1 {
+  .headRdv h1,
+  .headClients h1 {
     margin: 10vh 0 0;
+  }
+  .headTeam h1 {
+    margin: 15vh 0 30vh;
+  }
+  .headLivres h1 {
+    margin: 5vh 0 22vh;
+  }
+  .headPresse .blocH1 {
+    padding: 0 0 120px;
   }
 }
 @media (max-height: 750px) and (min-width: 768px) {
@@ -5199,8 +5216,11 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
 }
 @media (max-height: 800px) and (min-width: 768px) {
-  .filtres {
+  .headRdv .filtres {
     margin: 20px 0 180px;
+  }
+  .headRdv .filtres {
+    margin: 20px 0 130px;
   }
 }
 /* @end */

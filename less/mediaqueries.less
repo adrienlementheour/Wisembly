@@ -414,12 +414,15 @@
   .head{
     #bgHead{
       top: 0;
-      .no-js &{
-        background-position: 66% 295%;
-      }
       .no-mobile &{
         top: 100px;
       }
+    }
+  }
+
+  .no-js .headHome{
+    #bgHead{
+      background-position: 66% 295%;
     }
   }
 
@@ -954,7 +957,7 @@
     }
     form{
       &.visible{
-        height: 453px;
+        min-height: 380px;
       }
     }
   }
@@ -1120,9 +1123,27 @@
 /* @group Responsive vertical */
 
 @media (max-height: 850px) and (min-width: 768px){
-  .headHome, .headRdv{
+  .headHome, .headRdv, .headClients{
     h1{
       margin: 10vh 0 0;
+    }
+  }
+
+  .headTeam{
+    h1{
+      margin: 15vh 0 30vh;
+    }
+  }
+
+  .headLivres{
+    h1{
+      margin: 5vh 0 22vh;
+    }
+  }
+
+  .headPresse{
+    .blocH1{
+      padding: 0 0 120px;
     }
   }
 }
@@ -1161,8 +1182,16 @@
 }
 
 @media (max-height: 800px) and (min-width: 768px){
-  .filtres {
-    margin: 20px 0 180px;
+  .headRdv{
+    .filtres {
+      margin: 20px 0 180px;
+    }
+  }
+  
+  .headRdv{
+    .filtres {
+      margin: 20px 0 130px;
+    }
   }
 }
 
