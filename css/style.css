@@ -2431,6 +2431,10 @@ footer {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-size: cover;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .headHome #bgHead {
   background-image: url(../layoutImg/head/headHome.jpg);
@@ -3991,6 +3995,89 @@ ul#avantages-wisembly > li .zone-txt-avantages-wisembly {
 }
 .container-diapos #container-slider-diapos ul#slider-diapos li img {
   height: 100%;
+}
+.bloc-contact {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 60px 0 0 0;
+  padding: 0;
+}
+.bloc-contact .zone-photo-bloc-contact {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  height: auto;
+  text-align: right;
+  box-sizing: border-box;
+  padding: 0 20px 0 0;
+}
+.bloc-contact .zone-txt-bloc-contact {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  height: auto;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 0 0 20px;
+}
+.bloc-contact .zone-txt-bloc-contact h3 {
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.25em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #3a434c;
+  margin: 0 0 15px 0;
+}
+.bloc-contact .zone-txt-bloc-contact .nom-contact {
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.938em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #3a434c;
+  margin: 0 0 5px 0;
+}
+.bloc-contact .zone-txt-bloc-contact .mail-contact {
+  margin: 0 0 15px 0;
+}
+.bloc-contact .zone-txt-bloc-contact ul.social-contact li {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 5px 0 0;
+}
+.bloc-contact .zone-txt-bloc-contact ul.social-contact li:before {
+  display: none;
+}
+.bloc-contact .zone-txt-bloc-contact ul.social-contact li a {
+  border: 0;
+  font-size: 30px;
+}
+.bloc-contact .zone-txt-bloc-contact ul.social-contact li a.icon-tw {
+  color: #828282;
+}
+.bloc-contact .zone-txt-bloc-contact ul.social-contact li a.icon-tw:hover {
+  color: #258aae;
+}
+.bloc-contact .zone-txt-bloc-contact ul.social-contact li a.icon-in {
+  color: #4f4f4f;
+}
+.bloc-contact .zone-txt-bloc-contact ul.social-contact li a.icon-in:hover {
+  color: #258aae;
+}
+.bloc-contact .zone-txt-bloc-contact ul.social-contact li a span {
+  display: block;
+  text-indent: -999em;
 }
 /* Workable */
 #container-offres-emploi {

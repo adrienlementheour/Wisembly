@@ -74,7 +74,20 @@ Nous accordons une place fondamentale à la qualité de vie et de travail de nos
 					</script>
 					<div id="container-offres-emploi">
 						<div id="whr_embed_hook"></div>
-						<div id="no-offer">There is no offer for you? <a href="" class="lienVert">Apply freely.</a></div>
+						<!--<div id="no-offer">There is no offer for you? <a href="" class="lienVert">Apply freely.</a></div>-->
+					</div>
+					<div class="bloc-contact">
+						<div class="zone-photo-bloc-contact">
+							<img src="img/emploi/johanne.jpg">
+						</div><div class="zone-txt-bloc-contact">
+							<h3>Votre contact</h3>
+							<div class="nom-contact">Johanne Goulet</div>
+							<div class="mail-contact"><a href="" class="lienVert">johanne@wisembly.com</a></div>
+							<ul class="social-contact">
+								<li><a href="#" class="icon-tw" target="_blank"><span>Johanne Goulet sur Twitter</span></a></li>
+								<li><a href="#" class="icon-in" target="_blank"><span>Johanne Goulet sur LinkedIn</span></a></li>
+							</ul>
+						</div>
 					</div>
 				</section>
 				<section class='wrapper bgBlanc container-diapos scrollHere'>

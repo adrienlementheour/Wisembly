@@ -1953,6 +1953,7 @@ footer{
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-size: cover;
+  .backface-visibility(hidden);
 }
 
 .headHome{
@@ -3530,6 +3531,83 @@ ul#avantages-wisembly{
         }
         img{
           height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.bloc-contact{
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 60px 0 0 0;
+  padding: 0;
+  .zone-photo-bloc-contact{
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    height: auto;
+    text-align: right;
+    .box-sizing(border-box);
+    padding: 0 20px 0 0;
+    img{
+
+    }
+  }
+  .zone-txt-bloc-contact{
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    height: auto;
+    text-align: left;
+    .box-sizing(border-box);
+    padding: 0 0 0 20px;
+    h3{
+      .gothamMedium(1.250em);
+      color: @txt;
+      margin: 0 0 15px 0;
+    }
+    .nom-contact{
+      .gothamMedium(0.938em);
+      color: @txt;
+      margin: 0 0 5px 0;
+    }
+    .mail-contact{
+      margin: 0 0 15px 0;
+    }
+    ul.social-contact{
+      li{
+        display: inline-block;
+        vertical-align: bottom;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        padding: 0;
+        margin: 0 5px 0 0;
+        &:before{
+          display: none;
+        }
+        a{
+          border: 0;
+          font-size: 30px;
+          &.icon-tw{
+            color: #828282;
+            &:hover{
+              color: #258aae;
+            }
+          }
+          &.icon-in{
+            color: #4f4f4f;
+            &:hover{
+              color: #258aae;
+            }
+          }
+          span{
+            display: block;
+            text-indent: -999em;
+          }
         }
       }
     }
