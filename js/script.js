@@ -526,8 +526,10 @@ function sliderMission(){
 		/*var indexActiveMission = $("ul#slider-visu-mission li.active").index();
 		TweenMax.set($("ul#slider-visu-mission li.active"), {className:"-=active"});
 		TweenMax.set($("ul#slider-visu-mission li").eq(indexActiveMission+1), {className:"+=active"});*/
-		$("ul#slider-visu-mission li").append($("ul#slider-visu-mission li").first());
-		TweenMax.to($("ul#slider-visu-mission li"), 0.1, {"margin-left": "-"+$("ul#slider-visu-mission li").width()+"px"});
+		console.log(5-$("ul#slider-visu-mission li").length);
+		$("ul#slider-visu-mission li").eq($("ul#slider-visu-mission li").length-5).clone().appendTo("ul#slider-visu-mission");
+		TweenMax.set($("ul#slider-visu-mission"), {width: $("ul#slider-visu-mission li").length*202+"px"});
+		TweenMax.to($("ul#slider-visu-mission"), 0.1, {"margin-left": (5-($("ul#slider-visu-mission li").length))*202-505+"px"});
 	});
 }
 

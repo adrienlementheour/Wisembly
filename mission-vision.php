@@ -31,34 +31,36 @@
 				<section class='wrapper content bgBlanc scrollHere'>
 					<h2 class='noMarginTop'>Notre mission</h2>
 					<p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo,  au travers de <strong>5 valeurs fondamentales</strong> :</p>
-					<ul id="slider-visu-mission">
-						<li id="visu-work-hard-play-hard">
-							<a href="#">
-								<img class="img-couleur-slider-visu-mission" src="img/mission-vision/work-hard-play-hard@2x.png">
-								<img class="img-nb-slider-visu-mission" src="img/mission-vision/work-hard-play-hard-nb@2x.png">
-							</a>
-						</li><li id="visu-clients-not-customers">
-							<a href="#">
-								<img class="img-couleur-slider-visu-mission" src="img/mission-vision/clients-not-customers@2x.png">
-								<img class="img-nb-slider-visu-mission" src="img/mission-vision/clients-not-customers-nb@2x.png">
-							</a>
-						</li><li id="visu-open-the-way">
-							<a href="#">
-								<img class="img-couleur-slider-visu-mission" src="img/mission-vision/open-the-way@2x.png">
-								<img class="img-nb-slider-visu-mission" src="img/mission-vision/open-the-way-nb@2x.png">
-							</a>
-						</li><li id="visu-think-big-get-big">
-							<a href="#">
-								<img class="img-couleur-slider-visu-mission" src="img/mission-vision/think-big-get-big@2x.png">
-								<img class="img-nb-slider-visu-mission" src="img/mission-vision/think-big-get-big-nb@2x.png">
-							</a>
-						</li><li id="visu-we-are-wisembly">
-							<a href="#">
-								<img class="img-couleur-slider-visu-mission" src="img/mission-vision/we-are-wisembly@2x.png">
-								<img class="img-nb-slider-visu-mission" src="img/mission-vision/we-are-wisembly-nb@2x.png">
-							</a>
-						</li>
-					</ul>
+					<div id="wrapper-slider-visu-mission">
+						<ul id="slider-visu-mission">
+							<li id="visu-work-hard-play-hard">
+								<a href="#">
+									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/work-hard-play-hard@2x.png">
+									<img class="img-nb-slider-visu-mission" src="img/mission-vision/work-hard-play-hard-nb@2x.png">
+								</a>
+							</li><li id="visu-clients-not-customers">
+								<a href="#">
+									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/clients-not-customers@2x.png">
+									<img class="img-nb-slider-visu-mission" src="img/mission-vision/clients-not-customers-nb@2x.png">
+								</a>
+							</li><li id="visu-open-the-way">
+								<a href="#">
+									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/open-the-way@2x.png">
+									<img class="img-nb-slider-visu-mission" src="img/mission-vision/open-the-way-nb@2x.png">
+								</a>
+							</li><li id="visu-think-big-get-big">
+								<a href="#">
+									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/think-big-get-big@2x.png">
+									<img class="img-nb-slider-visu-mission" src="img/mission-vision/think-big-get-big-nb@2x.png">
+								</a>
+							</li><li id="visu-we-are-wisembly">
+								<a href="#">
+									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/we-are-wisembly@2x.png">
+									<img class="img-nb-slider-visu-mission" src="img/mission-vision/we-are-wisembly-nb@2x.png">
+								</a>
+							</li>
+						</ul>
+					</div>
 					<!--<ul id="slider-txt-mission">
 						<li id="txt-work-hard-play-hard">
 							<h3>Work hard play hard</h3>
