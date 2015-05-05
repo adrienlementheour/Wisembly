@@ -2411,7 +2411,7 @@ footer {
   width: 150%;
 }
 .head:after {
-  bottom: -25px;
+  bottom: -26px;
   height: 105px;
   background: #fff;
   -webkit-transform: rotate(-3deg);
