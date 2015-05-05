@@ -19,8 +19,12 @@ get_header(); ?>
 				<div id="bg-blanc"></div>
 
 				<section class='wrapper content bgBlanc scrollHere'>
+<<<<<<< HEAD
 					<h2 class='noMarginTop'><?php the_field('emploiTitreContent') ?></h2>
 					
+=======
+					<h2 class='noMarginTop'>Créez un compte de démonstration en 3 clics</h2>
+>>>>>>> origin/master
 					<ul id="avantages-wisembly">
 						<?php if(get_field('emploiPicto1')){ ?><!--
 							--><li>
