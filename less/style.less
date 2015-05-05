@@ -101,6 +101,15 @@ h3, .h3{
 .noMarginTop{
   margin-top: 0;
 }
+.marginTop {
+  margin-top: 2em;
+}
+.noMarginBottom {
+  margin-bottom: 0;
+ }
+.marginBottom {
+  margin-bottom: 2em;
+}
 
 a{
   border-bottom: 1px solid fade(@bleuLien, 30);
@@ -361,6 +370,9 @@ button{
     border-color: @vert;
     outline: 0;
   }
+  &.smaller {
+    width:150px;
+  }
 }
 .btnFull{
   color: #fff;
@@ -473,6 +485,9 @@ button{
   }
   &.smallPadBot{
     padding-bottom: 65px;
+  }
+  &.marginTop {
+    padding-top: 2em;
   }
 }
 

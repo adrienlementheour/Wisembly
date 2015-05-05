@@ -406,6 +406,15 @@ h3,
 .noMarginTop {
   margin-top: 0;
 }
+.marginTop {
+  margin-top: 2em;
+}
+.noMarginBottom {
+  margin-bottom: 0;
+}
+.marginBottom {
+  margin-bottom: 2em;
+}
 a {
   border-bottom: 1px solid rgba(40, 155, 196, 0.3);
   color: #289bc4;
@@ -751,6 +760,11 @@ button:focus {
   border-color: #46b489;
   outline: 0;
 }
+.btnFull.smaller,
+.btnLight.smaller,
+.btnBlanc.smaller {
+  width: 150px;
+}
 .btnFull {
   color: #fff;
   border-color: #46b489;
@@ -872,6 +886,9 @@ button:focus {
 }
 .content.smallPadBot {
   padding-bottom: 65px;
+}
+.content.marginTop {
+  padding-top: 2em;
 }
 #bg-blanc {
   width: 100%;
