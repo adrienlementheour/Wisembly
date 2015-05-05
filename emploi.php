@@ -97,7 +97,7 @@ get_header(); ?>
 					<div id="container-slider-diapos">
 						<ul id="slider-diapos">
 							<?php 
-								$loop = new WP_Query( array('post_type' => 'photo-recrutement', 'posts_per_page' => -1) ); 
+								$loop = new WP_Query( array('post_type' => 'photo-recrutement', 'posts_per_page' => -1, 'order' => 'ASC') ); 
 								if( $loop->have_posts() ) : while( $loop->have_posts() ) : $loop->the_post(); 
 							?><!--
 								--><li class='<?php the_field('sizePic'); ?>'><?php the_post_thumbnail('recrutement-thumb'); ?></li><!--
@@ -128,15 +128,14 @@ get_header(); ?>
 								<?php endwhile; ?>
 							</ul>
 						</div>
-
-						<button class='icon-down scrollNext'><span></span></button>
-					</section>
 				<?php endif; wp_reset_query(); ?>
 
 				<?php 
 					$loop = new WP_Query( array('post_type' => 'rh-presse', 'posts_per_page' => -1) ); 
 					if( $loop->have_posts() ) :
 				?>
+					<button class='icon-down scrollNext'><span></span></button>
+					</section>
 					<section class='wrapper content bgBlanc scrollHere'>
 						<h2><?php the_field('emploiTitreParle'); ?></h2>
 						<div id="slider-on-parle-de-nous" class="slider-emploi carousel">
@@ -151,6 +150,8 @@ get_header(); ?>
 								<?php endwhile; ?>
 							</ul>
 						</div>
+					</section>
+				<?php else : ?>
 					</section>
 				<?php endif; wp_reset_query(); ?>
 

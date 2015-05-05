@@ -2401,6 +2401,8 @@ footer {
   overflow: hidden;
   position: relative;
   width: 100%;
+  z-index: 0;
+  display: block;
 }
 .head h1 {
   font-family: 'edmond', sans-serif;
@@ -4001,9 +4003,11 @@ ul#avantages-wisembly .zone-txt-avantages-wisembly {
   border: 5px solid #fff;
   box-sizing: border-box;
   height: 100%;
+  width: auto;
 }
 #container-slider-diapos #slider-diapos li.half {
   height: 50%;
+  width: auto;
 }
 .js #container-slider-diapos #slider-diapos li {
   position: absolute;
@@ -4013,6 +4017,7 @@ ul#avantages-wisembly .zone-txt-avantages-wisembly {
 }
 #container-slider-diapos #slider-diapos li img {
   height: 100%;
+  width: auto;
 }
 .bloc-contact {
   margin: 60px 0 0 0;

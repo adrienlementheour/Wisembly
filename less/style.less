@@ -1938,6 +1938,8 @@ footer{
   overflow: hidden;
   position: relative;
   width: 100%;
+  z-index: 0;
+  display: block;
   h1{
     .edmond(3.95em);
     color: #fff;
@@ -3550,8 +3552,10 @@ ul#avantages-wisembly{
       border: 5px solid #fff;
       .box-sizing(border-box);
       height: 100%;
+      width: auto;
       &.half{
         height: 50%;
+        width: auto;
       }
       .js &{
         position: absolute;
@@ -3561,6 +3565,7 @@ ul#avantages-wisembly{
       }
       img{
         height: 100%;
+        width: auto;
       }
     }
   }
