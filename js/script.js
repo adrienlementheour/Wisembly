@@ -13,7 +13,8 @@ var myScroll,
 	avancementLeftFuture = 0,
 	precWidth = 0,
 	hasDemiBefore = false,
-	avancementLeftBottom = 0;
+	avancementLeftBottom = 0,
+	sliderSmall = false;
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -538,7 +539,11 @@ $(function(){
 
 	if(body.hasClass("emploi")){
 		initAnnonces();
-		//positionDiapos();
+		if($(window).width()>767){
+			sliderSmall=false;
+		}else{
+			sliderSmall=true;
+		}
 	}
 
 	// Scroll init //
@@ -714,6 +719,27 @@ $(function(){
 	    // Hauteur slider témoignages //
 	    if($('#sliderTemoignages').length){
 	    	setSliderHeight($('#sliderTemoignages'));
+	    }
+
+	    if(body.hasClass("emploi")){
+	    	initAnnonces();
+	    	if(($(window).width()>767)&&(sliderSmall)){
+	    		sliderSmall=false;
+	    		avancementLeft = 0;
+	    		avancementLeftFuture = 0;
+	    		precWidth = 0;
+	    		hasDemiBefore = false;
+	    		avancementLeftBottom = 0;
+	    		positionDiapos();
+	    	}else if(($(window).width()<767)&&(!sliderSmall)){
+	    		sliderSmall=true;
+	    		avancementLeft = 0;
+	    		avancementLeftFuture = 0;
+	    		precWidth = 0;
+	    		hasDemiBefore = false;
+	    		avancementLeftBottom = 0;
+	    		positionDiapos();
+	    	}
 	    }
 	});
 

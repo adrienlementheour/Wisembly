@@ -3863,7 +3863,7 @@ ul#avantages-wisembly {
   width: 100%;
   height: auto;
   list-style-type: none;
-  margin: 30px 0 20px 0;
+  margin: 30px auto 20px auto;
   padding: 0;
   text-align: center;
 }
@@ -3903,6 +3903,9 @@ ul#avantages-wisembly > li .zone-txt-avantages-wisembly {
 }
 .slider-emploi ul li {
   width: 100%;
+}
+.slider-emploi ul li img {
+  max-width: 100%;
 }
 #slider-invite ul li h3 {
   font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
@@ -4326,6 +4329,17 @@ ul.whr-items li ul.whr-info li.whr-date {
   #next {
     right: 30px;
   }
+  #slider-invite #prev,
+  #slider-on-parle-de-nous #prev {
+    left: 0;
+  }
+  #slider-invite #next,
+  #slider-on-parle-de-nous #next {
+    right: 0;
+  }
+  #slider-on-parle-de-nous .navSlider {
+    top: 40%;
+  }
   #sliderRef .ref {
     width: 33.333%;
   }
@@ -4403,6 +4417,9 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .containerLivre .small {
     width: 50%;
+  }
+  ul#avantages-wisembly {
+    width: 700px;
   }
 }
 @media (max-width: 1040px) {
@@ -4647,6 +4664,14 @@ ul.whr-items li ul.whr-info li.whr-date {
   #next {
     right: 50px;
   }
+  #slider-invite #prev,
+  #slider-on-parle-de-nous #prev {
+    left: -30px;
+  }
+  #slider-invite #next,
+  #slider-on-parle-de-nous #next {
+    right: -30px;
+  }
   #sliderRef .ref,
   .ref {
     width: 50%;
@@ -4742,6 +4767,12 @@ ul.whr-items li ul.whr-info li.whr-date {
   .containerLivre form {
     max-width: 500px;
     margin: 0 auto;
+  }
+  #container-offres-emploi {
+    width: 90%;
+  }
+  .slider-emploi {
+    width: 80%;
   }
 }
 @media (max-width: 767px) {
@@ -4963,6 +4994,31 @@ ul.whr-items li ul.whr-info li.whr-date {
   .temoignage > div {
     width: 62%;
   }
+  ul#avantages-wisembly {
+    width: 90%;
+  }
+  #container-offres-emploi {
+    padding: 30px;
+  }
+  ul.whr-items li.whr-item {
+    margin: 10px 0;
+  }
+  ul.whr-items li.whr-item h3.whr-title {
+    display: block;
+    width: 100%;
+    float: none;
+  }
+  ul.whr-items li.whr-item ul.whr-info {
+    display: block;
+    width: 100%;
+    margin: 0;
+    float: none;
+    text-align: left;
+    font-size: 0.8em;
+  }
+  .container-diapos #container-slider-diapos {
+    height: 300px;
+  }
 }
 @media (max-width: 520px) {
   header .rs {
@@ -4994,6 +5050,17 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   #next {
     right: 20px;
+  }
+  #slider-invite #prev,
+  #slider-on-parle-de-nous #prev {
+    left: 20px;
+  }
+  #slider-invite #next,
+  #slider-on-parle-de-nous #next {
+    right: 20px;
+  }
+  #slider-on-parle-de-nous .navSlider {
+    top: auto;
   }
   .logosPresse li {
     width: 100%;
@@ -5029,6 +5096,19 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .etude {
     height: 520px;
+  }
+  .bloc-contact .zone-photo-bloc-contact {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .bloc-contact .zone-txt-bloc-contact {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .bloc-contact ul.social-contact {
+    text-align: center;
   }
 }
 @media (max-width: 450px) {
@@ -5110,6 +5190,31 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .temoignage > div {
     width: 100%;
+  }
+  ul#avantages-wisembly {
+    width: 100%;
+  }
+  ul#avantages-wisembly > li {
+    margin: 10px 0;
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 33.3333333%;
+  }
+  ul#avantages-wisembly > li .zone-img-avantages-wisembly img {
+    max-width: 100%;
+  }
+  ul#avantages-wisembly > li .zone-txt-avantages-wisembly {
+    font-size: 0.8em;
+  }
+  ul#avantages-wisembly > li .zone-txt-avantages-wisembly br {
+    display: none;
+  }
+  #container-offres-emploi {
+    width: 100%;
+    padding: 20px;
+  }
+  .slider-emploi ul li .btnLight {
+    max-width: 95%;
   }
 }
 @media (max-width: 400px) {
