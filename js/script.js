@@ -484,12 +484,13 @@ function positionDiapos(){
 					// Si la nouvelle image est plus large que celle du haut
 					avancementLeft+=avancementLeftFuture;
 					TweenMax.set($(this), {top: "0", left: avancementLeft+"px"});
-					avancementLeftFuture=0;
+					avancementLeftFuture=$(this).outerWidth();
 					hasDemiBefore=false;
 					avancementLeftBottom=0;
 				}
 			}else{
 				// Si l'image d'avant n'est pas en haut
+				avancementLeft+=avancementLeftFuture;
 				TweenMax.set($(this), {top: "0px", left: avancementLeft+"px"});
 				precWidth = $(this).outerWidth();
 				avancementLeftFuture = $(this).outerWidth();
@@ -509,7 +510,7 @@ function positionDiapos(){
 			hasDemiBefore=false;
 		}
 	});
-	TweenMax.set($("#slider-diapos"), {width: avancementLeft+"px"});
+	TweenMax.set($("#slider-diapos"), {width: avancementLeft+avancementLeftFuture+"px"});
 	Draggable.create("#slider-diapos", {type:"x", edgeResistance:0.65, bounds:"#container-slider-diapos", throwProps:true});
 }
 

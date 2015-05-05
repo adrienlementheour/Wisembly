@@ -988,6 +988,7 @@ header.menuVisible #triangleMenu {
   -ms-transform: rotate(16deg);
   transform: rotate(16deg);
   -webkit-transition: 0.4s right 0.3s ease-in-out, 0.4s -webkit-transform 0.3s ease-in-out;
+  transition: 0.4s right 0.3s ease-in-out,0.4s -webkit-transform 0.3s ease-in-out,0.4s -moz-transform 0.3s ease-in-out,0.4s -o-transform 0.3s ease-in-out,0.4s transform 0.3s ease-in-out;
 }
 .topHeader {
   height: 40px;
@@ -3847,7 +3848,6 @@ footer {
   margin: 35px auto 0;
 }
 /* Emploi */
-<<<<<<< HEAD
 ul#avantages-wisembly {
   display: block;
   width: 100%;
@@ -3855,27 +3855,23 @@ ul#avantages-wisembly {
   list-style-type: none;
   margin: 30px auto 20px auto;
   padding: 0;
-=======
-#avantages-wisembly {
-  margin: 30px 0 20px;
->>>>>>> origin/master
   text-align: center;
 }
-#avantages-wisembly li {
+ul#avantages-wisembly li {
   display: inline-block;
   vertical-align: top;
   margin: 10px 20px;
   padding: 0;
 }
-#avantages-wisembly li:before {
+ul#avantages-wisembly li:before {
   display: none;
 }
-#avantages-wisembly .zone-img-avantages-wisembly {
+ul#avantages-wisembly .zone-img-avantages-wisembly {
   height: 105px;
   margin: 0 0 20px;
   line-height: 105px;
 }
-#avantages-wisembly .zone-txt-avantages-wisembly {
+ul#avantages-wisembly .zone-txt-avantages-wisembly {
   max-width: 95px;
   font-weight: 500;
   font-size: .938em;
@@ -3884,26 +3880,13 @@ ul#avantages-wisembly {
   width: 782px;
   margin: 0 auto;
 }
-.slider-emploi li {
+.slider-emploi ul li {
   width: 100%;
 }
-<<<<<<< HEAD
 .slider-emploi ul li img {
   max-width: 100%;
 }
-#slider-invite ul li h3 {
-  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 1.375em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  color: #17698d;
-  text-transform: uppercase;
-=======
 #slider-invite h3 {
->>>>>>> origin/master
   margin: 25px 0 20px 0;
 }
 #slider-invite h3:after {
@@ -5001,9 +4984,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   #slider-on-parle-de-nous #next {
     right: 20px;
   }
-  #slider-on-parle-de-nous .navSlider {
-    top: auto;
-  }
   .logosPresse li {
     width: 100%;
     padding: 0;
@@ -5048,8 +5028,9 @@ ul.whr-items li ul.whr-info li.whr-date {
     width: 100%;
     text-align: center;
     padding: 0;
+    margin: 20px 0 0 0;
   }
-  .bloc-contact ul.social-contact {
+  .bloc-contact ul.rs {
     text-align: center;
   }
 }
@@ -5121,6 +5102,9 @@ ul.whr-items li ul.whr-info li.whr-date {
   .navSlider {
     top: auto;
     bottom: -50px;
+  }
+  #slider-on-parle-de-nous .navSlider {
+    top: auto;
   }
   .gallery #prev,
   #prev {
