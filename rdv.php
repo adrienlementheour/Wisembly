@@ -1,111 +1,122 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9"> <![endif]-->
-<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
-<html lang='fr'>
+<?php 
+/*
+Template Name: Rendez-vous
+*/
 
-	<head>
-	  	<meta charset='utf-8'>
-	  	<title>RDV - Wisembly</title>
+get_header(); 
+?>
 
-	  	<meta name='description' content=''>
+	<?php if ( have_posts() ) : ?>
 
-	  	<?php include('includes/head.html'); ?>
-	  	
-	</head>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-	<body class='page-template'>
+			<section class='head headRdv'>
 
-		<div id='overflow'>
-		
-			<?php include('includes/header.html'); ?>
-			
-			<div id='container'>
-				<section class='head headRdv'>
-					<div id="bgHead"></div>
-					<div class='content main'>
-						<h1>Nos <span>Rendez-Vous</span></h1>
-						<ul class='filtres'>
-							<li>
-								<a href='#' title='Petits déjeuners à venir' class='dej'>Petit déjeuner</a>
-							</li><li>
-								<a href='#' title='Afterworks à venir'>Afterwork</a>
-							</li><li>
-								<a href='#' title='Webinars à venir' class='webi'>Webinar</a>
-							</li>
-						</ul>
-					</div>
-				</section>
+				<div id="bgHead"></div>
 
-				<div class='wrapper' role='main'>
-					<div id="bg-blanc"></div>
+				<div class='content main'>
+					<h1><?php the_field('rdvTitre1', 'options'); ?> <span><?php the_field('rdvTitre2', 'options'); ?></span></h1>
+					<ul class='filtres'>
+						<?php 
 
-					<section class='content bgBlanc paddingBottom'>
+						$ID = get_the_ID(); 
+						$currentPage = get_permalink( $ID );
 
-						<article class='scrollHere'>
-							<div class='roundImg'><img src='img/kpis.jpg' alt='Kpis' /></div>
-							<a href='' class='webi'>Webinar</a>
-							<h2>Identifiez et mesurez les kpis de tous vos événements</h2>
-							<p>
-								Vous organisez des séminaires, conférences, kickoff meetings, etc. 
-								Et vous souhaitez mesurer effectivement les succès de vos événements ? 
-								Votre public est-il engagé ? Vos messages sont-ils bien compris ? Vos objectifs sont-ils atteints ?
-							</p>
-							<span class='date'>Jeudi 9 avril à 11h</span>
-							<a href='' class='btnLight'>Je participe !</a>
-							<button class='icon-down scrollNext'><span></span></button>
-						</article>
+						$rdv = isset($_GET['cat']) ? $_GET['cat'] : '';
 
-						<article class='scrollHere'>
-							<div class='roundImg'><img src='img/collaboratif.jpg' alt='Collaboratif' /></div>
-							<a href='' class='dej'>Petit déjeuner</a>
-							<h2>Collaboratif et création de valeur</h2>
-							<p>
-								Interview croisée entre Sara Sreberny-Mohammadi, 
-								Head of Media Logistics à l’OCDE, et Romain David, CEO de Wisembly
-							</p>
-							<span class='date'>Mardi 14 avril à 8h30</span>
-							<a href='' class='btnLight'>Je participe !</a>
-							<button class='icon-down scrollNext'><span></span></button>
-						</article>
+						$today = date('Ymd'); 
 
-						<article class='scrollHere'>
-							<div class='roundImg'><img src='img/mojito.jpg' alt='Mojito' /></div>
-							<a href=''>Afterwork</a>
-							<h2>Mojito Party à la Wisembly Factory</h2>
-							<p>
-								L’équipe Wisembly est heureuse de vous inviter à son Afterwork #4 “ Mojito Party” !
-							</p>
-							<span class='date'>Mercredi 22 avril à 19h</span>
-							<a href='' class='btnLight'>Je participe !</a>
-							<button class='icon-down scrollNext'><span></span></button>
-						</article>
+						if(empty($rdv)){
+							$args = array( 'post_type' => 'rdv', 'posts_per_page' => -1, 'meta_query' => array( array( 'key' => 'rdvDate', 'compare' => '>=', 'value' => $today ) ), 'orderby' => 'meta_value_num', 'order' => 'ASC' );
+						}else{
+							$args = array( 'post_type' => 'rdv', 'posts_per_page' => -1, 'meta_query' => array( array( 'key' => 'rdvDate', 'compare' => '>=', 'value' => $today ) ), 'orderby' => 'meta_value_num', 'order' => 'ASC', 'tax_query' => array( array( 'taxonomy' => 'catRdv', 'field' => 'slug', 'terms' => $rdv ) ));
+						}
+						$loop = new WP_Query( $args );
 
-						<article class='scrollHere'>
-							<div class='roundImg'><img src='img/agent.jpg' alt='Agent' /></div>
-							<a href='' class='dej'>Petit déjeuner</a>
-							<h2>les change agents</h2>
-							<p>
-								Retour sur l’expérience de 3 “Change Agents” : comment ont-elles boosté l’adoption du digital dans leur entreprise ? 
-								Avec Nathalie Lelong, Chaikana Consulting, Margaux Cals, Orange et Sarah Akel, ex Canal+.
-							</p>
-							<span class='date'>Jeudi 23 avril à 8h30</span>
-							<a href='' class='btnLight'>Je participe !</a>
-							<button class='icon-down scrollNext'><span></span></button>
-						</article>
+						$cats = get_terms('catRdv');
+						foreach($cats as $cat) : 
 
-						<div class='scrollHere'>
-							<p>
-								Wisembly organise et dynamise ainsi les réunions depuis 3 ans !<br/>
-								<b>Envie d'en lire plus sur les événements passés ?</b>
-							</p>
-							<a href='' title='Evénements passés' class='lienVert'>Voir les archives</a>
-						</div>
+						?><!--
 
-					</section>
+							--><li>
+								<a href='<?php if($cat->slug == $rdv){ echo $currentPage; }else{ echo $currentPage . '?cat=' . $cat->slug; } ?>' title='<?php if($cat->slug == $rdv){ _e('Désactiver le filtre', 'wisembly'); }else{ echo __('Les', 'wisembly') . ' ' . $cat->name . ' ' . __('à venir', 'wisembly'); } ?>' class='<?php echo $cat->slug; if($cat->slug == $rdv) echo " actif"; ?>'><?php echo $cat->name; ?></a>
+							</li><!--
 
+						--><?php 
+
+						endforeach;
+
+						?>
+					</ul>
 				</div>
 
-		  		<?php include('includes/footer.php'); ?>
+			</section>
+
+			<div class='wrapper' role='main'>
+
+				<div id="bg-blanc" <?php if( !$loop->have_posts() ){ echo " style='top:-35px'"; }?>></div>
+
+				<section class='content bgBlanc paddingBottom'>
+
+					<?php
+
+					if( $loop->have_posts() ){
+						while( $loop->have_posts() ) : $loop->the_post(); 
+
+						$theCats = get_the_terms( $post->ID, 'catRdv' );
+ 
+						$date = get_field('rdvDate'); 
+						$srtDate = strtotime($date);
+						$dateOk = date_i18n('l d F', $srtDate);
+						$dateOkMaj = ucfirst(strtolower(trim($dateOk)));
+
+						
+					?>
+							<article class='scrollHere rdv'>
+								<div class='roundImg'><?php the_post_thumbnail('thumbnail'); ?></div>
+
+								<?php if ( $theCats ) :
+									foreach ( $theCats as $theCat ) : ?>
+									<a href='<?php echo $currentPage . '?cat=' . $theCat->slug; ?>' title='<?php echo __('Les', 'wisembly') . ' ' . $theCat->name . ' ' . __('à venir', 'wisembly'); ?>' class='<?php echo $theCat->slug; ?>'><?php echo $theCat->name; ?></a>
+								<?php endforeach;
+								endif; ?>
+
+								<h2><?php the_title(); ?></h2>
+								<?php the_content(); ?>
+								<span class='date'><?php echo $dateOkMaj . ' ' . __('à', 'wisembly') . ' '; the_field('rdvTime'); ?></span>
+								<a href='<?php the_field('rdvLink'); ?>' class='btnLight' target='_blank'><?php the_field('rdvTxtLink'); ?></a>
+								<button class='icon-down scrollNext'><span></span></button>
+							</article>
+
+					<?php
+						endwhile;
+					}else{
+						if(empty($rdv)){
+							echo "<article class='scrollHere'><p>" . __("Pas d'événements à venir !", 'wisembly') . "</p><button class='icon-down scrollNext'><span></span></button></article>";
+						}else{
+							$actualCat = get_term_by('slug', $rdv, 'catRdv');
+							echo "<article class='scrollHere'><p>" . __("Pas de", 'wisembly') . ' ' . $actualCat->name . ' ' . __("à venir !", 'wisembly') . "</p><button class='icon-down scrollNext'><span></span></button></article>";
+						}
+					}
+
+					wp_reset_query();
+					?>
+
+					<div class='scrollHere'>
+						<?php the_content(); ?>
+						<a class='prevLink lienVert' href='<?php echo get_post_type_archive_link( 'rdv' ); if(!empty($rdv)){ echo '?cat=' . $rdv; } ?>' title='<?php _e('Evénements passés', 'wisembly'); ?>' class='lienVert'><?php the_field('rdvBtn'); ?></a>
+					</div>
+
+				</section>
+
+			</div>
+		
+		<?php endwhile; ?>
+	
+	<?php else : ?>
+				
+		<h1>404</h1>
+
+	<?php endif; ?>
+
+<?php get_footer(); ?>

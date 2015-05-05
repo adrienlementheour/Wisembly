@@ -425,6 +425,22 @@ a:active {
   color: #04455c;
   border-color: rgba(4, 69, 92, 0.3);
 }
+a.prevLink,
+a.nextLink {
+  position: relative;
+}
+a.prevLink:before {
+  content: '‹';
+  position: absolute;
+  top: 0;
+  left: -7px;
+}
+a.nextLink:before {
+  content: '›';
+  position: absolute;
+  top: 0;
+  left: -7px;
+}
 .lienVert,
 .logosPresse + p a {
   font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;

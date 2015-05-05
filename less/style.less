@@ -117,6 +117,21 @@ a{
     color: darken(@bleu, 10);
     border-color: darken(fade(@bleu, 30), 10);
   }
+  &.prevLink, &.nextLink {
+    position: relative;
+  }
+  &.prevLink:before {
+    content: '‹';
+    position: absolute;
+    top: 0;
+    left: -7px;
+  }
+  &.nextLink:before {
+    content: '›';
+    position: absolute;
+    top: 0;
+    left: -7px;
+  }
 }
 
 .lienVert{
