@@ -474,17 +474,15 @@ p b {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-<<<<<<< HEAD
 p.small {
   font-size: 0.933em;
 }
 p.fullWidth {
   width: 100%;
   max-width: inherit;
-=======
+}
 p.noMarginBottom {
   margin-bottom: 0;
->>>>>>> origin/master
 }
 ul {
   padding: 0;
