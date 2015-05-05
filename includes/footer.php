@@ -13,7 +13,7 @@
           </div>
           
           <ul class='slidesTeam on'>
-            <li class='slideTeam on'>
+            <li class='slideTeam'>
               <p>
                 <strong>Arnaud</strong>
                 Key Account Manager
@@ -30,7 +30,21 @@
           </ul>
 
           <ul class='slidesTeam'>
-            <li class='slideTeam on'>
+            <li class='slideTeam'>
+              <p>
+                <strong>Cécile</strong>
+                Key Account Manager
+              </p>
+              <img src='layoutImg/team/cecile.png' alt='Cecile'/>
+            </li>
+            <li class='slideTeam'>
+              <p>
+                <strong>Cécile</strong>
+                Key Account Manager
+              </p>
+              <img src='layoutImg/team/cecile.png' alt='Cecile'/>
+            </li>
+            <li class='slideTeam'>
               <p>
                 <strong>Cécile</strong>
                 Key Account Manager
@@ -217,6 +231,9 @@
 <script src="js/jquery.swipe.min.js" type="text/javascript"></script>
 <script src="js/jquery.easing.min.js" type="text/javascript"></script>
 <script src="js/carousel.js" type="text/javascript"></script>
+
+<!-- Autogrow textarea -->
+<script src="js/jquery.autogrow.min.js" type="text/javascript"></script>
 
 <script src="js/script.js" type="text/javascript"></script>
 

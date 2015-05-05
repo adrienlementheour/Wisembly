@@ -40,12 +40,12 @@ textarea {
 /* selection */
 ::-moz-selection { 
 	background: @bleu;  
-	color: @blanc;
+	color: #fff;
 	text-shadow: none; 
 }
 ::selection { 
 	background: @bleu;  
-	color: @blanc; 
+	color: #fff; 
 	text-shadow: none; 
 }
 
@@ -191,6 +191,14 @@ iframe, object, embed{
   max-width: 100%;
 }
 
+hr{
+  margin: 50px 0;
+  border: 0;
+  &:after{
+    &:extend(h2:after);
+  }
+}
+
 fieldset{
   width: 48.5%;
   display: inline-block;
@@ -243,13 +251,14 @@ input{
   }
 }
 textarea{
-  height: 130px;
+  height: 60px;
+  max-height: 740px;
   resize: none;
 }
 
 .select{
   padding: 5px 10px;
-  border: 2px solid @blanc;
+  border: 2px solid #fff;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -257,7 +266,7 @@ textarea{
   &:after{
     .fontIcon();
     content: "\e601";
-    color: @blanc;
+    color: #fff;
     position: absolute;
     right: 10px;
     top: 10px;
@@ -275,7 +284,7 @@ select{
   border: 0;
   outline: 0;
   width: 130%;
-  color: @blanc;
+  color: #fff;
   .gothamItalic(1em);
 }
 
@@ -336,22 +345,22 @@ button{
   }
 }
 .btnFull{
-  color: @blanc;
+  color: #fff;
   border-color: @vert;
   background: @vert;
   &:hover, &:focus{
     color: @vert;
-    background: @blanc;
+    background: #fff;
   }
   &:active{
-    background: fade(@blanc, 80);
+    background: fade(#fff, 80);
   }
 }
 .btnLight{
   color: @vert;
-  background: @blanc;
+  background: #fff;
   &:hover, &:focus{
-    color: @blanc;
+    color: #fff;
     background: @vert;
   }
   &:active{
@@ -359,7 +368,7 @@ button{
   }
 }
 .btnBlanc{
-  color: @blanc;
+  color: #fff;
   background: none;
   .lt-ie10 &{
     color: @bleuLien;
@@ -367,10 +376,10 @@ button{
   &:hover, &:focus{
     color: @bleuLien;
     border-color: @bleuLien;
-    background: @blanc;
+    background: #fff;
   }
   &:active{
-    background: fade(@blanc, 80);
+    background: fade(#fff, 80);
   }
 }
 
@@ -392,7 +401,7 @@ button{
     }
   }
   &:before{
-    background: @blanc;
+    background: #fff;
     padding: 0 20px; 
     position: absolute;
     top: 0;
@@ -454,7 +463,7 @@ button{
   position: absolute;
   top: 0;
   bottom: -130px;
-  background: @blanc;
+  background: #fff;
   z-index: -1;
   .home &{
     top: 129px;
@@ -462,7 +471,7 @@ button{
 }
 
 .bgBlanc{
-  background: @blanc;
+  background: #fff;
 }
 
 #overflow{
@@ -525,7 +534,7 @@ header{
     top: -40px;
     .transition(.3s ease-in-out);
     .bottomHeader{
-      background: fade(@blanc, 95);
+      background: fade(#fff, 95);
       height: 73px;
       .transition(.3s ease-in-out);
     }
@@ -556,25 +565,25 @@ header{
       .hasSubMenu{
         > a{
           &:after{
-            top: 52px;
+            &:extend(header.on .menu > li.actifHover > a:before);
           }
           &:before{
             top: 37px;
             bottom: auto;
           }
           &:focus, &:hover{
-            &:after{
-              top: 62px;
-            }
             &:before{
-              top: 52px;
+              &:extend(header.on .menu > li.actifHover > a:before);
+            }
+            &:after{
+              &:extend(header.on .menu > li.actifHover > a:after);
             }
           }
         }
       }
     }
     .sub-menu{
-      background: fade(@blanc, 95);
+      background: fade(#fff, 95);
     }
     #logo, .bottomHeader .btnFull{
       margin: 13px 0;
@@ -613,10 +622,10 @@ header{
 .topHeader{
   height: 40px;
   background: @bleu;
-  color: @blanc;
+  color: #fff;
   .backface-visibility(hidden);
   a, label{
-    color: @blanc;
+    color: #fff;
     .gothamMedium(.85em);
   }
   p{
@@ -657,8 +666,8 @@ header{
     height: 12px;
     width: 121px;
     padding: 5px;
-    background: @blanc;
-    border-color: @blanc;
+    background: #fff;
+    border-color: #fff;
     .box-sizing(content-box);
     + button{
       margin-left: 3px;
@@ -768,7 +777,7 @@ header{
 
 .bottomHeader{
   height: 96px;
-  background: @blanc;
+  background: #fff;
   border-bottom: 1px solid @grisBorder;
   .box-sizing(border-box);
   .transition(.3s ease-in-out);
@@ -791,7 +800,7 @@ header{
   }
   .btnFull{
     float: right;
-    width: 185px;
+    width: 170px;
     margin: 24px 0;
   }
   .rs{
@@ -861,8 +870,7 @@ header{
       }
       &:hover, &:focus{
         &:before{
-          height: 3px;
-          .transition(.2s ease-in-out);
+          &:extend(.menu > li.current-menu-item > a:before);
         }
       }
     }
@@ -930,14 +938,11 @@ header{
       }
       &:hover, &:focus{
         &:after{
-          top: 75px;
-          opacity: 0;
+          &:extend(.menu .hasSubMenu.actifHover > a:after);
           .transition(.2s ease-in-out);
         }
         &:before{
-          border-width: 6px 6px 0 6px;
-          top: 65px;
-          opacity: 1;
+          &:extend(.menu .hasSubMenu.actifHover > a:before);
           .transition(.2s all .1s ease-in-out);
         }
       }
@@ -968,7 +973,7 @@ header{
     position: absolute;
     width: 100%;
     left: 0;
-    background: @blanc;
+    background: #fff;
     padding: 10px 0;
     z-index: -1;
     opacity: 0;
@@ -994,7 +999,7 @@ header{
       }
       &:hover, &:focus{
         &:after{
-          height: 2px;
+          &:extend(.menu .sub-menu .current-menu-item a:after);
           .transition(.15s ease-in-out);
         }
       }
@@ -1062,7 +1067,7 @@ header{
 #fdMenu{
   position: fixed;
   z-index: 9;
-  background: @blanc;
+  background: #fff;
   opacity: 0;
   top: 0;
   left: 100%;
@@ -1143,11 +1148,8 @@ footer{
   }
   &.bleu{
     background: @bleuFooterContact;
-    .wrapper-contentinfo{
-      background: @bleuFooterContact;
-    }
-    &:before{
-      background: @bleuFooterContact;
+    .wrapper-contentinfo, &:before{
+      &:extend(.contactFooter.bleu);
     }
     &:after{
       background: @bleuFooter;
@@ -1173,7 +1175,7 @@ footer{
         background: #116180;
         border-color: darken(@bleu, 10);
         &:focus{
-          border-color: @blanc;
+          border-color: #fff;
         }
       }
       .error{
@@ -1202,25 +1204,22 @@ footer{
   }
   &.rouge{
     background: @rouge;
-    .wrapper-contentinfo{
-      background: @rouge;
-    }
-    &:before{
-      background: @rouge;
+    .wrapper-contentinfo, &:before{
+      &:extend(.contactFooter.rouge);
     }
     &:after{
       background: fade(@rouge, 60);
     }
     .slideTeam{
       strong{
-        color: fade(@blanc, 80);
+        color: fade(#fff, 80);
       }
     }
     .navTeam{
       button{
         color: darken(@rouge, 10);
         &:hover, &:focus, &.actif{
-          color: fade(@blanc, 80);
+          color: fade(#fff, 80);
         }
         &.actif{
           text-shadow: 2px 2px 2px darken(@rouge, 10);
@@ -1232,7 +1231,7 @@ footer{
         background: darken(@rouge, 5);
         border-color: darken(@rouge, 10);
         &:focus{
-          border-color: @blanc;
+          border-color: #fff;
         }
       }
       .error{
@@ -1246,7 +1245,7 @@ footer{
     }
     #drag{
       &:before{
-        color: fade(@blanc, 80);
+        color: fade(#fff, 80);
         text-shadow: 2px 2px 2px darken(@rouge, 10);
       }
     }
@@ -1255,17 +1254,14 @@ footer{
       border-color: @jaune;
       &:hover, &:focus{
         color: @jaune;
-        background: @blanc;
+        background: #fff;
       }
     }
   }
   &.vert{
     background: @vert;
-    .wrapper-contentinfo{
-      background: @vert;
-    }
-    &:before{
-      background: @vert;
+    .wrapper-contentinfo, &:before{
+      &:extend(.contactFooter.vert);
     }
     &:after{
       background: fade(@vert, 60);
@@ -1274,7 +1270,7 @@ footer{
       button{
         color: darken(@vert, 10);
         &:hover, &:focus, &.actif{
-          color: fade(@blanc, 80);
+          color: fade(#fff, 80);
         }
         &.actif{
           text-shadow: 2px 2px 2px darken(@vert, 10);
@@ -1286,7 +1282,7 @@ footer{
         background: darken(@vert, 5);
         border-color: darken(@vert, 10);
         &:focus{
-          border-color: @blanc;
+          border-color: #fff;
         }
       }
       .error{
@@ -1300,18 +1296,15 @@ footer{
     }
     #drag{
       &:before{
-        color: fade(@blanc, 80);
+        color: fade(#fff, 80);
         text-shadow: 2px 2px 2px darken(@vert, 10);
       }
     }
   }
   &.rose{
     background: @rose;
-    .wrapper-contentinfo{
-      background: @rose;
-    }
-    &:before{
-      background: @rose;
+    .wrapper-contentinfo, &:before{
+      &:extend(.contactFooter.rose);
     }
     &:after{
       background: fade(@rose, 60);
@@ -1320,7 +1313,7 @@ footer{
       button{
         color: darken(@rose, 10);
         &:hover, &:focus, &.actif{
-          color: fade(@blanc, 80);
+          color: fade(#fff, 80);
         }
         &.actif{
           text-shadow: 2px 2px 2px darken(@rose, 10);
@@ -1332,7 +1325,7 @@ footer{
         background: darken(@rose, 5);
         border-color: darken(@rose, 10);
         &:focus{
-          border-color: @blanc;
+          border-color: #fff;
         }
       }
       .error{
@@ -1346,7 +1339,7 @@ footer{
     }
     #drag{
       &:before{
-        color: fade(@blanc, 80);
+        color: fade(#fff, 80);
         text-shadow: 2px 2px 2px darken(@rose, 10);
       }
     }
@@ -1357,17 +1350,17 @@ footer{
       border-color: @bleu;
       &:hover, &:focus{
         color: @bleu;
-        background-color: @blanc;
+        background-color: #fff;
       }
     }
     .slideTeam{
       strong{
-        color: fade(@blanc, 80);
+        color: fade(#fff, 80);
       }
     }
   }
   button, p, label{
-    color: @blanc;
+    color: #fff;
   }
 }
 
@@ -1404,7 +1397,7 @@ footer{
   overflow: hidden;
   display: none;
   text-align: right;
-  &.on{
+  &.on, strong{
     display: block;
   }
   p{
@@ -1412,9 +1405,6 @@ footer{
     margin: 38% 0 0;
     float: left;
     width: 177px;
-  }
-  strong{
-    display: block;
   }
 }
 .navTeam{
@@ -1450,11 +1440,11 @@ footer{
   }
   .no-js &{
     opacity: 1;
-    top: -590px;
+    top: -530px;
   }
   &:after{
     .fontIcon();
-    color: @blanc;
+    color: #fff;
     content: "\e60b";
     display: block;
     font-size: 194px;
@@ -1493,22 +1483,25 @@ footer{
     }
   }
   input, textarea{
-    color: @blanc;
+    color: #fff;
   }
   label{
     text-transform: capitalize;
   }
   form{
-    height: 0;
+    height: auto;
+    min-height: 0;
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
     .no-js &, .lt-ie9 &{
-      height: auto;
+      min-height: 380px;
       opacity: 1;
       margin: 40px 0 0;
     }
     &.visible{
-      height: 380px;
+      min-height: 310px;
+      max-height: 1000px;
       opacity: 1;
       .transition(.4s cubic-bezier(0.645, 0.045, 0.355, 1));
     }
@@ -1694,7 +1687,7 @@ footer{
       display: block;
       line-height: 96px;
       width: 100%;
-      color: @blanc;
+      color: #fff;
       font-size: 4em;
       .transition(.3s ease-in-out);
     }
@@ -1728,7 +1721,7 @@ footer{
       outline: 0;
       .titre{
         strong{
-          background: @blanc;
+          background: #fff;
           color: @grisSolid;
           .transition(.3s ease-in-out);
         }
@@ -1803,7 +1796,7 @@ footer{
   top: -12px;
   border-style: solid;
   border-width: 75px 40px 0 250px;
-  border-color: @blanc transparent transparent transparent;
+  border-color: #fff transparent transparent transparent;
   z-index: -1;
   .transform(rotate(-22deg) translateY(40px));
   .opacity(0);
@@ -1812,7 +1805,7 @@ footer{
 
 .rsFooter{
   width: 100%;
-  background-color: @blanc;
+  background-color: #fff;
   text-align: center;
   padding: 160px 0 0;
   margin: 0 auto;
@@ -1827,7 +1820,7 @@ footer{
     visibility: visible;
   }
   ul{
-    background: @blanc;
+    background: #fff;
     padding: 0 10px;
     &:before{
       content: '';
@@ -1915,7 +1908,7 @@ footer{
   width: 100%;
   h1{
     .edmond(3.95em);
-    color: @blanc;
+    color: #fff;
     text-align: center;
     span{
       .edmondBold(1em);
@@ -1933,7 +1926,7 @@ footer{
   &:after{
     bottom: -25px;
     height: 105px;
-    background: @blanc;
+    background: #fff;
     .transform(rotate(-3deg));
   }
   .no-js &{
@@ -1965,7 +1958,7 @@ footer{
       background-position: 57% 50%;
     }
     .no-js &{
-      background-position: 50% 355%;
+      background-position: 50% 255%;
     }
   }
   h1{
@@ -2020,7 +2013,7 @@ footer{
   &:before{
     left: 5%;
     width: 55%;
-    bottom: -100px;
+    bottom: -150px;
     height: 200px;
     background: fade(@bleu, 60);
     .transform(rotate(15deg));
@@ -2069,6 +2062,7 @@ footer{
   }
   .subHeading{
     text-align: center;
+    margin: 25px auto;
   }
   .filtres{
     a{
@@ -2094,7 +2088,7 @@ footer{
     background-position: 50% 0;
   }
   h1{
-    margin: 20vh 0;
+    &:extend(.headTeam h1);
   }
   &:before{
     right: 0;
@@ -2108,6 +2102,9 @@ footer{
 .headPresse{
   #bgHead{
     background: @grisBorder url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
+    .no-js &{
+      background-position: 25% 20%;
+    }
   }
   .blocH1{
     padding: 0 0 160px;
@@ -2127,7 +2124,7 @@ footer{
   }
   blockquote{
     border: 0;
-    color: @blanc;
+    color: #fff;
     .gotham(1.4em);
     font-weight: 300;
     display: inline-block;
@@ -2149,7 +2146,7 @@ footer{
     &:before{
       left: 95px;
       top: -5px;
-      color: fade(@blanc, 40);
+      color: fade(#fff, 40);
     }
   }
   .logo{
@@ -2159,7 +2156,7 @@ footer{
   }
   .roundImg{
     .size(155px);
-    background: @blanc;
+    background: #fff;
     border-radius: 100%;
     overflow: hidden;
     text-align: center;
@@ -2170,7 +2167,7 @@ footer{
     bottom: -105px;
     height: 170px;
     .transform(rotate(3deg));
-    background: fade(@blanc, 40);
+    background: fade(#fff, 40);
     z-index: 1;
   }
   &:after{
@@ -2224,7 +2221,7 @@ footer{
   margin: -17px 0 0;
   &:hover{
     background: @vert;
-    color: @blanc;
+    color: #fff;
   }
 }
 #prev{
@@ -2253,7 +2250,7 @@ footer{
 }
 
 .subHeading{
-  color: @blanc;
+  color: #fff;
   text-transform: none;
   .gotham(1.1em);
   margin: 25px 0;
@@ -2400,7 +2397,7 @@ footer{
     top: 300px;
     width: 100%;
     height: 100%;
-    color: @blanc;
+    color: #fff;
     opacity: 0;
     .box-sizing(border-box);
     .transition(.3s ease-in-out);
@@ -2515,7 +2512,7 @@ footer{
 .tooltip{
   position: absolute;
   z-index: 10;
-  background: @blanc;
+  background: #fff;
   color: @txt;
   padding: 5px;
   width: auto;
@@ -2669,7 +2666,7 @@ footer{
   }
   .zone-txt-cover-video{
     position: relative;
-    color: @blanc;
+    color: #fff;
     display: table-cell;
     vertical-align: middle;
   }
@@ -2697,7 +2694,7 @@ footer{
     }
   }
   a{
-    color: @blanc;
+    color: #fff;
     border: 1px solid;
     border-radius: 4px;
     padding: 4px 0;
@@ -2747,14 +2744,14 @@ footer{
       border-color: @vert;
       background: @vert;
       &:hover, &:focus{
-        background: @blanc;
+        background: #fff;
         color: @vert;
       }
       &.dej{
         background: @jaune;
         border-color: @jaune;
         &:hover, &:focus{
-          background: @blanc;
+          background: #fff;
           color: @jaune;
         }
       }
@@ -2762,7 +2759,7 @@ footer{
         background: @rouge;
         border-color: @rouge;
         &:hover, &:focus{
-          background: @blanc;
+          background: #fff;
           color: @rouge;
         }
       }
@@ -2807,7 +2804,7 @@ footer{
     &:hover, &:focus{
       background: @vert;
       border-color: @vert;
-      color: @blanc;
+      color: #fff;
     }
   }
   b{
@@ -2836,7 +2833,7 @@ footer{
   }
   .current{
     background: @bleu;
-    color: @blanc;
+    color: #fff;
     padding: 3px 0 2px;
     border: 1px solid @bleu;
     display: inline-block;
@@ -3047,7 +3044,7 @@ footer{
       content: '';
       border-style: solid;
       border-width: 0 0 20px 257px;
-      border-color: transparent transparent @blanc transparent;
+      border-color: transparent transparent #fff transparent;
     }
   }
   img{
@@ -3140,7 +3137,7 @@ footer{
   .btnFalse{
     width: 155px;
     line-height: 40px;
-    color: @blanc;
+    color: #fff;
     position: absolute;
     left: 0;
     right: 0;
@@ -3152,7 +3149,7 @@ footer{
     .cat{
       color: @jaune;
       &:hover, &:focus{
-        color: @blanc;
+        color: #fff;
         background: @jaune;
         border-color: @jaune;
       }
@@ -3165,7 +3162,7 @@ footer{
     .cat{
       color: @rose;
       &:hover, &:focus{
-        color: @blanc;
+        color: #fff;
         background: @rose;
         border-color: @rose;
       }
@@ -3178,7 +3175,7 @@ footer{
     .cat{
       color: @rouge;
       &:hover, &:focus{
-        color: @blanc;
+        color: #fff;
         background: @rouge;
         border-color: @rouge;
       }
@@ -3191,7 +3188,7 @@ footer{
     .cat{
       color: @vert;
       &:hover, &:focus{
-        color: @blanc;
+        color: #fff;
         background: @vert;
         border-color: @vert;
       }
@@ -3204,7 +3201,7 @@ footer{
     .cat{
       color: @bleu;
       &:hover, &:focus{
-        color: @blanc;
+        color: #fff;
         background: @bleu;
         border-color: @bleu;
       }
@@ -3243,7 +3240,7 @@ footer{
     }
   }
   .citeContainer{
-    background: @blanc;
+    background: #fff;
     position: relative;
     padding: 15px 0 0;
     &:before{
@@ -3296,7 +3293,7 @@ footer{
   }
   h3{
     display: inline-block;
-    color: @blanc;
+    color: #fff;
     text-transform: uppercase;
     font-size: 1em;
     line-height: 1em;
@@ -3340,6 +3337,9 @@ footer{
     &:before{
       display: none;
     }
+  }
+  + .scrollNext{
+    margin: 50px 0;
   }
 }
 
@@ -3410,6 +3410,7 @@ footer{
 }
 
 /* Emploi */
+<<<<<<< HEAD
 ul#avantages-wisembly{
   display: block;
   width: 100%;
@@ -3417,8 +3418,12 @@ ul#avantages-wisembly{
   list-style-type: none;
   margin: 30px auto 20px auto;
   padding: 0;
+=======
+#avantages-wisembly{
+  margin: 30px 0 20px;
+>>>>>>> origin/master
   text-align: center;
-  >li{
+  li{
     display: inline-block;
     vertical-align: top;
     margin: 10px 20px;
@@ -3426,27 +3431,23 @@ ul#avantages-wisembly{
     &:before{
       display: none;
     }
-    .zone-img-avantages-wisembly{
-      display: block;
-      width: 100%;
-      height: 105px;
-      margin: 0 0 20px 0;
-      vertical-align: middle;
-      line-height: 105px;
-    }
-    .zone-txt-avantages-wisembly{
-      display: block;
-      width: 100%;
-      height: auto;
-      text-align: center;
-      .gothamMedium(0.938em);
-    }
+  }
+  .zone-img-avantages-wisembly{
+    height: 105px;
+    margin: 0 0 20px;
+    line-height: 105px;
+  }
+  .zone-txt-avantages-wisembly{
+    max-width: 95px;
+    font-weight: 500;
+    font-size: .938em;
   }
 }
 
 .slider-emploi{
   width: 782px;
   margin: 0 auto;
+<<<<<<< HEAD
   ul{
     li{
       width: 100%;
@@ -3454,163 +3455,119 @@ ul#avantages-wisembly{
         max-width: 100%;
       }
     }
+=======
+  li{
+    width: 100%;
+>>>>>>> origin/master
   }
 }
 
 #slider-invite{
-  ul{
-    li{
-      h3{
-        .gothamMedium(1.375em);
-        color: @bleuH2;
-        text-transform: uppercase;
-        margin: 25px 0 20px 0;
-      }
-      .date-slider-invite{
-        .gothamMedium(1.375em);
-        color: @txt;
-      }
-      .place-slider-invite{
-        .gotham(1.250em);
-      }
-      p{
-        margin: 30px 0;
-      }
+  h3{
+    margin: 25px 0 20px 0;
+    &:after{
+      display: none;
     }
+  }
+  .date-slider-invite{
+    .gothamMedium(1.375em);
+    color: @txt;
+  }
+  .place-slider-invite{
+    .gotham(1.250em);
+  }
+  p{
+    margin: 30px 0;
   }
 }
 
 #slider-on-parle-de-nous{
-  ul{
-    li{
-      h3{
-        .gothamMedium(1.375em);
-        margin: 25px 0 20px 0;
-      }
-    }
+  h3{
+    .gothamMedium(1.375em);
+    margin: 25px 0 20px 0;
   }
 }
 
-.container-diapos{
+#container-slider-diapos{
+  height: 504px;
   position: relative;
-  width: 100%;
-  height: auto;
-  #container-slider-diapos{
-    display: block;
-    width: 100%;
-    height: 504px;
-    position: relative;
-    overflow: hidden;
-    margin: 100px 0 40px 0;
-    ul#slider-diapos{
+  overflow: hidden;
+  margin: 100px 0 40px;
+  #slider-diapos{
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .js &{
+      width: 4000px;
+    }
+    li{
       display: inline-block;
       vertical-align: top;
-      width: auto;
-      height: 100%;
-      margin: 0;
       padding: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      .js &{
-        width: 4000px;
+      border: 5px solid #fff;
+      .box-sizing(border-box);
+      height: 100%;
+      &.half{
+        height: 50%;
       }
-      li{
-        display: inline-block;
-        vertical-align: top;
-        margin: 0;
-        padding: 0;
-        border: 5px solid @blanc;
-        .box-sizing(border-box);
+      .js &{
+        position: absolute;
+      }
+      &:before{
+        display: none;
+      }
+      img{
         height: 100%;
-        &.half{
-          height: 50%;
-        }
-        .js &{
-          position: absolute;
-        }
-        &:before{
-          display: none;
-        }
-        img{
-          height: 100%;
-        }
       }
     }
   }
 }
 
 .bloc-contact{
-  display: block;
-  width: 100%;
-  height: auto;
-  position: relative;
   margin: 60px 0 0 0;
-  padding: 0;
-  .zone-photo-bloc-contact{
+  .zone-photo-bloc-contact, .zone-txt-bloc-contact{
     display: inline-block;
-    vertical-align: middle;
     width: 50%;
-    height: auto;
-    text-align: right;
     .box-sizing(border-box);
+  }
+  .zone-photo-bloc-contact{
+    text-align: right;
     padding: 0 20px 0 0;
-    img{
-
-    }
   }
   .zone-txt-bloc-contact{
-    display: inline-block;
     vertical-align: middle;
-    width: 50%;
-    height: auto;
     text-align: left;
-    .box-sizing(border-box);
     padding: 0 0 0 20px;
     h3{
-      .gothamMedium(1.250em);
+      font-size: 1.25em;
       color: @txt;
-      margin: 0 0 15px 0;
+      margin: 0 0 15px;
     }
     .nom-contact{
       .gothamMedium(0.938em);
       color: @txt;
-      margin: 0 0 5px 0;
+      margin: 0 0 5px;
     }
-    .mail-contact{
-      margin: 0 0 15px 0;
-    }
-    ul.social-contact{
+    .rs{
+      margin: 15px 0 0;
       li{
-        display: inline-block;
-        vertical-align: bottom;
-        width: 30px;
-        height: 30px;
-        overflow: hidden;
-        padding: 0;
         margin: 0 5px 0 0;
-        &:before{
-          display: none;
+        padding: 0;
+      }
+      .icon-tw{
+        color: #828282;
+        &:hover, &:focus{
+          &:extend(.rs .icon-tw);
         }
-        a{
-          border: 0;
-          font-size: 30px;
-          &.icon-tw{
-            color: #828282;
-            &:hover{
-              color: #258aae;
-            }
-          }
-          &.icon-in{
-            color: #4f4f4f;
-            &:hover{
-              color: #258aae;
-            }
-          }
-          span{
-            display: block;
-            text-indent: -999em;
-          }
+      }
+      .icon-in{
+        color: #4f4f4f;
+        &:hover, &:focus{
+          &:extend(.rs .icon-in);
         }
       }
     }
@@ -3620,17 +3577,15 @@ ul#avantages-wisembly{
 /* Workable */
 
 #container-offres-emploi{
-  display: block;
   width: 900px;
-  height: auto;
   .box-sizing(border-box);
   border: 1px solid #eceff0;
-  margin: 30px auto 0 auto;
+  margin: 30px auto 0;
   padding: 35px 45px;
 }
 
 #no-offer{
-  margin: 40px 0 0 0;
+  margin: 40px 0 0;
   .gothamMedium(0.938em);
   color: #084d66;
   text-align: left;
@@ -3654,7 +3609,7 @@ h2.whr-group{
     left: -45px;
     right: -45px;
     bottom: -20px;
-    margin: 10px auto 10px auto;
+    margin: 10px auto 10px;
   }
   a{
     color: @txt;
@@ -3663,7 +3618,7 @@ h2.whr-group{
 }
 
 ul.whr-items{
-  margin: 0 0 30px 0;
+  margin: 0 0 30px;
   li{
     padding: 0;
     &:before{
@@ -3726,9 +3681,9 @@ ul.whr-items{
 /* 404 */
 
 .error404{
-  background: #000;
+  background: darken(@txt, 10);
   h1{
-    color: @blanc;
+    color: #fff;
     .edmond(4em);
     margin: 1em 0 .5em;
     span{
@@ -3738,7 +3693,7 @@ ul.whr-items{
   }
   .wrapper{
     p{
-      color: @blanc;
+      color: #fff;
       font-size: 1.2em;
     }
     a{

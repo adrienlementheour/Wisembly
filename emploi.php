@@ -14,7 +14,7 @@
 
 	</head>
 
-	<body class="emploi">
+	<body class="page-template-emploi">
 
 		<div class='overflow'>
 		
@@ -28,8 +28,8 @@
 					</div>
 				</section>
 
-				<section class='wrapper content bgBlanc scrollHere main'>
-					<h2>Pourquoi vous aimerez travailler chez wisembly</h2>
+				<section class='wrapper content bgBlanc scrollHere'>
+					<h2 class='noMarginTop'>Pourquoi vous aimerez travailler chez wisembly</h2>
 					<ul id="avantages-wisembly">
 						<li>
 							<div class="zone-img-avantages-wisembly"><img src="layoutImg/emploi/mutuelle-sante.png"></div>
@@ -63,6 +63,7 @@ Nous accordons une place fondamentale à la qualité de vie et de travail de nos
 					
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
+
 				<section class='wrapper content bgBlanc scrollHere'>
 					<h2>Nos offres d’emploi</h2>
 					<script src='https://www.workable.com/assets/embed.js' type='text/javascript'></script>
@@ -82,15 +83,16 @@ Nous accordons une place fondamentale à la qualité de vie et de travail de nos
 						</div><div class="zone-txt-bloc-contact">
 							<h3>Votre contact</h3>
 							<div class="nom-contact">Johanne Goulet</div>
-							<div class="mail-contact"><a href="" class="lienVert">johanne@wisembly.com</a></div>
-							<ul class="social-contact">
+							<div><a href="" class="lienVert">johanne@wisembly.com</a></div>
+							<ul class="rs">
 								<li><a href="#" class="icon-tw" target="_blank"><span>Johanne Goulet sur Twitter</span></a></li>
 								<li><a href="#" class="icon-in" target="_blank"><span>Johanne Goulet sur LinkedIn</span></a></li>
 							</ul>
 						</div>
 					</div>
 				</section>
-				<section class='wrapper bgBlanc container-diapos scrollHere'>
+
+				<section class='wrapper bgBlanc scrollHere'>
 					<div id="container-slider-diapos">
 						<ul id="slider-diapos">
 							<li class="half">
@@ -116,20 +118,21 @@ Nous accordons une place fondamentale à la qualité de vie et de travail de nos
 					</div>
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
+
 				<section class='wrapper content bgBlanc scrollHere'>
 					<h2>Wisembly vous invite</h2>
 					<div id="slider-invite" class="slider-emploi carousel">
 						<ul>
 							<li>
 								<img src="img/emploi/forum-emploi.png">
-								<h3>Forum de l'emploi</h3>
+								<h3 class='h2'>Forum de l'emploi</h3>
 								<div class="date-slider-invite">Mercredi 06 mai 2015</div>
 								<div class="place-slider-invite">Grand Halle de la Vilette</div>
 								<p>Venez nous rencontrer au Forum de l’Emploi ! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget, lorem ipsum dolor sit amet.</p>
 								<a href="#" class="btnLight" target="_blank">En savoir plus</a>
 							</li><li>
 								<img src="img/emploi/forum-emploi.png">
-								<h3>Forum de l'emploi</h3>
+								<h3 class='h2'>Forum de l'emploi</h3>
 								<div class="date-slider-invite">Mercredi 06 mai 2015</div>
 								<div class="place-slider-invite">Grand Halle de la Vilette</div>
 								<p>Venez nous rencontrer au Forum de l’Emploi ! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget, lorem ipsum dolor sit amet.</p>
@@ -139,6 +142,7 @@ Nous accordons une place fondamentale à la qualité de vie et de travail de nos
 					</div>
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
+
 				<section class='wrapper content bgBlanc scrollHere'>
 					<h2>On parle de nous</h2>
 					<div id="slider-on-parle-de-nous" class="slider-emploi carousel">

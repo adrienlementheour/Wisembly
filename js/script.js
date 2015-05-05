@@ -8,7 +8,7 @@ var myScroll,
 	bgHead = $('#bgHead'),
 	btnContact = $('#demandeContact'),
 	minHeight = $('.menu').innerHeight() - 10,
-	subMenus = $('.menu').find('.sub-menu')
+	subMenus = $('.menu').find('.sub-menu'),
 	avancementLeft = 0,
 	avancementLeftFuture = 0,
 	precWidth = 0,
@@ -216,7 +216,7 @@ function setSliderTeam(slider){
 	var slides = slider.find('.slideTeam'), slidesLength = slides.length, i = 0, 
 		pagination = $('.navTeam'), button = '<li><button>•</button></li>',
 		sliders = $('.slidesTeam'), slidersLength = sliders.length, y = 0,
-		btnActif;
+		btnActif, rand = Math.floor(Math.random()*slidesLength);
 
 	function letSlide(){
 		var numSlide = $(this).parents('li').index();
@@ -224,10 +224,8 @@ function setSliderTeam(slider){
 		if(!slides.eq(numSlide).hasClass('on')){
 			$(this).addClass('actif').parents('li').siblings().find('button').removeClass('actif');
 			slides.eq(numSlide).siblings().stop().animate({opacity: 0, marginBottom: '-25px'}, 400, function(){
-				slides.eq(numSlide).siblings().removeClass('on');
-				slides.eq(numSlide).addClass('on').stop().animate({opacity: 1, marginBottom: 0}, 400);
+				slides.eq(numSlide).addClass('on').stop().animate({opacity: 1, marginBottom: 0}, 400).siblings().removeClass('on');
 			});
-			
 		}
 	}
 
@@ -237,11 +235,12 @@ function setSliderTeam(slider){
 		}
 	}
 
+	slides.removeClass('on').eq(rand).addClass('on').stop().animate({opacity: 1, marginBottom: 0}, 400);
 	pagination.html('');
 	if(slidesLength > 1){
 		for(i; i<slidesLength; i++){
 			pagination.append(button);
-			(!slides.eq(i).hasClass('on')) ? slides.eq(i).css({opacity: 0, marginBottom: '-25px'}) : btnActif = i;
+			!slides.eq(i).hasClass('on') ? slides.eq(i).css({opacity: 0, marginBottom: '-25px'}) : btnActif = i;
 		}
 	}
 
@@ -259,8 +258,7 @@ function setSliderTeamProfil(that){
 
 	if(!slider.hasClass('on')){
 		slider.siblings('.slidesTeam').stop().animate({opacity: 0, bottom: '-140px'}, 400, function(){
-			slider.siblings('.slidesTeam').removeClass('on');
-			slider.addClass('on').stop().animate({opacity: 1, bottom: '-115px'}, 400);
+			slider.addClass('on').stop().animate({opacity: 1, bottom: '-115px'}, 400).siblings('.slidesTeam').removeClass('on');
 
 			if(numSlider === 0){
 				TweenLite.set($('#drag'), {x:0});
@@ -275,9 +273,8 @@ function setSliderTeamProfil(that){
 				TweenLite.set($('#drag'), {x:334});
 				contactFooter.addClass('rose').removeClass('bleu').removeClass('rouge').removeClass('vert');
 			}
-
-			setSliderTeam(slider);
 		});
+		setSliderTeam(slider);
 	}
 
 	// Récupérer la valeur du name et l'appliquer au select "profil" //
@@ -348,7 +345,7 @@ function scrollMagic(){
 	}
 }
 
-// Scroll to a la section suivante //
+// Scroll to section suivante //
 function goToNextSection(){
 	htmlBody.animate({scrollTop: $(this).parents('.scrollHere').next('.scrollHere').offset().top - 100}, 400);
 }
@@ -470,10 +467,10 @@ function initAnnonces(){
 
 /* Positionnement des images diapos dans la page Emploi */
 function positionDiapos(){
-	$("ul#slider-diapos li").each(function(index){
+	$("#slider-diapos li").each(function(index){
 		if($(this).hasClass("half")){
 			// Si l'image a une demi-hauteur
-			if(precWidth!=0){
+			if(precWidth!==0){
 				// Si l'image d'avant est en haut
 				var newWidth=$(this).outerWidth();
 				if(newWidth<=precWidth){
@@ -512,8 +509,8 @@ function positionDiapos(){
 			hasDemiBefore=false;
 		}
 	});
-	TweenMax.set($("ul#slider-diapos"), {width: avancementLeft+"px"});
-	Draggable.create("ul#slider-diapos", {type:"x", edgeResistance:0.65, bounds:"#container-slider-diapos", throwProps:true});
+	TweenMax.set($("#slider-diapos"), {width: avancementLeft+"px"});
+	Draggable.create("#slider-diapos", {type:"x", edgeResistance:0.65, bounds:"#container-slider-diapos", throwProps:true});
 }
 
 /**** INIT ****/
@@ -537,7 +534,7 @@ $(function(){
 		setSubMenu();
 	}
 
-	if(body.hasClass("emploi")){
+	if(body.hasClass("page-template-emploi")){
 		initAnnonces();
 		if($(window).width()>767){
 			sliderSmall=false;
@@ -549,7 +546,7 @@ $(function(){
 	// Scroll init //
 	scrollPage();
 
-	// RDV filtres //
+	// RDV / Clients filtres //
 	if( $('.filtres').find('.actif').length ){
 		goToContent();
 	}
@@ -592,7 +589,7 @@ $(function(){
 			htmlBody.animate({scrollTop: $('#contactezNous').offset().top}, 800, 'easeInOutCubic');
 		}	
 	});
-	$('.blocH1').find('.btnFull').on('click', function(e){
+	$('.home .blocH1').find('.btnFull').on('click', function(e){
 		e.preventDefault();
 		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
 		if(!htmlTag.hasClass('lt-ie9')){ 
@@ -607,6 +604,11 @@ $(function(){
 	$('#profil').change(function(){
 		$('#labelEnt').html($(this).val() + ' *');
 	});
+
+	// Textarea footer autogrow //
+	if($('#message').length){
+	    $('#message').autoGrowTextArea();
+	}
 
 	// Petites fleches //
 	$('.scrollNext').on('click', goToNextSection);
@@ -637,7 +639,7 @@ $(function(){
 			randomLogosPress();
 		}
 
-		if(body.hasClass("emploi")){
+		if(body.hasClass("page-template-emploi")){
 			positionDiapos();
 		}
 
