@@ -150,12 +150,17 @@ p{
   strong, b{
     .gothamMedium(1em);
   }
+<<<<<<< HEAD
   &.small{
     font-size: 0.933em;
   }
   &.fullWidth{
     width: 100%;
     max-width: inherit;
+=======
+  &.noMarginBottom {
+    margin-bottom: 0;
+>>>>>>> origin/master
   }
 }
 
@@ -2801,6 +2806,20 @@ footer{
         }
       }
     }
+    .pastMask {
+      position: absolute;
+      width: 100%;
+      height:100%;
+      left:0;
+      top:0;
+      text-align: center;
+      background: rgba(0,0,0,0.3);
+      text-transform: uppercase;
+      padding-top: 47px;
+      letter-spacing: 1px;
+      .box-sizing(border-box);
+      color:rgb(255, 255, 255,0.6)
+    }
   }
   h2{
     margin: 0;
@@ -2822,6 +2841,9 @@ footer{
       left: 0;
       right: 0;
       top: 0;
+    }
+    &.smallPadBot {
+      padding-bottom: 5px;
     }
   }
 }
@@ -3376,7 +3398,7 @@ footer{
     }
   }
   + .scrollNext{
-    margin: 50px 0;
+    margin: 35px 0 40px;
   }
 }
 
