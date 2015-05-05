@@ -189,6 +189,15 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/archive-rdv.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/archive-rdv.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/css\/style.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -489,6 +498,248 @@
 		"initialSize": 5746,
 		"inputAbbreviatedPath": "\/img\/management.png",
 		"outputAbbreviatedPath": "\/img\/management.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/clients-not-customers-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23718,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/clients-not-customers-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 51279,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/clients-not-customers.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28545,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/clients-not-customers@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 56231,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/locaux-wisembly.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 101894,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/locaux-wisembly.jpg",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/locaux-wisembly.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/logo-wisembly.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9061,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/logo-wisembly.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/logo-wisembly.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/open-the-way-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19176,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/open-the-way-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/open-the-way-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/open-the-way-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 40952,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/open-the-way-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/open-the-way-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/open-the-way.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22447,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/open-the-way.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/open-the-way.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/open-the-way@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 44895,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/open-the-way@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/open-the-way@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/think-big-get-big-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20016,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/think-big-get-big-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42611,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/think-big-get-big.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23034,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/think-big-get-big@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46142,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/we-are-wisembly-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19703,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/we-are-wisembly-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42236,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/we-are-wisembly.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22751,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/we-are-wisembly@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45330,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/work-hard-play-hard-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23242,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/work-hard-play-hard-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 50784,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/work-hard-play-hard.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27180,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/work-hard-play-hard@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54947,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1659,6 +1910,15 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
+	"\/mission-vision.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/mission-vision.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/mstile-144x144.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1713,6 +1973,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
+		},
+	"\/plans.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/plans.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/rdv.php": {
 		"fileType": 8192,
