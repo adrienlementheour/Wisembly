@@ -523,6 +523,18 @@
       }
     }
   }
+  ul#offres-essais{
+    > li{
+      width: 350px;
+      &#reunions-conf-calls{
+        .bloc-top-offres-essais{
+          p{
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 979px){
@@ -1153,6 +1165,24 @@
   }
   .slider-emploi ul li .btnLight{
     max-width: 95%;
+  }
+  ul#offres-essais{
+    > li{
+      width: 100%;
+      padding: 0;
+      .bloc-top-offres-essais{
+        p {
+          padding: 0;
+        }
+      }
+      &#reunions-conf-calls{
+        .bloc-top-offres-essais{
+          p{
+            padding: 0;
+          }
+        }
+      }
+    }
   }
 }
 

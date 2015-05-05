@@ -474,6 +474,13 @@ p b {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+p.small {
+  font-size: 0.933em;
+}
+p.fullWidth {
+  width: 100%;
+  max-width: inherit;
+}
 ul {
   padding: 0;
   margin: 0;
@@ -739,6 +746,16 @@ button:focus {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+.btnFull.widthAuto,
+.btnLight.widthAuto,
+.btnBlanc.widthAuto {
+  width: auto;
+}
+.btnFull.smallTxt,
+.btnLight.smallTxt,
+.btnBlanc.smallTxt {
+  font-size: 0.933em;
+}
 .btnFull:hover,
 .btnLight:hover,
 .btnBlanc:hover,
@@ -752,6 +769,16 @@ button:focus {
   color: #fff;
   border-color: #46b489;
   background: #46b489;
+}
+.btnFull.btnFullBlanc {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #000000;
+}
+.btnFull.btnFullBlanc:hover,
+.btnFull.btnFullBlanc:focus {
+  color: #ffffff;
+  background: #000000;
 }
 .btnFull:hover,
 .btnFull:focus {
@@ -2381,6 +2408,7 @@ footer {
   overflow: hidden;
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 .head h1 {
   font-family: 'edmond', sans-serif;
@@ -4146,6 +4174,132 @@ ul.whr-items li ul.whr-info li.whr-date {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+/* Plans */
+ul#offres-essais {
+  display: block;
+  width: 100%;
+  height: auto;
+  list-style-type: none;
+  margin: 0 0 40px 0;
+  padding: 0;
+  text-align: center;
+}
+ul#offres-essais > li {
+  display: inline-block;
+  vertical-align: top;
+  width: 373px;
+  box-sizing: border-box;
+  margin: 80px 0 0 0;
+  padding: 0 15px;
+  text-align: center;
+  color: #ffffff;
+}
+ul#offres-essais > li#evenements-seminaires .bloc-top-offres-essais,
+ul#offres-essais > li#evenements-seminaires .bloc-bottom-offres-essais {
+  background-color: #17698d;
+}
+ul#offres-essais > li#evenements-seminaires .bloc-top-offres-essais:before {
+  background: url("../layoutImg/home/pot.png") no-repeat 50% 50%;
+}
+ul#offres-essais > li#evenements-seminaires .btnFull.btnFullBlanc {
+  color: #17698d;
+}
+ul#offres-essais > li#evenements-seminaires .btnFull.btnFullBlanc:hover {
+  background: #17698d;
+  color: #ffffff;
+}
+ul#offres-essais > li#reunions-conf-calls .bloc-top-offres-essais,
+ul#offres-essais > li#reunions-conf-calls .bloc-bottom-offres-essais {
+  background-color: #e25c5b;
+}
+ul#offres-essais > li#reunions-conf-calls .bloc-top-offres-essais:before {
+  background: url("../layoutImg/home/tel.png") no-repeat 50% 50%;
+}
+ul#offres-essais > li#reunions-conf-calls .btnFull.btnFullBlanc {
+  color: #e25c5b;
+}
+ul#offres-essais > li#reunions-conf-calls .btnFull.btnFullBlanc:hover {
+  background: #e25c5b;
+  color: #ffffff;
+}
+ul#offres-essais > li#cours-formations .bloc-top-offres-essais,
+ul#offres-essais > li#cours-formations .bloc-bottom-offres-essais {
+  background-color: #46b489;
+}
+ul#offres-essais > li#cours-formations .bloc-top-offres-essais:before {
+  background: url("../layoutImg/home/graph.png") no-repeat 50% 50%;
+}
+ul#offres-essais > li#cours-formations .btnFull.btnFullBlanc {
+  color: #46b489;
+}
+ul#offres-essais > li#cours-formations .btnFull.btnFullBlanc:hover {
+  background: #46b489;
+  color: #ffffff;
+}
+ul#offres-essais > li:before {
+  display: none;
+}
+ul#offres-essais > li .bloc-top-offres-essais,
+ul#offres-essais > li .bloc-bottom-offres-essais {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+ul#offres-essais > li h3 {
+  color: #ffffff;
+  margin: 0 0 20px 0;
+}
+ul#offres-essais > li a.btnFull {
+  max-width: 278px;
+  margin: 0 auto;
+}
+ul#offres-essais > li ul.fonctionnalites {
+  list-style-type: none;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 40px 0;
+  padding: 0;
+}
+ul#offres-essais > li ul.fonctionnalites > li {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 15px 0;
+  padding: 0;
+  font-size: 0.933em;
+}
+ul#offres-essais > li ul.fonctionnalites > li:before {
+  display: none;
+}
+ul#offres-essais > li .bloc-top-offres-essais {
+  padding: 100px 10px 20px 10px;
+  border-bottom: 1px dashed #ffffff;
+}
+ul#offres-essais > li .bloc-top-offres-essais p {
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 0;
+}
+ul#offres-essais > li .bloc-top-offres-essais:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -75px;
+  left: 50%;
+  margin-left: -75px;
+  width: 150px;
+  height: 150px;
+}
+ul#offres-essais > li .bloc-bottom-offres-essais {
+  padding: 20px 10px 20px 10px;
+}
+ul#offres-essais > li .bloc-bottom-offres-essais h3 {
+  text-transform: uppercase;
+}
 /* 404 */
 .error404 {
   background: #24292f;
@@ -4645,6 +4799,12 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .detailEtude > li:first-child {
     margin-top: 0;
+  }
+  ul#offres-essais > li {
+    width: 350px;
+  }
+  ul#offres-essais > li#reunions-conf-calls .bloc-top-offres-essais p {
+    padding: 0 10px;
   }
 }
 @media (max-width: 979px) {
@@ -5156,6 +5316,16 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .slider-emploi ul li .btnLight {
     max-width: 95%;
+  }
+  ul#offres-essais > li {
+    width: 100%;
+    padding: 0;
+  }
+  ul#offres-essais > li .bloc-top-offres-essais p {
+    padding: 0;
+  }
+  ul#offres-essais > li#reunions-conf-calls .bloc-top-offres-essais p {
+    padding: 0;
   }
 }
 @media (max-width: 400px) {

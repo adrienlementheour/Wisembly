@@ -29,7 +29,7 @@
 				</section>
 
 				<section class='wrapper content bgBlanc scrollHere'>
-					<h2 class='noMarginTop'>Pourquoi vous aimerez travailler chez wisembly</h2>
+					<h2 class='noMarginTop'>Créez un compte de démonstration en 3 clics</h2>
 					<ul id="avantages-wisembly">
 						<li>
 							<div class="zone-img-avantages-wisembly"><img src="layoutImg/emploi/mutuelle-sante.png"></div>
