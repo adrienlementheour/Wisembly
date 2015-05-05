@@ -356,7 +356,8 @@ function heightBgHead(){
 		if(!htmlTag.hasClass("lt-ie9") && !isMobile.any){
 			TweenMax.set(bgHead, {position:"fixed"});
 		}
-		TweenMax.set(bgHead, {height: $(".head").height()+"px"});
+		var calc = Math.ceil($(".head").height())-1;
+		TweenMax.set(bgHead, {height:calc+"px"});
 	}else{
 		if(htmlTag.hasClass('home')){
 			TweenMax.set(bgHead, {height: "340px"});
