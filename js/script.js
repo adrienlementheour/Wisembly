@@ -730,6 +730,11 @@ $(function(){
 			$('#slider-contenu-evenement').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
 		
+		// Slider Engagez votre audience //
+		if($('#slider-engagez-audience').length){
+			setSliderHeightLi($('#slider-engagez-audience'));
+			$('#slider-engagez-audience').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
 	});
 
     $(window).resize(function(){
