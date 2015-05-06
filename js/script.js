@@ -717,6 +717,19 @@ $(function(){
 			setSliderHeightLi($('#slider-on-parle-de-nous'));
 			$('#slider-on-parle-de-nous').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
+
+		// Slider Visez au plus juste //
+		if($('#slider-visez-juste').length){
+			setSliderHeightLi($('#slider-visez-juste'));
+			$('#slider-visez-juste').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
+
+		// Slider Capitalisez sur tout le contenu de votre événement //
+		if($('#slider-contenu-evenement').length){
+			setSliderHeightLi($('#slider-contenu-evenement'));
+			$('#slider-contenu-evenement').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
+		
 	});
 
     $(window).resize(function(){
