@@ -660,7 +660,7 @@ $(function(){
 		}
 	}
 
-	if(body.hasClass("page-template-mission-vision")){
+	if(body.hasClass("page-template-mission")){
 		sliderMission();
 	}
 

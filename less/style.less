@@ -4000,7 +4000,7 @@ ul#slider-visu-mission{
   position: absolute;
   top: 0;
   left:0;
-  margin: 0 0 0 -505px;
+  margin: 0;
   padding: 0;
   list-style-type: none;
   text-align: left;
@@ -4035,6 +4035,9 @@ ul#slider-visu-mission{
         top: 0;
         .grayscale(100%);
         left: 0;
+        .no-js & {
+          .grayscale(0%);
+        }
       }
     }
     &:before{

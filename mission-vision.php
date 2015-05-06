@@ -14,7 +14,7 @@
 
 	</head>
 
-	<body class="page-template-mission-vision">
+	<body class="page-template-mission">
 
 		<div class='overflow'>
 		
