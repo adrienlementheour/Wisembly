@@ -515,22 +515,119 @@ function positionDiapos(){
 	Draggable.create("#slider-diapos", {type:"x", edgeResistance:0.65, bounds:"#container-slider-diapos", throwProps:true});
 }
 
+/**** SLIDER VALUES MISSION ****/
+
+var unit = 200; // padding inclus
+var unitNaked = 122; // padding non inclus
+var bigUnitDelta = 338-200; // padding inclus
+var bigUnit = 260; // padding non inclus
+var total = 5;
+var numActive = 3;
+var spee = 0.4;
+//
+// actif : gros et en couleur
+function makeActive(numToActivate) {
+	// remettre les autres à 0
+	TweenMax.to($("ul#slider-visu-mission li").find("a"), spee, {"width": unitNaked+"px","height": unitNaked+"px", ease:Linear.easeIn});
+	TweenMax.to($("ul#slider-visu-mission li"), spee, {"width": unitNaked+"px", ease:Linear.easeIn});
+	$("ul#slider-visu-mission li").removeClass("active");
+	// passer en activ
+	TweenMax.to($("ul#slider-visu-mission li").eq(numToActivate).find("a"), spee, {"width": bigUnit+"px","height": bigUnit+"px", ease:Linear.easeIn});
+	TweenMax.to($("ul#slider-visu-mission li").eq(numToActivate), spee, {"width": bigUnit+"px", ease:Linear.easeIn, onComplete:purgeMission});
+	$("ul#slider-visu-mission li").eq(numToActivate).addClass("active");
+}
+// slide
+function slideMission(indexMiss) {
+	TweenMax.to($("ul#slider-visu-mission"), spee, {"margin-left": -indexMiss*unit-(total*unit+bigUnitDelta)/2+"px", ease:Linear.easeIn});
+	TweenMax.to($("ul#slider-txt-mission"), spee, {"margin-left": -(indexMiss+2)*$('#wrapper-slider-visu-mission').width()-6+"px", ease:Linear.easeIn});
+	makeActive(indexMiss+2);
+}
+// on rajoute le premier élément à la fin, on agrandit la liste en fonction
+function clickOnMission(e) {
+	e.preventDefault();	
+	// si c'est l'un des deux derniers
+	if ($(this).parent().index() >= $("ul#slider-visu-mission li").length-2) {
+		addEntityMission();
+		addEntityMission();
+	}
+	// si c'est l'un des deux premiers
+	if ($(this).parent().index() <= 1) {
+		addEntityMissionAtBeginning();
+		addEntityMissionAtBeginning();
+	} 
+	slideMission($(this).parent().index()-2);
+}
+// taille du slider
+function setSizeMission() {
+	TweenMax.set($("ul#slider-txt-mission"), {width: $("ul#slider-visu-mission li").length*$('#wrapper-slider-visu-mission').width()+"px"});
+	TweenMax.set($("ul#slider-txt-mission li"), {width: $('#wrapper-slider-visu-mission').width()+"px"});
+	TweenMax.set($("ul#slider-visu-mission"), {width: $("ul#slider-visu-mission li").length*unit+bigUnitDelta+"px"});
+}
+// on positionne 
+function posSlideMission() {
+	setSizeMission();
+	var myIndex = $("ul#slider-visu-mission li.active").index()-2;
+	$("ul#slider-visu-mission").css({"left":"50%","margin-left": -myIndex*unit-(total*unit+bigUnitDelta)/2+"px"});
+	$("ul#slider-txt-mission").css({"margin-left": (-myIndex-2)*$('#wrapper-slider-visu-mission').width()+"px"});
+}
+// on rajoute le premier élément à la fin
+function addEntityMission() {
+	$("ul#slider-txt-mission li").eq($("ul#slider-txt-mission li").length-total).clone().appendTo("ul#slider-txt-mission");
+	$("ul#slider-visu-mission li").eq($("ul#slider-visu-mission li").length-total).clone().appendTo("ul#slider-visu-mission");
+	setSizeMission();
+	// mappage du clic du nouveau
+	$('#slider-visu-mission li').eq($("ul#slider-visu-mission li").length-1).find('a').unbind('click');
+	$('#slider-visu-mission li').eq($("ul#slider-visu-mission li").length-1).find('a').on('click', clickOnMission);
+}
+// on rajoute le dernier élément au début
+function addEntityMissionAtBeginning() {
+	$("ul#slider-txt-mission li").eq($("ul#slider-txt-mission li").first().index()+4).clone().prependTo("ul#slider-txt-mission");
+	$("ul#slider-visu-mission li").eq($("ul#slider-visu-mission li").first().index()+4).clone().prependTo("ul#slider-visu-mission");
+	posSlideMission();
+	// mappage du clic du nouveau
+	$('#slider-visu-mission li').first().find('a').unbind('click');
+	$('#slider-visu-mission li').first().find('a').on('click', clickOnMission);
+}
+// de temps en temps, supprimer qui ne servent à rien pour libérer le DOM
+function purgeMission() {
+	if ($("ul#slider-visu-mission li").length > 10) {
+		// si on est vers la fin
+		if ($("ul#slider-visu-mission li.active").index()>5) {
+			$("ul#slider-visu-mission li").first().remove();
+			$("ul#slider-visu-mission li").first().remove();
+		}
+		// si on est vers le début
+		if ($("ul#slider-visu-mission li.active").index()<$("ul#slider-visu-mission li").length-5) {
+			$("ul#slider-visu-mission li").last().remove();
+			$("ul#slider-visu-mission li").last().remove();
+		}
+	}
+	posSlideMission();
+}
+// suivant/précédent
+function nextMission(e) {
+	e.preventDefault();	
+	addEntityMission();
+	// mouvement
+	slideMission($("ul#slider-visu-mission li.active").index()-1);
+}
+function prevMission(e) {
+	e.preventDefault();	
+	addEntityMissionAtBeginning();
+	// mouvement
+	slideMission($("ul#slider-visu-mission li.active").index()+1);
+}
+
+// initailisation
 function sliderMission(){
-	$('#next-slider-mission').on('click', function(){
-		//TweenMax.set($("ul#slider-visu-mission li.active"), {className:"-=active"});
-		//var widthSlideMission = 
-		/*
-		TweenMax.to($("ul#slider-visu-mission li"), 0.1, {left: "-17%"});
-		$("ul#slider-visu-mission li").first().insertAfter($("ul#slider-visu-mission li").last());
-		return false;*/
-		/*var indexActiveMission = $("ul#slider-visu-mission li.active").index();
-		TweenMax.set($("ul#slider-visu-mission li.active"), {className:"-=active"});
-		TweenMax.set($("ul#slider-visu-mission li").eq(indexActiveMission+1), {className:"+=active"});*/
-		console.log(5-$("ul#slider-visu-mission li").length);
-		$("ul#slider-visu-mission li").eq($("ul#slider-visu-mission li").length-5).clone().appendTo("ul#slider-visu-mission");
-		TweenMax.set($("ul#slider-visu-mission"), {width: $("ul#slider-visu-mission li").length*202+"px"});
-		TweenMax.to($("ul#slider-visu-mission"), 0.1, {"margin-left": (5-($("ul#slider-visu-mission li").length))*202-505+"px"});
-	});
+	// au départ, on en pré-ajoute un
+	addEntityMission();
+	posSlideMission();
+	makeActive(numActive-1);
+	// au clic sur suivant
+	$('#next-slider-mission').on('click', nextMission);
+	// mappage des clics
+	$('#slider-visu-mission li a').on('click', clickOnMission);
 }
 
 /**** INIT ****/
@@ -779,6 +876,10 @@ $(function(){
 
 		if($('#slider-on-parle-de-nous').length){
 			setSliderHeightLi($('#slider-on-parle-de-nous'));
+		}
+
+		if($('#next-slider-mission').length){
+			posSlideMission();
 		}
 
 	    if(body.hasClass("emploi")){

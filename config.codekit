@@ -1,7 +1,16 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "18902",
+"creatorBuild": "18917",
 "files": {
+	"\/accueil.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/accueil.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/android-chrome-144x144.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -194,6 +203,33 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/archive-rdv.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/css\/style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/emploi.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/emploi.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/evenements.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/evenements.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -418,6 +454,72 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/evenements\/illus-responsive.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 35646,
+		"inputAbbreviatedPath": "\/img\/evenements\/illus-responsive.png",
+		"outputAbbreviatedPath": "\/img\/evenements\/illus-responsive.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/evenements\/illus-slider-visez-juste1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22185,
+		"inputAbbreviatedPath": "\/img\/evenements\/illus-slider-visez-juste1.png",
+		"outputAbbreviatedPath": "\/img\/evenements\/illus-slider-visez-juste1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/evenements\/illus-slider-visez-juste2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21529,
+		"inputAbbreviatedPath": "\/img\/evenements\/illus-slider-visez-juste2.png",
+		"outputAbbreviatedPath": "\/img\/evenements\/illus-slider-visez-juste2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/evenements\/illus-slider-visez-juste3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22641,
+		"inputAbbreviatedPath": "\/img\/evenements\/illus-slider-visez-juste3.png",
+		"outputAbbreviatedPath": "\/img\/evenements\/illus-slider-visez-juste3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/evenements\/marie-laurence-pouxviel.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6290,
+		"inputAbbreviatedPath": "\/img\/evenements\/marie-laurence-pouxviel.jpg",
+		"outputAbbreviatedPath": "\/img\/evenements\/marie-laurence-pouxviel.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/evenements\/olivier-lagree.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7833,
+		"inputAbbreviatedPath": "\/img\/evenements\/olivier-lagree.jpg",
+		"outputAbbreviatedPath": "\/img\/evenements\/olivier-lagree.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/formation.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -480,6 +582,248 @@
 		"initialSize": 5746,
 		"inputAbbreviatedPath": "\/img\/management.png",
 		"outputAbbreviatedPath": "\/img\/management.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/clients-not-customers-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23718,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/clients-not-customers-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 51279,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/clients-not-customers.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28545,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/clients-not-customers@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 56231,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/clients-not-customers@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/locaux-wisembly.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 101894,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/locaux-wisembly.jpg",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/locaux-wisembly.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/logo-wisembly.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9061,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/logo-wisembly.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/logo-wisembly.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/open-the-way-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19176,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/open-the-way-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/open-the-way-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/open-the-way-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 40952,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/open-the-way-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/open-the-way-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/open-the-way.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22447,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/open-the-way.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/open-the-way.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/open-the-way@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 44895,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/open-the-way@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/open-the-way@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/think-big-get-big-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20016,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/think-big-get-big-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42611,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/think-big-get-big.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23034,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/think-big-get-big@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46142,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/think-big-get-big@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/we-are-wisembly-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19703,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/we-are-wisembly-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42236,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/we-are-wisembly.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22751,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/we-are-wisembly@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 45330,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/we-are-wisembly@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/work-hard-play-hard-nb.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23242,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard-nb.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard-nb.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/work-hard-play-hard-nb@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 50784,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard-nb@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard-nb@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/work-hard-play-hard.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27180,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mission-vision\/work-hard-play-hard@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54947,
+		"inputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard@2x.png",
+		"outputAbbreviatedPath": "\/img\/mission-vision\/work-hard-play-hard@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -936,12 +1280,45 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/min\/script-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/script-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/script-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/modernizr-min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/modernizr-min.js",
 		"outputAbbreviatedPath": "\/js\/min\/modernizr-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/script.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/script.js",
+		"outputAbbreviatedPath": "\/js\/min\/script-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/script.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/script.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/script.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -1154,6 +1531,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/layoutImg\/graph-simple.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10329,
+		"inputAbbreviatedPath": "\/layoutImg\/graph-simple.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/graph-simple.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/graph-simple.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12219,
+		"inputAbbreviatedPath": "\/layoutImg\/graph-simple.png",
+		"outputAbbreviatedPath": "\/layoutImg\/graph-simple.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/layoutImg\/head\/bgHeadHome.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1216,6 +1615,17 @@
 		"initialSize": 495954,
 		"inputAbbreviatedPath": "\/layoutImg\/head\/headLivres.jpg",
 		"outputAbbreviatedPath": "\/layoutImg\/head\/headLivres.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/head\/headMissionVision.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.32449e+06,
+		"inputAbbreviatedPath": "\/layoutImg\/head\/headMissionVision.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/head\/headMissionVision.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1462,6 +1872,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/layoutImg\/mission-vision\/tirets-histoire.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 114,
+		"inputAbbreviatedPath": "\/layoutImg\/mission-vision\/tirets-histoire.png",
+		"outputAbbreviatedPath": "\/layoutImg\/mission-vision\/tirets-histoire.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/raccord-img.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 512,
+		"inputAbbreviatedPath": "\/layoutImg\/raccord-img.png",
+		"outputAbbreviatedPath": "\/layoutImg\/raccord-img.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/raccord-img@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 930,
+		"inputAbbreviatedPath": "\/layoutImg\/raccord-img@2x.png",
+		"outputAbbreviatedPath": "\/layoutImg\/raccord-img@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/layoutImg\/team\/arnaud.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1513,6 +1956,28 @@
 		"initialSize": 176253,
 		"inputAbbreviatedPath": "\/layoutImg\/team\/emilio.png",
 		"outputAbbreviatedPath": "\/layoutImg\/team\/emilio.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/tel-simple.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16790,
+		"inputAbbreviatedPath": "\/layoutImg\/tel-simple.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/tel-simple.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/tel-simple.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23483,
+		"inputAbbreviatedPath": "\/layoutImg\/tel-simple.png",
+		"outputAbbreviatedPath": "\/layoutImg\/tel-simple.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1597,6 +2062,35 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
+	"\/less\/style.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/less\/style.less",
+		"outputAbbreviatedPath": "\/css\/style.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
+		},
+	"\/livres-blancs.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/livres-blancs.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/manifest.json": {
 		"fileType": 524288,
 		"ignore": 1,
@@ -1607,6 +2101,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
+		},
+	"\/mission-vision.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/mission-vision.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/mstile-144x144.png": {
 		"fileType": 32768,
@@ -1701,11 +2204,20 @@
 		"processHTML": 0,
 		"randomFootnoteNumbers": 0,
 		"useCompatibilityMode": 0
+		},
+	"\/single-ref.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/single-ref.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Adrien Le Menthéour",
+"lastSavedByUser": "Boris Forconi",
 "manualImportLinks": {
 	},
 "projectAttributes": {
@@ -1857,7 +2369,7 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
-	"externalServerAddress": "http:\/\/localhost",
+	"externalServerAddress": "http:\/\/localhost:8888",
 	"externalServerPreviewPathAddition": "",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,

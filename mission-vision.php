@@ -28,57 +28,52 @@
 					</div>
 				</section>
 
-				<section class='wrapper content bgBlanc scrollHere'>
+				<section class='wrapper content bgBlanc scrollHere noMarginResponsive'>
 					<h2 class='noMarginTop'>Notre mission</h2>
 					<p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo,  au travers de <strong>5 valeurs fondamentales</strong> :</p>
 					<div id="wrapper-slider-visu-mission">
 						<ul id="slider-visu-mission">
-							<li id="visu-work-hard-play-hard">
+							<li class="visu-work-hard-play-hard">
 								<a href="#">
 									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/work-hard-play-hard@2x.png">
-									<img class="img-nb-slider-visu-mission" src="img/mission-vision/work-hard-play-hard-nb@2x.png">
 								</a>
-							</li><li id="visu-clients-not-customers">
+							</li><li class="visu-clients-not-customers">
 								<a href="#">
 									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/clients-not-customers@2x.png">
-									<img class="img-nb-slider-visu-mission" src="img/mission-vision/clients-not-customers-nb@2x.png">
 								</a>
-							</li><li id="visu-open-the-way">
+							</li><li class="visu-open-the-way" class="active">
 								<a href="#">
 									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/open-the-way@2x.png">
-									<img class="img-nb-slider-visu-mission" src="img/mission-vision/open-the-way-nb@2x.png">
 								</a>
-							</li><li id="visu-think-big-get-big">
+							</li><li class="visu-think-big-get-big">
 								<a href="#">
 									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/think-big-get-big@2x.png">
-									<img class="img-nb-slider-visu-mission" src="img/mission-vision/think-big-get-big-nb@2x.png">
 								</a>
-							</li><li id="visu-we-are-wisembly">
+							</li><li class="visu-we-are-wisembly">
 								<a href="#">
 									<img class="img-couleur-slider-visu-mission" src="img/mission-vision/we-are-wisembly@2x.png">
-									<img class="img-nb-slider-visu-mission" src="img/mission-vision/we-are-wisembly-nb@2x.png">
 								</a>
 							</li>
 						</ul>
+						<ul id="slider-txt-mission">
+							<li id="txt-work-hard-play-hard">
+								<h3>Work hard play hard</h3>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
+							</li><li id="txt-clients-not-customers">
+								<h3>Clients not customers</h3>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
+							</li><li id="txt-open-the-way">
+								<h3>Open the way</h3>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
+							</li><li id="txt-think-big-get-big">
+								<h3>Think big, get big</h3>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
+							</li><li id="txt-we-are-wisembly">
+								<h3>We are Wisembly</h3>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
+							</li>
+						</ul>
 					</div>
-					<!--<ul id="slider-txt-mission">
-						<li id="txt-work-hard-play-hard">
-							<h3>Work hard play hard</h3>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
-						</li><li id="txt-clients-not-customers">
-							<h3>Clients not customers</h3>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
-						</li><li class="active" id="txt-open-the-way">
-							<h3>Open the way</h3>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
-						</li><li id="txt-think-big-get-big">
-							<h3>Think big, get big</h3>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
-						</li><li id="txt-we-are-wisembly">
-							<h3>We are Wisembly</h3>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
-						</li>
-					</ul>-->
 					<button id="next-slider-mission">›</button>
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
@@ -145,11 +140,11 @@
 							</div>
 						</li>
 					</ul>
-					<button class='icon-down scrollNext'><span></span></button>
+					<!--<button class='icon-down scrollNext'><span></span></button>-->
 				</section>
 
-				<section class='wrapper content bgBlanc scrollHere'>
+				<!--<section class='wrapper content bgBlanc scrollHere'>
 					<h2>S'inscrire à notre newsletter</h2>
-				</section>
+				</section>-->
 
 			  	<?php include('includes/footer.php'); ?>

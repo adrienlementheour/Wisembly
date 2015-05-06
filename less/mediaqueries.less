@@ -155,12 +155,23 @@
   ul#avantages-wisembly{
     width: 700px;
   }
+  ul#notre-histoire{
+    width: 100%;
+  }
 }
 
 @media (max-width: 1040px){
-  .content{
+   .content{
     &.main{
       padding-top: 0;
+    }
+    &.noMarginResponsive {
+      padding-left: 0;
+      padding-right: 0;
+      p {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
     }
   }
 
@@ -620,6 +631,37 @@
   .slider-emploi{
     width: 80%;
   }
+  ul#notre-histoire{
+    width: 100%;
+    li{
+     .date-histoire{
+        width: 30%;
+     }
+     .content-histoire{
+       width: 70%;
+     }
+     .deco-histoire {
+        &:before {
+          left: 30%;
+        }
+        &:after {
+          left: 30%;
+        }
+     }
+     &:nth-child(even){
+        .date-histoire{
+          float: left;
+          text-align: right;
+          padding: 4px 36px 0 0;
+        }
+        .content-histoire{
+          float: right;
+          text-align: left;
+          padding: 0 0 0 36px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 767px){
@@ -901,6 +943,33 @@
   }
   .container-diapos #container-slider-diapos{
     height: 300px;
+  }
+  ul#notre-histoire{
+    width: 100%;
+    li{
+     .date-histoire, .content-histoire {
+       float: left;
+       width: 100%;
+       padding: 0 0 0 20px;
+       text-align: left;
+     }
+     .deco-histoire {
+        &:before {
+          left: 0;
+        }
+        &:after {
+          left: 0;
+        }
+     }
+     &:nth-child(even){
+        .date-histoire, .content-histoire {
+          float: left;
+          text-align: left;
+          width: 100%;
+          padding: 0 0 0 20px;
+        }
+      }
+    }
   }
 }
 
