@@ -336,6 +336,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  counter-reset: h2;
 }
 h1,
 h3,
@@ -378,6 +379,31 @@ h2,
   margin-top: 4em;
   position: relative;
 }
+h2.num,
+.h2.num {
+  counter-increment: h2;
+  position: relative;
+  z-index: 2;
+}
+h2.num:before,
+.h2.num:before {
+  content: counter(h2);
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 3.636em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #ebeeef;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -45px;
+  display: block;
+  width: 90px;
+  z-index: -1;
+}
 h2:after,
 .h2:after,
 hr:after {
@@ -416,6 +442,10 @@ h3.light,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+h3.marginTop,
+.h3.marginTop {
+  margin-top: 50px;
 }
 .noMarginTop {
   margin-top: 0;
@@ -568,7 +598,7 @@ blockquote.blue-blockquote {
   color: #3a434c;
   padding: 20px 50px;
   font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   font-size: 1.2em;
   -webkit-font-smoothing: antialiased;
@@ -2642,7 +2672,8 @@ footer {
 }
 .headTeam h1,
 .headEmploi h1,
-.headMissionVision h1 {
+.headMissionVision h1,
+.headEvenements h1 {
   margin: 25vh 0 30vh;
 }
 .headTeam:before {
@@ -2712,6 +2743,23 @@ footer {
   bottom: -60px;
   height: 170px;
   background: rgba(226, 92, 91, 0.7);
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
+}
+.headEvenements #bgHead {
+  background-image: url(../layoutImg/head/headHome.jpg);
+  background-position: 50% 0;
+}
+.headEvenements h1 {
+  text-align: left;
+  float: right;
+}
+.headEvenements:before {
+  right: 0;
+  bottom: -60px;
+  height: 170px;
+  background: rgba(70, 180, 137, 0.6);
   -webkit-transform: rotate(7deg);
   -ms-transform: rotate(7deg);
   transform: rotate(7deg);
@@ -4729,9 +4777,13 @@ ul#notre-histoire li .content-histoire a:focus {
 .slider-evenements ul li img {
   display: inline-block;
   vertical-align: top;
+  max-width: 100%;
 }
 #slider-visez-juste {
-  margin: 50px 0 40px 0;
+  margin: 60px 0 60px 0;
+}
+#slider-visez-juste ul li img {
+  max-width: 80%;
 }
 img#illus-responsive {
   max-width: 100%;
@@ -4749,8 +4801,8 @@ ul#benefices-solution {
 ul#benefices-solution li {
   display: inline-block;
   vertical-align: top;
-  margin: 0;
-  padding: 0 0 20px 0;
+  margin: 0 0 20px 0;
+  padding: 0 10px 20px 10px;
   box-sizing: border-box;
   width: 33.333333%;
   height: auto;
@@ -4848,6 +4900,35 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   position: absolute;
   top: 0;
   left: -7px;
+}
+.wrapper-ecran {
+  display: block;
+  width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: auto;
+  padding: 35px 40px;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+  background-color: #3a434c;
+}
+.wrapper-ecran .slider-evenements ul {
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+}
+.wrapper-ecran .slider-evenements #prev {
+  left: -100px;
+}
+.wrapper-ecran .slider-evenements #next {
+  right: -100px;
 }
 /* 404 */
 .error404 {
@@ -4972,6 +5053,12 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   #next {
     right: 30px;
   }
+  .wrapper-ecran .slider-evenements #prev {
+    left: -100px;
+  }
+  .wrapper-ecran .slider-evenements #next {
+    right: -100px;
+  }
   #slider-invite #prev,
   #slider-on-parle-de-nous #prev {
     left: 0;
@@ -5000,6 +5087,12 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
     left: 40%;
   }
   .gallery #next {
+    right: 40%;
+  }
+  .gallery .wrapper-ecran .slider-evenements #prev {
+    left: 40%;
+  }
+  .gallery .wrapper-ecran .slider-evenements #next {
     right: 40%;
   }
 }
@@ -5064,8 +5157,15 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   ul#avantages-wisembly {
     width: 700px;
   }
+<<<<<<< HEAD
   ul#notre-histoire {
     width: 100%;
+=======
+  ul#wisembly-autre li {
+    width: 42%;
+    margin: 0 2%;
+    padding: 30px 26px 30px 26px;
+>>>>>>> origin/master
   }
 }
 @media (max-width: 1040px) {
@@ -5318,6 +5418,12 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   #next {
     right: 50px;
   }
+  .wrapper-ecran .slider-evenements #prev {
+    left: -75px;
+  }
+  .wrapper-ecran .slider-evenements #next {
+    right: -75px;
+  }
   #slider-invite #prev,
   #slider-on-parle-de-nous #prev {
     left: -30px;
@@ -5365,6 +5471,9 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   }
   ul#offres-essais > li#reunions-conf-calls .bloc-top-offres-essais p {
     padding: 0 10px;
+  }
+  ul#wisembly-autre li .bloc-txt-wisembly-autre {
+    padding: 0 0 0 25px;
   }
 }
 @media (max-width: 979px) {
@@ -5434,6 +5543,7 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   .slider-emploi {
     width: 80%;
   }
+<<<<<<< HEAD
   ul#notre-histoire {
     width: 100%;
   }
@@ -5458,9 +5568,37 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
     float: right;
     text-align: left;
     padding: 0 0 0 36px;
+=======
+  .wrapper-ecran {
+    width: 85%;
+  }
+  ul#wisembly-autre li {
+    padding: 25px 20px 25px 20px;
+  }
+  ul#wisembly-autre li .bloc-img-wisembly-autre {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  ul#wisembly-autre li .bloc-img-wisembly-autre img {
+    max-height: 150px;
+    width: auto;
+  }
+  ul#wisembly-autre li .bloc-txt-wisembly-autre {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+>>>>>>> origin/master
   }
 }
 @media (max-width: 767px) {
+  .wrapper-ecran .slider-evenements #prev {
+    left: -60px;
+  }
+  .wrapper-ecran .slider-evenements #next {
+    right: -60px;
+  }
   header.menuVisible .lang {
     opacity: 1;
     -webkit-transition: 0.5s ease-in-out;
@@ -5704,6 +5842,7 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   .container-diapos #container-slider-diapos {
     height: 300px;
   }
+<<<<<<< HEAD
   ul#notre-histoire {
     width: 100%;
   }
@@ -5726,6 +5865,32 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
     text-align: left;
     width: 100%;
     padding: 0 0 0 20px;
+=======
+  blockquote.blue-blockquote {
+    padding: 20px 15px;
+    font-size: 1em;
+  }
+  .wrapper-ecran {
+    padding: 10px 10px;
+  }
+  ul#benefices-solution li {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 50%;
+  }
+  ul#wisembly-autre {
+    width: 90%;
+    margin: 40px auto 20px auto;
+  }
+  ul#wisembly-autre li {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+  }
+  ul#wisembly-autre li .bloc-img-wisembly-autre img {
+    max-height: 100px;
+>>>>>>> origin/master
   }
 }
 @media (max-width: 520px) {
@@ -5758,6 +5923,12 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   }
   #next {
     right: 20px;
+  }
+  .wrapper-ecran .slider-evenements #prev {
+    left: -50px;
+  }
+  .wrapper-ecran .slider-evenements #next {
+    right: -50px;
   }
   #slider-invite #prev,
   #slider-on-parle-de-nous #prev {
@@ -5816,8 +5987,20 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   .bloc-contact ul.rs {
     text-align: center;
   }
+  ul#benefices-solution li {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 100%;
+    padding: 0 0 20px 0;
+  }
 }
 @media (max-width: 450px) {
+  .wrapper-ecran .slider-evenements #prev {
+    left: 20px;
+  }
+  .wrapper-ecran .slider-evenements #next {
+    right: 20px;
+  }
   .contactFooter .wrapper-contentinfo {
     padding: 0 0 20px;
   }
@@ -6000,7 +6183,8 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   .headTeam h1,
   .headEmploi h1,
   .headEmploi h1,
-  .headMissionVision h1 {
+  .headMissionVision h1,
+  .headEvenements h1 {
     margin: 15vh 0 30vh;
   }
   .headLivres h1 {
