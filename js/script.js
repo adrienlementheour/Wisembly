@@ -738,9 +738,7 @@ $(function(){
 
     	if(!body.hasClass('landing')){
     		minHeight = $('.menu').innerHeight() - 10;
-
     		fixedHeader();
-    		
     		setSubMenu();
     		centerSubMenu();
     		setPosBtnMenu();
@@ -755,10 +753,33 @@ $(function(){
 	    	setMapSize();
 	    }
 
-	    // Hauteur slider témoignages //
 	    if($('#sliderTemoignages').length){
 	    	setSliderHeight($('#sliderTemoignages'));
 	    }
+
+	    if($('#slider-invite').length){
+			setSliderHeightLi($('#slider-invite'));
+		}
+
+		if($('#sliderLogosConfiance').length){
+			setSliderHeight($('#sliderLogosConfiance'));
+		}
+
+		if($('#sliderTemoignages').length){
+			setSliderHeight($('#sliderTemoignages'));
+		}
+
+		if($('#sliderLogosAccueillis').length){
+			setSliderHeight($('#sliderLogosAccueillis'));
+		}
+
+		if($('#slider-invite').length){
+			setSliderHeightLi($('#slider-invite'));
+		}
+
+		if($('#slider-on-parle-de-nous').length){
+			setSliderHeightLi($('#slider-on-parle-de-nous'));
+		}
 
 	    if(body.hasClass("emploi")){
 	    	initAnnonces();
