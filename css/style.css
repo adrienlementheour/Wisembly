@@ -6230,6 +6230,7 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   }
   .headHome #bgHead {
     background-image: url(../layoutImg/head/bgHeadHome.jpg);
+    background-size: 1825px auto;
   }
   .headRdv #bgHead {
     background-image: url(../layoutImg/head/bgHeadRdv.jpg);

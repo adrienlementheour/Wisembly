@@ -207,7 +207,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-<<<<<<< HEAD
 	"\/css\/style.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -217,8 +216,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-=======
->>>>>>> origin/master
 	"\/emploi.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -228,7 +225,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-<<<<<<< HEAD
 	"\/evenements.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -238,8 +234,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-=======
->>>>>>> origin/master
 	"\/favicon-16x16.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -522,6 +516,28 @@
 		"initialSize": 7833,
 		"inputAbbreviatedPath": "\/img\/evenements\/olivier-lagree.jpg",
 		"outputAbbreviatedPath": "\/img\/evenements\/olivier-lagree.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/evenements\/visu-capitalisez-contenu-evenement1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 58003,
+		"inputAbbreviatedPath": "\/img\/evenements\/visu-capitalisez-contenu-evenement1.png",
+		"outputAbbreviatedPath": "\/img\/evenements\/visu-capitalisez-contenu-evenement1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/evenements\/visu-engagez-audience.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 214172,
+		"inputAbbreviatedPath": "\/img\/evenements\/visu-engagez-audience.png",
+		"outputAbbreviatedPath": "\/img\/evenements\/visu-engagez-audience.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1313,15 +1329,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/script.js",
-		"outputAbbreviatedPath": "\/js\/min\/script-min.js",
+		"outputAbbreviatedPath": "\/js\/script.min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/script.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/script.min.js",
 		"outputAbbreviatedPath": "\/js\/min\/script.min-min.js",
@@ -2028,6 +2044,26 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
+	"\/less\/mediaqueries.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/less\/mediaqueries.less",
+		"outputAbbreviatedPath": "\/css\/mediaqueries.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
+		},
 	"\/less\/norm.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
@@ -2048,7 +2084,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-<<<<<<< HEAD
 	"\/less\/style.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
@@ -2069,8 +2104,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-=======
->>>>>>> origin/master
 	"\/livres-blancs.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -2211,12 +2244,12 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "Wisembly",
+	"displayValue": "Prod",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "harddrive_gray"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 1,
+	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -2836,7 +2869,7 @@
 	"markdownAutoOutputPathReplace2": "",
 	"markdownAutoOutputPathStyle": 0,
 	"markdownCriticStyle": 0,
-	"markdownEnableFootnotes": 0,
+	"markdownEnableFootnotes": 1,
 	"markdownEnableLabels": 1,
 	"markdownEnableSmartQuotes": 1,
 	"markdownEscapeLineBreaks": 0,
@@ -2859,7 +2892,7 @@
 	"sassDecimalPrecision": 10,
 	"sassOutputStyle": 0,
 	"sassUseLibsass": 0,
-	"shouldRunAutoprefixer": 1,
+	"shouldRunAutoprefixer": 0,
 	"shouldRunBless": 0,
 	"skippedItemsString": ".svn, .git, .hg, log, _logs, _cache, cache, logs, node_modules",
 	"slimAutoOutputPathEnabled": 1,
