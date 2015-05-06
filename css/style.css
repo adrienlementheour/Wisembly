@@ -2672,7 +2672,8 @@ footer {
 }
 .headTeam h1,
 .headEmploi h1,
-.headMissionVision h1 {
+.headMissionVision h1,
+.headEvenements h1 {
   margin: 25vh 0 30vh;
 }
 .headTeam:before {
@@ -2742,6 +2743,23 @@ footer {
   bottom: -60px;
   height: 170px;
   background: rgba(226, 92, 91, 0.7);
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
+}
+.headEvenements #bgHead {
+  background-image: url(../layoutImg/head/headHome.jpg);
+  background-position: 50% 0;
+}
+.headEvenements h1 {
+  text-align: left;
+  float: right;
+}
+.headEvenements:before {
+  right: 0;
+  bottom: -60px;
+  height: 170px;
+  background: rgba(70, 180, 137, 0.6);
   -webkit-transform: rotate(7deg);
   -ms-transform: rotate(7deg);
   transform: rotate(7deg);
@@ -6093,7 +6111,8 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
   .headTeam h1,
   .headEmploi h1,
   .headEmploi h1,
-  .headMissionVision h1 {
+  .headMissionVision h1,
+  .headEvenements h1 {
     margin: 15vh 0 30vh;
   }
   .headLivres h1 {

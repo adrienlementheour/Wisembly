@@ -19,6 +19,13 @@
 		<div class='overflow'>
 		
 			<?php include('includes/header.html'); ?>
+			
+			<section class='head headEvenements'>
+				<div id="bgHead"></div>
+				<div class='content main'>
+					<h1>Collectez<br /> <span>toute<br /> l'information</span></h1>
+				</div>
+			</section>
 
 			<div id='container'>
 				<section class='wrapper content main bgBlanc scrollHere'>

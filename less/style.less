@@ -2239,6 +2239,25 @@ footer{
   }
 }
 
+.headEvenements{
+  #bgHead{
+    background-image: url(../layoutImg/head/headHome.jpg);
+    background-position: 50% 0;
+  }
+  h1{
+    &:extend(.headTeam h1);
+    text-align: left;
+    float: right;
+  }
+  &:before{
+    right: 0;
+    bottom: -60px;
+    height: 170px;
+    background: fade(@vert, 60);
+    .transform(rotate(7deg));
+  }
+}
+
 .headPresse{
   #bgHead{
     background: @grisBorder url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
