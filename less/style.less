@@ -2241,20 +2241,16 @@ footer{
 
 .headEvenements{
   #bgHead{
-    background-image: url(../layoutImg/head/headHome.jpg);
-    background-position: 50% 0;
+    background-image: url(../layoutImg/head/bgHeadEvt.jpg);
+    background-position: 50% 100%;
+  }
+  .blocH1{
+    float: right;
+    margin: 23vh 0 0;
   }
   h1{
-    &:extend(.headTeam h1);
     text-align: left;
-    float: right;
-  }
-  &:before{
-    right: 0;
-    bottom: -60px;
-    height: 170px;
-    background: fade(@vert, 60);
-    .transform(rotate(7deg));
+    margin: 0;
   }
 }
 
@@ -3509,6 +3505,7 @@ footer{
 .listeChiffres{
   text-align: center;
   li{
+    &:extend(.containerChiffre all);
     padding: 0 60px;
     &:before{
       display: none;
@@ -3586,7 +3583,7 @@ footer{
 }
 
 /* Emploi */
-ul#avantages-wisembly{
+#avantages-wisembly{
   display: block;
   width: 100%;
   height: auto;
@@ -3618,26 +3615,23 @@ ul#avantages-wisembly{
 .slider-emploi{
   width: 782px;
   margin: 0 auto;
-  ul{
-    li{
-      width: 100%;
-      img{
-        max-width: 100%;
-      }
-    }
+  li{
+    width: 100%;
+  }
+  img{
+    max-width: 100%;
   }
 }
 
 #slider-invite{
   h3{
-    margin: 25px 0 20px 0;
+    margin: 25px 0 20px;
     &:after{
       display: none;
     }
   }
   .date-slider-invite{
     .gothamMedium(1.375em);
-    color: @txt;
   }
   .place-slider-invite{
     .gotham(1.250em);
@@ -3659,40 +3653,40 @@ ul#avantages-wisembly{
   position: relative;
   overflow: hidden;
   margin: 100px 0 40px;
-  #slider-diapos{
+}
+#slider-diapos{
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .js &{
+    width: 4000px;
+  }
+  li{
     display: inline-block;
     vertical-align: top;
-    width: auto;
+    padding: 0;
+    border: 5px solid #fff;
+    .box-sizing(border-box);
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    .js &{
-      width: 4000px;
-    }
-    li{
-      display: inline-block;
-      vertical-align: top;
-      padding: 0;
-      border: 5px solid #fff;
-      .box-sizing(border-box);
-      height: 100%;
+    width: auto;
+    &.half{
+      height: 50%;
       width: auto;
-      &.half{
-        height: 50%;
-        width: auto;
-      }
-      .js &{
-        position: absolute;
-      }
-      &:before{
-        display: none;
-      }
-      img{
-        height: 100%;
-        width: auto;
-      }
     }
+    .js &{
+      position: absolute;
+    }
+    &:before{
+      display: none;
+    }
+  }
+  img{
+    height: 100%;
+    width: auto;
   }
 }
 
@@ -3711,33 +3705,33 @@ ul#avantages-wisembly{
     vertical-align: middle;
     text-align: left;
     padding: 0 0 0 20px;
-    h3{
-      font-size: 1.25em;
-      color: @txt;
-      margin: 0 0 15px;
+  }
+  h3{
+    font-size: 1.25em;
+    color: @txt;
+    margin: 0 0 15px;
+  }
+  .nom-contact{
+    .gothamMedium(0.938em);
+    color: @txt;
+    margin: 0 0 5px;
+  }
+  .rs{
+    margin: 15px 0 0;
+    li{
+      margin: 0 5px 0 0;
+      padding: 0;
     }
-    .nom-contact{
-      .gothamMedium(0.938em);
-      color: @txt;
-      margin: 0 0 5px;
+    .icon-tw{
+      color: #828282;
+      &:hover, &:focus{
+        &:extend(.rs .icon-tw);
+      }
     }
-    .rs{
-      margin: 15px 0 0;
-      li{
-        margin: 0 5px 0 0;
-        padding: 0;
-      }
-      .icon-tw{
-        color: #828282;
-        &:hover, &:focus{
-          &:extend(.rs .icon-tw);
-        }
-      }
-      .icon-in{
-        color: #4f4f4f;
-        &:hover, &:focus{
-          &:extend(.rs .icon-in);
-        }
+    .icon-in{
+      color: #4f4f4f;
+      &:hover, &:focus{
+        &:extend(.rs .icon-in);
       }
     }
   }
@@ -3848,7 +3842,7 @@ ul.whr-items{
 
 /* Plans */
 
-ul#offres-essais{
+#offres-essais{
   display: block;
   width: 100%;
   height: auto;
@@ -3871,7 +3865,7 @@ ul#offres-essais{
       }
       .bloc-top-offres-essais{
         &:before{
-          background: url("../layoutImg/home/pot.png") no-repeat 50% 50%;
+          background: url(../layoutImg/home/pot.png) no-repeat 50% 50%;
         }
       }
       .btnFull.btnFullBlanc{
@@ -3888,7 +3882,7 @@ ul#offres-essais{
       }
       .bloc-top-offres-essais{
         &:before{
-          background: url("../layoutImg/home/tel.png") no-repeat 50% 50%;
+          background: url(../layoutImg/home/tel.png) no-repeat 50% 50%;
         }
       }
       .btnFull.btnFullBlanc{
@@ -3905,7 +3899,7 @@ ul#offres-essais{
       }
       .bloc-top-offres-essais{
         &:before{
-          background: url("../layoutImg/home/graph.png") no-repeat 50% 50%;
+          background: url(../layoutImg/home/graph.png) no-repeat 50% 50%;
         }
       }
       .btnFull.btnFullBlanc{
@@ -3929,24 +3923,24 @@ ul#offres-essais{
     }
     h3{
       color: @blanc;
-      margin: 0 0 20px 0;
+      margin: 0 0 20px;
     }
-    a.btnFull{
+    .btnFull{
       max-width: 278px;
       margin: 0 auto;
     }
-    ul.fonctionnalites{
+    .fonctionnalites{
       list-style-type: none;
       display: block;
       width: 100%;
       height: auto;
-      margin: 0 0 40px 0;
+      margin: 0 0 40px;
       padding: 0;
       >li{
         display: block;
         width: 100%;
         text-align: center;
-        margin: 0 0 15px 0;
+        margin: 0 0 15px;
         padding: 0;
         font-size: 0.933em;
         &:before{
@@ -3955,7 +3949,7 @@ ul#offres-essais{
       }
     }
     .bloc-top-offres-essais{
-      padding: 100px 10px 20px 10px;
+      padding: 100px 10px 20px;
       border-bottom: 1px dashed @blanc;
       p{
         .box-sizing(border-box);
@@ -3974,7 +3968,7 @@ ul#offres-essais{
       }
     }
     .bloc-bottom-offres-essais{
-      padding: 20px 10px 20px 10px;
+      padding: 20px 10px;
       h3{
         text-transform: uppercase;
       }
@@ -3993,7 +3987,7 @@ ul#offres-essais{
   text-align: center;
 }
 
-ul#slider-visu-mission{
+#slider-visu-mission{
   display: block;
   width: 100%;
   height: 260px;
@@ -4046,7 +4040,7 @@ ul#slider-visu-mission{
   }
 }
 
-ul#slider-txt-mission{
+#slider-txt-mission{
   display: block;
   width: 100%;
   height: 150px;
@@ -4078,7 +4072,7 @@ ul#slider-txt-mission{
   }
 }
 
-button#next-slider-mission{
+#next-slider-mission{
   display: block;
   margin: 25px auto 0 auto;
   .size(46px);
@@ -4097,16 +4091,10 @@ button#next-slider-mission{
   }
 }
 
-ul#notre-histoire{
-  display: block;
+#notre-histoire{
   width: 1050px;
-  height: auto;
-  margin: 50px auto 50px auto;
-  padding: 0;
-  list-style-type: none;
+  margin: 50px auto;
   li{
-    display: block;
-    margin: 0;
     padding: 0 0 70px 0;
     position: relative;
     &:nth-child(even){
@@ -4124,24 +4112,21 @@ ul#notre-histoire{
     &:last-of-type{
       .deco-histoire{
         &:after{
-          background: #dcdcdc url("../layoutImg/mission-vision/tirets-histoire.png") no-repeat 50% 100%;
+          background: #dcdcdc url(../layoutImg/mission-vision/tirets-histoire.png) no-repeat 50% 100%;
         }
       }
     }
     .deco-histoire{
-      display: block;
       width: 100%;
       height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      margin: 0;
-      padding: 0;
       &:before{
         content: "";
         display: block;
         .size(6px);
-        background-color: #16698d;
+        background: #16698d;
         .border-radius(50%);
         position: absolute;
         top: 9px;
@@ -4157,11 +4142,10 @@ ul#notre-histoire{
         top: 24px;
         bottom: 0px;
         left: 50%;
-        background-color: #dcdcdc;
+        background: #dcdcdc;
       }
     }
     .date-histoire, .content-histoire{
-      display: block;
       width: 50%;
       .box-sizing(border-box);
       position: relative;
@@ -4205,181 +4189,128 @@ ul#notre-histoire{
 
 /* Evenements */
 .blockquote-author{
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 17px 0 0 0;
-  padding: 0;
+  margin: 17px 0 0;
   .blockquote-author-img{
-    display: block;
     .size(50px);
     .border-radius(50%);
     overflow: hidden;
     position: relative;
-    margin: 0 auto 5px auto;
+    margin: 0 auto 5px;
     img{
       width: 100%;
       height: auto;
     }
   }
-  .blockquote-author-name{
-    display: block;
-    text-align: center;
+  .blockquote-author-name, .blockquote-author-function{
     .gothamMedium(1em);
+  }
+  .blockquote-author-name{
     color: #708189;
   }
   .blockquote-author-function{
-    display: block;
-    text-align: center;
-    .gothamMedium(1em);
     color: #a1a9ae;
   }
 }
 
 .slider-evenements{
-  ul{
-    li{
-      text-align: center;
-      display: block;
-      width: 100%;
-      img{
-        display: inline-block;
-        vertical-align: top;
-        max-width: 100%;
-      }
-    }
+  li{
+    width: 100%;
+  }
+  img{
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100%;
   }
 }
+
 #slider-visez-juste{
-  margin: 60px 0 60px 0;
-  ul{
-    li{
-      img{
-        max-width: 80%;
-      }
-    }
+  margin: 60px 0;
+  img{
+    max-width: 80%;
   }
 }
-img#illus-responsive{
+
+#illus-responsive{
   max-width: 100%;
   height: auto;
-  margin: 30px 0 50px 0;
+  margin: 30px 0 50px;
 }
-ul#benefices-solution{
-  display: block;
-  width: 100%;
-  height: auto;
-  list-style-type: none;
-  margin: 20px 0 0 0;
-  padding: 0;
+
+.benefices-solution{
+  margin: 20px 0 0;
   li{
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 0 20px 0;
-    padding: 0 10px 20px 10px;
-    .box-sizing(border-box);
-    width: 33.333333%;
-    height: auto;
-    text-align: center;
-    position: relative;
-    &:before{
-      display: none;
-    }
-    &:after{
-      display: block;
-      content: "";
-      width: 96px;
-      height: 1px;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      margin-left: -48px;
-      background-color: @bleuH2;
-    }
-    .title-stat{
-      .gothamLight(3.333em);
-      color: @bleuH2;
-      margin: 0 0 5px 0;
-    }
-    .content-stat{
-      color: @txt;
-    }
+    width: 33%;
+    padding: 0;
   }
 }
-ul#wisembly-autre{
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 40px 0 20px 0;
-  padding: 0;
-  list-style-type: none;
+
+#wisembly-autre{
+  margin: 40px 0 20px;
   text-align: center;
-  li{
+  li, .img, .bloc-txt{
     display: inline-block;
-    vertical-align: top;
-    margin: 0;
-    padding: 30px 40px 30px 30px;
-    border: 1px solid #efefef;
     .box-sizing(border-box);
+  }
+  li{
+    vertical-align: top;
     width: 516px;
-    height: auto;
     margin: 0 4px;
     &:before{
       display: none;
     }
-    .bloc-img-wisembly-autre{
-      display: inline-block;
-      vertical-align: middle;
-      width: 30%;
-      .box-sizing(border-box);
-      img{
-        width: 80%;
-        height: auto;
+  }
+  a{
+    padding: 30px 40px 30px 30px;
+    border: 1px solid #efefef;
+    display: block;
+    &:hover, &:focus{
+      background: #efefef;
+      .lien{
+        color: darken(@vert, 10);
+        border-color: fade(darken(@vert, 10), 30);
       }
     }
-    .bloc-txt-wisembly-autre{
-      display: inline-block;
-      vertical-align: middle;
-      width: 70%;
-      .box-sizing(border-box);
-      text-align: left;
-      padding: 0 0 0 40px;
-      h3{
-        margin: 0 0 20px 0;
-      }
-      p{
-        margin: 20px 0;
-      }
-      a{
-        position: relative;
-        color: @vert;
-        border-color: fade(@vert, 30);
-        margin-left: 7px;
-        &:hover, &:focus{
-          color: darken(@vert, 10);
-          border-color: fade(darken(@vert, 10), 30);
-        }
-        &:before{
-          content: '›';
-          position: absolute;
-          top: 0;
-          left: -7px;
-        }
-      }
+  }
+  .img{
+    width: 30%;
+  }
+  img{
+    width: 90%;
+    height: auto;
+  }
+  .bloc-txt{
+    vertical-align: middle;
+    width: 70%;
+    text-align: left;
+    padding: 0 0 0 35px;
+  }
+  .p{
+    display: block;
+    color: @txt;
+    margin: 20px 0;
+  }
+  .lien{
+    color: @vert;
+    border-bottom: 1px solid fade(@vert, 30);
+    margin: 0 0 0 7px;
+    position: relative;
+    .transition(.3s ease-in-out);
+    &:before{
+      content: '›';
+      position: absolute;
+      top: 0;
+      left: -7px;
     }
   }
 }
 
 .wrapper-ecran{
-  display: block;
   width: 900px;
-  height: auto;
   margin: 0 auto;
   .box-sizing(border-box);
-  height: auto;
   padding: 35px 40px;
   .border-radius(5px);
-  background-color: @txt;
+  background: @txt;
   .slider-evenements{
     ul{
       .border-radius(3px);
