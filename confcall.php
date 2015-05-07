@@ -14,18 +14,18 @@
 
 	</head>
 
-	<body class="page-template-evenements">
+	<body class="page-template-conf">
 
 		<div class='overflow'>
 		
 			<?php include('includes/header.html'); ?>
 			
-			<section class='head headEvenements'>
+			<section class='head headConf'>
 				<div id="bgHead"></div>
 				<div class='content main'>
 					<div class='blocH1'>
-						<h1>Libérez <br/><span>la parole</span></h1>
-						<p class='subHeading'>Collectez toutes les questions de votre public et répondez au mieux à ses attentes !</p>
+						<h1>Collectez <br/><span>toute l'information</span></h1>
+						<p class='subHeading'>et prenez les bonnes décisions</p>
 					</div>
 				</div>
 			</section>
@@ -35,10 +35,37 @@
 				<div id="bg-blanc"></div>
 				
 				<section class='content bgBlanc scrollHere'>
-					<h2 class="num noMarginTop">Visez au plus juste !</h2>
-					<h3>C'est simple et flexible !</h3>
-					<p>Avec Wisembly, dès la phase amont, vous vous assurez de répondre aux interrogations de votre auditoire.<br />
-					Avant l’événement, <strong>partagez des documents</strong> pour un niveau d’information égal pour tous, récoltez les idées et commentaires des participants, proposez des votes pour sonder votre audience.</p>
+					<h2 class="num noMarginTop">Préparez vos participants</h2>
+					<h3>Tout le monde est préparé et a le même niveau d'information</h3>
+					<p>En amont de la réunions, <strong>proposez des documents en téléchargement aux participants</strong> et invitez les à poser toutes leurs questions.</p>
+					<div class="wrapper-ecran">
+						<div id="slider-engagez-audience" class="slider-evenements carousel">
+							<ul>
+								<li>
+									<img src="img/evenements/visu-engagez-audience.png">
+								</li><li>
+									<img src="img/evenements/visu-engagez-audience.png">
+								</li>
+							</ul>
+						</div>
+					</div>
+					<blockquote class='blue'><span class="raccord-img"></span>J'ai constaté une meilleure préparation en amont des réunions.</blockquote>
+					<div class="citeContainer">
+						<span class="imgQuote"><img src="img/evenements/olivier-lagree.jpg"></span>
+						<span class="cite">
+							<strong>Chloé Myard</strong>
+							Responsable de la Communication Interne, AUCHAN
+						</span>
+					</div>
+					<button class='icon-down scrollNext'><span></span></button>
+				</section>
+				
+				<section class='content bgBlanc scrollHere'>
+					<h2 class="num">Engagez votre audience</h2>
+					<h3>Avec Wisembly, partagez l'information et boostez la participation</h3>
+					<p>A distance ou en format hybride, impliquer vos collaborateurs grâce à des votes et en leur permettant
+					de participer par message en temps réel. Diffusez vos slides ou <strong>vos vidéos en temps réel</strong>, et retenez toute 
+					l'attention de votre auditoire !</p>
 					<div id="slider-visez-juste" class="slider-evenements carousel">
 						<ul>
 							<li>
@@ -52,62 +79,27 @@
 							</li>
 						</ul>
 					</div>
-					<blockquote class='blue'><span class="raccord-img"></span>Au-delà de l’évidente dynamique ludique que crée Wisembly, il redonne à nos pratiques d’intervention un gain spectaculaire dans la capacité d’interaction.</blockquote>
-					<div class="citeContainer">
-						<span class="imgQuote"><img src="img/evenements/olivier-lagree.jpg"></span>
-						<span class="cite">
-							<strong>Olivier Lagrée</strong>
-							Consultant DELOITTE
-						</span>
-					</div>
-					<button class='icon-down scrollNext'><span></span></button>
-				</section>
-				
-				<section class='content bgBlanc scrollHere'>
-					<h2 class="num">Engagez votre audience</h2>
-					<h3>Proposez des votes à votre public</h3>
-					<p><strong>Votes</strong>, questions en temps réel, likes, vidéos, présentations.<br /> 
-					Proposez des sessions interactives pour un engagement maximal !</p>
-					<div class="wrapper-ecran">
-						<div id="slider-engagez-audience" class="slider-evenements carousel">
-							<ul>
-								<li>
-									<img src="img/evenements/visu-engagez-audience.png">
-								</li><li>
-									<img src="img/evenements/visu-engagez-audience.png">
-								</li>
-							</ul>
-						</div>
-					</div>
 					<h3 class="marginTop">Wisembly est disponible partout, tout le temps.</h3>
 					<p>Ne changez pas les habitudes de votre public, utilisez les et surfez sur le digital : web, mobile, tablette, Twitter, email, SMS…<br />
 					Sans application à télécharger, Wisembly fonctionne depuis tous les appareils et se prête parfaitement aux conf calls multisites.</p>
 					<img class="illus-responsive" src="img/evenements/illus-responsive.png">
-					<blockquote class="blue"><span class="raccord-img"></span>J’ai cherché un moyen de rendre les participants acteurs pendant la plénière. Nous savons qu’aujourd’hui, participer est clé pour l’adhésion des participants aux événements.</blockquote>
+					<blockquote class="blue"><span class="raccord-img"></span>Le slideshow m'a permis de diffuser les slides en temps réel visibles et suivis par tous.</blockquote>
 					<div class="citeContainer">
 						<span class="imgQuote"><img src="img/evenements/marie-laurence-pouxviel.jpg"></span>
 						<span class="cite">
-							<strong>Marie-Laurence Pouxviel</strong>
-							Responsable Communication Interne et Externe, Danone Nutricia Research
+							<strong>Chloé Myard</strong>
+							Responsable de la Communication Interne, AUCHAN
 						</span>
 					</div>
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
 				
 				<section class='content bgBlanc scrollHere'>
-					<h2 class="num">Capitalisez sur tout le contenu de votre événement</h2>
-					<p>Avec Wisembly, vous traitez en moyenne 3 fois plus de sujets lors de vos événements. En 1 clic, vous pourrez accédez à l’ensemble de vos statistiques : <strong>taux de participation</strong>, messages, réponses aux questionnaires, etc. </p>
-					<div class="wrapper-ecran">
-						<div id="slider-contenu-evenement" class="slider-evenements carousel">
-							<ul>
-								<li>
-									<img src="img/evenements/visu-capitalisez-contenu-evenement1.png">
-								</li><li>
-									<img src="img/evenements/visu-capitalisez-contenu-evenement1.png">
-								</li>
-							</ul>
-						</div>
-					</div>
+					<h2 class="num">Sondez vos participants & capitalisez sur le contenu</h2>
+					<p>En fin de conf call, interrogez vos participants grâce à un questionnaire de satisfaction. 
+						Grâce au feedback des participants, vous améliorerez vos formats et contenus continuellement ! 
+						Vous retrouvez aussi sur Wisembly tout le détail de vos échanges, pour faciliter les compte-rendus et capitaliser sur le contenu.. </p>
+					<img class="illus-responsive" src="img/conf/compte-rendu.png">
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
 				
@@ -133,7 +125,7 @@
 
 					<article class='rouge ref etude'>
 						<span class='img'></span>
-						<a href='#' class='cat'>Séminaires & Evénements</a>
+						<a href='#' class='cat'>Réunions & conf-calls</a>
 						<a href='#' title='' class='lien'>
 							<strong class='medium'>Convention de présentation du plan digital du groupe La Poste</strong>
 							<span class='txt'>Chaque année, La Poste organise un séminaire d'échanges de bonnes pratiques. 120 managers de la direction financière sont invités à travailler sur un thème défini par avance.</span>
@@ -150,7 +142,7 @@
 						</a>
 					</article><article class='jaune ref etude'>
 						<span class='img'></span>
-						<a href='#' class='cat'>Séminaires & Evénements</a>
+						<a href='#' class='cat'>Réunions & conf-calls</a>
 						<a href='#' title='' class='lien'>
 							<strong class='medium'>Convention de présentation du plan digital du groupe La Poste</strong>
 							<span class='txt'>Chaque année, La Poste organise un séminaire d'échanges de bonnes pratiques. 120 managers de la direction financière sont invités à travailler sur un thème défini par avance.</span>
@@ -175,10 +167,10 @@
 						<li>
 							<a href="#">
 								<span class='img'>
-									<img src="layoutImg/tel.png">
+									<img src="layoutImg/pot.png">
 								</span><span class='bloc-txt'>
-									<span class='h3'>Réunions &amp; Conf-calls</span>
-									<span class='p'>Préparer, animer et assurer le suivi de vos réunions &amp; conf&#8209;calls</span>
+									<span class='h3'>Séminaires & Evénements</span>
+									<span class='p'>Donnez la parole à tous les participants de votre séminaire</span>
 									<span class='lien'>découvrir les avantages</span>
 								</span>
 							</a>

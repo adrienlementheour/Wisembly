@@ -592,10 +592,9 @@ blockquote {
   text-indent: 30px;
   line-height: 20px;
 }
-blockquote.blue-blockquote {
-  border: none;
-  background-color: #f7f7f7;
-  color: #3a434c;
+blockquote.blue {
+  border: 0;
+  background: #f7f7f7;
   padding: 20px 50px;
   font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
   font-weight: 200;
@@ -605,19 +604,9 @@ blockquote.blue-blockquote {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   line-height: 1.4em;
-  position: relative;
 }
-blockquote.blue-blockquote .raccord-img {
-  display: block;
-  width: 33px;
-  height: 16px;
-  background: url("../layoutImg/raccord-img.png") no-repeat 50% 50%;
-  position: absolute;
-  bottom: -16px;
-  left: 50%;
-  margin-left: -57px;
-}
-blockquote.blue-blockquote:before {
+blockquote.blue:before,
+blockquote.blue:after {
   font-family: 'wisembly';
   speak: none;
   font-weight: normal;
@@ -626,31 +615,19 @@ blockquote.blue-blockquote:before {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: '\e600';
   font-size: 12px;
-  color: #0a5a83;
+  color: #06698d;
   position: relative;
   top: inherit;
   left: inherit;
   vertical-align: top;
+}
+blockquote.blue:before {
+  content: '\e600';
   margin: 0 10px 0 0;
 }
-blockquote.blue-blockquote:after {
-  font-family: 'wisembly';
-  speak: none;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+blockquote.blue:after {
   content: '\e60e';
-  font-size: 12px;
-  color: #0a5a83;
-  position: relative;
-  top: inherit;
-  left: inherit;
-  vertical-align: top;
   margin: 0 0 0 10px;
 }
 blockquote:before {
@@ -865,6 +842,15 @@ button:focus {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+.btnFull:hover,
+.btnLight:hover,
+.btnBlanc:hover,
+.btnFull:focus,
+.btnLight:focus,
+.btnBlanc:focus {
+  border-color: #46b489;
+  outline: 0;
+}
 .btnFull.widthAuto,
 .btnLight.widthAuto,
 .btnBlanc.widthAuto {
@@ -875,19 +861,20 @@ button:focus {
 .btnBlanc.smallTxt {
   font-size: 0.933em;
 }
-.btnFull:hover,
-.btnLight:hover,
-.btnBlanc:hover,
-.btnFull:focus,
-.btnLight:focus,
-.btnBlanc:focus {
-  border-color: #46b489;
-  outline: 0;
-}
 .btnFull.smaller,
 .btnLight.smaller,
 .btnBlanc.smaller {
   width: 150px;
+}
+.btnFull.big,
+.btnLight.big,
+.btnBlanc.big {
+  width: 250px;
+}
+.btnFull + hr,
+.btnLight + hr,
+.btnBlanc + hr {
+  margin-top: 80px;
 }
 .btnFull {
   color: #fff;
@@ -2751,13 +2738,22 @@ footer {
   background-image: url(../layoutImg/head/bgHeadEvt.jpg);
   background-position: 50% 100%;
 }
-.headEvenements .blocH1 {
+.headEvenements .blocH1,
+.headConf .blocH1 {
   float: right;
   margin: 23vh 0 0;
 }
-.headEvenements h1 {
+.headEvenements h1,
+.headConf h1 {
   text-align: left;
   margin: 0;
+}
+.headConf #bgHead {
+  background-image: url(../layoutImg/head/bgHeadConf.jpg);
+  background-position: 50% 100%;
+}
+.headConf .blocH1 {
+  width: 500px;
 }
 .headPresse #bgHead {
   background: #ebeeef url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
@@ -3137,7 +3133,7 @@ footer {
   display: block;
 }
 .ref .imgQuote,
-.temoignage .imgQuote {
+.citeContainer .imgQuote {
   display: inline-block;
   vertical-align: middle;
   width: 50px;
@@ -3811,7 +3807,7 @@ footer {
   left: 0;
 }
 .etude .imgQuote,
-.temoignage .imgQuote {
+.citeContainer .imgQuote {
   display: block;
   margin: 0 auto 10px;
 }
@@ -3894,6 +3890,9 @@ footer {
 .etude.bleu .btnFalse {
   background: #06698d;
 }
+.etude + .btnLight {
+  margin-top: 60px;
+}
 .temoignage {
   width: 50%;
   height: auto;
@@ -3916,12 +3915,14 @@ footer {
 .temoignage .quote:before {
   color: #06698d;
 }
-.temoignage .citeContainer {
+.citeContainer {
   background: #fff;
   position: relative;
   padding: 15px 0 0;
+  max-width: 520px;
+  margin: 0 auto;
 }
-.temoignage .citeContainer:before {
+.citeContainer:before {
   font-family: 'wisembly';
   speak: none;
   font-weight: normal;
@@ -3937,11 +3938,11 @@ footer {
   top: -10px;
   left: 30%;
 }
-.temoignage .cite {
+.citeContainer .cite {
   opacity: .6;
   display: block;
 }
-.temoignage .cite strong {
+.citeContainer .cite strong {
   display: block;
 }
 .dateEtude {
@@ -4440,42 +4441,23 @@ ul.whr-items li ul.whr-info li.whr-date {
   color: #ffffff;
   margin: 0 0 20px;
 }
-<<<<<<< HEAD
-#offres-essais > li .btnFull {
-=======
-ul#offres-essais > li a {
+#offres-essais > li a {
   color: #ffffff;
   border-color: #ffffff;
-  text-decoration: none;
 }
-ul#offres-essais > li a:hover,
-ul#offres-essais > li a:active,
-ul#offres-essais > li a:visited {
-  color: #ffffff;
-  border-color: #ffffff;
-  text-decoration: none;
-}
-ul#offres-essais > li a:hover {
+#offres-essais > li a:hover {
   -webkit-opacity: 0.8;
   -moz-opacity: 0.8;
   opacity: 0.8;
 }
-ul#offres-essais > li a.btnFull {
->>>>>>> origin/master
+#offres-essais > li .btnFull {
   max-width: 278px;
   margin: 0 auto;
 }
 #offres-essais > li .fonctionnalites {
-  list-style-type: none;
-  display: block;
-  width: 100%;
-  height: auto;
   margin: 0 0 40px;
-  padding: 0;
 }
 #offres-essais > li .fonctionnalites > li {
-  display: block;
-  width: 100%;
   text-align: center;
   margin: 0 0 15px;
   padding: 0;
@@ -4744,42 +4726,6 @@ ul#offres-essais > li a.btnFull {
   border-color: rgba(56, 143, 109, 0.3);
 }
 /* Evenements */
-.blockquote-author {
-  margin: 17px 0 0;
-}
-.blockquote-author .blockquote-author-img {
-  width: 50px;
-  height: 50px;
-  -webkit-border-radius: 50%;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 50%;
-  -moz-background-clip: padding;
-  border-radius: 50%;
-  background-clip: padding-box;
-  overflow: hidden;
-  position: relative;
-  margin: 0 auto 5px;
-}
-.blockquote-author .blockquote-author-img img {
-  width: 100%;
-  height: auto;
-}
-.blockquote-author .blockquote-author-name,
-.blockquote-author .blockquote-author-function {
-  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 1em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-.blockquote-author .blockquote-author-name {
-  color: #708189;
-}
-.blockquote-author .blockquote-author-function {
-  color: #a1a9ae;
-}
 .slider-evenements li {
   width: 100%;
 }
@@ -4794,10 +4740,11 @@ ul#offres-essais > li a.btnFull {
 #slider-visez-juste img {
   max-width: 80%;
 }
-#illus-responsive {
+.illus-responsive {
   max-width: 100%;
   height: auto;
-  margin: 30px 0 50px;
+  margin: 30px auto 50px;
+  display: block;
 }
 .benefices-solution {
   margin: 20px 0 0;
@@ -4842,7 +4789,7 @@ ul#offres-essais > li a.btnFull {
   width: 30%;
 }
 #wisembly-autre img {
-  width: 90%;
+  width: 80%;
   height: auto;
 }
 #wisembly-autre .bloc-txt {
@@ -4896,6 +4843,9 @@ ul#offres-essais > li a.btnFull {
 }
 .wrapper-ecran .slider-evenements #next {
   right: -100px;
+}
+.wrapper-ecran + blockquote {
+  margin-top: 50px;
 }
 /* 404 */
 .error404 {

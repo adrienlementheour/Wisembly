@@ -230,44 +230,27 @@ blockquote{
   border: 2px solid @grisBorder;
   text-indent: 30px;
   line-height: 20px;
-  &.blue-blockquote{
-    border: none;
-    background-color: #f7f7f7;
-    color: @txt;
+  &.blue{
+    border: 0;
+    background: #f7f7f7;
     padding: 20px 50px;
     .gothamLight(1.200em);
     line-height: 1.4em;
-    position: relative;
-    .raccord-img{
-      display: block;
-      width: 33px;
-      height: 16px;
-      background: url("../layoutImg/raccord-img.png") no-repeat 50% 50%;
-      position: absolute;
-      bottom: -16px;
-      left: 50%;
-      margin-left: -57px;
-    }
-    &:before{
+    &:before, &:after{
       .fontIcon();
-      content: '\e600';
       font-size: 12px;
-      color: #0a5a83;
+      color: @bleu;
       position: relative;
       top: inherit;
       left: inherit;
       vertical-align: top;
+    }
+    &:before{
+      content: '\e600';
       margin: 0 10px 0 0;
     }
     &:after{
-      .fontIcon();
       content: '\e60e';
-      font-size: 12px;
-      color: #0a5a83;
-      position: relative;
-      top: inherit;
-      left: inherit;
-      vertical-align: top;
       margin: 0 0 0 10px;
     }
   }
@@ -441,18 +424,24 @@ button{
   border: 2px solid;
   .gothamMedium(1em);
   .transition(.3s ease-in-out);
+  &:hover, &:focus{
+    border-color: @vert;
+    outline: 0;
+  }
   &.widthAuto{
     width: auto;
   }
   &.smallTxt{
     font-size: 0.933em;
   }
-  &:hover, &:focus{
-    border-color: @vert;
-    outline: 0;
-  }
   &.smaller {
-    width:150px;
+    width: 150px;
+  }
+  &.big{
+    width: 250px;
+  }
+  + hr{
+    margin-top: 80px;
   }
 }
 .btnFull{
@@ -2256,6 +2245,20 @@ footer{
   }
 }
 
+.headConf{
+  #bgHead{
+    background-image: url(../layoutImg/head/bgHeadConf.jpg);
+    background-position: 50% 100%;
+  }
+  .blocH1{
+    &:extend(.headEvenements .blocH1);
+    width: 500px;
+  }
+  h1{
+    &:extend(.headEvenements h1);
+  }
+}
+
 .headPresse{
   #bgHead{
     background: @grisBorder url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
@@ -3392,6 +3395,9 @@ footer{
       background: @bleu;
     }
   }
+  + .btnLight{
+    margin-top: 60px;
+  }
 }
 
 .temoignage{
@@ -3407,10 +3413,6 @@ footer{
     &:extend(.ref .img);
     left: 0;
   }
-  .imgQuote{
-    &:extend(.ref .imgQuote);
-    &:extend(.etude .imgQuote);
-  }
   .quote{
     padding: 120px 50px 50px;
     display: block;
@@ -3421,19 +3423,22 @@ footer{
       color: @bleu;
     }
   }
-  .citeContainer{
-    background: #fff;
-    position: relative;
-    padding: 15px 0 0;
-    &:before{
-      .fontIcon();
-      content: "\e60c";
-      color: @grisSlides;
-      font-size: 40px;
-      position: absolute;
-      top: -10px;
-      left: 30%;
-    }
+}
+
+.citeContainer{
+  background: #fff;
+  position: relative;
+  padding: 15px 0 0;
+  max-width: 520px;
+  margin: 0 auto;
+  &:before{
+    .fontIcon();
+    content: "\e60c";
+    color: @grisSlides;
+    font-size: 40px;
+    position: absolute;
+    top: -10px;
+    left: 30%;
   }
   .cite{
     opacity: .6;
@@ -3441,6 +3446,10 @@ footer{
     strong{
       display: block;
     }
+  }
+  .imgQuote{
+    &:extend(.ref .imgQuote);
+    &:extend(.etude .imgQuote);
   }
 }
 
@@ -3935,37 +3944,20 @@ ul.whr-items{
       color: @blanc;
       margin: 0 0 20px;
     }
-<<<<<<< HEAD
-    .btnFull{
-=======
-    a {
+    a{
       color: @blanc;
       border-color: @blanc;
-      text-decoration: none;
-      &:hover, &:active, &:visited {
-        color: @blanc;
-        border-color: @blanc;
-        text-decoration: none;
-      }
       &:hover {
         .opacity(0.8);
       }
     }
-    a.btnFull{
->>>>>>> origin/master
+    .btnFull{
       max-width: 278px;
       margin: 0 auto;
     }
     .fonctionnalites{
-      list-style-type: none;
-      display: block;
-      width: 100%;
-      height: auto;
       margin: 0 0 40px;
-      padding: 0;
       >li{
-        display: block;
-        width: 100%;
         text-align: center;
         margin: 0 0 15px;
         padding: 0;
@@ -4215,30 +4207,6 @@ ul.whr-items{
 }
 
 /* Evenements */
-.blockquote-author{
-  margin: 17px 0 0;
-  .blockquote-author-img{
-    .size(50px);
-    .border-radius(50%);
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto 5px;
-    img{
-      width: 100%;
-      height: auto;
-    }
-  }
-  .blockquote-author-name, .blockquote-author-function{
-    .gothamMedium(1em);
-  }
-  .blockquote-author-name{
-    color: #708189;
-  }
-  .blockquote-author-function{
-    color: #a1a9ae;
-  }
-}
-
 .slider-evenements{
   li{
     width: 100%;
@@ -4257,10 +4225,11 @@ ul.whr-items{
   }
 }
 
-#illus-responsive{
+.illus-responsive{
   max-width: 100%;
   height: auto;
-  margin: 30px 0 50px;
+  margin: 30px auto 50px;
+  display: block;
 }
 
 .benefices-solution{
@@ -4302,7 +4271,7 @@ ul.whr-items{
     width: 30%;
   }
   img{
-    width: 90%;
+    width: 80%;
     height: auto;
   }
   .bloc-txt{
@@ -4348,6 +4317,9 @@ ul.whr-items{
     #next {
       right: -100px;
     }
+  }
+  + blockquote{
+    margin-top: 50px;
   }
 }
 
