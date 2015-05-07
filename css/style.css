@@ -1145,7 +1145,6 @@ header.menuVisible #triangleMenu {
   -ms-transform: rotate(16deg);
   transform: rotate(16deg);
   -webkit-transition: 0.4s right 0.3s ease-in-out, 0.4s -webkit-transform 0.3s ease-in-out;
-  transition: 0.4s right 0.3s ease-in-out,0.4s -webkit-transform 0.3s ease-in-out,0.4s -moz-transform 0.3s ease-in-out,0.4s -o-transform 0.3s ease-in-out,0.4s transform 0.3s ease-in-out;
 }
 .topHeader {
   height: 40px;
@@ -4734,6 +4733,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   display: inline-block;
   vertical-align: top;
   max-width: 100%;
+  height: auto;
 }
 #slider-visez-juste {
   margin: 60px 0;
