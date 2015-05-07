@@ -1145,6 +1145,7 @@ header.menuVisible #triangleMenu {
   -ms-transform: rotate(16deg);
   transform: rotate(16deg);
   -webkit-transition: 0.4s right 0.3s ease-in-out, 0.4s -webkit-transform 0.3s ease-in-out;
+  transition: 0.4s right 0.3s ease-in-out,0.4s -webkit-transform 0.3s ease-in-out,0.4s -moz-transform 0.3s ease-in-out,0.4s -o-transform 0.3s ease-in-out,0.4s transform 0.3s ease-in-out;
 }
 .topHeader {
   height: 40px;
@@ -5720,6 +5721,14 @@ ul.whr-items li ul.whr-info li.whr-date {
     display: none;
   }
   .blocH1 {
+    padding: 0;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .headEvenements .blocH1,
+  .headConf .blocH1,
+  .headConf .blocH1 {
     padding: 0;
     float: none;
     margin: 0 auto;
