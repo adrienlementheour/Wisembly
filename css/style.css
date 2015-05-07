@@ -849,6 +849,8 @@ button:focus {
   position: relative;
   display: block;
   width: 230px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
   height: 44px;
   line-height: 44px;
@@ -1389,7 +1391,7 @@ header.menuVisible #triangleMenu {
 }
 .bottomHeader .btnFull {
   float: right;
-  width: 170px;
+  width: 150px;
   margin: 24px 0;
 }
 .bottomHeader .rs a {
@@ -2934,8 +2936,16 @@ footer {
   display: inline-block;
   vertical-align: top;
   width: 33%;
-  padding: 0 30px;
+  padding: 0 30px 70px 30px;
   box-sizing: border-box;
+  position: relative;
+  min-height: 340px;
+}
+.detailHome li a.btnLight {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -125px;
 }
 .detailHome li:before {
   content: '';
@@ -2946,7 +2956,7 @@ footer {
   height: 150px;
 }
 .detailHome p {
-  margin: 1em 0 1.5em;
+  margin: 1em 0 0;
 }
 .detailHome .event:before {
   background: url(../layoutImg/home/pot.png) no-repeat;
@@ -4433,6 +4443,23 @@ ul#offres-essais > li h3 {
   color: #ffffff;
   margin: 0 0 20px 0;
 }
+ul#offres-essais > li a {
+  color: #ffffff;
+  border-color: #ffffff;
+  text-decoration: none;
+}
+ul#offres-essais > li a:hover,
+ul#offres-essais > li a:active,
+ul#offres-essais > li a:visited {
+  color: #ffffff;
+  border-color: #ffffff;
+  text-decoration: none;
+}
+ul#offres-essais > li a:hover {
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
 ul#offres-essais > li a.btnFull {
   max-width: 278px;
   margin: 0 auto;
@@ -5111,7 +5138,7 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
     padding-left: 20px;
   }
   .menu > li > a {
-    padding: 0 20px;
+    padding: 0 15px;
   }
   .slideTeam p {
     max-width: 150px;
@@ -5353,8 +5380,8 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
     transition: 0.3s ease-in-out;
   }
   .bottomHeader .sub-menu a {
-    color: rgba(58, 67, 76, 0.8);
-    font-size: .88em;
+    color: rgba(58, 67, 76, 0.5);
+    font-size: .80em;
   }
   .bottomHeader .sub-menu > li > a {
     padding-top: 0;
@@ -5515,6 +5542,17 @@ ul#wisembly-autre li .bloc-txt-wisembly-autre a:before {
     width: 100%;
     padding: 0;
     margin: 0 0 50px;
+    height: auto;
+    min-height: 0;
+  }
+  .detailHome li a.btnLight {
+    position: static;
+    left: auto;
+    bottom: auto;
+    margin-left: auto;
+  }
+  .detailHome p {
+    margin: 1em 0 1.5em;
   }
   .detailHome .training {
     margin: 0;
