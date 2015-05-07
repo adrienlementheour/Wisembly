@@ -276,6 +276,15 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/formations.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/formations.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/functions.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -340,6 +349,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/conf\/auchan.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4425,
+		"inputAbbreviatedPath": "\/img\/conf\/auchan.png",
+		"outputAbbreviatedPath": "\/img\/conf\/auchan.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/conf\/compte-rendu.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -347,6 +367,50 @@
 		"initialSize": 24336,
 		"inputAbbreviatedPath": "\/img\/conf\/compte-rendu.png",
 		"outputAbbreviatedPath": "\/img\/conf\/compte-rendu.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/conf\/visu-engagez-audience1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16702,
+		"inputAbbreviatedPath": "\/img\/conf\/visu-engagez-audience1.png",
+		"outputAbbreviatedPath": "\/img\/conf\/visu-engagez-audience1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/conf\/visu-engagez-audience2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23788,
+		"inputAbbreviatedPath": "\/img\/conf\/visu-engagez-audience2.png",
+		"outputAbbreviatedPath": "\/img\/conf\/visu-engagez-audience2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/conf\/visu-engagez-audience3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23305,
+		"inputAbbreviatedPath": "\/img\/conf\/visu-engagez-audience3.png",
+		"outputAbbreviatedPath": "\/img\/conf\/visu-engagez-audience3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/conf\/visu-preparez-participants1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 101402,
+		"inputAbbreviatedPath": "\/img\/conf\/visu-preparez-participants1.jpg",
+		"outputAbbreviatedPath": "\/img\/conf\/visu-preparez-participants1.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1659,6 +1723,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/layoutImg\/head\/headFormations.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.53757e+06,
+		"inputAbbreviatedPath": "\/layoutImg\/head\/headFormations.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/head\/headFormations.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/layoutImg\/head\/headHome.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -2116,7 +2191,7 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"relativeURLS": 0,
-		"shouldRunAutoprefixer": 1,
+		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"strictImports": 0,
 		"strictMath": 0,
@@ -2276,7 +2351,7 @@
 	"iconImageName": "harddrive_gray"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -2418,7 +2493,7 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
-	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerAddress": "http:\/\/localhost",
 	"externalServerPreviewPathAddition": "",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,
