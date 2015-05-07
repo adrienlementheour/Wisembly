@@ -883,6 +883,18 @@ $(function(){
 			posSlideMission();
 		}
 
+		if($('#slider-visez-juste').length){
+			setSliderHeightLi($('#slider-visez-juste'));
+		}
+
+		if($('#slider-contenu-evenement').length){
+			setSliderHeightLi($('#slider-contenu-evenement'));
+		}
+		
+		if($('#slider-engagez-audience').length){
+			setSliderHeightLi($('#slider-engagez-audience'));
+		}
+
 	    if(body.hasClass("page-template-emploi")){
 	    	//initAnnonces();
 	    	/*sliderSmall = $(window).width()>767 ? false : true ;

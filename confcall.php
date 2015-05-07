@@ -42,16 +42,16 @@
 						<div id="slider-engagez-audience" class="slider-evenements carousel">
 							<ul>
 								<li>
-									<img src="img/evenements/visu-engagez-audience.png">
+									<img src="img/conf/visu-preparez-participants1.jpg">
 								</li><li>
-									<img src="img/evenements/visu-engagez-audience.png">
+									<img src="img/conf/visu-preparez-participants1.jpg">
 								</li>
 							</ul>
 						</div>
 					</div>
 					<blockquote class='blue'><span class="raccord-img"></span>J'ai constaté une meilleure préparation en amont des réunions.</blockquote>
 					<div class="citeContainer">
-						<span class="imgQuote"><img src="img/evenements/olivier-lagree.jpg"></span>
+						<span class="imgQuote"><img src="img/conf/auchan.png"></span>
 						<span class="cite">
 							<strong>Chloé Myard</strong>
 							Responsable de la Communication Interne, AUCHAN
@@ -69,13 +69,13 @@
 					<div id="slider-visez-juste" class="slider-evenements carousel">
 						<ul>
 							<li>
-								<img src="img/evenements/illus-slider-visez-juste1.png">
+								<img src="img/conf/visu-engagez-audience1.png">
 							</li>
 							<li>
-								<img src="img/evenements/illus-slider-visez-juste2.png">
+								<img src="img/conf/visu-engagez-audience2.png">
 							</li>
 							<li>
-								<img src="img/evenements/illus-slider-visez-juste3.png">
+								<img src="img/conf/visu-engagez-audience3.png">
 							</li>
 						</ul>
 					</div>
@@ -169,7 +169,7 @@
 								<span class='img'>
 									<img src="layoutImg/pot.png">
 								</span><span class='bloc-txt'>
-									<span class='h3'>Séminaires & Evénements</span>
+									<span class='h3'>Séminaires&nbsp;&amp;&nbsp;Evénements</span>
 									<span class='p'>Donnez la parole à tous les participants de votre séminaire</span>
 									<span class='lien'>découvrir les avantages</span>
 								</span>

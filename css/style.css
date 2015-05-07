@@ -4773,7 +4773,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   display: none;
 }
 #wisembly-autre a {
-  padding: 30px 40px 30px 30px;
+  padding: 30px 40px 30px 25px;
   border: 1px solid #efefef;
   display: block;
 }
@@ -4797,7 +4797,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   vertical-align: middle;
   width: 70%;
   text-align: left;
-  padding: 0 0 0 35px;
+  padding: 0 0 0 25px;
 }
 #wisembly-autre .p {
   display: block;
@@ -5079,8 +5079,8 @@ ul.whr-items li ul.whr-info li.whr-date {
     width: 100%;
   }
   ul#wisembly-autre li {
-    width: 42%;
-    margin: 0 2%;
+    width: 48%;
+    margin: 0 1%;
     padding: 30px 26px 30px 26px;
   }
 }
@@ -5388,8 +5388,8 @@ ul.whr-items li ul.whr-info li.whr-date {
   ul#offres-essais > li#reunions-conf-calls .bloc-top-offres-essais p {
     padding: 0 10px;
   }
-  ul#wisembly-autre li .bloc-txt-wisembly-autre {
-    padding: 0 0 0 25px;
+  ul#wisembly-autre li .bloc-txt {
+    padding: 0 0 0 20px;
   }
 }
 @media (max-width: 979px) {
@@ -5498,19 +5498,22 @@ ul.whr-items li ul.whr-info li.whr-date {
   .wrapper-ecran {
     width: 85%;
   }
+  ul#wisembly-autre a {
+    padding: 30px 25px 30px 25px;
+  }
   ul#wisembly-autre li {
     padding: 25px 20px 25px 20px;
   }
-  ul#wisembly-autre li .bloc-img-wisembly-autre {
+  ul#wisembly-autre li .img {
     display: block;
     width: 100%;
     margin-bottom: 20px;
   }
-  ul#wisembly-autre li .bloc-img-wisembly-autre img {
-    max-height: 150px;
+  ul#wisembly-autre li .img img {
+    max-height: 100px;
     width: auto;
   }
-  ul#wisembly-autre li .bloc-txt-wisembly-autre {
+  ul#wisembly-autre li .bloc-txt {
     display: block;
     width: 100%;
     text-align: center;
@@ -5805,7 +5808,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   .wrapper-ecran {
     padding: 10px 10px;
   }
-  ul#benefices-solution li {
+  .benefices-solution li {
     display: block;
     margin: 0 auto 20px auto;
     width: 50%;
@@ -5820,8 +5823,8 @@ ul.whr-items li ul.whr-info li.whr-date {
     margin: 20px 0;
     padding: 20px;
   }
-  ul#wisembly-autre li .bloc-img-wisembly-autre img {
-    max-height: 100px;
+  ul#wisembly-autre li .img img {
+    max-height: 80px;
   }
 }
 @media (max-width: 520px) {
@@ -5918,7 +5921,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   .bloc-contact ul.rs {
     text-align: center;
   }
-  ul#benefices-solution li {
+  .benefices-solution li {
     display: block;
     margin: 0 auto 20px auto;
     width: 100%;
