@@ -2760,6 +2760,15 @@ footer {
   text-align: left;
   margin: 0;
 }
+.headFormations:before {
+  right: 0;
+  bottom: -60px;
+  height: 170px;
+  background: rgba(226, 92, 91, 0.7);
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
+}
 .headConf #bgHead {
   background-image: url(../layoutImg/head/bgHeadConf.jpg);
   background-position: 50% 100%;
