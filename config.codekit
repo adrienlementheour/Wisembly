@@ -216,6 +216,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/css\/style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/emploi.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1364,12 +1373,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/jquery.scrollmagic.min.js": {
+	"\/js\/jquery.ScrollMagic.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/jquery.scrollmagic.min.js",
-		"outputAbbreviatedPath": "\/js\/min\/jquery.scrollmagic.min-min.js",
+		"inputAbbreviatedPath": "\/js\/jquery.ScrollMagic.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/jquery.ScrollMagic.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -1718,7 +1727,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1.53757e+06,
+		"initialSize": 1.50905e+06,
 		"inputAbbreviatedPath": "\/layoutImg\/head\/headFormations.jpg",
 		"outputAbbreviatedPath": "\/layoutImg\/head\/headFormations.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -2168,7 +2177,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-<<<<<<< Updated upstream
 	"\/less\/style.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
@@ -2189,8 +2197,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-=======
->>>>>>> Stashed changes
 	"\/livres-blancs.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -2325,7 +2331,7 @@
 	"iconImageName": "harddrive_gray"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 1,
+	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -2467,7 +2473,7 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
-	"externalServerAddress": "http:\/\/localhost",
+	"externalServerAddress": "http:\/\/localhost:8888",
 	"externalServerPreviewPathAddition": "",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,
@@ -2924,7 +2930,7 @@
 	"markdownAutoOutputPathReplace1": "",
 	"markdownAutoOutputPathReplace2": "",
 	"markdownAutoOutputPathStyle": 0,
-	"markdownEnableFootnotes": 1,
+	"markdownEnableFootnotes": 0,
 	"markdownEnableSmartyPants": 1,
 	"markdownExpandTabs": 1,
 	"reloadFileURLs": 0,
