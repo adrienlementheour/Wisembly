@@ -433,6 +433,8 @@ button{
   position: relative;
   display: block;
   width: 230px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
   height: 44px;
   line-height: 44px;
@@ -921,7 +923,7 @@ header{
   }
   .btnFull{
     float: right;
-    width: 170px;
+    width: 150px;
     margin: 24px 0;
   }
   .rs{
@@ -2423,8 +2425,16 @@ footer{
     display: inline-block;
     vertical-align: top;
     width: 33%;
-    padding: 0 30px;
+    padding: 0 30px 70px 30px;
     .box-sizing(border-box);
+    position: relative;
+    min-height: 340px;
+    a.btnLight {
+      position: absolute;
+      bottom: 0;
+      left:50%;
+      margin-left: -125px;
+    }
     &:before{
       content: '';
       display: block;
@@ -2434,7 +2444,7 @@ footer{
     }
   }
   p{
-    margin: 1em 0 1.5em;
+    margin: 1em 0 0;
   }
   .event{
     &:before{
@@ -3925,7 +3935,24 @@ ul.whr-items{
       color: @blanc;
       margin: 0 0 20px;
     }
+<<<<<<< HEAD
     .btnFull{
+=======
+    a {
+      color: @blanc;
+      border-color: @blanc;
+      text-decoration: none;
+      &:hover, &:active, &:visited {
+        color: @blanc;
+        border-color: @blanc;
+        text-decoration: none;
+      }
+      &:hover {
+        .opacity(0.8);
+      }
+    }
+    a.btnFull{
+>>>>>>> origin/master
       max-width: 278px;
       margin: 0 auto;
     }
