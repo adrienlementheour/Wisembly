@@ -2748,6 +2748,18 @@ footer {
   text-align: left;
   margin: 0;
 }
+.headFormations #bgHead {
+  background-image: url(../layoutImg/head/headFormations.jpg);
+  background-position: 50% 100%;
+}
+.headFormations .blocH1 {
+  float: right;
+  margin: 23vh 0 0;
+}
+.headFormations h1 {
+  text-align: left;
+  margin: 0;
+}
 .headConf #bgHead {
   background-image: url(../layoutImg/head/bgHeadConf.jpg);
   background-position: 50% 100%;

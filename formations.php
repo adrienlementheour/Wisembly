@@ -14,13 +14,13 @@
 
 	</head>
 
-	<body class="page-template-evenements">
+	<body class="page-template-formations">
 
 		<div class='overflow'>
 		
 			<?php include('includes/header.html'); ?>
 			
-			<section class='head headEvenements'>
+			<section class='head headFormations'>
 				<div id="bgHead"></div>
 				<div class='content main'>
 					<div class='blocH1'>
