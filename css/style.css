@@ -5126,6 +5126,10 @@ ul.whr-items li ul.whr-info li.whr-date {
 .wrapper-ecran + blockquote {
   margin-top: 50px;
 }
+/* Formations */
+#slider-concentrez-cours {
+  margin: 40px 0;
+}
 /* 404 */
 .error404 {
   background: #24292f;

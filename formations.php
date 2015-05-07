@@ -38,22 +38,19 @@
 					<h2 class="num noMarginTop">Concentrez vos cours</h2>
 					<h3>Partagez des documents avec vos apprenants avant la formation.</h3>
 					<p>Dynamisez vos formations : <strong>centralisez tous les supports au même endroit,</strong> impliquez vos apprenants et boostez leur engagement.</p>
-					<div id="slider-visez-juste" class="slider-evenements carousel">
+					<div id="slider-concentrez-cours" class="slider-evenements carousel">
 						<ul>
 							<li>
-								<img src="img/evenements/illus-slider-visez-juste1.png">
+								<img src="img/formations/visu-concentrez-cours1.png">
 							</li>
 							<li>
-								<img src="img/evenements/illus-slider-visez-juste2.png">
-							</li>
-							<li>
-								<img src="img/evenements/illus-slider-visez-juste3.png">
+								<img src="img/formations/visu-concentrez-cours2.png">
 							</li>
 						</ul>
 					</div>
 					<blockquote class='blue'><span class="raccord-img"></span>Au-delà de l’évidente dynamique ludique que crée Wisembly, il redonne à nos pratiques d’intervention un gain spectaculaire dans la capacité d’interaction.</blockquote>
 					<div class="citeContainer">
-						<span class="imgQuote"><img src="img/evenements/olivier-lagree.jpg"></span>
+						<span class="imgQuote"><img src="img/formations/georges-edouard-dias.jpg"></span>
 						<span class="cite">
 							<strong>Georges-Edouard Dias</strong>
 							Professeur à HEC
@@ -83,7 +80,7 @@
 					<img class="illus-responsive" src="img/evenements/illus-responsive.png">
 					<blockquote class="blue"><span class="raccord-img"></span>Wisembly est un booster de ROI des formations et de l'enseignement. Cela devient "le manuel interactif" qui accompagne l'ensemble des participants, en communauté avec leurs formateurs.</blockquote>
 					<div class="citeContainer">
-						<span class="imgQuote"><img src="img/evenements/marie-laurence-pouxviel.jpg"></span>
+						<span class="imgQuote"><img src="img/formations/georges-edouard-dias.jpg"></span>
 						<span class="cite">
 							<strong>Georges-Edouard Dias</strong>
 							Professeur à HEC
@@ -96,6 +93,9 @@
 					<h2 class="num">Gardez le contact</h2>
 					<h3>Ne laissez aucune question sans réponse</h3>
 					<p>Il n’y a pas de commentaire ou de question bête. Chaque question devrait être traitée. Avec Wisembly, vos apprenants peuvent poser leurs questions à tout moment avant, pendant ou après la formation.</p>
+					<img src="img/formations/illus-question-reponse.png">
+					<h3>Capitalisez sur tout le contenu</h3>
+					<p>Wisembly est la mémoire de vos formations. Après chaque session, vous avez accès à une <strong>analyse détaillée de votre formation</strong> : volume et type d’interactions, contenus, classement des élèves, notes moyenne etc. Exportez tous vos contenus sous format excel.</p>
 					<div class="wrapper-ecran">
 						<div id="slider-contenu-evenement" class="slider-evenements carousel">
 							<ul>
@@ -107,8 +107,6 @@
 							</ul>
 						</div>
 					</div>
-					<h3>NCapitalisez sur tout le contenu</h3>
-					<p>Wisembly est la mémoire de vos formations. Après chaque session, vous avez accès à une <strong>analyse détaillée de votre formation</strong> : volume et type d’interactions, contenus, classement des élèves, notes moyenne etc. Exportez tous vos contenus sous format excel.</p>
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
 				

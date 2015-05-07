@@ -828,6 +828,14 @@ $(function(){
 			setSliderHeightLi($('#slider-engagez-audience'));
 			$('#slider-engagez-audience').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
+
+		// Slider Concentrez vos cours //
+		if($('#slider-concentrez-cours').length){
+			setSliderHeightLi($('#slider-concentrez-cours'));
+			$('#slider-concentrez-cours').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
+
+		
 	});
 
     $(window).resize(function(){
@@ -893,6 +901,10 @@ $(function(){
 		
 		if($('#slider-engagez-audience').length){
 			setSliderHeightLi($('#slider-engagez-audience'));
+		}
+
+		if($('#slider-concentrez-cours').length){
+			setSliderHeightLi($('#slider-concentrez-cours'));
 		}
 
 	    if(body.hasClass("page-template-emploi")){
