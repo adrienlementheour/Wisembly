@@ -537,9 +537,9 @@ function makeActive(numToActivate){
 	$("#slider-visu-mission li").eq(numToActivate).addClass("active");
 }
 // slide
-function slideMission(indexMiss){
-	TweenMax.to($("#slider-visu-mission"), spee, {"margin-left": -indexMiss*unit-(total*unit+bigUnitDelta)/2+"px", ease:Linear.easeIn});
-	TweenMax.to($("#slider-txt-mission"), spee, {"margin-left": -(indexMiss+2)*$('#wrapper-slider-visu-mission').width()-6+"px", ease:Linear.easeIn});
+function slideMission(indexMiss) {
+	TweenMax.to($("ul#slider-visu-mission"), spee, {"margin-left": -indexMiss*unit-(total*unit+bigUnitDelta)/2-1+"px", ease:Linear.easeIn});
+	TweenMax.to($("ul#slider-txt-mission"), spee, {"margin-left": -(indexMiss+2)*$('#wrapper-slider-visu-mission').width()-1+"px", ease:Linear.easeIn});
 	makeActive(indexMiss+2);
 }
 // on rajoute le premier élément à la fin, on agrandit la liste en fonction
@@ -566,9 +566,9 @@ function setSizeMission(){
 // on positionne 
 function posSlideMission(){
 	setSizeMission();
-	var myIndex = $("#slider-visu-mission li.active").index()-2;
-	$("#slider-visu-mission").css({"left":"50%","margin-left": -myIndex*unit-(total*unit+bigUnitDelta)/2+"px"});
-	$("#slider-txt-mission").css({"margin-left": (-myIndex-2)*$('#wrapper-slider-visu-mission').width()+"px"});
+	var myIndex = $("ul#slider-visu-mission li.active").index()-2;
+	TweenMax.set($("ul#slider-visu-mission"), {"left":"50%", "margin-left": -myIndex*unit-(total*unit+bigUnitDelta)/2+"px", ease:Linear.easeIn});
+	TweenMax.set($("ul#slider-txt-mission"), {"margin-left": -(myIndex+2)*$('#wrapper-slider-visu-mission').width()+"px", ease:Linear.easeIn});
 }
 // on rajoute le premier élément à la fin
 function addEntityMission(){
@@ -592,14 +592,18 @@ function addEntityMissionAtBeginning(){
 function purgeMission(){
 	if ($("#slider-visu-mission li").length > 10) {
 		// si on est vers la fin
-		if ($("#slider-visu-mission li.active").index()>5) {
-			$("#slider-visu-mission li").first().remove();
-			$("#slider-visu-mission li").first().remove();
+		if ($("ul#slider-visu-mission li.active").index()>5) {
+			$("ul#slider-visu-mission li").first().remove();
+			$("ul#slider-txt-mission li").first().remove();
+			$("ul#slider-visu-mission li").first().remove();
+			$("ul#slider-txt-mission li").first().remove();
 		}
 		// si on est vers le début
-		if ($("#slider-visu-mission li.active").index()<$("#slider-visu-mission li").length-5) {
-			$("#slider-visu-mission li").last().remove();
-			$("#slider-visu-mission li").last().remove();
+		if ($("ul#slider-visu-mission li.active").index()<$("ul#slider-visu-mission li").length-5) {
+			$("ul#slider-visu-mission li").last().remove();
+			$("ul#slider-txt-mission li").last().remove();
+			$("ul#slider-visu-mission li").last().remove();
+			$("ul#slider-txt-mission li").last().remove();
 		}
 	}
 	posSlideMission();
