@@ -517,36 +517,42 @@ function positionDiapos(){
 
 /**** SLIDER VALUES MISSION ****/
 
-var unit = 200; // padding inclus
-var unitNaked = 122; // padding non inclus
-var bigUnitDelta = 338-200; // padding inclus
-var bigUnit = 260; // padding non inclus
-var total = 5;
-var numActive = 3;
-var spee = 0.4;
+var unit = 200, // padding inclus
+	unitNaked = 122, // padding non inclus
+	bigUnitDelta = 338 - unit, // padding inclus
+	bigUnit = 260, // padding non inclus
+	total = 5,
+	numActive = 3,
+	spee = 0.4;
 //
 // actif : gros et en couleur
-function makeActive(numToActivate) {
+function makeActive(numToActivate){
 	// remettre les autres à 0
-	TweenMax.to($("ul#slider-visu-mission li").find("a"), spee, {"width": unitNaked+"px","height": unitNaked+"px", ease:Linear.easeIn});
-	TweenMax.to($("ul#slider-visu-mission li"), spee, {"width": unitNaked+"px", ease:Linear.easeIn});
-	$("ul#slider-visu-mission li").removeClass("active");
+	TweenMax.to($("#slider-visu-mission li").find("a"), spee, {"width": unitNaked+"px","height": unitNaked+"px", ease:Linear.easeIn});
+	TweenMax.to($("#slider-visu-mission li"), spee, {"width": unitNaked+"px", ease:Linear.easeIn});
+	$("#slider-visu-mission li").removeClass("active");
 	// passer en activ
-	TweenMax.to($("ul#slider-visu-mission li").eq(numToActivate).find("a"), spee, {"width": bigUnit+"px","height": bigUnit+"px", ease:Linear.easeIn});
-	TweenMax.to($("ul#slider-visu-mission li").eq(numToActivate), spee, {"width": bigUnit+"px", ease:Linear.easeIn, onComplete:purgeMission});
-	$("ul#slider-visu-mission li").eq(numToActivate).addClass("active");
+	TweenMax.to($("#slider-visu-mission li").eq(numToActivate).find("a"), spee, {"width": bigUnit+"px","height": bigUnit+"px", ease:Linear.easeIn});
+	TweenMax.to($("#slider-visu-mission li").eq(numToActivate), spee, {"width": bigUnit+"px", ease:Linear.easeIn, onComplete:purgeMission});
+	$("#slider-visu-mission li").eq(numToActivate).addClass("active");
 }
 // slide
+<<<<<<< HEAD
 function slideMission(indexMiss) {
 	TweenMax.to($("ul#slider-visu-mission"), spee, {"margin-left": -indexMiss*unit-(total*unit+bigUnitDelta)/2-1+"px", ease:Linear.easeIn});
 	TweenMax.to($("ul#slider-txt-mission"), spee, {"margin-left": -(indexMiss+2)*$('#wrapper-slider-visu-mission').width()-1+"px", ease:Linear.easeIn});
+=======
+function slideMission(indexMiss){
+	TweenMax.to($("#slider-visu-mission"), spee, {"margin-left": -indexMiss*unit-(total*unit+bigUnitDelta)/2+"px", ease:Linear.easeIn});
+	TweenMax.to($("#slider-txt-mission"), spee, {"margin-left": -(indexMiss+2)*$('#wrapper-slider-visu-mission').width()-6+"px", ease:Linear.easeIn});
+>>>>>>> origin/master
 	makeActive(indexMiss+2);
 }
 // on rajoute le premier élément à la fin, on agrandit la liste en fonction
-function clickOnMission(e) {
+function clickOnMission(e){
 	e.preventDefault();	
 	// si c'est l'un des deux derniers
-	if ($(this).parent().index() >= $("ul#slider-visu-mission li").length-2) {
+	if ($(this).parent().index() >= $("#slider-visu-mission li").length-2) {
 		addEntityMission();
 		addEntityMission();
 	}
@@ -558,40 +564,47 @@ function clickOnMission(e) {
 	slideMission($(this).parent().index()-2);
 }
 // taille du slider
-function setSizeMission() {
-	TweenMax.set($("ul#slider-txt-mission"), {width: $("ul#slider-visu-mission li").length*$('#wrapper-slider-visu-mission').width()+"px"});
-	TweenMax.set($("ul#slider-txt-mission li"), {width: $('#wrapper-slider-visu-mission').width()+"px"});
-	TweenMax.set($("ul#slider-visu-mission"), {width: $("ul#slider-visu-mission li").length*unit+bigUnitDelta+"px"});
+function setSizeMission(){
+	TweenMax.set($("#slider-txt-mission"), {width: $("#slider-visu-mission li").length*$('#wrapper-slider-visu-mission').width()+"px"});
+	TweenMax.set($("#slider-txt-mission li"), {width: $('#wrapper-slider-visu-mission').width()+"px"});
+	TweenMax.set($("#slider-visu-mission"), {width: $("#slider-visu-mission li").length*unit+bigUnitDelta+"px"});
 }
 // on positionne 
-function posSlideMission() {
+function posSlideMission(){
 	setSizeMission();
+<<<<<<< HEAD
 	var myIndex = $("ul#slider-visu-mission li.active").index()-2;
 	TweenMax.set($("ul#slider-visu-mission"), {"left":"50%", "margin-left": -myIndex*unit-(total*unit+bigUnitDelta)/2+"px", ease:Linear.easeIn});
 	TweenMax.set($("ul#slider-txt-mission"), {"margin-left": -(myIndex+2)*$('#wrapper-slider-visu-mission').width()+"px", ease:Linear.easeIn});
+=======
+	var myIndex = $("#slider-visu-mission li.active").index()-2;
+	$("#slider-visu-mission").css({"left":"50%","margin-left": -myIndex*unit-(total*unit+bigUnitDelta)/2+"px"});
+	$("#slider-txt-mission").css({"margin-left": (-myIndex-2)*$('#wrapper-slider-visu-mission').width()+"px"});
+>>>>>>> origin/master
 }
 // on rajoute le premier élément à la fin
-function addEntityMission() {
-	$("ul#slider-txt-mission li").eq($("ul#slider-txt-mission li").length-total).clone().appendTo("ul#slider-txt-mission");
-	$("ul#slider-visu-mission li").eq($("ul#slider-visu-mission li").length-total).clone().appendTo("ul#slider-visu-mission");
+function addEntityMission(){
+	$("#slider-txt-mission li").eq($("#slider-txt-mission li").length-total).clone().appendTo("#slider-txt-mission");
+	$("#slider-visu-mission li").eq($("#slider-visu-mission li").length-total).clone().appendTo("#slider-visu-mission");
 	setSizeMission();
 	// mappage du clic du nouveau
-	$('#slider-visu-mission li').eq($("ul#slider-visu-mission li").length-1).find('a').unbind('click');
-	$('#slider-visu-mission li').eq($("ul#slider-visu-mission li").length-1).find('a').on('click', clickOnMission);
+	$('#slider-visu-mission li').eq($("#slider-visu-mission li").length-1).find('a').unbind('click');
+	$('#slider-visu-mission li').eq($("#slider-visu-mission li").length-1).find('a').on('click', clickOnMission);
 }
 // on rajoute le dernier élément au début
-function addEntityMissionAtBeginning() {
-	$("ul#slider-txt-mission li").eq($("ul#slider-txt-mission li").first().index()+4).clone().prependTo("ul#slider-txt-mission");
-	$("ul#slider-visu-mission li").eq($("ul#slider-visu-mission li").first().index()+4).clone().prependTo("ul#slider-visu-mission");
+function addEntityMissionAtBeginning(){
+	$("#slider-txt-mission li").eq($("#slider-txt-mission li").first().index()+4).clone().prependTo("#slider-txt-mission");
+	$("#slider-visu-mission li").eq($("#slider-visu-mission li").first().index()+4).clone().prependTo("#slider-visu-mission");
 	posSlideMission();
 	// mappage du clic du nouveau
 	$('#slider-visu-mission li').first().find('a').unbind('click');
 	$('#slider-visu-mission li').first().find('a').on('click', clickOnMission);
 }
 // de temps en temps, supprimer qui ne servent à rien pour libérer le DOM
-function purgeMission() {
-	if ($("ul#slider-visu-mission li").length > 10) {
+function purgeMission(){
+	if ($("#slider-visu-mission li").length > 10) {
 		// si on est vers la fin
+<<<<<<< HEAD
 		if ($("ul#slider-visu-mission li.active").index()>5) {
 			$("ul#slider-visu-mission li").first().remove();
 			$("ul#slider-txt-mission li").first().remove();
@@ -604,23 +617,33 @@ function purgeMission() {
 			$("ul#slider-txt-mission li").last().remove();
 			$("ul#slider-visu-mission li").last().remove();
 			$("ul#slider-txt-mission li").last().remove();
+=======
+		if ($("#slider-visu-mission li.active").index()>5) {
+			$("#slider-visu-mission li").first().remove();
+			$("#slider-visu-mission li").first().remove();
+		}
+		// si on est vers le début
+		if ($("#slider-visu-mission li.active").index()<$("#slider-visu-mission li").length-5) {
+			$("#slider-visu-mission li").last().remove();
+			$("#slider-visu-mission li").last().remove();
+>>>>>>> origin/master
 		}
 	}
 	posSlideMission();
 }
 // suivant/précédent
-function nextMission(e) {
+function nextMission(e){
 	e.preventDefault();	
 	addEntityMission();
 	// mouvement
-	slideMission($("ul#slider-visu-mission li.active").index()-1);
+	slideMission($("#slider-visu-mission li.active").index()-1);
 }
-function prevMission(e) {
+/*function prevMission(e){
 	e.preventDefault();	
 	addEntityMissionAtBeginning();
 	// mouvement
-	slideMission($("ul#slider-visu-mission li.active").index()+1);
-}
+	slideMission($("#slider-visu-mission li.active").index()+1);
+}*/
 
 // initailisation
 function sliderMission(){
@@ -657,11 +680,7 @@ $(function(){
 
 	if(body.hasClass("page-template-emploi")){
 		initAnnonces();
-		if($(window).width()>767){
-			sliderSmall=false;
-		}else{
-			sliderSmall=true;
-		}
+		sliderSmall = $(window).width()>767 ? false : true;
 	}
 
 	if(body.hasClass("page-template-mission")){
@@ -695,7 +714,7 @@ $(function(){
 	} 
 
 	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
-	$('.buttonsTeam').find('button').on('click', function(){ setSliderTeamProfil($(this)); });
+	$('.buttonsTeam').find('button').on('click', function(){ setSliderTeamProfil($(this)); openForm(); });
 
 	// Btn demande de contact footer //
 	btnContact.on('click', openForm);
@@ -836,6 +855,14 @@ $(function(){
 			setSliderHeightLi($('#slider-engagez-audience'));
 			$('#slider-engagez-audience').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
+
+		// Slider Concentrez vos cours //
+		if($('#slider-concentrez-cours').length){
+			setSliderHeightLi($('#slider-concentrez-cours'));
+			$('#slider-concentrez-cours').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		}
+
+		
 	});
 
     $(window).resize(function(){
@@ -891,25 +918,33 @@ $(function(){
 			posSlideMission();
 		}
 
-	    if(body.hasClass("emploi")){
-	    	initAnnonces();
-	    	if(($(window).width()>767)&&(sliderSmall)){
-	    		sliderSmall=false;
+		if($('#slider-visez-juste').length){
+			setSliderHeightLi($('#slider-visez-juste'));
+		}
+
+		if($('#slider-contenu-evenement').length){
+			setSliderHeightLi($('#slider-contenu-evenement'));
+		}
+		
+		if($('#slider-engagez-audience').length){
+			setSliderHeightLi($('#slider-engagez-audience'));
+		}
+
+		if($('#slider-concentrez-cours').length){
+			setSliderHeightLi($('#slider-concentrez-cours'));
+		}
+
+	    if(body.hasClass("page-template-emploi")){
+	    	//initAnnonces();
+	    	/*sliderSmall = $(window).width()>767 ? false : true ;
+	    	if(sliderSmall){
 	    		avancementLeft = 0;
 	    		avancementLeftFuture = 0;
 	    		precWidth = 0;
 	    		hasDemiBefore = false;
 	    		avancementLeftBottom = 0;
 	    		positionDiapos();
-	    	}else if(($(window).width()<767)&&(!sliderSmall)){
-	    		sliderSmall=true;
-	    		avancementLeft = 0;
-	    		avancementLeftFuture = 0;
-	    		precWidth = 0;
-	    		hasDemiBefore = false;
-	    		avancementLeftBottom = 0;
-	    		positionDiapos();
-	    	}
+	    	}*/
 	    }
 	});
 

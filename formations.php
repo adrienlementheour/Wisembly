@@ -14,18 +14,18 @@
 
 	</head>
 
-	<body class="page-template-evenements">
+	<body class="page-template-formations">
 
 		<div class='overflow'>
 		
 			<?php include('includes/header.html'); ?>
 			
-			<section class='head headEvenements'>
+			<section class='head headFormations'>
 				<div id="bgHead"></div>
 				<div class='content main'>
 					<div class='blocH1'>
-						<h1>Libérez <br/><span>la parole</span></h1>
-						<p class='subHeading'>Collectez toutes les questions de votre public et répondez au mieux à ses attentes !</p>
+						<h1>Plus d’intéractivité <br/><span>dans vos cours<br /> et formations</span></h1>
+						<p class='subHeading'>Améliorez l'expérience des apprenants et suivez leur évolution.</p>
 					</div>
 				</div>
 			</section>
@@ -35,39 +35,34 @@
 				<div id="bg-blanc"></div>
 				
 				<section class='content bgBlanc scrollHere'>
-					<h2 class="num noMarginTop">Visez au plus juste !</h2>
-					<h3>C'est simple et flexible !</h3>
-					<p>Avec Wisembly, dès la phase amont, vous vous assurez de répondre aux interrogations de votre auditoire.<br />
-					Avant l’événement, <strong>partagez des documents</strong> pour un niveau d’information égal pour tous, récoltez les idées et commentaires des participants, proposez des votes pour sonder votre audience.</p>
-					<div id="slider-visez-juste" class="slider-evenements carousel">
+					<h2 class="num noMarginTop">Concentrez vos cours</h2>
+					<h3>Partagez des documents avec vos apprenants avant la formation.</h3>
+					<p>Dynamisez vos formations : <strong>centralisez tous les supports au même endroit,</strong> impliquez vos apprenants et boostez leur engagement.</p>
+					<div id="slider-concentrez-cours" class="slider-evenements carousel">
 						<ul>
 							<li>
-								<img src="img/evenements/illus-slider-visez-juste1.png">
+								<img src="img/formations/visu-concentrez-cours1.png">
 							</li>
 							<li>
-								<img src="img/evenements/illus-slider-visez-juste2.png">
-							</li>
-							<li>
-								<img src="img/evenements/illus-slider-visez-juste3.png">
+								<img src="img/formations/visu-concentrez-cours2.png">
 							</li>
 						</ul>
 					</div>
 					<blockquote class='blue'><span class="raccord-img"></span>Au-delà de l’évidente dynamique ludique que crée Wisembly, il redonne à nos pratiques d’intervention un gain spectaculaire dans la capacité d’interaction.</blockquote>
 					<div class="citeContainer">
-						<span class="imgQuote"><img src="img/evenements/olivier-lagree.jpg"></span>
+						<span class="imgQuote"><img src="img/formations/georges-edouard-dias.jpg"></span>
 						<span class="cite">
-							<strong>Olivier Lagrée</strong>
-							Consultant DELOITTE
+							<strong>Georges-Edouard Dias</strong>
+							Professeur à HEC
 						</span>
 					</div>
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
 				
 				<section class='content bgBlanc scrollHere'>
-					<h2 class="num">Engagez votre audience</h2>
-					<h3>Proposez des votes à votre public</h3>
-					<p><strong>Votes</strong>, questions en temps réel, likes, vidéos, présentations.<br /> 
-					Proposez des sessions interactives pour un engagement maximal !</p>
+					<h2 class="num">Innovez et testez vos apprenants simplement</h2>
+					<h3>Captez votre auditoire et rythmez vos formations avec une touche digitale :</h3>
+					<p><strong>Diffusez vos slides ou vos vidéos en temps réel</strong>, et ponctuez la session de questions rapides.<br /> Vous pourrez mesurer le taux de compréhension. Gagnez du temps : proposez des évaluations pendant la session, corrigées automatiquement et dans l'instant.</p>
 					<div class="wrapper-ecran">
 						<div id="slider-engagez-audience" class="slider-evenements carousel">
 							<ul>
@@ -83,20 +78,24 @@
 					<p>Ne changez pas les habitudes de votre public, utilisez les et surfez sur le digital : web, mobile, tablette, Twitter, email, SMS…<br />
 					Sans application à télécharger, Wisembly fonctionne depuis tous les appareils et se prête parfaitement aux conf calls multisites.</p>
 					<img class="illus-responsive" src="img/evenements/illus-responsive.png">
-					<blockquote class="blue"><span class="raccord-img"></span>J’ai cherché un moyen de rendre les participants acteurs pendant la plénière. Nous savons qu’aujourd’hui, participer est clé pour l’adhésion des participants aux événements.</blockquote>
+					<blockquote class="blue"><span class="raccord-img"></span>Wisembly est un booster de ROI des formations et de l'enseignement. Cela devient "le manuel interactif" qui accompagne l'ensemble des participants, en communauté avec leurs formateurs.</blockquote>
 					<div class="citeContainer">
-						<span class="imgQuote"><img src="img/evenements/marie-laurence-pouxviel.jpg"></span>
+						<span class="imgQuote"><img src="img/formations/georges-edouard-dias.jpg"></span>
 						<span class="cite">
-							<strong>Marie-Laurence Pouxviel</strong>
-							Responsable Communication Interne et Externe, Danone Nutricia Research
+							<strong>Georges-Edouard Dias</strong>
+							Professeur à HEC
 						</span>
 					</div>
 					<button class='icon-down scrollNext'><span></span></button>
 				</section>
 				
 				<section class='content bgBlanc scrollHere'>
-					<h2 class="num">Capitalisez sur tout le contenu de votre événement</h2>
-					<p>Avec Wisembly, vous traitez en moyenne 3 fois plus de sujets lors de vos événements. En 1 clic, vous pourrez accédez à l’ensemble de vos statistiques : <strong>taux de participation</strong>, messages, réponses aux questionnaires, etc. </p>
+					<h2 class="num">Gardez le contact</h2>
+					<h3>Ne laissez aucune question sans réponse</h3>
+					<p>Il n’y a pas de commentaire ou de question bête. Chaque question devrait être traitée. Avec Wisembly, vos apprenants peuvent poser leurs questions à tout moment avant, pendant ou après la formation.</p>
+					<img src="img/formations/illus-question-reponse.png">
+					<h3>Capitalisez sur tout le contenu</h3>
+					<p>Wisembly est la mémoire de vos formations. Après chaque session, vous avez accès à une <strong>analyse détaillée de votre formation</strong> : volume et type d’interactions, contenus, classement des élèves, notes moyenne etc. Exportez tous vos contenus sous format excel.</p>
 					<div class="wrapper-ecran">
 						<div id="slider-contenu-evenement" class="slider-evenements carousel">
 							<ul>
@@ -185,10 +184,10 @@
 						</li><li>
 							<a href="#">
 								<span class='img'>
-									<img src="layoutImg/graph.png">
+									<img src="layoutImg/pot.png">
 								</span><span class='bloc-txt'>
-									<span class='h3'>Cours &amp; Formations</span>
-									<span class='p'>Wisembly vous permet de rythmer et animer vos formations</span>
+									<span class='h3'>Séminaires&nbsp;&amp;&nbsp;Evénements</span>
+									<span class='p'>Donnez la parole à tous les participants de votre séminaire</span>
 									<span class='lien'>découvrir les avantages</span>
 								</span>
 							</a>
