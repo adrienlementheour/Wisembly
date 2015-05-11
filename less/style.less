@@ -2256,8 +2256,11 @@ footer{
     width: 580px;
   }
   h1{
-    text-align: left;
-    margin: 0;
+    &:extend(.headEvenements h1);
+    span{
+      width: 95%;
+      display: block;
+    }
   }
   &:before{
     right: 0;

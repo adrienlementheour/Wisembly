@@ -2924,6 +2924,7 @@ footer {
   margin: 23vh 0 0;
 }
 .headEvenements h1,
+.headFormations h1,
 .headConf h1 {
   text-align: left;
   margin: 0;
@@ -2937,9 +2938,9 @@ footer {
   margin: 23vh 0 0;
   width: 580px;
 }
-.headFormations h1 {
-  text-align: left;
-  margin: 0;
+.headFormations h1 span {
+  width: 95%;
+  display: block;
 }
 .headFormations:before {
   right: 0;

@@ -413,7 +413,7 @@ function setMapSize(){
 }
 
 function setToolTip(context){
-	var links = context.find('a'), linksLength = links.length, i = 0, titles = [], linkOffset;
+	var links = context.find('.lien'), linksLength = links.length, i = 0, titles = [], linkOffset;
 
 	if(links.attr('title') !== ''){
 
