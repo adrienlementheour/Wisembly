@@ -20,12 +20,14 @@
       margin: 0 auto;
     }
   }
+
   #prev{
     left: 30px;
   }
   #next{
     right: 30px;
   }
+
   .wrapper-ecran .slider-evenements #prev{
     left: -100px;
   }
@@ -40,6 +42,7 @@
       right: 0;
     }
   }
+
   #slider-on-parle-de-nous{
     .navSlider{
       top: 40%;
@@ -67,12 +70,6 @@
       left: 40%;
     }
     #next{
-      right: 40%;
-    }
-    .wrapper-ecran .slider-evenements #prev{
-      left: 40%;
-    }
-    .wrapper-ecran .slider-evenements #next{
       right: 40%;
     }
   }
@@ -164,19 +161,19 @@
       width: 50%;
     }
   }
-  ul#avantages-wisembly{
+  #avantages-wisembly{
     width: 700px;
   }
 
-  ul#notre-histoire{
+  #notre-histoire{
     width: 100%;
   }
 
-  ul#wisembly-autre{
+  #wisembly-autre{
     li{
       width: 48%;
       margin: 0 1%;
-      padding: 30px 26px 30px 26px;
+      padding: 30px 26px;
     }
   }
 }
@@ -561,7 +558,7 @@
       }
     }
   }
-  ul#offres-essais{
+  #offres-essais{
     > li{
       width: 350px;
       &#reunions-conf-calls{
@@ -573,7 +570,7 @@
       }
     }
   }
-  ul#wisembly-autre{
+  #wisembly-autre{
     li{
       .bloc-txt{
         padding: 0 0 0 20px;
@@ -677,7 +674,7 @@
     width: 80%;
   }
 
-  ul#notre-histoire{
+  #notre-histoire{
     width: 100%;
     li{
      .date-histoire{
@@ -711,12 +708,12 @@
   .wrapper-ecran{
     width: 85%;
   }
-  ul#wisembly-autre{
+  #wisembly-autre{
     a{
-      padding: 30px 25px 30px 25px;
+      padding: 30px 25px;
     }
     li{
-      padding: 25px 20px 25px 20px;
+      padding: 25px 20px;
       .img{
         display: block;
         width: 100%;
@@ -940,10 +937,7 @@
     background: @grisBorder;
     padding: 0 0 20% !important;
     .blocH1{
-      padding: 0;
-      width: 100%;
       max-width: 370px;
-      margin: 0 auto;
     }
     #bgHead{
       background-size: 300px !important;
@@ -958,24 +952,32 @@
     }
   }
 
+  .headFormations h1 span{
+    width: 100%;
+  }
+
   .subHeading{
     br:first-child{
       display: none;
     }
   }
 
-  .blocH1{
+  .blocH1, .headEvenements .blocH1, .headConf .blocH1, .headFormations .blocH1, .headPresse .blocH1{
     padding: 0;
     float: none;
     margin: 0 auto;
     text-align: center;
+    width: 100%;
   }
 
-  .headEvenements .blocH1, .headConf .blocH1, .headFormations .blocH1{
-    padding: 0;
+  .headMissionVision h1{
     float: none;
-    margin: 0 auto;
-    text-align: center;
+    br{
+      display: none;
+    }
+    span{
+      display: block;
+    }
   }
 
   .filtres{
@@ -1004,7 +1006,7 @@
     }
   }
 
-  ul#avantages-wisembly{
+  #avantages-wisembly{
     width: 90%;
   }
   #container-offres-emploi{
@@ -1030,7 +1032,7 @@
     height: 300px;
   }
 
-  ul#notre-histoire{
+  #notre-histoire{
     width: 100%;
     li{
      .date-histoire, .content-histoire {
@@ -1057,23 +1059,23 @@
       }
     }
   }
-  blockquote.blue-blockquote{
+  blockquote.blue{
     padding: 20px 15px;
     font-size: 1em;
   }
   .wrapper-ecran{
-    padding: 10px 10px;
+    padding: 10px;
   }
   .benefices-solution{
     li{
       display: block;
-      margin: 0 auto 20px auto;
+      margin: 0 auto 20px;
       width: 50%;
     }
   }
   ul#wisembly-autre{
     width: 90%;
-    margin: 40px auto 20px auto;
+    margin: 40px auto 20px;
     li{
       display: block;
       width: 100%;
@@ -1342,7 +1344,7 @@
       width: 100%;
     }
   }
-  ul#avantages-wisembly{
+  #avantages-wisembly{
     width: 100%;
     >li{
       margin: 10px 0;
@@ -1369,7 +1371,7 @@
   .slider-emploi ul li .btnLight{
     max-width: 95%;
   }
-  ul#offres-essais{
+  #offres-essais{
     > li{
       width: 100%;
       padding: 0;
@@ -1463,6 +1465,22 @@
 
 /* @group Responsive vertical */
 
+@media (max-height: 850px){
+  .headEvenements, .headFormations, .headConf{
+    h1{
+      span{
+        display: inline;
+      }
+    }
+    br{
+      display: none;
+    }
+    .subHeading{
+      margin-bottom: 0;
+    }
+  }
+}
+
 @media (max-height: 850px) and (min-width: 768px){
   .headHome, .headRdv, .headClients{
     h1{
@@ -1484,6 +1502,16 @@
 
   .headPresse{
     .blocH1{
+      padding: 0 0 120px;
+    }
+  }
+
+  .headEvenements, .headFormations, .headConf{
+    #bgHead{
+      background-position: 50% 0;
+    }
+    .blocH1{
+      margin: 15vh 0 0;
       padding: 0 0 120px;
     }
   }

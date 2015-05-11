@@ -58,6 +58,58 @@ function isValidEmail(email) {
     return pattern.test(email);
 }
 
+/**** WIZ ****/
+var joinAnEvent = {
+	$el: $('[data-name=join_an_event]'),
+	keywordExists: false,
+
+	startListening: function () {
+		this.$el.find('input').on('keyup', $.proxy(this.checkKeyword, this));
+		this.$el.on('submit', $.proxy(this.goTo, this));
+	},
+
+	checkKeyword: function (e) {
+		if (!this.$el.parsley().validate()) {
+			if (3 > this.$el.find('input').val().length)
+				return this.$el.attr('data-status', 'active');
+			this.keywordExists = false;
+			this.updateStatus();
+			return;
+		}
+
+		var keyword = $(e.currentTarget).val();
+		this.getEvent(keyword)
+			.success($.proxy(function () {
+				this.keywordExists = true;
+				this.updateStatus();
+				delete this.xhr;
+			}, this))
+			.fail($.proxy(function (jqXHR) {
+				this.keywordExists = (404 !== jqXHR.status);
+				this.updateStatus();
+				delete this.xhr;
+			}, this));
+	},
+
+	getEvent: function (keyword) {
+		if (this.xhr)
+			this.xhr.abort();
+		return this.xhr = $.ajax({ url: 'https://api.wisembly.com/api/4/event/' + keyword || '', dataType: 'json' });
+	},
+
+	goTo: function (e) {
+		e.preventDefault();
+		console.log('hey');
+		if (!this.keywordExists)
+			return;
+		window.open('https://app.wisembly.com/' + this.$el.find('input').val());
+	},
+
+	updateStatus: function () {
+		this.$el.attr('data-status', this.keywordExists ? 'valid' : 'not-valid');
+	}
+};
+
 
 /**** FONCTIONS SPECIFIQUES ****/
 
@@ -227,6 +279,9 @@ function setSliderTeam(slider){
 				slides.eq(numSlide).addClass('on').stop().animate({opacity: 1, marginBottom: 0}, 400).siblings().removeClass('on');
 			});
 		}
+
+		// Récupérer le nom de la personne //
+		$('#nomContact').attr('value', slides.eq(numSlide).find('strong').html());
 	}
 
 	for(y; y<slidersLength; y++){
@@ -243,6 +298,9 @@ function setSliderTeam(slider){
 			!slides.eq(i).hasClass('on') ? slides.eq(i).css({opacity: 0, marginBottom: '-25px'}) : btnActif = i;
 		}
 	}
+
+	// Récupérer le nom de la personne //
+	$('#nomContact').attr('value', slides.eq(rand).find('strong').html());
 
 	// Changement de slides //
 	pagination.find('button').eq(btnActif).addClass('actif');
@@ -283,6 +341,9 @@ function setSliderTeamProfil(that){
 	// Changement du champ entreprise //
 	var label = that.html() === 'Autre' ? 'Organisation' : that.html();
 	$('#labelEnt').html(label + ' *');
+
+	// Récupérer le nom de la personne //
+	$('#nomContact').attr('value', slider.find('.slideTeam.on').find('strong').html());
 }
 
 // Apparition du slider permettant de chosir son profil //
@@ -438,7 +499,7 @@ function setToolTip(context){
 	}
 }
 
-function setSliderHeight(context){
+function setGalleryHeight(context){
 	var li = context.find('li'), liLength = li.length, i = 0, nbDiv = [], nbDivBigger = 0, liBigger;
 
 	for(i; i < liLength; i++){
@@ -452,14 +513,24 @@ function setSliderHeight(context){
 	context.find('ul').css('height', li.eq(liBigger).outerHeight());
 }
 
-function setSliderHeightLi(context){
-	var li = context.find('li'), liLength = li.length, i = 0, heightMaxLi = 0;
-	for(i; i < liLength; i++){
-		if (li.eq(i).height() > heightMaxLi){
-			heightMaxLi = li.eq(i).height();
+function setSliderHeight(sliders){
+
+	function setHeight(context){
+		var li = context.find('li'), liLength = li.length, i = 0, heightMaxLi = 0;
+
+		for(i; i < liLength; i++){
+			if (li.eq(i).height() > heightMaxLi){
+				heightMaxLi = li.eq(i).height();
+			}
 		}
+
+		context.find('ul').css('height', heightMaxLi+"px");
 	}
-	context.find('ul').css('height', heightMaxLi+"px");
+
+	var c = 0, carouselLength = sliders.length;
+	for(c; c<carouselLength; c++){
+		setHeight(sliders.eq(c));
+	}
 }
 
 function initAnnonces(){
@@ -468,30 +539,30 @@ function initAnnonces(){
 
 /* Positionnement des images diapos dans la page Emploi */
 function positionDiapos(){
-	$("#slider-diapos li").each(function(index){
+	$("#slider-diapos").find('li').each(function(index){
 		if($(this).hasClass("half")){
 			// Si l'image a une demi-hauteur
-			if(precWidth!==0){
+			if(precWidth !== 0){
 				// Si l'image d'avant est en haut
-				var newWidth=$(this).outerWidth();
-				if(newWidth<=precWidth){
+				var newWidth = $(this).outerWidth();
+				if(newWidth <= precWidth){
 					// Si la nouvelle image n'est pas plus large que celle du haut
 					TweenMax.set($(this), {top: "50%", left: avancementLeft+avancementLeftBottom+"px"});
 					// Mise à jour du precWidth
-					precWidth-=newWidth;
-					hasDemiBefore=true;
-					avancementLeftBottom+=$(this).outerWidth();
+					precWidth -= newWidth;
+					hasDemiBefore = true;
+					avancementLeftBottom += $(this).outerWidth();
 				}else{
 					// Si la nouvelle image est plus large que celle du haut
-					avancementLeft+=avancementLeftFuture;
+					avancementLeft += avancementLeftFuture;
 					TweenMax.set($(this), {top: "0", left: avancementLeft+"px"});
-					avancementLeftFuture=$(this).outerWidth();
-					hasDemiBefore=false;
-					avancementLeftBottom=0;
+					avancementLeftFuture = $(this).outerWidth();
+					hasDemiBefore = false;
+					avancementLeftBottom = 0;
 				}
 			}else{
 				// Si l'image d'avant n'est pas en haut
-				avancementLeft+=avancementLeftFuture;
+				avancementLeft += avancementLeftFuture;
 				TweenMax.set($(this), {top: "0px", left: avancementLeft+"px"});
 				precWidth = $(this).outerWidth();
 				avancementLeftFuture = $(this).outerWidth();
@@ -501,14 +572,14 @@ function positionDiapos(){
 		}else{
 			// Si l'image n'a pas une demi-hauteur
 			// On met à jour l'avancement
-			avancementLeft+=avancementLeftFuture;
-			avancementLeftFuture=0;
+			avancementLeft += avancementLeftFuture;
+			avancementLeftFuture = 0;
 			TweenMax.set($(this), {top: "0px", left: avancementLeft+"px"});
-			avancementLeft+=$(this).outerWidth();
+			avancementLeft += $(this).outerWidth();
 			hasDemiBefore = false;
 			avancementLeftBottom = 0;
-			precWidth=0;
-			hasDemiBefore=false;
+			precWidth = 0;
+			hasDemiBefore = false;
 		}
 	});
 	TweenMax.set($("#slider-diapos"), {width: avancementLeft+avancementLeftFuture+"px"});
@@ -630,8 +701,18 @@ function sliderMission(){
 	makeActive(numActive-1);
 	// au clic sur suivant
 	$('#next-slider-mission').on('click', nextMission);
+	$('#slider-visu-mission').on('swipeleft', nextMission);
 	// mappage des clics
 	$('#slider-visu-mission li a').on('click', clickOnMission);
+}
+
+function goToContact(){
+	if(!htmlTag.hasClass('lt-ie9')){ 
+		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
+		setTimeout(openForm, 500); 
+	}else{
+		htmlBody.animate({scrollTop: $('#contactezNous').offset().top}, 800, 'easeInOutCubic');
+	}
 }
 
 /**** INIT ****/
@@ -653,6 +734,9 @@ $(function(){
 
 		// Sous menu //
 		setSubMenu();
+
+		// WIZ //
+		joinAnEvent.startListening();
 	}
 
 	if(body.hasClass("page-template-emploi")){
@@ -695,30 +779,22 @@ $(function(){
 
 	// Btn demande de contact footer //
 	btnContact.on('click', openForm);
-	if($('.formContact').hasClass('open')){
-		openForm();
-	}	
+
+	if($('.formContact').hasClass('open')){ openForm(); }	
+
 	$('.bottomHeader').find('.btnFull').on('click', function(e){
 		if(header.hasClass('menuVisible')){
 			responsiveMenu();
 		}
 		e.preventDefault();
-		if(!htmlTag.hasClass('lt-ie9')){ 
-			htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
-			setTimeout(openForm, 500); 
-		}else{
-			htmlBody.animate({scrollTop: $('#contactezNous').offset().top}, 800, 'easeInOutCubic');
-		}	
+		goToContact();	
+		//ga('send', 'event', 'contact', 'click', 'clic');
 	});
+
 	$('.home .blocH1').find('.btnFull').on('click', function(e){
 		e.preventDefault();
 		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
-		if(!htmlTag.hasClass('lt-ie9')){ 
-			htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
-			setTimeout(openForm, 500); 
-		}else{
-			htmlBody.animate({scrollTop: $('#contactezNous').offset().top}, 800, 'easeInOutCubic');
-		}
+		goToContact();	
 	});
 
 	// Changement label entreprise selon profil //
@@ -764,10 +840,9 @@ $(function(){
 			positionDiapos();
 		}
 
-		// Slider ref home //
+		// Tooltip ref home //
 		if($('#sliderRef').length){
 			setToolTip($('#sliderRef'));
-			$('#sliderRef').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
 
 		// Slider footer //
@@ -775,70 +850,22 @@ $(function(){
 			setSliderTeam($('.slidesTeam').eq(0));
 		}
 
-		// Slider landing livre blanc //
-		if($('#sliderBooks').length){
-			$('#sliderBooks').contentcarousel({ sliderEasing: 'easeOutExpo' });
-		}
-
 		// Tooltip etudes de cas //
 		if($('#etudes').length){
 			setToolTip($('#etudes'));
 		}
 
-		// Slider clients ils nous font confiance //
-		if($('#sliderLogosConfiance').length){
-			setSliderHeight($('#sliderLogosConfiance'));
-			$('#sliderLogosConfiance').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		// Slider //
+		if($('.carousel').length){
+			setSliderHeight($('.carousel'));
+			$('.carousel').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
 
-		// Slider témoignages //
-		if($('#sliderTemoignages').length){
-			setSliderHeight($('#sliderTemoignages'));
-			$('#sliderTemoignages').contentcarousel({ sliderEasing: 'easeOutExpo' });
+		// Gallery //
+		if($('.gallery').length){
+			setSliderHeight($('.gallery'));
+			$('.gallery').contentcarousel({ sliderEasing: 'easeOutExpo' });
 		}
-
-		// Slider clients ils nous ont accueillis //
-		if($('#sliderLogosAccueillis').length){
-			setSliderHeight($('#sliderLogosAccueillis'));
-			$('#sliderLogosAccueillis').contentcarousel({ sliderEasing: 'easeOutExpo' });
-		}
-
-		// Slider Wisembly vous invite //
-		if($('#slider-invite').length){
-			setSliderHeightLi($('#slider-invite'));
-			$('#slider-invite').contentcarousel({ sliderEasing: 'easeOutExpo' });
-		}
-
-		// Slider Wisembly vous invite //
-		if($('#slider-on-parle-de-nous').length){
-			setSliderHeightLi($('#slider-on-parle-de-nous'));
-			$('#slider-on-parle-de-nous').contentcarousel({ sliderEasing: 'easeOutExpo' });
-		}
-
-		// Slider Visez au plus juste //
-		if($('#slider-visez-juste').length){
-			setSliderHeightLi($('#slider-visez-juste'));
-			$('#slider-visez-juste').contentcarousel({ sliderEasing: 'easeOutExpo' });
-		}
-
-		// Slider Capitalisez sur tout le contenu de votre événement //
-		if($('#slider-contenu-evenement').length){
-			setSliderHeightLi($('#slider-contenu-evenement'));
-			$('#slider-contenu-evenement').contentcarousel({ sliderEasing: 'easeOutExpo' });
-		}
-		
-		// Slider Engagez votre audience //
-		if($('#slider-engagez-audience').length){
-			setSliderHeightLi($('#slider-engagez-audience'));
-			$('#slider-engagez-audience').contentcarousel({ sliderEasing: 'easeOutExpo' });
-		}
-
-		// Slider Concentrez vos cours //
-		if($('#slider-concentrez-cours').length){
-			setSliderHeightLi($('#slider-concentrez-cours'));
-			$('#slider-concentrez-cours').contentcarousel({ sliderEasing: 'easeOutExpo' });
-		}
-
 		
 	});
 
@@ -863,56 +890,21 @@ $(function(){
 	    	setMapSize();
 	    }
 
-	    if($('#sliderTemoignages').length){
-	    	setSliderHeight($('#sliderTemoignages'));
-	    }
-
-	    if($('#slider-invite').length){
-			setSliderHeightLi($('#slider-invite'));
-		}
-
-		if($('#sliderLogosConfiance').length){
-			setSliderHeight($('#sliderLogosConfiance'));
-		}
-
-		if($('#sliderTemoignages').length){
-			setSliderHeight($('#sliderTemoignages'));
-		}
-
-		if($('#sliderLogosAccueillis').length){
-			setSliderHeight($('#sliderLogosAccueillis'));
-		}
-
-		if($('#slider-invite').length){
-			setSliderHeightLi($('#slider-invite'));
-		}
-
-		if($('#slider-on-parle-de-nous').length){
-			setSliderHeightLi($('#slider-on-parle-de-nous'));
-		}
-
 		if($('#next-slider-mission').length){
 			posSlideMission();
 		}
 
-		if($('#slider-visez-juste').length){
-			setSliderHeightLi($('#slider-visez-juste'));
+		// Slider //
+		if($('.carousel').length){
+			setSliderHeight($('.carousel'));
 		}
 
-		if($('#slider-contenu-evenement').length){
-			setSliderHeightLi($('#slider-contenu-evenement'));
-		}
-		
-		if($('#slider-engagez-audience').length){
-			setSliderHeightLi($('#slider-engagez-audience'));
-		}
-
-		if($('#slider-concentrez-cours').length){
-			setSliderHeightLi($('#slider-concentrez-cours'));
+		// Gallery //
+		if($('.gallery').length){
+			setSliderHeight($('.gallery'));
 		}
 
 	    if(body.hasClass("page-template-emploi")){
-	    	//initAnnonces();
 	    	/*sliderSmall = $(window).width()>767 ? false : true ;
 	    	if(sliderSmall){
 	    		avancementLeft = 0;

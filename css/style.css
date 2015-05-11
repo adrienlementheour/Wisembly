@@ -1206,6 +1206,12 @@ header.menuVisible #triangleMenu {
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+.landing .topHeader {
+  height: 25px;
+}
+.landing .topHeader a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
 .topHeader a,
 .topHeader label {
   color: #fff;
@@ -2930,7 +2936,7 @@ footer {
   margin: 0;
 }
 .headFormations #bgHead {
-  background-image: url(../layoutImg/head/headFormations.jpg);
+  background-image: url(../layoutImg/head/bgHeadFormations.jpg);
   background-position: 50% 100%;
 }
 .headFormations .blocH1 {
@@ -3060,22 +3066,27 @@ footer {
   background: #f7886c;
 }
 /* Carousels */
-.carousel {
+.carousel,
+.gallery {
   position: relative;
 }
-.carousel ul {
+.carousel ul,
+.gallery ul {
   width: 100%;
   height: 100%;
   position: relative;
   text-align: center;
 }
-.js .carousel ul {
+.js .carousel ul,
+.js .gallery ul {
   overflow: hidden;
 }
-.carousel li {
+.carousel li,
+.gallery li {
   padding: 0;
 }
-.carousel li:before {
+.carousel li:before,
+.gallery li:before {
   display: none;
 }
 .navSlider {
@@ -3172,9 +3183,6 @@ footer {
 #sliderRef {
   width: 100%;
   margin: 35px 0 30px;
-}
-.js #sliderRef {
-  height: 300px;
 }
 #sliderRef .ref {
   height: 300px;
@@ -3898,9 +3906,6 @@ footer {
 .containerLivre fieldset.small {
   width: 50%;
 }
-.js #sliderBooks {
-  height: 500px;
-}
 #sliderBooks ul,
 #sliderBooks li {
   width: 400px;
@@ -4365,8 +4370,12 @@ footer {
 .slider-emploi img {
   max-width: 100%;
 }
-#slider-invite h3 {
-  margin: 25px 0 20px;
+#slider-invite img {
+  margin: 0 0 25px;
+}
+#slider-invite h3,
+#slider-on-parle-de-nous h3 {
+  margin: 0 0 20px;
 }
 #slider-invite h3:after {
   display: none;
@@ -4392,15 +4401,11 @@ footer {
 #slider-invite p {
   margin: 30px 0;
 }
+#slider-on-parle-de-nous img {
+  margin: 0 0 25px;
+}
 #slider-on-parle-de-nous h3 {
-  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-  font-weight: 500;
-  font-style: normal;
   font-size: 1.375em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  margin: 25px 0 20px 0;
 }
 #container-slider-diapos {
   height: 504px;
@@ -5292,12 +5297,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   .gallery #next {
     right: 40%;
   }
-  .gallery .wrapper-ecran .slider-evenements #prev {
-    left: 40%;
-  }
-  .gallery .wrapper-ecran .slider-evenements #next {
-    right: 40%;
-  }
 }
 @media (max-width: 1160px) {
   blockquote {
@@ -5359,16 +5358,16 @@ ul.whr-items li ul.whr-info li.whr-date {
   .containerLivre .small {
     width: 50%;
   }
-  ul#avantages-wisembly {
+  #avantages-wisembly {
     width: 700px;
   }
-  ul#notre-histoire {
+  #notre-histoire {
     width: 100%;
   }
-  ul#wisembly-autre li {
+  #wisembly-autre li {
     width: 48%;
     margin: 0 1%;
-    padding: 30px 26px 30px 26px;
+    padding: 30px 26px;
   }
 }
 @media (max-width: 1040px) {
@@ -5675,13 +5674,13 @@ ul.whr-items li ul.whr-info li.whr-date {
   .detailEtude > li:first-child {
     margin-top: 0;
   }
-  ul#offres-essais > li {
+  #offres-essais > li {
     width: 350px;
   }
-  ul#offres-essais > li#reunions-conf-calls .bloc-top-offres-essais p {
+  #offres-essais > li#reunions-conf-calls .bloc-top-offres-essais p {
     padding: 0 10px;
   }
-  ul#wisembly-autre li .bloc-txt {
+  #wisembly-autre li .bloc-txt {
     padding: 0 0 0 20px;
   }
 }
@@ -5763,27 +5762,27 @@ ul.whr-items li ul.whr-info li.whr-date {
   .slider-emploi {
     width: 80%;
   }
-  ul#notre-histoire {
+  #notre-histoire {
     width: 100%;
   }
-  ul#notre-histoire li .date-histoire {
+  #notre-histoire li .date-histoire {
     width: 30%;
   }
-  ul#notre-histoire li .content-histoire {
+  #notre-histoire li .content-histoire {
     width: 70%;
   }
-  ul#notre-histoire li .deco-histoire:before {
+  #notre-histoire li .deco-histoire:before {
     left: 30%;
   }
-  ul#notre-histoire li .deco-histoire:after {
+  #notre-histoire li .deco-histoire:after {
     left: 30%;
   }
-  ul#notre-histoire li:nth-child(even) .date-histoire {
+  #notre-histoire li:nth-child(even) .date-histoire {
     float: left;
     text-align: right;
     padding: 4px 36px 0 0;
   }
-  ul#notre-histoire li:nth-child(even) .content-histoire {
+  #notre-histoire li:nth-child(even) .content-histoire {
     float: right;
     text-align: left;
     padding: 0 0 0 36px;
@@ -5791,22 +5790,22 @@ ul.whr-items li ul.whr-info li.whr-date {
   .wrapper-ecran {
     width: 85%;
   }
-  ul#wisembly-autre a {
-    padding: 30px 25px 30px 25px;
+  #wisembly-autre a {
+    padding: 30px 25px;
   }
-  ul#wisembly-autre li {
-    padding: 25px 20px 25px 20px;
+  #wisembly-autre li {
+    padding: 25px 20px;
   }
-  ul#wisembly-autre li .img {
+  #wisembly-autre li .img {
     display: block;
     width: 100%;
     margin-bottom: 20px;
   }
-  ul#wisembly-autre li .img img {
+  #wisembly-autre li .img img {
     max-height: 100px;
     width: auto;
   }
-  ul#wisembly-autre li .bloc-txt {
+  #wisembly-autre li .bloc-txt {
     display: block;
     width: 100%;
     text-align: center;
@@ -6017,10 +6016,7 @@ ul.whr-items li ul.whr-info li.whr-date {
     padding: 0 0 20% !important;
   }
   .headPresse .blocH1 {
-    padding: 0;
-    width: 100%;
     max-width: 370px;
-    margin: 0 auto;
   }
   .headPresse #bgHead {
     background-size: 300px !important;
@@ -6033,23 +6029,32 @@ ul.whr-items li ul.whr-info li.whr-date {
   .headPresse .content.main:after {
     display: none !important;
   }
+  .headFormations h1 span {
+    width: 100%;
+  }
   .subHeading br:first-child {
     display: none;
   }
-  .blocH1 {
-    padding: 0;
-    float: none;
-    margin: 0 auto;
-    text-align: center;
-  }
+  .blocH1,
   .headEvenements .blocH1,
   .headConf .blocH1,
   .headFormations .blocH1,
+  .headPresse .blocH1,
   .headConf .blocH1 {
     padding: 0;
     float: none;
     margin: 0 auto;
     text-align: center;
+    width: 100%;
+  }
+  .headMissionVision h1 {
+    float: none;
+  }
+  .headMissionVision h1 br {
+    display: none;
+  }
+  .headMissionVision h1 span {
+    display: block;
   }
   .filtres {
     margin-bottom: 0;
@@ -6067,7 +6072,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   .temoignage > div {
     width: 62%;
   }
-  ul#avantages-wisembly {
+  #avantages-wisembly {
     width: 90%;
   }
   #container-offres-emploi {
@@ -6092,44 +6097,44 @@ ul.whr-items li ul.whr-info li.whr-date {
   .container-diapos #container-slider-diapos {
     height: 300px;
   }
-  ul#notre-histoire {
+  #notre-histoire {
     width: 100%;
   }
-  ul#notre-histoire li .date-histoire,
-  ul#notre-histoire li .content-histoire {
+  #notre-histoire li .date-histoire,
+  #notre-histoire li .content-histoire {
     float: left;
     width: 100%;
     padding: 0 0 0 20px;
     text-align: left;
   }
-  ul#notre-histoire li .deco-histoire:before {
+  #notre-histoire li .deco-histoire:before {
     left: 0;
   }
-  ul#notre-histoire li .deco-histoire:after {
+  #notre-histoire li .deco-histoire:after {
     left: 0;
   }
-  ul#notre-histoire li:nth-child(even) .date-histoire,
-  ul#notre-histoire li:nth-child(even) .content-histoire {
+  #notre-histoire li:nth-child(even) .date-histoire,
+  #notre-histoire li:nth-child(even) .content-histoire {
     float: left;
     text-align: left;
     width: 100%;
     padding: 0 0 0 20px;
   }
-  blockquote.blue-blockquote {
+  blockquote.blue {
     padding: 20px 15px;
     font-size: 1em;
   }
   .wrapper-ecran {
-    padding: 10px 10px;
+    padding: 10px;
   }
   .benefices-solution li {
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 20px;
     width: 50%;
   }
   ul#wisembly-autre {
     width: 90%;
-    margin: 40px auto 20px auto;
+    margin: 40px auto 20px;
   }
   ul#wisembly-autre li {
     display: block;
@@ -6331,10 +6336,10 @@ ul.whr-items li ul.whr-info li.whr-date {
   .temoignage > div {
     width: 100%;
   }
-  ul#avantages-wisembly {
+  #avantages-wisembly {
     width: 100%;
   }
-  ul#avantages-wisembly > li {
+  #avantages-wisembly > li {
     margin: 10px 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -6342,13 +6347,13 @@ ul.whr-items li ul.whr-info li.whr-date {
     padding: 0 10px;
     width: 33.3333333%;
   }
-  ul#avantages-wisembly > li .zone-img-avantages-wisembly img {
+  #avantages-wisembly > li .zone-img-avantages-wisembly img {
     max-width: 100%;
   }
-  ul#avantages-wisembly > li .zone-txt-avantages-wisembly {
+  #avantages-wisembly > li .zone-txt-avantages-wisembly {
     font-size: 0.8em;
   }
-  ul#avantages-wisembly > li .zone-txt-avantages-wisembly br {
+  #avantages-wisembly > li .zone-txt-avantages-wisembly br {
     display: none;
   }
   #container-offres-emploi {
@@ -6358,14 +6363,14 @@ ul.whr-items li ul.whr-info li.whr-date {
   .slider-emploi ul li .btnLight {
     max-width: 95%;
   }
-  ul#offres-essais > li {
+  #offres-essais > li {
     width: 100%;
     padding: 0;
   }
-  ul#offres-essais > li .bloc-top-offres-essais p {
+  #offres-essais > li .bloc-top-offres-essais p {
     padding: 0;
   }
-  ul#offres-essais > li#reunions-conf-calls .bloc-top-offres-essais p {
+  #offres-essais > li#reunions-conf-calls .bloc-top-offres-essais p {
     padding: 0;
   }
 }
@@ -6424,6 +6429,23 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 /* @end */
 /* @group Responsive vertical */
+@media (max-height: 850px) {
+  .headEvenements h1 span,
+  .headFormations h1 span,
+  .headConf h1 span {
+    display: inline;
+  }
+  .headEvenements br,
+  .headFormations br,
+  .headConf br {
+    display: none;
+  }
+  .headEvenements .subHeading,
+  .headFormations .subHeading,
+  .headConf .subHeading {
+    margin-bottom: 0;
+  }
+}
 @media (max-height: 850px) and (min-width: 768px) {
   .headHome h1,
   .headRdv h1,
@@ -6440,6 +6462,18 @@ ul.whr-items li ul.whr-info li.whr-date {
     margin: 5vh 0 22vh;
   }
   .headPresse .blocH1 {
+    padding: 0 0 120px;
+  }
+  .headEvenements #bgHead,
+  .headFormations #bgHead,
+  .headConf #bgHead {
+    background-position: 50% 0;
+  }
+  .headEvenements .blocH1,
+  .headFormations .blocH1,
+  .headConf .blocH1,
+  .headConf .blocH1 {
+    margin: 15vh 0 0;
     padding: 0 0 120px;
   }
 }

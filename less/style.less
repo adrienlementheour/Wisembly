@@ -736,6 +736,12 @@ header{
   background: @bleu;
   color: #fff;
   .backface-visibility(hidden);
+  .landing &{
+    height: 25px;
+    a{
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+  }
   a, label{
     color: #fff;
     .gothamMedium(.85em);
@@ -2247,7 +2253,7 @@ footer{
 
 .headFormations{
   #bgHead{
-    background-image: url(../layoutImg/head/headFormations.jpg);
+    background-image: url(../layoutImg/head/bgHeadFormations.jpg);
     background-position: 50% 100%;
   }
   .blocH1{
@@ -2378,7 +2384,7 @@ footer{
 
 /* Carousels */
 
-.carousel{
+.carousel, .gallery{
   position: relative;
   ul{
     width: 100%;
@@ -2495,9 +2501,6 @@ footer{
 #sliderRef{
   width: 100%;
   margin: 35px 0 30px;
-  .js &{
-    height: 300px;
-  }
   .ref{
     height: 300px;
     width: 25%;
@@ -3158,19 +3161,16 @@ footer{
 
 #sliderBooks{
   &:extend(.couvSeule);
-  .js &{
-    height: 500px;
-  }
   ul, li{
     width: 400px;
   }
   ul{
     margin: 0 auto;
   }
-  #prev {
+  #prev{
     left: 0;
   }
-  #next {
+  #next{
     right: 0;
   }
   li{
@@ -3669,8 +3669,11 @@ footer{
 }
 
 #slider-invite{
+  img{
+    margin: 0 0 25px;
+  }
   h3{
-    margin: 25px 0 20px;
+    margin: 0 0 20px;
     &:after{
       display: none;
     }
@@ -3687,9 +3690,12 @@ footer{
 }
 
 #slider-on-parle-de-nous{
+  img{
+    margin: 0 0 25px;
+  }
   h3{
-    .gothamMedium(1.375em);
-    margin: 25px 0 20px 0;
+    font-size: 1.375em;
+    &:extend(#slider-invite h3);
   }
 }
 
