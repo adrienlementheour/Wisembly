@@ -90,6 +90,14 @@ h2, .h2{
       display: block;
       width: 90px;
       z-index: -1;
+      .lt-ie9 &{
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        text-align: center;
+        margin: 0;
+      }
     }
   }
   &:after{
@@ -151,25 +159,24 @@ a{
     color: darken(@bleu, 10);
     border-color: darken(fade(@bleu, 30), 10);
   }
-  &.prevLink, &.nextLink {
+  &.prevLink, &.nextLink{
     position: relative;
+    &:before{
+      position: absolute;
+      top: 0;
+      left: -7px;
+    }
   }
-  &.prevLink:before {
+  &.prevLink:before{
     content: '‹';
-    position: absolute;
-    top: 0;
-    left: -7px;
   }
-  &.nextLink:before {
+  &.nextLink:before{
     content: '›';
-    position: absolute;
-    top: 0;
-    left: -7px;
   }
 }
 
 .lienVert{
-  .gotham(1em);
+  font-weight: 400;
   color: @vert;
   border-color: fade(@vert, 30);
   &:hover, &:focus{
@@ -191,8 +198,9 @@ p{
     width: 100%;
     max-width: inherit;
   }
-  &.noMarginBottom {
-    margin-bottom: 0;
+  img{
+    max-width: 100%;
+    hight: auto;
   }
 }
 
@@ -214,13 +222,13 @@ li{
 }
 
 strong, b{
-  .gothamBold(1em);
+  font-weight: 700;
   &.medium{
-    .gothamMedium(1em);
+    font-weight: 500;
   }
 }
 em, i, blockquote{
-  .gothamItalic(1em);
+  font-style: italic;
 }
 
 blockquote{
@@ -317,7 +325,6 @@ input, textarea{
   vertical-align: middle;
   background: #f7f7f7;
   border: 2px solid #edf0f1;
-  .gothamItalic(1em);
   line-height: 22px;
   width: 100%;
   .box-sizing(border-box);
@@ -368,7 +375,6 @@ select{
   outline: 0;
   width: 130%;
   color: #fff;
-  .gothamItalic(1em);
 }
 
 label{
@@ -738,6 +744,7 @@ header{
   .backface-visibility(hidden);
   .landing &{
     height: 25px;
+    padding: 3px 0 2px;
     a{
       border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     }
@@ -767,6 +774,11 @@ header{
     float: right;
     position: relative;
     z-index: 2;
+  }
+  [data-status="not-valid"]{
+    input[type=text]{
+      border-color: @rouge;
+    }
   }
   button{
     display: inline-block;
@@ -1070,6 +1082,11 @@ header{
         opacity: 1;
         bottom: -45px;
         .transition(.3s all .15s ease-in-out);
+      }
+    }
+    &.openSubMenu{
+      .sub-menu{
+        z-index: -2;
       }
     }
     &.actifHover, &.current_page_parent{
@@ -1522,12 +1539,12 @@ footer{
     display: inline-block;
     margin: 38% 0 0;
     float: left;
-    width: 177px;
+    width: 190px;
   }
 }
 .navTeam{
   text-align: right;
-  width: 178px;
+  width: 190px;
   position: absolute;
   top: -95px;
   li{
@@ -1556,9 +1573,9 @@ footer{
     opacity: 1;
     .transition(.3s ease-in-out);
   }
-  .no-js &{
+  .no-js &, .lt-ie9 &{
     opacity: 1;
-    top: -530px;
+    top: -520px;
   }
   &:after{
     .fontIcon();
@@ -1571,9 +1588,6 @@ footer{
     .lt-ie9 &{
       display: none;
     }
-  }
-  .lt-ie9 &{
-    top: -550px;
   }
 }
 
@@ -2040,6 +2054,9 @@ footer{
     content: '';
     position: absolute;
     width: 150%;
+    .lt-ie9 &{
+      display: none;
+    }
   }
   &:after{
     bottom: -26px;
@@ -2050,6 +2067,11 @@ footer{
   .no-js &{
     .content.main{
       padding-top: 0;
+    }
+  }
+  .lt-ie9 &{
+    .content.main{
+      padding-top: 200px;
     }
   }
 }
@@ -2072,12 +2094,6 @@ footer{
     background-image: url(../layoutImg/head/headHome.jpg);
     background-position: 50% 100%;
     background-size: auto;
-    .lt-ie9 &{
-      background-position: 57% 50%;
-    }
-    .no-js &{
-      background-position: 50% 255%;
-    }
   }
   h1{
     font-size: 2.6em;
@@ -2122,7 +2138,7 @@ footer{
     overflow: hidden;
   }
   h1{
-    margin: 5vh 0 27vh;
+    margin: 8vh 0 24vh;
     text-align: left;
     color: darken(@bleu, 10);
     width: 420px;
@@ -2244,6 +2260,7 @@ footer{
   .blocH1{
     float: right;
     margin: 23vh 0 0;
+    width: 390px;
   }
   h1{
     text-align: left;
@@ -2354,6 +2371,10 @@ footer{
     text-align: center;
     line-height: 155px;
   }
+  img{
+    max-width: 130px;
+    height: auto;
+  }
   &:before{
     right: 0;
     bottom: -105px;
@@ -2380,11 +2401,16 @@ footer{
   &.rose{
     background: @rose;
   }
+  .lt-ie9 &{
+    .content{
+      padding-bottom: 50px;
+    }
+  }
 }
 
 /* Carousels */
 
-.carousel, .gallery{
+.carousel, .gallery, .carouselDots{
   position: relative;
   ul{
     width: 100%;
@@ -2411,6 +2437,7 @@ footer{
   position: absolute;
   top: 50%;
   margin: -17px 0 0;
+  z-index: 2;
   &:hover{
     background: @vert;
     color: #fff;
@@ -2598,6 +2625,9 @@ footer{
     opacity: 0;
     .box-sizing(border-box);
     .transition(.3s ease-in-out);
+    .lt-ie9 &{
+      top: 350px;
+    }
   }
   .quote{
     &:before{
@@ -2613,6 +2643,9 @@ footer{
     + span{
       position: absolute;
       bottom: 25px;
+      .lt-ie9 &{
+        display: none;
+      }
     }
   }
   .cite{
@@ -3435,6 +3468,9 @@ footer{
     width: 92%;
     display: inline-block;
     background: @grisSlides;
+    .lt-ie9 &{
+      width: 89%;
+    }
   }
   .img{
     &:extend(.ref .img);
@@ -3445,6 +3481,7 @@ footer{
     display: block;
     font-size: 1.2em;
     line-height: 1.4em;
+    min-height: 150px;
     &:before{
       &:extend(.ref .quote:before);
       color: @bleu;
@@ -4336,7 +4373,7 @@ ul.whr-items{
 
 .wrapper-ecran{
   width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   .box-sizing(border-box);
   padding: 35px 40px;
   .border-radius(5px);
@@ -4352,8 +4389,42 @@ ul.whr-items{
       right: -100px;
     }
   }
-  + blockquote{
-    margin-top: 50px;
+  + .dots{
+    margin: 0 0 50px;
+  }
+}
+
+.keyword{
+  strong{
+    font-weight: normal;
+    .transition(.3s ease-in-out);
+  }
+  .on{
+    font-weight: 500;
+    border-bottom: @vert 2px dotted;
+  }
+}
+
+.dots{
+  text-align: center;
+  li{
+    display: inline-block;
+    padding: 0;
+    width: auto;
+    &:before{
+      display: none;
+    }
+  }
+  button{
+    font-size: 30px;
+    padding: 0 2px;
+    color: #d5d9da;
+    &:hover, &:focus{
+      color: @bleuLien;
+    }
+    &.actif{
+      color: @bleu;
+    }
   }
 }
 
@@ -4415,18 +4486,6 @@ ul.whr-items{
         }
       }
     }
-  }
-
-  .slideTeam{
-    p{
-      max-width: 150px;
-    }
-  }
-
-  .navTeam{
-    width: 152px;
-    top: auto;
-    bottom: 50px;
   }
 
   .menuFooter{

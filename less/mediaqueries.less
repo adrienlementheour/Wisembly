@@ -221,11 +221,11 @@
       >a{
         line-height: 25px;
         padding: 0;
+        &:before{
+          display: none;
+        }
         &:hover, &:focus{
           color: @vert;
-          &:before{
-            display: none;
-          }
         }
       }
       &.current-menu-item{
@@ -731,6 +731,19 @@
       }
     }
   }
+  
+  .slider-evenements{
+    .navSlider{
+      top: auto;
+      bottom: 0;
+    }
+    #prev{
+      left: 30%;
+    }
+    #next{
+      right: 30%;
+    }
+  }
 }
 
 @media (max-width: 767px){
@@ -927,6 +940,9 @@
         top: 0;
       }
     }
+    h1{
+      font-size: 3em;
+    }
   }
 
   .headTeam, .headClients{
@@ -959,6 +975,34 @@
   .subHeading{
     br:first-child{
       display: none;
+    }
+  }
+
+  .headEtude{
+    padding: 0 !important;
+    .quoteHead{
+      margin-top: 65px;
+    }
+    .content.main{
+      background: none !important;
+    }
+    blockquote{
+      text-align: center;
+      width: 100%;
+      margin: 110px 0 0;
+      padding: 0 20px;
+      text-indent: 0;
+      &:before{
+        left: 0;
+      }
+    }
+    .logo{
+      width: 155px;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      left: 0;
+      margin: auto;
     }
   }
 
@@ -1311,6 +1355,9 @@
     #bgHead{
       height: 200px !important;
     }
+    h1{
+      font-size: 2em;
+    }
   }
 
   .headPresse{
@@ -1329,6 +1376,11 @@
   }
   #slider-on-parle-de-nous .navSlider{
     top: auto;
+  }
+  .wrapper-ecran{
+    .navSlider{
+      bottom: -62px;
+    }
   }
 
   .gallery #prev, #prev{
@@ -1496,7 +1548,7 @@
 
   .headLivres{
     h1{
-      margin: 5vh 0 22vh;
+      margin: 12vh 0 17vh;
     }
   }
 
