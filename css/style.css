@@ -1596,7 +1596,8 @@ header.menuVisible #triangleMenu {
   -o-transition: 0.2s all 0.1s ease-in-out;
   transition: 0.2s all 0.1s ease-in-out;
 }
-.menu .hasSubMenu:hover .sub-menu {
+.menu .hasSubMenu:hover .sub-menu,
+.menu .hasSubMenu.openSubMenu .sub-menu {
   opacity: 1;
   bottom: -45px;
   -webkit-transition: 0.3s all 0.15s ease-in-out;

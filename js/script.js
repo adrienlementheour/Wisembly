@@ -69,8 +69,9 @@ var joinAnEvent = {
 	},
 
 	checkKeyword: function (e) {
-		if (!this.$el.parsley().validate()) {
-			if (3 > this.$el.find('input').val().length)
+		var valLength = this.$el.find('input').val().length;
+		if (3 > valLength || 20 < valLength) {
+			if (3 > valLength)
 				return this.$el.attr('data-status', 'active');
 			this.keywordExists = false;
 			this.updateStatus();
@@ -99,7 +100,6 @@ var joinAnEvent = {
 
 	goTo: function (e) {
 		e.preventDefault();
-		console.log('hey');
 		if (!this.keywordExists)
 			return;
 		window.open('https://app.wisembly.com/' + this.$el.find('input').val());
@@ -127,6 +127,9 @@ function onYouTubeIframeAPIReady(){
 function fixedHeader(){
 	if($(window).width() > 1040 && !isMobile.any){
 		myScroll > 100 ? header.addClass('on') : header.removeClass('on');
+		if($('.menu').find('.current_page_parent').length){
+			myScroll > 100 ? $('.menu').find('.current_page_parent').removeClass('openSubMenu') : $('.menu').find('.current_page_parent').addClass('openSubMenu');
+		}
 	}
 }
 
