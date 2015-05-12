@@ -76,7 +76,6 @@
 												La solution nous accompagne dans toutes nos réunions.
 											</span>
 											<span>
-												<span class='imgQuote'><img src='img/patrick.png' alt='Patrinck Ropert'/></span>
 												<span class='cite'>
 													<strong>Patrick Ropert,</strong>
 													Directeur de la Communication, SNCF
@@ -118,14 +117,12 @@
 										</span>
 										<span class='hover'>
 											<span class='quote'>
-												Wisembly a créé un véritable u-turn dans la relation managériale de l'entreprise. 
-												La solution nous accompagne dans toutes nos réunions.
+												Le pilotage des questions live et évaluations permet d'aboutir facilement et rapidement à des décisions partagées, co-construites, là où la conversation téléphonique seule renvoie souvent l'animateur à sa solitude.
 											</span>
 											<span>
-												<span class='imgQuote'><img src='img/patrick.png' alt='Patrinck Ropert'/></span>
 												<span class='cite'>
 													<strong>Patrick Ropert,</strong>
-													Directeur de la Communication, SNCF
+													Responsable Communication Interne Groupe, Groupe Auchan
 												</span>
 											</span>
 										</span>

@@ -3186,7 +3186,7 @@ footer {
   margin: 35px 0 30px;
 }
 #sliderRef .ref {
-  height: 300px;
+  height: 340px;
   width: 25%;
 }
 #sliderRef .ref a {
@@ -3351,7 +3351,7 @@ footer {
   display: inline-block;
   vertical-align: middle;
   max-width: 163px;
-  margin: 0 0 0 5px;
+  margin: 0;
   font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -3379,6 +3379,7 @@ footer {
   background: #f3f4f6;
   border-radius: 100%;
   overflow: hidden;
+  margin: 0 5px 0 0;
 }
 .ref.jaune a:before {
   border-color: transparent transparent transparent #f1bc33;
