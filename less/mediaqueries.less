@@ -462,6 +462,11 @@
         top: 100px;
       }
     }
+    .no-mobile &{
+      .content.main{
+        padding-top: 0;
+      }
+    }
   }
 
   .no-js .headHome{
@@ -645,8 +650,8 @@
 
   .logosPresse{
     padding: 0;
-    li{
-      padding: 0 20px;
+    img{
+      padding: 0 20px 20px;
     }
   }
 
@@ -735,7 +740,7 @@
   .slider-evenements{
     .navSlider{
       top: auto;
-      bottom: 0;
+      bottom: -10px;
     }
     #prev{
       left: 30%;
@@ -1198,10 +1203,10 @@
   }
   
   .logosPresse{
-    li{
-      width: 100%;
+    img{
+      display: block;
       padding: 0;
-      margin: 0 0 30px;
+      margin: 0 auto 20px;
     }
   }
 
@@ -1244,6 +1249,12 @@
 
   .etude{
     height: 520px;
+    .hover{
+      padding: 30px;
+    }
+    .quote{
+      font-size: 1em;
+    }
   }
 
   .bloc-contact{
@@ -1268,6 +1279,15 @@
       margin: 0 auto 20px auto;
       width: 100%;
       padding: 0 0 20px 0;
+    }
+  }
+
+  .slider-evenements{
+    #prev{
+      left: 10%;
+    }
+    #next{
+      right: 10%;
     }
   }
 }
@@ -1420,8 +1440,8 @@
     width: 100%;
     padding: 20px;
   }
-  .slider-emploi ul li .btnLight{
-    max-width: 95%;
+  .slider-emploi .btnLight{
+    max-width: 200px;
   }
   #offres-essais{
     > li{
@@ -1441,6 +1461,79 @@
       }
     }
   }
+
+  .etude{
+    .hover{
+      display: none;
+    }
+    .btnFalse{
+      bottom: 20%;
+    }
+    .lien{
+      &:hover, &:focus{
+        &:before{
+          border-width: 50px 0 0 520px;
+        }
+        &:after{
+          border-width: 0 0 50px 520px;
+        }
+        .btnFalse{
+          opacity: 1;
+          background: #fff;
+        }
+      }
+    }
+    &.bleu{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @bleu;
+          }
+        }
+      }
+    }
+    &.vert{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @vert;
+          }
+        }
+      }
+    }
+    &.rouge{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @rouge;
+          }
+        }
+      }
+    }
+    &.jaune{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @jaune;
+          }
+        }
+      }
+    }
+    &.rose{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @rose;
+          }
+        }
+      }
+    }
+  }
+
+  input, textarea, select{
+    font-size: 16px;
+  }
+
 }
 
 @media (max-width: 400px){
@@ -1487,16 +1580,6 @@
     }
   }
 
-  .etude{
-    .lien{
-      top: 36%;
-      height: 64%;
-    }
-    .hover{
-      padding: 30px;
-    }
-  }
-
 }
 
 @media (max-width: 330px){
@@ -1510,6 +1593,12 @@
 
   .etude{
     height: 560px;
+  }
+
+  .en #bloc-video{
+    p{
+      font-size: .9em;
+    }
   }
 }
 
@@ -1636,6 +1725,24 @@
     .headRdv{
       #bgHead{
         background-image: url(../layoutImg/head/bgHeadRdv.jpg);
+      }
+    }
+
+    .headEvt{
+      #bgHead{
+        background-image: url(../layoutImg/head/bgHeadEvt.jpg);
+      }
+    }
+
+    .headFormations{
+      #bgHead{
+        background-image: url(../layoutImg/head/bgHeadFormations.jpg);
+      }
+    }
+
+    .headRConf{
+      #bgHead{
+        background-image: url(../layoutImg/head/bgHeadConf.jpg);
       }
     }
 

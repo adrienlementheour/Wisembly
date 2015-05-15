@@ -21,7 +21,6 @@
 @bleuFooterContact: #0d5c7b;
 @grisMentions: #8c959b;
 @grisSolid: #718289;
-//@grisSubMenu: #eff1f1;
 @grisSlides: #f4f5f5;
 
 html,
@@ -238,6 +237,9 @@ blockquote{
   border: 2px solid @grisBorder;
   text-indent: 30px;
   line-height: 20px;
+  p{
+    min-width: 100%;
+  }
   &.blue{
     border: 0;
     background: #f7f7f7;
@@ -1726,6 +1728,10 @@ footer{
   height: 10px;
   border-radius: 20px;
   .transition(.3s ease-in-out);
+  .en &{
+    left: 58px;
+    width: 351px;
+  }
 }
 #drag{
   position: relative;
@@ -1898,16 +1904,14 @@ footer{
         color: @vert;
         +ul{
           position: relative;
-          padding: 30px 0 10px;
+          padding: 30px 0 0;
           &:after{
             content: '—';
-            position: absolute;
-            bottom: -10px;
           }
         }
       }
       ul{
-        padding: 10px 0;
+        padding: 0 0 10px;
       }
       li{
         a{
@@ -2064,13 +2068,12 @@ footer{
     background: #fff;
     .transform(rotate(-3deg));
   }
-  .no-js &{
-    .content.main{
-      padding-top: 0;
+  .content.main{
+    padding-top: 0;
+    .no-mobile &{
+      padding-top: 135px;
     }
-  }
-  .lt-ie9 &{
-    .content.main{
+    .lt-ie9 &{
       padding-top: 200px;
     }
   }
@@ -2094,6 +2097,9 @@ footer{
     background-image: url(../layoutImg/head/headHome.jpg);
     background-position: 50% 100%;
     background-size: auto;
+    .no-js &{
+      background-position: 50% 350%;
+    }
   }
   h1{
     font-size: 2.6em;
@@ -2254,7 +2260,7 @@ footer{
 
 .headEvenements{
   #bgHead{
-    background-image: url(../layoutImg/head/bgHeadEvt.jpg);
+    background-image: url(../layoutImg/head/headEvt.jpg);
     background-position: 50% 100%;
   }
   .blocH1{
@@ -2270,7 +2276,7 @@ footer{
 
 .headFormations{
   #bgHead{
-    background-image: url(../layoutImg/head/bgHeadFormations.jpg);
+    background-image: url(../layoutImg/head/headFormations.jpg);
     background-position: 50% 100%;
   }
   .blocH1{
@@ -2296,7 +2302,7 @@ footer{
 
 .headConf{
   #bgHead{
-    background-image: url(../layoutImg/head/bgHeadConf.jpg);
+    background-image: url(../layoutImg/head/headConf.jpg);
     background-position: 50% 100%;
   }
   .blocH1{
@@ -2353,7 +2359,7 @@ footer{
       }
     }
     &:before{
-      left: 95px;
+      left: 45px;
       top: -5px;
       color: fade(#fff, 40);
     }
@@ -2483,20 +2489,17 @@ footer{
   .box-sizing(border-box);
   padding: 0 65px;
   margin: -130px 0 0;
+  .en &{
+    padding: 0;
+  }
   li{
     display: inline-block;
     vertical-align: top;
     width: 33%;
-    padding: 0 30px 70px 30px;
+    padding: 0 30px 70px;
     .box-sizing(border-box);
     position: relative;
     min-height: 340px;
-    a.btnLight {
-      position: absolute;
-      bottom: 0;
-      left:50%;
-      margin-left: -125px;
-    }
     &:before{
       content: '';
       display: block;
@@ -2507,6 +2510,16 @@ footer{
   }
   p{
     margin: 1em 0 0;
+  }
+  .btnLight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    .en &{
+      width: 280px;
+    }
   }
   .event{
     &:before{
@@ -2825,19 +2838,8 @@ footer{
   .box-sizing(border-box);
   padding: 0 95px;
   margin: 60px 0 0;
-  li{
-    width: 25%;
-    display: inline-block;
-    padding: 0;
-    .box-sizing(border-box);
-    &:before{
-      display: none;
-    }
-  }
   img{
-    padding: 0 0 10px;
-    max-width: 100%;
-    height: auto;
+    padding: 0 30px 30px;
   }
   + p{
     position: relative;
@@ -2905,6 +2907,9 @@ footer{
     max-width: 410px;
     width: 95%;
     margin: 0 auto;
+    .en &{
+      font-size: .95em;
+    }
   }
   a{
     margin: 20px auto 0;
@@ -2935,13 +2940,13 @@ footer{
       background: @vert;
       border-color: @vert;
     }
-    &.dej{
+    &[class^="dej"], [class*=" dej"]{
       &:hover, &:focus, &.actif{
         background: @jaune;
         border-color: @jaune;
       }
     }
-    &.webi{
+    &[class^="webi"], [class*=" webi"]{
       &:hover, &:focus, &.actif{
         background: @rouge;
         border-color: @rouge;
@@ -4067,35 +4072,33 @@ ul.whr-items{
 
 /* Mission vision */
 #wrapper-slider-visu-mission{
-  display: block;
-  width: 100%;
   height: 400px;
   overflow: hidden;
   position: relative;
   margin: 0 auto;
   text-align: center;
+  .no-js &, .lt-ie9 &{
+    height: 330px;
+  }
 }
 
 #slider-visu-mission{
-  display: block;
   width: 100%;
   height: 260px;
   position: absolute;
   top: 0;
   left:0;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-align: left;
+  text-align: center;
   li{
-    display: block;
-    margin: 0; 
     padding: 0 39px;
     width: 122px;
-    text-align: center;
     height: 100%;
     line-height: 260px;
     float: left;
+    .no-js &, .lt-ie9 &{
+      float: none;
+      display: inline-block;
+    }
     &.active{
       a{
         img{
@@ -4130,17 +4133,15 @@ ul.whr-items{
 }
 
 #slider-txt-mission{
-  display: block;
   width: 100%;
   height: 150px;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
   position: absolute;
-  text-align: left;
   left: 0;
   top:310px;
   overflow: hidden;
+  .no-js &, .lt-ie9 &{
+    top: 250px;
+  }
   li{
     width: 20%;
     height: 150px;
@@ -4153,7 +4154,7 @@ ul.whr-items{
       display: none;
     }
     h3{
-      margin: 0 0 10px 0;
+      margin: 0 0 10px;
     }
     p{
       margin: 0 auto;
@@ -4163,7 +4164,7 @@ ul.whr-items{
 
 #next-slider-mission{
   display: block;
-  margin: 25px auto 0 auto;
+  margin: 25px auto 0;
   .size(46px);
   color: @vert;
   border: 2px solid;
@@ -4171,12 +4172,14 @@ ul.whr-items{
   .border-radius(50%);
   line-height: 42px;
   font-size: 26px;
-  text-align: center;
   padding: 0;
   font-weight: 500;
   &:hover{
     background: @vert;
     color: @blanc;
+  }
+  .no-js &, .lt-ie9 &{
+    display: none;
   }
 }
 
@@ -4184,7 +4187,7 @@ ul.whr-items{
   width: 1050px;
   margin: 50px auto;
   li{
-    padding: 0 0 70px 0;
+    padding: 0 0 70px;
     position: relative;
     &:nth-child(even){
       .date-histoire{
@@ -4262,15 +4265,10 @@ ul.whr-items{
         color: @txt;
       }
       img{
-        margin: 20px 0 0 0;
+        margin: 20px 0 0;
       }
       a{
-        color: @vert;
-        border-color: fade(@vert, 30);
-        &:hover, &:focus{
-          color: darken(@vert, 10);
-          border-color: fade(darken(@vert, 10), 30);
-        }
+        &:extend(.lienVert all);
       }
     }
   }
@@ -4355,6 +4353,7 @@ ul.whr-items{
     display: block;
     color: @txt;
     margin: 20px 0;
+    min-height: 57px;
   }
   .lien{
     color: @vert;
