@@ -150,7 +150,8 @@ function apparitionFooter(){
 
 // Animations au scroll //
 function scrollPage(){
-	var myScroll = $(document).scrollTop(), head = $('.head');
+	var head = $('.head');
+	myScroll = $(document).scrollTop();
 
 	if(!body.hasClass('landing')){
 		fixedHeader();
@@ -883,8 +884,7 @@ $(function(){
 			responsiveMenu();
 		}
 		e.preventDefault();
-		goToContact();	
-		//ga('send', 'event', 'contact', 'click', 'clic');
+		goToContact();
 	});
 
 	$('.home .blocH1').find('.btnFull').on('click', function(e){
