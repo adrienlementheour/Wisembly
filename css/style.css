@@ -3435,21 +3435,27 @@ footer {
   background: #46b489;
   border-color: #46b489;
 }
-.filtres a[class^="dej"]:hover,
-.filtres a [class*=" dej"]:hover,
-.filtres a[class^="dej"]:focus,
-.filtres a [class*=" dej"]:focus,
-.filtres a[class^="dej"].actif,
-.filtres a [class*=" dej"].actif {
+.filtres a[class^="petit"]:hover,
+.filtres a[class*=" petit"]:hover,
+.filtres a[class^="break"]:hover,
+.filtres a[class*=" break"]:hover,
+.filtres a[class^="petit"]:focus,
+.filtres a[class*=" petit"]:focus,
+.filtres a[class^="break"]:focus,
+.filtres a[class*=" break"]:focus,
+.filtres a[class^="petit"].actif,
+.filtres a[class*=" petit"].actif,
+.filtres a[class^="break"].actif,
+.filtres a[class*=" break"].actif {
   background: #f1bc33;
   border-color: #f1bc33;
 }
 .filtres a[class^="webi"]:hover,
-.filtres a [class*=" webi"]:hover,
+.filtres a[class*=" webi"]:hover,
 .filtres a[class^="webi"]:focus,
-.filtres a [class*=" webi"]:focus,
+.filtres a[class*=" webi"]:focus,
 .filtres a[class^="webi"].actif,
-.filtres a [class*=" webi"].actif {
+.filtres a[class*=" webi"].actif {
   background: #e25c5b;
   border-color: #e25c5b;
 }
@@ -3484,21 +3490,33 @@ footer {
   background: #fff;
   color: #46b489;
 }
-.rdv .roundImg + a.dej {
+.rdv .roundImg + a[class^="petit"],
+.rdv .roundImg + a[class*=" petit"],
+.rdv .roundImg + a[class^="break"],
+.rdv .roundImg + a[class*=" break"] {
   background: #f1bc33;
   border-color: #f1bc33;
 }
-.rdv .roundImg + a.dej:hover,
-.rdv .roundImg + a.dej:focus {
+.rdv .roundImg + a[class^="petit"]:hover,
+.rdv .roundImg + a[class*=" petit"]:hover,
+.rdv .roundImg + a[class^="break"]:hover,
+.rdv .roundImg + a[class*=" break"]:hover,
+.rdv .roundImg + a[class^="petit"]:focus,
+.rdv .roundImg + a[class*=" petit"]:focus,
+.rdv .roundImg + a[class^="break"]:focus,
+.rdv .roundImg + a[class*=" break"]:focus {
   background: #fff;
   color: #f1bc33;
 }
-.rdv .roundImg + a.webi {
+.rdv .roundImg + a[class^="webi"],
+.rdv .roundImg + a[class*=" webi"] {
   background: #e25c5b;
   border-color: #e25c5b;
 }
-.rdv .roundImg + a.webi:hover,
-.rdv .roundImg + a.webi:focus {
+.rdv .roundImg + a[class^="webi"]:hover,
+.rdv .roundImg + a[class*=" webi"]:hover,
+.rdv .roundImg + a[class^="webi"]:focus,
+.rdv .roundImg + a[class*=" webi"]:focus {
   background: #fff;
   color: #e25c5b;
 }

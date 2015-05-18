@@ -2940,13 +2940,13 @@ footer{
       background: @vert;
       border-color: @vert;
     }
-    &[class^="dej"], [class*=" dej"]{
+    &[class^="petit"], &[class*=" petit"], &[class^="break"], &[class*=" break"]{
       &:hover, &:focus, &.actif{
         background: @jaune;
         border-color: @jaune;
       }
     }
-    &[class^="webi"], [class*=" webi"]{
+    &[class^="webi"], &[class*=" webi"]{
       &:hover, &:focus, &.actif{
         background: @rouge;
         border-color: @rouge;
@@ -2983,7 +2983,7 @@ footer{
         background: #fff;
         color: @vert;
       }
-      &.dej{
+      &[class^="petit"], &[class*=" petit"], &[class^="break"], &[class*=" break"]{
         background: @jaune;
         border-color: @jaune;
         &:hover, &:focus{
@@ -2991,7 +2991,7 @@ footer{
           color: @jaune;
         }
       }
-      &.webi{
+      &[class^="webi"], &[class*=" webi"]{
         background: @rouge;
         border-color: @rouge;
         &:hover, &:focus{

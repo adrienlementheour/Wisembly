@@ -409,8 +409,8 @@ function openForm(){
 	if(btnContact.length){
 		btnContact.animate({opacity: 0}, 200, function(){
 			btnContact.css('display', 'none');
-			$('#contact, #bulle').addClass('visible');
-			setTimeout(function(){ htmlBody.animate({scrollTop: $('#contact').offset().top - 250}, 400, 'easeInOutCubic'); }, 300);
+			$('#formContact, #bulle').addClass('visible');
+			setTimeout(function(){ htmlBody.animate({scrollTop: $('#formContact').offset().top - 250}, 400, 'easeInOutCubic'); }, 300);
 			$('#nom').focus();
 		});
 	}else{
@@ -728,10 +728,10 @@ function sliderMission(){
 
 function goToContact(){
 	if(!htmlTag.hasClass('lt-ie9')){ 
-		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
+		htmlBody.animate({scrollTop: $('#contact').offset().top - 100}, 800, 'easeInOutCubic');
 		setTimeout(openForm, 500); 
 	}else{
-		htmlBody.animate({scrollTop: $('#contactezNous').offset().top}, 800, 'easeInOutCubic');
+		htmlBody.animate({scrollTop: $('#contact').offset().top}, 800, 'easeInOutCubic');
 	}
 }
 
@@ -889,7 +889,7 @@ $(function(){
 
 	$('.home .blocH1').find('.btnFull').on('click', function(e){
 		e.preventDefault();
-		htmlBody.animate({scrollTop: $('#contactezNous').offset().top - 100}, 800, 'easeInOutCubic');
+		htmlBody.animate({scrollTop: $('#contact').offset().top - 100}, 800, 'easeInOutCubic');
 		goToContact();	
 	});
 
