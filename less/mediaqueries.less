@@ -20,12 +20,14 @@
       margin: 0 auto;
     }
   }
+
   #prev{
     left: 30px;
   }
   #next{
     right: 30px;
   }
+
   .wrapper-ecran .slider-evenements #prev{
     left: -100px;
   }
@@ -40,6 +42,7 @@
       right: 0;
     }
   }
+
   #slider-on-parle-de-nous{
     .navSlider{
       top: 40%;
@@ -67,12 +70,6 @@
       left: 40%;
     }
     #next{
-      right: 40%;
-    }
-    .wrapper-ecran .slider-evenements #prev{
-      left: 40%;
-    }
-    .wrapper-ecran .slider-evenements #next{
       right: 40%;
     }
   }
@@ -164,19 +161,19 @@
       width: 50%;
     }
   }
-  ul#avantages-wisembly{
+  #avantages-wisembly{
     width: 700px;
   }
 
-  ul#notre-histoire{
+  #notre-histoire{
     width: 100%;
   }
 
-  ul#wisembly-autre{
+  #wisembly-autre{
     li{
       width: 48%;
       margin: 0 1%;
-      padding: 30px 26px 30px 26px;
+      padding: 30px 26px;
     }
   }
 }
@@ -224,11 +221,11 @@
       >a{
         line-height: 25px;
         padding: 0;
+        &:before{
+          display: none;
+        }
         &:hover, &:focus{
           color: @vert;
-          &:before{
-            display: none;
-          }
         }
       }
       &.current-menu-item{
@@ -465,6 +462,11 @@
         top: 100px;
       }
     }
+    .no-mobile &{
+      .content.main{
+        padding-top: 0;
+      }
+    }
   }
 
   .no-js .headHome{
@@ -561,7 +563,7 @@
       }
     }
   }
-  ul#offres-essais{
+  #offres-essais{
     > li{
       width: 350px;
       &#reunions-conf-calls{
@@ -573,7 +575,7 @@
       }
     }
   }
-  ul#wisembly-autre{
+  #wisembly-autre{
     li{
       .bloc-txt{
         padding: 0 0 0 20px;
@@ -648,8 +650,8 @@
 
   .logosPresse{
     padding: 0;
-    li{
-      padding: 0 20px;
+    img{
+      padding: 0 20px 20px;
     }
   }
 
@@ -677,7 +679,7 @@
     width: 80%;
   }
 
-  ul#notre-histoire{
+  #notre-histoire{
     width: 100%;
     li{
      .date-histoire{
@@ -711,12 +713,12 @@
   .wrapper-ecran{
     width: 85%;
   }
-  ul#wisembly-autre{
+  #wisembly-autre{
     a{
-      padding: 30px 25px 30px 25px;
+      padding: 30px 25px;
     }
     li{
-      padding: 25px 20px 25px 20px;
+      padding: 25px 20px;
       .img{
         display: block;
         width: 100%;
@@ -732,6 +734,19 @@
         text-align: center;
         padding: 0;
       }
+    }
+  }
+  
+  .slider-evenements{
+    .navSlider{
+      top: auto;
+      bottom: -10px;
+    }
+    #prev{
+      left: 30%;
+    }
+    #next{
+      right: 30%;
     }
   }
 }
@@ -930,6 +945,9 @@
         top: 0;
       }
     }
+    h1{
+      font-size: 3em;
+    }
   }
 
   .headTeam, .headClients{
@@ -940,10 +958,7 @@
     background: @grisBorder;
     padding: 0 0 20% !important;
     .blocH1{
-      padding: 0;
-      width: 100%;
       max-width: 370px;
-      margin: 0 auto;
     }
     #bgHead{
       background-size: 300px !important;
@@ -958,24 +973,60 @@
     }
   }
 
+  .headFormations h1 span{
+    width: 100%;
+  }
+
   .subHeading{
     br:first-child{
       display: none;
     }
   }
 
-  .blocH1{
-    padding: 0;
-    float: none;
-    margin: 0 auto;
-    text-align: center;
+  .headEtude{
+    padding: 0 !important;
+    .quoteHead{
+      margin-top: 65px;
+    }
+    .content.main{
+      background: none !important;
+    }
+    blockquote{
+      text-align: center;
+      width: 100%;
+      margin: 110px 0 0;
+      padding: 0 20px;
+      text-indent: 0;
+      &:before{
+        left: 0;
+      }
+    }
+    .logo{
+      width: 155px;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      left: 0;
+      margin: auto;
+    }
   }
 
-  .headEvenements .blocH1, .headConf .blocH1, .headFormations .blocH1{
+  .blocH1, .headEvenements .blocH1, .headConf .blocH1, .headFormations .blocH1, .headPresse .blocH1{
     padding: 0;
     float: none;
     margin: 0 auto;
     text-align: center;
+    width: 100%;
+  }
+
+  .headMissionVision h1{
+    float: none;
+    br{
+      display: none;
+    }
+    span{
+      display: block;
+    }
   }
 
   .filtres{
@@ -1004,7 +1055,7 @@
     }
   }
 
-  ul#avantages-wisembly{
+  #avantages-wisembly{
     width: 90%;
   }
   #container-offres-emploi{
@@ -1030,7 +1081,7 @@
     height: 300px;
   }
 
-  ul#notre-histoire{
+  #notre-histoire{
     width: 100%;
     li{
      .date-histoire, .content-histoire {
@@ -1057,23 +1108,23 @@
       }
     }
   }
-  blockquote.blue-blockquote{
+  blockquote.blue{
     padding: 20px 15px;
     font-size: 1em;
   }
   .wrapper-ecran{
-    padding: 10px 10px;
+    padding: 10px;
   }
   .benefices-solution{
     li{
       display: block;
-      margin: 0 auto 20px auto;
+      margin: 0 auto 20px;
       width: 50%;
     }
   }
   ul#wisembly-autre{
     width: 90%;
-    margin: 40px auto 20px auto;
+    margin: 40px auto 20px;
     li{
       display: block;
       width: 100%;
@@ -1152,10 +1203,10 @@
   }
   
   .logosPresse{
-    li{
-      width: 100%;
+    img{
+      display: block;
       padding: 0;
-      margin: 0 0 30px;
+      margin: 0 auto 20px;
     }
   }
 
@@ -1198,6 +1249,12 @@
 
   .etude{
     height: 520px;
+    .hover{
+      padding: 30px;
+    }
+    .quote{
+      font-size: 1em;
+    }
   }
 
   .bloc-contact{
@@ -1222,6 +1279,15 @@
       margin: 0 auto 20px auto;
       width: 100%;
       padding: 0 0 20px 0;
+    }
+  }
+
+  .slider-evenements{
+    #prev{
+      left: 10%;
+    }
+    #next{
+      right: 10%;
     }
   }
 }
@@ -1309,6 +1375,9 @@
     #bgHead{
       height: 200px !important;
     }
+    h1{
+      font-size: 2em;
+    }
   }
 
   .headPresse{
@@ -1328,6 +1397,11 @@
   #slider-on-parle-de-nous .navSlider{
     top: auto;
   }
+  .wrapper-ecran{
+    .navSlider{
+      bottom: -62px;
+    }
+  }
 
   .gallery #prev, #prev{
     left: 100px;
@@ -1342,7 +1416,7 @@
       width: 100%;
     }
   }
-  ul#avantages-wisembly{
+  #avantages-wisembly{
     width: 100%;
     >li{
       margin: 10px 0;
@@ -1366,10 +1440,10 @@
     width: 100%;
     padding: 20px;
   }
-  .slider-emploi ul li .btnLight{
-    max-width: 95%;
+  .slider-emploi .btnLight{
+    max-width: 200px;
   }
-  ul#offres-essais{
+  #offres-essais{
     > li{
       width: 100%;
       padding: 0;
@@ -1387,6 +1461,79 @@
       }
     }
   }
+
+  .etude{
+    .hover{
+      display: none;
+    }
+    .btnFalse{
+      bottom: 20%;
+    }
+    .lien{
+      &:hover, &:focus{
+        &:before{
+          border-width: 50px 0 0 520px;
+        }
+        &:after{
+          border-width: 0 0 50px 520px;
+        }
+        .btnFalse{
+          opacity: 1;
+          background: #fff;
+        }
+      }
+    }
+    &.bleu{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @bleu;
+          }
+        }
+      }
+    }
+    &.vert{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @vert;
+          }
+        }
+      }
+    }
+    &.rouge{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @rouge;
+          }
+        }
+      }
+    }
+    &.jaune{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @jaune;
+          }
+        }
+      }
+    }
+    &.rose{
+      .lien{
+        &:hover, &:focus{
+          .btnFalse{
+            color: @rose;
+          }
+        }
+      }
+    }
+  }
+
+  input, textarea, select{
+    font-size: 16px;
+  }
+
 }
 
 @media (max-width: 400px){
@@ -1433,16 +1580,6 @@
     }
   }
 
-  .etude{
-    .lien{
-      top: 36%;
-      height: 64%;
-    }
-    .hover{
-      padding: 30px;
-    }
-  }
-
 }
 
 @media (max-width: 330px){
@@ -1457,11 +1594,33 @@
   .etude{
     height: 560px;
   }
+
+  .en #bloc-video{
+    p{
+      font-size: .9em;
+    }
+  }
 }
 
 /* @end */
 
 /* @group Responsive vertical */
+
+@media (max-height: 850px){
+  .headEvenements, .headFormations, .headConf{
+    h1{
+      span{
+        display: inline;
+      }
+    }
+    br{
+      display: none;
+    }
+    .subHeading{
+      margin-bottom: 0;
+    }
+  }
+}
 
 @media (max-height: 850px) and (min-width: 768px){
   .headHome, .headRdv, .headClients{
@@ -1478,12 +1637,22 @@
 
   .headLivres{
     h1{
-      margin: 5vh 0 22vh;
+      margin: 12vh 0 17vh;
     }
   }
 
   .headPresse{
     .blocH1{
+      padding: 0 0 120px;
+    }
+  }
+
+  .headEvenements, .headFormations, .headConf{
+    #bgHead{
+      background-position: 50% 0;
+    }
+    .blocH1{
+      margin: 15vh 0 0;
       padding: 0 0 120px;
     }
   }
@@ -1556,6 +1725,24 @@
     .headRdv{
       #bgHead{
         background-image: url(../layoutImg/head/bgHeadRdv.jpg);
+      }
+    }
+
+    .headEvt{
+      #bgHead{
+        background-image: url(../layoutImg/head/bgHeadEvt.jpg);
+      }
+    }
+
+    .headFormations{
+      #bgHead{
+        background-image: url(../layoutImg/head/bgHeadFormations.jpg);
+      }
+    }
+
+    .headRConf{
+      #bgHead{
+        background-image: url(../layoutImg/head/bgHeadConf.jpg);
       }
     }
 

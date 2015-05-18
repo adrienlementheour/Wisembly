@@ -85,9 +85,10 @@
 						cache.totalItems	= $items.length;
 						
 						// add navigation buttons
-						if( cache.totalItems > 1 )	
+						if( cache.totalItems > 1 ){
 							$el.prepend('<button id="prev" class="navSlider">‹</button>');
 							$el.append('<button id="next" class="navSlider">›</button>');
+						}
 						
 						// control the scroll value
 						if( settings.scroll < 1 )
@@ -118,11 +119,7 @@
 						// navigate left
 						$navPrev.bind('click.contentcarousel', function( event ) {
 							nav(true);
-						});	
-
-						$wrapper.on('swiperight', function( event ){
-							nav(true);
-						});					
+						});			
 						
 						// navigate right
 
@@ -130,9 +127,15 @@
 							nav(false);
 						});
 
-						$wrapper.on('swipeleft', function( event ){
-							nav(false);
-						});
+						if(isMobile.any){
+							$wrapper.on('swiperight', function( event ){
+								nav(true);
+							});	
+
+							$wrapper.on('swipeleft', function( event ){
+								nav(false);
+							});
+						}	
 
 					});
 				}
