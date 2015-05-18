@@ -13,8 +13,7 @@ var myScroll,
 	avancementLeftFuture = 0,
 	precWidth = 0,
 	hasDemiBefore = false,
-	avancementLeftBottom = 0,
-	sliderSmall = false;
+	avancementLeftBottom = 0;
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -48,7 +47,7 @@ $.fn.isOnScreen = function(){
 
 function shuffle(array) {
   var random = array.map(Math.random);
-  array.sort(function(a, b) {
+  array.sort(function(a, b){
     return random[a] - random[b];
   });
 }
@@ -151,7 +150,7 @@ function apparitionFooter(){
 
 // Animations au scroll //
 function scrollPage(){
-	myScroll = $(document).scrollTop(), head = $('.head');
+	var myScroll = $(document).scrollTop(), head = $('.head');
 
 	if(!body.hasClass('landing')){
 		fixedHeader();
@@ -224,7 +223,7 @@ function centerSubMenu(){
 				widthSubMenu + newPosSubMenu >= $(window).width() ? subMenus.eq(i).css({'paddingLeft': 0, 'text-align': 'center'}) : subMenus.eq(i).css('paddingLeft', newPosSubMenu + 'px');
 			}
 		}else{
-			subMenus.css('padding-left', 0);
+			subMenus.css('paddingLeft', 0);
 		}
 
 	}
@@ -486,7 +485,7 @@ function randomLogosPress(){
 	}
 }
 
-// RDV filtres //
+// Filtres //
 function goToContent(){
 	setTimeout(function(){
 		htmlBody.animate({scrollTop: $('.wrapper').offset().top - 100}, 400);
@@ -521,20 +520,6 @@ function setToolTip(context){
 		});
 
 	}
-}
-
-function setGalleryHeight(context){
-	var li = context.find('li'), liLength = li.length, i = 0, nbDiv = [], nbDivBigger = 0, liBigger;
-
-	for(i; i < liLength; i++){
-		nbDiv[i] = li.eq(i).find('div').length;
-		if(nbDiv[i] > nbDivBigger){
-			nbDivBigger = nbDiv[i];
-			liBigger = i;
-		}
-	}
-
-	context.find('ul').css('height', li.eq(liBigger).outerHeight());
 }
 
 function setSliderHeight(sliders){
@@ -614,6 +599,7 @@ function positionDiapos(){
 	Draggable.create("#slider-diapos", {type:"x", edgeResistance:0.65, bounds:"#container-slider-diapos", throwProps:true});
 }
 
+
 /**** SLIDER VALUES MISSION ****/
 
 var unit = 200, // padding inclus
@@ -623,45 +609,15 @@ var unit = 200, // padding inclus
 	total = 5,
 	numActive = 3,
 	spee = 0.4;
-//
-// actif : gros et en couleur
-function makeActive(numToActivate){
-	// remettre les autres à 0
-	TweenMax.to($("#slider-visu-mission").find("a"), spee, {"width": unitNaked+"px","height": unitNaked+"px", ease:Linear.easeIn});
-	TweenMax.to($("#slider-visu-mission").find('li'), spee, {"width": unitNaked+"px", ease:Linear.easeIn});
-	$("#slider-visu-mission").find('li').removeClass("active");
-	// passer en activ
-	TweenMax.to($("#slider-visu-mission").find('li').eq(numToActivate).find("a"), spee, {"width": bigUnit+"px","height": bigUnit+"px", ease:Linear.easeIn});
-	TweenMax.to($("#slider-visu-mission").find('li').eq(numToActivate), spee, {"width": bigUnit+"px", ease:Linear.easeIn, onComplete:purgeMission});
-	$("#slider-visu-mission").find('li').eq(numToActivate).addClass("active");
-}
-// slide
-function slideMission(indexMiss) {
-	TweenMax.to($("#slider-visu-mission"), spee, {marginLeft: -indexMiss*unit-(total*unit+bigUnitDelta)/2-1+"px", ease:Linear.easeIn});
-	TweenMax.to($("#slider-txt-mission"), spee, {marginLeft: -(indexMiss+2)*$('#wrapper-slider-visu-mission').width()-1+"px", ease:Linear.easeIn});
-	makeActive(indexMiss+2);
-}
-// on rajoute le premier élément à la fin, on agrandit la liste en fonction
-function clickOnMission(e){
-	e.preventDefault();	
-	// si c'est l'un des deux derniers
-	if ($(this).parent().index() >= $("#slider-visu-mission li").length-2) {
-		addEntityMission();
-		addEntityMission();
-	}
-	// si c'est l'un des deux premiers
-	if ($(this).parent().index() <= 1) {
-		addEntityMissionAtBeginning();
-		addEntityMissionAtBeginning();
-	} 
-	slideMission($(this).parent().index()-2);
-}
+
+
 // taille du slider
 function setSizeMission(){
 	TweenMax.set($("#slider-txt-mission"), {width: $("#slider-visu-mission").find('li').length*$('#wrapper-slider-visu-mission').width()+"px"});
 	TweenMax.set($("#slider-txt-mission").find('li'), {width: $('#wrapper-slider-visu-mission').width()+"px"});
 	TweenMax.set($("#slider-visu-mission"), {width: $("#slider-visu-mission").find('li').length*unit+bigUnitDelta+"px"});
 }
+
 // on positionne 
 function posSlideMission(){
 	setSizeMission();
@@ -669,22 +625,7 @@ function posSlideMission(){
 	TweenMax.set($("#slider-visu-mission"), {left:"50%", marginLeft: -myIndex*unit-(total*unit+bigUnitDelta)/2+"px", ease:Linear.easeIn});
 	TweenMax.set($("#slider-txt-mission"), {marginLeft: -(myIndex+2)*$('#wrapper-slider-visu-mission').width()+"px", ease:Linear.easeIn});
 }
-// on rajoute le premier élément à la fin
-function addEntityMission(){
-	$("#slider-txt-mission li").eq($("#slider-txt-mission").find('li').length-total).clone().appendTo("#slider-txt-mission");
-	$("#slider-visu-mission li").eq($("#slider-visu-mission").find('li').length-total).clone().appendTo("#slider-visu-mission");
-	setSizeMission();
-	// mappage du clic du nouveau
-	$('#slider-visu-mission li').eq($("#slider-visu-mission").find('li').length-1).find('a').unbind('click').on('click', clickOnMission);
-}
-// on rajoute le dernier élément au début
-function addEntityMissionAtBeginning(){
-	$("#slider-txt-mission li").eq($("#slider-txt-mission").find('li').first().index()+4).clone().prependTo("#slider-txt-mission");
-	$("#slider-visu-mission li").eq($("#slider-visu-mission").find('li').first().index()+4).clone().prependTo("#slider-visu-mission");
-	posSlideMission();
-	// mappage du clic du nouveau
-	$('#slider-visu-mission').first().find('a').unbind('click').on('click', clickOnMission);
-}
+
 // de temps en temps, supprimer qui ne servent à rien pour libérer le DOM
 function purgeMission(){
 	if ($("#slider-visu-mission li").length > 10) {
@@ -705,6 +646,60 @@ function purgeMission(){
 	}
 	posSlideMission();
 }
+
+// actif : gros et en couleur
+function makeActive(numToActivate){
+	// remettre les autres à 0
+	TweenMax.to($("#slider-visu-mission").find("a"), spee, {"width": unitNaked+"px","height": unitNaked+"px", ease:Linear.easeIn});
+	TweenMax.to($("#slider-visu-mission").find('li'), spee, {"width": unitNaked+"px", ease:Linear.easeIn});
+	$("#slider-visu-mission").find('li').removeClass("active");
+	// passer en activ
+	TweenMax.to($("#slider-visu-mission").find('li').eq(numToActivate).find("a"), spee, {"width": bigUnit+"px","height": bigUnit+"px", ease:Linear.easeIn});
+	TweenMax.to($("#slider-visu-mission").find('li').eq(numToActivate), spee, {"width": bigUnit+"px", ease:Linear.easeIn, onComplete:purgeMission});
+	$("#slider-visu-mission").find('li').eq(numToActivate).addClass("active");
+}
+
+// slide
+function slideMission(indexMiss) {
+	TweenMax.to($("#slider-visu-mission"), spee, {marginLeft: -indexMiss*unit-(total*unit+bigUnitDelta)/2-1+"px", ease:Linear.easeIn});
+	TweenMax.to($("#slider-txt-mission"), spee, {marginLeft: -(indexMiss+2)*$('#wrapper-slider-visu-mission').width()-1+"px", ease:Linear.easeIn});
+	makeActive(indexMiss+2);
+}
+
+// on rajoute le premier élément à la fin
+function addEntityMission(){
+	$("#slider-txt-mission li").eq($("#slider-txt-mission").find('li').length-total).clone().appendTo("#slider-txt-mission");
+	$("#slider-visu-mission li").eq($("#slider-visu-mission").find('li').length-total).clone().appendTo("#slider-visu-mission");
+	setSizeMission();
+	// mappage du clic du nouveau
+	$('#slider-visu-mission li').eq($("#slider-visu-mission").find('li').length-1).find('a').unbind('click').on('click', clickOnMission);
+}
+
+// on rajoute le dernier élément au début
+function addEntityMissionAtBeginning(){
+	$("#slider-txt-mission li").eq($("#slider-txt-mission").find('li').first().index()+4).clone().prependTo("#slider-txt-mission");
+	$("#slider-visu-mission li").eq($("#slider-visu-mission").find('li').first().index()+4).clone().prependTo("#slider-visu-mission");
+	posSlideMission();
+	// mappage du clic du nouveau
+	$('#slider-visu-mission').first().find('a').unbind('click').on('click', clickOnMission);
+}
+
+// on rajoute le premier élément à la fin, on agrandit la liste en fonction
+function clickOnMission(e){
+	e.preventDefault();	
+	// si c'est l'un des deux derniers
+	if ($(this).parent().index() >= $("#slider-visu-mission li").length-2) {
+		addEntityMission();
+		addEntityMission();
+	}
+	// si c'est l'un des deux premiers
+	if ($(this).parent().index() <= 1) {
+		addEntityMissionAtBeginning();
+		addEntityMissionAtBeginning();
+	} 
+	slideMission($(this).parent().index()-2);
+}
+
 // suivant/précédent
 function nextMission(e){
 	e.preventDefault();	
@@ -712,12 +707,6 @@ function nextMission(e){
 	// mouvement
 	slideMission($("#slider-visu-mission").find('li.active').index()-1);
 }
-/*function prevMission(e){
-	e.preventDefault();	
-	addEntityMissionAtBeginning();
-	// mouvement
-	slideMission($("#slider-visu-mission li.active").index()+1);
-}*/
 
 // initailisation
 function sliderMission(){
@@ -804,8 +793,7 @@ function setCarouselDots(carousel, slides, slideWidth, updateWidth){
 			carousel.parents('section').find('.dots').find('button').on('click', function(){ letSlide($(this).parents('li').index()); });
 		}
 		
-		slides.css({'position': 'absolute', 'top': 0});
-		slides.removeClass('on').eq(0).addClass('on');
+		slides.css({'position': 'absolute', 'top': 0}).removeClass('on').eq(0).addClass('on');
 
 		for(p; p<nbSlides; p++){
 			slides.eq(p).css('left', posSlide);
@@ -831,29 +819,20 @@ $(function(){
 		// Make links not active in grey //
 		setActiveMenu();
 
+		// Sous menu //
+		setSubMenu();
+
 		// Lang selector //
 		if(htmlTag.attr('lang') !== 'fr-FR'){
 			langSelector();
 		}
 
-		// Sous menu //
-		setSubMenu();
-
 		// WIZ //
 		joinAnEvent.startListening();
 	}
 
-	if(body.hasClass("page-template-emploi")){
-		initAnnonces();
-		//sliderSmall = $(window).width()>767 ? false : true;
-	}
-
-	if($('#slider-visu-mission').length && !htmlTag.hasClass('lt-ie9')){
-		sliderMission();
-	}
-
 	// Scroll init //
-	scrollPage();
+	scrollPage();	
 
 	// RDV / Clients filtres //
 	if( $('.filtres').find('.actif').length ){
@@ -865,18 +844,31 @@ $(function(){
 		setMapSize();
 	}
 
+	if($('#slider-visu-mission').length && !htmlTag.hasClass('lt-ie9')){
+		sliderMission();
+	}
+
+	if(body.hasClass("page-template-emploi")){
+		initAnnonces();
+	}
+
+	// Slider footer //
+	if($(window).width() > 450 && !htmlTag.hasClass('lt-ie9') && $('.buttonsTeam').length){
+		setDraggableButton();
+	}
+
+	// Textarea footer autogrow //
+	if($('#message').length){
+	    $('#message').autoGrowTextArea();
+	}
+
 	// Responsive menu //
 	burger.on('click', responsiveMenu);
 	$('#triangleMenu').on('click', function(){
 		burger.removeClass('actif');
 		header.removeClass('menuVisible');
 		$('#container').css({height: 'auto', overflow: 'visible'});
-	});
-
-	// Slider footer //
-	if($(window).width() > 450 && !htmlTag.hasClass('lt-ie9') && $('.buttonsTeam').length){
-		setDraggableButton();
-	} 
+	}); 
 
 	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
 	$('.buttonsTeam').find('button').on('click', function(){ setSliderTeamProfil($(this)); openForm(); });
@@ -906,11 +898,6 @@ $(function(){
 		$('#labelEnt').html($(this).val() + ' *');
 	});
 
-	// Textarea footer autogrow //
-	if($('#message').length){
-	    $('#message').autoGrowTextArea();
-	}
-
 	// Petites fleches //
 	$('.scrollNext').on('click', goToNextSection);
 
@@ -924,9 +911,6 @@ $(function(){
 	
 
 	$(window).load(function(){
-		// Photo header //
-		heightBgHead();
-
 		if(!body.hasClass('landing')){
 			// Sous menu //
 			centerSubMenu();
@@ -934,6 +918,9 @@ $(function(){
 			// Anim triangles header + footer //
 			scrollMagic();
 		}
+
+		// Photo header //
+		heightBgHead();
 
 		if(body.hasClass("home")){
 			// Logos presse //
@@ -984,8 +971,6 @@ $(function(){
 
     $(window).resize(function(){
 
-    	heightBgHead();
-
     	if(!body.hasClass('landing')){
     		minHeight = $('.menu').innerHeight() - 10;
     		fixedHeader();
@@ -993,6 +978,8 @@ $(function(){
     		centerSubMenu();
     		setPosBtnMenu();
     	}
+
+    	heightBgHead();
     	
 	    if(header.hasClass('menuVisible') && $(window).width() > 1040){
 	    	responsiveMenu();
