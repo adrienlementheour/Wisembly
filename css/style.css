@@ -2718,7 +2718,7 @@ footer {
 }
 .headMissionVision #bgHead {
   background-image: url(../layoutImg/head/headMissionVision.jpg);
-  background-position: 50% 0;
+  background-position: 50%;
 }
 .headMissionVision h1 {
   text-align: left;
@@ -2749,6 +2749,15 @@ footer {
   text-align: left;
   margin: 0;
 }
+.headEvenements:before {
+  right: 0;
+  bottom: -60px;
+  height: 170px;
+  background: rgba(247, 136, 108, 0.7);
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
+}
 .headFormations #bgHead {
   background-image: url(../layoutImg/head/headFormations.jpg);
   background-position: 50% 100%;
@@ -2777,6 +2786,15 @@ footer {
 }
 .headConf .blocH1 {
   width: 500px;
+}
+.headConf:before {
+  right: 0;
+  bottom: -60px;
+  height: 170px;
+  background: rgba(6, 105, 141, 0.7);
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
 }
 .headPresse #bgHead {
   background: #ebeeef url(../layoutImg/logoPresse.png) no-repeat 25% 100%;
@@ -6302,18 +6320,15 @@ ul.whr-items li ul.whr-info li.whr-date {
 /* @group Responsive vertical */
 @media (max-height: 850px) {
   .headEvenements h1 span,
-  .headFormations h1 span,
-  .headConf h1 span {
+  .headFormations h1 span {
     display: inline;
   }
   .headEvenements br,
-  .headFormations br,
-  .headConf br {
+  .headFormations br {
     display: none;
   }
   .headEvenements .subHeading,
-  .headFormations .subHeading,
-  .headConf .subHeading {
+  .headFormations .subHeading {
     margin-bottom: 0;
   }
 }
@@ -6325,9 +6340,11 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .headTeam h1,
   .headEmploi h1,
-  .headEmploi h1,
   .headMissionVision h1 {
     margin: 15vh 0 30vh;
+  }
+  .headMissionVision h1 {
+    margin: 15vh 0 20vh;
   }
   .headLivres h1 {
     margin: 12vh 0 17vh;
@@ -6336,13 +6353,11 @@ ul.whr-items li ul.whr-info li.whr-date {
     padding: 0 0 120px;
   }
   .headEvenements #bgHead,
-  .headFormations #bgHead,
-  .headConf #bgHead {
+  .headFormations #bgHead {
     background-position: 50% 0;
   }
   .headEvenements .blocH1,
   .headFormations .blocH1,
-  .headConf .blocH1,
   .headConf .blocH1 {
     margin: 15vh 0 0;
     padding: 0 0 120px;
