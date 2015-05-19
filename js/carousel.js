@@ -86,8 +86,8 @@
 						
 						// add navigation buttons
 						if( cache.totalItems > 1 ){
-							$el.prepend('<button id="prev" class="navSlider">‹</button>');
-							$el.append('<button id="next" class="navSlider">›</button>');
+							$el.prepend('<button id="prev" class="navSlider icon-left"></button>');
+							$el.append('<button id="next" class="navSlider icon-right"></button>');
 						}
 						
 						// control the scroll value

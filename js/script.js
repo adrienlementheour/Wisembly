@@ -776,7 +776,7 @@ function setCarouselDots(carousel, slides, slideWidth, updateWidth){
 
 	if(nbSlides > 1){
 		if(!updateWidth){
-			carousel.prepend('<button id="prev" class="navSlider">‹</button>').append('<button id="next" class="navSlider">›</button>');
+			carousel.prepend('<button id="prev" class="navSlider icon-left"></button>').append('<button id="next" class="navSlider icon-right"></button>');
 			carousel.parents('.wrapper-ecran').length ? carousel.parents('.wrapper-ecran').after('<ul class="dots"></ul>') : carousel.append('<ul class="dots"></ul>');
 
 			for(i; i<nbSlides; i++){
