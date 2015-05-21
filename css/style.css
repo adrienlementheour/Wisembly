@@ -1060,6 +1060,7 @@ header a {
 }
 .no-mobile .home header a.btnFull {
   opacity: 0;
+  pointer-events: none;
 }
 header.on {
   top: -40px;
@@ -1074,6 +1075,7 @@ header.on .bottomHeader {
 }
 .js header.on a.btnFull {
   opacity: 1;
+  pointer-events: auto;
 }
 header.on .menu > li > a {
   line-height: 73px;
@@ -1118,6 +1120,7 @@ header.menuVisible nav .btnFull {
 }
 .js header.menuVisible nav .btnFull {
   opacity: 1;
+  pointer-events: auto;
 }
 header.menuVisible #fdMenu {
   opacity: .95;
@@ -6372,6 +6375,11 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .en #bloc-video p {
     font-size: .9em;
+  }
+  .btnFull.smallTxt,
+  .btnLight.smallTxt,
+  .btnBlanc.smallTxt {
+    font-size: .83em;
   }
 }
 /* @end */

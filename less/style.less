@@ -647,6 +647,7 @@ header{
     a.btnFull{
       .no-mobile &{
         opacity: 0;
+        pointer-events: none;
       }
     }
   }
@@ -661,6 +662,7 @@ header{
     a.btnFull{
       .js &{
         opacity: 1;
+        pointer-events: auto;
       }
     }
     .menu{
@@ -720,6 +722,7 @@ header{
         right: 30px;
         .js &{
           opacity: 1;
+          pointer-events: auto;
         }
         .transition(.5s ease-in-out);
       }
