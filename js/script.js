@@ -13,7 +13,8 @@ var myScroll,
 	avancementLeftFuture = 0,
 	precWidth = 0,
 	hasDemiBefore = false,
-	avancementLeftBottom = 0;
+	avancementLeftBottom = 0,
+	scrollTop = $('#scrollTop');
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -161,6 +162,10 @@ function scrollPage(){
 	if(!htmlTag.hasClass("lt-ie9") && !isMobile.any && myScroll < head.height() && $(window).width() > 767){
 		TweenMax.set(bgHead, {y:-(myScroll/1.5)+"px"});
 		TweenMax.set(head.find('.content'), {y:+(myScroll/2.5)+"px"});
+	}
+
+	if(scrollTop.length){
+		myScroll > 1000 ? scrollTop.addClass('on') : scrollTop.removeClass('on');
 	}
 
 	requestAnimFrame(scrollPage);
@@ -334,18 +339,23 @@ function setSliderTeamProfil(that){
 		slider.siblings('.slidesTeam').stop().animate({opacity: 0, bottom: '-140px'}, 400, function(){
 			slider.addClass('on').stop().animate({opacity: 1, bottom: '-115px'}, 400).siblings('.slidesTeam').removeClass('on');
 
-			if(numSlider === 0){
-				TweenLite.set($('#drag'), {x:0});
-				contactFooter.addClass('bleu').removeClass('rose rouge vert');
-			}else if(numSlider === 1){
-				TweenLite.set($('#drag'), {x:pos2});
-				contactFooter.addClass('rouge').removeClass('rose bleu vert');
-			}else if(numSlider === 2){
-				TweenLite.set($('#drag'), {x:pos3});
-				contactFooter.addClass('vert').removeClass('rose rouge bleu');
-			}else if(numSlider === 3){
-				TweenLite.set($('#drag'), {x:pos4});
-				contactFooter.addClass('rose').removeClass('bleu rouge vert');
+			switch(numSlider){
+				case 0:
+					TweenLite.set($('#drag'), {x:0});
+					contactFooter.addClass('bleu').removeClass('rose rouge vert');
+					break;
+				case 1:
+					TweenLite.set($('#drag'), {x:pos2});
+					contactFooter.addClass('rouge').removeClass('rose bleu vert');
+					break;
+				case 2:
+					TweenLite.set($('#drag'), {x:pos3});
+					contactFooter.addClass('vert').removeClass('rose rouge bleu');
+					break;
+				case 3:
+					TweenLite.set($('#drag'), {x:pos4});
+					contactFooter.addClass('rose').removeClass('bleu rouge vert');
+					break;
 			}
 		});
 		setSliderTeam(slider);
@@ -475,13 +485,15 @@ function randomLogosPress(){
 		i = 0, nbLogos = 4, j = 0, tabRand = [];
 
 	if(logosLength > nbLogos){
-		for(j; j<logosLength; j++){ tabRand[j] = j; }
+		for(j; j<logosLength; j++){ 
+			tabRand[j] = j; 
+		}
 		shuffle(tabRand);
 
-		logos.css('display', 'none');
+		logos.addClass('none');
 
 		for(i; i<nbLogos; i++){
-			logos.eq(tabRand[i]).css('display', 'inline-block');
+			logos.eq(tabRand[i]).removeClass('none');
 		}
 	}
 }
@@ -504,15 +516,13 @@ function setToolTip(context){
 
 		for(i; i<linksLength; i++){
 			titles[i] = links.eq(i).attr('title');
-			links.eq(i).removeAttr('title').append("<span class='tooltip' style='display:none'>"  + titles[i] + "</span>");
+			links.eq(i).removeAttr('title').append("<span class='tooltip' class='none'>"  + titles[i] + "</span>");
 		}
 
 		links.on('mouseenter', function(){
-			$(this).find('.tooltip').delay(300).css('display', 'block');
+			$(this).find('.tooltip').delay(300).removeClass('none');
 		}).on('mouseleave', function(){
-			setTimeout(function(){
-				$(this).find('.tooltip').css('display', 'none');
-			}, 300);
+			setTimeout(function(){ $(this).find('.tooltip').addClass('none'); }, 300);
 		});
 
 		links.on('mousemove', function(e){
@@ -758,33 +768,39 @@ function setCarouselDots(carousel, slides, slideWidth, updateWidth){
 			}
 		}
 
+		var activeSlide = carousel.find('.on');
+
 		if(next === true){
-			if(carousel.find('.on').next().length){
-				goToSlide(carousel.find('.on').next().index());
-			}
+			if(activeSlide.next().length) next = activeSlide.next().index();
 		}else if(next === false){
-			if(carousel.find('.on').prev().length){
-				goToSlide(carousel.find('.on').prev().index());
-			}
-		}else{
-			goToSlide(next);
+			if(activeSlide.prev().length) next = activeSlide.prev().index();
 		}
+
+		btnNext.removeClass('none');
+		btnPrev.removeClass('none');
+		if(next === 0) btnPrev.addClass('none');
+		if(next+1 === nbSlides) btnNext.addClass('none');
+
+		goToSlide(next);
 
 	}
 
-	var nbSlides = slides.length, i = 0, p = 0, posSlide = 0, strong = carousel.parents('section').find('.keyword').find('strong');
+	var nbSlides = slides.length, i = 0, p = 0, posSlide = 0, strong = carousel.parents('section').find('.keyword').find('strong'), btnPrev, btnNext;
 
 	if(nbSlides > 1){
 		if(!updateWidth){
-			carousel.prepend('<button id="prev" class="navSlider icon-left"></button>').append('<button id="next" class="navSlider icon-right"></button>');
+			carousel.prepend('<button id="prev" class="navSlider icon-left none"></button>').append('<button id="next" class="navSlider icon-right"></button>');
 			carousel.parents('.wrapper-ecran').length ? carousel.parents('.wrapper-ecran').after('<ul class="dots"></ul>') : carousel.append('<ul class="dots"></ul>');
 
 			for(i; i<nbSlides; i++){
 				carousel.parents('section').find('.dots').append('<li><button>&bull;</button></li>');
 			}
 
-			carousel.find('#next').on('click', function(){ letSlide(true); });
-			carousel.find('#prev').on('click', function(){ letSlide(false); });
+			btnPrev = carousel.find('#prev');
+			btnNext = carousel.find('#next');
+
+			btnNext.on('click', function(){ letSlide(true); });
+			btnPrev.on('click', function(){ letSlide(false); });
 
 			if(isMobile.any){
 				carousel.on('swipeleft', function(){ letSlide(true); });
@@ -879,6 +895,11 @@ $(function(){
 
 	if($('.formContact').hasClass('open')){ openForm(); }	
 
+	// Landing livre blanc formulaire //
+	if($('.form').hasClass('open')){
+		htmlBody.animate({scrollTop: $('.form').offset().top}, 800, 'easeInOutCubic');
+	}	
+
 	$('.bottomHeader').find('.btnFull').on('click', function(e){
 		if(header.hasClass('menuVisible')){
 			responsiveMenu();
@@ -904,10 +925,13 @@ $(function(){
 	// Btn video //
 	$('#btn-video').on('click', videoCover);
 
-	// Landing livre blanc formulaire //
-	if($('.form').hasClass('open')){
-		htmlBody.animate({scrollTop: $('.form').offset().top}, 800, 'easeInOutCubic');
-	}	
+	// Scroll Top //
+	if(scrollTop.length){
+		scrollTop.on('click', function(e){
+			e.preventDefault();
+			htmlBody.animate({scrollTop: $('#top').offset().top}, 800, 'easeInOutCubic');
+		});
+	}
 	
 
 	$(window).load(function(){

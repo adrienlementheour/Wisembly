@@ -854,7 +854,18 @@
 
   .triangle-menu-footer{
     .transform(rotate(-3deg) translateY(0px));
-    .opacity(1);
+    opacity: 1;
+  }
+
+  #scrollTop{
+    bottom: 10px;
+    right: 10px;
+    width: 25px;
+    height: 22px;
+    line-height: 22px;
+    &:after{
+      border-width: 0 0 3px 25px;
+    }
   }
 
   .scrollNext{
