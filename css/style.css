@@ -1061,6 +1061,8 @@ header a {
 .no-mobile .home header a.btnFull {
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: none;
+  transition: none;
 }
 header.on {
   top: -40px;
@@ -1076,6 +1078,8 @@ header.on .bottomHeader {
 .js header.on a.btnFull {
   opacity: 1;
   pointer-events: auto;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 header.on .menu > li > a {
   line-height: 73px;
@@ -1507,8 +1511,8 @@ header.menuVisible #triangleMenu {
 .menu .hasSubMenu.openSubMenu .sub-menu {
   opacity: 1;
   bottom: -45px;
-  -webkit-transition: 0.3s all 0.15s ease-in-out;
-  transition: 0.3s all 0.15s ease-in-out;
+  -webkit-transition: 0.3s opacity 0.15s ease-in-out, 0.3s bottom 0.15s ease-in-out;
+  transition: 0.3s opacity 0.15s ease-in-out, 0.3s bottom 0.15s ease-in-out;
 }
 .menu .hasSubMenu.openSubMenu .sub-menu {
   z-index: -2;
@@ -1538,11 +1542,8 @@ header.menuVisible #triangleMenu {
   z-index: -1;
   opacity: 0;
   height: 26px;
-  -webkit-transition: 0.5s all 0.3s ease-in-out;
-  transition: 0.5s all 0.3s ease-in-out;
-}
-.no-js .menu .sub-menu,
-.lt-ie9 .menu .sub-menu {
+  -webkit-transition: 0.5s opacity 0.3s ease-in-out, 0.5s bottom 0.3s ease-in-out;
+  transition: 0.5s opacity 0.3s ease-in-out, 0.5s bottom 0.3s ease-in-out;
   text-align: center;
 }
 .menu .sub-menu a {
@@ -4746,7 +4747,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   border-radius: 50%;
   background-clip: padding-box;
   line-height: 42px;
-  font-size: 26px;
+  font-size: 10px;
   padding: 0;
   font-weight: 500;
 }
