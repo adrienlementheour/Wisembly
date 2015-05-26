@@ -4311,6 +4311,7 @@ footer {
 }
 .js #slider-diapos {
   width: 4000px;
+  visibility: hidden;
 }
 #slider-diapos li {
   display: inline-block;

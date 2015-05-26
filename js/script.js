@@ -612,6 +612,10 @@ function positionDiapos(){
 
 	TweenMax.set(slider, {width: avancementLeft+avancementLeftFuture+"px"});
 	Draggable.create("#slider-diapos", {type:"x", edgeResistance:0.65, bounds:"#container-slider-diapos", throwProps:true});
+
+	if(slider.css('visibility') == 'hidden'){
+		slider.css('visibility', 'visible');
+	}
 }
 
 
