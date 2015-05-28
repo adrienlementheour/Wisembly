@@ -52,6 +52,24 @@
 							</li>
 						</ul>
 					</div>
+					<div id="slider-anim-visez-juste" class="slider-anim">
+						<div class="zone-anim">
+							<div class="elem-anim perso-gauche"></div>
+							<div class="elem-anim bulle-gauche1"></div>
+							
+							<div class="elem-anim groupe-bulles-centre">
+								<div class="elem-anim bulle-centre1"></div>
+								<div class="elem-anim bulle-centre2"></div>
+								<div class="elem-anim bulle-centre3"></div>
+							</div>
+							<div class="elem-anim fleche-centre"></div>
+
+							<div class="elem-anim perso-droite1"></div>
+							<div class="elem-anim perso-droite2"></div>
+							<div class="elem-anim perso-droite3"></div>
+							<div class="elem-anim perso-droite4"></div>
+						</div>
+					</div>
 					<blockquote class='blue'><span class="raccord-img"></span>Au-delà de l’évidente dynamique ludique que crée Wisembly, il redonne à nos pratiques d’intervention un gain spectaculaire dans la capacité d’interaction.</blockquote>
 					<div class="citeContainer">
 						<span class="imgQuote"><img src="img/evenements/olivier-lagree.jpg"></span>
