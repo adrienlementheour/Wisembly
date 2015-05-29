@@ -5064,6 +5064,13 @@ ul.whr-items li ul.whr-info li.whr-date {
   height: auto;
   position: relative;
 }
+#slider-anim-visez-juste #prev-slider-anim-visez-juste {
+  left: -50px;
+  display: none;
+}
+#slider-anim-visez-juste #next-slider-anim-visez-juste {
+  right: -50px;
+}
 #slider-anim-visez-juste .zone-anim {
   display: block;
   width: 610px;
@@ -5081,6 +5088,12 @@ ul.whr-items li ul.whr-info li.whr-date {
   background: url("../layoutImg/sliders-animes/perso-gauche.png") no-repeat 50% 50%;
   top: 35px;
   left: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  transform: translateX(-50px);
 }
 #slider-anim-visez-juste .zone-anim .bulle-gauche1 {
   width: 65px;
@@ -5088,6 +5101,25 @@ ul.whr-items li ul.whr-info li.whr-date {
   background: url("../layoutImg/sliders-animes/bulle-gauche1.png") no-repeat 50% 50%;
   top: 1px;
   left: 80px;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+#slider-anim-visez-juste .zone-anim .bulle-gauche2 {
+  width: 65px;
+  height: 50px;
+  background: url("../layoutImg/sliders-animes/bulle-gauche2.png") no-repeat 50% 50%;
+  top: 1px;
+  left: 80px;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px);
 }
 #slider-anim-visez-juste .zone-anim .groupe-bulles-centre {
   width: 111px;
@@ -5096,11 +5128,15 @@ ul.whr-items li ul.whr-info li.whr-date {
   left: 50%;
   margin-left: -55px;
 }
-#slider-anim-visez-juste .zone-anim .groupe-bulles-centre .bulle-centre1,
-#slider-anim-visez-juste .zone-anim .groupe-bulles-centre .bulle-centre2,
-#slider-anim-visez-juste .zone-anim .groupe-bulles-centre .bulle-centre3 {
+#slider-anim-visez-juste .zone-anim .groupe-bulles-centre .bulle-centre {
   width: 48px;
   height: 40px;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px);
 }
 #slider-anim-visez-juste .zone-anim .groupe-bulles-centre .bulle-centre1 {
   background: url("../layoutImg/sliders-animes/bulle-centre1.png") no-repeat 50% 50%;
@@ -5117,26 +5153,127 @@ ul.whr-items li ul.whr-info li.whr-date {
   left: 34px;
   top: 0;
 }
-#slider-anim-visez-juste .zone-anim .fleche-centre {
+#slider-anim-visez-juste .zone-anim .groupe-files-centre {
+  width: 116px;
+  height: 69px;
+  top: 6px;
+  left: 50%;
+  margin-left: -58px;
+}
+#slider-anim-visez-juste .zone-anim .groupe-files-centre .file-centre {
+  width: 44px;
+  height: 59px;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+#slider-anim-visez-juste .zone-anim .groupe-files-centre .file-centre1 {
+  background: url("../layoutImg/sliders-animes/file-centre1.png") no-repeat 50% 50%;
+  left: 0;
+  top: 11px;
+}
+#slider-anim-visez-juste .zone-anim .groupe-files-centre .file-centre2 {
+  background: url("../layoutImg/sliders-animes/file-centre2.png") no-repeat 50% 50%;
+  right: 0;
+  top: 11px;
+}
+#slider-anim-visez-juste .zone-anim .groupe-files-centre .file-centre3 {
+  background: url("../layoutImg/sliders-animes/file-centre3.png") no-repeat 50% 50%;
+  left: 36px;
+  top: 0px;
+}
+#slider-anim-visez-juste .zone-anim .groupe-checkbox-centre {
+  width: 100px;
+  height: 48px;
+  top: 21px;
+  left: 50%;
+  margin-left: -50px;
+}
+#slider-anim-visez-juste .zone-anim .groupe-checkbox-centre .checkbox-centre {
+  width: 28px;
+  height: 28px;
+  background: url("../layoutImg/sliders-animes/checkbox.png") no-repeat 50% 50%;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px);
+}
+#slider-anim-visez-juste .zone-anim .groupe-checkbox-centre .checkbox-centre1 {
+  left: 0;
+  top: 20px;
+}
+#slider-anim-visez-juste .zone-anim .groupe-checkbox-centre .checkbox-centre2 {
+  right: 0;
+  top: 20px;
+}
+#slider-anim-visez-juste .zone-anim .groupe-checkbox-centre .checkbox-centre3 {
+  left: 35px;
+  top: 1px;
+}
+#slider-anim-visez-juste .zone-anim .groupe-checkbox-centre .checkbox-checked-centre {
+  width: 29px;
+  height: 29px;
+  background: url("../layoutImg/sliders-animes/checkbox-checked.png") no-repeat 50% 50%;
+  left: 35px;
+  top: 0px;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+}
+#slider-anim-visez-juste .zone-anim .container-fleche-centre {
   width: auto;
   height: 6px;
   left: 104px;
   right: 178px;
   top: 87px;
+}
+#slider-anim-visez-juste .zone-anim .container-fleche-centre .fleche-centre {
+  width: 0;
+  height: 100%;
+  right: 0;
+  top: 0;
   background: url("../layoutImg/sliders-animes/line-circle.png") repeat-x 0 50%;
 }
-#slider-anim-visez-juste .zone-anim .fleche-centre:before {
-  content: "";
+#slider-anim-visez-juste .zone-anim .container-fleche-centre .fleche-centre .fleche-gauche {
   position: absolute;
   left: -7px;
   top: -5px;
-  display: block;
-  width: 0;
-  height: 0;
+  width: 0px;
+  height: 0px;
+  border-color: transparent;
+  border-style: solid;
   border-width: 8px 10px 8px 0;
   border-right-color: #a1a9ae;
   border-top-color: rgba(161, 169, 174, 0);
   border-bottom-color: rgba(161, 169, 174, 0);
+  display: none;
+}
+#slider-anim-visez-juste .zone-anim .container-fleche-centre .fleche-centre .fleche-droite {
+  position: absolute;
+  right: -7px;
+  top: -5px;
+  width: 0px;
+  height: 0px;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 8px 0 8px 10px;
+  border-left-color: #a1a9ae;
+  border-top-color: rgba(161, 169, 174, 0);
+  border-bottom-color: rgba(161, 169, 174, 0);
+  display: none;
+}
+#slider-anim-visez-juste .zone-anim .perso-droite {
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
 }
 #slider-anim-visez-juste .zone-anim .perso-droite1 {
   width: 75px;

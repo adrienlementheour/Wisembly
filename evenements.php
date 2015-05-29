@@ -53,22 +53,38 @@
 						</ul>
 					</div>
 					<div id="slider-anim-visez-juste" class="slider-anim">
+						<button id="prev-slider-anim-visez-juste" class="navSlider icon-left"></button>
 						<div class="zone-anim">
 							<div class="elem-anim perso-gauche"></div>
 							<div class="elem-anim bulle-gauche1"></div>
+							<div class="elem-anim bulle-gauche2"></div>
 							
 							<div class="elem-anim groupe-bulles-centre">
-								<div class="elem-anim bulle-centre1"></div>
-								<div class="elem-anim bulle-centre2"></div>
-								<div class="elem-anim bulle-centre3"></div>
+								<div class="elem-anim bulle-centre bulle-centre1"></div>
+								<div class="elem-anim bulle-centre bulle-centre2"></div>
+								<div class="elem-anim bulle-centre bulle-centre3"></div>
 							</div>
-							<div class="elem-anim fleche-centre"></div>
+							<div class="elem-anim groupe-files-centre">
+								<div class="elem-anim file-centre file-centre1"></div>
+								<div class="elem-anim file-centre file-centre2"></div>
+								<div class="elem-anim file-centre file-centre3"></div>
+							</div>
+							<div class="elem-anim groupe-checkbox-centre">
+								<div class="elem-anim checkbox-centre checkbox-centre1"></div>
+								<div class="elem-anim checkbox-centre checkbox-centre2"></div>
+								<div class="elem-anim checkbox-centre checkbox-centre3"></div>
+								<div class="elem-anim checkbox-checked-centre"></div>
+							</div>
+							<div class="elem-anim container-fleche-centre">
+								<div class="elem-anim fleche-centre"><div class="fleche-gauche"></div><div class="fleche-droite"></div></div>
+							</div>
 
-							<div class="elem-anim perso-droite1"></div>
-							<div class="elem-anim perso-droite2"></div>
-							<div class="elem-anim perso-droite3"></div>
-							<div class="elem-anim perso-droite4"></div>
+							<div class="elem-anim perso-droite perso-droite1"></div>
+							<div class="elem-anim perso-droite perso-droite2"></div>
+							<div class="elem-anim perso-droite perso-droite3"></div>
+							<div class="elem-anim perso-droite perso-droite4"></div>
 						</div>
+						<button id="next-slider-anim-visez-juste" class="navSlider icon-right"></button>
 					</div>
 					<blockquote class='blue'><span class="raccord-img"></span>Au-delà de l’évidente dynamique ludique que crée Wisembly, il redonne à nos pratiques d’intervention un gain spectaculaire dans la capacité d’interaction.</blockquote>
 					<div class="citeContainer">

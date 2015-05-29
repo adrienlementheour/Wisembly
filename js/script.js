@@ -164,6 +164,8 @@ function scrollPage(){
 		apparitionFooter();
 	}
 
+	appartitionAnimsSliders();
+
 	if(!htmlTag.hasClass("lt-ie9") && !isMobile.any && myScroll < head.height() && $(window).width() > 767){
 		TweenMax.set(bgHead, {y:-(myScroll/1.5)+"px"});
 		TweenMax.set(head.find('.content'), {y:+(myScroll/2.5)+"px"});
@@ -832,6 +834,70 @@ function setCarouselDots(carousel, slides, slideWidth, updateWidth){
 }
 
 
+// Animations sliders
+var slideAnim1Active = 1;
+var slideAnim2Active = 1;
+var slideAnim3Active = 1;
+var sliderAnim1Init = false;
+function appartitionAnimsSliders(){
+	if( $('#slider-anim-visez-juste').length ){
+		if($("#slider-anim-visez-juste").isOnScreen()&&(!sliderAnim1Init)){
+			sliderAnim1Init = true;
+			animInitSliderAnim1();
+		}
+	}
+}
+// Animation du slider Visez au plus juste
+function animInitSliderAnim1(){
+	setTimeout(function(){
+	    TweenMax.to($("#slider-anim-visez-juste .perso-gauche"), 0.1, {x: "0px", opacity: "1", ease:Cubic.easeInOut});
+	    TweenMax.staggerTo(".perso-droite", 0.4, {x: "0px", opacity: "1", ease:Cubic.easeInOut, delay: 0.1}, 0.1);
+	    TweenMax.set($(".container-fleche-centre .fleche-centre .fleche-gauche"), {display: "block", delay: 0.5});
+	    TweenMax.to($(".container-fleche-centre .fleche-centre"), 0.5, {width: "100%", delay: 0.5, ease:Cubic.easeInOut});
+	    TweenMax.staggerTo(".bulle-centre", 0.4, {y: "0px", opacity: "1", ease:Cubic.easeInOut, delay: 0.5}, 0.1);
+	    TweenMax.to($(".bulle-gauche1"), 0.1, {y: "0px", opacity: "1", delay: 1, ease:Cubic.easeInOut});
+	}, 300);
+	
+}
+function sliderAnim1(){
+	$("#next-slider-anim-visez-juste").on('click', function(){
+		if(slideAnim1Active==1){
+			slideAnim1Active=2;
+			TweenMax.set($("#prev-slider-anim-visez-juste"), {display: "block"});
+
+			// fin etape 1
+			TweenMax.staggerTo(".bulle-centre", 0.4, {y: "-50px", opacity: "0", ease:Cubic.easeInOut}, 0.1);
+			TweenMax.to($(".bulle-gauche1"), 0.1, {y: "-50px", opacity: "0", ease:Cubic.easeInOut});
+			TweenMax.set($(".container-fleche-centre .fleche-centre"), {right: "initial", left: "0px"});
+			TweenMax.to($(".container-fleche-centre .fleche-centre"), 0.5, {width: "0%", ease:Cubic.easeInOut});
+			TweenMax.set($(".container-fleche-centre .fleche-centre .fleche-gauche"), {display: "none", delay: 0.5});
+
+			// debut etape 2
+			TweenMax.set($(".container-fleche-centre .fleche-centre .fleche-droite"), {display: "block", delay: 0.5});
+			TweenMax.to($(".container-fleche-centre .fleche-centre"), 0.5, {width: "100%", ease:Cubic.easeInOut, delay: 0.5});
+			TweenMax.staggerTo(".file-centre", 0.4, {y: "0px", opacity: "1", ease:Cubic.easeInOut, delay: 0.7}, 0.1);
+		}else if (slideAnim1Active==2){
+			slideAnim1Active=3;
+			TweenMax.set($("#next-slider-anim-visez-juste"), {display: "none"});
+
+			// fin etape 2
+			TweenMax.staggerTo(".file-centre", 0.4, {y: "-50px", opacity: "0", ease:Cubic.easeInOut}, 0.1);
+			TweenMax.set($(".container-fleche-centre .fleche-centre"), {left: "initial", right: "0px"});
+			TweenMax.to($(".container-fleche-centre .fleche-centre"), 0.5, {width: "0%", ease:Cubic.easeInOut});
+			TweenMax.set($(".container-fleche-centre .fleche-centre .fleche-droite"), {display: "none", delay: 0.5});
+
+			// etape 3
+			TweenMax.set($(".container-fleche-centre .fleche-centre .fleche-gauche"), {display: "block", delay: 0.5});
+			TweenMax.to($(".container-fleche-centre .fleche-centre"), 0.5, {width: "100%", ease:Cubic.easeInOut, delay: 0.5});
+			TweenMax.to($(".bulle-gauche2"), 0.1, {y: "0px", opacity: "1", ease:Cubic.easeInOut, delay: 0.5});
+			TweenMax.staggerTo(".checkbox-centre", 0.4, {y: "0px", opacity: "1", ease:Cubic.easeInOut, delay: 0.5}, 0.1);
+			TweenMax.to($(".checkbox-checked-centre"), 0.2, {opacity: "1", ease:Cubic.easeInOut, delay: 1.2});
+			
+		}
+		return false;
+	});
+}
+
 /**** INIT ****/
 $(function(){
 
@@ -951,7 +1017,11 @@ $(function(){
 			htmlBody.animate({scrollTop: $('#top').offset().top}, 800, 'easeInOutCubic');
 		});
 	}
-	
+
+	// Slider anim Visez au plus juste //
+	if( $('#slider-anim-visez-juste').length ){
+		sliderAnim1();
+	}
 
 	$(window).load(function(){
 		if(!body.hasClass('landing')){

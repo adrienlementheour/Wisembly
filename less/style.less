@@ -417,6 +417,57 @@ button{
   color: @rouge;
 }
 
+// Triangle Mixin
+.triangle(@_, @width, @height, @color){
+  width: 0px;
+  height: 0px;
+  border-color: transparent;
+  border-style: solid; }
+  .triangle(top, @width, @height, @color){
+    border-width: 0 @width/2 @height @width/2;
+    border-bottom-color: @color;
+    border-left-color: fade(@color, 0);
+    border-right-color: fade(@color, 0);
+  }
+  .triangle(bottom, @width, @height, @color){
+    border-width: @height @width/2 0 @width/2;
+    border-top-color: @color;
+    border-left-color: fade(@color, 0);
+    border-right-color: fade(@color, 0);
+  }
+  .triangle(right, @width, @height, @color){
+    border-width: @height/2 0 @height/2 @width;
+    border-left-color: @color;
+    border-top-color: fade(@color, 0);
+    border-bottom-color: fade(@color, 0);
+  }
+  .triangle(left, @width, @height, @color){
+    border-width: @height/2 @width @height/2 0;
+    border-right-color: @color;
+    border-top-color: fade(@color, 0);
+    border-bottom-color: fade(@color, 0);
+  }
+  .triangle(top-right, @width, @height, @color){
+    border-width: 0 @width @height 0;
+    border-right-color: @color;
+    border-bottom-color: fade(@color, 0);
+  }
+  .triangle(top-left, @width, @height, @color){
+    border-width: @height @width 0 0;
+    border-top-color: @color;
+    border-right-color: fade(@color, 0);
+  }
+  .triangle(bottom-right, @width, @height, @color){
+    border-width: 0 0 @height @width;
+    border-bottom-color: @color;
+    border-left-color: fade(@color, 0);
+  }
+  .triangle(bottom-left, @width, @height, @color){
+    border-width: @height 0 0 @width;
+    border-left-color: @color;
+    border-top-color: fade(@color, 0);
+}
+
 
 /* BUTTONS */
 
@@ -4529,12 +4580,18 @@ ul.whr-items{
 }
 
 #slider-anim-visez-juste{
+  #prev-slider-anim-visez-juste{
+    left: -50px;
+    display: none;
+  }
+  #next-slider-anim-visez-juste{
+    right: -50px;
+  }
   .zone-anim{
     display: block;
     width: 610px;
     height: 173px;
     margin: 0 auto;
-    //background-color: yellow;
     position: relative;
     .elem-anim{
       display: block;
@@ -4546,6 +4603,9 @@ ul.whr-items{
       background: url("../layoutImg/sliders-animes/perso-gauche.png") no-repeat 50% 50%;
       top: 35px;
       left: 0;
+
+      .opacity(0);
+      .transform(translateX(-50px));
     }
     .bulle-gauche1{
       width: 65px;
@@ -4553,6 +4613,19 @@ ul.whr-items{
       background: url("../layoutImg/sliders-animes/bulle-gauche1.png") no-repeat 50% 50%;
       top: 1px;
       left: 80px;
+
+      .opacity(0);
+      .transform(translateY(-50px));
+    }
+    .bulle-gauche2{
+      width: 65px;
+      height: 50px;
+      background: url("../layoutImg/sliders-animes/bulle-gauche2.png") no-repeat 50% 50%;
+      top: 1px;
+      left: 80px;
+
+      .opacity(0);
+      .transform(translateY(-50px));
     }
 
     .groupe-bulles-centre{
@@ -4561,9 +4634,12 @@ ul.whr-items{
       top: 16px;
       left: 50%;
       margin-left: -55px;
-      .bulle-centre1, .bulle-centre2, .bulle-centre3{
+      .bulle-centre{
         width: 48px;
         height: 40px;
+
+        .opacity(0);
+        .transform(translateY(-50px));
       }
       .bulle-centre1{
         background: url("../layoutImg/sliders-animes/bulle-centre1.png") no-repeat 50% 50%;
@@ -4581,28 +4657,103 @@ ul.whr-items{
         top: 0;
       }
     }
-    .fleche-centre{
+    .groupe-files-centre{
+      width: 116px;
+      height: 69px;
+      top: 6px;
+      left: 50%;
+      margin-left: -58px;
+      .file-centre{
+        width: 44px;
+        height: 59px;
+
+        .opacity(0);
+        .transform(translateY(-50px));
+      }
+      .file-centre1{
+        background: url("../layoutImg/sliders-animes/file-centre1.png") no-repeat 50% 50%;
+        left: 0;
+        top: 11px;
+      }
+      .file-centre2{
+        background: url("../layoutImg/sliders-animes/file-centre2.png") no-repeat 50% 50%;
+        right: 0;
+        top: 11px;
+      }
+      .file-centre3{
+        background: url("../layoutImg/sliders-animes/file-centre3.png") no-repeat 50% 50%;
+        left: 36px;
+        top: 0px;
+      }
+    }
+    .groupe-checkbox-centre{
+      width: 100px;
+      height: 48px;
+      top: 21px;
+      left: 50%;
+      margin-left: -50px;
+      .checkbox-centre{
+        width: 28px;
+        height: 28px;
+        background: url("../layoutImg/sliders-animes/checkbox.png") no-repeat 50% 50%;
+
+        .opacity(0);
+        .transform(translateY(-50px));
+      }
+      .checkbox-centre1{
+        left: 0;
+        top: 20px;
+      }
+      .checkbox-centre2{
+        right: 0;
+        top: 20px;
+      }
+      .checkbox-centre3{
+        left: 35px;
+        top: 1px;
+      }
+      .checkbox-checked-centre{
+        width: 29px;
+        height: 29px;
+        background: url("../layoutImg/sliders-animes/checkbox-checked.png") no-repeat 50% 50%;
+        left: 35px;
+        top: 0px;
+        
+        .opacity(0);
+      }
+    }
+    .container-fleche-centre{
       width: auto;
       height: 6px;
       left: 104px;
       right: 178px;
       top: 87px;
-      background: url("../layoutImg/sliders-animes/line-circle.png") repeat-x 0 50%;
-      &:before{
-        content: "";
-        position: absolute;
-        left: -7px;
-        top: -5px;
-        display: block;
+      .fleche-centre{
         width: 0;
-        height: 0;
-        border-width: 16px/2 10px 16px/2 0;
-        border-right-color: #a1a9ae;
-        border-top-color: fade(#a1a9ae, 0);
-        border-bottom-color: fade(#a1a9ae, 0);
+        height: 100%;
+        right: 0;
+        top: 0;
+        background: url("../layoutImg/sliders-animes/line-circle.png") repeat-x 0 50%;
+        .fleche-gauche{
+          position: absolute;
+          left: -7px;
+          top: -5px;
+          .triangle(left, 10px, 16px, #a1a9ae);
+          display: none;
+        }
+        .fleche-droite{
+          position: absolute;
+          right: -7px;
+          top: -5px;
+          .triangle(right, 10px, 16px, #a1a9ae);
+          display: none;
+        }
       }
     }
-
+    .perso-droite{
+      .opacity(0);
+      .transform(translateX(50px));
+    }
     .perso-droite1{
       width: 75px;
       height: 86px;
