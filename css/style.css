@@ -5063,6 +5063,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   width: 100%;
   height: auto;
   position: relative;
+  margin: 80px 0;
 }
 #slider-anim-visez-juste #prev-slider-anim-visez-juste {
   left: -50px;
@@ -5380,6 +5381,12 @@ ul.whr-items li ul.whr-info li.whr-date {
     left: 30px;
   }
   #next {
+    right: 30px;
+  }
+  #slider-anim-visez-juste #prev-slider-anim-visez-juste {
+    left: 30px;
+  }
+  #slider-anim-visez-juste #next-slider-anim-visez-juste {
     right: 30px;
   }
   .wrapper-ecran .slider-evenements #prev {
@@ -5741,6 +5748,12 @@ ul.whr-items li ul.whr-info li.whr-date {
   #next {
     right: 50px;
   }
+  #slider-anim-visez-juste #prev-slider-anim-visez-juste {
+    left: 50px;
+  }
+  #slider-anim-visez-juste #next-slider-anim-visez-juste {
+    right: 50px;
+  }
   .wrapper-ecran .slider-evenements #prev {
     left: -75px;
   }
@@ -5936,8 +5949,21 @@ ul.whr-items li ul.whr-info li.whr-date {
   .slider-evenements #next {
     right: 30%;
   }
+  #slider-anim-visez-juste #prev-slider-anim-visez-juste {
+    left: 30%;
+    top: auto;
+    bottom: -10px;
+  }
+  #slider-anim-visez-juste #next-slider-anim-visez-juste {
+    right: 30%;
+    top: auto;
+    bottom: -10px;
+  }
 }
 @media (max-width: 767px) {
+  #slider-anim-visez-juste .zone-anim {
+    width: 100%;
+  }
   .wrapper-ecran .slider-evenements #prev {
     left: -60px;
   }
@@ -6289,6 +6315,112 @@ ul.whr-items li ul.whr-info li.whr-date {
     max-height: 80px;
   }
 }
+@media (max-width: 600px) {
+  #slider-anim-visez-juste .zone-anim .elem-anim {
+    background-size: cover;
+  }
+  #slider-anim-visez-juste .zone-anim .perso-gauche {
+    width: 61px;
+    height: 68px;
+    top: 50px;
+    left: 0;
+  }
+  #slider-anim-visez-juste .zone-anim .bulle-gauche1 {
+    width: 43px;
+    height: 36px;
+    top: 17px;
+    left: 50px;
+  }
+  #slider-anim-visez-juste .zone-anim .bulle-gauche2 {
+    width: 43px;
+    height: 33px;
+    top: 17px;
+    left: 50px;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-bulles-centre {
+    width: 84px;
+    height: 44px;
+    top: 33px;
+    left: 50%;
+    margin-left: -50px;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-bulles-centre .bulle-centre {
+    width: 32px;
+    height: 27px;
+    background-size: cover;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-bulles-centre .bulle-centre3 {
+    left: 25px;
+    top: 0;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-files-centre {
+    width: 68px;
+    height: 46px;
+    top: 26px;
+    left: 50%;
+    margin-left: -50px;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-files-centre .file-centre {
+    width: 29px;
+    height: 39px;
+    background-size: cover;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-files-centre .file-centre3 {
+    left: 20px;
+    top: 0px;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-checkbox-centre {
+    width: 76px;
+    height: 40px;
+    top: 35px;
+    left: 50%;
+    margin-left: -50px;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-checkbox-centre .checkbox-centre {
+    width: 19px;
+    height: 19px;
+    background-size: cover;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-checkbox-centre .checkbox-centre3 {
+    left: 29px;
+    top: 1px;
+  }
+  #slider-anim-visez-juste .zone-anim .groupe-checkbox-centre .checkbox-checked-centre {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    left: 29px;
+    top: 0px;
+  }
+  #slider-anim-visez-juste .zone-anim .container-fleche-centre {
+    left: 76px;
+    right: 112px;
+  }
+  #slider-anim-visez-juste .zone-anim .perso-droite1 {
+    width: 50px;
+    height: 57px;
+    top: 27px;
+    right: 28px;
+  }
+  #slider-anim-visez-juste .zone-anim .perso-droite2 {
+    width: 50px;
+    height: 61px;
+    top: 50px;
+    right: 0;
+  }
+  #slider-anim-visez-juste .zone-anim .perso-droite3 {
+    width: 50px;
+    height: 61px;
+    top: 60px;
+    right: 57px;
+  }
+  #slider-anim-visez-juste .zone-anim .perso-droite4 {
+    width: 50px;
+    height: 63px;
+    top: 81px;
+    right: 24px;
+  }
+}
 @media (max-width: 520px) {
   header .rs {
     margin: 17px 0;
@@ -6399,6 +6531,12 @@ ul.whr-items li ul.whr-info li.whr-date {
     left: 10%;
   }
   .slider-evenements #next {
+    right: 10%;
+  }
+  #slider-anim-visez-juste #prev-slider-anim-visez-juste {
+    left: 10%;
+  }
+  #slider-anim-visez-juste #next-slider-anim-visez-juste {
     right: 10%;
   }
 }

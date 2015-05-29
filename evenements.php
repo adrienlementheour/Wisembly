@@ -39,19 +39,6 @@
 					<h3>C'est simple et flexible !</h3>
 					<p>Avec Wisembly, dès la phase amont, vous vous assurez de répondre aux interrogations de votre auditoire.<br />
 					Avant l’événement, <strong>partagez des documents</strong> pour un niveau d’information égal pour tous, récoltez les idées et commentaires des participants, proposez des votes pour sonder votre audience.</p>
-					<div id="slider-visez-juste" class="slider-evenements carousel">
-						<ul>
-							<li>
-								<img src="img/evenements/illus-slider-visez-juste1.png">
-							</li>
-							<li>
-								<img src="img/evenements/illus-slider-visez-juste2.png">
-							</li>
-							<li>
-								<img src="img/evenements/illus-slider-visez-juste3.png">
-							</li>
-						</ul>
-					</div>
 					<div id="slider-anim-visez-juste" class="slider-anim">
 						<button id="prev-slider-anim-visez-juste" class="navSlider icon-left"></button>
 						<div class="zone-anim">
