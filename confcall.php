@@ -79,6 +79,20 @@
 							</li>
 						</ul>
 					</div>
+					<div id="slider-anim-engagez-audience" class="slider-anim">
+						<button id="prev-slider-anim-engagez-audience" class="navSlider icon-left"></button>
+						<div class="zone-anim">
+							<div class="elem-anim perso-gauche perso-gauche1"></div>
+							<div class="elem-anim perso-gauche perso-gauche2"></div>
+							<div class="elem-anim ordinateur-gauche"></div>
+							<div class="elem-anim perso-gauche perso-gauche3"></div>
+
+							<div class="elem-anim container-screen">
+								
+							</div>
+						</div>
+						<button id="next-slider-anim-engagez-audience" class="navSlider icon-right"></button>
+					</div>
 					<h3 class="marginTop">Wisembly est disponible partout, tout le temps.</h3>
 					<p>Ne changez pas les habitudes de votre public, utilisez les et surfez sur le digital : web, mobile, tablette, Twitter, email, SMS…<br />
 					Sans application à télécharger, Wisembly fonctionne depuis tous les appareils et se prête parfaitement aux conf calls multisites.</p>

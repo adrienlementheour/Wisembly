@@ -849,14 +849,17 @@ function appartitionAnimsSliders(){
 }
 // Animation du slider Visez au plus juste
 function animInitSliderAnim1(){
-	setTimeout(function(){
-	    TweenMax.to($("#slider-anim-visez-juste .perso-gauche"), 0.4, {x: "0px", opacity: "1", ease:Quint.easeOut});
-	    TweenMax.staggerTo(".perso-droite", 0.8, {x: "0px", opacity: "1", ease:Quint.easeOut, delay: 0.4}, 0.2);
-	    TweenMax.set($(".container-fleche-centre .fleche-centre .fleche-gauche"), {display: "block", delay: 1.2});
-	    TweenMax.to($(".container-fleche-centre .fleche-centre"), 0.5, {width: "100%", delay: 1.2, ease:Quint.easeOut});
-	    TweenMax.staggerTo(".bulle-centre", 0.8, {y: "0px", opacity: "1", ease:Quint.easeOut, delay: 1.4}, 0.2);
-	    TweenMax.to($(".bulle-gauche1"), 0.4, {y: "0px", opacity: "1", delay: 2.6, ease:Quint.easeOut});
-	},1000);
+	if ($(".slider-anim").length){
+		$(".slider-anim").parents('section').find('.keyword').find('strong').eq(0).addClass('on');
+	}
+	//setTimeout(function(){
+	    //TweenMax.to($("#slider-anim-visez-juste .perso-gauche"), 0.4, {x: "0px", opacity: "1", ease:Quint.easeOut});
+	    //TweenMax.staggerTo(".perso-droite", 0.8, {x: "0px", opacity: "1", ease:Quint.easeOut, delay: 0.4}, 0.2);
+	    //TweenMax.set($(".container-fleche-centre .fleche-centre .fleche-gauche"), {display: "block", delay: 1.2});
+	    //TweenMax.to($(".container-fleche-centre .fleche-centre"), 0.5, {width: "100%", delay: 1.2, ease:Quint.easeOut});
+	    //TweenMax.staggerTo(".bulle-centre", 0.8, {y: "0px", opacity: "1", ease:Quint.easeOut, delay: 1.4}, 0.2);
+	    //TweenMax.to($(".bulle-gauche1"), 0.4, {y: "0px", opacity: "1", delay: 2.6, ease:Quint.easeOut});
+	//},1000);
 	
 }
 function sliderAnim1(){
@@ -865,6 +868,8 @@ function sliderAnim1(){
 			if(slideAnim1Active==1){
 				slideAnim1Active=2;
 				TweenMax.set($("#prev-slider-anim-visez-juste"), {display: "block"});
+				$(this).parents('section').find('.keyword').find('strong').removeClass('on');
+				$(this).parents('section').find('.keyword').find('strong').eq(1).addClass('on');
 
 				// fin etape 1
 				TweenMax.staggerTo(".bulle-centre", 0.4, {y: "-50px", opacity: "0", ease:Cubic.easeOut}, 0.1);
@@ -880,6 +885,8 @@ function sliderAnim1(){
 			}else if (slideAnim1Active==2){
 				slideAnim1Active=3;
 				TweenMax.set($("#next-slider-anim-visez-juste"), {display: "none"});
+				$(this).parents('section').find('.keyword').find('strong').removeClass('on');
+				$(this).parents('section').find('.keyword').find('strong').eq(2).addClass('on');
 
 				// fin etape 2
 				TweenMax.staggerTo(".file-centre", 0.4, {y: "-50px", opacity: "0", ease:Cubic.easeOut}, 0.1);
@@ -904,6 +911,8 @@ function sliderAnim1(){
 			if(slideAnim1Active==2){
 				slideAnim1Active=1;
 				TweenMax.set($("#prev-slider-anim-visez-juste"), {display: "none"});
+				$(this).parents('section').find('.keyword').find('strong').removeClass('on');
+				$(this).parents('section').find('.keyword').find('strong').eq(0).addClass('on');
 
 				// retour etape 2
 				TweenMax.staggerTo(".file-centre", 0.4, {y: "-50px", opacity: "0", ease:Cubic.easeOut}, 0.1);
@@ -919,6 +928,8 @@ function sliderAnim1(){
 			}else if (slideAnim1Active==3){
 				slideAnim1Active=2;
 				TweenMax.set($("#next-slider-anim-visez-juste"), {display: "block"});
+				$(this).parents('section').find('.keyword').find('strong').removeClass('on');
+				$(this).parents('section').find('.keyword').find('strong').eq(1).addClass('on');
 
 				// retour etape 3
 				TweenMax.staggerTo(".checkbox-centre", 0.8, {y: "-50px", opacity: "0", ease:Cubic.easeOut}, 0.2);

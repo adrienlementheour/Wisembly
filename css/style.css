@@ -5089,12 +5089,8 @@ ul.whr-items li ul.whr-info li.whr-date {
   background: url("../layoutImg/sliders-animes/perso-gauche.png") no-repeat 50% 50%;
   top: 35px;
   left: 0;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  opacity: 0;
-  -webkit-transform: translateX(-50px);
-  -ms-transform: translateX(-50px);
-  transform: translateX(-50px);
+  /*.opacity(0);
+      .transform(translateX(-50px));*/
 }
 #slider-anim-visez-juste .zone-anim .bulle-gauche1 {
   width: 65px;
@@ -5102,12 +5098,8 @@ ul.whr-items li ul.whr-info li.whr-date {
   background: url("../layoutImg/sliders-animes/bulle-gauche1.png") no-repeat 50% 50%;
   top: 1px;
   left: 80px;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  opacity: 0;
-  -webkit-transform: translateY(-50px);
-  -ms-transform: translateY(-50px);
-  transform: translateY(-50px);
+  /*.opacity(0);
+      .transform(translateY(-50px));*/
 }
 #slider-anim-visez-juste .zone-anim .bulle-gauche2 {
   width: 65px;
@@ -5132,12 +5124,8 @@ ul.whr-items li ul.whr-info li.whr-date {
 #slider-anim-visez-juste .zone-anim .groupe-bulles-centre .bulle-centre {
   width: 48px;
   height: 40px;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  opacity: 0;
-  -webkit-transform: translateY(-50px);
-  -ms-transform: translateY(-50px);
-  transform: translateY(-50px);
+  /*.opacity(0);
+        .transform(translateY(-50px));*/
 }
 #slider-anim-visez-juste .zone-anim .groupe-bulles-centre .bulle-centre1 {
   background: url("../layoutImg/sliders-animes/bulle-centre1.png") no-repeat 50% 50%;
@@ -5234,7 +5222,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   top: 87px;
 }
 #slider-anim-visez-juste .zone-anim .container-fleche-centre .fleche-centre {
-  width: 0;
+  width: 100%;
   height: 100%;
   right: 0;
   top: 0;
@@ -5252,7 +5240,8 @@ ul.whr-items li ul.whr-info li.whr-date {
   border-right-color: #a1a9ae;
   border-top-color: rgba(161, 169, 174, 0);
   border-bottom-color: rgba(161, 169, 174, 0);
-  display: none;
+  /*display: none;*/
+  display: block;
 }
 #slider-anim-visez-juste .zone-anim .container-fleche-centre .fleche-centre .fleche-droite {
   position: absolute;
@@ -5269,12 +5258,8 @@ ul.whr-items li ul.whr-info li.whr-date {
   display: none;
 }
 #slider-anim-visez-juste .zone-anim .perso-droite {
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  opacity: 0;
-  -webkit-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  transform: translateX(50px);
+  /*.opacity(0);
+      .transform(translateX(50px));*/
 }
 #slider-anim-visez-juste .zone-anim .perso-droite1 {
   width: 75px;
@@ -5303,6 +5288,24 @@ ul.whr-items li ul.whr-info li.whr-date {
   background: url("../layoutImg/sliders-animes/perso-droite4.png") no-repeat 50% 50%;
   top: 79px;
   right: 41px;
+}
+#slider-anim-engagez-audience #prev-slider-anim-engagez-audience {
+  left: -50px;
+  display: none;
+}
+#slider-anim-engagez-audience #next-slider-anim-engagez-audience {
+  right: -50px;
+}
+#slider-anim-engagez-audience .zone-anim {
+  display: block;
+  width: 543px;
+  height: 221px;
+  margin: 0 auto;
+  position: relative;
+}
+#slider-anim-engagez-audience .zone-anim .elem-anim {
+  display: block;
+  position: absolute;
 }
 /* Special IE 8 */
 .lt-ie9 .content.simple {

@@ -4605,8 +4605,8 @@ ul.whr-items{
       top: 35px;
       left: 0;
 
-      .opacity(0);
-      .transform(translateX(-50px));
+      /*.opacity(0);
+      .transform(translateX(-50px));*/
     }
     .bulle-gauche1{
       width: 65px;
@@ -4615,8 +4615,8 @@ ul.whr-items{
       top: 1px;
       left: 80px;
 
-      .opacity(0);
-      .transform(translateY(-50px));
+      /*.opacity(0);
+      .transform(translateY(-50px));*/
     }
     .bulle-gauche2{
       width: 65px;
@@ -4639,8 +4639,8 @@ ul.whr-items{
         width: 48px;
         height: 40px;
 
-        .opacity(0);
-        .transform(translateY(-50px));
+        /*.opacity(0);
+        .transform(translateY(-50px));*/
       }
       .bulle-centre1{
         background: url("../layoutImg/sliders-animes/bulle-centre1.png") no-repeat 50% 50%;
@@ -4730,7 +4730,8 @@ ul.whr-items{
       right: 178px;
       top: 87px;
       .fleche-centre{
-        width: 0;
+        //width: 0;
+        width: 100%;
         height: 100%;
         right: 0;
         top: 0;
@@ -4740,7 +4741,8 @@ ul.whr-items{
           left: -7px;
           top: -5px;
           .triangle(left, 10px, 16px, #a1a9ae);
-          display: none;
+          /*display: none;*/
+          display: block;
         }
         .fleche-droite{
           position: absolute;
@@ -4752,8 +4754,8 @@ ul.whr-items{
       }
     }
     .perso-droite{
-      .opacity(0);
-      .transform(translateX(50px));
+      /*.opacity(0);
+      .transform(translateX(50px));*/
     }
     .perso-droite1{
       width: 75px;
@@ -4782,6 +4784,27 @@ ul.whr-items{
       background: url("../layoutImg/sliders-animes/perso-droite4.png") no-repeat 50% 50%;
       top: 79px;
       right: 41px;
+    }
+  }
+}
+
+#slider-anim-engagez-audience{
+  #prev-slider-anim-engagez-audience{
+    left: -50px;
+    display: none;
+  }
+  #next-slider-anim-engagez-audience{
+    right: -50px;
+  }
+  .zone-anim{
+    display: block;
+    width: 543px;
+    height: 221px;
+    margin: 0 auto;
+    position: relative;
+    .elem-anim{
+      display: block;
+      position: absolute;
     }
   }
 }
