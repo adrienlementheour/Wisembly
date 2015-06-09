@@ -1141,6 +1141,9 @@ header.menuVisible #triangleMenu {
   -webkit-transition: 0.4s right 0.3s ease-in-out, 0.4s -webkit-transform 0.3s ease-in-out;
   transition: 0.4s right 0.3s ease-in-out,0.4s -webkit-transform 0.3s ease-in-out,0.4s -moz-transform 0.3s ease-in-out,0.4s -o-transform 0.3s ease-in-out,0.4s transform 0.3s ease-in-out;
 }
+.blog header {
+  background: #06698d;
+}
 .topHeader {
   height: 40px;
   background: #06698d;
@@ -1661,6 +1664,15 @@ header.menuVisible #triangleMenu {
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
 }
+.rsMenuBlog {
+  float: right;
+}
+.rsMenuBlog a {
+  color: #fff;
+}
+.rsMenuBlog a span {
+  display: none;
+}
 /* FOOTER */
 footer {
   padding: 130px 0 0;
@@ -1763,6 +1775,9 @@ footer {
 .contactFooter.bleu .formContact .error input {
   background: #116180 url(../layoutImg/error.png) no-repeat 95% 50%;
 }
+.contactFooter.bleu .formContact .error textarea {
+  background: #116180 url(../layoutImg/error.png) no-repeat 98% 10px;
+}
 .contactFooter.bleu .formContact .select:hover:after,
 .contactFooter.bleu .formContact .select:focus:after {
   color: #04455c;
@@ -1811,6 +1826,9 @@ footer {
 }
 .contactFooter.rouge .formContact .error input {
   background: #de4645 url(../layoutImg/error.png) no-repeat 95% 50%;
+}
+.contactFooter.rouge .formContact .error textarea {
+  background: #de4645 url(../layoutImg/error.png) no-repeat 98% 10px;
 }
 .contactFooter.rouge #dragIn {
   background: #da3130;
@@ -1861,6 +1879,9 @@ footer {
 .contactFooter.vert .formContact .error input {
   background: #3fa27b url(../layoutImg/error.png) no-repeat 95% 50%;
 }
+.contactFooter.vert .formContact .error textarea {
+  background: #3fa27b url(../layoutImg/error.png) no-repeat 98% 10px;
+}
 .contactFooter.vert #dragIn {
   background: #388f6d;
 }
@@ -1900,6 +1921,9 @@ footer {
 }
 .contactFooter.rose .formContact .error input {
   background: #f67454 url(../layoutImg/error.png) no-repeat 95% 50%;
+}
+.contactFooter.rose .formContact .error textarea {
+  background: #f67454 url(../layoutImg/error.png) no-repeat 98% 10px;
 }
 .contactFooter.rose #dragIn {
   background: #f4613c;
@@ -3903,6 +3927,7 @@ footer {
   height: 490px;
   width: 46%;
   margin: 4% 2% 0;
+  vertical-align: top;
 }
 .etude strong {
   margin: 0 auto;

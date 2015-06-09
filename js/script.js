@@ -159,7 +159,7 @@ function scrollPage(){
 	var head = $('.head');
 	myScroll = $(document).scrollTop();
 
-	if(!body.hasClass('landing')){
+	if(!body.hasClass('landing') && !body.hasClass('blog')){
 		fixedHeader();
 		apparitionFooter();
 	}
@@ -958,19 +958,21 @@ $(function(){
 	}
 
 	if(!body.hasClass('landing')){
-		// Make links not active in grey //
-		setActiveMenu();
+		if(!body.hasClass('blog')){
+			// Make links not active in grey //
+			setActiveMenu();
 
-		// Sous menu //
-		setSubMenu();
+			// Sous menu //
+			setSubMenu();
+
+			// WIZ //
+			joinAnEvent.startListening();
+		}
 
 		// Lang selector //
 		if(htmlTag.attr('lang') !== 'fr-FR'){
 			langSelector();
 		}
-
-		// WIZ //
-		joinAnEvent.startListening();
 	}
 
 	// Photo header //
@@ -1075,7 +1077,7 @@ $(function(){
 	}
 
 	$(window).load(function(){
-		if(!body.hasClass('landing')){
+		if(!body.hasClass('landing') && !body.hasClass('blog')){
 			// Sous menu //
 			centerSubMenu();
 
@@ -1132,7 +1134,7 @@ $(function(){
 
     $(window).resize(function(){
 
-    	if(!body.hasClass('landing')){
+    	if(!body.hasClass('landing') && !body.hasClass('blog')){
     		minHeight = $('.menu').innerHeight() - 10;
     		fixedHeader();
     		setSubMenu();

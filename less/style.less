@@ -792,7 +792,9 @@ header{
       .transition(.4s right .3s ease-in-out, .4s transform .3s ease-in-out);
     }
   }
-  
+  .blog &{
+    background: @bleu;
+  }
 }
 
 .topHeader{
@@ -1279,6 +1281,20 @@ header{
   .transform(rotate(0));
 }
 
+.rsMenuBlog{
+  float: right;
+  a{
+    color: #fff;
+    span{
+      display: none;
+    }
+  }
+}
+
+.mainMenuBlog{
+
+}
+
 /* FOOTER */
 
 footer{
@@ -1373,6 +1389,9 @@ footer{
         input{
           background: #116180 url(../layoutImg/error.png) no-repeat 95% 50%;
         }
+        textarea{
+          background: #116180 url(../layoutImg/error.png) no-repeat 98% 10px;
+        }
       }
       .select{
         &:hover, &:focus{
@@ -1429,6 +1448,9 @@ footer{
         input{
           background: darken(@rouge, 5) url(../layoutImg/error.png) no-repeat 95% 50%;
         }
+        textarea{
+          background: darken(@rouge, 5) url(../layoutImg/error.png) no-repeat 98% 10px;
+        }
       }
     }
     #dragIn{
@@ -1480,6 +1502,9 @@ footer{
         input{
           background: darken(@vert, 5) url(../layoutImg/error.png) no-repeat 95% 50%;
         }
+        textarea{
+          background: darken(@vert, 5) url(../layoutImg/error.png) no-repeat 98% 10px;
+        }
       }
     }
     #dragIn{
@@ -1522,6 +1547,9 @@ footer{
       .error{
         input{
           background: darken(@rose, 5) url(../layoutImg/error.png) no-repeat 95% 50%;
+        }
+        textarea{
+          background: darken(@rose, 5) url(../layoutImg/error.png) no-repeat 98% 10px;
         }
       }
     }
@@ -3439,6 +3467,7 @@ footer{
   height: 490px;
   width: 46%;
   margin: 4% 2% 0;
+  vertical-align: top;
   strong{
     margin: 0 auto;
     max-width: 85%;
