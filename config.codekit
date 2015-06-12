@@ -316,6 +316,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/blog\/flag.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 32423,
+		"inputAbbreviatedPath": "\/img\/blog\/flag.jpg",
+		"outputAbbreviatedPath": "\/img\/blog\/flag.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/blog\/solid.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19904,
+		"inputAbbreviatedPath": "\/img\/blog\/solid.jpg",
+		"outputAbbreviatedPath": "\/img\/blog\/solid.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/bnp.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1536,6 +1558,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/layoutImg\/blog\/logo-blog.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4260,
+		"inputAbbreviatedPath": "\/layoutImg\/blog\/logo-blog.png",
+		"outputAbbreviatedPath": "\/layoutImg\/blog\/logo-blog.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/layoutImg\/client\/benefices.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2027,17 +2060,6 @@
 		"initialSize": 2384,
 		"inputAbbreviatedPath": "\/layoutImg\/home\/w@2.png",
 		"outputAbbreviatedPath": "\/layoutImg\/home\/w@2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/layoutImg\/logo-blog.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4260,
-		"inputAbbreviatedPath": "\/layoutImg\/logo-blog.png",
-		"outputAbbreviatedPath": "\/layoutImg\/logo-blog.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

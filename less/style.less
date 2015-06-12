@@ -22,6 +22,7 @@
 @grisMentions: #8c959b;
 @grisSolid: #718289;
 @grisSlides: #f4f5f5;
+@grisBlog: #a5a5a5;
 
 html,
 button,
@@ -493,7 +494,7 @@ button{
   &.smallTxt{
     font-size: 0.933em;
   }
-  &.smaller {
+  &.smaller{
     width: 150px;
   }
   &.big{
@@ -613,6 +614,9 @@ button{
   &.main{
     padding-top: 135px;
     position: relative;
+    .blog &{
+      padding-top: 190px;
+    }
   }
   &.simple{
     padding-right: 120px;
@@ -675,6 +679,7 @@ header{
   .no-mobile &{
     position: fixed;
     top: 0;
+    .transform(translateZ(0));
     + .content{
       &.main{
         padding-top: 135px;
@@ -905,6 +910,8 @@ header{
   .transition(.3s ease-in-out);
   a{
     text-transform: uppercase;
+    font-weight: 500;
+    font-size: .85em;
     &:active{
       opacity: .7;
     }
@@ -943,6 +950,7 @@ header{
       top: 0;
       line-height: 20px;
       cursor: pointer;
+      color: #fff;
       .transition(.1s ease-in-out);
     }
     &:hover{
@@ -962,6 +970,9 @@ header{
   }
   .no-js &{
     float: left;
+  }
+  .blog &{
+    margin: 0;
   }
 }
 
@@ -1014,6 +1025,11 @@ header{
     .no-js &{
       float: left;
     }
+  }
+  .blog &{
+    width: 262px;
+    height: 34px;
+    background: url(../layoutImg/blog/logo-blog.png) no-repeat;
   }
 }
 
@@ -1281,19 +1297,6 @@ header{
   .transform(rotate(0));
 }
 
-.rsMenuBlog{
-  float: right;
-  a{
-    color: #fff;
-    span{
-      display: none;
-    }
-  }
-}
-
-.mainMenuBlog{
-
-}
 
 /* FOOTER */
 
@@ -1958,6 +1961,7 @@ footer{
 }
 
 .menuFooter{
+  position: relative;
   p{
     margin: 0 0 60px;
     position: relative;
@@ -4209,6 +4213,7 @@ ul.whr-items{
 }
 
 /* Mission vision */
+
 #wrapper-slider-visu-mission{
   height: 400px;
   overflow: hidden;
@@ -4633,7 +4638,6 @@ ul.whr-items{
       background: url("../layoutImg/sliders-animes/perso-gauche.png") no-repeat 50% 50%;
       top: 35px;
       left: 0;
-
       /*.opacity(0);
       .transform(translateX(-50px));*/
     }
@@ -4643,7 +4647,6 @@ ul.whr-items{
       background: url("../layoutImg/sliders-animes/bulle-gauche1.png") no-repeat 50% 50%;
       top: 1px;
       left: 80px;
-
       /*.opacity(0);
       .transform(translateY(-50px));*/
     }
@@ -4653,7 +4656,6 @@ ul.whr-items{
       background: url("../layoutImg/sliders-animes/bulle-gauche2.png") no-repeat 50% 50%;
       top: 1px;
       left: 80px;
-
       .opacity(0);
       .transform(translateY(-50px));
     }
@@ -4667,7 +4669,6 @@ ul.whr-items{
       .bulle-centre{
         width: 48px;
         height: 40px;
-
         /*.opacity(0);
         .transform(translateY(-50px));*/
       }
@@ -4696,7 +4697,6 @@ ul.whr-items{
       .file-centre{
         width: 44px;
         height: 59px;
-
         .opacity(0);
         .transform(translateY(-50px));
       }
@@ -4782,10 +4782,10 @@ ul.whr-items{
         }
       }
     }
-    .perso-droite{
-      /*.opacity(0);
-      .transform(translateX(50px));*/
-    }
+    /*.perso-droite{
+      .opacity(0);
+      .transform(translateX(50px));
+    }*/
     .perso-droite1{
       width: 75px;
       height: 86px;
@@ -4835,6 +4835,357 @@ ul.whr-items{
       display: block;
       position: absolute;
     }
+  }
+}
+
+/* Blog */ 
+
+.rsMenuBlog{
+  float: right;
+  margin: 29px 0 0;
+  a{
+    color: #fff;
+  }
+  .rsBlog{
+    padding: 0 15px 0 0;
+    margin: 0 35px 0 0;
+    position: relative;
+    li{
+      padding: 0 20px 0 0;
+    }
+    a{
+      font-size: 15px;
+      span{
+        display: none;
+      }
+    }
+    .icon-fb2{
+      font-size: 17px;
+    }
+    .icon-yt2{
+      font-size: 18px;
+    }
+    .icon-rss{
+      font-size: 13px;
+    }
+    &:after{
+      content: '';
+      display: block;
+      height: 8px;
+      width: 2px;
+      background: #fff;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  .lang{
+    .no-mobile &{
+      &:hover{
+        padding: 0;
+      }
+    }
+  }
+}
+
+.mainMenuBlog{
+  background: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  overflow: hidden;
+  clear: both;
+  ul{
+    margin: 13px 0;
+  }
+  li{
+    padding: 0 50px 0 0;
+  }
+  a{
+    color: @bleu;
+    font-weight: 500;
+    &:hover, &:focus{
+      color: @grisBlog;
+    }
+  }
+}
+
+.searchform{
+  float: right;
+  width: 245px;
+  overflow: hidden;
+  margin: 5px 0 0;
+  position: relative;
+  height: 35px;
+  .transition(width .3s ease-in-out);
+  .js &{
+    width: 20px;
+  }
+  input{
+    width: 220px;
+    padding: 0;
+    border: 0;
+    height: 35px;
+    background: none;
+    .js &{
+      position: absolute;
+      right: -220px;
+    }
+  }
+  button{
+    width: 15px;
+    margin: 11px 5px 0 0;
+    padding: 0;
+    color: @grisBlog;
+    .fontIcon();
+  }
+  &.on{
+    width: 245px;
+    .transition(width .3s ease-in-out);
+    input{
+      right: 0;
+    }
+  }
+}
+
+.blogMain, .sidebar{
+  display: inline-block;
+  vertical-align: top;
+}
+.blogMain{
+  width: 58%;
+  margin: 0 15% 0 0;
+}
+.sidebar{
+  width: 27%;
+}
+
+.postData{
+  b{
+    font-style: normal;
+  }
+  a{
+    border: 0;
+    color: @txt;
+    &:hover, &:focus{
+      color: @bleu;
+      &.jaune{
+        color: @jaune;
+      }
+      &.rose{
+        color: @rose;
+      }
+      &.vert{
+        color: @vert;
+      }
+      &.rouge{
+        color: @rouge;
+      }
+    }
+    
+  }
+  + h2{
+    margin-top: 15px;
+    font-size: 1.85em;
+    font-weight: 500;
+    &:after{
+      display: none;
+    }
+    a{
+      color: @bleu;
+      border: 0;
+      &:hover, &:focus{
+        color: @bleuLien;
+      }
+    }
+  }
+}
+
+.post{
+  .scrollNext{
+    margin: 60px 0 75px;
+  }
+}
+
+.blogLivres, .catWisembly{
+  .carouselDots{
+    ul:first-child{
+      border: 2px solid @grisBorder;
+      .box-sizing(border-box);
+      li{
+        width: 100%;
+      }
+      a{
+        border: 0;
+      }
+    }
+  }
+}
+
+.catWisembly{
+  margin: 0 0 50px;
+  strong{
+    a{
+      color: @bleu;
+      border: 0;
+      font-size: 1.18em;
+      &:hover, &:focus{
+        color: @grisBlog !important;
+      }
+    }
+  }
+  p{
+    margin: 5px 0;
+    font-size: .87em;
+    line-height: 1.7em;
+  }
+  .carouselDots{
+    ul:first-child{
+      a{
+        display: block;
+        padding: 20px 15px;
+        .box-sizing(border-box);
+        text-align: left;
+      }
+      .roundImg, .txt{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .roundImg{
+        .size(60px);
+        overflow: hidden;
+        border-radius: 100%;
+        margin: 0 12px 0 0;
+        img{
+          width: 100%;
+        }
+        + .txt{
+          width: 195px;
+        }
+      }
+      .txt{
+        font-size: .86em;
+        line-height: 1.4em;
+      }
+      strong{
+        display: block;
+        color: @txt;
+        font-weight: 500;
+      }
+      .date{
+        color: @bleu;
+        text-transform: capitalize;
+      }
+    }
+  }
+  &.jaune{
+    strong{
+      a{
+        color: @jaune;
+      }
+    }
+    .carouselDots{
+      ul:first-child{
+        .date{
+          color: @jaune;
+        }
+      }
+    }
+  }
+  &.rose{
+    strong{
+      a{
+        color: @rose;
+      }
+    }
+    .carouselDots{
+      ul:first-child{
+        .date{
+          color: @rose;
+        }
+      }
+    }
+  }
+  &.vert{
+    strong{
+      a{
+        color: @vert;
+      }
+    }
+    .carouselDots{
+      ul:first-child{
+        .date{
+          color: @vert;
+        }
+      }
+    }
+  }
+  &.rouge{
+    strong{
+      a{
+        color: @rouge;
+      }
+    }
+    .carouselDots{
+      ul:first-child{
+        .date{
+          color: @rouge;
+        }
+      }
+    }
+  }
+}
+
+.blogImg, .blogWisembly, .catWisembly + .blogLivres{
+  margin: 100px 0 0;
+  position: relative;
+  &:before{
+    content: '';
+    display: block;
+    width: 66px;
+    height: 2px;
+    background: @grisBorder;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -49px;
+  }
+}
+
+.blogLivres{
+  strong{
+    a{
+      border: 0;
+      font-size: 1.18em;
+      color: @txt;
+      &:hover, &:focus{
+        color: @bleuLien;
+      }
+    }
+  }
+  p{
+    &:extend(.catWisembly p);
+  }
+  .carouselDots{
+    ul:first-child{
+      span{
+        margin: 30px 0;
+        display: inline-block;
+        border-bottom: 1px solid;
+      }
+    }
+  }
+}
+
+.blogWisembly{
+  border: 2px solid @grisBorder;
+  p{
+    color: @grisSolid;
+    margin: 20px 0 30px;
+  }
+  .btnFull{
+    margin: 40px auto 30px;
   }
 }
 
