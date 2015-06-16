@@ -1715,6 +1715,9 @@ footer {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+.blog .contactFooter {
+  text-align: center;
+}
 .contactFooter .wrapper-contentinfo {
   display: block;
   position: relative;
@@ -2590,6 +2593,9 @@ footer {
   text-align: center;
   border: 0;
   opacity: 0;
+  -webkit-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  transform: translateZ(0px);
 }
 #scrollTop.on,
 #scrollTop.no-js {
@@ -3695,6 +3701,9 @@ footer {
 /* Pagination */
 .pagination {
   margin: 40px 0 0;
+}
+.blog .pagination {
+  margin: 100px 0 0;
 }
 .pagination a {
   font-size: 1.2em;
@@ -5485,6 +5494,9 @@ ul.whr-items li ul.whr-info li.whr-date {
 .sidebar {
   width: 27%;
 }
+.sidebar b {
+  font-weight: 500;
+}
 .postData b {
   font-style: normal;
 }
@@ -5562,76 +5574,124 @@ ul.whr-items li ul.whr-info li.whr-date {
   font-size: .87em;
   line-height: 1.7em;
 }
-.catWisembly .carouselDots ul:first-child a {
+.catWisembly .carouselDots ul:first-child,
+.catWisembly .carouselDots ul:first-child li {
+  height: 100px;
+}
+.catWisembly .carouselDots a,
+.sameCat a {
   display: block;
   padding: 20px 15px;
   box-sizing: border-box;
   text-align: left;
+  height: 100px;
 }
-.catWisembly .carouselDots ul:first-child .roundImg,
-.catWisembly .carouselDots ul:first-child .txt {
+.catWisembly .carouselDots a:hover,
+.catWisembly .carouselDots a:focus,
+.sameCat a:hover,
+.sameCat a:focus {
+  background: #ebeeef;
+}
+.catWisembly .carouselDots a:hover strong,
+.catWisembly .carouselDots a:focus strong,
+.sameCat a:hover strong,
+.sameCat a:focus strong {
+  color: #06698d;
+}
+.catWisembly .carouselDots a .roundImg,
+.catWisembly .carouselDots a .txt,
+.sameCat a .roundImg,
+.sameCat a .txt {
   display: inline-block;
   vertical-align: middle;
 }
-.catWisembly .carouselDots ul:first-child .roundImg {
+.catWisembly .carouselDots a .roundImg,
+.sameCat a .roundImg {
   width: 60px;
   height: 60px;
   overflow: hidden;
   border-radius: 100%;
   margin: 0 12px 0 0;
 }
-.catWisembly .carouselDots ul:first-child .roundImg img {
+.catWisembly .carouselDots a .roundImg img,
+.sameCat a .roundImg img {
   width: 100%;
 }
-.catWisembly .carouselDots ul:first-child .roundImg + .txt {
+.catWisembly .carouselDots a .roundImg + .txt,
+.sameCat a .roundImg + .txt {
   width: 195px;
 }
-.catWisembly .carouselDots ul:first-child .txt {
+.catWisembly .carouselDots a .txt,
+.sameCat a .txt {
   font-size: .86em;
   line-height: 1.4em;
 }
-.catWisembly .carouselDots ul:first-child strong {
+.catWisembly .carouselDots a strong,
+.sameCat a strong {
   display: block;
   color: #3a434c;
   font-weight: 500;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.catWisembly .carouselDots ul:first-child .date {
+.catWisembly .carouselDots a .date,
+.sameCat a .date {
   color: #06698d;
   text-transform: capitalize;
 }
 .catWisembly.jaune strong a {
   color: #f1bc33;
 }
-.catWisembly.jaune .carouselDots ul:first-child .date {
+.catWisembly.jaune .carouselDots .date {
+  color: #f1bc33;
+}
+.catWisembly.jaune .carouselDots a:hover strong,
+.catWisembly.jaune .carouselDots a:focus strong {
   color: #f1bc33;
 }
 .catWisembly.rose strong a {
   color: #f7886c;
 }
-.catWisembly.rose .carouselDots ul:first-child .date {
+.catWisembly.rose .carouselDots .date {
+  color: #f7886c;
+}
+.catWisembly.rose .carouselDots a:hover strong,
+.catWisembly.rose .carouselDots a:focus strong {
   color: #f7886c;
 }
 .catWisembly.vert strong a {
   color: #46b489;
 }
-.catWisembly.vert .carouselDots ul:first-child .date {
+.catWisembly.vert .carouselDots .date {
+  color: #46b489;
+}
+.catWisembly.vert .carouselDots a:hover strong,
+.catWisembly.vert .carouselDots a:focus strong {
   color: #46b489;
 }
 .catWisembly.rouge strong a {
   color: #e25c5b;
 }
-.catWisembly.rouge .carouselDots ul:first-child .date {
+.catWisembly.rouge .carouselDots .date {
+  color: #e25c5b;
+}
+.catWisembly.rouge .carouselDots a:hover strong,
+.catWisembly.rouge .carouselDots a:focus strong {
   color: #e25c5b;
 }
 .blogImg,
 .blogWisembly,
-.catWisembly + .blogLivres {
+.catWisembly + .blogLivres,
+.sameCat,
+#comments {
   margin: 100px 0 0;
   position: relative;
 }
 .blogImg:before,
 .blogWisembly:before,
-.catWisembly + .blogLivres:before {
+.catWisembly + .blogLivres:before,
+.sameCat:before,
+#comments:before {
   content: '';
   display: block;
   width: 66px;
@@ -5656,6 +5716,8 @@ ul.whr-items li ul.whr-info li.whr-date {
   margin: 30px 0;
   display: inline-block;
   border-bottom: 1px solid;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .blogWisembly {
   border: 2px solid #ebeeef;
@@ -5666,6 +5728,182 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 .blogWisembly .btnFull {
   margin: 40px auto 30px;
+}
+.blog .contactFooter .h2 {
+  margin-bottom: 0;
+}
+.blog .contactFooter .h2 + p {
+  margin: 10px auto 25px;
+}
+.blog .contactFooter input {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.blog .contactFooter input[type=email] {
+  background: #116180;
+  border-color: #04455c;
+  width: 220px;
+}
+.blog .contactFooter input[type=email]::-webkit-input-placeholder {
+  color: #04455c;
+}
+.blog .contactFooter input[type=email]:-moz-placeholder {
+  color: #04455c;
+}
+.blog .contactFooter input[type=email]::-moz-placeholder {
+  color: #04455c;
+}
+.blog .contactFooter input[type=email]:-ms-input-placeholder {
+  color: #04455c;
+}
+.blog .contactFooter input[type=email]:focus {
+  border-color: #fff;
+}
+.blog .contactFooter input[type=submit] {
+  width: 45px;
+  background: #46b489;
+  border-color: #46b489;
+  padding: 5px;
+}
+.blog .contactFooter input[type=submit]:hover,
+.blog .contactFooter input[type=submit]:focus {
+  background: #fff;
+  color: #46b489;
+}
+.blog .contactFooter:after {
+  height: 100px;
+}
+.single .wrapper {
+  text-align: left;
+}
+.single h1 {
+  margin-top: 0;
+  color: #3a434c;
+}
+.single h1 + img + .blogMain,
+.single h1 + img + .blogMain + .sidebar {
+  margin-top: 55px;
+}
+.single .blogMain p:first-child {
+  margin-top: 0;
+}
+.single .blogMain h2 {
+  text-transform: none;
+}
+.single .blogMain h2:after {
+  display: none;
+}
+.single .sidebar {
+  text-align: center;
+}
+.mc4wp-alert {
+  margin: 10px auto 0;
+  color: #fff;
+  width: 400px;
+}
+.sharePost {
+  margin: 40px 0 90px;
+}
+.sharePost ul {
+  text-align: center;
+  margin: 15px 0 0;
+}
+.sharePost li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 5px;
+}
+.sharePost li:before {
+  display: none;
+}
+.sharePost a {
+  display: block;
+  border: 0;
+  width: 55px;
+  height: 55px;
+  color: #fff;
+  border-radius: 100%;
+  text-align: center;
+}
+.sharePost a span {
+  display: block;
+  font-weight: 800;
+  font-size: 12px;
+  margin: 3px 0 0;
+}
+.sharePost a.icon-tw2 {
+  background: #01aced;
+}
+.sharePost a.icon-tw2 span {
+  margin: 0;
+}
+.sharePost a.icon-tw2:before {
+  font-size: 25px;
+}
+.sharePost a.icon-fb2 {
+  background: #3a5898;
+}
+.sharePost a.icon-in2 {
+  background: #007bb6;
+}
+.sharePost a.icon-google {
+  background: #dd4b39;
+}
+.sharePost a:before {
+  font-size: 22px;
+  padding: 10px 0 0;
+  display: block;
+}
+.sameCat,
+#comments {
+  text-align: center;
+}
+.subTitle {
+  font-weight: 200;
+  font-size: 1.38em;
+}
+.sameCat a {
+  border: 1px solid #d6d6d6;
+  width: 300px;
+  height: 140px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 32px 20px 45px;
+}
+.sameCat a + a {
+  margin: 0 0 0 40px;
+}
+.sameCat a .roundImg + .txt {
+  width: 185px;
+}
+.sameCat a.jaune .date {
+  color: #f1bc33;
+}
+.sameCat a.jaune:hover strong,
+.sameCat a.jaune:focus strong {
+  color: #f1bc33;
+}
+.sameCat a.rose .date {
+  color: #f7886c;
+}
+.sameCat a.rose:hover strong,
+.sameCat a.rose:focus strong {
+  color: #f7886c;
+}
+.sameCat a.vert .date {
+  color: #46b489;
+}
+.sameCat a.vert:hover strong,
+.sameCat a.vert:focus strong {
+  color: #46b489;
+}
+.sameCat a.rouge .date {
+  color: #e25c5b;
+}
+.sameCat a.rouge:hover strong,
+.sameCat a.rouge:focus strong {
+  color: #e25c5b;
 }
 /* Special IE 8 */
 .lt-ie9 .content.simple {

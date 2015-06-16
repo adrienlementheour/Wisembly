@@ -974,7 +974,12 @@ function openSearch(e){
 		query = input.val(),
 		queryLength = query.length;
 
-	queryLength === 0 || !form.hasClass('on') ? form.toggleClass('on').find(input).focus() : form.submit();
+	queryLength === 0 || !form.hasClass('on') ? form.addClass('on').find(input).focus() : form.submit();
+
+	input.on('blur', function(){
+		if(form.hasClass('on'))
+			form.removeClass('on');
+	});
 }
 
 /**** INIT ****/

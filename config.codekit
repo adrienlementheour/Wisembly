@@ -316,6 +316,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/blog\/apropos.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2619,
+		"inputAbbreviatedPath": "\/img\/blog\/apropos.jpg",
+		"outputAbbreviatedPath": "\/img\/blog\/apropos.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/blog\/flag.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

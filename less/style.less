@@ -1314,6 +1314,9 @@ footer{
   position: relative;
   z-index: 2;
   .transition(.3s ease-in-out);
+  .blog &{
+    text-align: center;
+  }
   .wrapper-contentinfo{
     display: block;
     position: relative;
@@ -2135,6 +2138,7 @@ footer{
   text-align: center;
   border: 0;
   opacity: 0;
+  .transform(translateZ(0px));
   &.on, &.no-js{
     opacity: 1;
   }
@@ -3186,6 +3190,9 @@ footer{
 
 .pagination{
   margin: 40px 0 0;
+  .blog &{
+    margin: 100px 0 0;
+  }
   a{
     font-size: 1.2em;
     border: 0;
@@ -4958,6 +4965,9 @@ ul.whr-items{
 }
 .sidebar{
   width: 27%;
+  b{
+    font-weight: 500;
+  }
 }
 
 .postData{
@@ -5040,12 +5050,20 @@ ul.whr-items{
     line-height: 1.7em;
   }
   .carouselDots{
-    ul:first-child{
-      a{
-        display: block;
-        padding: 20px 15px;
-        .box-sizing(border-box);
-        text-align: left;
+    ul:first-child, ul:first-child li{
+      height: 100px;
+    }
+    a{
+      display: block;
+      padding: 20px 15px;
+      .box-sizing(border-box);
+      text-align: left;
+      height: 100px;
+      &:hover, &:focus{
+        background: @grisBorder;
+        strong{
+          color: @bleu;
+        }
       }
       .roundImg, .txt{
         display: inline-block;
@@ -5071,6 +5089,7 @@ ul.whr-items{
         display: block;
         color: @txt;
         font-weight: 500;
+        .transition(.3s ease-in-out);
       }
       .date{
         color: @bleu;
@@ -5085,9 +5104,14 @@ ul.whr-items{
       }
     }
     .carouselDots{
-      ul:first-child{
-        .date{
-          color: @jaune;
+      .date{
+        color: @jaune;
+      }
+      a{
+        &:hover, &:focus{
+          strong{
+            color: @jaune;
+          }
         }
       }
     }
@@ -5099,9 +5123,14 @@ ul.whr-items{
       }
     }
     .carouselDots{
-      ul:first-child{
-        .date{
-          color: @rose;
+      .date{
+        color: @rose;
+      }
+      a{
+        &:hover, &:focus{
+          strong{
+            color: @rose;
+          }
         }
       }
     }
@@ -5113,9 +5142,14 @@ ul.whr-items{
       }
     }
     .carouselDots{
-      ul:first-child{
-        .date{
-          color: @vert;
+      .date{
+        color: @vert;
+      }
+      a{
+        &:hover, &:focus{
+          strong{
+            color: @vert;
+          }
         }
       }
     }
@@ -5127,16 +5161,21 @@ ul.whr-items{
       }
     }
     .carouselDots{
-      ul:first-child{
-        .date{
-          color: @rouge;
+      .date{
+        color: @rouge;
+      }
+      a{
+        &:hover, &:focus{
+          strong{
+            color: @rouge;
+          }
         }
       }
     }
   }
 }
 
-.blogImg, .blogWisembly, .catWisembly + .blogLivres{
+.blogImg, .blogWisembly, .catWisembly + .blogLivres, .sameCat, #comments{
   margin: 100px 0 0;
   position: relative;
   &:before{
@@ -5173,6 +5212,7 @@ ul.whr-items{
         margin: 30px 0;
         display: inline-block;
         border-bottom: 1px solid;
+        .transition(.3s ease-in-out);
       }
     }
   }
@@ -5188,6 +5228,200 @@ ul.whr-items{
     margin: 40px auto 30px;
   }
 }
+
+.blog{
+  .contactFooter{
+    .h2{
+      margin-bottom: 0;
+      + p{
+        margin: 10px auto 25px;
+      }
+    }
+    input{
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 500;
+      &[type=email]{
+        background: #116180;
+        border-color: #04455c;
+        width: 220px;
+        .placeholder(#04455c);
+        &:focus{
+          border-color: #fff;
+        }
+      }
+      &[type=submit]{
+        width: 45px;
+        background: @vert;
+        border-color: @vert;
+        padding: 5px;
+        &:hover, &:focus{
+          background: #fff;
+          color: @vert;
+        }
+      }
+    }
+    &:after{
+      height: 100px;
+    }
+  }
+}
+
+.single{
+  .wrapper{
+    text-align: left;
+  }
+  h1{
+    margin-top: 0;
+    color: @txt;
+    + img{
+      + .blogMain, + .blogMain + .sidebar{
+        margin-top: 55px;
+      }
+    }
+  }
+  .blogMain{
+    p:first-child{
+      margin-top: 0;
+    }
+    h2{
+      text-transform: none;
+      &:after{
+        display: none;
+      }
+    }
+  }
+  .sidebar{
+    text-align: center;
+  }
+}
+
+.mc4wp-alert{
+  margin: 10px auto 0;
+  color: #fff;
+  width: 400px;
+}
+
+.sharePost{
+  margin: 40px 0 90px;
+  ul{
+    text-align: center;
+    margin: 15px 0 0;
+  }
+  li{
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
+    &:before{
+      display: none;
+    }
+  }
+  a{
+    display: block;
+    border: 0;
+    .size(55px);
+    color: #fff;
+    border-radius: 100%;
+    text-align: center;
+    span{
+      display: block;
+      font-weight: 800;
+      font-size: 12px;
+      margin: 3px 0 0;
+    }
+    &.icon-tw2{
+      background: #01aced;
+      span{
+        margin: 0;
+      }
+      &:before{
+        font-size: 25px;
+      }
+    }
+    &.icon-fb2{
+      background: #3a5898;
+    }
+    &.icon-in2{
+      background: #007bb6;
+    }
+    &.icon-google{
+      background: #dd4b39;
+    }
+    &:before{
+      font-size: 22px;
+      padding: 10px 0 0;
+      display: block;
+    }
+  }
+}
+
+.sameCat, #comments{
+  text-align: center;
+}
+
+.subTitle{
+  font-weight: 200;
+  font-size: 1.38em;
+}
+
+.sameCat{
+  a{
+    &:extend(.catWisembly .carouselDots a all);
+    border: 1px solid #d6d6d6;
+    width: 300px;
+    height: 140px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 32px 20px 45px;
+    + a{
+      margin: 0 0 0 40px;
+    }
+    .roundImg + .txt{
+      width: 185px;
+    }
+    &.jaune{
+      .date{
+        color: @jaune;
+      }
+      &:hover, &:focus{
+        strong{
+          color: @jaune;
+        }
+      }
+    }
+    &.rose{
+      .date{
+        color: @rose;
+      }
+      &:hover, &:focus{
+        strong{
+          color: @rose;
+        }
+      }
+    }
+    &.vert{
+      .date{
+        color: @vert;
+      }
+      &:hover, &:focus{
+        strong{
+          color: @vert;
+        }
+      }
+    }
+    &.rouge{
+      .date{
+        color: @rouge;
+      }
+      &:hover, &:focus{
+        strong{
+          color: @rouge;
+        }
+      }
+    }
+  }
+}
+
 
 /* Special IE 8 */
 
