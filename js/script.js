@@ -260,12 +260,14 @@ function langSelector(){
 // Gérer la position du bouton "je suis intéressé" et du texte "contactez-nous" dans le menu responsive //
 function setPosBtnMenu(){
 	var btn = $('#contact-topbar'), txt = $('.topHeader').find('p');
-	if($(window).width() < 1040){
-		btn.css('top', minHeight);
-		txt.css('top', minHeight + 80);
-	}else{
-		btn.css('top', 0);
-		txt.css('top', 0);
+	if(btn.length && txt.length){
+		if($(window).width() < 1040){
+			btn.css('top', minHeight);
+			txt.css('top', minHeight + 80);
+		}else{
+			btn.css('top', 0);
+			txt.css('top', 0);
+		}
 	}
 }
 
@@ -967,19 +969,23 @@ function sliderAnim1(){
 }
 
 function openSearch(e){
-	e.preventDefault();
+	if($(window).width() > 767){
+		e.preventDefault();
 
-	var form = $('#searchform'),
-		input = $('#searchInput'),
-		query = input.val(),
-		queryLength = query.length;
+		var form = $('#searchform'),
+			input = $('#searchInput'),
+			query = input.val(),
+			queryLength = query.length;
 
-	queryLength === 0 || !form.hasClass('on') ? form.addClass('on').find(input).focus() : form.submit();
+		input.on('blur', function(){
+			if(form.hasClass('on'))
+				form.removeClass('on');
+		});
 
-	input.on('blur', function(){
-		if(form.hasClass('on'))
-			form.removeClass('on');
-	});
+		queryLength === 0 /*|| !form.hasClass('on')*/ ? form.addClass('on').find(input).focus() : form.submit();
+	}else{
+		return true;
+	}
 }
 
 /**** INIT ****/
@@ -1113,6 +1119,12 @@ $(function(){
 
 	// Searchform - blog //
 	$('#search').on('click', openSearch);
+
+	// Go To Comments //
+	$('#goToCom').on('click', function(e){
+		e.preventDefault();
+		htmlBody.animate({scrollTop: $('#comments').offset().top - 100}, 800, 'easeInOutCubic');
+	});
 
 	$(window).load(function(){
 		if(!body.hasClass('landing')){
