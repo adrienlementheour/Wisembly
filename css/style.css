@@ -256,9 +256,12 @@ table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+<<<<<<< HEAD
 .icon-cross:before {
   content: "\e619";
 }
+=======
+>>>>>>> origin/master
 .icon-google:before {
   content: "\e618";
 }
@@ -1012,7 +1015,10 @@ button:focus {
 .blog .content.main {
   padding-top: 190px;
   text-align: left;
+<<<<<<< HEAD
   line-height: 1.4em;
+=======
+>>>>>>> origin/master
 }
 .content.simple {
   padding-right: 120px;
@@ -1179,9 +1185,12 @@ header.menuVisible #triangleMenu {
   -webkit-transition: 0.4s right 0.3s ease-in-out, 0.4s -webkit-transform 0.3s ease-in-out;
   transition: 0.4s right 0.3s ease-in-out,0.4s -webkit-transform 0.3s ease-in-out,0.4s -moz-transform 0.3s ease-in-out,0.4s -o-transform 0.3s ease-in-out,0.4s transform 0.3s ease-in-out;
 }
+<<<<<<< HEAD
 .blog header.menuVisible #triangleMenu {
   right: 12%;
 }
+=======
+>>>>>>> origin/master
 .blog header.menuVisible .rsMenuBlog {
   z-index: 10;
   position: absolute;
@@ -5874,10 +5883,13 @@ ul.whr-items li ul.whr-info li.whr-date {
 .blogWisembly .btnFull {
   margin: 40px auto 30px;
 }
+<<<<<<< HEAD
 .blogWisembly.fixed {
   position: fixed;
   top: 50px;
 }
+=======
+>>>>>>> origin/master
 .blog .attachment-blog-thumb {
   max-width: 100%;
   height: auto;
@@ -6796,9 +6808,12 @@ ul.whr-items li ul.whr-info li.whr-date {
   .rsMenuBlog {
     margin: 6px 0 0;
   }
+<<<<<<< HEAD
   .sharePost {
     margin: 40px 0 0;
   }
+=======
+>>>>>>> origin/master
 }
 @media (max-width: 979px) {
   .navFooter .content > ul,
@@ -7370,10 +7385,15 @@ ul.whr-items li ul.whr-info li.whr-date {
     margin: 10px 0 0 15px;
     float: right;
   }
+<<<<<<< HEAD
   .blog .lang {
     width: 200px;
   }
   .no-mobile .blog .lang {
+=======
+  .no-mobile .blog .lang,
+  .mobile .blog .lang {
+>>>>>>> origin/master
     width: 200px;
   }
   .sameCat a {
