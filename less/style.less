@@ -616,6 +616,8 @@ button{
     position: relative;
     .blog &{
       padding-top: 190px;
+      text-align: left;
+      line-height: 1.4em;
     }
   }
   &.simple{
@@ -785,6 +787,11 @@ header{
         .transition(.5s ease-in-out);
       }
     }
+    .mainMenuBlog{
+      right: 0;
+      opacity: 1;
+      .transition(.4s ease-in-out);
+    }
     #fdMenu{
       opacity: .95;
       left: 0;
@@ -795,6 +802,21 @@ header{
       right: 10%;
       .transform(rotate(16deg));
       .transition(.4s right .3s ease-in-out, .4s transform .3s ease-in-out);
+      .blog &{
+        right: 12%;
+      }
+    }
+    .blog &{
+      .rsMenuBlog{
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        margin: 0;
+        left: 0;
+      }
+      .rsBlog{
+        opacity: 0;
+      }
     }
   }
   .blog &{
@@ -1235,6 +1257,9 @@ header{
   top: 0;
   z-index: 11;
   .transition(none);
+  .blog &{
+    margin: 22px 0 0;
+  }
   .b{
     display: block;
     height: 4px;
@@ -1242,6 +1267,9 @@ header{
     background: @vert;
     position: absolute;
     .transition(.3s ease-in-out);
+    .blog &{
+      background: #fff;
+    }
   }
   .b1{
     top: 0;
@@ -1269,6 +1297,11 @@ header{
     .b3{
       opacity: 0;
       .transition(.2s ease-in-out);
+    }
+    .blog &{
+      .b{
+        background: @bleu;
+      }
     }
   }
 }
@@ -1304,6 +1337,7 @@ footer{
   padding: 130px 0 0;
   overflow: hidden;
   position: relative;
+  width: 100%;
   .js .page-template-nous-trouver &{
     margin: -90px 0 0;
   }
@@ -3192,6 +3226,9 @@ footer{
   margin: 40px 0 0;
   .blog &{
     margin: 100px 0 0;
+    .current{
+      line-height: 1.2em;
+    }
   }
   a{
     font-size: 1.2em;
@@ -4847,11 +4884,35 @@ ul.whr-items{
 
 /* Blog */ 
 
+#popupBlog{
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  background: #1C5468;
+  font-size: .9em;
+  opacity: .8;
+  .transition(.3s ease-in-out);
+  button{
+    color: #fff;
+    padding: 0 0 0 25px;
+    font-size: .85em;
+    .fontIcon();
+  }
+  &.scrolled{
+    height: 0;
+    overflow: hidden;
+  }
+}
+
 .rsMenuBlog{
   float: right;
   margin: 29px 0 0;
   a{
     color: #fff;
+    &:hover, &:focus{
+      opacity: .7;
+    }
   }
   .rsBlog{
     padding: 0 15px 0 0;
@@ -4900,7 +4961,6 @@ ul.whr-items{
 .mainMenuBlog{
   background: #fff;
   border-bottom: 1px solid #dbdbdb;
-  overflow: hidden;
   clear: both;
   ul{
     margin: 13px 0;
@@ -4911,8 +4971,53 @@ ul.whr-items{
   a{
     color: @bleu;
     font-weight: 500;
+    position: relative;
+    &.grey{
+      color: @grisBlog;
+    }
     &:hover, &:focus{
       color: @grisBlog;
+      &.jaune{
+        color: @jaune;
+      }
+      &.rose{
+        color: @rose;
+      }
+      &.vert{
+        color: @vert;
+      }
+      &.rouge{
+        color: @rouge;
+      }
+      &.bleu{
+        color: @bleu;
+      }
+    }
+    &.actif{
+      &:after{
+        content: '';
+        display: block;
+        background: url(../layoutImg/blog/actif.png) no-repeat;
+        width: 8px;
+        height: 6px;
+        position: absolute;
+        bottom: -19px;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      &.jaune{
+        color: @jaune;
+      }
+      &.rose{
+        color: @rose;
+      }
+      &.vert{
+        color: @vert;
+      }
+      &.rouge{
+        color: @rouge;
+      }
     }
   }
 }
@@ -4934,6 +5039,8 @@ ul.whr-items{
     border: 0;
     height: 35px;
     background: none;
+    border-radius: 0;
+    -webkit-appearance: none;
     .js &{
       position: absolute;
       right: -220px;
@@ -4956,15 +5063,15 @@ ul.whr-items{
 }
 
 .blogMain, .sidebar{
-  display: inline-block;
-  vertical-align: top;
+  text-align: center;
 }
 .blogMain{
-  width: 58%;
-  margin: 0 15% 0 0;
+  width: 650px;
+  float: left;
 }
 .sidebar{
-  width: 27%;
+  width: 301px;
+  float: right;
   b{
     font-weight: 500;
   }
@@ -5206,20 +5313,28 @@ ul.whr-items{
   p{
     &:extend(.catWisembly p);
   }
-  .carouselDots{
-    ul:first-child{
-      span{
-        margin: 30px 0;
-        display: inline-block;
-        border-bottom: 1px solid;
-        .transition(.3s ease-in-out);
-      }
+  .title{
+    display: block;
+    color: @txt;
+    text-transform: uppercase;
+    width: 90%;
+    margin: 15px auto 5px;
+    .edmond(1.1em);
+    span{
+      .edmondBold(1em);
     }
+  }
+  .lienVert{
+    margin: 0 0 30px;
+    display: inline-block;
+    border-bottom: 1px solid;
+    .transition(.3s ease-in-out);
   }
 }
 
 .blogWisembly{
   border: 2px solid @grisBorder;
+  width: 300px;
   p{
     color: @grisSolid;
     margin: 20px 0 30px;
@@ -5227,9 +5342,17 @@ ul.whr-items{
   .btnFull{
     margin: 40px auto 30px;
   }
+  &.fixed{
+    position: fixed;
+    top: 50px;
+  }
 }
 
 .blog{
+  .attachment-blog-thumb{
+    max-width: 100%;
+    height: auto;
+  }
   .contactFooter{
     .h2{
       margin-bottom: 0;
@@ -5237,65 +5360,147 @@ ul.whr-items{
         margin: 10px auto 25px;
       }
     }
-    input{
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 500;
-      &[type=email]{
-        background: #116180;
-        border-color: #04455c;
-        width: 220px;
-        .placeholder(#04455c);
-        &:focus{
-          border-color: #fff;
-        }
-      }
-      &[type=submit]{
-        width: 45px;
-        background: @vert;
-        border-color: @vert;
-        padding: 5px;
-        &:hover, &:focus{
-          background: #fff;
-          color: @vert;
-        }
-      }
-    }
     &:after{
       height: 100px;
     }
   }
-}
-
-.single{
-  .wrapper{
+  .itemsFooter{
     text-align: left;
-  }
-  h1{
-    margin-top: 0;
-    color: @txt;
-    + img{
-      + .blogMain, + .blogMain + .sidebar{
-        margin-top: 55px;
+    a{
+      border: 0;
+      &:hover, &:focus{
+        .savoir{
+          color: @bleuLien;
+          .transition(.3s ease-in-out);
+        }
+      }
+    }
+    .txt{
+      display: inline-block;
+      width: 380px;
+      vertical-align: top;
+      padding: 0 0 0 30px;
+    }
+    b{
+      display: block;
+      font-weight: 500;
+      font-size: 1.24em;
+      color: @vert;
+      margin: 0 0 20px;
+    }
+    .main{
+      color: #6d747b;
+    }
+    .savoir{
+      display: block;
+      .transition(.3s ease-in-out);
+      &:before{
+        content: '—';
+        display: block;
       }
     }
   }
-  .blogMain{
-    p:first-child{
+
+  &.single{
+    .wrapper{
+      text-align: left;
+    }
+    h1{
       margin-top: 0;
+      color: @txt;
+      + img{
+        max-width: 100%;
+        height: auto;
+        + .blogMain, + .blogMain + .sidebar{
+          margin-top: 55px;
+        }
+      }
     }
-    h2{
+    .blogMain{
+      text-align: left;
+      img{
+        max-width: 100%;
+        height: auto;
+      }
+      p{
+        margin: 2em 0;
+        &:first-child{
+          margin-top: 0;
+        }
+      }
+      h2{
+        text-transform: none;
+        &:after{
+          display: none;
+        }
+      }
+    }
+    .sidebar{
+      text-align: center;
+    }
+  }
+
+  &.search, &.category{
+    h1{
+      font-size: 1.19em;
       text-transform: none;
-      &:after{
-        display: none;
+      margin: 10px 0 0;
+      + p{
+        margin-top: 5px;
       }
     }
   }
-  .sidebar{
-    text-align: center;
+  &.category{
+    h1{
+      color: @bleu;
+      &.jaune{
+        color: @jaune;
+      }
+      &.rose{
+        color: @rose;
+      }
+      &.vert{
+        color: @vert;
+      }
+      &.rouge{
+        color: @rouge;
+      }
+    }
+  }
+
+  &.search{
+    h1{
+      color: @txt;
+    }
   }
 }
 
+.mc4wp-form{
+  input{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    &[type=email]{
+      background: #116180;
+      border-color: #04455c;
+      width: 220px;
+      .placeholder(#04455c);
+      &:focus{
+        border-color: #fff;
+      }
+    }
+    &[type=submit]{
+      width: 45px;
+      background: @vert;
+      border-color: @vert;
+      padding: 5px;
+      &:hover, &:focus{
+        background: #fff;
+        color: @vert;
+      }
+    }
+  }
+}
 .mc4wp-alert{
   margin: 10px auto 0;
   color: #fff;
@@ -5325,9 +5530,8 @@ ul.whr-items{
     text-align: center;
     span{
       display: block;
-      font-weight: 800;
-      font-size: 12px;
       margin: 3px 0 0;
+      .gothamBold(12px);
     }
     &.icon-tw2{
       background: #01aced;
@@ -5346,17 +5550,28 @@ ul.whr-items{
     }
     &.icon-google{
       background: #dd4b39;
+      &:before{
+        font-size: 27px;
+        padding: 14px 0 0;
+      }
     }
     &:before{
       font-size: 22px;
       padding: 10px 0 0;
       display: block;
+      text-align: center;
+    }
+    &:hover, &:focus{
+      background: @txt !important;
     }
   }
 }
 
 .sameCat, #comments{
   text-align: center;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .subTitle{
@@ -5373,52 +5588,118 @@ ul.whr-items{
     display: inline-block;
     vertical-align: top;
     padding: 32px 20px 45px;
+    position: relative;
+    overflow: hidden;
     + a{
       margin: 0 0 0 40px;
     }
     .roundImg + .txt{
       width: 185px;
     }
+    .date{
+      .transition(.3s ease-in-out);
+    }
+    &:before, &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -24px;
+      width: 310px;
+      height: 40px;
+      z-index: -1;
+    }
+    &:before{
+      left: -5px;
+      background: @bleu;
+      .transform(rotate(6deg));
+      .transition(.2s all .2s ease-in-out);
+    }
+    &:after{
+      right: -5px;
+      background: fade(@bleu, 55);
+      .transform(rotate(-6deg));
+      .transition(.2s all .3s ease-in-out);
+    }
+    &:hover, &:focus{
+      background: none;
+      &:before, &:after{
+        .transform(rotate(0deg));
+        height: 165px;
+      }
+      &:before{
+        .transition(.2s ease-in-out);
+      }
+      &:after{
+        .transition(.1s all .1s ease-in-out);
+      }
+      strong{
+        color: #fff;
+      }
+      .date{
+        color: #fff !important;
+        .transition(.3s ease-in-out);
+      }
+    }
     &.jaune{
       .date{
         color: @jaune;
       }
-      &:hover, &:focus{
-        strong{
-          color: @jaune;
-        }
+      &:before{
+        background: @jaune;
+      }
+      &:after{
+        background: fade(@jaune, 55);
       }
     }
     &.rose{
       .date{
         color: @rose;
       }
-      &:hover, &:focus{
-        strong{
-          color: @rose;
-        }
+      &:before{
+        background: @rose;
+      }
+      &:after{
+        background: fade(@rose, 55);
       }
     }
     &.vert{
       .date{
         color: @vert;
       }
-      &:hover, &:focus{
-        strong{
-          color: @vert;
-        }
+      &:before{
+        background: @vert;
+      }
+      &:after{
+        background: fade(@vert, 55);
       }
     }
     &.rouge{
       .date{
         color: @rouge;
       }
-      &:hover, &:focus{
-        strong{
-          color: @rouge;
-        }
+      &:before{
+        background: @rouge;
+      }
+      &:after{
+        background: fade(@rouge, 55);
       }
     }
+  }
+}
+
+#invox{
+  border: 0;
+  position: relative;
+  margin: 0 0 0 20px;
+  &:before{
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: @grisMentions;
+    position: absolute;
+    top: 3px;
+    left: -12px;
   }
 }
 

@@ -338,6 +338,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/blog\/invox.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 456,
+		"inputAbbreviatedPath": "\/img\/blog\/invox.png",
+		"outputAbbreviatedPath": "\/img\/blog\/invox.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/blog\/solid.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1568,6 +1579,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/layoutImg\/blog\/actif.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 192,
+		"inputAbbreviatedPath": "\/layoutImg\/blog\/actif.png",
+		"outputAbbreviatedPath": "\/layoutImg\/blog\/actif.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/layoutImg\/blog\/logo-blog.png": {
 		"fileType": 32768,
