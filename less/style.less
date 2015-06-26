@@ -619,6 +619,9 @@ button{
       text-align: left;
       line-height: 1.4em;
     }
+    .blog.hasPop &{
+      padding-top: 240px;
+    }
   }
   &.simple{
     padding-right: 120px;
@@ -1297,14 +1300,15 @@ header{
     position: fixed;
     top: 2px;
     right: 28px;
+    .b1, .b2{
+      .transition(.3s ease-in-out);
+    }
     .b1{
       top: 8px;
       .transform(rotate(45deg));
-      .transition(.3s ease-in-out);
     }
     .b2{
       .transform(rotate(-45deg));
-      .transition(.3s ease-in-out);
     }
     .b3{
       opacity: 0;
@@ -4978,12 +4982,13 @@ ul.whr-items{
     margin: 13px 0;
   }
   li{
-    padding: 0 50px 0 0;
+    padding: 0 40px 0 0;
   }
   a{
     color: @bleu;
     font-weight: 500;
     position: relative;
+    font-size: .85em;
     &.grey{
       color: @grisBlog;
     }
@@ -5115,7 +5120,9 @@ ul.whr-items{
   }
   + h2{
     margin-top: 15px;
-    font-size: 1.85em;
+    font-size: 1.75em;
+    line-height: 1.2em;
+    text-transform: none;
     font-weight: 500;
     &:after{
       display: none;

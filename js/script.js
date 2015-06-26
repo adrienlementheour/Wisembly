@@ -195,6 +195,8 @@ function scrollPage(){
 					blogWisembly.removeClass('fixed');
 				}
 			}
+			//console.log(myScroll);
+			
 		}
 
 		if($(window).width() > 1040){
@@ -1212,7 +1214,10 @@ $(function(){
 		}
 
 		if(body.hasClass('blog')){
-			blogWisemblyTop = $('.blogWisembly').offset().top - 150;
+			if($('.blogWisembly').length){
+				blogWisemblyTop = $(window).width() < 1161 ? $('.blogWisembly').offset().top - 20 : $('.blogWisembly').offset().top - 150;
+			}
+			
 			// Scroll init //
 			scrollPage();
 		}
@@ -1231,6 +1236,10 @@ $(function(){
 
     	if(!body.hasClass('blog')){
     		heightBgHead();
+    	}else{
+    		if($('.blogWisembly').length){
+    			blogWisemblyTop = $(window).width() < 1161 ? $('.blogWisembly').offset().top - 20 : $('.blogWisembly').offset().top - 150;
+    		}
     	}
     	
 	    if(header.hasClass('menuVisible') && $(window).width() > 1040){

@@ -1014,6 +1014,9 @@ button:focus {
   text-align: left;
   line-height: 1.4em;
 }
+.blog.hasPop .content.main {
+  padding-top: 240px;
+}
 .content.simple {
   padding-right: 120px;
   padding-left: 120px;
@@ -1181,6 +1184,16 @@ header.menuVisible #triangleMenu {
 }
 .blog header.menuVisible #triangleMenu {
   right: 12%;
+}
+.blog header.menuVisible .rsMenuBlog {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  left: 0;
+}
+.blog header.menuVisible .rsBlog {
+  opacity: 0;
 }
 .blog header.menuVisible .rsMenuBlog {
   z-index: 10;
@@ -1685,20 +1698,21 @@ header.menuVisible #triangleMenu {
   top: 2px;
   right: 28px;
 }
+#burger.actif .b1,
+#burger.actif .b2 {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
 #burger.actif .b1 {
   top: 8px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 #burger.actif .b2 {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 #burger.actif .b3 {
   opacity: 0;
@@ -5497,12 +5511,13 @@ ul.whr-items li ul.whr-info li.whr-date {
   margin: 13px 0;
 }
 .mainMenuBlog li {
-  padding: 0 50px 0 0;
+  padding: 0 40px 0 0;
 }
 .mainMenuBlog a {
   color: #06698d;
   font-weight: 500;
   position: relative;
+  font-size: .85em;
 }
 .mainMenuBlog a.grey {
   color: #a5a5a5;
@@ -5647,7 +5662,9 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 .postData + h2 {
   margin-top: 15px;
-  font-size: 1.85em;
+  font-size: 1.75em;
+  line-height: 1.2em;
+  text-transform: none;
   font-weight: 500;
 }
 .postData + h2:after {
@@ -6374,6 +6391,10 @@ ul.whr-items li ul.whr-info li.whr-date {
     padding-right: 20px;
     padding-left: 20px;
   }
+  .blog .content.main,
+  .blog.hasPop .content.main {
+    padding-top: 50px;
+  }
   .menu > li > a {
     padding: 0 15px;
   }
@@ -6435,17 +6456,122 @@ ul.whr-items li ul.whr-info li.whr-date {
     margin: 0 1%;
     padding: 30px 26px;
   }
+  .blog #logo {
+    margin: 15px 0;
+  }
+  .no-mobile .blog header {
+    position: relative;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+  .blog header.menuVisible .lang {
+    opacity: 1;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  .blog .lang {
+    opacity: 0;
+    position: absolute;
+    left: 30px;
+    top: 15px;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    width: 200px;
+    margin: 15px 0 0 0;
+  }
+  .no-mobile .blog .lang {
+    width: 200px;
+    margin: 15px 0 0 0;
+    padding: 0;
+  }
+  .no-mobile .blog .lang:after {
+    display: none;
+  }
+  .no-mobile .blog .lang li.actif {
+    position: relative;
+  }
+  .no-mobile .blog .lang li.actif + li {
+    margin: 0;
+    opacity: .7;
+  }
+  .no-mobile .blog .lang:hover {
+    width: auto;
+  }
   .blog .itemsFooter .txt {
     padding: 20px 0 0;
     display: block;
+  }
+  .blog #burger {
+    display: block;
+  }
+  .rsMenuBlog {
+    margin: 20px 0 0;
+  }
+  .rsMenuBlog .rsBlog {
+    margin: 0 29px 0 0;
+  }
+  .rsMenuBlog .rsBlog li {
+    padding: 0 10px 0 0;
+  }
+  .mainMenuBlog {
+    width: 185px;
+    opacity: 0;
+    position: absolute;
+    top: 35px;
+    z-index: 10;
+    margin: 0;
+    padding: 30px;
+    right: -245px;
+    background: none;
+    text-align: right;
+    border: 0;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+  .mainMenuBlog .content {
+    padding: 0;
+  }
+  .mainMenuBlog ul {
+    margin: 20px 0 10px;
+  }
+  .mainMenuBlog li {
+    padding: 0 0 20px;
+    display: block;
+    text-align: right;
+    font-size: .95em;
+  }
+  .mainMenuBlog a.actif:after {
+    display: none;
+  }
+  .searchform {
+    float: none;
+    height: auto;
+  }
+  .js .searchform {
+    width: auto;
+  }
+  .js .searchform input {
+    position: relative;
+    right: 0;
+    border-bottom: 1px solid #a5a5a5;
+    width: 150px;
+    height: 25px;
+  }
+  .js .searchform button {
+    margin: 10px 0 0 15px;
+    float: right;
+  }
+  .blogWisembly.fixed {
+    top: -80px;
   }
 }
 @media (max-width: 1040px) {
   .content.main {
     padding-top: 0;
-  }
-  .blog .content.main {
-    padding-top: 50px;
+    /*.blog &, .blog.hasPop &{
+        padding-top: 50px;
+      }*/
   }
   .content.noMarginResponsive {
     padding-left: 0;
@@ -6595,12 +6721,12 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .lang {
     margin: 15px 30px 0 0;
-  }
-  .blog .lang {
-    margin: 15px 0 0 0;
-  }
-  .no-mobile .blog .lang {
-    margin: 15px 0 0 0;
+    /*.blog &{
+      margin: 15px 0 0 0;
+      .no-mobile &{
+        margin: 15px 0 0 0;
+      }
+    }*/
   }
   .no-mobile .lang {
     padding: 0;
@@ -6649,9 +6775,9 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   #burger {
     display: block;
-  }
-  .blog #burger {
-    display: none;
+    /*.blog &{
+      display: none;
+    }*/
   }
   #sliderTeam {
     display: none;
@@ -6793,9 +6919,9 @@ ul.whr-items li ul.whr-info li.whr-date {
     text-align: left;
     left: 20px;
   }
-  .rsMenuBlog {
+  /*.rsMenuBlog{
     margin: 6px 0 0;
-  }
+  }*/
   .sharePost {
     margin: 40px 0 0;
   }
@@ -7032,15 +7158,6 @@ ul.whr-items li ul.whr-info li.whr-date {
     top: 15px;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
-  }
-  #burger.actif .b1,
-  #burger.actif .b2 {
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-  }
-  #burger.actif .b3 {
-    -webkit-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out;
   }
   .itemsFooter li {
     padding: 0 0 0 30px;
@@ -7310,19 +7427,23 @@ ul.whr-items li ul.whr-info li.whr-date {
   ul#wisembly-autre li .img img {
     max-height: 80px;
   }
-  .blog #burger {
-    display: block;
+  /*.blog{
+    #burger{
+      display: block;
+    }
   }
-  .rsMenuBlog {
+
+  .rsMenuBlog{
     margin: 20px 0 0;
+    .rsBlog{
+      margin: 0 29px 0 0;
+      li{
+        padding: 0 10px 0 0;
+      }
+    }
   }
-  .rsMenuBlog .rsBlog {
-    margin: 0 29px 0 0;
-  }
-  .rsMenuBlog .rsBlog li {
-    padding: 0 10px 0 0;
-  }
-  .mainMenuBlog {
+
+  .mainMenuBlog{
     width: 185px;
     opacity: 0;
     position: absolute;
@@ -7334,48 +7455,55 @@ ul.whr-items li ul.whr-info li.whr-date {
     background: none;
     text-align: right;
     border: 0;
-    -webkit-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out;
+    .transition(.2s ease-in-out);
+    .content{
+      padding: 0;
+    }
+    ul{
+      margin: 20px 0 10px;
+    }
+    li{
+      padding: 0 0 20px;
+      display: block;
+      text-align: right;
+      font-size: .95em;
+    }
+    a{
+      &.actif{
+        &:after{
+          display: none;
+        }
+      }
+    }
   }
-  .mainMenuBlog .content {
-    padding: 0;
-  }
-  .mainMenuBlog ul {
-    margin: 20px 0 10px;
-  }
-  .mainMenuBlog li {
-    padding: 0 0 20px;
-    display: block;
-    text-align: right;
-    font-size: .95em;
-  }
-  .mainMenuBlog a.actif:after {
-    display: none;
-  }
-  .searchform {
+
+  .searchform{
     float: none;
     height: auto;
+    .js &{
+      width: auto;
+      input{
+        position: relative;
+        right: 0;
+        border-bottom: 1px solid #a5a5a5;
+        width: 150px;
+        height: 25px;
+      }
+      button{
+        margin: 10px 0 0 15px;
+        float: right;
+      }
+    }
   }
-  .js .searchform {
-    width: auto;
-  }
-  .js .searchform input {
-    position: relative;
-    right: 0;
-    border-bottom: 1px solid #a5a5a5;
-    width: 150px;
-    height: 25px;
-  }
-  .js .searchform button {
-    margin: 10px 0 0 15px;
-    float: right;
-  }
-  .blog .lang {
-    width: 200px;
-  }
-  .no-mobile .blog .lang {
-    width: 200px;
-  }
+
+  .lang{
+    .blog &{
+      width: 200px;
+      .no-mobile &{
+        width: 200px;
+      }
+    }
+  }*/
   .sameCat a {
     display: block;
     margin: 0 auto;
@@ -7869,6 +7997,12 @@ ul.whr-items li ul.whr-info li.whr-date {
   .btnLight.smallTxt,
   .btnBlanc.smallTxt {
     font-size: .83em;
+  }
+  #popupBlog {
+    font-size: .8em;
+  }
+  #popupBlog button {
+    padding: 0 0 0 15px;
   }
 }
 /* @end */
