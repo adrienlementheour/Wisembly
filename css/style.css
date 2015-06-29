@@ -5754,6 +5754,7 @@ ul.whr-items li ul.whr-info li.whr-date {
 .catWisembly .carouselDots a .roundImg img,
 .sameCat a .roundImg img {
   width: 100%;
+  height: auto;
 }
 .catWisembly .carouselDots a .roundImg + .txt,
 .sameCat a .roundImg + .txt {
@@ -5898,6 +5899,9 @@ ul.whr-items li ul.whr-info li.whr-date {
 .blog .attachment-blog-thumb {
   max-width: 100%;
   height: auto;
+}
+.blog .lienThumb {
+  border: 0;
 }
 .blog .contactFooter .h2 {
   margin-bottom: 0;
