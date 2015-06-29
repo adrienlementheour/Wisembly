@@ -5959,6 +5959,7 @@ ul.whr-items li ul.whr-info li.whr-date {
 .blog.single h1 + img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 .blog.single h1 + img + .blogMain,
 .blog.single h1 + img + .blogMain + .sidebar {

@@ -1215,11 +1215,18 @@ $(function(){
 
 		if(body.hasClass('blog')){
 			if($('.blogWisembly').length){
-				blogWisemblyTop = $(window).width() < 1161 ? $('.blogWisembly').offset().top - 20 : $('.blogWisembly').offset().top - 150;
+				var blogWisembly = $('.blogWisembly');
+				blogWisemblyTop = $(window).width() < 1161 ? blogWisembly.offset().top - 20 : blogWisembly.offset().top - 150;
 			}
 			
 			// Scroll init //
 			scrollPage();
+
+			// Espace insécables avant ponctuation //
+			var wrapperBlog = $('#container').find('.wrapper');
+			espaceFine(wrapperBlog.find('h2').find('a'));
+			espaceFine(wrapperBlog.find('p'));
+			espaceFine(wrapperBlog.find('h1'));
 		}
 		
 	});
