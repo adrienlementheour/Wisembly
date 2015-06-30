@@ -155,7 +155,7 @@ function appearSubMenu(){
 
 // Appartition footer social //
 function apparitionFooter(){
-	if(!isMobile.any){
+	if(!isMobile.any && $('.navFooter').length){
 		$('.navFooter').isOnScreen() ? TweenMax.set($(".rsFooter"), {visibility:"visible"}) : TweenMax.set($(".rsFooter"), {visibility:"hidden"});
 	}
 }
@@ -166,7 +166,7 @@ function scrollPage(){
 	myScroll = $(document).scrollTop();
 
 	if(!body.hasClass('landing')){
-		if(!body.hasClass('blog')){
+		if(!body.hasClass('blog') && !body.hasClass('success')){
 			fixedHeader();
 		}
 		apparitionFooter();
@@ -1016,7 +1016,7 @@ $(function(){
 	}
 
 	if(!body.hasClass('landing')){
-		if(!body.hasClass('blog')){
+		if(!body.hasClass('blog') && !body.hasClass('success')){
 			// Make links not active in grey //
 			setActiveMenu();
 
@@ -1038,15 +1038,16 @@ $(function(){
 		heightBgHead();
 
 		// Scroll init //
-		scrollPage();	
-	}else{
-		$('#closePopBlog').on('click', function(){
-			$('#popupBlog').animate({'height': 0}, function(){
-				$(this).css('display', 'none');
-				$.cookie('blog', true, { expires: 7, path: '/' });
-			});
+		scrollPage();
+			
+	}
+
+	$('#closePopBlog').on('click', function(){
+		$('#popupBlog').animate({'height': 0}, function(){
+			$(this).css('display', 'none');
+			$.cookie('blog', true, { expires: 7, path: '/' });
 		});
-	}	
+	});	
 
 	// RDV / Clients filtres //
 	if( $('.filtres').find('.actif').length ){
@@ -1154,7 +1155,7 @@ $(function(){
 
 	$(window).load(function(){
 		if(!body.hasClass('landing')){
-			if(!body.hasClass('blog')){
+			if(!body.hasClass('blog') && !body.hasClass('success')){
 				// Sous menu //
 				centerSubMenu();
 				// Anim triangles header + footer //
@@ -1233,7 +1234,7 @@ $(function(){
 
     $(window).resize(function(){
 
-    	if(!body.hasClass('landing') && !body.hasClass('blog')){
+    	if(!body.hasClass('landing') && !body.hasClass('blog') && !body.hasClass('success')){
     		minHeight = $('.menu').innerHeight() - 10;
     		fixedHeader();
     		setSubMenu();
