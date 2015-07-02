@@ -1,5 +1,4 @@
-@import "lesshat.less";
-@import "mixins-fonts.less";
+@import "style.less";
 
 @blanc: #fff;
 @noir: #000;
@@ -11,68 +10,13 @@
 @rose: #f7886c;
 @jaune: #f1bc33;
 
-@bleuLien: #289bc4;
-@bleuH2: #17698d;
 @grisH3: #4e4e4e;
-@grisBorder: #ebeeef;
 @bleuTop: #1e8cb4;
 @bleuFooter: #aed7e8;
 @bleuFooterContact: #0d5c7b;
-@grisMentions: #8c959b;
 @grisSolid: #718289;
 @grisSlides: #f4f5f5;
 @grisBlog: #a5a5a5;
-
-// Triangle Mixin
-.triangle(@_, @width, @height, @color){
-  width: 0px;
-  height: 0px;
-  border-color: transparent;
-  border-style: solid; }
-  .triangle(top, @width, @height, @color){
-    border-width: 0 @width/2 @height @width/2;
-    border-bottom-color: @color;
-    border-left-color: fade(@color, 0);
-    border-right-color: fade(@color, 0);
-  }
-  .triangle(bottom, @width, @height, @color){
-    border-width: @height @width/2 0 @width/2;
-    border-top-color: @color;
-    border-left-color: fade(@color, 0);
-    border-right-color: fade(@color, 0);
-  }
-  .triangle(right, @width, @height, @color){
-    border-width: @height/2 0 @height/2 @width;
-    border-left-color: @color;
-    border-top-color: fade(@color, 0);
-    border-bottom-color: fade(@color, 0);
-  }
-  .triangle(left, @width, @height, @color){
-    border-width: @height/2 @width @height/2 0;
-    border-right-color: @color;
-    border-top-color: fade(@color, 0);
-    border-bottom-color: fade(@color, 0);
-  }
-  .triangle(top-right, @width, @height, @color){
-    border-width: 0 @width @height 0;
-    border-right-color: @color;
-    border-bottom-color: fade(@color, 0);
-  }
-  .triangle(top-left, @width, @height, @color){
-    border-width: @height @width 0 0;
-    border-top-color: @color;
-    border-right-color: fade(@color, 0);
-  }
-  .triangle(bottom-right, @width, @height, @color){
-    border-width: 0 0 @height @width;
-    border-bottom-color: @color;
-    border-left-color: fade(@color, 0);
-  }
-  .triangle(bottom-left, @width, @height, @color){
-    border-width: @height 0 0 @width;
-    border-left-color: @color;
-    border-top-color: fade(@color, 0);
-}
 
 html,
 button,
@@ -4957,4 +4901,5 @@ ul.whr-items{
   }
 }
 
-@import "mediaqueries-wisembly.less";
+@import "_mediaqueries.less";
+@import "_mediaqueries-wisembly.less";

@@ -58,20 +58,26 @@
 						<ul class='ressources'>
 							<li>
 								<h2>Vidéos</h2>
-								<h3>Préparer un Wiz</h3>
-								<p>Apprenez à organiser votre Wiz efficacement en 3 minutes.</p>
-								<a href='#' class='btnFull'>Visionner</a>
+								<article>
+									<h3>Préparer un Wiz</h3>
+									<p>Apprenez à organiser votre Wiz efficacement en 3 minutes.</p>
+									<a href='#' class='btnFull'>Visionner</a>
+								</article>
 								<p>Et aussi :</p>
 								<h4>Animer un Wiz</h4>
 							</li><li>
 								<h2>Agenda</h2>
-								<h3>Devenir autonome sur Wisembly</h3>
-								<a href='#' class='btnFull'>Je participe !</a>
+								<article>
+									<h3>Devenir autonome sur Wisembly</h3>
+									<a href='#' class='btnFull'>Je participe !</a>
+								</article>
 							</li><li>
 								<h2>Documents</h2>
-								<h3>Guide utilisateur</h3>
-								<p>Pour devenir un administrateur autonome sur la solution</p>
-								<a href='#' class='btnFull'>Télécharger le PDF</a>
+								<article>
+									<h3>Guide utilisateur</h3>
+									<p>Pour devenir un administrateur autonome sur la solution</p>
+									<a href='#' class='btnFull'>Télécharger le PDF</a>
+								</article>
 							</li>
 						</ul>
 						<button class='icon-down scrollNext'><span></span></button>

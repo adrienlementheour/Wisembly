@@ -34,8 +34,85 @@
     font-style: normal;
 }
 
+.gotham(@size){
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif; 
+  font-weight: 400; 
+  font-style: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 
-[class^="icon-"], [class*=" icon-"]{
+.gothamLight(@size){
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif; 
+  font-weight: 200; 
+  font-style: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.gothamItalic(@size){
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif; 
+  font-weight: 400; 
+  font-style: italic;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.gothamMedium(@size){
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif; 
+  font-weight: 500; 
+  font-style: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.gothamMediumIt(@size){
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif; 
+  font-weight: 600; 
+  font-style: italic;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.gothamBold(@size){
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif; 
+  font-weight: 700; 
+  font-style: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.edmond(@size){
+  font-family: 'edmond', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.edmondBold(@size){
+  font-family: 'edmondBold', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+[class^="icon-"], [class*=" icon-"], .fontIcon{
   font-family: 'wisembly';
   speak: none;
   font-weight: normal;
@@ -46,6 +123,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-mail2:before {
+  content: "\e61a";
+}
 .icon-cross:before {
   content: "\e619";
 }

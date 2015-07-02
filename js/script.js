@@ -174,7 +174,9 @@ function scrollPage(){
 
 	if(!htmlTag.hasClass("lt-ie9") && !isMobile.any && myScroll < head.height() && $(window).width() > 767 && !body.hasClass('blog')){
 		TweenMax.set(bgHead, {y:-(myScroll/1.5)+"px"});
-		TweenMax.set(head.find('.content'), {y:+(myScroll/2.5)+"px"});
+		if(!body.hasClass('success')){
+			TweenMax.set(head.find('.content'), {y:+(myScroll/2.5)+"px"});
+		}
 	}
 
 	if(scrollTop.length){
