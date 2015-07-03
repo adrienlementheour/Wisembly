@@ -155,8 +155,13 @@ function appearSubMenu(){
 
 // Appartition footer social //
 function apparitionFooter(){
-	if(!isMobile.any && $('.navFooter').length){
-		$('.navFooter').isOnScreen() ? TweenMax.set($(".rsFooter"), {visibility:"visible"}) : TweenMax.set($(".rsFooter"), {visibility:"hidden"});
+	if(!isMobile.any){
+		if($('.navFooter').length){
+			$('.navFooter').isOnScreen() ? TweenMax.set($(".rsFooter"), {visibility:"visible"}) : TweenMax.set($(".rsFooter"), {visibility:"hidden"});
+		}
+		if(body.hasClass('success')){
+			!$('.head').isOnScreen() ? TweenMax.set($(".rsFooter"), {visibility:"visible"}) : TweenMax.set($(".rsFooter"), {visibility:"hidden"});
+		}
 	}
 }
 

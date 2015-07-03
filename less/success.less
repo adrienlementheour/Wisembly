@@ -28,8 +28,14 @@ h2, .h2{
   font-size: .95em;
 }
 
-h3, .h3, h4{
+h3, .h3, h4, h4 a{
   color: @bleuH3;
+}
+h4 a{
+  border: 0;
+  &:hover, &:focus{
+    color: @grisH2;
+  }
 }
 
 h3, .h3{
@@ -42,6 +48,30 @@ h4{
 
 #container{
   margin: 0 0 0 310px;
+}
+
+.wrapper{
+  .no-mobile &{
+    margin: 0 0 220px;
+  }
+}
+
+.cat{
+  font-weight: 500;
+  margin: 0 0 5px;
+  display: inline-block;
+  &.jaune{
+    color: @jaune;
+    border-color: @jaune;
+  }
+  &.rouge{
+    color: @rouge;
+    border-color: @rouge;
+  }
+  &:hover, &:focus{
+    color: @bleuLien !important;
+    border-color: @bleuLien !important;
+  }
 }
 
 
@@ -178,7 +208,18 @@ h4{
 
 .connectMenu{
   display: inline-block;
-  padding: 7px 0 0;
+  padding: 7px 60px 0 0;
+  position: relative;
+  &:after{
+    content: '';
+    width: 1px;
+    height: 17px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 30px;
+  }
   li{
     display: inline-block;
     padding: 0 15px;
@@ -186,12 +227,7 @@ h4{
       padding: 0 60px 0 0;
       position: relative;
       &:after{
-        content: '';
-        width: 1px;
-        height: 17px;
-        background: #fff;
-        display: block;
-        position: absolute;
+        &:extend(.connectMenu:after);
         top: 2px;
         right: 20px;
       }
@@ -222,6 +258,31 @@ h4{
   }
   a{
     color: #fff;
+  }
+}
+
+
+.rsFooter{
+  background: #f1f3f4;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 150%;
+    background: #f1f3f4;
+    .transform(rotate(-3deg));
+    z-index: -1;
+    height: 125px;
+    top: -76px;
+    left: -20%;
+  }
+  .no-mobile &{
+    padding: 0 0 0 310px;
+    .box-sizing(border-box);
+  }
+  ul{
+    background: #f1f3f4;
+    padding: 0 10px;
   }
 }
 
@@ -268,15 +329,20 @@ h4{
     padding: 0;
     display: inline-block;
     vertical-align: top;
-    width: 33%;
+    width: 30%;
+    margin: 0 0 0 5%;
     &:before{
       display: none;
+    }
+    &:first-child{
+      margin: 0;
     }
   }
   article{
     border: 1px solid @grisBorder;
     padding: 40px 35px;
     position: relative;
+    background: url(../layoutImg/success/corner.png) no-repeat 101% 0;
     &:before, &:after{
       content: '';
       position: absolute;
@@ -291,14 +357,56 @@ h4{
       border-color: transparent #fff transparent transparent;
     }
     &:after{
-      right: 9px;
-      border-width: 25px 0 0 15px;
+      right: 8px;
+      border-width: 25px 0 0 17px;
       border-color: transparent transparent transparent @grisBorder;
     }
   }
-  .btnFull{
+  .btnLight{
+    width: 185px;
+  }
+  div{
+    p, h4{
+      margin: 0;
+    }
+    &:after{
+      content: '';
+      display: block;
+      width: 66px;
+      height: 2px;
+      background: @grisBorder;
+      margin: 25px auto;
+    }
+  }
+  .date{
+    display: block;
+    margin: 0 0 25px;
+  }
+  .lienVert{
+    position: relative;
+    &:before{
+      content: '›';
+      position: absolute;
+      left: -10px;
+    }
+  }
+}
+
+.videosTitle, .agendaTitle, .docTitle{
+  &:before{
+    .fontIcon();
+    display: block;
     margin: 0 auto;
   }
+}
+.agendaTitle:before {
+  content: "\e61c";
+}
+.docTitle:before {
+  content: "\e61d";
+}
+.videosTitle:before {
+  content: "\e61e";
 }
 
 
@@ -320,8 +428,58 @@ h4{
       display: block;
     }
   }
+
+  #searchform{
+    width: 200px;
+  }
+
+  .connectMenu{
+    padding: 7px 50px 0 0;
+    &:after{
+      right: 24px;
+    }
+    li{
+      padding: 0 5px;
+      &:first-child{
+        padding: 0 50px 0 0;
+        &:after{
+          right: 20px;
+        }
+      }
+    }
+  }
+
+  .ressources{
+    li{
+      width: 100%;
+      margin: 70px 0 0;
+      max-width: 500px;
+    }
+  }
 }
 
+@media (max-height: 700px){
+  #logo{
+    margin: 0 auto 50px;
+  }
+
+  .contactHeader{
+    &:before{
+      top: -15px;
+    }
+    &:after{
+      top: -22px;
+    }
+  }
+}
+
+@media (max-height: 590px){
+  .contactHeader{
+    &:before, &:after{
+      display: none;
+    }
+  }
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   #logo{

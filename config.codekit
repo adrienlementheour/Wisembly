@@ -2667,6 +2667,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/layoutImg\/success\/corner.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 396,
+		"inputAbbreviatedPath": "\/layoutImg\/success\/corner.png",
+		"outputAbbreviatedPath": "\/layoutImg\/success\/corner.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/layoutImg\/success\/headHome.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

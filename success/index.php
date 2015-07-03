@@ -29,8 +29,8 @@
 					<div class='secondMenu'>
 						<ul class='connectMenu'>
 							<li><a href='#'>Rejoindre votre event</a></li>
-							<li><a href='#'>Créer un compte</a></li>
-							<li><a href='#'>Connexion</a></li>
+							<li><a href='#' rel='nofollow'>Créer un compte</a></li>
+							<li><a href='#' rel='nofollow'>Connexion</a></li>
 						</ul>
 
 						<ul class='lang'>
@@ -57,26 +57,48 @@
 					<section class='content scrollHere'>
 						<ul class='ressources'>
 							<li>
-								<h2>Vidéos</h2>
+								<h2 class='videosTitle'>Vidéos</h2>
 								<article>
 									<h3>Préparer un Wiz</h3>
 									<p>Apprenez à organiser votre Wiz efficacement en 3 minutes.</p>
-									<a href='#' class='btnFull'>Visionner</a>
+									<a href='#' class='btnLight'>&#9654; Visionner</a>
 								</article>
 								<p>Et aussi :</p>
-								<h4>Animer un Wiz</h4>
+								<div>
+									<h4><a href='#'>Animer un Wiz</a></h4>
+									<p>Découvrez comment animer un Wiz simplement en 4 minutes.</p>
+								</div>
+								<div>
+									<h4><a href='#'>Animer un Wiz</a></h4>
+									<p>Découvrez comment animer un Wiz simplement en 4 minutes.</p>
+								</div>
+								<a class='lienVert' href='#'>Voir toutes les vidéos</a>
 							</li><li>
-								<h2>Agenda</h2>
+								<h2 class='agendaTitle'>Agenda</h2>
 								<article>
 									<h3>Devenir autonome sur Wisembly</h3>
-									<a href='#' class='btnFull'>Je participe !</a>
+									<a href='#' class='cat jaune'>Formation</a>
+									<span class='date'>Jeudi 16 juin à 19h30</span>
+									<a href='#' class='btnLight'>Je participe !</a>
 								</article>
+								<p>Et aussi :</p>
+								<div>
+									<h4><a href='#'>Animer un Wiz</a></h4>
+									<a href='#' class='cat jaune'>Formation</a>
+									<span class='date'>Jeudi 16 juin à 19h30</span>
+								</div>
+								<div>
+									<h4><a href='#'>Animer un Wiz</a></h4>
+									<a href='#' class='cat rouge'>Webinar</a>
+									<span class='date'>Jeudi 16 juin à 19h30</span>
+								</div>
+								<a class='lienVert' href='#'>Voir le calendrier</a>
 							</li><li>
-								<h2>Documents</h2>
+								<h2 class='docTitle'>Documents</h2>
 								<article>
 									<h3>Guide utilisateur</h3>
 									<p>Pour devenir un administrateur autonome sur la solution</p>
-									<a href='#' class='btnFull'>Télécharger le PDF</a>
+									<a href='#' class='btnLight'>Télécharger le PDF</a>
 								</article>
 							</li>
 						</ul>
