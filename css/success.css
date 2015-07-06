@@ -1347,6 +1347,10 @@ select,
 textarea {
   color: #4f4f4f;
 }
+img {
+  height: auto;
+  max-width: 100%;
+}
 h2,
 .h2,
 h3,
@@ -1704,6 +1708,9 @@ h4 {
   right: 8px;
   border-width: 25px 0 0 17px;
   border-color: transparent transparent transparent #d8d8d8;
+}
+.ressources article p {
+  margin: .5em auto 2.5em;
 }
 .ressources .btnLight {
   width: 185px;
