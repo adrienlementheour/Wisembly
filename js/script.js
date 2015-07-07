@@ -1,9 +1,9 @@
 /**** VARIABLES ****/
 var myScroll,
-	header = $('header'),
+	body = $("body"),
+	header = body.hasClass('success') ? $('#header') : $('header'),
 	htmlTag = $('html'),
 	htmlBody = $('html, body'),
-	body = $("body"),
 	burger = $('#burger'),
 	bgHead = $('#bgHead'),
 	btnContact = $('#demandeContact'),
@@ -323,6 +323,19 @@ function responsiveMenu(){
 	header.toggleClass('menuVisible');
 }
 
+function responsiveMenuSuccess(){
+	if(!burger.hasClass('actif')){
+		burger.css({opacity: 0}).delay(10).animate({opacity: 1}, 100);
+	}
+
+	burger.toggleClass('actif');
+	header.toggleClass('menuVisible');
+	$('#fdMenu').fadeToggle(300);
+
+	if($(window).width() < 911)
+		$('.connectMenu').toggleClass('on');
+}
+
 // Mise en place du slider du footer //
 function setSliderTeam(slider){
 	var slides = slider.find('.slideTeam'), slidesLength = slides.length, i = 0, 
@@ -505,6 +518,9 @@ function heightBgHead(){
 			TweenMax.set(bgHead, {position:"fixed"});
 		}
 		TweenMax.set(bgHead, {height: Math.ceil($(".head").height())-1+"px"});
+		if($(window).width() < 1041 && body.hasClass('success')){
+			TweenMax.set(bgHead, {height: Math.ceil($(".head").height())+90+"px"});
+		}
 	}else{
 		TweenMax.set(bgHead, {position:"absolute"});
 	}
@@ -1093,12 +1109,16 @@ $(function(){
 	}
 
 	// Responsive menu //
-	burger.on('click', responsiveMenu);
-	$('#triangleMenu').on('click', function(){
-		burger.removeClass('actif');
-		header.removeClass('menuVisible');
-		$('#container').css({height: 'auto', overflow: 'visible'});
-	}); 
+	if(!body.hasClass('success')){
+		burger.on('click', responsiveMenu);
+		$('#triangleMenu').on('click', function(){
+			burger.removeClass('actif');
+			header.removeClass('menuVisible');
+			$('#container').css({height: 'auto', overflow: 'visible'});
+		}); 
+	}else{
+		burger.on('click', responsiveMenuSuccess);
+	}
 
 	// Changement de slider au clic btn footer (entreprise, agence, etc...) //
 	$('.buttonsTeam').find('button').on('click', function(){ setSliderTeamProfil($(this)); openForm(); });
@@ -1257,7 +1277,7 @@ $(function(){
     		}
     	}
     	
-	    if(header.hasClass('menuVisible') && $(window).width() > 1040){
+	    if(header.hasClass('menuVisible') && $(window).width() > 1040 && !body.hasClass('success')){
 	    	responsiveMenu();
 	    }
 

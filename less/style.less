@@ -593,6 +593,49 @@ button{
 
 /* HEADER */
 
+#burger{
+  display: none;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  .b{
+    display: block;
+    height: 4px;
+    width: 28px;
+    position: absolute;
+    .transition(.3s ease-in-out);
+    .blog &{
+      background: #fff;
+    }
+  }
+  .b1{
+    top: 0;
+  }
+  .b2{
+    top: 8px;
+  }
+  .b3{
+    top: 16px;
+    opacity: 1;
+  }
+  &.actif{
+    .b1, .b2{
+      .transition(.3s ease-in-out);
+    }
+    .b1{
+      top: 8px;
+      .transform(rotate(45deg));
+    }
+    .b2{
+      .transform(rotate(-45deg));
+    }
+    .b3{
+      opacity: 0;
+      .transition(.2s ease-in-out);
+    }
+  }
+}
+
 .lang{
   position: relative;
   padding: 0;
@@ -919,6 +962,18 @@ footer{
   right: -50px;
 }
 
+
+#fdMenu{
+  position: fixed;
+  background: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .7;
+  display: none;
+  z-index: 2;
+}
 
 /* Special IE 8 */
 

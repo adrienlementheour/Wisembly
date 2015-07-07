@@ -961,6 +961,54 @@ button:focus {
   top: 129px;
 }
 /* HEADER */
+#burger {
+  display: none;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+}
+#burger .b {
+  display: block;
+  height: 4px;
+  width: 28px;
+  position: absolute;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.blog #burger .b {
+  background: #fff;
+}
+#burger .b1 {
+  top: 0;
+}
+#burger .b2 {
+  top: 8px;
+}
+#burger .b3 {
+  top: 16px;
+  opacity: 1;
+}
+#burger.actif .b1,
+#burger.actif .b2 {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+#burger.actif .b1 {
+  top: 8px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#burger.actif .b2 {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#burger.actif .b3 {
+  opacity: 0;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
 .lang {
   position: relative;
   padding: 0;
@@ -1319,6 +1367,17 @@ footer {
 }
 #next {
   right: -50px;
+}
+#fdMenu {
+  position: fixed;
+  background: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .7;
+  display: none;
+  z-index: 2;
 }
 /* Special IE 8 */
 .lt-ie9 .content.simple {
@@ -1986,66 +2045,21 @@ header.menuVisible #triangleMenu {
 #burger {
   float: right;
   margin: 28px 0 27px;
-  display: none;
   position: relative;
-  width: 28px;
-  height: 20px;
-  padding: 0;
   top: 0;
-  z-index: 11;
   -webkit-transition: none;
   transition: none;
 }
+#burger .b {
+  background: #46b489;
+}
 .blog #burger {
   margin: 22px 0 0;
-}
-#burger .b {
-  display: block;
-  height: 4px;
-  width: 28px;
-  background: #46b489;
-  position: absolute;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-.blog #burger .b {
-  background: #fff;
-}
-#burger .b1 {
-  top: 0;
-}
-#burger .b2 {
-  top: 8px;
-}
-#burger .b3 {
-  top: 16px;
-  opacity: 1;
 }
 #burger.actif {
   position: fixed;
   top: 2px;
   right: 28px;
-}
-#burger.actif .b1,
-#burger.actif .b2 {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-#burger.actif .b1 {
-  top: 8px;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-#burger.actif .b2 {
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-#burger.actif .b3 {
-  opacity: 0;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
 }
 .blog #burger.actif .b {
   background: #06698d;
@@ -6475,14 +6489,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
 }
 @media (max-width: 767px) {
-  .lang {
-    opacity: 0;
-    position: absolute;
-    left: 30px;
-    top: 15px;
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-  }
   #scrollTop {
     bottom: 10px;
     right: 10px;
@@ -7344,6 +7350,14 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
 }
 @media (max-width: 767px) {
+  .lang {
+    opacity: 0;
+    position: absolute;
+    left: 30px;
+    top: 15px;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
   #slider-anim-visez-juste .zone-anim {
     width: 100%;
   }

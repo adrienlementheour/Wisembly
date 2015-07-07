@@ -625,56 +625,19 @@ header{
 #burger{
   float: right;
   margin: 28px 0 27px;
-  display: none;
   position: relative;
-  width: 28px;
-  height: 20px;
-  padding: 0;
   top: 0;
-  z-index: 11;
   .transition(none);
+  .b{
+    background: @vert;
+  }
   .blog &{
     margin: 22px 0 0;
-  }
-  .b{
-    display: block;
-    height: 4px;
-    width: 28px;
-    background: @vert;
-    position: absolute;
-    .transition(.3s ease-in-out);
-    .blog &{
-      background: #fff;
-    }
-  }
-  .b1{
-    top: 0;
-  }
-  .b2{
-    top: 8px;
-  }
-  .b3{
-    top: 16px;
-    opacity: 1;
   }
   &.actif{
     position: fixed;
     top: 2px;
     right: 28px;
-    .b1, .b2{
-      .transition(.3s ease-in-out);
-    }
-    .b1{
-      top: 8px;
-      .transform(rotate(45deg));
-    }
-    .b2{
-      .transform(rotate(-45deg));
-    }
-    .b3{
-      opacity: 0;
-      .transition(.2s ease-in-out);
-    }
     .blog &{
       .b{
         background: @bleu;
