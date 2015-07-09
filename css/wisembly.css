@@ -917,8 +917,14 @@ button:focus {
   text-align: left;
   line-height: 1.4em;
 }
+.no-js .blog .content.main {
+  padding-top: 60px;
+}
 .blog.hasPop .content.main {
   padding-top: 240px;
+}
+.no-js .blog.hasPop .content.main {
+  padding-top: 85px;
 }
 .content.simple {
   padding-right: 120px;
@@ -1868,6 +1874,9 @@ header.menuVisible #triangleMenu {
   width: 262px;
   height: 34px;
   background: url(../layoutImg/blog/logo-blog.png) no-repeat;
+}
+.no-js .blog #logo {
+  float: left;
 }
 .menu {
   margin: 0 0 0 70px;
@@ -5580,6 +5589,9 @@ ul.whr-items li ul.whr-info li.whr-date {
   bottom: 0;
   margin: auto;
 }
+.no-js .rsMenuBlog .rsBlog {
+  float: left;
+}
 .no-mobile .rsMenuBlog .lang:hover {
   padding: 0;
 }
@@ -5590,6 +5602,9 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 .mainMenuBlog ul {
   margin: 13px 0;
+}
+.no-js .mainMenuBlog ul {
+  float: left;
 }
 .mainMenuBlog li {
   padding: 0 40px 0 0;
@@ -5650,6 +5665,9 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 .mainMenuBlog a.actif.rouge {
   color: #e25c5b;
+}
+.no-js .mainMenuBlog {
+  height: 45px;
 }
 .searchform {
   float: right;
@@ -5796,6 +5814,9 @@ ul.whr-items li ul.whr-info li.whr-date {
 .catWisembly .carouselDots ul:first-child,
 .catWisembly .carouselDots ul:first-child li {
   height: 100px;
+}
+.no-js .catWisembly .carouselDots ul:first-child {
+  height: auto;
 }
 .catWisembly .carouselDots a,
 .sameCat a {
@@ -6781,6 +6802,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .blog #logo {
     margin: 15px 0;
+    float: none;
   }
   .no-mobile .blog header {
     position: relative;

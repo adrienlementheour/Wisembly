@@ -912,8 +912,14 @@ button:focus {
   text-align: left;
   line-height: 1.4em;
 }
+.no-js .blog .content.main {
+  padding-top: 60px;
+}
 .blog.hasPop .content.main {
   padding-top: 240px;
+}
+.no-js .blog.hasPop .content.main {
+  padding-top: 85px;
 }
 .content.simple {
   padding-right: 120px;

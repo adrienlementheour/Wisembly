@@ -428,6 +428,9 @@ header{
     width: 262px;
     height: 34px;
     background: url(../layoutImg/blog/logo-blog.png) no-repeat;
+    .no-js &{
+      float: left;
+    }
   }
 }
 
@@ -4046,6 +4049,9 @@ ul.whr-items{
       bottom: 0;
       margin: auto;
     }
+    .no-js &{
+      float: left;
+    }
   }
   .lang{
     .no-mobile &{
@@ -4062,6 +4068,9 @@ ul.whr-items{
   clear: both;
   ul{
     margin: 13px 0;
+    .no-js &{
+      float: left;
+    }
   }
   li{
     padding: 0 40px 0 0;
@@ -4118,6 +4127,9 @@ ul.whr-items{
         color: @rouge;
       }
     }
+  }
+  .no-js &{
+    height: 45px;
   }
 }
 
@@ -4260,6 +4272,11 @@ ul.whr-items{
   .carouselDots{
     ul:first-child, ul:first-child li{
       height: 100px;
+    }
+    .no-js &{
+      ul:first-child{
+        height: auto;
+      }
     }
     a{
       display: block;
