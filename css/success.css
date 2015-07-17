@@ -1417,6 +1417,11 @@ img {
   height: auto;
   max-width: 100%;
 }
+h1 {
+  font-size: 1.6em;
+  color: #0d5c7b;
+  font-weight: 500;
+}
 h2,
 .h2,
 h3,
@@ -1453,11 +1458,26 @@ h3,
 h4 {
   font-size: 1.05em;
 }
+.subtitle {
+  margin: 40px auto 0;
+  color: #959595;
+  font-size: 1.3em;
+}
+.content.main {
+  padding-top: 35px;
+}
 #container {
   margin: 0 0 0 310px;
+  position: relative;
+  z-index: 2;
 }
 .no-mobile .wrapper {
-  margin: 0 0 220px;
+  margin: 0 auto 220px;
+}
+#bg-blanc {
+  -webkit-transform: skew(0deg, -4deg);
+  -ms-transform: skew(0deg, -4deg);
+  transform: skew(0deg, -4deg);
 }
 .cat {
   font-weight: 500;
@@ -1727,21 +1747,30 @@ h4 {
   position: absolute;
   width: 150%;
   background: #f1f3f4;
-  -webkit-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
+  -webkit-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);
   z-index: -1;
   height: 125px;
-  top: -76px;
+  top: -50px;
   left: -20%;
 }
 .no-mobile .rsFooter {
   padding: 0 0 0 310px;
   box-sizing: border-box;
+  visibility: visible;
+}
+.home .no-mobile .rsFooter {
+  visibility: hidden;
 }
 .rsFooter ul {
   background: #f1f3f4;
   padding: 0 10px;
+}
+.rsFooter ul:before {
+  -webkit-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);
 }
 /* ENTETE */
 .head {
@@ -1772,21 +1801,56 @@ h4 {
   transform: rotate(9deg);
 }
 /* HOME */
-.ressources {
+.home .lienVert,
+.page-template-faq .lienVert {
+  position: relative;
+}
+.home .lienVert:before,
+.page-template-faq .lienVert:before {
+  content: '›';
+  position: absolute;
+  left: -10px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.home .lienVert:hover:before,
+.page-template-faq .lienVert:hover:before,
+.home .lienVert:focus:before,
+.page-template-faq .lienVert:focus:before {
+  left: -7px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.ressources,
+.list-post {
   text-align: center;
 }
-.ressources li {
+.ressources li,
+.list-post li {
   padding: 0;
   display: inline-block;
   vertical-align: top;
   width: 30%;
   margin: 0 0 0 5%;
 }
-.ressources li:before {
+.ressources li:before,
+.list-post li:before {
   display: none;
 }
-.ressources li:first-child {
+.ressources li:first-child,
+.list-post li:first-child {
   margin: 0;
+}
+.ressources .btnLight,
+.list-post .btnLight {
+  width: 185px;
+}
+.page-template-ressources .list-post {
+  padding: 60px 0 0;
+  text-align: left;
+}
+.page-template-ressources .list-post li {
+  text-align: center;
 }
 .ressources article {
   border: 1px solid #d8d8d8;
@@ -1816,9 +1880,6 @@ h4 {
 .ressources article p {
   margin: .5em auto 2.5em;
 }
-.ressources .btnLight {
-  width: 185px;
-}
 .ressources div p,
 .ressources div h4 {
   margin: 0;
@@ -1835,15 +1896,7 @@ h4 {
   display: block;
   margin: 0 0 25px;
 }
-.ressources .lienVert {
-  position: relative;
-}
-.ressources .lienVert:before {
-  content: '›';
-  position: absolute;
-  left: -10px;
-}
-.videosTitle:before,
+.videoTitle:before,
 .agendaTitle:before,
 .docTitle:before {
   font-family: 'wisembly';
@@ -1858,14 +1911,99 @@ h4 {
   margin: 0 auto 10px;
   font-size: 32px;
 }
+.page-template-ressources .videoTitle:before,
+.page-template-ressources .agendaTitle:before,
+.page-template-ressources .docTitle:before {
+  font-size: 35px;
+}
 .agendaTitle:before {
   content: "\e61c";
 }
 .docTitle:before {
   content: "\e61d";
 }
-.videosTitle:before {
+.videoTitle:before {
   content: "\e61e";
+}
+.questions {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 60px 0 0 50px;
+}
+.questions:first-child {
+  padding: 60px 50px 0 0;
+}
+.questions h2 {
+  margin: 0;
+}
+.questions h2:before {
+  content: "\e61b";
+  font-family: 'wisembly';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto 10px;
+  display: block;
+  font-size: 24px;
+  color: #959595;
+}
+.questions h2:after {
+  content: '';
+  width: 75px;
+  height: 2px;
+  display: block;
+  background: #d8d8d8;
+  margin: 30px auto;
+}
+.questions ul {
+  text-align: center;
+  padding: 0 0 15px;
+}
+.questions li {
+  padding: 0 0 15px;
+}
+.questions li:before {
+  display: none;
+}
+.questions li a {
+  border: 0;
+  font-weight: 500;
+  color: #06698d;
+  font-size: 1.05em;
+}
+.questions li a:hover,
+.questions li a:focus {
+  color: #289bc4;
+}
+.page-template-faq .questions {
+  width: 100%;
+  display: block;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 60px 0 0;
+}
+.page-template-faq .questions h2:before {
+  display: none;
+}
+.page-template-faq h1:before {
+  content: "\e61b";
+  font-family: 'wisembly';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto 10px;
+  display: block;
+  font-size: 35px;
 }
 .formateurs {
   margin: 70px auto 0;
@@ -1873,6 +2011,121 @@ h4 {
 .formateurs h2 {
   text-transform: none;
   margin-top: 35px;
+}
+.filtres {
+  margin: 35px 0 0;
+  text-align: center;
+}
+.filtres li {
+  padding: 10px 20px 0;
+  display: inline-block;
+}
+.filtres li:before {
+  display: none;
+}
+.filtres a,
+.filtre {
+  display: inline-block;
+  padding: 4px 20px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+.filtres a:hover,
+.filtres a:focus,
+.filtres a.actif {
+  color: #fff !important;
+}
+.filtres a.rouge {
+  color: #e25c5b;
+  border-color: #e25c5b;
+}
+.filtres a.rouge:hover,
+.filtres a.rouge:focus,
+.filtres a.rouge.actif {
+  background: #e25c5b;
+}
+.filtres a.jaune {
+  color: #f1bc33;
+  border-color: #f1bc33;
+}
+.filtres a.jaune:hover,
+.filtres a.jaune:focus,
+.filtres a.jaune.actif {
+  background: #f1bc33;
+}
+.filtres a.bleu {
+  color: #06698d;
+  border-color: #06698d;
+}
+.filtres a.bleu:hover,
+.filtres a.bleu:focus,
+.filtres a.bleu.actif {
+  background: #06698d;
+}
+.filtres a.rose {
+  color: #f7886c;
+  border-color: #f7886c;
+}
+.filtres a.rose:hover,
+.filtres a.rose:focus,
+.filtres a.rose.actif {
+  background: #f7886c;
+}
+.filtres a.vert {
+  color: #46b489;
+  border-color: #46b489;
+}
+.filtres a.vert:hover,
+.filtres a.vert:focus,
+.filtres a.vert.actif {
+  background: #46b489;
+}
+.filtre {
+  color: #fff;
+}
+.filtre:hover,
+.filtre:focus {
+  background: #fff !important;
+}
+.filtre.rouge {
+  background: #e25c5b;
+  border-color: #e25c5b;
+}
+.filtre.rouge:hover,
+.filtre.rouge:focus {
+  color: #e25c5b;
+}
+.filtre.jaune {
+  background: #f1bc33;
+  border-color: #f1bc33;
+}
+.filtre.jaune:hover,
+.filtre.jaune:focus {
+  color: #f1bc33;
+}
+.filtre.bleu {
+  background: #06698d;
+  border-color: #06698d;
+}
+.filtre.bleu:hover,
+.filtre.bleu:focus {
+  color: #06698d;
+}
+.filtre.rose {
+  background: #f7886c;
+  border-color: #f7886c;
+}
+.filtre.rose:hover,
+.filtre.rose:focus {
+  color: #f7886c;
+}
+.filtre.vert {
+  background: #46b489;
+  border-color: #46b489;
+}
+.filtre.vert:hover,
+.filtre.vert:focus {
+  color: #46b489;
 }
 /* ==|== media queries ======================================================
    ========================================================================== */
@@ -2303,6 +2556,25 @@ h4 {
   .head #bgHead {
     z-index: -1;
   }
+  .list-post li {
+    width: 100%;
+    margin: 70px auto 0;
+    max-width: 500px;
+    display: block;
+  }
+  .list-post li:first-child {
+    margin: 70px auto 0;
+  }
+}
+@media (max-width: 767px) {
+  .questions {
+    width: 100%;
+    display: block;
+    padding: 60px 0 0;
+  }
+  .questions:first-child {
+    padding: 60px 0 0;
+  }
 }
 @media (max-width: 400px) {
   #connectHeader {
@@ -2323,6 +2595,7 @@ h4 {
     left: 20px;
   }
 }
+/* VERTICAL */
 @media (max-height: 800px) and (min-width: 1040px) {
   .no-mobile .headHome .content.main {
     padding-top: 30vh;
@@ -2373,6 +2646,7 @@ h4 {
     display: none;
   }
 }
+/* RETINA */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   #logo {
     background: url('../layoutImg/success/logo@2.png') no-repeat;

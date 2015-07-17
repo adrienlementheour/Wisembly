@@ -1,0 +1,286 @@
+@media (max-width: 1250px){
+  #header{
+    padding: 30px;
+  }
+
+  #container {
+    margin: 0 0 0 260px;
+  }
+
+  .contactHeader{
+    text-align: center;
+    width: 200px;
+    span{
+      display: block;
+    }
+  }
+
+  #searchform{
+    width: 200px;
+  }
+
+  .connectMenu{
+    padding: 7px 50px 0 0;
+    &:after{
+      right: 24px;
+    }
+    li{
+      padding: 0 5px;
+      &:first-child{
+        padding: 0 50px 0 0;
+        &:after{
+          right: 20px;
+        }
+      }
+    }
+  }
+
+  .ressources{
+    li{
+      width: 100%;
+      margin: 70px auto 0;
+      max-width: 500px;
+      display: block;
+      &:first-child{
+        margin: 0 auto;
+      }
+    }
+    article{
+      background-position: 100% -1px;
+      &:before{
+        right: -1px;
+        border-width: 0 27px 38px 0;
+      }
+      &:after{
+        right: 8px;
+        border-width: 26px 0 0 19px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1110px){
+  #header{
+    left: -260px;
+  }
+
+  #burger{
+    display: block;
+  }
+
+  #container{
+    margin: 0;
+  }
+
+  #searchform{
+    margin: 0 0 0 50px;
+  }
+
+  .rsFooter{
+    .no-mobile &{
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 1040px){
+  .lang, .no-mobile .lang{
+    margin: 0;
+    li{
+      margin: 0 0 0 5px !important;
+      &.actif{
+        margin: 0;
+      }
+    }
+  }
+
+  .head{
+    margin-top: 0;
+    .no-mobile &{
+      #bgHead{
+        top: 0;
+      }
+      .content.main{
+        padding-top: 5vh;
+      }
+    }
+  }
+}
+
+@media(max-width: 910px){
+  #connectHeader{
+    z-index: auto;
+  }
+
+  .lang, .no-mobile .lang{
+    margin: 8px 0 0;
+  }
+
+  .connectMenu{
+    position: fixed;
+    left: -230px;
+    z-index: 3;
+    width: 150px;
+    padding: 0;
+    bottom: 60px;
+    .transition(left .3s ease-in-out);
+    li, li:first-child{
+      padding: 0;
+      display: block;
+      &:after{
+        display: none
+      }
+    }
+    a{
+      font-size: .85em;
+    }
+    &:after{
+      display: none;
+    }
+    &.on{
+      left: 30px;
+    }
+  }
+
+  .contactHeader{
+    text-align: left;
+    span, &:before, &:after{
+      display: none;
+    }
+    a{
+      font-size: .85em;
+    }
+  }
+
+  .head{
+    z-index: -1;
+    #bgHead{
+      z-index: -1;
+    }
+  }
+
+  .list-post{
+    li{
+      width: 100%;
+      margin: 70px auto 0;
+      max-width: 500px;
+      display: block;
+      &:first-child{
+        margin: 70px auto 0;
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .questions{
+    width: 100%;
+    display: block;
+    padding: 60px 0 0;
+    &:first-child{
+      padding: 60px 0 0;
+    }
+  }
+}
+
+@media(max-width: 400px){
+  #connectHeader{
+    padding: 27px 20px;
+  }
+  #searchform {
+    width: 165px;
+  }
+}
+
+@media(max-width: 335px){
+  #header {
+    padding: 30px 20px;
+  }
+
+  #burger.actif{
+    left: 250px;
+  }
+
+  .connectMenu.on{
+    left: 20px;
+  }
+}
+
+
+/* VERTICAL */
+
+@media (max-height: 800px) and (min-width: 1040px){
+  .headHome{
+    .no-mobile &{
+      .content.main{
+        padding-top: 30vh;
+      }
+    }
+  }
+}
+
+@media (max-height: 700px) and (min-width: 1040px){
+  .headHome{
+    .no-mobile &{
+      .content.main{
+        padding-top: 10vh;
+      }
+    }
+  }
+}
+
+@media (max-height: 700px) {
+  #logo{
+    margin: 0 auto 50px;
+  }
+
+  .contactHeader{
+    &:before{
+      top: -15px;
+    }
+    &:after{
+      top: -22px;
+    }
+  }
+}
+
+@media (max-height: 640px){
+  #logo{
+    margin: 0 auto 30px;
+  }
+
+  .menuSuccess{
+    a, span{
+      line-height: .9em;
+      font-size: .9em;
+    }
+    span{ 
+      margin: 0;
+    }
+    .hasSubMenu{
+      margin: 0 0 20px;
+    }
+  }
+
+  .connectMenu.on{
+    bottom: 55px;
+  }
+}
+
+@media (max-height: 590px){
+  .contactHeader{
+    text-align: left;
+    &:before, &:after, span{
+      display: none;
+    }
+  }
+}
+
+/* RETINA */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+  #logo{
+    background: url('../layoutImg/success/logo@2.png') no-repeat;
+    background-size: 100%; 
+  }
+}

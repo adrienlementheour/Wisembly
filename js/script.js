@@ -159,7 +159,7 @@ function apparitionFooter(){
 		if($('.navFooter').length){
 			$('.navFooter').isOnScreen() ? TweenMax.set($(".rsFooter"), {visibility:"visible"}) : TweenMax.set($(".rsFooter"), {visibility:"hidden"});
 		}
-		if(body.hasClass('success')){
+		if(body.hasClass('success') && body.hasClass('home')){
 			!$('.head').isOnScreen() ? TweenMax.set($(".rsFooter"), {visibility:"visible"}) : TweenMax.set($(".rsFooter"), {visibility:"hidden"});
 		}
 	}
