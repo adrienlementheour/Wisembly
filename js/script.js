@@ -1030,6 +1030,99 @@ function openSearch(e){
 	}
 }
 
+
+function wisemblyTrip(){
+	var container = $('#trip'), steps = $('.trip-step'), nbSteps = steps.length, i = 0, left = 0,
+		nav = $('#navTrip'), pagination = $('#pagiTrip');
+
+	for(i; i<nbSteps; i++){
+		steps.eq(i).css('left', left+'%').data('left', left);
+		left += 100;
+	}
+
+	function goToStep(nextStep, dir, round){
+		function makeItTurn(){
+			var j = 0, actualPos, newLeft;
+
+			for(j; j<nbSteps; j++){
+				actualPos = steps.eq(j).data('left');
+				newLeft = dir == 'next' ? actualPos-100 : actualPos+100;
+
+				steps.eq(j).css('left', newLeft+'%').data('left', newLeft);
+				if(steps.eq(j).hasClass('actif')){
+					steps.eq(j).removeClass('actif');
+				}
+			}
+		}
+		
+		if(!round || round == 1){
+			makeItTurn();
+		}else{
+			var x = 0;
+			for(x; x<round; x++){
+				makeItTurn();
+			}
+		}
+		
+
+		$(nextStep).addClass('actif');
+
+		var posActif = $('.trip-step.actif').index(), 
+			idActif = steps.eq(posActif).attr('id'),
+			idPrev = steps.eq(posActif-1).attr('id'),
+			idNext = steps.eq(posActif+1).attr('id');
+
+		if(posActif > 0){
+			if(nav.find('#prev').length){
+				nav.find('#prev').attr('href', '#'+idPrev);
+			}else{
+				nav.find('li').eq(0).append("<a href='#"+idPrev+"' id='prev'><span>Previous step</span></a>")
+			}
+
+		}else{
+			nav.find('li').eq(0).html('');
+		}
+
+		if(posActif < nbSteps - 1){
+			if(nav.find('#next').length){
+				nav.find('#next').attr('href', '#'+idNext);
+			}else{
+				nav.find('li').eq(1).append("<a href='#"+idNext+"' id='next'><span>Next step</span></a>")
+			}
+		}else{
+			nav.find('li').eq(1).html('');
+		}
+	}
+
+	nav.on('click', '#next', function(e){
+		e.preventDefault();
+		goToStep($(this).attr('href'), 'next');
+	});
+
+	nav.on('click', '#prev', function(e){
+		e.preventDefault();
+		goToStep($(this).attr('href'), 'prev');
+	});
+
+	pagination.find('a').on('click', function(e){
+		e.preventDefault();
+		var targetStep = $(this).attr('href'),
+			targetPos = $(targetStep).index(),
+			actifPos = $('.trip-step.actif').index(),
+			rounds = targetPos - actifPos;
+
+		$(this).addClass('actif').parents('li').siblings().find('a').removeClass('actif');
+
+		if(rounds > 0){
+			goToStep($(this).attr('href'), 'next', rounds);
+		}
+
+		if(rounds < 0){
+			goToStep($(this).attr('href'), 'prev', Math.abs(rounds));
+		}
+	});
+}
+
 /**** INIT ****/
 $(function(){
 
@@ -1062,7 +1155,10 @@ $(function(){
 
 		// Scroll init //
 		scrollPage();
-			
+	}
+
+	if(body.hasClass('page-template-trip')){
+		wisemblyTrip();
 	}
 
 	$('#closePopBlog').on('click', function(){

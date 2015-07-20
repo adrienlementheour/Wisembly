@@ -77,7 +77,7 @@ h4{
 
 .wrapper{
   .no-mobile &{
-    margin: 0 auto 220px;
+    margin: 0 auto 150px;
   }
 }
 
@@ -432,12 +432,55 @@ h4{
   }
 }
 
-.page-template-ressources{
-  .list-post{
+.list-post{
+  .date{
+    display: block;
+    margin: 0 0 25px;
+    font-weight: 500;
+    font-size: 1.3em;
+    &:before{
+      &:extend(.ressources div:after);
+    }
+  }
+  img{
+    margin: 0 0 20px;
+    border: 1px solid @grisBorder;
+  }
+  figure{
+    display: inline-block;
+    background: #5d6a78;
+    margin: 0 0 20px;
+    border: 1px solid @grisBorder;
+    position: relative;
+    img{
+      margin: 0;
+      border: 0;
+      opacity: .5;
+    }
+    figcaption{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-transform: uppercase;
+      color: #fff;
+      height: 32px;
+      font-size: 2em;
+    }
+  }
+  h3{
+    margin-top: 0;
+  }
+  .page-template-ressources &, .page-template-agenda &{
     padding: 60px 0 0;
     text-align: left;
     li{
       text-align: center;
+    }
+    + .list-post{
+      padding: 120px 0 0;
     }
   }
 }
@@ -571,7 +614,7 @@ h4{
   }
 }
 
-.page-template-faq{
+.page-template-faq, .page-template-installation{
   h1{
     &:before{
       content: "\e61b";
@@ -688,6 +731,18 @@ h4{
     &:hover, &:focus{
       color: @vert;
     }
+  }
+}
+
+
+#trip{
+  position: relative;
+}
+.trip-step{
+  display: inline-block;
+  width: 100%;
+  .js &{
+    position: absolute;
   }
 }
 

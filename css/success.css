@@ -1472,7 +1472,7 @@ h4 {
   z-index: 2;
 }
 .no-mobile .wrapper {
-  margin: 0 auto 220px;
+  margin: 0 auto 150px;
 }
 #bg-blanc {
   -webkit-transform: skew(0deg, -4deg);
@@ -1845,12 +1845,55 @@ h4 {
 .list-post .btnLight {
   width: 185px;
 }
-.page-template-ressources .list-post {
+.list-post .date {
+  display: block;
+  margin: 0 0 25px;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+.list-post img {
+  margin: 0 0 20px;
+  border: 1px solid #d8d8d8;
+}
+.list-post figure {
+  display: inline-block;
+  background: #5d6a78;
+  margin: 0 0 20px;
+  border: 1px solid #d8d8d8;
+  position: relative;
+}
+.list-post figure img {
+  margin: 0;
+  border: 0;
+  opacity: .5;
+}
+.list-post figure figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-transform: uppercase;
+  color: #fff;
+  height: 32px;
+  font-size: 2em;
+}
+.list-post h3 {
+  margin-top: 0;
+}
+.page-template-ressources .list-post,
+.page-template-agenda .list-post {
   padding: 60px 0 0;
   text-align: left;
 }
-.page-template-ressources .list-post li {
+.page-template-ressources .list-post li,
+.page-template-agenda .list-post li {
   text-align: center;
+}
+.page-template-ressources .list-post + .list-post,
+.page-template-agenda .list-post + .list-post {
+  padding: 120px 0 0;
 }
 .ressources article {
   border: 1px solid #d8d8d8;
@@ -1884,7 +1927,8 @@ h4 {
 .ressources div h4 {
   margin: 0;
 }
-.ressources div:after {
+.ressources div:after,
+.list-post .date:before {
   content: '';
   display: block;
   width: 66px;
@@ -1991,7 +2035,8 @@ h4 {
 .page-template-faq .questions h2:before {
   display: none;
 }
-.page-template-faq h1:before {
+.page-template-faq h1:before,
+.page-template-installation h1:before {
   content: "\e61b";
   font-family: 'wisembly';
   speak: none;
@@ -2126,6 +2171,16 @@ h4 {
 .filtre.vert:hover,
 .filtre.vert:focus {
   color: #46b489;
+}
+#trip {
+  position: relative;
+}
+.trip-step {
+  display: inline-block;
+  width: 100%;
+}
+.js .trip-step {
+  position: absolute;
 }
 /* ==|== media queries ======================================================
    ========================================================================== */
