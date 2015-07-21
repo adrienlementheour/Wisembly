@@ -52,6 +52,9 @@ h4 a{
 h3, .h3{
   font-size: 1.2em;
 }
+.h3{
+  text-transform: none;
+}
 
 h4{
   font-size: 1.05em;
@@ -739,10 +742,103 @@ h4{
   position: relative;
 }
 .trip-step{
-  display: inline-block;
   width: 100%;
+  padding: 100px 0 0;
   .js &{
     position: absolute;
+    .transition(left .5s ease-in-out);
+  }
+}
+
+#navTrip{
+  .no-js &{
+    display: none;
+  }
+}
+.navTrip{
+  position: fixed;
+  top: 45%;
+  left: 350px;
+  right: 40px;
+  li{
+    position: absolute;
+    padding: 0;
+    width: 50px;
+    &:before{
+      display: none;
+    }
+    + li{
+      right: 0;
+    }
+  }
+  a{
+    display: block;
+    .size(47px);
+    color: @bleuMenu;
+    border: 4px solid;
+    line-height: 49px;
+    border-radius: 100%;
+    text-align: center;
+    span{
+      display: none;
+    }
+    &:before{
+      .fontIcon();
+    }
+    &:hover, &:focus{
+      color: #fff;
+      border-color: @bleuMenu;
+      background: @bleuMenu;
+    }
+  }
+}
+
+#nextTrip{
+  &:before{
+    content: "\e610";
+  }
+}
+#prevTrip{
+  &:before{
+    content: "\e60f";
+  }
+}
+
+.pagiTrip{
+  text-align: center;
+  padding: 40px 0 0;
+  li{
+    display: inline-block;
+    padding: 0;
+    width: 25px;
+    height: 10px;
+    line-height: 10px;
+    position: relative;
+    &:before{
+      display: none;
+    }
+  }
+  span{
+    display: none;
+  }
+  a{
+    color: @grisBorder;
+    border: 0;
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    &.actif{
+      color: @bleuHeader;
+      font-size: 40px;
+      pointer-events: none;
+    }
+    &:hover, &:focus{
+      color: @bleuLien;
+    }
+    &:before{
+      content: '•';
+    }
   }
 }
 

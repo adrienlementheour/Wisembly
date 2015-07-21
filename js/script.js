@@ -1040,6 +1040,8 @@ function wisemblyTrip(){
 		left += 100;
 	}
 
+	container.css('height', steps.eq(0).height() + 30);
+
 	function goToStep(nextStep, dir, round){
 		function makeItTurn(){
 			var j = 0, actualPos, newLeft;
@@ -1063,20 +1065,22 @@ function wisemblyTrip(){
 				makeItTurn();
 			}
 		}
-		
 
 		$(nextStep).addClass('actif');
+		container.css('height', $(nextStep).height());
 
 		var posActif = $('.trip-step.actif').index(), 
 			idActif = steps.eq(posActif).attr('id'),
 			idPrev = steps.eq(posActif-1).attr('id'),
 			idNext = steps.eq(posActif+1).attr('id');
 
+		pagination.find('li').eq(posActif).find('a').addClass('actif').parents('li').siblings().find('a').removeClass('actif');
+
 		if(posActif > 0){
-			if(nav.find('#prev').length){
-				nav.find('#prev').attr('href', '#'+idPrev);
+			if(nav.find('#prevTrip').length){
+				nav.find('#prevTrip').attr('href', '#'+idPrev);
 			}else{
-				nav.find('li').eq(0).append("<a href='#"+idPrev+"' id='prev'><span>Previous step</span></a>")
+				nav.find('li').eq(0).append("<a href='#"+idPrev+"' id='prevTrip'><span>Previous step</span></a>")
 			}
 
 		}else{
@@ -1084,22 +1088,22 @@ function wisemblyTrip(){
 		}
 
 		if(posActif < nbSteps - 1){
-			if(nav.find('#next').length){
-				nav.find('#next').attr('href', '#'+idNext);
+			if(nav.find('#nextTrip').length){
+				nav.find('#nextTrip').attr('href', '#'+idNext);
 			}else{
-				nav.find('li').eq(1).append("<a href='#"+idNext+"' id='next'><span>Next step</span></a>")
+				nav.find('li').eq(1).append("<a href='#"+idNext+"' id='nextTrip'><span>Next step</span></a>")
 			}
 		}else{
 			nav.find('li').eq(1).html('');
 		}
 	}
 
-	nav.on('click', '#next', function(e){
+	nav.on('click', '#nextTrip', function(e){
 		e.preventDefault();
 		goToStep($(this).attr('href'), 'next');
 	});
 
-	nav.on('click', '#prev', function(e){
+	nav.on('click', '#prevTrip', function(e){
 		e.preventDefault();
 		goToStep($(this).attr('href'), 'prev');
 	});
@@ -1110,8 +1114,6 @@ function wisemblyTrip(){
 			targetPos = $(targetStep).index(),
 			actifPos = $('.trip-step.actif').index(),
 			rounds = targetPos - actifPos;
-
-		$(this).addClass('actif').parents('li').siblings().find('a').removeClass('actif');
 
 		if(rounds > 0){
 			goToStep($(this).attr('href'), 'next', rounds);
