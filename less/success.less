@@ -76,6 +76,9 @@ h4{
   margin: 0 0 0 310px;
   position: relative;
   z-index: 2;
+  &.openMenu{
+    z-index: auto;
+  }
 }
 
 .wrapper{
@@ -391,6 +394,52 @@ h4{
     height: 170px;
     background: fade(@rose, 60);
     .transform(rotate(9deg));
+  }
+}
+
+.headVideo, .headDoc{
+  height: 0px;
+  background: @bleuMenu;
+  &.open{
+    height: auto !important;
+  }
+  #bgHead{
+    background-image: url(../layoutImg/success/headHome@2.jpg);
+    background-position: 50% 100%;
+    background-size: 100%;
+    opacity: .3;
+  }
+  .no-mobile &{
+    .content.main{
+      padding: 10vh 20px 150px;
+    }
+  }
+  #videoIframe{
+    max-width: 100%;
+    margin: 0 auto; 
+    display: block;
+  }
+  &:before{
+    right: 0;
+    bottom: -60px;
+    height: 170px;
+    background: fade(@jaune, 60);
+    .transform(rotate(9deg));
+  }
+}
+#closeVideo{
+  .fontIcon();
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  color: #fff;
+  .size(40px);
+  text-align: center;
+  border: 2px solid;
+  border-radius: 99%;
+  &:hover, &:focus{
+    background: @jaune;
+    border-color: @jaune;
   }
 }
 
@@ -740,6 +789,7 @@ h4{
 
 #trip{
   position: relative;
+  .transition(height .3s ease-in-out);
 }
 .trip-step{
   width: 100%;

@@ -1474,6 +1474,9 @@ h4 {
   position: relative;
   z-index: 2;
 }
+#container.openMenu {
+  z-index: auto;
+}
 .no-mobile .wrapper {
   margin: 0 auto 150px;
 }
@@ -1802,6 +1805,66 @@ h4 {
   -webkit-transform: rotate(9deg);
   -ms-transform: rotate(9deg);
   transform: rotate(9deg);
+}
+.headVideo,
+.headDoc {
+  height: 0px;
+  background: #07394d;
+}
+.headVideo.open,
+.headDoc.open {
+  height: auto !important;
+}
+.headVideo #bgHead,
+.headDoc #bgHead {
+  background-image: url(../layoutImg/success/headHome@2.jpg);
+  background-position: 50% 100%;
+  background-size: 100%;
+  opacity: .3;
+}
+.no-mobile .headVideo .content.main,
+.no-mobile .headDoc .content.main {
+  padding: 10vh 20px 150px;
+}
+.headVideo #videoIframe,
+.headDoc #videoIframe {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+.headVideo:before,
+.headDoc:before {
+  right: 0;
+  bottom: -60px;
+  height: 170px;
+  background: rgba(241, 188, 51, 0.6);
+  -webkit-transform: rotate(9deg);
+  -ms-transform: rotate(9deg);
+  transform: rotate(9deg);
+}
+#closeVideo {
+  font-family: 'wisembly';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 99%;
+}
+#closeVideo:hover,
+#closeVideo:focus {
+  background: #f1bc33;
+  border-color: #f1bc33;
 }
 /* HOME */
 .home .lienVert,
@@ -2177,6 +2240,8 @@ h4 {
 }
 #trip {
   position: relative;
+  -webkit-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
 }
 .trip-step {
   width: 100%;
@@ -2307,9 +2372,6 @@ h4 {
 @media (max-width: 1040px) {
   .content.main {
     padding-top: 0;
-    /*.blog &, .blog.hasPop &{
-        padding-top: 50px;
-      }*/
   }
   .content.noMarginResponsive {
     padding-left: 0;
@@ -2321,12 +2383,6 @@ h4 {
   }
   .lang {
     margin: 15px 30px 0 0;
-    /*.blog &{
-      margin: 15px 0 0 0;
-      .no-mobile &{
-        margin: 15px 0 0 0;
-      }
-    }*/
   }
   .no-mobile .lang {
     padding: 0;
@@ -2402,10 +2458,12 @@ h4 {
     -ms-transform: rotate(-3deg);
     transform: rotate(-3deg);
   }
-  .head:not(.headLivreLanding) {
+  .head:not(.headLivreLanding),
+  .head:not(#headVideo) {
     padding: 0 0 50%;
   }
-  .head:not(.headLivreLanding) #bgHead {
+  .head:not(.headLivreLanding) #bgHead,
+  .head:not(#headVideo) #bgHead {
     background-size: 100%;
     background-position: 0 100%;
     top: auto;
@@ -2413,29 +2471,36 @@ h4 {
     position: absolute;
     height: 340px;
   }
-  .no-js .head:not(.headLivreLanding) #bgHead {
+  .no-js .head:not(.headLivreLanding) #bgHead,
+  .no-js .head:not(#headVideo) #bgHead {
     top: auto;
   }
-  .no-mobile .head:not(.headLivreLanding) #bgHead {
+  .no-mobile .head:not(.headLivreLanding) #bgHead,
+  .no-mobile .head:not(#headVideo) #bgHead {
     top: auto;
     bottom: 50px;
   }
-  .head:not(.headLivreLanding) h1 {
+  .head:not(.headLivreLanding) h1,
+  .head:not(#headVideo) h1 {
     margin: 0;
     text-align: center;
     font-size: 2.7em;
   }
-  .head:not(.headLivreLanding):before {
+  .head:not(.headLivreLanding):before,
+  .head:not(#headVideo):before {
     display: none;
   }
-  .head:not(.headLivreLanding) .btnFull {
+  .head:not(.headLivreLanding) .btnFull,
+  .head:not(#headVideo) .btnFull {
     margin: 0 auto;
   }
-  .head:not(.headLivreLanding) .content.main {
+  .head:not(.headLivreLanding) .content.main,
+  .head:not(#headVideo) .content.main {
     padding: 40px 20px 20px;
     background: #06698d;
   }
-  .head:not(.headLivreLanding) .content.main:after {
+  .head:not(.headLivreLanding) .content.main:after,
+  .head:not(#headVideo) .content.main:after {
     content: '';
     display: block;
     width: 120%;
@@ -2703,10 +2768,10 @@ h4 {
   .contactHeader a {
     font-size: .85em;
   }
-  .head {
+  .headHome {
     z-index: -1;
   }
-  .head #bgHead {
+  .headHome #bgHead {
     z-index: -1;
   }
   .list-post li {

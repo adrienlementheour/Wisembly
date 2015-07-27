@@ -35,9 +35,6 @@
    .content{
     &.main{
       padding-top: 0;
-      /*.blog &, .blog.hasPop &{
-        padding-top: 50px;
-      }*/
     }
     &.noMarginResponsive {
       padding-left: 0;
@@ -51,12 +48,6 @@
 
   .lang{
     margin: 15px 30px 0 0;
-    /*.blog &{
-      margin: 15px 0 0 0;
-      .no-mobile &{
-        margin: 15px 0 0 0;
-      }
-    }*/
     .no-mobile &{
       padding: 0;
       width: auto;
@@ -149,7 +140,7 @@
     }
   }
 
-  .head:not(.headLivreLanding){
+  .head:not(.headLivreLanding), .head:not(#headVideo){
     padding: 0 0 50%;
     #bgHead{
       background-size: 100%;

@@ -6430,9 +6430,6 @@ ul.whr-items li ul.whr-info li.whr-date {
 @media (max-width: 1040px) {
   .content.main {
     padding-top: 0;
-    /*.blog &, .blog.hasPop &{
-        padding-top: 50px;
-      }*/
   }
   .content.noMarginResponsive {
     padding-left: 0;
@@ -6444,12 +6441,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .lang {
     margin: 15px 30px 0 0;
-    /*.blog &{
-      margin: 15px 0 0 0;
-      .no-mobile &{
-        margin: 15px 0 0 0;
-      }
-    }*/
   }
   .no-mobile .lang {
     padding: 0;
@@ -6525,10 +6516,12 @@ ul.whr-items li ul.whr-info li.whr-date {
     -ms-transform: rotate(-3deg);
     transform: rotate(-3deg);
   }
-  .head:not(.headLivreLanding) {
+  .head:not(.headLivreLanding),
+  .head:not(#headVideo) {
     padding: 0 0 50%;
   }
-  .head:not(.headLivreLanding) #bgHead {
+  .head:not(.headLivreLanding) #bgHead,
+  .head:not(#headVideo) #bgHead {
     background-size: 100%;
     background-position: 0 100%;
     top: auto;
@@ -6536,29 +6529,36 @@ ul.whr-items li ul.whr-info li.whr-date {
     position: absolute;
     height: 340px;
   }
-  .no-js .head:not(.headLivreLanding) #bgHead {
+  .no-js .head:not(.headLivreLanding) #bgHead,
+  .no-js .head:not(#headVideo) #bgHead {
     top: auto;
   }
-  .no-mobile .head:not(.headLivreLanding) #bgHead {
+  .no-mobile .head:not(.headLivreLanding) #bgHead,
+  .no-mobile .head:not(#headVideo) #bgHead {
     top: auto;
     bottom: 50px;
   }
-  .head:not(.headLivreLanding) h1 {
+  .head:not(.headLivreLanding) h1,
+  .head:not(#headVideo) h1 {
     margin: 0;
     text-align: center;
     font-size: 2.7em;
   }
-  .head:not(.headLivreLanding):before {
+  .head:not(.headLivreLanding):before,
+  .head:not(#headVideo):before {
     display: none;
   }
-  .head:not(.headLivreLanding) .btnFull {
+  .head:not(.headLivreLanding) .btnFull,
+  .head:not(#headVideo) .btnFull {
     margin: 0 auto;
   }
-  .head:not(.headLivreLanding) .content.main {
+  .head:not(.headLivreLanding) .content.main,
+  .head:not(#headVideo) .content.main {
     padding: 40px 20px 20px;
     background: #06698d;
   }
-  .head:not(.headLivreLanding) .content.main:after {
+  .head:not(.headLivreLanding) .content.main:after,
+  .head:not(#headVideo) .content.main:after {
     content: '';
     display: block;
     width: 120%;
