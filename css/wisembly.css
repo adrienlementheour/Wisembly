@@ -6516,12 +6516,10 @@ ul.whr-items li ul.whr-info li.whr-date {
     -ms-transform: rotate(-3deg);
     transform: rotate(-3deg);
   }
-  .head:not(.headLivreLanding),
-  .head:not(#headVideo) {
+  .head:not(.headLivreLanding, .headVideo) {
     padding: 0 0 50%;
   }
-  .head:not(.headLivreLanding) #bgHead,
-  .head:not(#headVideo) #bgHead {
+  .head:not(.headLivreLanding, .headVideo) #bgHead {
     background-size: 100%;
     background-position: 0 100%;
     top: auto;
@@ -6529,36 +6527,29 @@ ul.whr-items li ul.whr-info li.whr-date {
     position: absolute;
     height: 340px;
   }
-  .no-js .head:not(.headLivreLanding) #bgHead,
-  .no-js .head:not(#headVideo) #bgHead {
+  .no-js .head:not(.headLivreLanding, .headVideo) #bgHead {
     top: auto;
   }
-  .no-mobile .head:not(.headLivreLanding) #bgHead,
-  .no-mobile .head:not(#headVideo) #bgHead {
+  .no-mobile .head:not(.headLivreLanding, .headVideo) #bgHead {
     top: auto;
     bottom: 50px;
   }
-  .head:not(.headLivreLanding) h1,
-  .head:not(#headVideo) h1 {
+  .head:not(.headLivreLanding, .headVideo) h1 {
     margin: 0;
     text-align: center;
     font-size: 2.7em;
   }
-  .head:not(.headLivreLanding):before,
-  .head:not(#headVideo):before {
+  .head:not(.headLivreLanding, .headVideo):before {
     display: none;
   }
-  .head:not(.headLivreLanding) .btnFull,
-  .head:not(#headVideo) .btnFull {
+  .head:not(.headLivreLanding, .headVideo) .btnFull {
     margin: 0 auto;
   }
-  .head:not(.headLivreLanding) .content.main,
-  .head:not(#headVideo) .content.main {
+  .head:not(.headLivreLanding, .headVideo) .content.main {
     padding: 40px 20px 20px;
     background: #06698d;
   }
-  .head:not(.headLivreLanding) .content.main:after,
-  .head:not(#headVideo) .content.main:after {
+  .head:not(.headLivreLanding, .headVideo) .content.main:after {
     content: '';
     display: block;
     width: 120%;
@@ -6606,7 +6597,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   .none450 {
     display: none;
   }
-  .head:not(.headLivreLanding) {
+  .head:not(.headLivreLanding, .headVideo) {
     padding: 0 0 55%;
   }
   .head h1 {
@@ -6629,7 +6620,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
 }
 @media (max-width: 330px) {
-  .head:not(.headLivreLanding) {
+  .head:not(.headLivreLanding, .headVideo) {
     padding: 0 0 60%;
   }
   .btnFull.smallTxt,

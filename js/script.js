@@ -1051,16 +1051,7 @@ function responsiveMenuSuccess(){
 		$('.connectMenu').toggleClass('on');
 }
 
-function wisemblyTrip(){
-	var container = $('#trip'), steps = $('.trip-step'), nbSteps = steps.length, i = 0, left = 0,
-		nav = $('#navTrip'), pagination = $('#pagiTrip');
-
-	for(i; i<nbSteps; i++){
-		steps.eq(i).css('left', left+'%').data('left', left);
-		left += 100;
-	}
-
-	container.css('height', steps.eq(0).height() + 30);
+function wisemblyTrip(updateHeight){
 
 	function goToStep(nextStep, dir, round){
 		function makeItTurn(){
@@ -1118,31 +1109,48 @@ function wisemblyTrip(){
 		}
 	}
 
-	nav.on('click', '#nextTrip', function(e){
-		e.preventDefault();
-		goToStep($(this).attr('href'), 'next');
-	});
+	var container = $('#trip'), steps = $('.trip-step');
 
-	nav.on('click', '#prevTrip', function(e){
-		e.preventDefault();
-		goToStep($(this).attr('href'), 'prev');
-	});
+	if(!updateHeight){
+		var nbSteps = steps.length, i = 0, left = 0,
+			nav = $('#navTrip'), pagination = $('#pagiTrip');
 
-	pagination.find('a').on('click', function(e){
-		e.preventDefault();
-		var targetStep = $(this).attr('href'),
-			targetPos = $(targetStep).index(),
-			actifPos = $('.trip-step.actif').index(),
-			rounds = targetPos - actifPos;
-
-		if(rounds > 0){
-			goToStep($(this).attr('href'), 'next', rounds);
+		for(i; i<nbSteps; i++){
+			steps.eq(i).css('left', left+'%').data('left', left);
+			left += 100;
 		}
+	}
 
-		if(rounds < 0){
-			goToStep($(this).attr('href'), 'prev', Math.abs(rounds));
-		}
-	});
+	container.css('height', steps.eq(0).height() + 30);
+
+	if(!updateHeight){
+		nav.on('click', '#nextTrip', function(e){
+			e.preventDefault();
+			goToStep($(this).attr('href'), 'next');
+		});
+
+		nav.on('click', '#prevTrip', function(e){
+			e.preventDefault();
+			goToStep($(this).attr('href'), 'prev');
+		});
+
+		pagination.find('a').on('click', function(e){
+			e.preventDefault();
+			var targetStep = $(this).attr('href'),
+				targetPos = $(targetStep).index(),
+				actifPos = $('.trip-step.actif').index(),
+				rounds = targetPos - actifPos;
+
+			if(rounds > 0){
+				goToStep($(this).attr('href'), 'next', rounds);
+			}
+
+			if(rounds < 0){
+				goToStep($(this).attr('href'), 'prev', Math.abs(rounds));
+			}
+		});
+	}
+	
 }
 
 function openVideos(videoLink){
@@ -1187,6 +1195,73 @@ function closeVideo(){
 		$(this).remove();
 		heightBgHead(0);
 	});
+}
+
+// Apparition du slider permettant de chosir le nb de participants (success) //
+function setDraggableDebitButton(){
+	var container = $('#debitContainer'), txt = container.data('txt'), 
+		nbMax = container.data('debitmax'), nbDefault = container.data('debit'), 
+		nb, dragWidth, draggable, drag, dragContainer,
+		a = $('#debitA'), aCompare = a.data('compare'), aDivise = a.data('divise'),
+		b = $('#debitB'), bCompare = b.data('compare'), bDivise = b.data('divise'),
+		c = $('#debitC'), cCompare = c.data('compare'), cDivise = c.data('divise'),
+		d = $('#debitD'), dCompare = d.data('compare'), dDivise = d.data('divise'),
+		buttons = $('#debitBtn').find('button'), buttonsNb = [], buttonsLength = buttons.length, i = 0;
+
+	function calc(compare, divise, nb, txt){
+		return nb > compare ? txt : nb/divise + ' Mo';
+	}
+
+	function setActiveBtn(i, nb){
+		
+		function lightIt(btn){
+			btn.addClass('actif').parents('li').siblings().find('button').removeClass();
+		}
+
+		if(i == 0){
+			if(nb <= buttonsNb[i]){
+				lightIt(buttons.eq(i));
+			}
+		}else{
+			if(nb >= buttonsNb[i]){
+				lightIt(buttons.eq(i));
+			}
+		}
+	}
+
+	container.append("<div id='dragContainer'><div id='drag'></div></div>");
+	drag = $('#drag');
+	dragContainer = $('#dragContainer');
+
+	dragWidth = dragContainer.width() - drag.width();
+
+	for(i; i<buttonsLength; i++){
+		buttonsNb[i] = buttons.eq(i).data('nb');
+		setActiveBtn(i, nbDefault);
+	}
+
+	draggable = Draggable.create('#drag', {
+		type: 'x', 
+		bounds: dragContainer,
+		cursor: 'pointer',
+		zIndexBoost:false,
+		onDrag: function(){
+			nb = Math.ceil((nbMax/dragWidth)*this.x);
+
+			a.html(calc(aCompare, aDivise, nb, txt));
+			b.html(calc(bCompare, bDivise, nb, txt));
+			c.html(calc(cCompare, cDivise, nb, txt));
+			d.html(calc(dCompare, dDivise, nb, txt));
+
+			i = 0;
+			for(i; i<buttonsLength; i++){
+				setActiveBtn(i, nb);
+			}
+		}
+	});
+
+	TweenLite.set(drag,{x:(nbDefault*dragWidth)/nbMax});
+	draggable[0].update();
 }
 
 
@@ -1261,6 +1336,11 @@ $(function(){
 	// Textarea footer autogrow //
 	if($('#message').length){
 		$('#message').autoGrowTextArea();
+	}
+
+	// Slider debit success //
+	if($('#debitContainer').length){
+		setDraggableDebitButton();
 	}
 
 	// Placeholder IE8 //
@@ -1457,6 +1537,10 @@ $(function(){
     	
 	    if(header.hasClass('menuVisible') && $(window).width() > 1040 && !body.hasClass('success')){
 	    	responsiveMenu();
+	    }
+
+	    if(body.hasClass('page-template-trip')){
+	    	wisemblyTrip(true);
 	    }
 
 	    // Size map //
