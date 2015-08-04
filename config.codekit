@@ -3145,17 +3145,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/success\/maquettes\/success.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2.31875e+07,
-		"inputAbbreviatedPath": "\/success\/maquettes\/success.png",
-		"outputAbbreviatedPath": "\/success\/maquettes\/success.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/success\/video1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

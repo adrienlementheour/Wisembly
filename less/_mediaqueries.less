@@ -140,7 +140,7 @@
     }
   }
 
-  .head:not(.headLivreLanding), .head:not(#headVideo){
+  .head:not(.headLivreLanding, .headVideo){
     padding: 0 0 50%;
     #bgHead{
       background-size: 100%;
@@ -238,7 +238,7 @@
   }
 
   .head{
-    &:not(.headLivreLanding){
+    &:not(.headLivreLanding, .headVideo){
       padding: 0 0 55%;
     }
     h1{
@@ -264,7 +264,7 @@
 }
 
 @media (max-width: 330px){
-  .head:not(.headLivreLanding){
+  .head:not(.headLivreLanding, .headVideo){
     padding: 0 0 60%;
   }
 

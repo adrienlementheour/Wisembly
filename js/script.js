@@ -1119,11 +1119,9 @@ function wisemblyTrip(updateHeight){
 			steps.eq(i).css('left', left+'%').data('left', left);
 			left += 100;
 		}
-	}
 
-	container.css('height', steps.eq(0).height() + 30);
+		container.css('height', steps.eq(0).height() + 30);
 
-	if(!updateHeight){
 		nav.on('click', '#nextTrip', function(e){
 			e.preventDefault();
 			goToStep($(this).attr('href'), 'next');
@@ -1149,6 +1147,8 @@ function wisemblyTrip(updateHeight){
 				goToStep($(this).attr('href'), 'prev', Math.abs(rounds));
 			}
 		});
+	}else{
+		container.height($('.trip-step.actif').height());
 	}
 	
 }
@@ -1200,44 +1200,55 @@ function closeVideo(){
 // Apparition du slider permettant de chosir le nb de participants (success) //
 function setDraggableDebitButton(){
 	var container = $('#debitContainer'), txt = container.data('txt'), 
+		posX,  tooltip = $('#nbParticipants'),
 		nbMax = container.data('debitmax'), nbDefault = container.data('debit'), 
-		nb, dragWidth, draggable, drag, dragContainer,
+		nb, dragWidth, draggable, drag = $('#drag'), dragContainer = $('#dragContainer'),
 		a = $('#debitA'), aCompare = a.data('compare'), aDivise = a.data('divise'),
 		b = $('#debitB'), bCompare = b.data('compare'), bDivise = b.data('divise'),
 		c = $('#debitC'), cCompare = c.data('compare'), cDivise = c.data('divise'),
 		d = $('#debitD'), dCompare = d.data('compare'), dDivise = d.data('divise'),
-		buttons = $('#debitBtn').find('button'), buttonsNb = [], buttonsLength = buttons.length, i = 0;
+		steps = $('#debitSteps').find('div'), stepsNb = [], stepsLength = steps.length, i = 0;
 
 	function calc(compare, divise, nb, txt){
 		return nb > compare ? txt : nb/divise + ' Mo';
 	}
 
-	function setActiveBtn(i, nb){
+	function setActiveStep(i, nb){
 		
-		function lightIt(btn){
-			btn.addClass('actif').parents('li').siblings().find('button').removeClass();
+		function lightIt(step){
+			step.addClass('actif').parents('li').siblings().find('div').removeClass();
 		}
 
 		if(i == 0){
-			if(nb <= buttonsNb[i]){
-				lightIt(buttons.eq(i));
+			if(nb <= stepsNb[i]){
+				lightIt(steps.eq(i));
 			}
 		}else{
-			if(nb >= buttonsNb[i]){
-				lightIt(buttons.eq(i));
+			if(nb >= stepsNb[i]){
+				lightIt(steps.eq(i));
 			}
 		}
 	}
 
-	container.append("<div id='dragContainer'><div id='drag'></div></div>");
-	drag = $('#drag');
-	dragContainer = $('#dragContainer');
+	function updateData(nb){
+		a.html(calc(aCompare, aDivise, nb, txt));
+		b.html(calc(bCompare, bDivise, nb, txt));
+		c.html(calc(cCompare, cDivise, nb, txt));
+		d.html(calc(dCompare, dDivise, nb, txt));
+
+		i = 0;
+		for(i; i<stepsLength; i++){
+			setActiveStep(i, nb);
+		}
+
+		tooltip.html(nb);
+	}
 
 	dragWidth = dragContainer.width() - drag.width();
 
-	for(i; i<buttonsLength; i++){
-		buttonsNb[i] = buttons.eq(i).data('nb');
-		setActiveBtn(i, nbDefault);
+	for(i; i<stepsLength; i++){
+		stepsNb[i] = steps.eq(i).data('nb');
+		setActiveStep(i, nbDefault);
 	}
 
 	draggable = Draggable.create('#drag', {
@@ -1246,22 +1257,29 @@ function setDraggableDebitButton(){
 		cursor: 'pointer',
 		zIndexBoost:false,
 		onDrag: function(){
+			TweenLite.set(tooltip,{x:this.x});
 			nb = Math.ceil((nbMax/dragWidth)*this.x);
-
-			a.html(calc(aCompare, aDivise, nb, txt));
-			b.html(calc(bCompare, bDivise, nb, txt));
-			c.html(calc(cCompare, cDivise, nb, txt));
-			d.html(calc(dCompare, dDivise, nb, txt));
-
-			i = 0;
-			for(i; i<buttonsLength; i++){
-				setActiveBtn(i, nb);
-			}
+			updateData(nb);
 		}
 	});
 
-	TweenLite.set(drag,{x:(nbDefault*dragWidth)/nbMax});
+	posX = (nbDefault*dragWidth)/nbMax;
+	TweenLite.set(drag,{x:posX});
+	TweenLite.set(tooltip,{x:posX});
 	draggable[0].update();
+
+	dragContainer.on('click', function(e){
+		var posX = Math.ceil(e.pageX - $(this).offset().left - drag.width()/2), realNb;
+
+		if(posX < 0) posX = 0;
+		if(posX > dragWidth) posX = dragWidth;
+
+		realNb = Math.ceil((nbMax/dragWidth)*posX);
+		
+		TweenLite.set(drag,{x: posX });
+		TweenLite.set(tooltip,{x: posX});
+		updateData( realNb );
+	});
 }
 
 
@@ -1340,6 +1358,7 @@ $(function(){
 
 	// Slider debit success //
 	if($('#debitContainer').length){
+		$('#debitContainer').append("<div id='dragContainer'><div id='drag'></div></div>");
 		setDraggableDebitButton();
 	}
 
@@ -1541,6 +1560,10 @@ $(function(){
 
 	    if(body.hasClass('page-template-trip')){
 	    	wisemblyTrip(true);
+	    }
+
+	    if(body.hasClass('page-template-installation')){
+	    	setDraggableDebitButton();
 	    }
 
 	    // Size map //

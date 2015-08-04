@@ -1,3 +1,28 @@
+@media (max-width: 1410px){
+  .navTrip {
+    left: 325px;
+    right: 15px;
+    li{
+      width: 24px;
+    }
+    a{
+      border: 3px solid;
+      line-height: 18px;
+      .size(18px);
+      font-size: 10px;
+    }
+  }
+}
+
+@media (max-width: 1300px){
+  .navTrip{
+    top: 35px;
+    right: 20px;
+    left: 20px;
+    position: absolute;
+  }
+}
+
 @media (max-width: 1250px){
   #header{
     padding: 30px;
@@ -57,6 +82,17 @@
       }
     }
   }
+
+  #next, #prev{
+    top: auto;
+    bottom: -40px;
+  }
+  #next{
+    right: 35%;
+  }
+  #prev{
+    left: 35%;
+  }
 }
 
 @media (max-width: 1110px){
@@ -104,6 +140,16 @@
         padding-top: 5vh;
       }
     }
+  }
+
+  .page-template-register, .page-template-login, .page-template-reset{
+    .content.main{
+      padding-top: 35px;
+    }
+  }
+
+  #closeVideo{
+    top: 5vh;
   }
 }
 
@@ -165,9 +211,6 @@
       margin: 70px auto 0;
       max-width: 500px;
       display: block;
-      &:first-child{
-        margin: 70px auto 0;
-      }
     }
   }
 }
@@ -181,6 +224,52 @@
       padding: 60px 0 0;
     }
   }
+
+  .headVideo{
+    #bgHead{
+      background: none;
+    }
+    #videoIframe{
+      height: 50vh;
+      max-height: 400px;
+      min-height: 300px;
+    }
+  }
+
+  #closeVideo{
+    font-size: 9px;
+    line-height: 18px;
+    .size(25px);
+  }
+
+  .docInstall{
+    li{
+      width: 100%;
+      padding: 0 0 50px;
+      max-width: 500px;
+    }
+  }
+
+  .astuces{
+    .carousel{
+      width: 360px;
+    }
+    .txt{
+      width: 100%;
+      margin: 30px 0 0;
+      text-align: center;
+    }
+  }
+
+  .form{
+    max-width: 320px;
+    fieldset{
+      width: 100%;
+      &.left{
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 @media(max-width: 400px){
@@ -189,6 +278,28 @@
   }
   #searchform {
     width: 165px;
+  }
+
+  .headVideo{
+    #videoIframe{
+      height: 35vh;
+      max-height: 230px;
+      min-height: 180px;
+      margin: 30px auto 0;
+    }
+    .content.main{
+      padding-bottom: 130px;
+    }
+  }
+
+  #dragContainer{
+    width: 280px;
+  }
+
+  .astuces{
+    .carousel{
+      width: 280px;
+    }
   }
 }
 
