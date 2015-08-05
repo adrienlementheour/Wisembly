@@ -70,6 +70,11 @@ function isValidTel(n){
   return pattern.test(n);
 }
 
+filterInt = function (value) {
+  if(/^(\-|\+)?([0-9]+|Infinity)$/.test(value)) return Number(value);
+  return 0;
+}
+
 /**** WIZ ****/
 var joinAnEvent = {
 	$el: $('[data-name=join_an_event]'),
@@ -1054,6 +1059,42 @@ function responsiveMenuSuccess(){
 function wisemblyTrip(updateHeight){
 
 	function goToStep(nextStep, dir, round){
+		
+		function animateShapes(){
+			
+			function setCoordinates(shape, dir, rand, randCoord){
+				shapeDefault = filterInt(shape.css(dir).replace('px',''));
+				
+				if( shape.isOnScreen() ){
+					newCoord = shapeDefault;
+					newCoord += (rand > .5) ? randCoord : - randCoord;
+					newCoord += 'px';
+				}else{
+					newCoord = '';
+				}
+				shape.css(dir, newCoord);
+			}
+
+			var i = 0, randAngle, randNeg;
+
+			for(i; i<nbShapes; i++){
+				randAngle = Math.random() * (120 - 5) + 5;
+				randNeg = Math.random();
+				randNeg = randNeg > .5 ? '-' : '+';
+
+				shapes[i].css({
+					'border-bottom-color': colors[ Math.floor(Math.random() * nbColors) ], 
+					'opacity': Math.random() + .3,
+					'transform': 'rotate('+randNeg+randAngle+'deg)',
+					'-ms-transform': 'rotate('+randNeg+randAngle+'deg)',
+					'-webkit-transform': 'rotate('+randNeg+randAngle+'deg)'
+				});
+
+				setCoordinates(shapes[i], shapes[i].data('y'), Math.random(), Math.floor(Math.random() * 30));
+				setCoordinates(shapes[i], shapes[i].data('x'), Math.random(), Math.floor(Math.random() * 30));
+			}
+		}
+
 		function makeItTurn(){
 			var j = 0, actualPos, newLeft;
 
@@ -1066,6 +1107,8 @@ function wisemblyTrip(updateHeight){
 					steps.eq(j).removeClass('actif');
 				}
 			}
+
+			animateShapes();
 		}
 		
 		if(!round || round == 1){
@@ -1109,27 +1152,49 @@ function wisemblyTrip(updateHeight){
 		}
 	}
 
-	var container = $('#trip'), steps = $('.trip-step');
+	var container = $('#trip'), steps = $('.trip-step'),
+		shapes = [$('#t1'), $('#t2'), $('#t3'), $('#t4')],
+		nbShapes = shapes.length,
+		colors = ['#46b489', '#e25c5b', '#06698d', '#f7886c', '#f1bc33'],
+		nbColors = colors.length;
 
 	if(!updateHeight){
 		var nbSteps = steps.length, i = 0, left = 0,
-			nav = $('#navTrip'), pagination = $('#pagiTrip');
+			nav = $('#navTrip'), pagination = $('#pagiTrip'),
+			firstStep = 0, hash;
+
+		if(location.hash){
+			//window.scrollTo(0, 0);
+		  	//setTimeout(function(){ window.scrollTo(0, 0); }, 500);
+		  	target = location.hash;
+		  	firstStep = $(target).index();
+		  	//left = firstStep * 100;
+		  	console.log(location);
+
+		  	window.location.assign(location.origin + location.pathname);
+		}
 
 		for(i; i<nbSteps; i++){
 			steps.eq(i).css('left', left+'%').data('left', left);
 			left += 100;
 		}
 
-		container.css('height', steps.eq(0).height() + 30);
+		//steps.eq(firstStep).addClass('actif');
+		container.css('height', steps.eq(firstStep).height() + 30);
+		/*if(firstStep != 0){
+			goToStep(target, 'next');
+		}*/
 
 		nav.on('click', '#nextTrip', function(e){
 			e.preventDefault();
 			goToStep($(this).attr('href'), 'next');
+			history.replaceState(null, '', $(this).attr('href'));
 		});
 
 		nav.on('click', '#prevTrip', function(e){
 			e.preventDefault();
 			goToStep($(this).attr('href'), 'prev');
+			history.replaceState(null, '', $(this).attr('href'));
 		});
 
 		pagination.find('a').on('click', function(e){
@@ -1146,6 +1211,7 @@ function wisemblyTrip(updateHeight){
 			if(rounds < 0){
 				goToStep($(this).attr('href'), 'prev', Math.abs(rounds));
 			}
+			history.replaceState(null, '', $(this).attr('href'));
 		});
 	}else{
 		container.height($('.trip-step.actif').height());
@@ -1283,6 +1349,17 @@ function setDraggableDebitButton(){
 }
 
 
+function setActiveSuccessMenu(){
+	var menu = $('#menu'), 
+		current = menu.find('.current-menu-item');
+
+	if( current.length ){
+		current.siblings().find('a').addClass('notActive');
+		current.parents('.hasSubMenu').siblings().addClass('notActive');
+	}
+}
+
+
 /**** INIT ****/
 $(function(){
 
@@ -1307,6 +1384,10 @@ $(function(){
 		if(htmlTag.attr('lang') !== 'fr-FR'){
 			langSelector();
 		}
+	}
+
+	if(body.hasClass('success')){
+		setActiveSuccessMenu();
 	}
 
 	if(!body.hasClass('blog')){

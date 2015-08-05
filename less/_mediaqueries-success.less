@@ -40,6 +40,15 @@
     }
   }
 
+  .headHome{
+    .content.main{
+      padding-top: 38vh;
+      .no-mobile &{
+        padding-top: 38vh;
+      }
+    }
+  }
+
   #searchform{
     width: 200px;
   }
@@ -142,6 +151,16 @@
     }
   }
 
+  .headHome{
+    background: #000;
+    #bgHead{
+      .no-mobile &{
+        height: 450px !important;
+        opacity: .5;
+      }
+    }
+  }
+
   .page-template-register, .page-template-login, .page-template-reset{
     .content.main{
       padding-top: 35px;
@@ -179,12 +198,29 @@
     }
     a{
       font-size: .85em;
+      span{
+        display: inline-block;
+      }
     }
     &:after{
       display: none;
     }
     &.on{
       left: 30px;
+    }
+    .logout{
+      padding-right: 0;
+      > span{
+        display: none;
+      }
+    }
+    .icon-off{
+      .gotham(.85em);
+      position: static;
+      border-bottom: 1px solid;
+      &:before{
+        display: none;
+      }
     }
   }
 
@@ -212,6 +248,10 @@
       max-width: 500px;
       display: block;
     }
+  }
+
+  .t-trip{
+    opacity: .5 !important;
   }
 }
 
@@ -267,6 +307,91 @@
       width: 100%;
       &.left{
         margin-right: 0;
+      }
+    }
+  }
+
+  .bgBlue{
+    .txt{
+      width: 100%;
+    }
+  }
+}
+
+@media(max-width: 580px){
+  .onglet{
+    h2{
+      button{
+        font-size: 1em;
+      }
+    }
+  }
+
+  .dragConseils{
+    display: none;
+  }
+
+  .ongletConseils{
+    fieldset{
+      display: block;
+      text-align: left;
+      width: auto !important;
+    }
+    label{
+      font-weight: normal;
+      width: auto;
+      padding: 0 0 0 50px;
+    }
+    input{
+      .size(17px);
+      margin: 0;
+      .transition(.3s ease-in-out);
+      position: absolute;
+      top: 3px;
+      left: 0;
+      &:checked{
+        .size(17px);
+        margin: 0;
+        .transition(.3s ease-in-out);
+        background: @bleuLien;
+      }
+    }
+    .result{
+      margin: 50px 0 0;
+    }
+  }
+
+  .question{
+    h3{
+      text-align: left;
+      margin-top: 30px;
+    }
+  }
+
+  .ongletUsage{
+    .question{
+      fieldset{
+        margin-left: 0 !important;
+      }
+    }
+  }
+
+  .conseils{
+    h4{
+      padding-left: 50px;
+    }
+    b{
+      display: block;
+      width: auto;
+      text-align: left;
+    }
+    p{
+      width: 100%;
+      margin: 10px 0 0;
+    }
+    li{
+      &:before{
+        width: auto;
       }
     }
   }
@@ -385,6 +510,32 @@
       display: none;
     }
   }
+}
+
+@media (max-height: 495px) /*and (max-width: 1040px)*/{
+  #header{
+    padding: 20px 30px;
+  }
+
+  #logo{
+    background-size: 100%;
+    width: 150px;
+    height: 41px;
+    margin: 0 0 20px;
+  }
+
+  .contactHeader{
+    bottom: 20px;
+  }
+
+  .connectMenu.on{
+    bottom: 40px;
+  }
+
+  #container{
+    margin: 0 0 0 235px;
+  }
+
 }
 
 /* RETINA */

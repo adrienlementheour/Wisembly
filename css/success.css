@@ -259,6 +259,12 @@ table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-check:before {
+  content: "\e620";
+}
+.icon-off:before {
+  content: "\e61f";
+}
 .icon-ask:before {
   content: "\e61b";
 }
@@ -1533,6 +1539,18 @@ p.error {
   color: #e25c5b;
   border-color: #e25c5b;
 }
+.cat.bleu {
+  color: #06698d;
+  border-color: #06698d;
+}
+.cat.rouge {
+  color: #46b489;
+  border-color: #46b489;
+}
+.cat.rose {
+  color: #f7886c;
+  border-color: #f7886c;
+}
 .cat:hover,
 .cat:focus {
   color: #959595 !important;
@@ -1591,6 +1609,9 @@ p.error {
 .menuSuccess .hasSubMenu {
   margin: 0 0 30px;
 }
+.menuSuccess .hasSubMenu.notActive {
+  opacity: .6;
+}
 .menuSuccess a,
 .menuSuccess span {
   color: #fff;
@@ -1604,10 +1625,21 @@ p.error {
   text-transform: uppercase;
   color: #67b7d6;
 }
+.menuSuccess .sub-menu .current-menu-item a:before {
+  content: '▶ ';
+  font-size: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 23px;
+  padding: 0 5px 0 0;
+}
 .menuSuccess .sub-menu a:hover,
 .menuSuccess .sub-menu a:focus {
-  color: #cdd7db;
+  opacity: .8;
   padding: 0 0 0 5px;
+}
+.menuSuccess .sub-menu a.notActive {
+  opacity: .6;
 }
 .contactHeader {
   position: absolute;
@@ -1741,6 +1773,7 @@ p.error {
 .connectMenu li {
   display: inline-block;
   padding: 0 15px;
+  color: #fff;
 }
 .connectMenu li:first-child {
   padding: 0 60px 0 0;
@@ -1759,9 +1792,31 @@ p.error {
   font-size: .95em;
   font-weight: 500;
 }
+.connectMenu a span {
+  display: none;
+}
 .connectMenu a:hover,
 .connectMenu a:focus {
   border-color: #cdd7db;
+}
+.connectMenu .logout {
+  position: relative;
+  padding-right: 30px;
+}
+.connectMenu .logout > span {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.connectMenu .icon-off {
+  border: 0;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .lang {
   margin: 0;
@@ -1820,7 +1875,6 @@ p.error {
 .headHome #bgHead {
   background-image: url(../layoutImg/success/headHome@2.jpg);
   background-position: 50% 100%;
-  background-size: 100%;
 }
 .headHome .content.main {
   padding: 42vh 20px 150px;
@@ -1900,6 +1954,7 @@ p.error {
   text-align: center;
   border: 2px solid;
   border-radius: 99%;
+  line-height: 33px;
 }
 #closeVideo:hover,
 #closeVideo:focus {
@@ -1913,7 +1968,7 @@ p.error {
 }
 .home .lienVert:before,
 .page-template-faq .lienVert:before {
-  content: '›';
+  content: '\203A';
   position: absolute;
   left: -10px;
   -webkit-transition: 0.2s ease-in-out;
@@ -2278,6 +2333,7 @@ p.error {
 /* TRIP */
 #trip {
   position: relative;
+  height: 1000px;
   -webkit-transition: height 0.3s ease-in-out;
   transition: height 0.3s ease-in-out;
 }
@@ -2285,6 +2341,8 @@ p.error {
   width: 100%;
   padding: 100px 0 0;
   overflow: hidden;
+  z-index: 1;
+  top: 0;
 }
 .js .trip-step {
   position: absolute;
@@ -2299,7 +2357,7 @@ p.error {
   top: 45%;
   left: 350px;
   right: 40px;
-  z-index: 2;
+  z-index: 3;
 }
 .navTrip li {
   position: absolute;
@@ -2350,6 +2408,8 @@ p.error {
 .pagiTrip {
   text-align: center;
   padding: 40px 0 0;
+  z-index: 2;
+  position: relative;
 }
 .pagiTrip li {
   display: inline-block;
@@ -2393,7 +2453,7 @@ p.error {
   line-height: 40px;
 }
 .page-template-trip .btnFull:before {
-  content: '› ';
+  content: '\203A \00a0';
 }
 .bgBlue {
   position: relative;
@@ -2416,6 +2476,12 @@ p.error {
   height: 250px;
   left: -20%;
   z-index: -1;
+}
+.even .bgBlue:before,
+.even .bgBlue:after {
+  -webkit-transform: rotate(4deg);
+  -ms-transform: rotate(4deg);
+  transform: rotate(4deg);
 }
 .bgBlue:before {
   top: -60px;
@@ -2499,6 +2565,52 @@ p.error {
   background: #fff;
   color: #07435b;
 }
+.t-trip {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  -webkit-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+}
+#t1 {
+  border-width: 0 40px 150px 40px;
+  border-color: transparent transparent #f1bc33 transparent;
+  top: 60px;
+  right: -20px;
+  -webkit-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  opacity: .7;
+}
+#t2 {
+  border-width: 0 39px 270px 105px;
+  border-color: transparent transparent #f7886c transparent;
+  top: 120px;
+  left: -20px;
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+#t3 {
+  border-width: 0 100px 173.2px 100px;
+  border-color: transparent transparent #e25c5b transparent;
+  bottom: -10px;
+  right: -30px;
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
+}
+#t4 {
+  border-width: 0 25px 250px 90px;
+  border-color: transparent transparent #06698d transparent;
+  bottom: -180px;
+  left: 45px;
+  -webkit-transform: rotate(100deg);
+  -ms-transform: rotate(100deg);
+  transform: rotate(100deg);
+  opacity: .5;
+}
 /* Conception */
 .conception {
   max-width: 710px;
@@ -2543,12 +2655,28 @@ p.error {
   font-size: 1.1em;
 }
 .conception form button:before {
-  content: '› ';
+  content: '\203A \00a0';
 }
 .conception form button:hover,
 .conception form button:focus {
   background: #fff;
   color: #07435b;
+}
+.conception .goBack {
+  position: absolute;
+  top: 65px;
+  left: 20px;
+  font-size: 16px;
+  border: 2px solid;
+  border-radius: 99%;
+  width: 24px;
+  height: 24px;
+  line-height: 4px;
+  color: #1c698d;
+}
+.conception .goBack:hover,
+.conception .goBack:focus {
+  color: #fff;
 }
 .onglet {
   padding: 0;
@@ -2629,6 +2757,8 @@ p.error {
   display: inline-block;
   text-align: center;
   vertical-align: bottom;
+  z-index: 1;
+  position: relative;
 }
 .ongletConseils label {
   font-weight: 500;
@@ -2640,8 +2770,8 @@ p.error {
 }
 .ongletConseils input {
   margin: 0;
-  width: 13px;
-  height: 13px;
+  width: 11px;
+  height: 11px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   margin: 20px 0 0;
@@ -2655,6 +2785,11 @@ p.error {
   margin-bottom: -5px;
   margin-top: 16px;
 }
+.question h3 {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .js .question {
   display: none;
 }
@@ -2666,15 +2801,58 @@ p.error {
   max-width: 455px;
   margin: 0 auto;
 }
+.conseils h4 {
+  padding-left: 100px;
+}
 .conseils b {
-  max-width: 85px;
+  width: 85px;
   display: inline-block;
+  text-align: center;
+  font-size: .9em;
+  padding: 8px 0 0;
+  line-height: 1.35em;
 }
 .conseils p {
   display: inline-block;
   max-width: 345px;
   margin: 0 0 0 15px;
   vertical-align: top;
+}
+.conseils li {
+  padding: 0 0 15px 0;
+}
+.conseils li:before {
+  content: "\e620";
+  font-family: 'wisembly';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 80px;
+  text-align: center;
+  font-size: 30px;
+  left: 10px;
+  color: #1c698d;
+}
+.dragConseils {
+  height: 16px;
+  border-radius: 20px;
+  background: #084d66;
+  position: relative;
+  margin: -34px auto 0;
+  max-width: 100%;
+}
+#dragQ1 {
+  width: 360px;
+}
+#dragQ2 {
+  width: 470px;
+}
+#dragQ3 {
+  width: 320px;
 }
 #conseilsForm1 fieldset {
   width: 25%;
@@ -3163,6 +3341,12 @@ fieldset.error label {
   .contactHeader span {
     display: block;
   }
+  .headHome .content.main {
+    padding-top: 38vh;
+  }
+  .no-mobile .headHome .content.main {
+    padding-top: 38vh;
+  }
   #searchform {
     width: 200px;
   }
@@ -3253,6 +3437,13 @@ fieldset.error label {
   .no-mobile .head .content.main {
     padding-top: 5vh;
   }
+  .headHome {
+    background: #000;
+  }
+  .no-mobile .headHome #bgHead {
+    height: 450px !important;
+    opacity: .5;
+  }
   .page-template-register .content.main,
   .page-template-login .content.main,
   .page-template-reset .content.main {
@@ -3292,12 +3483,35 @@ fieldset.error label {
   .connectMenu a {
     font-size: .85em;
   }
+  .connectMenu a span {
+    display: inline-block;
+  }
   .connectMenu:after,
   .connectMenu li:first-child:after {
     display: none;
   }
   .connectMenu.on {
     left: 30px;
+  }
+  .connectMenu .logout {
+    padding-right: 0;
+  }
+  .connectMenu .logout > span {
+    display: none;
+  }
+  .connectMenu .icon-off {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.85em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    position: static;
+    border-bottom: 1px solid;
+  }
+  .connectMenu .icon-off:before {
+    display: none;
   }
   .contactHeader {
     text-align: left;
@@ -3321,6 +3535,9 @@ fieldset.error label {
     margin: 70px auto 0;
     max-width: 500px;
     display: block;
+  }
+  .t-trip {
+    opacity: .5 !important;
   }
 }
 @media (max-width: 767px) {
@@ -3367,6 +3584,70 @@ fieldset.error label {
   }
   .form fieldset.left {
     margin-right: 0;
+  }
+  .bgBlue .txt {
+    width: 100%;
+  }
+}
+@media (max-width: 580px) {
+  .onglet h2 button {
+    font-size: 1em;
+  }
+  .dragConseils {
+    display: none;
+  }
+  .ongletConseils fieldset {
+    display: block;
+    text-align: left;
+    width: auto !important;
+  }
+  .ongletConseils label {
+    font-weight: normal;
+    width: auto;
+    padding: 0 0 0 50px;
+  }
+  .ongletConseils input {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    top: 3px;
+    left: 0;
+  }
+  .ongletConseils input:checked {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    background: #289bc4;
+  }
+  .ongletConseils .result {
+    margin: 50px 0 0;
+  }
+  .question h3 {
+    text-align: left;
+    margin-top: 30px;
+  }
+  .ongletUsage .question fieldset {
+    margin-left: 0 !important;
+  }
+  .conseils h4 {
+    padding-left: 50px;
+  }
+  .conseils b {
+    display: block;
+    width: auto;
+    text-align: left;
+  }
+  .conseils p {
+    width: 100%;
+    margin: 10px 0 0;
+  }
+  .conseils li:before {
+    width: auto;
   }
 }
 @media (max-width: 400px) {
@@ -3452,6 +3733,27 @@ fieldset.error label {
   .contactHeader:after,
   .contactHeader span {
     display: none;
+  }
+}
+@media (max-height: 495px) {
+  /*and (max-width: 1040px)*/
+  #header {
+    padding: 20px 30px;
+  }
+  #logo {
+    background-size: 100%;
+    width: 150px;
+    height: 41px;
+    margin: 0 0 20px;
+  }
+  .contactHeader {
+    bottom: 20px;
+  }
+  .connectMenu.on {
+    bottom: 40px;
+  }
+  #container {
+    margin: 0 0 0 235px;
   }
 }
 /* RETINA */

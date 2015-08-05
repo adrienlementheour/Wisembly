@@ -131,6 +131,18 @@ p{
     color: @rouge;
     border-color: @rouge;
   }
+  &.bleu{
+    color: @bleu;
+    border-color: @bleu;
+  }
+  &.rouge{
+    color: @vert;
+    border-color: @vert;
+  }
+  &.rose{
+    color: @rose;
+    border-color: @rose;
+  }
   &:hover, &:focus{
     color: @grisH2 !important;
     border-color: @grisH2 !important;
@@ -192,6 +204,9 @@ p{
   }
   .hasSubMenu{
     margin: 0 0 30px;
+    &.notActive{
+      opacity: .6;
+    }
   }
   a, span{
     color: #fff;
@@ -206,10 +221,25 @@ p{
     color: @bleuTitresMenu;
   }
   .sub-menu{
+    .current-menu-item{
+      a{
+        &:before{
+          content: '▶ ';
+          font-size: 10px;
+          display: inline-block;
+          vertical-align: middle;
+          line-height: 23px;
+          padding: 0 5px 0 0;
+        }
+      }
+    }
     a{
       &:hover, &:focus{
-        color: #cdd7db;
+        opacity: .8;
         padding: 0 0 0 5px;
+      }
+      &.notActive{
+        opacity: .6;
       }
     }
   }
@@ -316,6 +346,7 @@ p{
   li{
     display: inline-block;
     padding: 0 15px;
+    color: #fff;
     &:first-child{
       padding: 0 60px 0 0;
       position: relative;
@@ -334,9 +365,31 @@ p{
     border-color: #fff;
     font-size: .95em;
     font-weight: 500;
+    span{
+      display: none;
+    }
     &:hover, &:focus{
       border-color: #cdd7db;
     }
+  }
+  .logout{
+    position: relative;
+    padding-right: 30px;
+    > span{
+      display: inline-block;
+      overflow: hidden;
+      max-width: 200px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+  }
+  .icon-off{
+    border: 0;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 
@@ -402,7 +455,7 @@ p{
   #bgHead{
     background-image: url(../layoutImg/success/headHome@2.jpg);
     background-position: 50% 100%;
-    background-size: 100%;
+    //background-size: 100%;
   }
   .content.main{
     padding: 42vh 20px 150px;
@@ -472,6 +525,7 @@ p{
   text-align: center;
   border: 2px solid;
   border-radius: 99%;
+  line-height: 33px;
   &:hover, &:focus{
     background: @jaune;
     border-color: @jaune;
@@ -485,7 +539,7 @@ p{
   .lienVert{
     position: relative;
     &:before{
-      content: '›';
+      content: '\203A';
       position: absolute;
       left: -10px;
       .transition(.2s ease-in-out);
@@ -829,12 +883,15 @@ p{
 
 #trip{
   position: relative;
+  height: 1000px;
   .transition(height .3s ease-in-out);
 }
 .trip-step{
   width: 100%;
   padding: 100px 0 0;
   overflow: hidden;
+  z-index: 1;
+  top: 0;
   .js &{
     position: absolute;
     .transition(left .5s ease-in-out);
@@ -851,7 +908,7 @@ p{
   top: 45%;
   left: 350px;
   right: 40px;
-  z-index: 2;
+  z-index: 3;
   li{
     position: absolute;
     padding: 0;
@@ -899,6 +956,8 @@ p{
 .pagiTrip{
   text-align: center;
   padding: 40px 0 0;
+  z-index: 2;
+  position: relative;
   li{
     display: inline-block;
     padding: 0;
@@ -943,7 +1002,7 @@ p{
     height: 40px;
     line-height: 40px;
     &:before{
-      content: '› ';
+      content: '\203A \00a0';
     }
   }
 }
@@ -965,6 +1024,9 @@ p{
     height: 250px;
     left: -20%;
     z-index: -1;
+    .even &{
+      .transform(rotate(4deg));
+    }
   }
   &:before{
     top: -60px;
@@ -1049,6 +1111,44 @@ p{
   }
 }
 
+.t-trip{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  .transition(.7s ease-in-out);
+}
+#t1{
+  border-width: 0 40px 150px 40px;
+  border-color: transparent transparent @jaune transparent;
+  top: 60px;
+  right: -20px;
+  .transform(rotate(-20deg));
+  opacity: .7;
+}
+#t2{
+  border-width: 0 39px 270px 105px;
+  border-color: transparent transparent @rose transparent;
+  top: 120px;
+  left: -20px;
+  .transform(rotate(40deg));
+}
+#t3{
+  border-width: 0 100px 173.2px 100px;
+  border-color: transparent transparent @rouge transparent;
+  bottom: -10px;
+  right: -30px;
+  .transform(rotate(7deg));
+}
+#t4{
+  border-width: 0 25px 250px 90px;
+  border-color: transparent transparent @bleu transparent;
+  bottom: -180px;
+  left: 45px;
+  .transform(rotate(100deg));
+  opacity: .5;
+}
+
  /* Conception */
 
 .conception{
@@ -1089,12 +1189,26 @@ p{
       border: 2px solid;
       font-size: 1.1em;
       &:before{
-        content: '› ';
+        content: '\203A \00a0';
       }
       &:hover, &:focus{
         background: #fff;
         color: @bgBlue;
       }
+    }
+  }
+  .goBack{
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    font-size: 16px;
+    border: 2px solid;
+    border-radius: 99%;
+    .size(24px);
+    line-height: 4px;
+    color: #1c698d;
+    &:hover, &:focus{
+      color: #fff;
     }
   }
 }
@@ -1189,6 +1303,8 @@ p{
     display: inline-block;
     text-align: center;
     vertical-align: bottom;
+    z-index: 1;
+    position: relative;
   }
   label{
     font-weight: 500;
@@ -1200,7 +1316,7 @@ p{
   }
   input{
     margin: 0;
-    .size(13px);
+    .size(11px);
     .transition(.2s);
     margin: 20px 0 0;
     &:checked{
@@ -1213,6 +1329,11 @@ p{
   }
 }
 .question{
+  h3{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .js &{
     display: none;
     &.actif{
@@ -1225,9 +1346,16 @@ p{
   display: none;
   max-width: 455px;
   margin: 0 auto;
+  h4{
+    padding-left: 100px;
+  }
   b{
-    max-width: 85px;
+    width: 85px;
     display: inline-block;
+    text-align: center;
+    font-size: .9em;
+    padding: 8px 0 0;
+    line-height: 1.35em;
   }
   p{
     display: inline-block;
@@ -1235,6 +1363,37 @@ p{
     margin: 0 0 0 15px;
     vertical-align: top;
   }
+  li{
+    padding: 0 0 15px 0;
+    &:before{
+      content: "\e620";
+      .fontIcon();
+      width: 80px;
+      text-align: center;
+      font-size: 30px;
+      left: 10px;
+      color: #1c698d;
+    }
+  }
+}
+
+.dragConseils{
+  height: 16px;
+  border-radius: 20px;
+  background: #084d66;
+  position: relative;
+  margin: -34px auto 0;
+  max-width: 100%;
+  //cursor: pointer;
+}
+#dragQ1{
+  width: 360px;
+}
+#dragQ2{
+  width: 470px;
+}
+#dragQ3{
+  width: 320px;
 }
 
 #conseilsForm1{

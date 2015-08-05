@@ -256,6 +256,12 @@ table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-check:before {
+  content: "\e620";
+}
+.icon-off:before {
+  content: "\e61f";
+}
 .icon-ask:before {
   content: "\e61b";
 }
