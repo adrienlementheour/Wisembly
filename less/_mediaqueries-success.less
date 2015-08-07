@@ -7,9 +7,9 @@
     }
     a{
       border: 3px solid;
-      line-height: 18px;
-      .size(18px);
-      font-size: 10px;
+      line-height: 26px;
+      .size(25px);
+      font-size: 11px;
     }
   }
 }
@@ -42,9 +42,13 @@
 
   .headHome{
     .content.main{
-      padding-top: 38vh;
+      padding-top: 24vh;
       .no-mobile &{
-        padding-top: 38vh;
+        padding-top: 24vh;
+      }
+      .no-js &{
+        padding-top: 15vh;
+        padding-bottom: 120px;
       }
     }
   }
@@ -122,8 +126,12 @@
   }
 
   .rsFooter{
-    .no-mobile &{
-      padding: 0;
+    padding: 0;
+    .content{
+      overflow: hidden;
+    }
+    &:before{
+      top: 50px;
     }
   }
 }
@@ -154,10 +162,8 @@
   .headHome{
     background: #000;
     #bgHead{
-      .no-mobile &{
-        height: 450px !important;
-        opacity: .5;
-      }
+      height: 450px !important;
+      opacity: .5;
     }
   }
 
@@ -278,7 +284,7 @@
 
   #closeVideo{
     font-size: 9px;
-    line-height: 18px;
+    line-height: 19px;
     .size(25px);
   }
 
@@ -397,6 +403,12 @@
   }
 }
 
+@media(max-width: 480px){
+  #nbParticipants{
+    left: -10px;
+  }
+}
+
 @media(max-width: 400px){
   #connectHeader{
     padding: 27px 20px;
@@ -405,15 +417,19 @@
     width: 165px;
   }
 
+  .head{
+    .content.main{
+      padding-top: 10vh;
+      padding-bottom: 130px;
+    }
+  }
+
   .headVideo{
     #videoIframe{
       height: 35vh;
       max-height: 230px;
       min-height: 180px;
       margin: 30px auto 0;
-    }
-    .content.main{
-      padding-bottom: 130px;
     }
   }
 
@@ -426,19 +442,38 @@
       width: 280px;
     }
   }
+
+  .onglet{
+    h2{
+      button{
+        font-size: .85em;
+      }
+    }
+  }
+
+  .question{
+    h3{
+      margin: 15px 0 0;
+      font-size: 1em;
+    }
+  }
+
+  .conception{
+    input{
+      margin: 0 20px 0 0;
+    }
+  }
 }
 
 @media(max-width: 335px){
-  #header {
-    padding: 30px 20px;
-  }
-
   #burger.actif{
     left: 250px;
   }
 
-  .connectMenu.on{
-    left: 20px;
+  .headHome{
+    .btnFull{
+      font-size: .9em;
+    }
   }
 }
 
@@ -459,7 +494,7 @@
   .headHome{
     .no-mobile &{
       .content.main{
-        padding-top: 10vh;
+        padding-top: 20vh;
       }
     }
   }
@@ -512,7 +547,7 @@
   }
 }
 
-@media (max-height: 495px) /*and (max-width: 1040px)*/{
+@media (max-height: 495px){
   #header{
     padding: 20px 30px;
   }
@@ -532,11 +567,47 @@
     bottom: 40px;
   }
 
+}
+
+@media (max-height: 495px) and (min-width: 1110px){
+  
   #container{
     margin: 0 0 0 235px;
   }
 
 }
+
+
+@media (max-height: 455px) and (max-width: 1110px){
+  
+  .menuSuccess{
+    .hasSubMenu{
+      margin: 0 0 10px;
+    }
+    span{
+      display: none;
+    }
+  }
+
+}
+
+@media (max-height: 455px) and (min-width: 1110px){
+  
+  #container{
+    margin: 0 0 0 210px;
+  }
+
+}
+
+@media (max-height: 380px) and (max-width: 1110px){
+  
+  .connectMenu{
+    display: none;
+  }
+
+}
+
+
 
 /* RETINA */
 
