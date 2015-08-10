@@ -55,10 +55,16 @@ $.urlParam = function(name){
 }
 
 function shuffle(array) {
-  var random = array.map(Math.random);
-  array.sort(function(a, b){
-    return random[a] - random[b];
-  });
+  var elementsRemaining = array.length, temp, randomIndex;
+  while (elementsRemaining > 1) {
+    randomIndex = Math.floor(Math.random() * elementsRemaining--);
+    if (randomIndex != elementsRemaining) {
+      temp = array[elementsRemaining];
+      array[elementsRemaining] = array[randomIndex];
+      array[randomIndex] = temp;
+    }
+  }
+  return array;
 }
 
 function isValidEmail(email) {
@@ -1100,20 +1106,29 @@ function wisemblyTrip(updateHeight){
 		
 		function animateShapes(){
 			
-			function setCoordinates(shape, dir, rand, randCoord){
-				shapeDefault = filterInt(shape.css(dir).replace('px',''));
+			function setCoordinates(shape, axe, rand, randCoord, axeX){
+				shapeDefault = filterInt(shape.css(axe).replace('px',''));
 				
 				if( shape.isOnScreen() ){
 					newCoord = shapeDefault;
-					newCoord += (rand > .5) ? randCoord : - randCoord;
+					if(axeX){
+						if(axe == 'left'){
+							newCoord += (dir == 'next') ? randCoord : - randCoord;
+						}else{
+							newCoord -= (dir == 'next') ? randCoord : - randCoord;
+						}
+					}else{
+						newCoord += (rand > .5) ? randCoord : - randCoord;
+					}
 					newCoord += 'px';
-				}else{
+				}else if(!axeX){
 					newCoord = '';
 				}
-				shape.css(dir, newCoord);
+				shape.css(axe, newCoord);
+
 			}
 
-			var i = 0, randAngle, randNeg;
+			var i = 0, randAngle, randNeg, randColors = shuffle([0, 1, 2, 3, 4]);
 
 			for(i; i<nbShapes; i++){
 				randAngle = Math.random() * (30 - 5) + 5;
@@ -1121,7 +1136,7 @@ function wisemblyTrip(updateHeight){
 				randNeg = randNeg > .5 ? '-' : '+';
 
 				shapes[i].css({
-					'border-bottom-color': colors[ Math.floor(Math.random() * nbColors) ], 
+					'border-bottom-color': colors[ randColors[i] ], 
 					'opacity': Math.random() + .3,
 					'transform': 'rotate('+randNeg+randAngle+'deg)',
 					'-ms-transform': 'rotate('+randNeg+randAngle+'deg)',
@@ -1129,7 +1144,7 @@ function wisemblyTrip(updateHeight){
 				});
 
 				setCoordinates(shapes[i], shapes[i].data('y'), Math.random(), Math.floor(Math.random() * 20));
-				setCoordinates(shapes[i], shapes[i].data('x'), Math.random(), Math.floor(Math.random() * 20));
+				setCoordinates(shapes[i], shapes[i].data('x'), Math.random(), Math.floor((Math.random() * (40 - 10) + 10 ) ), true);
 			}
 		}
 
@@ -1275,6 +1290,67 @@ function wisemblyTrip(updateHeight){
 	
 }
 
+// Apparition du slider trip conception //
+function setDraggableInputs(container, parts, nbForm){
+	var dragWidth = container.width()-10,
+		pos1 = 5, pos2 = (dragWidth/parts) - 3,
+		pos3 = parts > 2 ? (2*(dragWidth/parts)) - 5 : dragWidth - 15,
+		pos4 = parts > 3 ? (3*(dragWidth/parts)) - 5 : dragWidth - 15,
+		pos5 = dragWidth - 15,
+		positions = [pos1, pos2, pos3, pos4, pos5],
+		fields = container.siblings('fieldset'),
+		id = 'drag'+nbForm;
+
+	if(parts > 4){
+		positions = [pos1, pos2, pos3, pos4];
+		if(parts > 3){
+			positions = [pos1, pos2, pos3];
+		}
+	}
+
+	function updateDrag(nb){
+		fields.eq(nb).removeClass('noCheck').find('input').prop('checked', true).change().parents('fieldset').siblings('fieldset').addClass('noCheck').find('input').prop('checked', false).change();
+	}
+
+	container.append("<div id='"+id+"'></div>");
+	Draggable.create('#'+id, {
+		type: 'x', 
+		bounds: container,
+		cursor: 'pointer',
+		throwProps: true,
+		snap: positions,
+		throwResistance: 2000,
+		maxDuration: 3,
+		onThrowComplete: function(){
+			switch (this.x){
+				case positions[0]:
+					updateDrag(0);
+					break;
+				case positions[1]:
+					updateDrag(1);
+					break;
+				case positions[2]:
+					updateDrag(2);
+					break;
+				case positions[3]:
+					updateDrag(3);
+					break;
+				case positions[4]:
+					updateDrag(4);
+					break;
+			}
+		}
+	});
+
+	fields.on('click', function(){
+		nb = $(this).index();
+		pos = positions[nb];
+		TweenLite.set($('#'+id),{x: pos });
+		updateDrag(nb);
+	});
+
+}
+
 function openVideos(videoLink){
 	var videoContainer = $('#videoContainer'),
 		headVideo = $('#headVideo');
@@ -1406,8 +1482,7 @@ function setDraggableDebitButton(){
 
 
 function setActiveSuccessMenu(){
-	var menu = $('#menu'), 
-		current = menu.find('.current-menu-item');
+	var menu = $('#menu'), current = menu.find('.current-menu-item');
 
 	if( current.length ){
 		current.siblings().find('a').addClass('notActive');
@@ -1490,6 +1565,9 @@ $(function(){
 		wisemblyTrip();
 		if($(window).width() > 1300)
 			animateArrowsTrip($('.trip-step.actif'));
+		setDraggableInputs($('#dragQ1'), 3, 1);
+		setDraggableInputs($('#dragQ2'), 4, 2);
+		setDraggableInputs($('#dragQ3'), 2, 3);
 	}
 
 	$('#closePopBlog').on('click', function(){

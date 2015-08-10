@@ -34,7 +34,7 @@ img{
 h1{
   font-size: 1.5em;
   color: @bleuHeader;
-  .page-template-trip &{
+  .page-template-trip &, &.e404{
     &:after{
       content: '';
       width: 75px;
@@ -43,6 +43,14 @@ h1{
       background: @grisBorder;
       margin: 30px auto;
     }
+  }
+  .page-template-trip &{
+    + h2 + p{
+      background: fade(#fff, 60);
+    }
+  }
+  &.e404{
+    font-size: 2.5em;
   }
 }
 
@@ -398,6 +406,7 @@ p{
       text-overflow: ellipsis;
       white-space: nowrap;
       vertical-align: middle;
+
     }
   }
   .icon-off{
@@ -407,7 +416,7 @@ p{
     top: 0;
     right: 0;
     height: 100%;
-    line-height: 19px;
+    line-height: 22px;
   }
 }
 
@@ -635,7 +644,7 @@ footer{
   }
   img{
     margin: 0 0 20px;
-    border: 1px solid @grisBorder;
+    //border: 1px solid @grisBorder;
   }
   figure{
     display: inline-block;
@@ -710,10 +719,11 @@ footer{
       margin: .5em auto 2.5em;
     }
     > p{
-      min-height: 40px;
+      min-height: 57px;
     }
-    > .cat{
-      margin-top: .25em;
+    .date{
+      margin: 0 0 3.29em;
+      height: 20px;
     }
   }
   div{
@@ -731,12 +741,13 @@ footer{
   }
   .date{
     display: block;
-    margin: 0 0 2.5em;
-    height: 20px;
   }
   h3{
     min-height: 45px;
   }
+  /*img{
+    border: 1px solid #d8d8d8;
+  }*/
 }
 
 .videoTitle, .agendaTitle, .docTitle{
@@ -1275,6 +1286,7 @@ footer{
     border-radius: 99%;
     border-width: 4px;
     margin: 0 30px 0 0;
+    -moz-appearance: radio;
     &:checked{
       border-color: #fff;
       background: @bleuLien;
@@ -1434,6 +1446,10 @@ footer{
     vertical-align: bottom;
     z-index: 1;
     position: relative;
+    .transition(opacity .3s ease-in-out);
+    &.noCheck{
+      opacity: .7;
+    }
   }
   label{
     font-weight: 500;
@@ -1441,6 +1457,9 @@ footer{
     span{
       font-style: normal;
       opacity: 1;
+    }
+    .js &{
+      cursor: pointer;
     }
   }
   input{
@@ -1450,10 +1469,12 @@ footer{
     margin: 20px 0 0;
     &:checked{
       background: #fff;
-      .size(22px);
-      .transition(.2s);
-      margin-bottom: -5px;
-      margin-top: 16px;
+      .no-js &{
+        .size(22px);
+        .transition(.2s);
+        margin-bottom: -5px;
+        margin-top: 16px;
+      }
     }
   }
 }
@@ -1521,6 +1542,9 @@ footer{
   position: relative;
   margin: -34px auto 0;
   max-width: 100%;
+  #drag1, #drag2, #drag3{
+    z-index: 2;
+  }
 }
 #dragQ1{
   width: 360px;
@@ -1615,7 +1639,7 @@ footer{
   margin: 0 auto;
   cursor: pointer;
 }
-#drag{
+#drag, #drag1, #drag2, #drag3{
   .size(22px);
   border-radius: 99%;
   background: #fff;
@@ -1673,6 +1697,7 @@ footer{
   }
   img{
     margin: 25px 0 40px;
+    //border: 1px solid #d8d8d8;
   }
 }
 

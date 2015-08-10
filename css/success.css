@@ -1436,6 +1436,7 @@ h1 {
   color: #0d5c7b;
 }
 .page-template-trip h1:after,
+h1.e404:after,
 .questions h2:after,
 .docInstall h2:after,
 .astuces h2:after {
@@ -1445,6 +1446,12 @@ h1 {
   display: block;
   background: #d8d8d8;
   margin: 30px auto;
+}
+.page-template-trip h1 + h2 + p {
+  background: rgba(255, 255, 255, 0.6);
+}
+h1.e404 {
+  font-size: 2.5em;
 }
 h1,
 h2,
@@ -1836,7 +1843,7 @@ p.error {
   top: 0;
   right: 0;
   height: 100%;
-  line-height: 19px;
+  line-height: 22px;
 }
 .lang {
   margin: 0;
@@ -2064,7 +2071,6 @@ footer.bottom {
 }
 .list-post img {
   margin: 0 0 20px;
-  border: 1px solid #d8d8d8;
 }
 .list-post figure {
   display: inline-block;
@@ -2100,6 +2106,11 @@ footer.bottom {
 .page-template-ressources .list-post,
 .page-template-agenda .list-post {
   padding: 60px 0 0;
+}
+.ressources {
+  /*img{
+    border: 1px solid #d8d8d8;
+  }*/
 }
 .lt-ie9 .ressources {
   margin-top: 50px;
@@ -2139,10 +2150,11 @@ footer.bottom {
   margin: .5em auto 2.5em;
 }
 .ressources article > p {
-  min-height: 40px;
+  min-height: 57px;
 }
-.ressources article > .cat {
-  margin-top: .25em;
+.ressources article .date {
+  margin: 0 0 3.29em;
+  height: 20px;
 }
 .ressources div p,
 .ressources div h4 {
@@ -2159,8 +2171,6 @@ footer.bottom {
 }
 .ressources .date {
   display: block;
-  margin: 0 0 2.5em;
-  height: 20px;
 }
 .ressources h3 {
   min-height: 45px;
@@ -2746,6 +2756,7 @@ footer.bottom {
   border-radius: 99%;
   border-width: 4px;
   margin: 0 30px 0 0;
+  -moz-appearance: radio;
 }
 .conception input:checked {
   border-color: #fff;
@@ -2891,6 +2902,11 @@ footer.bottom {
   vertical-align: bottom;
   z-index: 1;
   position: relative;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.ongletConseils fieldset.noCheck {
+  opacity: .7;
 }
 .ongletConseils label {
   font-weight: 500;
@@ -2899,6 +2915,9 @@ footer.bottom {
 .ongletConseils label span {
   font-style: normal;
   opacity: 1;
+}
+.js .ongletConseils label {
+  cursor: pointer;
 }
 .ongletConseils input {
   margin: 0;
@@ -2910,6 +2929,8 @@ footer.bottom {
 }
 .ongletConseils input:checked {
   background: #fff;
+}
+.no-js .ongletConseils input:checked {
   width: 22px;
   height: 22px;
   -webkit-transition: 0.2s;
@@ -2981,6 +3002,11 @@ footer.bottom {
   position: relative;
   margin: -34px auto 0;
   max-width: 100%;
+}
+.dragConseils #drag1,
+.dragConseils #drag2,
+.dragConseils #drag3 {
+  z-index: 2;
 }
 #dragQ1 {
   width: 360px;
@@ -3064,7 +3090,10 @@ footer.bottom {
   margin: 0 auto;
   cursor: pointer;
 }
-#drag {
+#drag,
+#drag1,
+#drag2,
+#drag3 {
   width: 22px;
   height: 22px;
   border-radius: 99%;
@@ -3690,6 +3719,9 @@ fieldset.error label {
   }
   .t-trip {
     opacity: .5 !important;
+  }
+  .page-template-trip h1 + h2 + p {
+    background: none;
   }
 }
 @media (max-width: 767px) {
