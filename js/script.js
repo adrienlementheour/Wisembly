@@ -1291,7 +1291,7 @@ function wisemblyTrip(updateHeight){
 }
 
 // Apparition du slider trip conception //
-function setDraggableInputs(container, parts, nbForm){
+function setDraggableInputs(container, parts, nbForm, firstClick){
 	var dragWidth = container.width()-10,
 		pos1 = 5, pos2 = (dragWidth/parts) - 3,
 		pos3 = parts > 2 ? (2*(dragWidth/parts)) - 5 : dragWidth - 15,
@@ -1299,7 +1299,8 @@ function setDraggableInputs(container, parts, nbForm){
 		pos5 = dragWidth - 15,
 		positions = [pos1, pos2, pos3, pos4, pos5],
 		fields = container.siblings('fieldset'),
-		id = 'drag'+nbForm;
+		id = 'drag'+nbForm,
+		firstNb = firstClick.index();
 
 	if(parts > 4){
 		positions = [pos1, pos2, pos3, pos4];
@@ -1342,10 +1343,12 @@ function setDraggableInputs(container, parts, nbForm){
 		}
 	});
 
+	TweenLite.set($('#'+id),{x: positions[firstNb] });
+	updateDrag(firstNb);
+
 	fields.on('click', function(){
 		nb = $(this).index();
-		pos = positions[nb];
-		TweenLite.set($('#'+id),{x: pos });
+		TweenLite.set($('#'+id),{x: positions[nb] });
 		updateDrag(nb);
 	});
 
@@ -1485,6 +1488,13 @@ function setActiveSuccessMenu(){
 	var menu = $('#menu'), current = menu.find('.current-menu-item');
 
 	if( current.length ){
+
+		/* Condition pour filtres Incriptions */
+		if(current.length > 1){
+			current = menu.find('.current-menu-item').eq(1);
+			menu.find('.current-menu-item').eq(0).removeClass();
+		}
+
 		current.siblings().find('a').addClass('notActive');
 		current.parents('.hasSubMenu').siblings().addClass('notActive');
 	}
@@ -1565,10 +1575,17 @@ $(function(){
 		wisemblyTrip();
 		if($(window).width() > 1300)
 			animateArrowsTrip($('.trip-step.actif'));
-		setDraggableInputs($('#dragQ1'), 3, 1);
-		setDraggableInputs($('#dragQ2'), 4, 2);
-		setDraggableInputs($('#dragQ3'), 2, 3);
 	}
+	$('#dragQ1').parents('form').one('click', 'fieldset', function(){
+		setDraggableInputs($('#dragQ1'), 3, 1, $(this));
+	});
+	/*$('#dragQ2').parents('form').one('click', 'fieldset', function(){
+		setDraggableInputs($('#dragQ2'), 4, 2, $(this));
+	});*/
+	$('#dragQ3').parents('form').one('click', 'fieldset', function(){
+		setDraggableInputs($('#dragQ3'), 2, 3, $(this));
+	});
+
 
 	$('#closePopBlog').on('click', function(){
 		$('#popupBlog').animate({'height': 0}, function(){

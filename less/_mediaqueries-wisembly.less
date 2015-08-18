@@ -892,6 +892,52 @@
     top: 15px;
     .transition(.3s ease-in-out);
   }
+
+  .head:not(.headLivreLanding){
+    padding: 0 0 50%;
+    #bgHead{
+      background-size: 100%;
+      background-position: 0 100%;
+      top: auto;
+      bottom: 50px;
+      position: absolute;
+      height: 340px;
+      .no-js &{
+        top: auto;
+      }
+      .no-mobile &{
+        top: auto;
+        bottom: 50px;
+      }
+    }
+    h1{
+      margin: 0;
+      text-align: center;
+      font-size: 2.7em;
+    }
+    &:before{
+      display: none;
+    }
+    .btnFull{
+      margin: 0 auto;
+    }
+    .content.main{
+      padding: 40px 20px 20px;
+      background: @bleu;
+      &:after{
+        content: '';
+        display: block;
+        width: 120%;
+        height: 50px;
+        background: @bleu;
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        .transform(rotate(3deg));
+        z-index: -1;
+      }
+    }
+  }
   
   #slider-anim-visez-juste .zone-anim{
     width: 100%;
@@ -1598,6 +1644,10 @@
     display: none;
   }
 
+  .head:not(.headLivreLanding){
+    padding: 0 0 55%;
+  }
+
   .headLivres, .headTeam, .headClients{
     padding: 0 0 43% !important;
   }
@@ -1846,6 +1896,10 @@
 
 
 @media (max-width: 330px){
+  
+  .head:not(.headLivreLanding){
+    padding: 0 0 60%;
+  }
 
   .headLivres, .headTeam, .headClients{
     padding: 0 0 50% !important;

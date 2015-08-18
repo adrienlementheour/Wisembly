@@ -750,7 +750,7 @@ footer{
   }*/
 }
 
-.videoTitle, .agendaTitle, .docTitle{
+/*.videoTitle, .agendaTitle, .docTitle{
   &:before{
     .fontIcon();
     display: block;
@@ -770,7 +770,7 @@ footer{
 }
 .videoTitle:before {
   content: "\e61e";
-}
+}*/
 
 .questions{
   width: 50%;
@@ -829,7 +829,7 @@ footer{
   }
 }
 
-.page-template-faq, .page-template-installation{
+/*.page-template-faq, .page-template-installation{
   h1{
     &:before{
       content: "\e61b";
@@ -840,7 +840,7 @@ footer{
       text-align: center;
     }
   }
-}
+}*/
 
 .formateurs{
   margin: 70px auto 0;
@@ -1283,13 +1283,15 @@ footer{
   }
   input{
     .size(17px);
-    border-radius: 99%;
-    border-width: 4px;
     margin: 0 30px 0 0;
-    -moz-appearance: radio;
-    &:checked{
-      border-color: #fff;
-      background: @bleuLien;
+    &[type=radio]{
+      border-radius: 99%;
+      -moz-appearance: radio;
+      border-width: 4px;
+      &:checked{
+        border-color: #fff;
+        background: @bleuLien;
+      }
     }
   }
   fieldset{
@@ -1507,14 +1509,6 @@ footer{
   h4{
     padding-left: 100px;
   }
-  b{
-    width: 85px;
-    display: inline-block;
-    text-align: center;
-    font-size: .9em;
-    padding: 8px 0 0;
-    line-height: 1.35em;
-  }
   p{
     display: inline-block;
     max-width: 345px;
@@ -1523,6 +1517,23 @@ footer{
   }
   li{
     padding: 0 0 15px 0;
+    div{
+      margin: 30px 0 0;
+      &:first-child{
+        margin: 0;
+      }
+    }
+    > b, div > b{
+      width: 85px;
+      display: inline-block;
+      text-align: center;
+      font-size: .9em;
+      padding: 8px 0 0;
+      line-height: 1.35em;
+      span{
+        font-size: .9em;
+      }
+    }
     &:before{
       content: "\e620";
       .fontIcon();
@@ -1766,6 +1777,19 @@ fieldset{
       color: @rouge;
     }
   }
+}
+
+
+#fdMenu{
+  position: fixed;
+  background: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .7;
+  display: none;
+  z-index: 2;
 }
 
 

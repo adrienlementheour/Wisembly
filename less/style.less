@@ -309,6 +309,10 @@ input, textarea{
     border-color: @vert;
     .transition(.3s ease-in-out);
   }
+  &[type=checkbox]{
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+  }
 }
 input{
   + button{
@@ -968,18 +972,6 @@ footer{
   right: -50px;
 }
 
-
-#fdMenu{
-  position: fixed;
-  background: #000;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: .7;
-  display: none;
-  z-index: 2;
-}
 
 /* Special IE 8 */
 

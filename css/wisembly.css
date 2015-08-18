@@ -641,6 +641,11 @@ textarea:focus {
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+input[type=checkbox],
+textarea[type=checkbox] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+}
 input + button {
   margin-left: 3px;
 }
@@ -1380,17 +1385,6 @@ footer {
 #next {
   right: -50px;
 }
-#fdMenu {
-  position: fixed;
-  background: #000;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: .7;
-  display: none;
-  z-index: 2;
-}
 /* Special IE 8 */
 .lt-ie9 .content.simple {
   padding-right: 20px;
@@ -2062,6 +2056,7 @@ header.menuVisible #triangleMenu {
   margin: 28px 0 27px;
   position: relative;
   top: 0;
+  z-index: 11;
   -webkit-transition: none;
   transition: none;
 }
@@ -6522,53 +6517,6 @@ ul.whr-items li ul.whr-info li.whr-date {
     -ms-transform: rotate(-3deg);
     transform: rotate(-3deg);
   }
-  .head:not(.headLivreLanding, .headVideo) {
-    padding: 0 0 50%;
-  }
-  .head:not(.headLivreLanding, .headVideo) #bgHead {
-    background-size: 100%;
-    background-position: 0 100%;
-    top: auto;
-    bottom: 50px;
-    position: absolute;
-    height: 340px;
-  }
-  .no-js .head:not(.headLivreLanding, .headVideo) #bgHead {
-    top: auto;
-  }
-  .no-mobile .head:not(.headLivreLanding, .headVideo) #bgHead {
-    top: auto;
-    bottom: 50px;
-  }
-  .head:not(.headLivreLanding, .headVideo) h1 {
-    margin: 0;
-    text-align: center;
-    font-size: 2.7em;
-  }
-  .head:not(.headLivreLanding, .headVideo):before {
-    display: none;
-  }
-  .head:not(.headLivreLanding, .headVideo) .btnFull {
-    margin: 0 auto;
-  }
-  .head:not(.headLivreLanding, .headVideo) .content.main {
-    padding: 40px 20px 20px;
-    background: #06698d;
-  }
-  .head:not(.headLivreLanding, .headVideo) .content.main:after {
-    content: '';
-    display: block;
-    width: 120%;
-    height: 50px;
-    background: #06698d;
-    position: absolute;
-    bottom: -25px;
-    left: 0;
-    -webkit-transform: rotate(3deg);
-    -ms-transform: rotate(3deg);
-    transform: rotate(3deg);
-    z-index: -1;
-  }
   blockquote.blue {
     padding: 20px 15px;
     font-size: 1em;
@@ -6603,9 +6551,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   .none450 {
     display: none;
   }
-  .head:not(.headLivreLanding, .headVideo) {
-    padding: 0 0 55%;
-  }
   .head h1 {
     font-size: 2.5em;
   }
@@ -6626,9 +6571,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
 }
 @media (max-width: 330px) {
-  .head:not(.headLivreLanding, .headVideo) {
-    padding: 0 0 60%;
-  }
   .btnFull.smallTxt,
   .btnLight.smallTxt,
   .btnBlanc.smallTxt {
@@ -7377,6 +7319,53 @@ ul.whr-items li ul.whr-info li.whr-date {
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
   }
+  .head:not(.headLivreLanding) {
+    padding: 0 0 50%;
+  }
+  .head:not(.headLivreLanding) #bgHead {
+    background-size: 100%;
+    background-position: 0 100%;
+    top: auto;
+    bottom: 50px;
+    position: absolute;
+    height: 340px;
+  }
+  .no-js .head:not(.headLivreLanding) #bgHead {
+    top: auto;
+  }
+  .no-mobile .head:not(.headLivreLanding) #bgHead {
+    top: auto;
+    bottom: 50px;
+  }
+  .head:not(.headLivreLanding) h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2.7em;
+  }
+  .head:not(.headLivreLanding):before {
+    display: none;
+  }
+  .head:not(.headLivreLanding) .btnFull {
+    margin: 0 auto;
+  }
+  .head:not(.headLivreLanding) .content.main {
+    padding: 40px 20px 20px;
+    background: #06698d;
+  }
+  .head:not(.headLivreLanding) .content.main:after {
+    content: '';
+    display: block;
+    width: 120%;
+    height: 50px;
+    background: #06698d;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    -webkit-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    z-index: -1;
+  }
   #slider-anim-visez-juste .zone-anim {
     width: 100%;
   }
@@ -7979,6 +7968,9 @@ ul.whr-items li ul.whr-info li.whr-date {
   #dragIn {
     display: none;
   }
+  .head:not(.headLivreLanding) {
+    padding: 0 0 55%;
+  }
   .headLivres,
   .headTeam,
   .headClients {
@@ -8152,6 +8144,9 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
 }
 @media (max-width: 330px) {
+  .head:not(.headLivreLanding) {
+    padding: 0 0 60%;
+  }
   .headLivres,
   .headTeam,
   .headClients {
