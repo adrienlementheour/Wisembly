@@ -1465,7 +1465,6 @@ footer{
     }
   }
   input{
-    margin: 0;
     .size(11px);
     .transition(.2s);
     margin: 20px 0 0;
@@ -1477,6 +1476,23 @@ footer{
         margin-bottom: -5px;
         margin-top: 16px;
       }
+    }
+    &[type=checkbox]{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      .transition(none);
+      &:checked{
+        .size(21px);
+        bottom: -6px;
+      }
+    }
+  }
+  .question2{
+    fieldset{
+      padding: 0 0 31px;
     }
   }
 }

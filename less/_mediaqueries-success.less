@@ -367,9 +367,22 @@
         .transition(.3s ease-in-out);
         background: @bleuLien;
       }
+      &[type=checkbox]{
+        right: auto;
+        bottom: auto;
+        &:checked{
+          bottom: auto;
+          .size(17px);
+        }
+      }
     }
     .result{
       margin: 50px 0 0;
+    }
+    .question2{
+      fieldset{
+        padding: 0;
+      }
     }
   }
 
@@ -392,16 +405,16 @@
     h4{
       padding-left: 50px;
     }
-    b{
-      display: block;
-      width: auto;
-      text-align: left;
-    }
     p{
       width: 100%;
       margin: 10px 0 0;
     }
     li{
+      > b, div > b{
+        display: block;
+        width: auto;
+        text-align: left;
+      }
       &:before{
         width: auto;
       }

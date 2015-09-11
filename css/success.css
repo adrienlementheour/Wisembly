@@ -2903,7 +2903,6 @@ footer.bottom {
   cursor: pointer;
 }
 .ongletConseils input {
-  margin: 0;
   width: 11px;
   height: 11px;
   -webkit-transition: 0.2s;
@@ -2920,6 +2919,23 @@ footer.bottom {
   transition: 0.2s;
   margin-bottom: -5px;
   margin-top: 16px;
+}
+.ongletConseils input[type=checkbox] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transition: none;
+  transition: none;
+}
+.ongletConseils input[type=checkbox]:checked {
+  width: 21px;
+  height: 21px;
+  bottom: -6px;
+}
+.ongletConseils .question2 fieldset {
+  padding: 0 0 31px;
 }
 .question h3 {
   max-width: 500px;
@@ -3760,8 +3776,20 @@ fieldset.error label {
     transition: 0.3s ease-in-out;
     background: #289bc4;
   }
+  .ongletConseils input[type=checkbox] {
+    right: auto;
+    bottom: auto;
+  }
+  .ongletConseils input[type=checkbox]:checked {
+    bottom: auto;
+    width: 17px;
+    height: 17px;
+  }
   .ongletConseils .result {
     margin: 50px 0 0;
+  }
+  .ongletConseils .question2 fieldset {
+    padding: 0;
   }
   .question h3 {
     text-align: left;
@@ -3773,14 +3801,15 @@ fieldset.error label {
   .conseils h4 {
     padding-left: 50px;
   }
-  .conseils b {
-    display: block;
-    width: auto;
-    text-align: left;
-  }
   .conseils p {
     width: 100%;
     margin: 10px 0 0;
+  }
+  .conseils li > b,
+  .conseils li div > b {
+    display: block;
+    width: auto;
+    text-align: left;
   }
   .conseils li:before {
     width: auto;
