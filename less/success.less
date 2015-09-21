@@ -1808,6 +1808,43 @@ fieldset{
   z-index: 2;
 }
 
+#news{
+  position: relative;
+  z-index: 1;
+  background: fade(#ddd, 90%);
+  padding: 7px 40px 7px 20px;
+  color: #000;
+  strong{
+    margin: 0 10px 0 0;
+  }
+  a{
+    display: inline-block;
+    color: #000;
+    border-color: fade(#000, 30%);
+    &:hover, &:focus{
+      opacity: .7;
+    }
+  }
+  p{
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    max-width: none;
+  }
+}
+
+#closeNews{
+  .fontIcon();
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  color: #000;
+  &:hover, &:focus{
+    opacity: .7;
+  }
+}
+
 
 @import "_mediaqueries.less";
 @import "_mediaqueries-success.less";

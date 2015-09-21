@@ -1538,6 +1538,9 @@ h3.marginTop,
 .h3.marginTop {
   margin-top: 50px;
 }
+fieldset {
+  width: 48.5%;
+}
 /* HEADER */
 header {
   z-index: 5;

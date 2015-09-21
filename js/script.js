@@ -425,11 +425,11 @@ function setSliderTeamProfil(that){
 	}
 
 	// Récupérer la valeur du name et l'appliquer au select "profil" //
-	$('#profil').find('option[value='+ that.attr('name') +']').prop('selected', true);
+	$('.select option').removeAttr("selected");
+	$('.select option[value='+ that.attr('name') +']').attr("selected", "selected");
 
 	// Changement du champ entreprise //
-	var label = that.html() === 'Autre' ? 'Organisation' : that.html();
-	$('#labelEnt').html(label + ' *');
+	$('#labelEnt').html($('.select').val() + ' *');
 
 	// Récupérer le nom de la personne //
 	$('#nomContact').attr('value', slider.find('.slideTeam.on').find('strong').html());
@@ -484,7 +484,7 @@ function openForm(){
 			btnContact.css('display', 'none');
 			$('#formContact, #bulle').addClass('visible');
 			setTimeout(function(){ htmlBody.animate({scrollTop: $('#formContact').offset().top - 250}, 400, 'easeInOutCubic'); }, 300);
-			$('#nom').focus();
+			$('#prenom').focus();
 		});
 	}else{
 		setTimeout(function(){ htmlBody.animate({scrollTop: $('.formContact').offset().top - 200}, 500, 'easeInOutCubic'); }, 300);
@@ -1562,6 +1562,13 @@ $(function(){
 		if(isMobile.any)
 			stickyFooter();
 	}
+
+	$('#closeNews').on('click', function(){
+		$('#news').animate({'height': 0, 'padding-top': 0, 'padding-bottom': 0}, function(){
+			$(this).css('display', 'none');
+			$.cookie('news', true, { expires: 7, path: '/' });
+		});
+	});	
 
 	if(!body.hasClass('blog')){
 		// Photo header //
