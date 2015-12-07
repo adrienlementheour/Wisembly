@@ -807,14 +807,14 @@ button:focus {
   background: #46b489;
 }
 .btnFull.btnFullBlanc {
-  border-color: #ffffff;
-  background: #ffffff;
-  color: #000000;
+  border-color: #fff;
+  background: #fff;
+  color: #000;
 }
 .btnFull.btnFullBlanc:hover,
 .btnFull.btnFullBlanc:focus {
-  color: #ffffff;
-  background: #000000;
+  color: #fff;
+  background: #000;
 }
 .btnFull:hover,
 .btnFull:focus {
@@ -2977,16 +2977,7 @@ header.menuVisible #triangleMenu {
 }
 .headClients .subHeading {
   text-align: center;
-  margin: 25px auto;
-}
-.headClients .filtres a {
-  width: 240px;
-}
-.headClients .filtres a:hover,
-.headClients .filtres a:focus,
-.headClients .filtres a.actif {
-  background: #289bc4;
-  border-color: #289bc4;
+  margin: 25px auto 230px;
 }
 .headClients:before {
   right: 0;
@@ -3720,6 +3711,55 @@ header.menuVisible #triangleMenu {
   background: #e25c5b;
   border-color: #e25c5b;
 }
+#etudes {
+  position: relative;
+  padding-top: 80px;
+}
+.filtresClients {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: -150px;
+  margin: 0 2%;
+}
+.filtresClients .filtres {
+  padding: 25px;
+  margin: 0;
+  background: #f4f5f5;
+}
+.filtresClients a {
+  width: 240px;
+  color: #06698d;
+}
+.filtresClients a:hover,
+.filtresClients a:focus,
+.filtresClients a.actif {
+  color: #f4f5f5;
+  background: #06698d;
+  border-color: #06698d;
+}
+.filtresClients form {
+  padding: 20px 25px;
+  background: #fff;
+  border: 2px solid #f4f5f5;
+  text-align: left;
+}
+.filtresClients form fieldset {
+  width: 20%;
+  margin: 0 0 5px;
+}
+.filtresClients form input[type=checkbox] {
+  width: auto;
+}
+.filtresClients form input[type=submit] {
+  width: 200px;
+}
+.filtresClients form label {
+  display: inline-block;
+  margin: 0 0 0 5px;
+  font-weight: 400;
+  cursor: pointer;
+}
 /* Articles RDV */
 .rdv {
   position: relative;
@@ -4368,6 +4408,14 @@ header.menuVisible #triangleMenu {
   display: inline-block;
   vertical-align: top;
 }
+.page-template-clients .containerChiffre,
+.page-template-clients .listeChiffres li {
+  margin: 70px 0 0;
+}
+.page-template-clients .containerChiffre:after,
+.page-template-clients .listeChiffres li:after {
+  display: none;
+}
 .containerChiffre span,
 .listeChiffres li span {
   display: block;
@@ -4735,7 +4783,7 @@ ul.whr-items li ul.whr-info li.whr-date {
   margin: 80px 0 0 0;
   padding: 0 15px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
 }
 #offres-essais > li#evenements-seminaires .bloc-top-offres-essais,
 #offres-essais > li#evenements-seminaires .bloc-bottom-offres-essais {
@@ -4749,7 +4797,7 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 #offres-essais > li#evenements-seminaires .btnFull.btnFullBlanc:hover {
   background: #17698d;
-  color: #ffffff;
+  color: #fff;
 }
 #offres-essais > li#reunions-conf-calls .bloc-top-offres-essais,
 #offres-essais > li#reunions-conf-calls .bloc-bottom-offres-essais {
@@ -4763,7 +4811,7 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 #offres-essais > li#reunions-conf-calls .btnFull.btnFullBlanc:hover {
   background: #e25c5b;
-  color: #ffffff;
+  color: #fff;
 }
 #offres-essais > li#cours-formations .bloc-top-offres-essais,
 #offres-essais > li#cours-formations .bloc-bottom-offres-essais {
@@ -4777,7 +4825,7 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 #offres-essais > li#cours-formations .btnFull.btnFullBlanc:hover {
   background: #46b489;
-  color: #ffffff;
+  color: #fff;
 }
 #offres-essais > li:before {
   display: none;
@@ -4792,12 +4840,12 @@ ul.whr-items li ul.whr-info li.whr-date {
   position: relative;
 }
 #offres-essais > li h3 {
-  color: #ffffff;
+  color: #fff;
   margin: 0 0 20px;
 }
 #offres-essais > li a {
-  color: #ffffff;
-  border-color: #ffffff;
+  color: #fff;
+  border-color: #fff;
 }
 #offres-essais > li a:hover {
   -webkit-opacity: 0.8;
@@ -4822,7 +4870,7 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 #offres-essais > li .bloc-top-offres-essais {
   padding: 100px 10px 20px;
-  border-bottom: 1px dashed #ffffff;
+  border-bottom: 1px dashed #fff;
 }
 #offres-essais > li .bloc-top-offres-essais p {
   box-sizing: border-box;
@@ -4966,7 +5014,7 @@ ul.whr-items li ul.whr-info li.whr-date {
 }
 #next-slider-mission:hover {
   background: #46b489;
-  color: #ffffff;
+  color: #fff;
 }
 .no-js #next-slider-mission,
 .lt-ie9 #next-slider-mission {
@@ -6969,7 +7017,7 @@ ul.whr-items li ul.whr-info li.whr-date {
     transition: 0.3s ease-in-out;
   }
   .topHeader p > span {
-    background: #ffffff;
+    background: #fff;
   }
   .topHeader p a {
     color: #3a434c;
@@ -7470,7 +7518,7 @@ ul.whr-items li ul.whr-info li.whr-date {
     max-width: 300px;
     margin: 0 auto !important;
     float: none;
-    color: #ffffff;
+    color: #fff;
   }
   .headLivreLanding #bgHead {
     position: absolute;
@@ -7532,6 +7580,9 @@ ul.whr-items li ul.whr-info li.whr-date {
     right: 0;
     left: 0;
     margin: auto;
+  }
+  .headClients .subHeading {
+    margin-bottom: 20px;
   }
   .blocH1,
   .headEvenements .blocH1,
@@ -7639,83 +7690,6 @@ ul.whr-items li ul.whr-info li.whr-date {
   ul#wisembly-autre li .img img {
     max-height: 80px;
   }
-  /*.blog{
-    #burger{
-      display: block;
-    }
-  }
-
-  .rsMenuBlog{
-    margin: 20px 0 0;
-    .rsBlog{
-      margin: 0 29px 0 0;
-      li{
-        padding: 0 10px 0 0;
-      }
-    }
-  }
-
-  .mainMenuBlog{
-    width: 185px;
-    opacity: 0;
-    position: absolute;
-    top: 35px;
-    z-index: 10;
-    margin: 0;
-    padding: 30px;
-    right: -245px;
-    background: none;
-    text-align: right;
-    border: 0;
-    .transition(.2s ease-in-out);
-    .content{
-      padding: 0;
-    }
-    ul{
-      margin: 20px 0 10px;
-    }
-    li{
-      padding: 0 0 20px;
-      display: block;
-      text-align: right;
-      font-size: .95em;
-    }
-    a{
-      &.actif{
-        &:after{
-          display: none;
-        }
-      }
-    }
-  }
-
-  .searchform{
-    float: none;
-    height: auto;
-    .js &{
-      width: auto;
-      input{
-        position: relative;
-        right: 0;
-        border-bottom: 1px solid #a5a5a5;
-        width: 150px;
-        height: 25px;
-      }
-      button{
-        margin: 10px 0 0 15px;
-        float: right;
-      }
-    }
-  }
-
-  .lang{
-    .blog &{
-      width: 200px;
-      .no-mobile &{
-        width: 200px;
-      }
-    }
-  }*/
   .sameCat a {
     display: block;
     margin: 0 auto;
@@ -8244,8 +8218,8 @@ ul.whr-items li ul.whr-info li.whr-date {
   .headRdv .filtres {
     margin: 20px 0 180px;
   }
-  .headClients .filtres {
-    margin: 20px 0 130px;
+  .headClients .subHeading {
+    margin-bottom: 200px;
   }
 }
 /* @end */

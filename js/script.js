@@ -1605,6 +1605,14 @@ $(function(){
 	if( $('.filtres').find('.actif').length ){
 		goToContent();
 	}
+	if($('#domainsClients').length){
+		var checkboxes = $('#domainsClients').find('input[type=checkbox]'), nbCheckboxes = checkboxes.length, i = 0;
+		for(i; i<nbCheckboxes; i++){
+			if(checkboxes.eq(i).prop('checked')){
+				console.log('yo');
+			}
+		}
+	}
 
 	// Size map //
 	if( $('#map').length ){
