@@ -2231,17 +2231,21 @@ header{
 
 #etudes{
   position: relative;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 .filtresClients{
   position: absolute;
-  left: 20px;
-  right: 20px;
   top: -150px;
-  margin: 0 2%;
+  left: 0;
+  right: 0;
+  max-width: 1160px;
+  margin: auto;
+  padding: 0 20px;
+  z-index: 2;
+  box-sizing: border-box;
   .filtres{
-    padding: 25px;
-    margin: 0;
+    padding: 25px 32px;
+    margin: 0 2%;
     background: @grisSlides;
   }
   a{
@@ -2254,27 +2258,92 @@ header{
     }
   }
   form{
-    padding: 20px 25px;
+    padding: 20px 37px;
     background: #fff;
     border: 2px solid @grisSlides;
     text-align: left;
+    margin: 0 2%;
     fieldset{
       width: 20%;
+      min-width: 170px;
       margin: 0 0 5px;
+    }
+    .block{
+      display: block;
+      margin: 0;
     }
     input{
       &[type=checkbox]{
-        width: auto;
+        //width: auto;
+        position: absolute;
+        left: -99em;
+        &:checked{
+          +label{
+            &:after{
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+        }
       }
       &[type=submit]{
         width: 200px;
+        .js &{
+          display: none;
+        }
       }
     }
     label{
       display: inline-block;
-      margin: 0 0 0 5px;
+      position: relative;
+      padding: 0 0 0 25px;
       font-weight: 400;
       cursor: pointer;
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #d9dadb;
+      }
+      &:after{
+        content: "\e620";
+        .fontIcon();
+        position: absolute;
+        top: 4px;
+        left: 3px;
+        font-size: 11px;
+        color: @bleu;
+        transform: scale(0);
+        transition: .2s;
+      }
+    }
+  }
+  button{
+    color: #848484;
+    text-decoration: underline;
+    font-size: .75em;
+    position: relative;
+    padding: 0 0 0 15px;
+    &:before{
+      content: "\e900";
+      .fontIcon();
+      position: absolute;
+      left: 0;
+      font-size: 12px;
+      top: 1px;
+    }
+    &:hover, &:focus{
+      color: @bleu;
+    }
+  }
+  &.fixed{
+    position: fixed;
+    top: -18px;
+    .filtres{
+      opacity: 0;
     }
   }
 }
@@ -4237,6 +4306,33 @@ ul.whr-items{
   float: right;
   b{
     font-weight: 500;
+  }
+  .form{
+    margin: 10px 0 100px;
+    position: relative;
+    input{
+      &[type=email]{
+        background: #fff;
+        border-color: #ebeeef;
+        color: #000;
+        .placeholder(#dbdbdb);
+        &:focus{
+          border-color: @vert;
+        }
+      }
+    }
+    &:after{
+      content: '';
+      display: block;
+      width: 66px;
+      height: 2px;
+      background: #ebeeef;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: -49px;
+    }
   }
 }
 

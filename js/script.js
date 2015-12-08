@@ -16,7 +16,8 @@ var myScroll,
 	avancementLeftBottom = 0,
 	scrollTop = $('#scrollTop'),
 	blogWisemblyTop,
-	btnTripColor = $('.navTrip').find('a').css('color');
+	btnTripColor = $('.navTrip').find('a').css('color'),
+	domainsOffset = 0;
 
 
 /**** FONCTIONS GENERIQUES ****/
@@ -226,7 +227,18 @@ function scrollPage(){
 		if($(window).width() > 1040){
 			myScroll > 100 ? $('#popupBlog').addClass('scrolled') : $('#popupBlog').removeClass('scrolled');
 		}
+	}
 
+	if($('#domainsClients').length){
+		if(domainsOffset <= myScroll + header.height() + filterInt(header.css('top').replace('px', ''))){
+			if(myScroll > $('.pagination').offset().top){
+				$('.filtresClients').removeClass('fixed');
+			}else{
+				$('.filtresClients').addClass('fixed');
+			}
+		}else{
+			$('.filtresClients').removeClass('fixed');
+		}
 	}
 
 	requestAnimFrame(scrollPage);
@@ -1568,7 +1580,27 @@ $(function(){
 			$(this).css('display', 'none');
 			$.cookie('news', true, { expires: 7, path: '/' });
 		});
-	});	
+	});
+
+	if($('#domainsClients').length){
+		var form = $('#domainsClients'), indexUrl = 0;
+		domainsOffset = form.offset().top;
+		$('.filtres').find('a').on('click', function(e){
+			e.preventDefault();
+			form.attr('action', $(this).attr('href')).submit();
+		});
+		form.find('input[type=checkbox]').on('change', function(){
+			form.submit();
+		});
+		form.find('#reset').on('click', function(e){
+			indexUrl = form.attr('action').indexOf('?');
+			if(indexUrl > -1){
+				e.preventDefault();
+				form.find('input[type=checkbox]').prop('checked', true);
+				form.attr('action', form.attr('action').substring(0, indexUrl)).submit();
+			}
+		});
+	}
 
 	if(!body.hasClass('blog')){
 		// Photo header //
@@ -1604,14 +1636,6 @@ $(function(){
 	// RDV / Clients filtres //
 	if( $('.filtres').find('.actif').length ){
 		goToContent();
-	}
-	if($('#domainsClients').length){
-		var checkboxes = $('#domainsClients').find('input[type=checkbox]'), nbCheckboxes = checkboxes.length, i = 0;
-		for(i; i<nbCheckboxes; i++){
-			if(checkboxes.eq(i).prop('checked')){
-				console.log('yo');
-			}
-		}
 	}
 
 	// Size map //

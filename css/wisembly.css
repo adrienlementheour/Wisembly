@@ -256,6 +256,9 @@ table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-loop:before {
+  content: "\e900";
+}
 .icon-check:before {
   content: "\e620";
 }
@@ -3713,18 +3716,22 @@ header.menuVisible #triangleMenu {
 }
 #etudes {
   position: relative;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 .filtresClients {
   position: absolute;
-  left: 20px;
-  right: 20px;
   top: -150px;
-  margin: 0 2%;
+  left: 0;
+  right: 0;
+  max-width: 1160px;
+  margin: auto;
+  padding: 0 20px;
+  z-index: 2;
+  box-sizing: border-box;
 }
 .filtresClients .filtres {
-  padding: 25px;
-  margin: 0;
+  padding: 25px 32px;
+  margin: 0 2%;
   background: #f4f5f5;
 }
 .filtresClients a {
@@ -3739,26 +3746,106 @@ header.menuVisible #triangleMenu {
   border-color: #06698d;
 }
 .filtresClients form {
-  padding: 20px 25px;
+  padding: 20px 37px;
   background: #fff;
   border: 2px solid #f4f5f5;
   text-align: left;
+  margin: 0 2%;
 }
 .filtresClients form fieldset {
   width: 20%;
+  min-width: 170px;
   margin: 0 0 5px;
 }
+.filtresClients form .block {
+  display: block;
+  margin: 0;
+}
 .filtresClients form input[type=checkbox] {
-  width: auto;
+  position: absolute;
+  left: -99em;
+}
+.filtresClients form input[type=checkbox]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 .filtresClients form input[type=submit] {
   width: 200px;
 }
+.js .filtresClients form input[type=submit] {
+  display: none;
+}
 .filtresClients form label {
   display: inline-block;
-  margin: 0 0 0 5px;
+  position: relative;
+  padding: 0 0 0 25px;
   font-weight: 400;
   cursor: pointer;
+}
+.filtresClients form label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #d9dadb;
+}
+.filtresClients form label:after {
+  content: "\e620";
+  font-family: 'wisembly';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  font-size: 11px;
+  color: #06698d;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: .2s;
+          transition: .2s;
+}
+.filtresClients button {
+  color: #848484;
+  text-decoration: underline;
+  font-size: .75em;
+  position: relative;
+  padding: 0 0 0 15px;
+}
+.filtresClients button:before {
+  content: "\e900";
+  font-family: 'wisembly';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+  top: 1px;
+}
+.filtresClients button:hover,
+.filtresClients button:focus {
+  color: #06698d;
+}
+.filtresClients.fixed {
+  position: fixed;
+  top: -18px;
+}
+.filtresClients.fixed .filtres {
+  opacity: 0;
 }
 /* Articles RDV */
 .rdv {
@@ -5784,6 +5871,42 @@ ul.whr-items li ul.whr-info li.whr-date {
 .sidebar b {
   font-weight: 500;
 }
+.sidebar .form {
+  margin: 10px 0 100px;
+  position: relative;
+}
+.sidebar .form input[type=email] {
+  background: #fff;
+  border-color: #ebeeef;
+  color: #000;
+}
+.sidebar .form input[type=email]::-webkit-input-placeholder {
+  color: #dbdbdb;
+}
+.sidebar .form input[type=email]:-moz-placeholder {
+  color: #dbdbdb;
+}
+.sidebar .form input[type=email]::-moz-placeholder {
+  color: #dbdbdb;
+}
+.sidebar .form input[type=email]:-ms-input-placeholder {
+  color: #dbdbdb;
+}
+.sidebar .form input[type=email]:focus {
+  border-color: #46b489;
+}
+.sidebar .form:after {
+  content: '';
+  display: block;
+  width: 66px;
+  height: 2px;
+  background: #ebeeef;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -49px;
+}
 .postData b {
   font-style: normal;
 }
@@ -6900,6 +7023,12 @@ ul.whr-items li ul.whr-info li.whr-date {
   .blogWisembly.fixed {
     top: -80px;
   }
+  #etudes {
+    padding-top: 100px;
+  }
+  .filtresClients .filtres {
+    padding: 25px 33px;
+  }
 }
 @media (max-width: 1040px) {
   .no-mobile header {
@@ -7186,7 +7315,8 @@ ul.whr-items li ul.whr-info li.whr-date {
   .catWisembly,
   .blogLivres,
   .blogWisembly,
-  #goToCom {
+  #goToCom,
+  .sidebar .form {
     display: none;
   }
   .blog.single h1 {
@@ -7203,6 +7333,28 @@ ul.whr-items li ul.whr-info li.whr-date {
   }*/
   .sharePost {
     margin: 40px 0 0;
+  }
+  #etudes {
+    padding-top: 0;
+  }
+  .filtresClients {
+    position: static;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 0 50px;
+    padding: 0;
+  }
+  .filtresClients .filtres,
+  .filtresClients form {
+    margin: 0;
+  }
+  .filtresClients.fixed {
+    position: static;
+    top: 0;
+  }
+  .filtresClients.fixed .filtres {
+    opacity: 1;
   }
 }
 @media (max-width: 979px) {

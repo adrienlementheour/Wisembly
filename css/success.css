@@ -259,6 +259,9 @@ table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-loop:before {
+  content: "\e900";
+}
 .icon-check:before {
   content: "\e620";
 }
@@ -804,14 +807,14 @@ button:focus {
   background: #46b489;
 }
 .btnFull.btnFullBlanc {
-  border-color: #ffffff;
-  background: #ffffff;
-  color: #000000;
+  border-color: #fff;
+  background: #fff;
+  color: #000;
 }
 .btnFull.btnFullBlanc:hover,
 .btnFull.btnFullBlanc:focus {
-  color: #ffffff;
-  background: #000000;
+  color: #fff;
+  background: #000;
 }
 .btnFull:hover,
 .btnFull:focus {

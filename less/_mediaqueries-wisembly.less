@@ -293,6 +293,17 @@
     }
   }
 
+
+  #etudes{
+    padding-top: 100px;
+  }
+
+  .filtresClients{
+    .filtres{
+      padding: 25px 33px;
+    }
+  }
+
 }
 
 
@@ -666,7 +677,7 @@
     width: 100%;
   }
 
-  .catWisembly, .blogLivres, .blogWisembly, #goToCom{
+  .catWisembly, .blogLivres, .blogWisembly, #goToCom, .sidebar .form{
     display: none;
   }
 
@@ -690,6 +701,28 @@
 
   .sharePost {
     margin: 40px 0 0;
+  }
+
+  #etudes{
+    padding-top: 0;
+  }
+  .filtresClients{
+    position: static;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 0 50px;
+    padding: 0;
+    .filtres, form{
+      margin: 0;
+    }
+    &.fixed{
+      position: static;
+      top: 0;
+      .filtres{
+        opacity: 1;
+      }
+    }
   }
 
 }
