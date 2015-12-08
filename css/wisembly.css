@@ -3843,9 +3843,25 @@ header.menuVisible #triangleMenu {
 .filtresClients.fixed {
   position: fixed;
   top: -18px;
+  -webkit-transition: -webkit-transform .5s;
+          transition: transform .5s;
 }
 .filtresClients.fixed .filtres {
   opacity: 0;
+  -webkit-transition: .1s opacity .4s;
+          transition: .1s opacity .4s;
+}
+.filtresClients.fixed:hover {
+  -webkit-transform: translateY(89px);
+      -ms-transform: translateY(89px);
+          transform: translateY(89px);
+  -webkit-transition: -webkit-transform .3s;
+          transition: transform .3s;
+}
+.filtresClients.fixed:hover .filtres {
+  opacity: 1;
+  -webkit-transition: 0s;
+          transition: 0s;
 }
 /* Articles RDV */
 .rdv {
@@ -7355,6 +7371,11 @@ ul.whr-items li ul.whr-info li.whr-date {
   }
   .filtresClients.fixed .filtres {
     opacity: 1;
+  }
+  .filtresClients.fixed:hover {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
 }
 @media (max-width: 979px) {

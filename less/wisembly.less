@@ -2342,8 +2342,18 @@ header{
   &.fixed{
     position: fixed;
     top: -18px;
+    transition: transform .5s;
     .filtres{
       opacity: 0;
+      transition: .1s opacity .4s;
+    }
+    &:hover{
+      transform: translateY(89px);
+      transition: transform .3s;
+      .filtres{
+        opacity: 1;
+        transition: 0s;
+      }
     }
   }
 }
