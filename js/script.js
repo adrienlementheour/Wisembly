@@ -1589,17 +1589,26 @@ $(function(){
 			e.preventDefault();
 			form.attr('action', $(this).attr('href')).submit();
 		});
-		form.find('input[type=checkbox]').on('change', function(){
-			form.submit();
-		});
-		form.find('#reset').on('click', function(e){
-			indexUrl = form.attr('action').indexOf('?');
-			if(indexUrl > -1){
-				e.preventDefault();
-				form.find('input[type=checkbox]').prop('checked', true);
-				form.attr('action', form.attr('action').substring(0, indexUrl)).submit();
+		var allchecked = true;
+		form.find('input[type=checkbox]:not(#reset)').each(function() {
+			if (!$(this).is(':checked')) {
+				allchecked = false;
 			}
 		});
+		if (allchecked) {
+			$("#reset").prop('checked', true);
+		}
+		form.find('input[type=checkbox]').on('change', function(){
+			if ($(this).attr("id") == "reset" && !$(this).is(':checked')) {
+				form.find('input[type=checkbox]:not(#reset)').prop('checked', false);
+			} else {
+				if (!$(this).is(':checked')) {
+					$("#reset").prop('checked', false);
+				}
+			}
+			form.submit();
+		});
+		
 	}
 
 	if(!body.hasClass('blog')){

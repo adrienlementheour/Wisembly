@@ -2246,11 +2246,11 @@ header{
   .filtres{
     padding: 25px 32px;
     margin: 0 2%;
-    background: @grisSlides;
+    background: #fff;
   }
   a{
     width: 240px;
-    color: @bleu;
+    color: @txt;
     &:hover, &:focus, &.actif{
       color: @grisSlides;
       background: @bleu;
@@ -2259,7 +2259,7 @@ header{
   }
   form{
     padding: 20px 37px;
-    background: #fff;
+    background: @grisSlides;
     border: 2px solid @grisSlides;
     text-align: left;
     margin: 0 2%;
@@ -2269,7 +2269,7 @@ header{
       margin: 0 0 5px;
     }
     .block{
-      display: block;
+      display: inline-block;
       margin: 0;
     }
     input{
@@ -2307,6 +2307,7 @@ header{
         width: 15px;
         height: 15px;
         border: 1px solid #d9dadb;
+        background-color: #FFF;
       }
       &:after{
         content: "\e620";
@@ -2320,25 +2321,34 @@ header{
         transition: .2s;
       }
     }
+    .resetDomains{
+        color: #0e4861;
+        position: relative;
+        padding: 8px 0px;
+        background-color: #FFF;
+        border-bottom-right-radius: 10px;
+        text-align: center;
+        bottom: 22px;
+        right: 39px;
+        label {
+          .gothamBoldIt(0.9em);
+          &:before{
+            .fontIcon();
+            top: 0px;
+            border-color: #0e4861;
+          }
+          &:hover, &:focus{
+            color: @bleu;
+          }
+        }
+      }
   }
-  button{
-    color: #848484;
-    text-decoration: underline;
+  /*button{ 
+    color: #000;
     font-size: .75em;
     position: relative;
     padding: 0 0 0 15px;
-    &:before{
-      content: "\e900";
-      .fontIcon();
-      position: absolute;
-      left: 0;
-      font-size: 12px;
-      top: 1px;
-    }
-    &:hover, &:focus{
-      color: @bleu;
-    }
-  }
+  }*/
   &.fixed{
     position: fixed;
     top: -18px;

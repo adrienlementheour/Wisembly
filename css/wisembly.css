@@ -3728,15 +3728,21 @@ header.menuVisible #triangleMenu {
   padding: 0 20px;
   z-index: 2;
   box-sizing: border-box;
+  /*button{ 
+    color: #000;
+    font-size: .75em;
+    position: relative;
+    padding: 0 0 0 15px;
+  }*/
 }
 .filtresClients .filtres {
   padding: 25px 32px;
   margin: 0 2%;
-  background: #f4f5f5;
+  background: #fff;
 }
 .filtresClients a {
   width: 240px;
-  color: #06698d;
+  color: #3a434c;
 }
 .filtresClients a:hover,
 .filtresClients a:focus,
@@ -3747,7 +3753,7 @@ header.menuVisible #triangleMenu {
 }
 .filtresClients form {
   padding: 20px 37px;
-  background: #fff;
+  background: #f4f5f5;
   border: 2px solid #f4f5f5;
   text-align: left;
   margin: 0 2%;
@@ -3758,7 +3764,7 @@ header.menuVisible #triangleMenu {
   margin: 0 0 5px;
 }
 .filtresClients form .block {
-  display: block;
+  display: inline-block;
   margin: 0;
 }
 .filtresClients form input[type=checkbox] {
@@ -3792,6 +3798,7 @@ header.menuVisible #triangleMenu {
   width: 15px;
   height: 15px;
   border: 1px solid #d9dadb;
+  background-color: #FFF;
 }
 .filtresClients form label:after {
   content: "\e620";
@@ -3814,15 +3821,26 @@ header.menuVisible #triangleMenu {
   -webkit-transition: .2s;
           transition: .2s;
 }
-.filtresClients button {
-  color: #848484;
-  text-decoration: underline;
-  font-size: .75em;
+.filtresClients form .resetDomains {
+  color: #0e4861;
   position: relative;
-  padding: 0 0 0 15px;
+  padding: 8px 0px;
+  background-color: #FFF;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  bottom: 22px;
+  right: 39px;
 }
-.filtresClients button:before {
-  content: "\e900";
+.filtresClients form .resetDomains label {
+  font-family: "Gotham SSm A", "Gotham SSm B";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.9em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.filtresClients form .resetDomains label:before {
   font-family: 'wisembly';
   speak: none;
   font-weight: normal;
@@ -3831,13 +3849,11 @@ header.menuVisible #triangleMenu {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-  left: 0;
-  font-size: 12px;
-  top: 1px;
+  top: 0px;
+  border-color: #0e4861;
 }
-.filtresClients button:hover,
-.filtresClients button:focus {
+.filtresClients form .resetDomains label:hover,
+.filtresClients form .resetDomains label:focus {
   color: #06698d;
 }
 .filtresClients.fixed {
